@@ -31,10 +31,11 @@
     -- university.absents(@id, justified, #student_id, #course_id)
     -- university.participates(@id, #course_id, #subgroup_id)
 */
-
--- CREATE DATABASE university;
--- CREATE USER university_admin WITH PASSWORD 'password';
--- GRANT ALL PRIVILEGES ON DATABASE university TO university_admin;
+DROP DATABASE IF EXISTS university;
+CREATE DATABASE university;
+DROP USER IF EXISTS university_admin;
+CREATE USER university_admin WITH PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE university TO university_admin;
 
 
 \echo 'Start of create UNIVERSITY database'; -- Start of create UNIVERSITY database
