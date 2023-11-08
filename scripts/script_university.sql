@@ -1,5 +1,6 @@
 -- \echo [INFO] Start of script Insertion for SAE 1.0
 -- SOURCE script_university_delete.sql; -- or \i delete.sql; for some databases
+-- psql -U university_admin -d university
 
 /* Script contain create for each table
     -- university.personals(@id, last_name, first_name, mail, phone_number)
@@ -31,11 +32,17 @@
     -- university.absents(@id, justified, #student_id, #course_id)
     -- university.participates(@id, #course_id, #subgroup_id)
 */
-DROP DATABASE IF EXISTS university;
-CREATE DATABASE university;
-DROP USER IF EXISTS university_admin;
-CREATE USER university_admin WITH PASSWORD 'password';
-GRANT ALL PRIVILEGES ON DATABASE university TO university_admin;
+
+/*  Need a connection to a SUPERUSER (postgres)
+    DROP DATABASE IF EXISTS university;
+    CREATE DATABASE university;
+    DROP USER IF EXISTS university_admin;
+    CREATE USER university_admin WITH PASSWORD 'password';
+    GRANT ALL PRIVILEGES ON DATABASE university TO university_admin;
+    GRANT USAGE ON SCHEMA public TO university_admin;
+    GRANT CREATE ON SCHEMA public TO university_admin;
+    ALTER USER university_admin WITH SUPERUSER;
+*/
 
 
 \echo 'Start of create UNIVERSITY database'; -- Start of create UNIVERSITY database

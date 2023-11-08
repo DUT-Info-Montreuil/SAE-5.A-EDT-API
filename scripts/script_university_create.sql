@@ -129,7 +129,7 @@ CREATE TABLE university.courses(
 	description TEXT NOT NULL,
 	startTime timestamp NOT NULL,
 	duree time NOT NULL,
-	course_type course_types NOT NULL,
+	course_type courses_types NOT NULL,
 
     -- FOREIGN KEY (personals)
     personal_id INT NOT NULL,
