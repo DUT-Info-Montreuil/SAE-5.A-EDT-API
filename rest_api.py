@@ -817,9 +817,9 @@ def get_students():
     connect_pg.disconnect(conn)
     return jsonify(returnStatement)
 
-@app.route('/students/get/<int:id>', methods=['GET'])
-def get_student_by_id(id):
-    query = "SELECT * FROM university.students WHERE id = %(id)s" % {'id': id}
+@app.route('/students/get/<string:student_number>', methods=['GET'])
+def get_student_by_id(student_number):
+    query = "SELECT * FROM university.students WHERE student_number = '%(student_number)s'" % {'student_number': student_number}
     conn = connect_pg.connect()
     rows = connect_pg.get_query(conn, query)
     returnStatement = {}
@@ -854,6 +854,7 @@ def identify_student():
 def add_student():
     data = request.json
 
+    student_number = data.get('student_number', '')
     last_name = data.get('last_name', '')
     first_name = data.get('first_name', '')
     mail = data.get('mail', '')
@@ -862,19 +863,19 @@ def add_student():
     group_id = data.get('group_id', '')
     subgroup_id = data.get('subgroup_id', '')
 
-    query = "INSERT INTO university.students (last_name, first_name, mail, phone_number, department_id, group_id, subgroup_id) VALUES ('%(last_name)s', '%(first_name)s', '%(mail)s', '%(phone_number)s', %(department_id)s, %(group_id)s, %(subgroup_id)s) RETURNING id" % {'last_name': last_name, 'first_name': first_name, 'mail': mail, 'phone_number': phone_number, 'department_id': department_id, 'group_id': group_id, 'subgroup_id': subgroup_id}
+    query = "INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, department_id, group_id, subgroup_id) VALUES ('%(student_number)s', '%(last_name)s', '%(first_name)s', '%(mail)s', '%(phone_number)s', %(department_id)s, %(group_id)s, %(subgroup_id)s) RETURNING id" % {'student_number': student_number, 'last_name': last_name, 'first_name': first_name, 'mail': mail, 'phone_number': phone_number, 'department_id': department_id, 'group_id': group_id, 'subgroup_id': subgroup_id}
     conn = connect_pg.connect()
-    new_student_id = connect_pg.execute_commands(conn, (query,))
+    new_student_number = connect_pg.execute_commands(conn, (query,))
     connect_pg.disconnect(conn)
 
-    if new_student_id:
+    if new_student_number:
         return jsonify({"message": "Student successfully added!"}), 200
     else:
         return jsonify({"message": "Student not found!"}), 404
 
-@app.route('/students/delete/<int:id>', methods=['GET'])
-def delete_student_by_id(id):
-    query = "DELETE FROM university.students WHERE id = %(id)s RETURNING id" %  {'id': id}
+@app.route('/students/delete/<string:student_number>', methods=['GET'])
+def delete_student_by_id(student_number):
+    query = "DELETE FROM university.students WHERE student_number = '%(student_number)s' RETURNING student_number" %  {'student_number': student_number}
     conn = connect_pg.connect()
     row = connect_pg.execute_commands(conn, (query,))
     connect_pg.disconnect(conn)
@@ -885,7 +886,7 @@ def delete_student_by_id(id):
 
 def get_student_statement(row):
     return {
-        'id': row[0],                # L'ID de l'étudiant
+        'student_number': row[0],    # Numero étudiant
         'last_name': row[1],         # Le nom de famille de l'étudiant
         'first_name': row[2],        # Le prénom de l'étudiant
         'mail': row[3],              # L'adresse e-mail de l'étudiant
