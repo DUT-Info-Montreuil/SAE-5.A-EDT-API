@@ -10,8 +10,6 @@ DELETE FROM university.reminders;
 DELETE FROM university.courses;
 -- Delete all records from university.rooms
 DELETE FROM university.rooms;
--- Delete all records from university.resource
--- DELETE FROM university.resource;
 -- Delete all records from university.
 DELETE FROM university.teachings;
 -- Delete all records from university.students

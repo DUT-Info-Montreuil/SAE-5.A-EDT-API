@@ -23,6 +23,10 @@ DROP SCHEMA IF EXISTS university cascade ;
 CREATE SCHEMA university;
 
 -- \echo [INFO] Create the numphone domain with regex
+DROP DOMAIN IF EXISTS studentNumber ;
+CREATE DOMAIN studentNumber as varchar(8) check (value ~* E'0\\d{8}');
+
+-- \echo [INFO] Create the numphone domain with regex
 DROP DOMAIN IF EXISTS numphone ;
 CREATE DOMAIN numphone as varchar(14) check (value ~* E'0\\d{1}\.\\d{2}\.\\d{2}\.\\d{2}\.\\d{2}');
 
@@ -44,6 +48,7 @@ CREATE TABLE university.students(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_students PRIMARY KEY CONSTRAINT ck_university_student_id CHECK(id > 0), 
     -- ATTRIBUTE
+	studentNumber studentNumber UNIQUE NOT NULL,	-- domaine numphone
 	last_name varchar(32) NOT NULL,
 	first_name varchar(32) NOT NULL,
 	mail email NOT NULL,
