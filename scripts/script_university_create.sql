@@ -16,7 +16,6 @@
     -- university.absents(@id, justified, #student_number, #course_id)
     -- university.participates(@id, #course_id, #subgroup_id)
 */
-
 DROP SCHEMA IF EXISTS university cascade ;
 
 -- \echo [INFO] Create schema university

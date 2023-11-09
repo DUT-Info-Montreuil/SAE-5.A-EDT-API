@@ -84,6 +84,55 @@ def after_request(response):
     response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
     return response
 
+# CREATE ALL DB 
+# !! Warning this methode drop all before !! 
+# university()
+@app.route('/create_university_db', methods=['GET'])
+def create_university_db():
+    """ CREATE ALL DB this methode will DROP all BEFORE create """
+    # script_file_path = 'scripts/script_university.sql'
+    # result = connect_pg.execute_sql_script(script_file_path)
+    script_file_path = 'scripts/script_university_create.sql'
+    result = connect_pg.execute_sql_script(script_file_path)
+    
+    script_file_path = 'scripts/script_university_school_insert.sql'
+    result1 = connect_pg.execute_sql_script(script_file_path)
+    
+    script_file_path = 'scripts/script_university_student_insert.sql'
+    result2 = connect_pg.execute_sql_script(script_file_path)
+    return jsonify( {"univesity_create" : result, "school_insert" : result1, "student_insert" : result2})
+
+@app.route('/create_table_university_db', methods=['GET'])
+def create_table_university_db():
+    """ DROP AND CREATE ALL TABLE IN DB """
+    script_file_path = 'scripts/script_university_create.sql'
+    result = connect_pg.execute_sql_script(script_file_path)
+    return result
+
+@app.route('/empty_table_university_db', methods=['GET'])
+def empty_table_university_db():
+    """ EMPTY ALL TABLE IN THE DB """
+    script_file_path = 'scripts/script_university_delete.sql'
+    result = connect_pg.execute_sql_script(script_file_path)
+    return result
+
+@app.route('/insert_table_university_db', methods=['GET'])
+def insert_table_university_db():
+    """ INSERT ALL TABLE IN THE DB """
+    script_file_path = 'scripts/script_university_school_insert.sql'
+    result1 = connect_pg.execute_sql_script(script_file_path)
+    
+    script_file_path = 'scripts/script_university_student_insert.sql'
+    result2 = connect_pg.execute_sql_script(script_file_path)
+    return jsonify( {"school_insert" : result1, "student_insert" : result2})
+
+@app.route('/drop_table_university_db', methods=['GET'])
+def drop_table_university_db():
+    """ DROP ALL TABLE IN THE DB """
+    script_file_path = 'scripts/script_university_drop.sql'
+    result = connect_pg.execute_sql_script(script_file_path)
+    return result
+
 if __name__ == "__main__":
     # read server parameters
     params = config('config.ini', 'server')
