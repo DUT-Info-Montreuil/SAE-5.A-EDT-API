@@ -10,7 +10,7 @@
     -- university.teachings(@id, title, hour_number, semestre, sequence, description, teaching_type, #specialization_id)
     -- university.roles(@id, name, description, #personal_id)
     -- university.courses(@id, description, starttime, duree, course_type, #personal_id, #rooms_id, #teaching_id)
-    -- university.students(@id, last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
+    -- university.students(@id, studentNumber, last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
     -- university.responsibles(@id, #personal_id, #resource_id)
     -- university.reminders(@id, name, description, #course_id)
     -- university.absents(@id, justified, #student_id, #course_id)
