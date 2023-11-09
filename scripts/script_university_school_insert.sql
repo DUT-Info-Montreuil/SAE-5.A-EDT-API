@@ -16,7 +16,7 @@
     -- university.courses(@id, description, starttime, duree, course_type, #personal_id, #rooms_id, #teaching_id)
     -- university.responsibles(@id, #personal_id, #resource_id)
     -- university.reminders(@id, name, description, #course_id)
-    -- university.absents(@id, justified, #student_id, #course_id)
+    -- university.absents(@id, justified, #student_number, #course_id)
     -- university.participates(@id, #course_id, #subgroup_id)
 */
 

@@ -10,10 +10,10 @@
     -- university.teachings(@id, title, hour_number, semestre, sequence, description, teaching_type, #specialization_id)
     -- university.roles(@id, name, description, #personal_id)
     -- university.courses(@id, description, starttime, duree, course_type, #personal_id, #rooms_id, #teaching_id)
-    -- university.students(@id, studentNumber, last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
+    -- university.students(@student_number, last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
     -- university.responsibles(@id, #personal_id, #resource_id)
     -- university.reminders(@id, name, description, #course_id)
-    -- university.absents(@id, justified, #student_id, #course_id)
+    -- university.absents(@id, justified, #student_number, #course_id)
     -- university.participates(@id, #course_id, #subgroup_id)
 */
 
@@ -23,8 +23,8 @@ DROP SCHEMA IF EXISTS university cascade ;
 CREATE SCHEMA university;
 
 -- \echo [INFO] Create the numphone domain with regex
-DROP DOMAIN IF EXISTS studentNumber ;
-CREATE DOMAIN studentNumber as varchar(8) check (value ~* E'0\\d{8}');
+DROP DOMAIN IF EXISTS numstudent ;
+CREATE DOMAIN numstudent as varchar(8) check (value ~* E'\\d{8}');
 
 -- \echo [INFO] Create the numphone domain with regex
 DROP DOMAIN IF EXISTS numphone ;
@@ -45,16 +45,16 @@ CREATE DOMAIN teachings_types as varchar(32) check (value ~* '^(SAE|RT|RCC|Portf
 -- Student
 -- \echo [INFO] Create the university.students table
 CREATE TABLE university.students(
-    -- PRIMARY KEY
-    id SERIAL constraint pk_university_students PRIMARY KEY CONSTRAINT ck_university_student_id CHECK(id > 0), 
+	-- PRIMARY KEY
+    student_number numstudent UNIQUE NOT NULL,  -- domain numstudent,
+    CONSTRAINT pk_university_students PRIMARY KEY (student_number),  -- primary key constraint
+    CONSTRAINT ck_university_student_student_number CHECK (student_number IS NOT NULL),
     -- ATTRIBUTE
-	studentNumber studentNumber UNIQUE NOT NULL,	-- domaine numphone
-	last_name varchar(32) NOT NULL,
-	first_name varchar(32) NOT NULL,
-	mail email NOT NULL,
-	phone_number numphone UNIQUE NOT NULL,	-- domaine numphone
-
-	-- FOREIGN KEY (departments)
+    last_name varchar(32) NOT NULL,
+    first_name varchar(32) NOT NULL,
+    mail email NOT NULL,
+    phone_number numphone UNIQUE NOT NULL,  -- domain numphone,
+    -- FOREIGN KEY (departments)
     department_id INT NOT NULL,
     -- FOREIGN KEY (groups)
     group_id INT NOT NULL,
@@ -209,9 +209,9 @@ CREATE TABLE university.absents(
     justified boolean default true,
 
     -- FOREIGN KEY (students)
-    student_id INT NOT NULL,
-    constraint fk_university_absents_students foreign key (student_id) 
-    references university.students (id) on delete restrict on update cascade,
+    student_number numstudent NOT NULL,
+    constraint fk_university_absents_students foreign key (student_number) 
+    references university.students (student_number) on delete restrict on update cascade,
     
     -- FOREIGN KEY (courses)
     course_id INT NOT NULL,
