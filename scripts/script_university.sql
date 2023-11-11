@@ -53,18 +53,19 @@
     Then
     -- psql -U university_admin -d university
     Password for user university_admin: password
+    url : jdbc:postgresql://localhost:5432/university
 
 */
 
 
-\echo '\nStart of create UNIVERSITY database\n' -- Start of create UNIVERSITY database
+-- \echo '\nStart of create UNIVERSITY database\n' -- Start of create UNIVERSITY database
 \i script_university_create.sql;
-\echo '\nend of create UNIVERSITY database\n' -- End of create UNIVERSITY database
+-- \echo '\nend of create UNIVERSITY database\n' -- End of create UNIVERSITY database
 
-\echo '\nStart of insert UNIVERSITY database (design for montreuil)\n' --Start of insert UNIVERSITY database (design for montreuil)
+-- \echo '\nStart of insert UNIVERSITY database (design for montreuil)\n' --Start of insert UNIVERSITY database (design for montreuil)
 \i script_university_school_insert.sql;
-\echo '\nend of insert UNIVERSITY database\n' -- End of insert UNIVERSITY database
+-- \echo '\nend of insert UNIVERSITY database\n' -- End of insert UNIVERSITY database
 
-\echo '\nStart of insert UNIVERSITY student in database (design for montreuil)\n' -- Start of insert UNIVERSITY student in database (design for montreuil)
+-- \echo '\nStart of insert UNIVERSITY student in database (design for montreuil)\n' -- Start of insert UNIVERSITY student in database (design for montreuil)
 \i script_university_student_insert.sql;
-\echo '\nEnd of insert UNIVERSITY student in database\n' -- End of insert UNIVERSITY student in database
+-- \echo '\nEnd of insert UNIVERSITY student in database\n' -- End of insert UNIVERSITY student in database

@@ -59,5 +59,33 @@ def get_query(conn, query):
         if conn is not None:
             return rows
 
+def execute_sql_script(script_file,filename='config.ini', section='postgresql'):
+    """Execute an SQL script to the database."""
+    
+    result = "SQL script executed successfully."
+    try:
+        params = config(filename, section)
+        print('Connecting to the PostgreSQL database...')
+        conn = psycopg2.connect(**params)
+        conn.set_client_encoding('UTF8')
+        cur = conn.cursor()
+        
+        with open(script_file, 'r') as sql_file:
+            sql_script = sql_file.read()
+            cur.execute(sql_script)
+
+        conn.commit()
+
+    except (Exception, psycopg2.DatabaseError) as error:
+        print("Error executing SQL script:", error)
+        result = "Error executing SQL script:"
+
+    finally:
+        cur.close()
+        conn.close()
+        
+    return result
+        
+        
 if __name__ == '__main__':
     connect()
