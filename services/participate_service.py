@@ -83,18 +83,18 @@ class participate_service(Service):
         course_id = data.get('course_id', existing_participate['course_id'])
         rooms_id = data.get('rooms_id', existing_participate['rooms_id'])
 
-        query = """UPDATE your_database.participate_table
+        query = """UPDATE university.participates
                 SET course_id = %(course_id)s,
-                rooms_id = %(rooms_id)s
-            WHERE id = %(id)s
-            RETURNING id """ % {
-                'id': id,
-                'course_id': course_id,
-                'rooms_id': rooms_id
-            }
+                    rooms_id = %(rooms_id)s
+                WHERE id = %(id)s
+                RETURNING id """ % {
+                    'id': id,
+                    'course_id': course_id,
+                    'rooms_id': rooms_id
+                }
 
         conn = self.get_connection()
-        updated_participate_id = connect_pg.execute_commands(conn, query)
+        updated_participate_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
 
         return updated_participate_id

@@ -87,9 +87,9 @@ class absent_service(Service):
         student_number = data.get('student_number', existing_absent['student_number'])
         course_id = data.get('course_id', existing_absent['course_id'])
 
-        query = """UPDATE your_database.absent_table
-                SET justified = %(justified)s,
-                student_number = %(student_number)s,
+        query = """UPDATE university.absents
+                SET justified = '%(justified)s',
+                student_number = '%(student_number)s',
                 course_id = %(course_id)s
             WHERE id = %(id)s
             RETURNING id """ % {
@@ -100,7 +100,7 @@ class absent_service(Service):
             }
 
         conn = self.get_connection()
-        updated_absent_id = connect_pg.execute_commands(conn, query)
+        updated_absent_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
 
         return updated_absent_id

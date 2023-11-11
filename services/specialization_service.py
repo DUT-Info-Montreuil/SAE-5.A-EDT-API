@@ -85,20 +85,20 @@ class specialization_service(Service):
         name = data.get('name', existing_specialization['name'])
         department_id = data.get('department_id', existing_specialization['department_id'])
 
-        query = """UPDATE your_database.specialization_table
-                SET code = %(code)s,
-                name = %(name)s,
-                department_id = %(department_id)s
-            WHERE id = %(id)s
-            RETURNING id """ % {
-                'id': id,
-                'code': code,
-                'name': name,
-                'department_id': department_id
-            }
+        query = """UPDATE university.specializations
+                    SET code = '%(code)s',
+                        name = '%(name)s',
+                        department_id = %(department_id)s
+                    WHERE id = %(id)s
+                    RETURNING id """ % {
+                        'id': id,
+                        'code': code,
+                        'name': name,
+                        'department_id': department_id
+                    }
 
         conn = self.get_connection()
-        updated_specialization_id = connect_pg.execute_commands(conn, query)
+        updated_specialization_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
 
         return updated_specialization_id

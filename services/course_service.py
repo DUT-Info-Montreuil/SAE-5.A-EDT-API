@@ -97,10 +97,10 @@ class course_service(Service):
         teaching_id = data.get('teaching_id', existing_course['teaching_id'])
 
         query = """UPDATE university.courses
-                SET description = %(description)s,
-                starttime = %(starttime)s,
+                SET description = '%(description)s',
+                starttime = '%(starttime)s',
                 duree = %(duree)s,
-                course_type = %(course_type)s,
+                course_type = '%(course_type)s',
                 personal_id = %(personal_id)s,
                 rooms_id = %(rooms_id)s,
                 teaching_id = %(teaching_id)s
@@ -117,7 +117,7 @@ class course_service(Service):
             }
 
         conn = self.get_connection()
-        updated_course_id = connect_pg.execute_commands(conn, query)
+        updated_course_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
 
         return updated_course_id

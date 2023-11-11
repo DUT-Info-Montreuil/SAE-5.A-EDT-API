@@ -85,20 +85,20 @@ class role_service(Service):
         description = data.get('description', existing_role['description'])
         personal_id = data.get('personal_id', existing_role['personal_id'])
 
-        query = """UPDATE your_database.role_table
-                SET name = %(name)s,
-                description = %(description)s,
-                personal_id = %(personal_id)s
-            WHERE id = %(id)s
-            RETURNING id """ % {
-                'id': id,
-                'name': name,
-                'description': description,
-                'personal_id': personal_id
-            }
+        query = """UPDATE university.roles
+                    SET name = '%(name)s',
+                        description = '%(description)s',
+                        personal_id = %(personal_id)s
+                    WHERE id = %(id)s
+                    RETURNING id """ % {
+                        'id': id,
+                        'name': name,
+                        'description': description,
+                        'personal_id': personal_id
+                    }
 
         conn = self.get_connection()
-        updated_role_id = connect_pg.execute_commands(conn, query)
+        updated_role_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
 
         return updated_role_id

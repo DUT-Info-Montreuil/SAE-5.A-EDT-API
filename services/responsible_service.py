@@ -83,18 +83,18 @@ class responsible_service(Service):
         personal_id = data.get('personal_id', existing_responsible['personal_id'])
         teaching_id = data.get('teaching_id', existing_responsible['teaching_id'])
 
-        query = """UPDATE your_database.responsible_table
-                SET personal_id = %(personal_id)s,
-                teaching_id = %(teaching_id)s
-            WHERE id = %(id)s
-            RETURNING id """ % {
-                'id': id,
-                'personal_id': personal_id,
-                'teaching_id': teaching_id
-            }
+        query = """UPDATE university.responsibles
+                    SET personal_id = %(personal_id)s,
+                        teaching_id = %(teaching_id)s
+                    WHERE id = %(id)s
+                    RETURNING id """ % {
+                        'id': id,
+                        'personal_id': personal_id,
+                        'teaching_id': teaching_id
+                    }
 
         conn = self.get_connection()
-        updated_responsible_id = connect_pg.execute_commands(conn, query)
+        updated_responsible_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
 
         return updated_responsible_id

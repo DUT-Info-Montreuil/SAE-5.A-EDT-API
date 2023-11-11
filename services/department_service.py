@@ -81,22 +81,22 @@ class department_service(Service):
         degree_type = data.get('degree_type', existing_department['degree_type'])
         personal_id = data.get('personal_id', existing_department['personal_id'])
 
-        query = """UPDATE your_database.department_table
-                SET name = %(name)s,
-                description = %(description)s,
-                degree_type = %(degree_type)s,
-                personal_id = %(personal_id)s
-            WHERE id = %(id)s
-            RETURNING id """ % {
+        query = """UPDATE university.departments
+                    SET name = '%(name)s',
+                    description = '%(description)s',
+                    degree_type = '%(degree_type)s',
+                    personal_id = %(personal_id)s
+                WHERE id = %(id)s
+                RETURNING id """ % {
                 'id': id,
                 'name': name,
                 'description': description,
                 'degree_type': degree_type,
                 'personal_id': personal_id
             }
-
+        
         conn = self.get_connection()
-        updated_department_id = connect_pg.execute_commands(conn, query)
+        updated_department_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
 
         return updated_department_id

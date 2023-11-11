@@ -226,3 +226,4 @@ cython_debug/
 /web/js/
 
 # End of https://www.toptal.com/developers/gitignore/api/symfony,flask
+.vscode/launch.json

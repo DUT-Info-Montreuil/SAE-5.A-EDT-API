@@ -86,22 +86,22 @@ class room_service(Service):
         has_computer = data.get('has_computer', existing_room['has_computer'])
         has_projector = data.get('has_projector', existing_room['has_projector'])
 
-        query = """UPDATE your_database.room_table
-                SET code = %(code)s,
-                capacity = %(capacity)s,
-                has_computer = %(has_computer)s,
-                has_projector = %(has_projector)s
-            WHERE id = %(id)s
-            RETURNING id """ % {
-                'id': id,
-                'code': code,
-                'capacity': capacity,
-                'has_computer': has_computer,
-                'has_projector': has_projector
-            }
+        query = """UPDATE university.rooms
+                SET code = '%(code)s',
+                    capacity = %(capacity)s,
+                    has_computer = '%(has_computer)s',
+                    has_projector = '%(has_projector)s'
+                WHERE id = %(id)s
+                RETURNING id """ % {
+                    'id': id,
+                    'code': code,
+                    'capacity': capacity,
+                    'has_computer': has_computer,
+                    'has_projector': has_projector
+                }
 
         conn = self.get_connection()
-        updated_room_id = connect_pg.execute_commands(conn, query)
+        updated_room_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
 
         return updated_room_id

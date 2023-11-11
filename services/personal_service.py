@@ -86,11 +86,11 @@ class personal_service(Service):
         mail = data.get('mail', existing_personal['mail'])
         phone_number = data.get('phone_number', existing_personal['phone_number'])
 
-        query = """UPDATE your_database.personal_table
-                SET last_name = %(last_name)s,
-                first_name = %(first_name)s,
-                mail = %(mail)s,
-                phone_number = %(phone_number)s
+        query = """UPDATE university.personals
+                SET last_name = '%(last_name)s',
+                    first_name = '%(first_name)s',
+                    mail = '%(mail)s',
+                    phone_number = '%(phone_number)'s
             WHERE id = %(id)s
             RETURNING id """ % {
                 'id': id,
@@ -101,7 +101,7 @@ class personal_service(Service):
             }
 
         conn = self.get_connection()
-        updated_personal_id = connect_pg.execute_commands(conn, query)
+        updated_personal_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
 
         return updated_personal_id

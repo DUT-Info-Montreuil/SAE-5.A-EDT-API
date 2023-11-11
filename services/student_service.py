@@ -102,28 +102,28 @@ class student_service(Service):
         group_id = data.get('group_id', existing_student['group_id'])
         subgroup_id = data.get('subgroup_id', existing_student['subgroup_id'])
 
-        query = """UPDATE your_database.student_table
-                SET last_name = %(last_name)s,
-                first_name = %(first_name)s,
-                mail = %(mail)s,
-                phone_number = %(phone_number)s,
-                department_id = %(department_id)s,
-                group_id = %(group_id)s,
-                subgroup_id = %(subgroup_id)s
-            WHERE student_number = %(student_number)s
-            RETURNING student_number """ % {
-                'student_number': student_number,
-                'last_name': last_name,
-                'first_name': first_name,
-                'mail': mail,
-                'phone_number': phone_number,
-                'department_id': department_id,
-                'group_id': group_id,
-                'subgroup_id': subgroup_id
-            }
+        query = """UPDATE university.students
+                SET last_name = '%(last_name)s',
+                    first_name = '%(first_name)s',
+                    mail = '%(mail)s',
+                    phone_number = '%(phone_number)s',
+                    department_id = %(department_id)s,
+                    group_id = %(group_id)s,
+                    subgroup_id = %(subgroup_id)s
+                WHERE student_number = '%(student_number)s'
+                RETURNING student_number """ % {
+                    'student_number': student_number,
+                    'last_name': last_name,
+                    'first_name': first_name,
+                    'mail': mail,
+                    'phone_number': phone_number,
+                    'department_id': department_id,
+                    'group_id': group_id,
+                    'subgroup_id': subgroup_id
+                }
 
         conn = self.get_connection()
-        updated_student_number = connect_pg.execute_commands(conn, query)
+        updated_student_number = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
 
         return updated_student_number

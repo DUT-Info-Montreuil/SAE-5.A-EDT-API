@@ -84,18 +84,18 @@ class subgroup_service(Service):
         name = data.get('name', existing_subgroup['name'])
         group_id = data.get('group_id', existing_subgroup['group_id'])
 
-        query = """UPDATE your_database.subgroup_table
-                SET name = %(name)s,
-                group_id = %(group_id)s
-            WHERE id = %(id)s
-            RETURNING id """ % {
-                'id': id,
-                'name': name,
-                'group_id': group_id
-            }
+        query = """UPDATE university.subgroups
+                    SET name = '%(name)s',
+                        group_id = %(group_id)s
+                    WHERE id = %(id)s
+                    RETURNING id """ % {
+                        'id': id,
+                        'name': name,
+                        'group_id': group_id
+                    }
 
         conn = self.get_connection()
-        updated_subgroup_id = connect_pg.execute_commands(conn, query)
+        updated_subgroup_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
 
         return updated_subgroup_id

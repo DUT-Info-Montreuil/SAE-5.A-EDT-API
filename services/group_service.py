@@ -87,10 +87,10 @@ class group_service(Service):
         type = data.get('type', existing_group['type'])
         department_id = data.get('department_id', existing_group['department_id'])
 
-        query = """UPDATE your_database.group_table
+        query = """UPDATE university.groups
                 SET promotion = %(promotion)s,
-                type = %(type)s,
-                department_id = %(department_id)s
+                    type = '%(type)s',
+                    department_id = %(department_id)s
                 WHERE id = %(id)s
                 RETURNING id """ % {
                     'id': id,
@@ -100,7 +100,7 @@ class group_service(Service):
                 }
 
         conn = self.get_connection()
-        updated_group_id = connect_pg.execute_commands(conn, query)
+        updated_group_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
 
         return updated_group_id
