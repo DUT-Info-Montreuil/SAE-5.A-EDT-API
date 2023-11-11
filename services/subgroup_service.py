@@ -71,7 +71,36 @@ class subgroup_service(Service):
         row = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
         return row
-    
+
+    def update_subgroup(self, id, data):
+        """ Update a subgroup record by ID using data in JSON format """
+        # data = request.json
+
+        # Check if the subgroup record with the given ID exists
+        existing_subgroup = self.get_subgroup_by_id(id)
+        if not existing_subgroup:
+            return existing_subgroup
+
+        name = data.get('name', existing_subgroup['name'])
+        group_id = data.get('group_id', existing_subgroup['group_id'])
+
+        query = """UPDATE your_database.subgroup_table
+                SET name = %(name)s,
+                group_id = %(group_id)s
+            WHERE id = %(id)s
+            RETURNING id """ % {
+                'id': id,
+                'name': name,
+                'group_id': group_id
+            }
+
+        conn = self.get_connection()
+        updated_subgroup_id = connect_pg.execute_commands(conn, query)
+        # connect_pg.disconnect(conn)
+
+        return updated_subgroup_id
+
+
     def get_subgroup_statement(self, row):
         """ Formats subgroup data in JSON"""
         return {

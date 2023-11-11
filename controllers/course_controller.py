@@ -56,3 +56,14 @@ def delete_course_by_id(id):
         return jsonify({"message": "Course deleted successfully!"}), 200
     else:
         return jsonify({"message": "Course not found!"}), 404
+    
+@course_app.route('/courses/update/<int:id>', methods=['POST'])
+def update_course(id):
+    """ Update a course by ID using data in JSON format """
+    data = request.json
+    _service = course_service()
+    updated_course_id= _service.update_course(id, data)
+    if updated_course_id :
+        return {"message": f"Course with ID {updated_course_id} updated successfully!"}, 200
+    else :
+        return {"message": f"Course with ID {id} not found!"}, 404

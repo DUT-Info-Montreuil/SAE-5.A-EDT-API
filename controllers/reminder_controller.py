@@ -57,3 +57,14 @@ def delete_reminder_by_id(id):
         return jsonify({"message": "Course deleted successfully!"}), 200
     else:
         return jsonify({"message": "Course not found!"}), 404
+
+@reminder_app.route('/reminders/update/<int:id>', methods=['POST'])
+def update_reminder(id):
+    """ Update a reminder record by ID using data in JSON format """
+    data = request.json
+    _service = reminder_service()
+    updated_reminder_id = _service.update_reminder(id, data)
+    if updated_reminder_id:
+        return {"message": f"Reminder record with ID {updated_reminder_id} updated successfully!"}, 200
+    else:
+        return {"message": f"Reminder record with ID {id} not found!"}, 404

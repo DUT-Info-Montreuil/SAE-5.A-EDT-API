@@ -56,3 +56,14 @@ def delete_role_by_id(id):
         return jsonify({"message": "Role deleted successfully!"}), 200
     else:
         return jsonify({"message": "Role not found!"}), 404
+
+@role_app.route('/roles/update/<int:id>', methods=['POST'])
+def update_role(id):
+    """ Update a role record by ID using data in JSON format """
+    data = request.json
+    _service = role_service()
+    updated_role_id = _service.update_role(id, data)
+    if updated_role_id:
+        return {"message": f"Role record with ID {updated_role_id} updated successfully!"}, 200
+    else:
+        return {"message": f"Role record with ID {id} not found!"}, 404

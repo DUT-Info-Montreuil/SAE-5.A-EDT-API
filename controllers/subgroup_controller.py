@@ -58,3 +58,14 @@ def delete_subgroup_by_id(id):
         return jsonify({"message": "Subgroup deleted successfully!"}), 200
     else:
         return jsonify({"message": "Subgroup not found!"}), 404
+
+@subgroup_app.route('/subgroups/update/<int:id>', methods=['POST'])
+def update_subgroup(id):
+    """ Update a subgroup record by ID using data in JSON format """
+    data = request.json
+    _service = subgroup_service()
+    updated_subgroup_id = _service.update_subgroup(id, data)
+    if updated_subgroup_id:
+        return {"message": f"Subgroup record with ID {updated_subgroup_id} updated successfully!"}, 200
+    else:
+        return {"message": f"Subgroup record with ID {id} not found!"}, 404

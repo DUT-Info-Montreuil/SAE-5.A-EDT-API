@@ -72,6 +72,41 @@ class personal_service(Service):
         # connect_pg.disconnect(conn)
         return row
     
+    def update_personal(self, id, data):
+        """ Update a personal record by ID using data in JSON format """
+        # data = request.json
+
+        # Check if the personal record with the given ID exists
+        existing_personal = self.get_personal_by_id(id)
+        if not existing_personal:
+            return existing_personal
+
+        last_name = data.get('last_name', existing_personal['last_name'])
+        first_name = data.get('first_name', existing_personal['first_name'])
+        mail = data.get('mail', existing_personal['mail'])
+        phone_number = data.get('phone_number', existing_personal['phone_number'])
+
+        query = """UPDATE your_database.personal_table
+                SET last_name = %(last_name)s,
+                first_name = %(first_name)s,
+                mail = %(mail)s,
+                phone_number = %(phone_number)s
+            WHERE id = %(id)s
+            RETURNING id """ % {
+                'id': id,
+                'last_name': last_name,
+                'first_name': first_name,
+                'mail': mail,
+                'phone_number': phone_number
+            }
+
+        conn = self.get_connection()
+        updated_personal_id = connect_pg.execute_commands(conn, query)
+        # connect_pg.disconnect(conn)
+
+        return updated_personal_id
+
+    
     def get_personal_statement(self, row):
         """ Formats personal data in JSON """
         return {

@@ -72,6 +72,38 @@ class role_service(Service):
         # connect_pg.disconnect(conn)
         return row
     
+    def update_role(self, id, data):
+        """ Update a role record by ID using data in JSON format """
+        # data = request.json
+
+        # Check if the role record with the given ID exists
+        existing_role = self.get_role_by_id(id)
+        if not existing_role:
+            return existing_role
+
+        name = data.get('name', existing_role['name'])
+        description = data.get('description', existing_role['description'])
+        personal_id = data.get('personal_id', existing_role['personal_id'])
+
+        query = """UPDATE your_database.role_table
+                SET name = %(name)s,
+                description = %(description)s,
+                personal_id = %(personal_id)s
+            WHERE id = %(id)s
+            RETURNING id """ % {
+                'id': id,
+                'name': name,
+                'description': description,
+                'personal_id': personal_id
+            }
+
+        conn = self.get_connection()
+        updated_role_id = connect_pg.execute_commands(conn, query)
+        # connect_pg.disconnect(conn)
+
+        return updated_role_id
+
+    
     def get_role_statement(self, row):
         """ Formats role data in JSON """
         return {

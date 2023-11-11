@@ -79,6 +79,50 @@ class teaching_service(Service):
         # connect_pg.disconnect(conn)
         return row
     
+    def update_teaching(self, id, data):
+        """ Update a teaching record by ID using data in JSON format """
+        # data = request.json
+
+        # Check if the teaching record with the given ID exists
+        existing_teaching = self.get_teaching_by_id(id)
+        if not existing_teaching:
+            return existing_teaching
+
+        title = data.get('title', existing_teaching['title'])
+        hour_number = data.get('hour_number', existing_teaching['hour_number'])
+        semestre = data.get('semestre', existing_teaching['semestre'])
+        sequence = data.get('sequence', existing_teaching['sequence'])
+        description = data.get('description', existing_teaching['description'])
+        teaching_type = data.get('teaching_type', existing_teaching['teaching_type'])
+        specialization_id = data.get('specialization_id', existing_teaching['specialization_id'])
+
+        query = """UPDATE your_database.teaching_table
+                SET title = %(title)s,
+                hour_number = %(hour_number)s,
+                semestre = %(semestre)s,
+                sequence = %(sequence)s,
+                description = %(description)s,
+                teaching_type = %(teaching_type)s,
+                specialization_id = %(specialization_id)s
+            WHERE id = %(id)s
+            RETURNING id """ % {
+                'id': id,
+                'title': title,
+                'hour_number': hour_number,
+                'semestre': semestre,
+                'sequence': sequence,
+                'description': description,
+                'teaching_type': teaching_type,
+                'specialization_id': specialization_id
+            }
+
+        conn = self.get_connection()
+        updated_teaching_id = connect_pg.execute_commands(conn, query)
+        # connect_pg.disconnect(conn)
+
+        return updated_teaching_id
+
+
     def get_teaching_statement(self, row):
         """ Formats teaching data in JSON """
         return {

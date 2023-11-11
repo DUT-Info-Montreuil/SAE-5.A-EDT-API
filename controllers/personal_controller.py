@@ -55,3 +55,14 @@ def delete_personal_by_id(id):
         return jsonify({"message": "Personal deleted successfully!"}), 200
     else:
         return jsonify({"message": "Personal not found!"}), 404
+
+@personal_app.route('/personal/update/<int:id>', methods=['POST'])
+def update_personal(id):
+    """ Update a personal record by ID using data in JSON format """
+    data = request.json
+    _service = personal_service()
+    updated_personal_id = _service.update_personal(id, data)
+    if updated_personal_id:
+        return {"message": f"Personal record with ID {updated_personal_id} updated successfully!"}, 200
+    else:
+        return {"message": f"Personal record with ID {id} not found!"}, 404

@@ -56,3 +56,14 @@ def delete_responsible_by_id(id):
         return jsonify({"message": "Course deleted successfully!"}), 200
     else:
         return jsonify({"message": "Course not found!"}), 404
+
+@responsible_app.route('/responsibles/update/<int:id>', methods=['POST'])
+def update_responsible(id):
+    """ Update a responsible record by ID using data in JSON format """
+    data = request.json
+    _service = responsible_service()
+    updated_responsible_id = _service.update_responsible(id, data)
+    if updated_responsible_id:
+        return {"message": f"Responsible record with ID {updated_responsible_id} updated successfully!"}, 200
+    else:
+        return {"message": f"Responsible record with ID {id} not found!"}, 404
