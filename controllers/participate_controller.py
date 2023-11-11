@@ -7,10 +7,6 @@ from flask_cors import CORS
 from contextlib import closing
 from config import config
 
-import connect_pg
-import psycopg2
-import requests
-import hashlib
-import json
+# from services.participate_service import participate_service
 
-responsible_app = Blueprint('responsible_app', __name__)
+participate_app = Blueprint('participate_app', __name__)

@@ -7,10 +7,6 @@ from flask_cors import CORS
 from contextlib import closing
 from config import config
 
-import connect_pg
-import psycopg2
-import requests
-import hashlib
-import json
+# from services.responsible_service import responsible_service
 
-reminder_app = Blueprint('reminder_app', __name__)
+responsible_app = Blueprint('responsible_app', __name__)

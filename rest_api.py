@@ -13,20 +13,20 @@ import requests
 import hashlib
 import json
 
-from services.DepartmentService import department_app
-from services.GroupService import group_app
-from services.SubgroupService import subgroup_app
-from services.PersonalService import personal_app
-from services.SpecializationService import specialization_app
-from services.RoomService import room_app
-from services.TeachingService import teaching_app
-from services.RoleService import role_app
-from services.CourseService import course_app
-from services.StudentService import student_app
-from services.ResponsibleService import responsible_app
-from services.ReminderService import reminder_app
-from services.AbsentService import absent_app
-from services.ParticipateService import participate_app
+from controllers.department_controller import department_app
+from controllers.group_controller import group_app
+from controllers.subgroup_controller import subgroup_app
+from controllers.personal_controller import personal_app
+from controllers.specialization_controller import specialization_app
+from controllers.room_controller import room_app
+from controllers.teaching_controller import teaching_app
+from controllers.role_controller import role_app
+from controllers.course_controller import course_app
+from controllers.student_controller import student_app
+from controllers.responsible_controller import responsible_app
+from controllers.reminder_controller import reminder_app
+from controllers.absent_controller import absent_app
+from controllers.participate_controller import participate_app
 
 # Register the main controller
 app = Flask(__name__)

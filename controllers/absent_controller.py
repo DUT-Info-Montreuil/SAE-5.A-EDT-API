@@ -7,10 +7,6 @@ from flask_cors import CORS
 from contextlib import closing
 from config import config
 
-import connect_pg
-import psycopg2
-import requests
-import hashlib
-import json
+# from services.absent_service import absent_service
 
 absent_app = Blueprint('absent_app', __name__)
