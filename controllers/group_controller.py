@@ -56,3 +56,14 @@ def delete_group_by_id(id):
         return jsonify({"message": "Department deleted successfully!"}), 200
     else:
         return jsonify({"message": "Department not found!"}), 404
+    
+@group_app.route('/groups/update/<int:id>', methods=['POST'])
+def update_group(id):
+    """ Update a group record by ID using data in JSON format """
+    data = request.json
+    _service = group_service()
+    updated_group_id = _service.update_group(id, data)
+    if updated_group_id:
+        return {"message": f"Group record with ID {updated_group_id} updated successfully!"}, 200
+    else:
+        return {"message": f"Group record with ID {id} not found!"}, 404

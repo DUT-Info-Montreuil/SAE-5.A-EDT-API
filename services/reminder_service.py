@@ -73,6 +73,37 @@ class reminder_service(Service):
         # connect_pg.disconnect(conn)
         return row
     
+    def update_reminder(self, id, data):
+        """ Update a reminder record by ID using data in JSON format """
+        # data = request.json
+
+        # Check if the reminder record with the given ID exists
+        existing_reminder = self.get_reminder_by_id(id)
+        if not existing_reminder:
+            return existing_reminder
+
+        name = data.get('name', existing_reminder['name'])
+        description = data.get('description', existing_reminder['description'])
+        course_id = data.get('course_id', existing_reminder['course_id'])
+
+        query = """UPDATE university.reminders
+                SET name = '%(name)s',
+                    description = '%(description)s',
+                    course_id = %(course_id)s
+                WHERE id = %(id)s
+                RETURNING id """ % {
+                    'id': id,
+                    'name': name,
+                    'description': description,
+                    'course_id': course_id
+                }
+
+        conn = self.get_connection()
+        updated_reminder_id = connect_pg.execute_commands(conn, (query,))
+        # connect_pg.disconnect(conn)
+
+        return updated_reminder_id
+
     def get_reminder_statement(self, row):
         """ Formats reminder data in JSON """
         return {

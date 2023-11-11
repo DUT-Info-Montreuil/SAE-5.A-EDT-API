@@ -67,6 +67,41 @@ class department_service(Service):
         print(row)
         return row
     
+    def update_department(self, id, data):
+        """ Update a department record by ID using data in JSON format """
+        # data = request.json
+
+        # Check if the department record with the given ID exists
+        existing_department = self.get_department_by_id(id)
+        if not existing_department:
+            return existing_department
+
+        name = data.get('name', existing_department['name'])
+        description = data.get('description', existing_department['description'])
+        degree_type = data.get('degree_type', existing_department['degree_type'])
+        personal_id = data.get('personal_id', existing_department['personal_id'])
+
+        query = """UPDATE university.departments
+                    SET name = '%(name)s',
+                    description = '%(description)s',
+                    degree_type = '%(degree_type)s',
+                    personal_id = %(personal_id)s
+                WHERE id = %(id)s
+                RETURNING id """ % {
+                'id': id,
+                'name': name,
+                'description': description,
+                'degree_type': degree_type,
+                'personal_id': personal_id
+            }
+        
+        conn = self.get_connection()
+        updated_department_id = connect_pg.execute_commands(conn, (query,))
+        # connect_pg.disconnect(conn)
+
+        return updated_department_id
+
+    
     def get_department_statement(self, row):
         """ Formats department data in JSON"""
         return {

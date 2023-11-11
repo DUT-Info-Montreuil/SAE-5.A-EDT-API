@@ -56,3 +56,14 @@ def delete_absent_by_id(id):
         return jsonify({"message": "Absent deleted successfully!"}), 200
     else:
         return jsonify({"message": "Absent not found!"}), 404
+    
+@absent_app.route('/absent/update/<int:id>', methods=['POST'])
+def update_absent(id):
+    """ Update an absent record by ID using data in JSON format """
+    data = request.json
+    _service = absent_service()
+    updated_absent_id = _service.update_absent(id, data)
+    if updated_absent_id:
+        return {"message": f"Absent record with ID {updated_absent_id} updated successfully!"}, 200
+    else:
+        return {"message": f"Absent record with ID {id} not found!"}, 404

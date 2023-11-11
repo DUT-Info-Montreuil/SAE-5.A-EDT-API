@@ -74,6 +74,38 @@ class absent_service(Service):
         # connect_pg.disconnect(conn)
         return row
     
+    def update_absent(self, id, data):
+        """ Update an absent record by ID using data in JSON format """
+        # data = request.json
+
+        # Check if the absent record with the given ID exists
+        existing_absent = self.get_absent_by_id(id)
+        if not existing_absent:
+            return existing_absent
+
+        justified = data.get('justified', existing_absent['justified'])
+        student_number = data.get('student_number', existing_absent['student_number'])
+        course_id = data.get('course_id', existing_absent['course_id'])
+
+        query = """UPDATE university.absents
+                SET justified = '%(justified)s',
+                student_number = '%(student_number)s',
+                course_id = %(course_id)s
+            WHERE id = %(id)s
+            RETURNING id """ % {
+                'id': id,
+                'justified': justified,
+                'student_number': student_number,
+                'course_id': course_id
+            }
+
+        conn = self.get_connection()
+        updated_absent_id = connect_pg.execute_commands(conn, (query,))
+        # connect_pg.disconnect(conn)
+
+        return updated_absent_id
+
+    
     def get_absent_statement(self, row):
         """ Formats absent data in JSON """
         return {

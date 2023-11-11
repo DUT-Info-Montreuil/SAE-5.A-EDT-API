@@ -57,3 +57,14 @@ def delete_department_by_id(id):
         return jsonify({"message": "Department deleted successfully!"}), 200
     else:
         return jsonify({"message": "Department not found!"}), 404
+    
+@department_app.route('/departments/update/<int:id>', methods=['POST'])
+def update_department(id):
+    """ Update a department record by ID using data in JSON format """
+    data = request.json
+    _service = department_service()
+    updated_department_id = _service.update_department(id, data)
+    if updated_department_id:
+        return {"message": f"Department record with ID {updated_department_id} updated successfully!"}, 200
+    else:
+        return {"message": f"Department record with ID {id} not found!"}, 404

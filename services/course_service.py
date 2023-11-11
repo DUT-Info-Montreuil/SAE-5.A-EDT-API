@@ -79,6 +79,50 @@ class course_service(Service):
         # connect_pg.disconnect(conn)
         return row
     
+    def update_course(self, id, data):
+        """ Update a course by ID using data in JSON format """
+        # data = request.json
+
+        # Check if the course with the given ID exists
+        existing_course = self.get_course_by_id(id)
+        if not existing_course:
+            return existing_course
+
+        description = data.get('description', existing_course['description'])
+        starttime = data.get('starttime', existing_course['starttime'])
+        duree = data.get('duree', existing_course['duree'])
+        course_type = data.get('course_type', existing_course['course_type'])
+        personal_id = data.get('personal_id', existing_course['personal_id'])
+        rooms_id = data.get('rooms_id', existing_course['rooms_id'])
+        teaching_id = data.get('teaching_id', existing_course['teaching_id'])
+
+        query = """UPDATE university.courses
+                SET description = '%(description)s',
+                starttime = '%(starttime)s',
+                duree = %(duree)s,
+                course_type = '%(course_type)s',
+                personal_id = %(personal_id)s,
+                rooms_id = %(rooms_id)s,
+                teaching_id = %(teaching_id)s
+            WHERE id = %(id)s
+            RETURNING id """ % {
+                'id': id,
+                'description': description,
+                'starttime': starttime,
+                'duree': duree,
+                'course_type': course_type,
+                'personal_id': personal_id,
+                'rooms_id': rooms_id,
+                'teaching_id': teaching_id
+            }
+
+        conn = self.get_connection()
+        updated_course_id = connect_pg.execute_commands(conn, (query,))
+        # connect_pg.disconnect(conn)
+
+        return updated_course_id
+
+    
     def get_course_statement(self, row):
         """ Formats course data in JSON """
         return {

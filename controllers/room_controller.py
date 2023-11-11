@@ -57,3 +57,14 @@ def delete_room_by_id(id):
         return jsonify({"message": "Room deleted successfully!"}), 200
     else:
         return jsonify({"message": "Room not found!"}), 404
+
+@room_app.route('/rooms/update/<int:id>', methods=['POST'])
+def update_room(id):
+    """ Update a room record by ID using data in JSON format """
+    data = request.json
+    _service = room_service()
+    updated_room_id = _service.update_room(id, data)
+    if updated_room_id:
+        return {"message": f"Room record with ID {updated_room_id} updated successfully!"}, 200
+    else:
+        return {"message": f"Room record with ID {id} not found!"}, 404

@@ -71,6 +71,35 @@ class responsible_service(Service):
         # connect_pg.disconnect(conn)
         return row
     
+    def update_responsible(self, id, data):
+        """ Update a responsible record by ID using data in JSON format """
+        # data = request.json
+
+        # Check if the responsible record with the given ID exists
+        existing_responsible = self.get_responsible_by_id(id)
+        if not existing_responsible:
+            return existing_responsible
+
+        personal_id = data.get('personal_id', existing_responsible['personal_id'])
+        teaching_id = data.get('teaching_id', existing_responsible['teaching_id'])
+
+        query = """UPDATE university.responsibles
+                    SET personal_id = %(personal_id)s,
+                        teaching_id = %(teaching_id)s
+                    WHERE id = %(id)s
+                    RETURNING id """ % {
+                        'id': id,
+                        'personal_id': personal_id,
+                        'teaching_id': teaching_id
+                    }
+
+        conn = self.get_connection()
+        updated_responsible_id = connect_pg.execute_commands(conn, (query,))
+        # connect_pg.disconnect(conn)
+
+        return updated_responsible_id
+
+    
     def get_responsible_statement(self, row):
         """ Formats responsible data in JSON """
         return {

@@ -56,3 +56,14 @@ def delete_participate_by_id(id):
         return jsonify({"message": "Course deleted successfully!"}), 200
     else:
         return jsonify({"message": "Course not found!"}), 404
+    
+@participate_app.route('/participate/update/<int:id>', methods=['POST'])
+def update_participate(id):
+    """ Update a participate record by ID using data in JSON format """
+    data = request.json
+    _service = participate_service()
+    updated_participate_id = _service.update_participate(id, data)
+    if updated_participate_id:
+        return {"message": f"Participate record with ID {updated_participate_id} updated successfully!"}, 200
+    else:
+        return {"message": f"Participate record with ID {id} not found!"}, 404

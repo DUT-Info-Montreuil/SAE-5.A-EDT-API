@@ -56,3 +56,14 @@ def delete_specialization_by_id(id):
         return jsonify({"message": "Specialization deleted successfully!"}), 200
     else:
         return jsonify({"message": "Specialization not found!"}), 404
+
+@specialization_app.route('/specializations/update/<int:id>', methods=['POST'])
+def update_specialization(id):
+    """ Update a specialization record by ID using data in JSON format """
+    data = request.json
+    _service = specialization_service()
+    updated_specialization_id = _service.update_specialization(id, data)
+    if updated_specialization_id:
+        return {"message": f"Specialization record with ID {updated_specialization_id} updated successfully!"}, 200
+    else:
+        return {"message": f"Specialization record with ID {id} not found!"}, 404

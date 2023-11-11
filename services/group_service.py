@@ -74,6 +74,37 @@ class group_service(Service):
         # connect_pg.disconnect(conn)
         return row
     
+    def update_group(self, id, data):
+        """ Update a group record by ID using data in JSON format """
+        # data = request.json
+
+        # Check if the group record with the given ID exists
+        existing_group = self.get_group_by_id(id)
+        if not existing_group:
+            return existing_group
+
+        promotion = data.get('promotion', existing_group['promotion'])
+        type = data.get('type', existing_group['type'])
+        department_id = data.get('department_id', existing_group['department_id'])
+
+        query = """UPDATE university.groups
+                SET promotion = %(promotion)s,
+                    type = '%(type)s',
+                    department_id = %(department_id)s
+                WHERE id = %(id)s
+                RETURNING id """ % {
+                    'id': id,
+                    'promotion': promotion,
+                    'type': type,
+                    'department_id': department_id
+                }
+
+        conn = self.get_connection()
+        updated_group_id = connect_pg.execute_commands(conn, (query,))
+        # connect_pg.disconnect(conn)
+
+        return updated_group_id
+
     def get_group_statement(self, row):
         """ Formats group data in JSON"""
         return {

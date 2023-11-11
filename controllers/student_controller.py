@@ -58,3 +58,14 @@ def delete_student_by_id(student_number):
         return jsonify({"message": "Student deleted successfully!"}), 200
     else:
         return jsonify({"message": "Student not found!"}), 404
+
+@student_app.route('/students/update/<string:student_number>', methods=['POST'])
+def update_student(student_number):
+    """ Update a student record by student_number using data in JSON format """
+    data = request.json
+    _service = student_service()
+    updated_student_number = _service.update_student(student_number, data)
+    if updated_student_number:
+        return {"message": f"Student record with student number {updated_student_number} updated successfully!"}, 200
+    else:
+        return {"message": f"Student record with student number {student_number} not found!"}, 404

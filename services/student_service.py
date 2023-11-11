@@ -85,6 +85,50 @@ class student_service(Service):
         # connect_pg.disconnect(conn)
         return row
     
+    def update_student(self, student_number, data):
+        """ Update a student record by student_number using data in JSON format """
+        # data = request.json
+
+        # Check if the student record with the given student_number exists
+        existing_student = self.get_student_by_student_number(student_number)
+        if not existing_student:
+            return existing_student
+
+        last_name = data.get('last_name', existing_student['last_name'])
+        first_name = data.get('first_name', existing_student['first_name'])
+        mail = data.get('mail', existing_student['mail'])
+        phone_number = data.get('phone_number', existing_student['phone_number'])
+        department_id = data.get('department_id', existing_student['department_id'])
+        group_id = data.get('group_id', existing_student['group_id'])
+        subgroup_id = data.get('subgroup_id', existing_student['subgroup_id'])
+
+        query = """UPDATE university.students
+                SET last_name = '%(last_name)s',
+                    first_name = '%(first_name)s',
+                    mail = '%(mail)s',
+                    phone_number = '%(phone_number)s',
+                    department_id = %(department_id)s,
+                    group_id = %(group_id)s,
+                    subgroup_id = %(subgroup_id)s
+                WHERE student_number = '%(student_number)s'
+                RETURNING student_number """ % {
+                    'student_number': student_number,
+                    'last_name': last_name,
+                    'first_name': first_name,
+                    'mail': mail,
+                    'phone_number': phone_number,
+                    'department_id': department_id,
+                    'group_id': group_id,
+                    'subgroup_id': subgroup_id
+                }
+
+        conn = self.get_connection()
+        updated_student_number = connect_pg.execute_commands(conn, (query,))
+        # connect_pg.disconnect(conn)
+
+        return updated_student_number
+
+    
     def get_student_statement(self, row):
         return {
             'student_number': row[0],    # Numero étudiant

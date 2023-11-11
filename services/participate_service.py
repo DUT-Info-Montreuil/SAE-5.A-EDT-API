@@ -71,6 +71,34 @@ class participate_service(Service):
         # connect_pg.disconnect(conn)
         return row
     
+    def update_participate(self, id, data):
+        """ Update a participate record by ID using data in JSON format """
+        # data = request.json
+
+        # Check if the participate record with the given ID exists
+        existing_participate = self.get_participate_by_id(id)
+        if not existing_participate:
+            return existing_participate
+
+        course_id = data.get('course_id', existing_participate['course_id'])
+        rooms_id = data.get('rooms_id', existing_participate['rooms_id'])
+
+        query = """UPDATE university.participates
+                SET course_id = %(course_id)s,
+                    rooms_id = %(rooms_id)s
+                WHERE id = %(id)s
+                RETURNING id """ % {
+                    'id': id,
+                    'course_id': course_id,
+                    'rooms_id': rooms_id
+                }
+
+        conn = self.get_connection()
+        updated_participate_id = connect_pg.execute_commands(conn, (query,))
+        # connect_pg.disconnect(conn)
+
+        return updated_participate_id
+    
     def get_participate_statement(self, row):
         """ Formats participate data in JSON """
         return {

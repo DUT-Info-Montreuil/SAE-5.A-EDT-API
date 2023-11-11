@@ -72,6 +72,41 @@ class room_service(Service):
         # connect_pg.disconnect(conn)
         return row
     
+    def update_room(self, id, data):
+        """ Update a room record by ID using data in JSON format """
+        # data = request.json
+
+        # Check if the room record with the given ID exists
+        existing_room = self.get_room_by_id(id)
+        if not existing_room:
+            return existing_room
+
+        code = data.get('code', existing_room['code'])
+        capacity = data.get('capacity', existing_room['capacity'])
+        has_computer = data.get('has_computer', existing_room['has_computer'])
+        has_projector = data.get('has_projector', existing_room['has_projector'])
+
+        query = """UPDATE university.rooms
+                SET code = '%(code)s',
+                    capacity = %(capacity)s,
+                    has_computer = '%(has_computer)s',
+                    has_projector = '%(has_projector)s'
+                WHERE id = %(id)s
+                RETURNING id """ % {
+                    'id': id,
+                    'code': code,
+                    'capacity': capacity,
+                    'has_computer': has_computer,
+                    'has_projector': has_projector
+                }
+
+        conn = self.get_connection()
+        updated_room_id = connect_pg.execute_commands(conn, (query,))
+        # connect_pg.disconnect(conn)
+
+        return updated_room_id
+
+    
     def get_room_statement(self, row):
         """ Formats room data in JSON """
         return {
