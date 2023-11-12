@@ -23,3 +23,20 @@ class ReminderModel:
             "course_duree": self.course_duree,
             "course_course_type": self.course_course_type
         }
+    
+    @staticmethod
+    def objectify(data, data_if_not_found=None):
+        if data_if_not_found is None:
+            data_if_not_found = {key: '' for key in data}
+
+        reminder_instance = ReminderModel(
+            data.get('id', data_if_not_found['id']),
+            data.get('name', data_if_not_found['name']),
+            data.get('description', data_if_not_found['description']),
+            data.get('course_id', data_if_not_found['course_id']),
+            data.get('course_startTime', data_if_not_found['course_startTime']),
+            data.get('course_duree', data_if_not_found['course_duree']),
+            data.get('course_course_type', data_if_not_found['course_course_type'])
+        )
+
+        return reminder_instance

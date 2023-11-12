@@ -21,3 +21,19 @@ class RoleModel:
             "personal_last_name": self.personal_last_name,
             "personal_first_name": self.personal_first_name
         }
+    
+    @staticmethod
+    def objectify(data, data_if_not_found=None):
+        if data_if_not_found is None:
+            data_if_not_found = {key: '' for key in data}
+
+        role_instance = RoleModel(
+            data.get('id', data_if_not_found['id']),
+            data.get('name', data_if_not_found['name']),
+            data.get('description', data_if_not_found['description']),
+            data.get('personal_id', data_if_not_found['personal_id']),
+            data.get('personal_last_name', data_if_not_found['personal_last_name']),
+            data.get('personal_first_name', data_if_not_found['personal_first_name'])
+        )
+
+        return role_instance

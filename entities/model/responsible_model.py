@@ -23,3 +23,20 @@ class ResponsibleModel:
             "personal_first_name": self.personal_first_name,
             "teaching_title": self.teaching_title
         }
+    
+    @staticmethod
+    def objectify(data, data_if_not_found=None):
+        if data_if_not_found is None:
+            data_if_not_found = {key: '' for key in data}
+
+        responsible_instance = ResponsibleModel(
+            data.get('id', data_if_not_found['id']),
+            data.get('personal_id', data_if_not_found['personal_id']),
+            data.get('teaching_id', data_if_not_found['teaching_id']),
+            data.get('personal_last_name', data_if_not_found['personal_last_name']),
+            data.get('personal_first_name', data_if_not_found['personal_first_name']),
+            data.get('teaching_title', data_if_not_found['teaching_title'])
+        )
+
+        return responsible_instance
+   

@@ -13,3 +13,16 @@ class Participate:
             "course_id": self.course_id,
             "subgroup_id": self.subgroup_id
         }
+
+    @staticmethod
+    def objectify(data, data_if_not_found=None):
+        if data_if_not_found is None:
+            data_if_not_found = {key: '' for key in data}
+
+        participate = Participate(
+            data.get('id', data_if_not_found['id']),
+            data.get('course_id', data_if_not_found['course_id']),
+            data.get('subgroup_id', data_if_not_found['subgroup_id'])
+        )
+
+        return participate

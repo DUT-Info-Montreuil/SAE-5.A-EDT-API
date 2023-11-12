@@ -15,3 +15,17 @@ class Reminder:
             "description": self.description,
             "course_id": self.course_id
         }
+
+    @staticmethod
+    def objectify(data, data_if_not_found=None):
+        if data_if_not_found is None:
+            data_if_not_found = {key: '' for key in data}
+
+        reminder = Reminder(
+            data.get('id', data_if_not_found['id']),
+            data.get('name', data_if_not_found['name']),
+            data.get('description', data_if_not_found['description']),
+            data.get('course_id', data_if_not_found['course_id'])
+        )
+
+        return reminder

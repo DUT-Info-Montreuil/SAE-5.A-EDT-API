@@ -15,3 +15,17 @@ class Specialization:
             "name": self.name,
             "department_id": self.department_id
         }
+    
+    @staticmethod
+    def objectify(data, data_if_not_found=None):
+        if data_if_not_found is None:
+            data_if_not_found = {key: '' for key in data}
+
+        specialization = Specialization(
+            data.get('id', data_if_not_found['id']),
+            data.get('code', data_if_not_found['code']),
+            data.get('name', data_if_not_found['name']),
+            data.get('department_id', data_if_not_found['department_id'])
+        )
+
+        return specialization

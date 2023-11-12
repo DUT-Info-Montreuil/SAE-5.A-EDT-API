@@ -35,3 +35,26 @@ class StudentModel:
             "department_name" : self.department_name,
             "department_degree_type" : self.department_degree_type
         }
+    
+    @staticmethod
+    def objectify(data, data_if_not_found=None):
+        if data_if_not_found is None:
+            data_if_not_found = {key: '' for key in data}
+
+        student_instance = StudentModel(
+            data.get('student_number', data_if_not_found['student_number']),
+            data.get('last_name', data_if_not_found['last_name']),
+            data.get('first_name', data_if_not_found['first_name']),
+            data.get('mail', data_if_not_found['mail']),
+            data.get('phone_number', data_if_not_found['phone_number']),
+            data.get('department_id', data_if_not_found['department_id']),
+            data.get('group_id', data_if_not_found['group_id']),
+            data.get('subgroup_id', data_if_not_found['subgroup_id']),
+            data.get('subgroup_name', data_if_not_found['subgroup_name']),
+            data.get('group_type', data_if_not_found['group_type']),
+            data.get('group_promotion', data_if_not_found['group_promotion']),
+            data.get('department_name', data_if_not_found['department_name']),
+            data.get('department_degree_type', data_if_not_found['department_degree_type'])
+        )
+
+        return student_instance

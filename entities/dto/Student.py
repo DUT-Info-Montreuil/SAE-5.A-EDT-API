@@ -23,3 +23,21 @@ class Student:
             "group_id" : self.group_id,
             "subgroup_id" : self.subgroup_id
         }
+    
+    @staticmethod
+    def objectify(data, data_if_not_found=None):
+        if data_if_not_found is None:
+            data_if_not_found = {key: '' for key in data}
+
+        student = Student(
+            data.get('student_number', data_if_not_found['student_number']),
+            data.get('last_name', data_if_not_found['last_name']),
+            data.get('first_name', data_if_not_found['first_name']),
+            data.get('mail', data_if_not_found['mail']),
+            data.get('phone_number', data_if_not_found['phone_number']),
+            data.get('department_id', data_if_not_found['department_id']),
+            data.get('group_id', data_if_not_found['group_id']),
+            data.get('subgroup_id', data_if_not_found['subgroup_id'])
+        )
+
+        return student
