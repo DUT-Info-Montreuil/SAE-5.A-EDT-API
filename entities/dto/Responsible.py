@@ -13,3 +13,16 @@ class Responsible:
             "personal_id": self.personal_id,
             "teaching_id": self.teaching_id
         }
+
+    @staticmethod
+    def objectify(data, data_if_not_found=None):
+        if data_if_not_found is None:
+            data_if_not_found = {key: '' for key in data}
+
+        responsible = Responsible(
+            data.get('id', data_if_not_found['id']),
+            data.get('personal_id', data_if_not_found['personal_id']),
+            data.get('teaching_id', data_if_not_found['teaching_id'])
+        )
+
+        return responsible

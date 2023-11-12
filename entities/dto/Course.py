@@ -23,3 +23,21 @@ class Course:
             "rooms_id": self.rooms_id,
             "teaching_id": self.teaching_id
         }
+        
+    @staticmethod
+    def objectify(data, data_if_not_found=None):
+        if data_if_not_found is None:
+            data_if_not_found = {key: '' for key in data}
+
+        course = Course(
+            data.get('id', data_if_not_found['id']),
+            data.get('description', data_if_not_found['description']),
+            data.get('startTime', data_if_not_found['startTime']),
+            data.get('duree', data_if_not_found['duree']),
+            data.get('course_type', data_if_not_found['course_type']),
+            data.get('personal_id', data_if_not_found['personal_id']),
+            data.get('rooms_id', data_if_not_found['rooms_id']),
+            data.get('teaching_id', data_if_not_found['teaching_id'])
+        )
+
+        return course

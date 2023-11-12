@@ -15,3 +15,17 @@ class Absent:
             "student_number": self.student_number,
             "course_id": self.course_id
         }
+        
+    @staticmethod
+    def objectify(data, data_if_not_found=None):
+        if data_if_not_found is None:
+            data_if_not_found = {key: '' for key in data}
+
+        absent = Absent(
+            data.get('id', data_if_not_found['id']),
+            data.get('justified', data_if_not_found['justified']),
+            data.get('student_number', data_if_not_found['student_number']),
+            data.get('course_id', data_if_not_found['course_id'])
+        )
+
+        return absent

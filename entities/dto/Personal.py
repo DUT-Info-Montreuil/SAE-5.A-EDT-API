@@ -17,3 +17,18 @@ class Personal:
             "mail": self.mail,
             "phone_number": self.phone_number
         }
+    
+    @staticmethod
+    def objectify(data, data_if_not_found=None):
+        if data_if_not_found is None:
+            data_if_not_found = {key: '' for key in data}
+
+        personal = Personal(
+            data.get('id', data_if_not_found['id']),
+            data.get('last_name', data_if_not_found['last_name']),
+            data.get('first_name', data_if_not_found['first_name']),
+            data.get('mail', data_if_not_found['mail']),
+            data.get('phone_number', data_if_not_found['phone_number'])
+        )
+
+        return personal

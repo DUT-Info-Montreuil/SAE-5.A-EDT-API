@@ -33,3 +33,24 @@ class ParticipateModel:
             "group_promotion": self.group_promotion,
             "department_name": self.department_name
         }
+    
+    @staticmethod
+    def objectify(data, data_if_not_found=None):
+        if data_if_not_found is None:
+            data_if_not_found = {key: '' for key in data}
+
+        participate_instance = ParticipateModel(
+            data.get('id', data_if_not_found['id']),
+            data.get('course_id', data_if_not_found['course_id']),
+            data.get('subgroup_id', data_if_not_found['subgroup_id']),
+            data.get('course_description', data_if_not_found['course_description']),
+            data.get('course_startTime', data_if_not_found['course_startTime']),
+            data.get('course_duree', data_if_not_found['course_duree']),
+            data.get('course_type', data_if_not_found['course_type']),
+            data.get('subgroup_name', data_if_not_found['subgroup_name']),
+            data.get('group_type', data_if_not_found['group_type']),
+            data.get('group_promotion', data_if_not_found['group_promotion']),
+            data.get('department_name', data_if_not_found['department_name'])
+        )
+
+        return participate_instance
