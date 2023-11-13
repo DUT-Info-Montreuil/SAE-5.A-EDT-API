@@ -53,6 +53,7 @@ CREATE TABLE university.students(
     first_name varchar(32) NOT NULL,
     mail email NOT NULL,
     phone_number numphone UNIQUE NOT NULL,  -- domain numphone,
+    password varchar(255) NOT NULL,
     -- FOREIGN KEY (departments)
     department_id INT NOT NULL,
     -- FOREIGN KEY (groups)
@@ -109,6 +110,7 @@ CREATE TABLE university.personals(
 	last_name varchar(32) NOT NULL,
 	first_name varchar(32) NOT NULL,
 	mail email NOT NULL ,
+    password varchar(255) NOT NULL,
 	phone_number numphone UNIQUE NOT NULL	-- domaine numphone
 ) ;
 
