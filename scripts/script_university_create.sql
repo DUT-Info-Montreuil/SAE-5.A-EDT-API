@@ -365,3 +365,33 @@ CREATE OR REPLACE FUNCTION make_type_lowercase()
     BEFORE INSERT ON university.subgroups
     FOR EACH ROW
 EXECUTE FUNCTION make_type_lowercase();
+
+
+CREATE OR REPLACE FUNCTION check_student_foreign_keys()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- Vérifier le département
+    IF NEW.department_id IS NOT NULL AND NEW.group_id IS NOT NULL AND NEW.subgroup_id IS NOT NULL THEN
+        IF NOT EXISTS (
+            SELECT 1
+            FROM university.subgroups AS subgroups
+            JOIN university.groups AS groups ON subgroups.group_id = groups.id
+            JOIN university.departments AS departments ON groups.department_id = departments.id
+            WHERE subgroups.id = NEW.subgroup_id
+            AND groups.id = NEW.group_id
+            AND departments.id = NEW.department_id
+        ) THEN
+            RAISE EXCEPTION 'Contrainte de clé étrangère violation : Les clés étrangères (student_number=%, department_id=%, group_id=%, subgroup_id=%) ne correspondent pas', NEW.student_number, NEW.department_id, NEW.group_id, NEW.subgroup_id;
+        END IF;
+    END IF;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Créer le trigger
+CREATE TRIGGER check_student_keys_trigger
+BEFORE INSERT OR UPDATE
+ON university.students
+FOR EACH ROW
+EXECUTE FUNCTION check_student_foreign_keys();
