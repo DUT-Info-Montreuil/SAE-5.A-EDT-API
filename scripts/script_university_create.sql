@@ -363,8 +363,9 @@ CREATE OR REPLACE FUNCTION make_type_lowercase()
         RETURN NEW;
     END;
     $$ LANGUAGE plpgsql;
-    -- Create the trigger
-    CREATE TRIGGER lowercase_name_trigger
+
+-- Create the trigger
+CREATE TRIGGER lowercase_name_trigger
     BEFORE INSERT ON university.subgroups
     FOR EACH ROW
 EXECUTE FUNCTION make_type_lowercase();
@@ -394,7 +395,6 @@ $$ LANGUAGE plpgsql;
 
 -- Créer le trigger
 CREATE TRIGGER check_student_keys_trigger
-BEFORE INSERT OR UPDATE
-ON university.students
-FOR EACH ROW
+    BEFORE INSERT OR UPDATE ON university.students
+    FOR EACH ROW
 EXECUTE FUNCTION check_student_foreign_keys();

@@ -2,12 +2,12 @@
 -- \i script_university_school_insert.sql; --add database
 
 /* Script contain insert for each table
-    -- university.students(@student_number, last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
+    -- university.students(@student_number, last_name, first_name, mail, phone_number, password, #department_id, #group_id, #subgroup_id)
 */
-delete from university.students;
+-- delete from university.students;
 
--- university.students(@student_number, last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
-INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, department_id, group_id, subgroup_id)
+-- university.students(@student_number, last_name, first_name, mail, phone_number, password, #department_id, #group_id, #subgroup_id)
+INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, password, department_id, group_id, subgroup_id)
 VALUES
     ('85800425','Mehedi','Toure','mtoure@iut.univ-paris8.fr','07.12.34.56.78','$2b$12$n9o/jbKgDAJrpC1ejpfWcug6dRTh.wpEmXdv2o4nWJHtiQVYhFZAa',1,38,38), -- pwd : Mehedi_Toure1234
     ('32800138','Hugo','COHEN','hcohen@iut.univ-paris8.fr','06.12.21.12.21','$2b$12$7v3cwt6UnMwKbKwPWucXAeeGULIPpDL0qtzUbK2Sk7LRAvidh.uhi',1,38,38), -- pwd : Hugo_COHENh1234
@@ -16,9 +16,9 @@ VALUES
     ('24992466','Boulaye','SEYDI','bseydi@iut.univ-paris8.fr','07.01.10.01.10','$2b$12$3tWrEuOGAtwERwLjmZeUl.Q4LYjE.yl/m6f.77Bs1VwYX2rCXuP22',1,38,38) -- pwd : Boulaye_SEYDI1234
 ;
 
--- university.students(@student_number, last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
+-- university.students(@student_number, last_name, first_name, mail, phone_number, password, #department_id, #group_id, #subgroup_id)
 -- FAKE for departement INFO
-INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, department_id, group_id, subgroup_id)
+INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, password, department_id, group_id, subgroup_id)
 VALUES
     ('65857267','Yujiro','Hanma','yhanma@iut.univ-paris8.fr','07.76.01.23.29','$2b$12$/Hu/tJQwfN5UYeTQTcQlYOHJsiFiTP4QSXlEtcJegSljsz1x2deje',1,15,15), -- pwd : @~f=,6}n/%]v
     ('26211358','Baki','Hanma','bhanma@iut.univ-paris8.fr','07.24.20.80.26','$2b$12$0d8XHQR3kPq1Jm/hW2s05u5.PrLFriCynsXozbhW5sze9aMRzuQnW',1,15,15), -- pwd : Z1:t}uv?"<Mh
@@ -381,9 +381,9 @@ VALUES
     ('10074649','Melanie','Gutierrez','mgutierrez@iut.univ-paris8.fr','07.76.04.13.22','$2b$12$7iaOM5i61xNgMVoSJQn6LeCvoPynLnvkoaEUDXNngU01QkLpo8uVi',1,3,91), -- pwd : uFLCMxWX6o]2
     ('66670102','Emily','Ward','eward@iut.univ-paris8.fr','07.29.88.61.58','$2b$12$pVpBuHbM4XL5lxSTvIBQS..imlXp9FVry5s1gRTB9UnCfT4Ldue/u',1,3,91) -- pwd : aR6zp56FE9{S
 ;
--- university.students(@student_number,last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
+-- university.students(@student_number,last_name, first_name, mail, phone_number, password, #department_id, #group_id, #subgroup_id)
 -- FAKE for departement QLIO
-INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, department_id, group_id, subgroup_id)
+INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, password, department_id, group_id, subgroup_id)
 VALUES
     ('05018235','Naruto','Uzumaki','nuzumaki@iut.univ-paris8.fr','07.20.63.10.81','$2b$12$9PmKASZM1hE8u/I/ChNmK.3NdF45gOpwISfceLrJMLsavYpm0Dzpq',2,16,16), -- pwd : 1@'N/$}[K=24
     ('99087589','Sasuke','Uchiha','suchiha@iut.univ-paris8.fr','07.48.97.52.44','$2b$12$ZY8HGxKBoDjwOIztBig7munPoGm2JhY9eMMNuefYzmlK/jP6TxxlO',2,16,16), -- pwd : w]+jXH'TrG,4
@@ -747,9 +747,9 @@ VALUES
     ('02564651','Samantha','Campbell','scampbell@iut.univ-paris8.fr','07.83.15.74.05','$2b$12$qM/Uf/4aG8ioPSKZfXtvQ.lH4kUP9cJNj4rlIXMSEXxXf9DZGH2Xu',2,5,93) -- pwd : z0l`xT$=emEE
 ;
 
--- university.students(@student_number,last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
+-- university.students(@student_number,last_name, first_name, mail, phone_number, password, #department_id, #group_id, #subgroup_id)
 -- FAKE for departement INFOCOM
-INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, department_id, group_id, subgroup_id)
+INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, password, department_id, group_id, subgroup_id)
 VALUES
     ('68469024','Itadori','Yuji','iyuji@iut.univ-paris8.fr','06.88.88.88.88','$2b$12$h6B09cEG.kERdxmfRB1TieNBCpD9eUJZY9Z0./sPpHpfXwlKewyta',3,19,19), -- pwd : Al`ERTd<Vy9v
     ('70555486','Satoru','Gojo','sgojo@iut.univ-paris8.fr','06.66.66.66.66','$2b$12$N3I47V5GoDN89Ubl5aeAUO7Rk8tyWcbycRFdOksTrRir7uRytYu0i',3,19,19), -- pwd : :E<7)_W11[5P
@@ -1113,9 +1113,9 @@ VALUES
     ('49427545','Lauren','Hughes','lhughes@iut.univ-paris8.fr','06.15.47.03.35','$2b$12$pvhQXNc1si8aj9AD5/cl4OeZCkl/fmc7p8HZSDhycSqtFEWkz1GTC',3,8,96) -- pwd : NfH]p^|][gXS
 ;
 
--- university.students(@student_number,last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
+-- university.students(@student_number,last_name, first_name, mail, phone_number, password, #department_id, #group_id, #subgroup_id)
 -- FAKE for departement GACO
-INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, department_id, group_id, subgroup_id)
+INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, password, department_id, group_id, subgroup_id)
 VALUES
     ('82110480','Ichigo','Kurosaki','ikurosaki@iut.univ-paris8.fr','07.31.18.90.10','$2b$12$6XWo52wcpDbz5n66/k9fVeUPvcHRlY5BtvDln33bJkBInudHkaNJa',4,24,24), -- pwd : *1(`{^=`}_/%
     ('12954159','Rukia','Kuchiki','rkuchiki@iut.univ-paris8.fr','07.16.11.67.69','$2b$12$pdCdleMtnGE/DVBpV8z0aOdP09RgVN7KFI2L5LRbPnantfx2e/0xa',4,24,24), -- pwd : z:|V(on1|pLS
