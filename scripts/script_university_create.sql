@@ -114,6 +114,16 @@ CREATE TABLE university.personals(
 	phone_number numphone UNIQUE NOT NULL	-- domaine numphone
 ) ;
 
+-- User
+-- \echo [INFO] Create the university.uses table
+CREATE TABLE university.users(
+    -- PRIMARY KEY
+    username varchar(64) UNIQUE NOT NULL,
+    CONSTRAINT pk_university_users PRIMARY KEY (username),
+    -- ATTRIBUTE
+    password varchar(255) NOT NULL,
+) ;
+
 -- \echo [INFO] Create the university.roles table
 CREATE TABLE university.roles(
     -- PRIMARY KEY
