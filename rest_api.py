@@ -27,9 +27,17 @@ from controllers.responsible_controller import responsible_app
 from controllers.reminder_controller import reminder_app
 from controllers.absent_controller import absent_app
 from controllers.participate_controller import participate_app
+from controllers.auth_controller import auth_app
+
+from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import jwt_required
+from flask_jwt_extended import JWTManager
+from flask_jwt_extended import create_access_token
 
 # Register the main controller
 app = Flask(__name__)
+app.config["JWT_SECRET_KEY"] = "kdJa9OxjmY82xgn"
+jwt = JWTManager(app)
 
 # Register the department controller
 app.register_blueprint(department_app)
@@ -72,6 +80,8 @@ app.register_blueprint(absent_app)
 
 # Register the participate controller
 app.register_blueprint(participate_app)
+
+app.register_blueprint(auth_app)
 
 
 cors = CORS(app, resources={r"*": {"origins": "*"}})
