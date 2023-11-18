@@ -27,6 +27,11 @@ from controllers.responsible_controller import responsible_app
 from controllers.reminder_controller import reminder_app
 from controllers.absent_controller import absent_app
 from controllers.participate_controller import participate_app
+from entities.exception.https_exception import https_exception
+from entities.exception.https_exception import bad_query_exception
+from entities.exception.https_exception import bad_request_exception
+from entities.exception.https_exception import good_result_request
+
 
 # Register the main controller
 app = Flask(__name__)
@@ -132,6 +137,19 @@ def drop_table_university_db():
     script_file_path = 'scripts/script_university_drop.sql'
     result = connect_pg.execute_sql_script(script_file_path)
     return result
+
+
+# Define a global error handler using the errorhandler decorator
+@app.errorhandler(Exception)
+def handle_exception(e):
+    # Log the exception or perform other actions
+    print(f"An exception occurred: {str(e)}")
+    if(isinstance(e, https_exception)) :
+        return jsonify({"error_message": f"{e.error_message}" }), e.status_code
+
+# @app.route('/testerror', methods=['GET'])
+# def error():
+#     raise good_result_request("wow a not found exception")
 
 if __name__ == "__main__":
     # read server parameters
