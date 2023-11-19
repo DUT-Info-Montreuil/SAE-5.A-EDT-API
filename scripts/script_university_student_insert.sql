@@ -2,1479 +2,1479 @@
 -- \i script_university_school_insert.sql; --add database
 
 /* Script contain insert for each table
-    -- university.students(@student_number, last_name, first_name, mail, phone_number, password, #department_id, #group_id, #subgroup_id)
+    -- university.students(@student_number, last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
 */
--- delete from university.students;
 
--- university.students(@student_number, last_name, first_name, mail, phone_number, password, #department_id, #group_id, #subgroup_id)
-INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, password, department_id, group_id, subgroup_id)
+-- university.students(@student_number, last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
+INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, user_username, department_id, group_id, subgroup_id)
 VALUES
-    ('85800425','Mehedi','Toure','mtoure@iut.univ-paris8.fr','07.12.34.56.78','$2b$12$n9o/jbKgDAJrpC1ejpfWcug6dRTh.wpEmXdv2o4nWJHtiQVYhFZAa',1,38,38), -- pwd : Mehedi_Toure1234
-    ('32800138','Hugo','COHEN','hcohen@iut.univ-paris8.fr','06.12.21.12.21','$2b$12$7v3cwt6UnMwKbKwPWucXAeeGULIPpDL0qtzUbK2Sk7LRAvidh.uhi',1,38,38), -- pwd : Hugo_COHENh1234
-    ('91736781','Aldric','CLAUDE','aclaude@iut.univ-paris8.fr','07.11.11.11.11','$2b$12$4uT0.g7slJG8HR810FhP6uOpsS7iBdW5lBbW2M.JU076Dp4w1dqxq',1,38,38), -- pwd : Aldric_CLAUDE1234
-    ('00953322','Adil','CHETOUANI','achetouani@iut.univ-paris8.fr','07.22.22.22.22','$2b$12$foIsmgkwIiRDCpzl9FDcS.ox7crQ320ShFB1P79Iygny1PmdIlQ0q',1,38,38), -- pwd : Adil_CHETOUANI1234
-    ('24992466','Boulaye','SEYDI','bseydi@iut.univ-paris8.fr','07.01.10.01.10','$2b$12$3tWrEuOGAtwERwLjmZeUl.Q4LYjE.yl/m6f.77Bs1VwYX2rCXuP22',1,38,38) -- pwd : Boulaye_SEYDI1234
+    ('85800425', 'Mehedi', 'Toure', 'mtoure@iut.univ-paris8.fr', '07.12.34.56.78', 'mtoure', 1, 38, 38), -- username : mtoure 
+    ('32800138', 'Hugo', 'COHEN', 'hcohen@iut.univ-paris8.fr', '06.12.21.12.21', 'hcohen', 1, 38, 38), -- username : hcohen 
+    ('91736781', 'Aldric', 'CLAUDE', 'aclaude@iut.univ-paris8.fr', '07.11.11.11.11', 'aclaude', 1, 38, 38), -- username : aclaude 
+    ('00953322', 'Adil', 'CHETOUANI', 'achetouani@iut.univ-paris8.fr', '07.22.22.22.22', 'achetouani', 1, 38, 38), -- username : achetouani 
+    ('24992466', 'Boulaye', 'SEYDI', 'bseydi@iut.univ-paris8.fr', '07.01.10.01.10', 'bseydi', 1, 38,38) -- username : bbseydi 
 ;
 
--- university.students(@student_number, last_name, first_name, mail, phone_number, password, #department_id, #group_id, #subgroup_id)
+-- university.students(@student_number, last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
 -- FAKE for departement INFO
-INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, password, department_id, group_id, subgroup_id)
+INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, user_username, department_id, group_id, subgroup_id)
 VALUES
-    ('65857267','Yujiro','Hanma','yhanma@iut.univ-paris8.fr','07.76.01.23.29','$2b$12$/Hu/tJQwfN5UYeTQTcQlYOHJsiFiTP4QSXlEtcJegSljsz1x2deje',1,15,15), -- pwd : @~f=,6}n/%]v
-    ('26211358','Baki','Hanma','bhanma@iut.univ-paris8.fr','07.24.20.80.26','$2b$12$0d8XHQR3kPq1Jm/hW2s05u5.PrLFriCynsXozbhW5sze9aMRzuQnW',1,15,15), -- pwd : Z1:t}uv?"<Mh
-    ('68294080','Christine','Brown','cbrown@iut.univ-paris8.fr','06.55.09.93.34','$2b$12$uJ8rbTensgrPrIB/YjnRUev7./v/rF336xpw/lyReONumpCLBM/r.',1,15,15), -- pwd : ;`#{-t&'AYY~
-    ('70518598','Jeffery','Gross','jgross@iut.univ-paris8.fr','06.42.67.36.18','$2b$12$7Jqj2GG2ZRHywxWvn433WO9/VxOZtMkVmvedB.atXyyQE/oXGRpi.',1,15,15), -- pwd : pT5y58<x\W}4
-    ('71530085','Craig','Russell','crussell@iut.univ-paris8.fr','06.59.53.18.00','$2b$12$bhefcrLFk6zKjE5B9Lo3VuFO2ZXiUsMRvM37eHvp3cScCeVyCetP6',1,15,15), -- pwd : E^u,>uvF`sg(
-    ('89352328','Laura','Gregory','lgregory@iut.univ-paris8.fr','06.54.56.02.04','$2b$12$iqUWj0sWeD8e6PH.IKluzupBBUzwJGO40bkBEIaStu3G.fmO3GKLe',1,15,15), -- pwd : 7`o#aSBRK%`n
-    ('73388259','Vincent','Fisher','vfisher@iut.univ-paris8.fr','06.20.01.39.30','$2b$12$8kpR.27bY7Cz9a98brJmLuVq1S36W2IT3BEjtUolqUScFOv7kd7NO',1,15,15), -- pwd : vkTL0aWI*zv$
-    ('55571619','Adrian','Vasquez','avasquez@iut.univ-paris8.fr','06.75.46.29.93','$2b$12$r5BvsdDwS950jKpqm4BPjuPDEPD0alEF6vqyYTjMm2aAq2cVt4/Ri',1,15,15), -- pwd : '/.jjPih9WpS
-    ('93243283','Lauren','Miller','lmiller@iut.univ-paris8.fr','06.70.85.39.54','$2b$12$LK4Qum7f8pQ56o8rkfHpjuP5Vl/Q.QUoxUrtYRDgqVXeqp0Ghb9E6',1,15,15), -- pwd : zeH%,/uU,E#e
-    ('15382554','Jamie','Jackson','jjackson@iut.univ-paris8.fr','07.39.17.17.12','$2b$12$6mYE9JMEjxkRj.Xqfo3uveuiArt4D/g.BqxHXHbP2QR25fkSQlZG2',1,15,15), -- pwd : N9x:G-Q3#1EU
-    ('74935450','Alexandra','Hamilton','ahamilton@iut.univ-paris8.fr','06.85.31.21.60','$2b$12$do0rYfyN6J6HxWIPusKdP.Kz6K1.UB6j7LhIwEKEpB0UrjiOW1YiW',1,15,59), -- pwd : 2X?=&"C?(J!+
-    ('16106025','Kristen','Robinson','krobinson@iut.univ-paris8.fr','07.18.42.16.10','$2b$12$azwPZivPAHNmEoyxF1YdeuLXMuOVCemvt5K0YbSBpxMOTfVbbShJ.',1,15,59), -- pwd : A-X8Q.^E-7'o
-    ('99270479','Grant','Smith','gsmith@iut.univ-paris8.fr','07.79.87.78.43','$2b$12$u94lB8noDcnpZJ2Cra3ZNuANLDQbhz3R67mQr7f0exi4rcGiiIacW',1,15,59), -- pwd : G's%+LL`#SUE
-    ('96677459','Bobby','Nelson','bnelson@iut.univ-paris8.fr','07.09.12.11.85','$2b$12$HWA7i.KT.UtiSkOqAeCH8O17sCNjFeAhA9501DMRQBmbx3f5JCCbe',1,15,59), -- pwd : j1UIAM~_J2$_
-    ('57045266','Laura','Olson','lolson@iut.univ-paris8.fr','06.92.70.92.97','$2b$12$iOjATAZyzagJUJ.vkXz0kOpVAVOVqAWnaMg2AwkW5hf8kvaTVaheS',1,15,59), -- pwd : |CY4s3K}9lNP
-    ('05879612','Sherry','Smith','ssmith@iut.univ-paris8.fr','06.27.80.21.57','$2b$12$fJDopu9HbC0dfjSYqdJjcecJ/q1FklXeji04lL9pTJZg14p9mR63.',1,15,59), -- pwd : ``cn2V,RndqU
-    ('92734986','David','Warner','dwarner@iut.univ-paris8.fr','07.98.31.81.18','$2b$12$9GIqSUnBzRhRaqIDHG6OaeKBiQDgJdJ/YeZvvCXfDB8Y/RC5vwp4S',1,15,59), -- pwd : Ve3KFe'EZ!BY
-    ('84459738','Kenneth','Stewart','kstewart@iut.univ-paris8.fr','06.07.27.70.17','$2b$12$bcfGp9xr3JplGs441o8BqeOR.vv0p9IFe2VGS7Wlq/vurkwhExXky',1,15,59), -- pwd : XV'#3K=v;go<
-    ('56827659','Jeremy','Brown','jbrown@iut.univ-paris8.fr','06.98.66.49.23','$2b$12$cwyzi1beQ1IMA057cSGw5ugyJs/i5Nm/M3ETWvFGpXfZqN9c31i.u',1,15,59), -- pwd : mSr7B^8]h~_O
-    ('42052066','Jennifer','Mitchell','jmitchell@iut.univ-paris8.fr','07.53.40.75.40','$2b$12$XycuNAiM8.Npu1Pv4FBv.eYYDfDzWPUx4LdQjS7mvlh/ityvPyXHy',1,15,59), -- pwd : -h6RYVmZ?C<g
-    ('08341526','Matthew','Bradley','mbradley@iut.univ-paris8.fr','06.68.36.75.31','$2b$12$CwPoeeZLPAyga5jhDpeRpeR7T8QyBVKm5eY6IY7Tb/yHH0nPtjoBm',1,15,103), -- pwd : LeP"Sj>&1wzN
-    ('11241892','Kevin','Ward','kward@iut.univ-paris8.fr','06.28.91.74.20','$2b$12$DhYYNWxEVafBkYIKkJAdoeUgLOaO74mndHUEGL99ZVs5JsCoz6CY2',1,15,103), -- pwd : 2xqjj.e^mr+W
-    ('65772919','Jason','Zamora','jzamora@iut.univ-paris8.fr','07.74.72.14.06','$2b$12$Y2BrqG37MgAqzRDI.M93nuWkK/kbX5G2YxyPfZQVhGW4ngRbxaTwW',1,15,103), -- pwd : B[g]oPWOCgxn
-    ('16487090','Martin','Humphrey','mhumphrey@iut.univ-paris8.fr','07.24.67.74.65','$2b$12$53PR.l.NzPqLSMOEWFpUV.NbXG3GPuFUgETqnVSL3RBElMLgflPfG',1,15,103), -- pwd : -R#+Ph|!L\#]
-    ('47277510','Mark','Johnson','mjohnson@iut.univ-paris8.fr','07.22.88.94.55','$2b$12$qI1DIK8alAjoT8OZe7cK1Ou5q4VW8UEr/lJt6dzqKZxXKKBfjEkRC',1,15,103), -- pwd : B+,=t#tt&UN@
-    ('34787446','Travis','Hopkins','thopkins@iut.univ-paris8.fr','07.06.47.39.54','$2b$12$LrNR7I/KjlVN5vWAPfbYwud.Bvz0JG5.GXVO4QLK5Wlmh5QIXGL32',1,15,103), -- pwd : AM-d#p/t<\q.
-    ('90625942','Brandon','Cobb','bcobb@iut.univ-paris8.fr','06.50.59.61.52','$2b$12$ljnc3fcbDRkDIvVpj1lU/Of1MdqWy4GObzEUIVieMF6ClmRw2WGFq',1,15,103), -- pwd : \/L*w*!D+6px
-    ('82676250','Zachary','Simmons','zsimmons@iut.univ-paris8.fr','06.00.57.70.06','$2b$12$W3t/e5QSPsiLI33Z73jo8ucdlW.nVAnVV6LHrNm8F0/0lxHqve0ai',1,15,103), -- pwd : 7e&?"2]n\D{k
-    ('99932870','Samantha','White','swhite@iut.univ-paris8.fr','07.69.23.17.25','$2b$12$XgSe2FaOqiv0VYYKp3ySzeXhKCOz87/Du1FIKGYBzhSnUQRs6n.La',1,15,103), -- pwd : {Rbuj/QNV$8V
-    ('17814527','Lauren','Beard','lbeard@iut.univ-paris8.fr','07.70.07.87.83','$2b$12$LaCDwBbR/KylHV48MQ32Y.mndIM3dKTPqB.2pKwC4/OTbk.7/6gqa',1,15,103), -- pwd : .p44<=wn=q/q
-    ('61291902','Timothy','Bauer','tbauer@iut.univ-paris8.fr','06.42.06.78.03','$2b$12$fScpad.TRQYN2Qg5sVtofu4nOU2lN4UL0EGPAYMt2MRmKhKDJVL3e',1,13,13), -- pwd : |+*9<95E]1D?
-    ('87898875','John','Stevens','jstevens@iut.univ-paris8.fr','07.99.04.64.44','$2b$12$ITpK62mFpxqICeWXwxG/p.pFpB/BejyPg/w3KAaYak9LyQZ1sryD6',1,13,13), -- pwd : Zx=t+g$Z$-wU
-    ('74570494','Matthew','Garcia','mgarcia@iut.univ-paris8.fr','06.70.26.44.84','$2b$12$NmPv3LUiek26d5p8uc2Kpufss3d404902rzj2.wCSLtxVDbQ3.kRy',1,13,13), -- pwd : 9COC5^/s8lt`
-    ('11983616','Debbie','Griffith','dgriffith@iut.univ-paris8.fr','07.77.81.61.16','$2b$12$9ulmecvvWEA3dWKgkGFmFO0ER5DnR3XQtJ1ELJkO8.wMaPDWV6DMO',1,13,13), -- pwd : O;]}6^33!P:R
-    ('85839074','Patricia','Miller','pmiller@iut.univ-paris8.fr','07.71.38.48.33','$2b$12$MqqSmneChuD2dzX1vrdS2ectKHGWT.qSQhch.6wFi4g.S4LmIMuYi',1,13,13), -- pwd : v+\bVama]a`w
-    ('02558325','Connor','Scott','cscott@iut.univ-paris8.fr','06.53.76.78.28','$2b$12$LWSbGuM9VKbF2N.KoVowGey4IOUcjXEftm6eEpp5JwMe1EkiHm56S',1,13,13), -- pwd : Qg-aIsWI4.tu
-    ('12457808','Angela','White','awhite@iut.univ-paris8.fr','07.61.13.16.08','$2b$12$JmZEEgImeOohsdFm4mCsVOnCso.dOn2eCM.XBm5KVMK1QUbFgLwl2',1,13,13), -- pwd : caTvU#XL3Tb&
-    ('47156601','Shannon','Ball','sball@iut.univ-paris8.fr','07.62.47.09.83','$2b$12$AUEI0dOrkuJQa6.XFd/mTeeyhf0Ulv1P9vDioUfDia5y5k8Wc2bey',1,13,13), -- pwd : 2DY&Gq9%NyST
-    ('79123117','Michael','Jennings','mjennings@iut.univ-paris8.fr','06.06.86.76.71','$2b$12$lG901k4n/NJGg7blJdfqA.Unp4RyySyF3aHzUlhEddwZjAA/rQ0nW',1,13,13), -- pwd : C&('qag2T3Os
-    ('00111812','Alexander','Roth','aroth@iut.univ-paris8.fr','06.74.01.28.30','$2b$12$UIQploWJhdElcPUxNR5EL.K22rQUen7lNlNVe/3HJm6T1KT2Y5mjG',1,13,13), -- pwd : 9~Gz+c<%`ws$
-    ('30092089','Ryan','Rivera','rrivera@iut.univ-paris8.fr','07.31.62.15.92','$2b$12$5w4nr4EG7OriPb8GIlbnJef9kEwAb9ZsCvS6FPYb3kRMksndE/RRi',1,13,57), -- pwd : /t=OKzBxi4[[
-    ('29991330','Ernest','Richard','erichard@iut.univ-paris8.fr','06.74.59.19.69','$2b$12$Kvf.Vu9mkeOXpVxI9ZZh/Omn85/qx8kN1IGWAgwjd7BQ3joOlF10i',1,13,57), -- pwd : Yh5v8W#}?!&q
-    ('91425260','Mary','Gutierrez','mgutierrez@iut.univ-paris8.fr','06.40.61.42.22','$2b$12$57n4HIk4I34qMKSoTyZ8oupTdO1lzKS./Eis6YwaM53jAeWO2YVxi',1,13,57), -- pwd : Ijo..@ZVmm*7
-    ('78527635','Daniel','Stein','dstein@iut.univ-paris8.fr','07.96.54.81.26','$2b$12$.trU4yJlsBuyz.sJogoqkuUw2.Do1ElQXYDTi2gywOy2NpL.A.wPa',1,13,57), -- pwd : "*~45Ob:abX<
-    ('41616270','Marvin','Patel','mpatel@iut.univ-paris8.fr','07.32.79.08.65','$2b$12$2oOnqYuA6wfojccxAQZOV.mP71grbOag4o.r170O1wT8RPXldKJSK',1,13,57), -- pwd : ^I"<51evL-*R
-    ('38271798','Christopher','Gray','cgray@iut.univ-paris8.fr','06.58.41.18.76','$2b$12$v2eZU82gDgXeTMpTzkKF7uVpxnF/rk16ZZSHztrkn2CNMmPNUtbVa',1,13,57), -- pwd : H:@)Q<v%8M6~
-    ('96423171','Lisa','Williams','lwilliams@iut.univ-paris8.fr','06.27.69.05.91','$2b$12$kz8a8GL4TeeQbfGsyxaPxetMadeNA6wPqSNW6KvPVM.2kXfEdfq/S',1,13,57), -- pwd : t/~uOnW@}+e[
-    ('63187888','Sonia','Hall','shall@iut.univ-paris8.fr','06.09.18.08.56','$2b$12$lGQ5Hk.xPJ1uogFuZH6NH.BpEto10AGqnHzb8LJRH6v.YmDbhrZK2',1,13,57), -- pwd : qeLzC*/xL%nI
-    ('94359465','Mary','Watson','mwatson@iut.univ-paris8.fr','06.33.58.86.98','$2b$12$5SHFwStblD8H0gjo/sDSC.CbGiCdOhb3ZP3fjiYyGduSXf/mLetda',1,13,57), -- pwd : )p?GpzyK]F-u
-    ('29310058','Derrick','Gonzalez','dgonzalez@iut.univ-paris8.fr','06.28.12.40.53','$2b$12$Nuc0DL9Rqt.0P1NwMaL1B.PYy2KVcI7FoY6vMR6nRJunGDdds87Fu',1,13,57), -- pwd : EB\At#'<&Z!.
-    ('54031514','Alicia','Robinson','arobinson@iut.univ-paris8.fr','06.07.11.42.31','$2b$12$qN2mMU51QXJOJmPCbUwHv.jV2bD4WuZL1v4bS5oSZq.4kemGTUXGe',1,13,101), -- pwd : P*LKH3XEl?JI
-    ('02652655','Debbie','Kane','dkane@iut.univ-paris8.fr','06.10.87.13.50','$2b$12$DhHrMw6EtePMhOLwN1b3Qe7b/AWxY98Rji1Id.jDtvVtFZRL0MLo2',1,13,101), -- pwd : y>{27.'o|wBO
-    ('34767318','Andrew','Klein','aklein@iut.univ-paris8.fr','07.44.71.53.82','$2b$12$/.G2A6dM9Gj1fkOvGsA5Wu5iF8kIVmsb4vn4K.V6AopPfgdHxF5PS',1,13,101), -- pwd : 5$]V1yY_M.k2
-    ('73424439','Patrick','Obrien','pobrien@iut.univ-paris8.fr','07.19.10.00.21','$2b$12$nNsS0flhQCcu9KXr7f1UNO.lhGPJc.U45aCgUQA1jUdiwrwTQIyLi',1,13,101), -- pwd : zM_M<m+MEg~,
-    ('21527621','Cynthia','Foley','cfoley@iut.univ-paris8.fr','07.17.60.87.85','$2b$12$TLccLHUi2bdVCO8FymKLOuXXiN54lk3Da7ZwxgbQEOLJXC8WdaaXe',1,13,101), -- pwd : ry=`^Q56X1nd
-    ('74714761','Juan','Garcia','jgarcia@iut.univ-paris8.fr','07.56.73.31.77','$2b$12$nObGlvSmTL74BVWCLDjC0uFxlWGxncKxAG.8aamsVAkCghs9KeI16',1,13,101), -- pwd : [)y)/FSt1B0b
-    ('92059001','Sabrina','Brown','sbrown@iut.univ-paris8.fr','07.01.87.05.24','$2b$12$SBnKU3eaZn.C2wAZ5EsDc.oViQIWceFqow1inCsKL.rH2NwjOAW.y',1,13,101), -- pwd : T\[[2]pK5HX$
-    ('68674097','Marcus','Skinner','mskinner@iut.univ-paris8.fr','07.56.96.95.00','$2b$12$tMB2b0MxU5rKYKrZrOHD4OjyuWwnHaa8o9F14rDbSAO5uk2PFuzcO',1,13,101), -- pwd : 7KG/JX,>7}5L
-    ('19913242','Michael','Fowler','mfowler@iut.univ-paris8.fr','07.49.92.62.19','$2b$12$YeahbitNMhU9L0svp8BCRO94atTzX1b7X4HYEC.LfLTijK9P6U2.O',1,13,101), -- pwd : CZQ0ly&0bZ|<
-    ('38601147','Dwayne','Morrison','dmorrison@iut.univ-paris8.fr','07.76.90.33.65','$2b$12$ucI2XEhJe/NxFr0nWRFL1e6iXjPJ8WNujP/O91gUUE93HOzmHz4Eq',1,13,101), -- pwd : 3E&Q3}|l6G;}
-    ('09500750','Nicole','White','nwhite@iut.univ-paris8.fr','06.77.86.99.06','$2b$12$XtTaZcy574Rj7VWlMVhu8.C5JsaRRAafYW4.D6seCMUaS4y/zvHKa',1,14,14), -- pwd : aK\L8bb'R@Vi
-    ('00642225','Kristin','Johnson','kjohnson@iut.univ-paris8.fr','07.07.62.56.15','$2b$12$WtnlCTO3Pl3KhaQP8j4WJOz6AyYHsiuK9/IyTEWZd8ctLRSyl/axa',1,14,14), -- pwd : ~K(wcT,ueA>!
-    ('56066929','Donald','Santos','dsantos@iut.univ-paris8.fr','06.46.29.97.13','$2b$12$MVq4eif1WzDMcC7kjGA0A.UyQaS5OwLncvbg927U73I.qbaBD/8Wi',1,14,14), -- pwd : xU"@p[&$v.rr
-    ('23546788','Donna','Foster','dfoster@iut.univ-paris8.fr','07.71.41.54.06','$2b$12$9VBKAvZzkMAmfGnc957drOwbAxGNIEhWwQo/8nTkffPzBH.9YG9ai',1,14,14), -- pwd : |W\rJ&t.~>FC
-    ('22048201','James','Smith','jsmith@iut.univ-paris8.fr','07.77.92.14.18','$2b$12$htsUQlsjq2AuU29ODjlAKuEUMTyzZIlhlGOka1osQ0HSdNMLC.gFO',1,14,14), -- pwd : A4^pZHrO!q<0
-    ('40438249','James','Santiago','jsantiago@iut.univ-paris8.fr','07.54.61.55.30','$2b$12$gtvyWKZFdOwomLN2e05/cu4YfPcoDyamAtFv7zTjcJSkFY5sBuC8i',1,14,14), -- pwd : *X$wv2]x,ZY-
-    ('37107617','Gary','Martin','gmartin@iut.univ-paris8.fr','06.79.71.94.17','$2b$12$Nh24Eswz6g70RIdMzEDb7uJgUMFB0.aNERsn/RmndR4X/.ilpNsGm',1,14,14), -- pwd : !x+h^Qq9>wD3
-    ('52859475','Kari','Williams','kwilliams@iut.univ-paris8.fr','07.48.68.17.77','$2b$12$SmoYqaB1KAGFb8f6VmG4Pe/pLcj7/W4jE1NHqiYEVBC8GOHaKsD82',1,14,14), -- pwd : 90^O:'5*=lb[
-    ('69993633','Michael','Henry','mhenry@iut.univ-paris8.fr','06.65.90.84.20','$2b$12$jaMoYqBlCKsSvgScfSS8ReDMBn0PXlbTDqVhaF4fKmzct3y2Z2g8a',1,14,14), -- pwd : Q23)0~`W#1n\
-    ('70190947','Shawn','Velez','svelez@iut.univ-paris8.fr','06.71.16.12.20','$2b$12$7poqOAfq9yuUGfVRxK3uIu8XS3KbyMFXcE55vpMNuphRE37gO5YXu',1,14,14), -- pwd : X=lq|1C.Zft!
-    ('33834534','Lori','Jennings','ljennings@iut.univ-paris8.fr','07.37.27.73.40','$2b$12$GD9vE5FDesq6i1WLQYGMPOF2ZfBZ/MmCcinjz2fMbu1QG8wGrpYcm',1,14,58), -- pwd : i<WdOPP?N|Wj
-    ('38495728','Michael','Davis','mdavis@iut.univ-paris8.fr','07.69.12.55.37','$2b$12$WMHSjSezBAIGKpPTpmcjAe6VGpfQZCpPBknF6M.hwRRk1A8gWkQW6',1,14,58), -- pwd : ]ia'!i~WFgkm
-    ('08854418','Ryan','Reeves','rreeves@iut.univ-paris8.fr','07.30.64.71.18','$2b$12$kLUoHBY2M0hmlNNOeKwTDeyUFGzKy7dQoa9e2QNJ/0zC0WgyApJX.',1,14,58), -- pwd : M'zAEsf&;_W>
-    ('74349205','Jenna','Jackson','jjackson@iut.univ-paris8.fr','07.65.10.03.09','$2b$12$CMDK9UjBTFySv3Hc50RM7.03b9BVkQ5/uS/5sK87ryRiA2/2Du1Gm',1,14,58), -- pwd : gKhK=4K21nB(
-    ('14349828','Sherry','Kemp','skemp@iut.univ-paris8.fr','06.06.38.67.24','$2b$12$pMTGyx6CfJZw7qQ1OLH6GeDqCp4BmSKg7U6lo.SqX20MKd7LHPXhm',1,14,58), -- pwd : %o7r;e(~DITe
-    ('13584401','James','Peters','jpeters@iut.univ-paris8.fr','06.16.30.18.43','$2b$12$kSQgeof.ckAKcPS1u03qN.Th5Q/9eb357948PUcwTZ9Mo6NfByr0i',1,14,58), -- pwd : KoqcL8A[hb8:
-    ('86321711','Kristy','Hunt','khunt@iut.univ-paris8.fr','07.59.87.89.80','$2b$12$qRfMlP6.vsWIm4flhYHbouoIExxe.DmfmKr5MMaYMI8FolpGZHROG',1,14,58), -- pwd : {HrN<g<qMr]X
-    ('02492664','Mark','Dudley','mdudley@iut.univ-paris8.fr','06.98.31.75.95','$2b$12$Yb4I3ZILtdeBcV3sNh2RN.s/ihBkA1hzFHvR3uK1hiQEKUTp8Pusm',1,14,58), -- pwd : GZ-,Ysv5V/;:
-    ('81833335','Andrew','Vasquez','avasquez@iut.univ-paris8.fr','06.17.12.46.78','$2b$12$0KUnAlt7gH57dGxC9E3tDelBt6XigpYaQV2lm/OSR8QR4FXWRM.lK',1,14,58), -- pwd : TYIj2-~{(QvK
-    ('90527699','Kelly','Doyle','kdoyle@iut.univ-paris8.fr','06.43.04.39.67','$2b$12$TH8AB0RaqZShdeB9MhhD2OAOGFIXKG3vkEbPc49jHTz0s29dTbA7i',1,14,58), -- pwd : cJP,s(GmYX-I
-    ('86912725','Roy','Clarke','rclarke@iut.univ-paris8.fr','06.18.81.48.97','$2b$12$oX.Fhr31ixLKyoGbaM7W.uFOMGGQnFtu1V8F2h38ajAu74lxiadJ.',1,14,102), -- pwd : y9YMO:giqI_.
-    ('54596217','Heidi','Moore','hmoore@iut.univ-paris8.fr','07.46.34.48.14','$2b$12$6eySg7pORzaWd/VOz6rYAuXLSM8L7y599RYgT1UtyGzDf80YebSxe',1,14,102), -- pwd : %V>)H$n^whVM
-    ('42729938','Kayla','Cox','kcox@iut.univ-paris8.fr','07.13.96.35.27','$2b$12$EBLtKkVheHEBzLwtEfeFMe9o.xzSgS2I5SwnK73KHZ4zAXeoPT4A2',1,14,102), -- pwd : 0]bkj,'Vb|dZ
-    ('38329565','Anne','Willis','awillis@iut.univ-paris8.fr','07.14.72.24.78','$2b$12$izzs3FOorTH8tQ5SUwLRpe/8C.ysA6z55XVwc5xlCN8Enh9Moiu1W',1,14,102), -- pwd : YC)ezYh,"{QN
-    ('00568988','Joyce','Skinner','jskinner@iut.univ-paris8.fr','06.87.76.33.60','$2b$12$HAew8.Zeqsc6EGAg/Fx/Ye9ylIl5iKO/tx5rsiHhQ3Ft8v.QJ3hty',1,14,102), -- pwd : _50-*ZQ.p(WZ
-    ('20218411','Andrea','James','ajames@iut.univ-paris8.fr','06.12.61.09.81','$2b$12$HU9EyYrT.woWbLIS9NnIsuuAcz3up9kveW63tRG1rPkE8D0jUsfVe',1,14,102), -- pwd : \fvT|&,'!Ixj
-    ('45184670','Jamie','Maddox','jmaddox@iut.univ-paris8.fr','06.94.71.10.41','$2b$12$x6xVCdKZo47gX4xR2GMfaOzmvXo.TYIwSR9IjOxW/mx5uLyCjmS0e',1,14,102), -- pwd : eTYb:wW':BfN
-    ('87850228','Jerry','Cooley','jcooley@iut.univ-paris8.fr','07.19.57.29.72','$2b$12$yG7iv2.YXMf3UewsevPPUuleYT1./f8r9s5qcumjsqKaIg09mq8/u',1,14,102), -- pwd : zF`sZ:UeC$U}
-    ('73785487','Stacy','Gould','sgould@iut.univ-paris8.fr','06.54.37.92.66','$2b$12$4OCbqgWGvQFAF9gMcM5OEuQf7g67Y.DPPSRutCce0J5kvXr7yHWT.',1,14,102), -- pwd : `a9bi_Ig+pt#
-    ('16520846','Ralph','Peters','rpeters@iut.univ-paris8.fr','07.73.44.41.91','$2b$12$bAZ/EnupZ.Lg.WUVwqJALuN9Ldb1.dc575JNkQtwbm0JUe68WSpKG',1,14,102), -- pwd : KEt/+33UR`Gh
-    ('72229698','Laura','White','lwhite@iut.univ-paris8.fr','07.59.03.02.68','$2b$12$o1zVfZetCgw532swDTXjbOYPVYm1GHNPoRqIWLSscrGeiFuIC/JAa',1,2,2), -- pwd : ]7XJ,x7Sn,3;
-    ('30978751','Christopher','Gonzalez','cgonzalez@iut.univ-paris8.fr','07.38.72.68.78','$2b$12$BjsSDP/MqBJ7WgLsPfR4aOuX2PJhZQdw/vn011qD7Ue6yKRro1tc.',1,2,2), -- pwd : MO}G'tj#8^*{
-    ('82621157','Sarah','Jordan','sjordan@iut.univ-paris8.fr','06.24.38.84.24','$2b$12$Oq11igSQ7LZNN1CNcvjyAeKdGN1VbpRKwzE7KwIDt2.so.1HfsN6a',1,2,2), -- pwd : 'vI(TD+QZNrW
-    ('09485438','James','Love','jlove@iut.univ-paris8.fr','06.15.20.80.36','$2b$12$Qnw2tmupWIi86wjKRr/fauJHMA/dqu9t9UBG5rcd7A1fLeaHSx1yC',1,2,2), -- pwd : r\4X&!@AAl@,
-    ('28816470','Levi','Heath','lheath@iut.univ-paris8.fr','07.21.04.46.53','$2b$12$RGKWfCzqJzLXRSru6rhcjenqw5K8EM0Lz4tA0qfEn7TZA.P7rQgsS',1,2,2), -- pwd : -h8z^)x!edy~
-    ('82031888','Brandy','Ramos','bramos@iut.univ-paris8.fr','06.99.68.56.46','$2b$12$6AtiX0mYYkLKeb1/jRFE3O/VXhJNJrZ2cPo6G3hjscZmAN8Yk..kG',1,2,2), -- pwd : Nb7gmujD,3Hw
-    ('65572328','Daniel','Brown','dbrown@iut.univ-paris8.fr','07.12.92.94.71','$2b$12$yNYPgCt1YY45OuRh/3cTvet5.9jGUH13ZVVYYKwydosYOUUoYxUi2',1,2,2), -- pwd : }oacdTl"|rNy
-    ('54838849','Mark','Phillips','mphillips@iut.univ-paris8.fr','06.24.88.10.27','$2b$12$nwsAJhy9IbFqV8pWAkp0uObe9b7gd.qhmY1KULHLqlg6v7YzcCOJa',1,2,2), -- pwd : 0g<@LZ9p#\?#
-    ('81411527','Larry','Jackson','ljackson@iut.univ-paris8.fr','07.30.59.03.13','$2b$12$EVfUyk89puapYReDTbHtNOmYrAGxrzGPyHIhhhXt7xQof7v5icOwG',1,2,2), -- pwd : 07nHMJZ|uAox
-    ('34084059','Donald','Smith','dsmith@iut.univ-paris8.fr','06.37.46.64.08','$2b$12$zVY/XGGgQfnUrYAdG4aV/OMO9mnGNe0wow7ccVDD9IJRgPKWmHevu',1,2,2), -- pwd : "}%J4aJStP<5
-    ('39262602','Patricia','Klein','pklein@iut.univ-paris8.fr','06.43.62.51.81','$2b$12$4JfdDrwfxYvtrauDff6sOuePrqCRUeIzFIAraFeXJaPzrfjEeKBbC',1,2,46), -- pwd : dkRbydEY+^6j
-    ('40199913','Jonathan','Martinez','jmartinez@iut.univ-paris8.fr','07.72.99.88.41','$2b$12$f0v7IlaGpvpgaB/1ld3L2.HXYVhdzwP6LomIqKUEekckuw69ZKYX6',1,2,46), -- pwd : sV/EHSV'ea&6
-    ('21700930','Jesse','Reynolds','jreynolds@iut.univ-paris8.fr','07.70.37.78.75','$2b$12$aJwjYdig.sl9nOz/itqOGOhSAFOAYp/0mEwerTy.mHdaTTjxV/rhe',1,2,46), -- pwd : ):sMw!QXu-]A
-    ('52613544','Caleb','Jarvis','cjarvis@iut.univ-paris8.fr','06.01.14.37.59','$2b$12$plusnw9jdPxWqOdEPumXyuuBp8w0aQlwbDcjYT85bTIT6psXGrUuS',1,2,46), -- pwd : ^HxELc;lSTIH
-    ('25405560','Annette','Cook','acook@iut.univ-paris8.fr','07.78.61.33.89','$2b$12$E2aN.ilUDJwudjpuJxNbjO3NnCgWq0pBsg0JQeBwcIEew5HwI8Xhy',1,2,46), -- pwd : <9q#I1Td04Jx
-    ('01698392','Renee','Gonzales','rgonzales@iut.univ-paris8.fr','07.87.87.99.96','$2b$12$/YBmjFiuLEDZPVrutFwOCewkrcxwdFepnySP07f2oYegeom.R/uH.',1,2,46), -- pwd : fP$X`?*R{XGu
-    ('25772667','Laura','Campbell','lcampbell@iut.univ-paris8.fr','06.33.13.09.83','$2b$12$UBp4xloQJz8s2iB6LMsS3u/8rmYEevqCtwRjMz/eGCaOeb45FuJi2',1,2,46), -- pwd : ]mj'.YP>+]J&
-    ('65456495','Angela','Perry','aperry@iut.univ-paris8.fr','07.70.39.37.19','$2b$12$zE4i3hKdSh3KAqzBJ7gHF.mfall6WNNJfCBgscF0Lca/Jpa6qF6nO',1,2,46), -- pwd : XKiZ&d:+"6>i
-    ('62175240','John','Johnston','jjohnston@iut.univ-paris8.fr','06.70.24.87.85','$2b$12$.nKq4WKsa.C7yBhF40Va0OKtexSMh3glyJFICezFhTlzqIOycS8Oi',1,2,46), -- pwd : eU#9NnDyrStt
-    ('16208979','Stephanie','Gordon','sgordon@iut.univ-paris8.fr','06.08.90.26.61','$2b$12$8a1If0ZldEPjdheL1rG2wu.H3Yx54A2zKIuXz6x5DUHJSM0FVZsaq',1,2,46), -- pwd : x#YREb|_-a#5
-    ('17874761','Cynthia','Sanchez','csanchez@iut.univ-paris8.fr','06.29.39.13.19','$2b$12$/5LN0xuRtXqOW9.u3ubsnu8q9wK7NPYXhLfbt9YrVA0ybLuwD7CP.',1,2,90), -- pwd : `gCe6jxC0g[&
-    ('44961166','Laura','Shelton','lshelton@iut.univ-paris8.fr','06.22.20.55.04','$2b$12$koFKI7e7XPBLp9EzX2EkkurNbw9B8SF.D5SGUbtwfH221pkTIHbG2',1,2,90), -- pwd : !8B9"ipkT<ON
-    ('98873456','Angela','Adams','aadams@iut.univ-paris8.fr','07.40.50.34.95','$2b$12$9h01bSJnDPoBDNAHR9lGvOgK22GHzgl93UGoyum36wodib2JenzOW',1,2,90), -- pwd : xL?0>O_@6Z-M
-    ('73208753','Raymond','Williams','rwilliams@iut.univ-paris8.fr','07.82.11.62.69','$2b$12$wyxmpf00ThoipPCVhI8RV.pTM8LIeMczuBI4r.8HeepAAqTR2bNp6',1,2,90), -- pwd : yY#@}4-"%v~I
-    ('56108136','Linda','Mcdonald','lmcdonald@iut.univ-paris8.fr','07.21.54.71.63','$2b$12$tjtlyG2DiOLTTad6JB8dEe2lVSTCIEf.FWeVUKEpOLjnxFjehkwCS',1,2,90), -- pwd : <$HC:i|cVf2N
-    ('56645338','Chelsea','Johnston','cjohnston@iut.univ-paris8.fr','07.33.25.77.86','$2b$12$hFsShKiFrf8FLxZJslWWjupMiXNzYF94EkBs2nl5CuRPCsjtNx0tC',1,2,90), -- pwd : 4v,zmqH|Irf!
-    ('17543274','Jason','Smith','jsmith@iut.univ-paris8.fr','07.35.85.84.76','$2b$12$pY0H.hu4YowLj8gRgf4idO1qX3IfAdde/TlnOqAT.IfkYjHJBbeGq',1,2,90), -- pwd : 4t%KjT;VktZ{
-    ('21116224','Brandi','Coffey','bcoffey@iut.univ-paris8.fr','07.67.24.60.31','$2b$12$1IdZogaCgFJV9ADn9rO4y.TUGCi4iI02qHOCUdPsInIi4p/j/iY76',1,2,90), -- pwd : Wr#@{2~zsD^M
-    ('31710493','Robert','Edwards','redwards@iut.univ-paris8.fr','06.60.49.54.48','$2b$12$Z0mxJZrgBNHFGn0ILmsvcOb0G.2OaZSSSrlWu8X2eZaQWCpqVYNQC',1,2,90), -- pwd : _;&RYEe9o[Ph
-    ('51137848','Stephanie','Sanders','ssanders@iut.univ-paris8.fr','06.34.51.50.91','$2b$12$VjATEHZX7M0xdvrr05Duz.puZW03ULvQbU72rKJpEM/nfn7Msw5Rq',1,2,90), -- pwd : >bc;2~9l7-o4
-    ('19499037','Jonathan','Luna','jluna@iut.univ-paris8.fr','07.12.58.81.51','$2b$12$h97bwdzLHicb8amtY/Lt6.6DXj48D3kBpJUNi.1Wz1Wzyq/CqtHJS',1,3,3), -- pwd : m8F,8aOlZ0l#
-    ('77604399','Alexander','Goodwin','agoodwin@iut.univ-paris8.fr','07.23.78.59.17','$2b$12$AsDGtLAfJpK1uMxO7v11Z.9WO9iVqN1QI3p/J/D9J2YylvFesEb9K',1,3,3), -- pwd : uG/MujmKY#c!
-    ('47884030','Douglas','Rodriguez','drodriguez@iut.univ-paris8.fr','06.35.43.89.96','$2b$12$LmwLV.QHblzcxKbPMvDcguoHN5UK.l6n7/NHvrGClFzA/EwSxsmsy',1,3,3), -- pwd : NbRX;$=SP-q7
-    ('65934134','Joel','Stewart','jstewart@iut.univ-paris8.fr','07.43.81.46.68','$2b$12$NiOCZ6ODU6F9z3S7SEiKOOSOFIlYlpCSVZDmvmRkkl.YX5W3brO.O',1,3,3), -- pwd : F)V;@y~5hXfA
-    ('53205042','Todd','Bradford','tbradford@iut.univ-paris8.fr','07.24.08.31.87','$2b$12$TQyZ/60LFRQYGPr7WriwJ.r2mdT7okxASh034AczjyC1/fFuT5jzC',1,3,3), -- pwd : _w_FDl2i_+/G
-    ('32717464','Stephanie','Schroeder','sschroeder@iut.univ-paris8.fr','07.87.29.71.51','$2b$12$8c614uSazIuajE4msxPzN.BkOlqPhAECK9ATzhTXcQKhOi2oLsLka',1,3,3), -- pwd : ]g[~IJvajiuH
-    ('64988521','Lori','Wilkerson','lwilkerson@iut.univ-paris8.fr','06.57.21.59.79','$2b$12$.zyaq.k4moL4g.s7SRKgKOIANMi4GS9XkdVhhygL26.D1tAAZsbiy',1,3,3), -- pwd : W.6qqj{cZ)=U
-    ('83889933','Kathleen','Thompson','kthompson@iut.univ-paris8.fr','07.12.76.36.26','$2b$12$iAi9/Gyk8BP0n7CIskoy0euIcBtQTgj05kpWBrYMLZIfJf2hh6.q6',1,3,3), -- pwd : [1D2/-$sk{v3
-    ('97991178','Cathy','Berry','cberry@iut.univ-paris8.fr','06.02.05.86.32','$2b$12$JFnkaBzWZoApjT0c/oIFwurXSK03rJC69iUhVPbmd9dvqSYApmer2',1,3,3), -- pwd : rf~&mN?Pq"oi
-    ('39805609','Jill','Morales','jmorales@iut.univ-paris8.fr','06.10.91.15.31','$2b$12$gwxqe76PiztU0Crjf3YvZu5VqDLWyU7wXsSf8j05dFsM5S4owdk9O',1,3,3), -- pwd : M6'el:lhhD!]
-    ('81511681','Steven','Hoffman','shoffman@iut.univ-paris8.fr','07.68.29.11.34','$2b$12$hpNScNxM65dPT7ihAPmVYOda1wDhQZilPBzHeE2JxQqZQNalWJ4pG',1,3,47), -- pwd : Y-<fW*W[@/+m
-    ('37955110','Jesse','Meadows','jmeadows@iut.univ-paris8.fr','06.53.02.53.39','$2b$12$1HMd3BLsN6A1qIZG59Agauvqv7vSId73cRlFaeWQVgrPOwbtpGyI.',1,3,47), -- pwd : A2y$r='q;+N{
-    ('04860278','Christopher','Joyce','cjoyce@iut.univ-paris8.fr','06.35.62.24.19','$2b$12$CJmd9ZSHlmnpWBszCVgyze0EXY2p0pYZEXqdLXoRgnvtsNWPOPhKq',1,3,47), -- pwd : kKhT?fUU|!fY
-    ('52355521','Melissa','Winters','mwinters@iut.univ-paris8.fr','06.50.82.02.53','$2b$12$X4g4k1BszWtuFkTRQu8GS.z9FepdL0p10gsjkiJ7fLsOBoYACEBZe',1,3,47), -- pwd : gM';V>O_DF,G
-    ('81757963','Olivia','Jackson','ojackson@iut.univ-paris8.fr','06.58.75.02.22','$2b$12$8qaxW8.A7F/6pxSJxPjGPup/hDGg7wz4pSnY2YpBM/b81goQv7naC',1,3,47), -- pwd : x8Te'w[?4X3[
-    ('57669106','Barry','Robinson','brobinson@iut.univ-paris8.fr','06.06.79.04.05','$2b$12$5KSi.Vv/..nFp.5l5C7UnOzBi5hMzS/zwkY982kfvo4ONmZNGeMV2',1,3,47), -- pwd : *i?MnNsd4ieZ
-    ('84747211','Anthony','Turner','aturner@iut.univ-paris8.fr','07.41.46.71.00','$2b$12$q3cDVKjkcD7lzuMgVAicCOxTBwNBRZIOPgWUOW7ZoT6Vd/BX8ShXq',1,3,47), -- pwd : U[;A6D$oqVcL
-    ('47989975','Jessica','Anderson','janderson@iut.univ-paris8.fr','07.24.78.56.69','$2b$12$pJWJQE9HjPYLG8euF.yJCeoi2lr0Zt0FsJv7AgUXbfKCuEKyjBIWi',1,3,47), -- pwd : 1)Iv-~-ugA+x
-    ('15672397','Katie','Garcia','kgarcia@iut.univ-paris8.fr','06.54.94.94.51','$2b$12$Ah4vN7GCbrayda2gs6EOm.AuX5X9hAdjjMQj5Pu/LeTs9gxkOvjaW',1,3,47), -- pwd : MG,,AJ'nJ*XS
-    ('03779068','Daniel','Elliott','delliott@iut.univ-paris8.fr','06.67.51.99.47','$2b$12$uAYZUS2K2Y55kuPnZdh4WulqeQAS3bSM2ePAQ0oATlwxNgdtTNOey',1,3,47), -- pwd : rxK~/TV.-t4~
-    ('20237532','Frederick','Hunter','fhunter@iut.univ-paris8.fr','07.53.65.75.28','$2b$12$GARpMMk1NuC1aE0rshNsZuJUFTxQ/AuFV9veaZ8ott2ukuWL.uPeC',1,3,91), -- pwd : <cOov!52/D:l
-    ('43302558','Brandon','Gonzalez','bgonzalez@iut.univ-paris8.fr','06.96.67.33.99','$2b$12$LRPVNw1uzd5ZBibE4fCK5uzMcHFqGI/DCcu.5x9RMwUBDPAm0NANO',1,3,91), -- pwd : `RsqNH#[4ifR
-    ('34868036','Christina','Cameron','ccameron@iut.univ-paris8.fr','06.95.41.15.66','$2b$12$0a0.j0rmE7Hh2h7hBeOtsOj6z4bhP5U8mnUxESZoCsv87tHYaRsB6',1,3,91), -- pwd : zQ;T(^YkWy*R
-    ('57646436','Felicia','Lopez','flopez@iut.univ-paris8.fr','07.53.74.44.20','$2b$12$s/MXf5zwIx7mBkaOyS7QOekokXNfxyhuCIesvmCLSmJZvlL6ba6We',1,3,91), -- pwd : G1Ly1t4pVKEZ
-    ('23859280','Wendy','Ponce','wponce@iut.univ-paris8.fr','06.40.66.89.32','$2b$12$hq6dEXtdNUHCmvULvnfnHOqfNY/Uu6oHr6INfuZburoe9bFS92zeW',1,3,91), -- pwd : H$WRkaQr*[<w
-    ('43967778','Joshua','Ramirez','jramirez@iut.univ-paris8.fr','07.10.12.66.89','$2b$12$06GPaI/jcDbDVjsOwDhBEesoqzm31ZOrH4nQBg9ZndK41uKhztOHS',1,3,91), -- pwd : )9<,61|#^)J)
-    ('47700084','Michael','Burton','mburton@iut.univ-paris8.fr','06.32.31.33.20','$2b$12$ro6rl3CXTo8B8llus5wqwuur0Dx/WylY1uqD86Z4oZbgucnJO3aFy',1,3,91), -- pwd : I/AKPYil\2iI
-    ('99600919','Anthony','Nolan','anolan@iut.univ-paris8.fr','07.99.43.63.54','$2b$12$arKF/d6F1.PqfqOAgmvKUuxZpfqBGaMSgP1usbHmzFAcGMhI7eRSG',1,3,91), -- pwd : >Fw9n8d5mc&4
-    ('31019697','Mark','Conner','mconner@iut.univ-paris8.fr','06.27.50.02.67','$2b$12$d3eGYa7k5SagkXP3j93MWuy709PiigCO5n01zCY3LFHuem1H7o6SW',1,3,91), -- pwd : Q;<U39=3N1o"
-    ('12734102','James','Howard','jhoward@iut.univ-paris8.fr','07.76.76.32.58','$2b$12$Ci1ykqrL6eO6WnTQDKXRY.8jGbU1ZmXQSKhKuVqUfNFaDghfsOYB2',1,3,91), -- pwd : ]:zi-5(d5q{E
-    ('51634363','Christina','Nguyen','cnguyen@iut.univ-paris8.fr','06.01.92.36.00','$2b$12$coOfVlj4RlwELcOAc2g7ru1SaW7pa9yi9Qvehflw4D3nmOJXjf/Wu',1,1,1), -- pwd : O3-2KTpPue^G
-    ('89453839','Nichole','Kaiser','nkaiser@iut.univ-paris8.fr','07.87.08.49.26','$2b$12$UHZgZsaE6XRkpaniD25ku.uynOpE2B171rQYPjD5FEEhG0Ql3fAsK',1,1,1), -- pwd : */##}!koJZoX
-    ('61699350','Stacy','Craig','scraig@iut.univ-paris8.fr','06.12.23.69.02','$2b$12$lIQZjwEBswmCHtUZj9L1TOgwh4GasPzFIo0iB5Kbc69TFumzSNEzq',1,1,1), -- pwd : kJBNVB|oRHx|
-    ('23356490','Sarah','Osborne','sosborne@iut.univ-paris8.fr','06.79.89.72.48','$2b$12$pvz3OYjRFRl2rzjO2rGoDuDJjlKAWgVICLD3JKmkink0ziRelVSlm',1,1,1), -- pwd : Cj9yrZ/i.we|
-    ('36180693','Joseph','Hendrix','jhendrix@iut.univ-paris8.fr','07.88.41.96.48','$2b$12$N5j7PE3neP26ulfz7Werd.qia.MSkLxQOvajIRCJFobrp9VHOAov.',1,1,1), -- pwd : UCp'Z]|M@@&,
-    ('12992605','Dale','Reed','dreed@iut.univ-paris8.fr','07.61.73.58.98','$2b$12$nvU9Q08KuuIeUpyjJ6ce5eiJNU7qKemyHcps6re0/7m6a23dMfGh2',1,1,1), -- pwd : U]]akuwYFmd4
-    ('69484518','Mary','Butler','mbutler@iut.univ-paris8.fr','07.86.85.35.27','$2b$12$WKnusgEuKVcZuZQ8mTyV.uNu2fU9Ngmo2iEyYiVEoIuRD2wXy0wY.',1,1,1), -- pwd : h^#!Nv'ag7_/
-    ('23720050','Edwin','Fischer','efischer@iut.univ-paris8.fr','06.21.61.58.79','$2b$12$WW.K1RT0yRLpCybGX9kWL.9FbPSmUAj1dOTE0TKh2rCB/Kgw3cO0.',1,1,1), -- pwd : %~mnHsi94{HH
-    ('63174696','Kaylee','Castillo','kcastillo@iut.univ-paris8.fr','06.48.96.14.31','$2b$12$oz5PbCbEFDfYKvWxdxaQGeFyEEbepRhGlqPvEwM.kgiGC8gTy2d5a',1,1,1), -- pwd : {L\FD0a2iBVj
-    ('22189532','Courtney','Carter','ccarter@iut.univ-paris8.fr','06.34.28.92.92','$2b$12$rO5Y1R3KmDiLhXofpnRrw.wECDmrsXn5Iay0f7rk.fRO2jd2I1G9.',1,1,1), -- pwd : v}7~PYH`x5&;
-    ('70368688','Krista','Kent','kkent@iut.univ-paris8.fr','06.07.68.41.86','$2b$12$cQfGtEy71EXBqJE1eDjYTODi6YNkP9yHISQ9WEmBGU5tnGJetPoTO',1,1,45), -- pwd : Wqk;>XAFzr!T
-    ('87346382','Holly','Johnson','hjohnson@iut.univ-paris8.fr','06.70.69.13.56','$2b$12$7ZTdJ.9mKv0LMVTPpAxcZu3LlxnexWI5vypw4pMYHDDI4ZwfOqr6G',1,1,45), -- pwd : $_`QB[LTM\p%
-    ('17147542','Chad','Dixon','cdixon@iut.univ-paris8.fr','06.36.37.86.57','$2b$12$Om5UR46iYo/5jjwZEXLEYu2KTFAwpm/W17OTyA/efoREiRywXNsFC',1,1,45), -- pwd : ?{He~T0?LZB)
-    ('84537858','Angela','Mccarthy','amccarthy@iut.univ-paris8.fr','06.42.96.03.03','$2b$12$t3M5Ths0tX2UT/sPR4WHmuYeDP6ePNYpw9wtA93oCoaynKU4cZKWW',1,1,45), -- pwd : iClR%"q.7eOp
-    ('53688242','William','Nguyen','wnguyen@iut.univ-paris8.fr','06.82.09.97.33','$2b$12$aOf1cXVxe/I6nda7WjPZaeug033HGizX9rIJfZ2A2lnyXLcL3qJaG',1,1,45), -- pwd : rz0(q5}9H=C]
-    ('42300921','Michael','Chang','mchang@iut.univ-paris8.fr','06.37.84.46.87','$2b$12$EAsRshMK3Pz.e1F0xT9IY.lG4gOGy9CBRhsPbSKDRfKJBk/gB4MHy',1,1,45), -- pwd : _;=,c)1"#J{,
-    ('18997480','Kristin','Parks','kparks@iut.univ-paris8.fr','07.13.73.76.80','$2b$12$V1LlivraQjWgex.Ii6iquOjgvvk1a6rXuQ2EIOP2XGWQ3NceyMu.6',1,1,45), -- pwd : D0uf0VAzSUTN
-    ('03317942','Jennifer','Stephens','jstephens@iut.univ-paris8.fr','07.02.08.10.35','$2b$12$4FVO4bJlfdDosdYbjCRlre.JY.lOem6LWBCy/ximUiBIY3X83dHAi',1,1,45), -- pwd : %#hs+lX6tlMx
-    ('60267872','Rachel','Merritt','rmerritt@iut.univ-paris8.fr','07.39.59.54.05','$2b$12$PrPlBpoPgt0KtPF3/qCTWOzkZT8KX2Ao9QElfjTsLMi5vN0J6voIy',1,1,45), -- pwd : szXrDVtc\f'L
-    ('20805439','Cory','Smith','csmith@iut.univ-paris8.fr','06.29.28.61.85','$2b$12$L4u4AGb3Ch6FSWIlemdCMOuP7h7XrgFvsq251rIuW004n5UlVsSai',1,1,45), -- pwd : {3z">'-!*A;l
-    ('22299182','Robin','Brown','rbrown@iut.univ-paris8.fr','06.92.75.86.36','$2b$12$H0VEBXNHmUS3UM6y.XgBluOJvHOHFUUrD.am12O3zKPvSccLHYTWK',1,1,89), -- pwd : SW.`7F!|(FaL
-    ('60353886','Cheryl','Simpson','csimpson@iut.univ-paris8.fr','06.03.83.68.89','$2b$12$NoWmFjO3ysA6s.XqWjxEMuU30Zy.HD/y1ysfsoB5XfCMPKwUToRnK',1,1,89), -- pwd : ~JFI:u`7R17(
-    ('59904869','Mark','Carson','mcarson@iut.univ-paris8.fr','06.63.10.91.78','$2b$12$1.a.UV5X5x4PMRbPqWfuguW4WFJV9tTjIWHAa2AzbbLw20I8d1ZWq',1,1,89), -- pwd : e4y_4b@4]T9!
-    ('59032188','Jason','Johnson','jjohnson@iut.univ-paris8.fr','06.79.49.76.65','$2b$12$W5RdPimHkpr1s4zD1I0IWeCmay/x7KJKijgUYF0Vp2mnEeCC1Mv9e',1,1,89), -- pwd : 0X+BDL9i\Fm(
-    ('98689539','Matthew','Rodgers','mrodgers@iut.univ-paris8.fr','07.68.95.01.01','$2b$12$6oGeNS5pumjl7qKC5n3Dq.q9YVlXNotVtaewFGEudVzb1hn5Wi6YG',1,1,89), -- pwd : 97cyr%@v9NGS
-    ('64701508','Sean','Rosario','srosario@iut.univ-paris8.fr','07.48.39.20.47','$2b$12$6NbB72z/ZeO3kwOLxFO4KePY55cLwhhIoI9CMCukpIzo4sagxDuL2',1,1,89), -- pwd : {yxw},$t{as}
-    ('95817804','Mary','Miller','mmiller@iut.univ-paris8.fr','06.92.69.79.18','$2b$12$kbkoU.r6DEiGoAUD6pPnF.4pT14oh6uzzaeWZz70lFQWle1JU2Rra',1,1,89), -- pwd : Yb<zE0RTKy'N
-    ('83201783','Daniel','Herrera','dherrera@iut.univ-paris8.fr','07.06.14.00.66','$2b$12$uPAttFs/Ql6l54K8p2xyoefUef4pYLxjqBA.QZvYKTLBNbWVuDsEi',1,1,89), -- pwd : rGql&nilm<|=
-    ('20069554','Brittany','Moore','bmoore@iut.univ-paris8.fr','06.27.90.55.38','$2b$12$BrqNnXYLJAj0DKBj2pM8quWdka/cN6t9Y8xJYzyy9vm8MVW23hL9q',1,1,89), -- pwd : *#}/n!qz*\(e
-    ('66643312','Allison','Walker','awalker@iut.univ-paris8.fr','06.23.73.57.44','$2b$12$ekwrFFcPFvxrcxf12PTOyuGme2UIas3MduCHz5PRkzhduvEr8T8Se',1,1,89), -- pwd : Y83)'Su;p&hv
-    ('18614271','Rodney','Hall','rhall@iut.univ-paris8.fr','07.53.82.80.75','$2b$12$jgQw52OWWFA4dPijei8SFufRTrwSU.vkZBVcY3LbX4KqAQbh7iNaq',1,38,38), -- pwd : k=DMH@:i25$G
-    ('89039625','Jason','Singleton','jsingleton@iut.univ-paris8.fr','07.53.95.30.72','$2b$12$GlWbMUI1QP10V.z69XZ.Hu19OkfPAbtcEWj/jvneXr0pZgV0Ocdpm',1,38,38), -- pwd : jWQD3JDc86;R
-    ('93486604','Amanda','Rodriguez','arodriguez@iut.univ-paris8.fr','07.74.26.87.87','$2b$12$/5gk8NaNE0DUwdNRqXd2qO/CWXI.time1BXudtKwvcjjq2VMZwh4W',1,38,38), -- pwd : n~&w2jVupC.a
-    ('79972285','Kimberly','Russell','krussell@iut.univ-paris8.fr','06.09.00.37.00','$2b$12$gkPCXoDKaRb.ZcB1H/oimucqdWe7HDYCDZN3NHL4E6Yy0FNP4WFj2',1,38,38), -- pwd : 7]";o=IrVAdi
-    ('76989167','Kimberly','Hill','khill@iut.univ-paris8.fr','06.27.58.24.33','$2b$12$UGUgywb.WFMPPJn9TIlWSOAY2hCEnOHhRQSgavOS5t9IcaGo2J9y2',1,38,38), -- pwd : xD$h+')'']50
-    ('32627103','Alexander','Smith','asmith@iut.univ-paris8.fr','07.71.08.54.79','$2b$12$HArrBcDWwavwZPnskk3Yx.y5sWwB2ieZ8.VcozGpUBQ5veBVxaKba',1,38,38), -- pwd : tcZEO-CVVS48
-    ('95280694','Karen','Rose','krose@iut.univ-paris8.fr','06.03.20.81.15','$2b$12$LhL8yPdK3I6hQWcu0.NyYuLn.Krj7buTDoSUQYNVMt6l3p2Fes6aC',1,38,38), -- pwd : +gk0nxeqs~^_
-    ('61220317','Christopher','Thompson','cthompson@iut.univ-paris8.fr','06.72.24.87.98','$2b$12$W3BrfbEX48h0VHPOo/G3FebMZKvmUS2JzcZgycTzI4n5CQdyah9tG',1,38,38), -- pwd : $pj+<!_cUO'Y
-    ('22036090','Michael','Marsh','mmarsh@iut.univ-paris8.fr','06.68.05.77.87','$2b$12$evHPwbAEnLxzrlwvKR4gHOApITkrsSwRNfe47egGuRNEyriDgCv4e',1,38,38), -- pwd : #xJ4EL$CgJN[
-    ('16714539','Rachel','Hicks','rhicks@iut.univ-paris8.fr','07.11.00.33.25','$2b$12$aYMWI55Nmrpr3OordsbTcOTknZAnTYiDPvQU4JenRbmzMaRfPjJeW',1,38,38), -- pwd : SmB31vo*\H]R
-    ('35509567','Colleen','Brown','cbrown@iut.univ-paris8.fr','06.27.67.08.41','$2b$12$/BMH6D0dGn15HIaK3XN2O.VWGfk1J0ksgK5qNdqZi1hIJ1MjAPrG2',1,38,82), -- pwd : =ce{*$X7j5F|
-    ('98500675','Mitchell','Galvan','mgalvan@iut.univ-paris8.fr','06.19.49.88.86','$2b$12$2bdIzXDYqc3hC0L6zbqyxO1B4u0tkS4nsuydTP484cMt55STLpkTW',1,38,82), -- pwd : a;jrjr!c0"/.
-    ('96512739','Kimberly','Schmidt','kschmidt@iut.univ-paris8.fr','06.34.96.08.92','$2b$12$AAt3rCPOYXDOkTdMd1SGBuPUYkixpi9EqGpGIiKStzeWpBcTXw4Ru',1,38,82), -- pwd : :+<J2<w_!M!3
-    ('44411182','Casey','Le','cle@iut.univ-paris8.fr','06.40.56.89.08','$2b$12$ad94No2M/Dqx5p3S4RlpjeibGnB1M5jjMgRi4vUX8YXW60mj/Stg2',1,38,82), -- pwd : {~t)/<24Lbdp
-    ('04844346','Ryan','Phelps','rphelps@iut.univ-paris8.fr','06.13.43.03.43','$2b$12$lQsv8mUGmY3Hk3Fw/RASxeaL4dAv7jGPFgaIQLjhuByV8CBeOVvOe',1,38,82), -- pwd : )iluI<gGM[GC
-    ('66775024','Heidi','Wagner','hwagner@iut.univ-paris8.fr','06.94.94.32.01','$2b$12$s5DfF9AH5NRl7J2yLOUWq./0rmsYY8iSPBS8zdyvW6pR5X.EdKYi2',1,38,82), -- pwd : Yil@"kpo`(z`
-    ('86012923','Robert','Wright','rwright@iut.univ-paris8.fr','07.12.02.93.70','$2b$12$EV1zj0RMAqWLP3noagcuDuxbZ5Nd8LtPC7uOmYS.ZEOCs5dpNkLyC',1,38,82), -- pwd : oIvf0O\j`{v&
-    ('63887688','Emily','Hunter','ehunter@iut.univ-paris8.fr','07.30.31.74.38','$2b$12$WE/GP474OxEfiQ5TGHmXf.iodxyEVMw7aHMf4eQpmg1vjl2iEXBSy',1,38,82), -- pwd : bAzt-^9yH1qo
-    ('38524401','Ivan','Martin','imartin@iut.univ-paris8.fr','07.70.08.86.92','$2b$12$l.r9i9NkVLP1JQueCOqOfOp5FzOrjcPA14HHYF9LHApjjZ0JGz2b6',1,38,82), -- pwd : S8eQt);=e*k,
-    ('47913785','Jacqueline','Chambers','jchambers@iut.univ-paris8.fr','06.24.95.70.35','$2b$12$el4oDnLa6HbGqgG6qjdkvuIazShCbPhjDKw/dMsmFO5w/dK3lP2AK',1,38,82), -- pwd : k_-\,d?kWDXO
-    ('77616049','Monica','Lindsey','mlindsey@iut.univ-paris8.fr','06.21.24.38.09','$2b$12$6GJUpCWNClsrskbHnOA1N.KNGkpOZzhN0LWED2/.mLUMSnRgCC0lW',1,38,126), -- pwd : ediBg&q~yq_;
-    ('75032692','Mary','Sanchez','msanchez@iut.univ-paris8.fr','06.62.31.64.18','$2b$12$m6o0/iMB2EI0NIIFocSQAeXSQo7ZG7Um69/BrbEdHFAmeeMRg98Cm',1,38,126), -- pwd : v63CEUXebQF|
-    ('38614228','Sarah','Novak','snovak@iut.univ-paris8.fr','07.05.25.89.09','$2b$12$h5Iiy/MoTD043nPN7uOI3uZ3mlLWrSo4VHNQlbohJk3NcnSs91kTe',1,38,126), -- pwd : iE1#t<dWr$O6
-    ('15864611','Donna','Hernandez','dhernandez@iut.univ-paris8.fr','06.24.87.36.08','$2b$12$PFe4rzqQ//zcgG1KUQjZiu5Z0bja5wSlLUjjzNQMYptWx4clYPq/6',1,38,126), -- pwd : DqbDvd)L[R$&
-    ('66540523','Jennifer','Foster','jfoster@iut.univ-paris8.fr','07.79.66.04.59','$2b$12$4oHKpinlF91FjlgZOPAy/OhQ3t0ywCv/XrwHnf1YY8aDQ.f26Qxi6',1,38,126), -- pwd : lRCxTu5O>/6r
-    ('32564152','Jason','Jones','jjones@iut.univ-paris8.fr','06.97.37.04.77','$2b$12$GexoZAwnRI/3DfriiQtyFeytVCdP4EcTuEN7hLKRYCOnfHh1TBP3G',1,38,126), -- pwd : [^i3Q@j&1$Pi
-    ('43984648','Erin','Cross','ecross@iut.univ-paris8.fr','06.94.03.06.61','$2b$12$AJCWmBvMa9g94/SM381g9ez7lkIQAZtwR7lb2mXZLDp5f8YtD3YWu',1,38,126), -- pwd : !K<H"C/{@Xt/
-    ('79064072','Patricia','Velazquez','pvelazquez@iut.univ-paris8.fr','07.44.47.92.17','$2b$12$1G91LPB9HONEqZCSmdxIVu.4un0A26P0v42VlxNdgw6ySb/o27Rc2',1,38,126), -- pwd : LRPk_oaYJdh\
-    ('41222913','Michael','Norman','mnorman@iut.univ-paris8.fr','07.96.33.07.99','$2b$12$B8JELm/42GE.7a2Yji43SegxPXdtjEdfgR4XrXqBdkH7RqwugFIM6',1,38,126), -- pwd : ]^},g$Lh(4L%
-    ('64000096','Frank','Salazar','fsalazar@iut.univ-paris8.fr','07.84.59.42.85','$2b$12$ruO7UoFglriKbI/SneM.zOnqGkY.0bhQjigdx0mkQ3mOpblKBJTay',1,38,126), -- pwd : SY0Q=.N?vllY
-    ('03619602','Karen','Gibbs','kgibbs@iut.univ-paris8.fr','06.99.00.50.28','$2b$12$yVJe6.2zfWSTCL4lPvFpeuWDKQGfBPoZYEz7JwlWPUNls7yoz8Qnq',1,37,37), -- pwd : =)_Rm36Ws'lK
-    ('93398173','Kristi','Obrien','kobrien@iut.univ-paris8.fr','06.35.15.54.32','$2b$12$ToPSKnYofN4UFEOHB7sZ4.5lvql9tDue816Sk4mxyBjOS8XNTh6qO',1,37,37), -- pwd : hC:#UW#IMKr_
-    ('65341757','Brenda','Silva','bsilva@iut.univ-paris8.fr','07.27.80.18.80','$2b$12$JSvZi8TfwUu315e9dJvReuYf14L2vvabsVa3nwFNKYxeKOCB4Zwui',1,37,37), -- pwd : #VPc.j#.mqR}
-    ('79174458','David','Rodriguez','drodriguez@iut.univ-paris8.fr','07.38.51.79.54','$2b$12$TBCwPB2nJxUZh8HssuKsdO6bPL3Bfq3JvQAs4Sok/1w0tQD9IfYD2',1,37,37), -- pwd : hho"@/.da&4s
-    ('74720700','Michelle','Lopez','mlopez@iut.univ-paris8.fr','07.96.58.87.27','$2b$12$wNtMOrNbBQo4.3nQ8BwWSenLhnhWBWWX60FSw4INI.n5f6c2TZ4oe',1,37,37), -- pwd : bXQy@2x5c{,{
-    ('02267340','Katie','Wilson','kwilson@iut.univ-paris8.fr','07.02.77.41.74','$2b$12$0fo0iP0pL3JeUZf3uYILMuRDXbrte9ougxm1rstsrsOOTzsMXKDku',1,37,37), -- pwd : 1Qe'3^p-Uwms
-    ('77924614','Bryan','Hughes','bhughes@iut.univ-paris8.fr','06.33.08.40.99','$2b$12$aq2Fe9DZ3shwugvG3q/3YuqO5cO25Y1niVaFEdn25IVvIe3To/7lW',1,37,37), -- pwd : A?'Y::fhKXiF
-    ('50801891','Sharon','Howard','showard@iut.univ-paris8.fr','06.71.65.18.88','$2b$12$zOf8iZ3Pe8nL1D3udMcsNO7rg/lFJ5ESgrJuCyZYwBOGRX2cdZb5K',1,37,37), -- pwd : zr`YcoOf#~Hx
-    ('80096851','John','Weaver','jweaver@iut.univ-paris8.fr','07.32.79.90.64','$2b$12$mMwBa/WtAcwwJrB3lJGCW.jx2zXVa0aZe6jDoX.i.QZ.ah2D/rYBq',1,37,37), -- pwd : +fIx8)SmF*cP
-    ('24080165','Logan','Benton','lbenton@iut.univ-paris8.fr','07.30.97.09.37','$2b$12$Ty7Q7NP4PueC8y2e1wapbODg1qlzZQ7xNPZ1e91sxQ.yWE6u56iLG',1,37,37), -- pwd : m)G*E?Ya$[kW
-    ('43072561','Emily','Foster','efoster@iut.univ-paris8.fr','07.88.60.55.31','$2b$12$/CboOng4UhZkGpe6bj5UiOuMXyWbPojpoaEr8EE4hVPWLUi8ZSdVS',1,37,81), -- pwd : >*{k9wc_V~CP
-    ('92343728','John','Blankenship','jblankenship@iut.univ-paris8.fr','06.59.52.88.70','$2b$12$OSbDNq59XRT/tPCRyXt0nOy4m/FLWumgImEDG9l1QPPTujKLJWrOa',1,37,81), -- pwd : flyTbd|GAnjd
-    ('84482690','Amanda','Mccann','amccann@iut.univ-paris8.fr','06.66.54.70.69','$2b$12$OONecNgkiPG/m0tmLQAjw.VY/LRrg0EDpEOqQfAFp.ri1HSjzmmvm',1,37,81), -- pwd : DfokM-f).`?d
-    ('75078367','Michael','Smith','msmith@iut.univ-paris8.fr','06.72.60.68.57','$2b$12$SPgzTFkZTXcttpaezbIslO3tjlBye4oUUtjJoRceImn4L7KRtcDG6',1,37,81), -- pwd : ?.q'O+C:/046
-    ('35741163','Frank','Kelly','fkelly@iut.univ-paris8.fr','07.39.67.48.21','$2b$12$rNhFKBWR2hRzeqzH5V7RAeuCTU7cJoQJ412u1aXiFXGr/CH9a1S96',1,37,81), -- pwd : G3(g592Hw68e
-    ('48177534','Alexander','Blackburn','ablackburn@iut.univ-paris8.fr','06.68.80.01.49','$2b$12$73ZaoRjm6KGaRDW.yrT70uDMt2829ZX0rQMnDbwKlySLwhosxMn4W',1,37,81), -- pwd : f\jCPjkHPn(I
-    ('67623913','Victor','Wilkinson','vwilkinson@iut.univ-paris8.fr','07.01.12.36.53','$2b$12$yvqeV.630sZUL3wyj9eJK.JsIHAYqLjyiDKOAuz0vMXIyx.UIqQYG',1,37,81), -- pwd : VNU1%Vt"6ma(
-    ('70713160','Kathryn','Andrews','kandrews@iut.univ-paris8.fr','07.02.29.51.90','$2b$12$hd397z23R/arKpfXwUHZw.OpiBxMkFUegVns83o.LMs2Juae4rKie',1,37,81), -- pwd : q5Dx<wXe{s8I
-    ('80425660','Andrew','Rodriguez','arodriguez@iut.univ-paris8.fr','07.57.36.51.03','$2b$12$7i7ifcgdAKVmbVW9GriUZuZLcaJRNmajdJkCgVPTsaJ.Z4RsJti8m',1,37,81), -- pwd : k:+\dWX]*J?|
-    ('03927856','Aaron','Garcia','agarcia@iut.univ-paris8.fr','07.09.66.73.90','$2b$12$FZBah4GVSNmLHe3/WdUW4uJJ31g3e3/dHPQDz3v1g9ApWzI15BE.2',1,37,81), -- pwd : kDI/#Qn34%.x
-    ('21043567','Rebecca','Black','rblack@iut.univ-paris8.fr','06.30.85.67.81','$2b$12$6jx4DEQ4drOhkW7uNFU5helFwLhQ.Q82uWCmsFAEN9d.58be4EgvC',1,37,125), -- pwd : _R/t&e\^bYBt
-    ('41512715','Ashley','Christian','achristian@iut.univ-paris8.fr','06.93.09.54.46','$2b$12$YEWjKKz8NZHC85.RE0I1Iela0hvGcRx5DsCOuPAU8zlzyUFcJsbM2',1,37,125), -- pwd : NLL^dQ=f}XoO
-    ('47539038','Tasha','Abbott','tabbott@iut.univ-paris8.fr','06.94.29.12.08','$2b$12$n1BXYXgiedGSd.kqfSe/Xe.Ybm003bXKWzYcDcY8U5d.eBnl6jMkW',1,37,125), -- pwd : f.po>DIv.|\2
-    ('46902751','Ronald','Mccarthy','rmccarthy@iut.univ-paris8.fr','07.51.24.16.48','$2b$12$91CbNjz/BMAmM.cOr7zpQeHj5bpB7dTMZaHH5c3XUZZU/lplgZ5fO',1,37,125), -- pwd : DkJn76\x07hV
-    ('27887732','Taylor','Wood','twood@iut.univ-paris8.fr','07.23.79.88.44','$2b$12$05BBt61Edv6FjOjCj3tHjed8XQURLOo0sKzzrHBYP10i0j7/4GrZy',1,37,125), -- pwd : 7#rpaQz"w?!G
-    ('04218397','Wendy','Coleman','wcoleman@iut.univ-paris8.fr','06.95.32.73.68','$2b$12$5jODvqvFvOAjXPzuAwN0qu1fTByXkrI2eae93tO2NsZ.Fo6Bc5tuO',1,37,125), -- pwd : vbM8^|UEm[]F
-    ('11051654','Lisa','Ware','lware@iut.univ-paris8.fr','07.02.83.51.21','$2b$12$3V4Wqxdw5YQ6rV.QadNk.Ob7.pTWqQ5putSISEBZX2w7DIz0hzxZ6',1,37,125), -- pwd : be~]yVM@LAYV
-    ('70428664','Joseph','Wilson','jwilson@iut.univ-paris8.fr','06.79.85.45.37','$2b$12$zIug/Fjqp0fziHmCh.bAfurqiY2mtyBYGK779v/rKTLTqnnOOnKLi',1,37,125), -- pwd : /*H*'6cGXxDC
-    ('03570303','Tracy','Jacobs','tjacobs@iut.univ-paris8.fr','07.32.51.14.05','$2b$12$F/zpmo/iuuB4aOCX2EoisOnFHE24CHJlfP2LsT4HqBmrHpHmYO8Qu',1,37,125), -- pwd : 1Xgk^3<Fmk7\
-    ('01966536','Brian','Rodriguez','brodriguez@iut.univ-paris8.fr','07.44.57.39.75','$2b$12$3JAzNA6gytPaSMWxLmZZgOUuU/d1Vs/BXyppWDeCxuPKewy/F59VO',1,37,125), -- pwd : >1B8zvZ,8xYo
-    ('46233690','Angela','Collins','acollins@iut.univ-paris8.fr','07.67.03.51.37','$2b$12$v8DrjvsyVztLgU5DSd7PbudBm/yeP/tglyBCUwS3G27jimGjxc.s6',1,27,27), -- pwd : N17`^iO48wi'
-    ('18389102','Nicole','Clay','nclay@iut.univ-paris8.fr','06.06.19.10.35','$2b$12$OsbXYYDEaK3V7ajx5On4GuOcTytb.uW2FSXprYgkPII.RfLaBQSMe',1,27,27), -- pwd : 0x'{^L$n,Ur\
-    ('80425096','Timothy','Robles','trobles@iut.univ-paris8.fr','07.50.47.19.90','$2b$12$ck.AC1DrZ3xMbxXQ6T4P.uSvh61aQ5otMSzGb/Zw5UUzKbzN5pcxa',1,27,27), -- pwd : DTY$a]7H?-3_
-    ('14220118','Brian','Wall','bwall@iut.univ-paris8.fr','07.95.96.60.45','$2b$12$zntnEJXE2nrt.ccvRpUphe6rvICGpY1KSfoxPaxBzpaoekXiFyLz6',1,27,27), -- pwd : bKW1%B_`et%@
-    ('97905864','Justin','Flores','jflores@iut.univ-paris8.fr','06.92.97.12.89','$2b$12$n/gxJgqribZU2YQHxfOXS.L5cPQEOTI1xarydmhxJczK42Kt0CoWq',1,27,27), -- pwd : j*vl\^<#Ng(q
-    ('92507924','Katie','Graham','kgraham@iut.univ-paris8.fr','06.41.81.27.37','$2b$12$qGYr59jDUWts686rdTYJyOp2qhboqa1WeohJOhEFEw3BpsnroHIpW',1,27,27), -- pwd : %h}(SRB@>:&u
-    ('32229949','Destiny','Mckenzie','dmckenzie@iut.univ-paris8.fr','07.93.93.40.69','$2b$12$/fXXlfGL.RUjF4up5dZTM.1o4zJu83wfTAv244tPgd1bEwyeJRCIK',1,27,27), -- pwd : ++gY9tG/:^9;
-    ('15163174','Eric','Burton','eburton@iut.univ-paris8.fr','06.45.20.46.71','$2b$12$KME9qDPz4c22.XLXxZ1q.eII.tWrpPxKAmr9TzLms//h86rwlGk5a',1,27,27), -- pwd : =wQ#efHDY27j
-    ('82550213','Whitney','Freeman','wfreeman@iut.univ-paris8.fr','07.30.06.41.03','$2b$12$aCcxot5Yv3VAK5GKJpc6BukiGKkyPvDMxcLG.mqYUYT.0xisGBbd2',1,27,27), -- pwd : 7FaJ}|5m/5m7
-    ('92248626','Christina','Blackburn','cblackburn@iut.univ-paris8.fr','06.61.90.84.64','$2b$12$Eu1A4T4qIHZMAEqpXYDUZeJzYNGTMEwgR9JN.kHCALSae9FDL1SkW',1,27,27), -- pwd : -srz\NJ?$[z4
-    ('17079261','Kathy','Holt','kholt@iut.univ-paris8.fr','07.41.06.42.67','$2b$12$Y3gNV0yloG4e3RMumgY8Y.0KuC7cWZ0zpVQscWz7GW2tsdhAxJRya',1,27,71), -- pwd : ]FSF!ccYDET=
-    ('76963937','Tricia','Weber','tweber@iut.univ-paris8.fr','07.39.27.43.67','$2b$12$msd6Q3RyUga8c8EWEdeG9OtZ8qpEwW2Hrxp.JFoR0lec9D5IiFM3i',1,27,71), -- pwd : K?4'k48BKhuA
-    ('50649357','Diane','Petty','dpetty@iut.univ-paris8.fr','07.37.11.74.53','$2b$12$50FmFcumtK7sV0KAD1b1Y.l.VRHGz1FRpI9TPtkdjiT0BlBjYylkK',1,27,71), -- pwd : cNQkw9^W(}Cx
-    ('51774615','Denise','Simpson','dsimpson@iut.univ-paris8.fr','07.08.56.25.91','$2b$12$LTmggzFH8dtmBYPoXM6sYuAeKz0.y14xVbc5WJ/TYuT470SSw.yFi',1,27,71), -- pwd : 5(7t^k6X9-}a
-    ('03501998','Brittany','Johnson','bjohnson@iut.univ-paris8.fr','06.03.79.20.26','$2b$12$AUOaTvwnEDhKbEJsmH8IxemWvAHqN.yVqV6PJAKhwvordmmKRhJpS',1,27,71), -- pwd : (zPI(CY[S[Eu
-    ('93469637','Jose','Duran','jduran@iut.univ-paris8.fr','06.92.93.30.09','$2b$12$5Kna4jfzUsnYblq.fCTLK.HPpxuoE9fUfSyvPzLFBC/..cgYCheZ6',1,27,71), -- pwd : aQo.=y"6VYeT
-    ('71008369','Angela','Adams','aadams@iut.univ-paris8.fr','06.71.37.88.20','$2b$12$MS0j/VCQSNa27fjCkzTOj.jfvQj2IbVrfhrGyhJktys3TJwYMAm/y',1,27,71), -- pwd : f_)0=t?(~vy|
-    ('48183487','Barbara','Knight','bknight@iut.univ-paris8.fr','06.07.60.58.96','$2b$12$qZp/t9WUEYefYjM3U3WBH.wJmgiaP2e82vf343odVapExLh8YcLkG',1,27,71), -- pwd : :?.k&5[nTX^[
-    ('17814036','Colleen','Reid','creid@iut.univ-paris8.fr','07.41.96.06.82','$2b$12$EEXtM0QTPhemcgUYKqNWfOBIoJ.qoNLa6n/eX9Q.7SVv9BOASO64.',1,27,71), -- pwd : f;eTvOkSYCnr
-    ('31314008','Emily','Lamb','elamb@iut.univ-paris8.fr','06.13.11.90.37','$2b$12$YeoABllXhe648LPP/Efod.RYsFt0Ksjy9UP5Qn7AYTNd9Pbr6ejRe',1,27,71), -- pwd : >Ky4el9eaodQ
-    ('68220415','Nancy','Lester','nlester@iut.univ-paris8.fr','07.02.22.63.39','$2b$12$rLsdnSPJAqncqDH.5kLnJOmfBuFg3S3U8dfmMqHkAWGmLevIJKcNG',1,27,115), -- pwd : Q7jl2.%8A@8e
-    ('09711018','Henry','Haney','hhaney@iut.univ-paris8.fr','06.54.24.04.31','$2b$12$EI0EHLAz1n9cIjJ3dizCteXqzTqdbvwHFIeYHNDJ0sWG9yqSyLoJq',1,27,115), -- pwd : dNSkQC*BiJz'
-    ('86889501','Adam','Davis','adavis@iut.univ-paris8.fr','06.21.19.39.77','$2b$12$Mhbm.lBEsfA.iLralVrzu.7g0zjyCpp8KV67kXCETVnCZX4SoT6kq',1,27,115), -- pwd : \,n*U3C5]CVB
-    ('94443964','Joel','Taylor','jtaylor@iut.univ-paris8.fr','07.87.67.80.69','$2b$12$lZFEj88wA8PqePvqGbtJQeFhKr5QdaETAaLFGyHHO/j237/w3/cj2',1,27,115), -- pwd : wn~+8KnT'YJ%
-    ('43966419','Marc','Porter','mporter@iut.univ-paris8.fr','07.44.39.59.79','$2b$12$EjRzDgWJ3DNdZYqf2n09PuoTElyeYadVVcTTnX2Cn4.NckomR2aLO',1,27,115), -- pwd : t&[e>Kn5\[dc
-    ('67538204','Kevin','Fernandez','kfernandez@iut.univ-paris8.fr','06.32.27.14.82','$2b$12$I3x2zRp5U6SZ/EFtvbbeo.ta.GarNoN5D3I2s1u8L9Ic9DkrZawZq',1,27,115), -- pwd : |H~50pu}3dQV
-    ('10589333','Alexandra','Nash','anash@iut.univ-paris8.fr','06.19.22.67.50','$2b$12$miSyiJBqxPFwtT087aTot.D3c5KgIauaRpyeXVSSJqR874n/cw6kq',1,27,115), -- pwd : ohz6l'}+q")T
-    ('42003373','Daniel','Clark','dclark@iut.univ-paris8.fr','07.53.97.22.99','$2b$12$2cUloqpqf9.UN4zVnbQlNucKL7z13rHIsHV16n0ezZgM93isoFHIW',1,27,115), -- pwd : I[!Azh8L;HIo
-    ('33963975','Erica','Sanford','esanford@iut.univ-paris8.fr','06.69.52.76.52','$2b$12$xliTVlOqbk1FydhooWEKFuzjdw5x79YH97xRgKKO8rpOEhjvBGu2C',1,27,115), -- pwd : &0T7/y3gT2n}
-    ('69139375','Kyle','Jones','kjones@iut.univ-paris8.fr','06.51.46.38.82','$2b$12$ReZvlfds45sZHDEZKE0NJO7TRVpIDmho6rzNjhU0VKjLuLZ62oaUa',1,27,115), -- pwd : TpI?Vr"d:29@
-    ('53074140','Mitchell','Leonard','mleonard@iut.univ-paris8.fr','07.81.56.74.71','$2b$12$ry61ZLKUX8t4KcmHm/5JD.D8hvRodGCvaTMaBG/chSfU/pAVPIoki',1,26,26), -- pwd : lh30<O[fuLRO
-    ('59761172','Robert','Bennett','rbennett@iut.univ-paris8.fr','06.76.66.27.72','$2b$12$p.QjjF3FCX7hBRoRSkGBk.IbUlvBdormv/ITPCb5WuX3iSxH2UK1y',1,26,26), -- pwd : rr6=-pM(Sb:%
-    ('83281083','Wendy','Wolf','wwolf@iut.univ-paris8.fr','06.42.65.29.02','$2b$12$KH0vHQDzc01p85T8P3gKhuqfe8XgHVpsiL7JZJlfmK28oG3AzO6km',1,26,26), -- pwd : /&`+_8E`(ztI
-    ('51229774','Deanna','Hicks','dhicks@iut.univ-paris8.fr','07.14.34.62.69','$2b$12$jnFw73Ql64qb.9hwUGd6Nub07YPHg6KAAMZup0wZnvIHvFcur4dp.',1,26,26), -- pwd : CJ+dVr;6La]u
-    ('58914740','Tyler','Walker','twalker@iut.univ-paris8.fr','07.69.98.31.52','$2b$12$D54QGZ6PJJRdVlxU9H8CTe04A43PFJLrD4dVndqiYVklVz2jZdE4m',1,26,26), -- pwd : 2`5E;]aZ,Wb"
-    ('16329117','Belinda','Williams','bwilliams@iut.univ-paris8.fr','07.58.87.03.43','$2b$12$YZdCgp/Zq.7uWcLDS3EhBOhMGmHm/Rlo7EEO1BGFYOtiMrkWVHUya',1,26,26), -- pwd : M6mrEZs]SD}`
-    ('49751054','Mary','Scott','mscott@iut.univ-paris8.fr','06.41.85.77.51','$2b$12$JOcPA879DWOA6lKlCvOE9OSfh.X.bGtoc6WTD4bXByW8gSGKT1uXa',1,26,26), -- pwd : 6+E`a>En^Ej1
-    ('87442063','Nicole','Cook','ncook@iut.univ-paris8.fr','06.33.91.77.21','$2b$12$/xeKMgwH47swjMbujuakBul8uNpcNZAgc/IGeziQY1KEbsuqfimhC',1,26,26), -- pwd : Wmy;iSp{7PzP
-    ('58602060','Christine','Hall','chall@iut.univ-paris8.fr','06.75.37.58.78','$2b$12$Oe/X8BHBWCkCm0P0EnXQYeIFbb36GrMXzK344.6CdXdcgM088AwyK',1,26,26), -- pwd : O&FBIOc/3fAG
-    ('22715078','Martin','Dyer','mdyer@iut.univ-paris8.fr','06.89.73.72.18','$2b$12$ORw896qRsF2CbMMMFPVviu5LGdXkZTTkxBnVv8mbjLhthxbpi7BH2',1,26,26), -- pwd : K-w&iriSfcK{
-    ('26598594','Amanda','Bailey','abailey@iut.univ-paris8.fr','06.83.13.12.41','$2b$12$PKCc6jUZMa9zdMLsoNCM3u10W6Lc/RLEQtuneUGfdqsXuaU26tCh6',1,26,70), -- pwd : [\'\cbJ8"},I
-    ('16029498','John','Perez','jperez@iut.univ-paris8.fr','07.56.75.32.07','$2b$12$vjDa9SX.EoFQ/fnuuiZBNewTvqoUklDD8fXxV4Wb529bfwe2MLVdS',1,26,70), -- pwd : u#yZbU1?e@iI
-    ('00904808','Michael','Lynch','mlynch@iut.univ-paris8.fr','07.99.58.43.07','$2b$12$2hrjJ7OqW1QujUqHApkg1uz8jsn1emidYZ6g1XCZbA57kak16u6VO',1,26,70), -- pwd : N0LtSVSG?w0&
-    ('99631929','Jeffrey','Mcintyre','jmcintyre@iut.univ-paris8.fr','07.90.77.24.76','$2b$12$MERnuS06l.MsEItGJQLoAOT2QmkPul2xGRjkhTmYMyDRpwwU/d1F6',1,26,70), -- pwd : !BlIJ|EJpl~d
-    ('35298495','Joel','Jackson','jjackson@iut.univ-paris8.fr','07.24.54.05.73','$2b$12$9Dp02hB2TJcE2vgl86.h7ulV7JMg7VqGxaq5oxW8Oe6l0zFF/7GWS',1,26,70), -- pwd : XnzklEY|K:vg
-    ('82188981','James','Lee','jlee@iut.univ-paris8.fr','07.58.43.09.01','$2b$12$nF4d7H59VC11HGalDgj6P.5eIbe8mTTeWyuVOx3Dupbvxh.DzZKSG',1,26,70), -- pwd : R1A@Yul+5[dV
-    ('23057911','Aaron','Christian','achristian@iut.univ-paris8.fr','07.42.95.38.12','$2b$12$bmq/rB9.EzhTdONNCl6GcOyWWUiZFQbWhhuMCmP4RFTeBsR.zL0I.',1,26,70), -- pwd : aQt*`r?FUKP|
-    ('95721880','Faith','Osborne','fosborne@iut.univ-paris8.fr','07.89.68.49.78','$2b$12$v9BR/g1HmrGMX9HBevZpQOGgXwdZfYgi3wfDmReIOZ4bt5DTP0Ebu',1,26,70), -- pwd : y%4&B}B73EuN
-    ('02751988','Hannah','Smith','hsmith@iut.univ-paris8.fr','07.14.30.98.17','$2b$12$w0PbLrWeTM0b5q/5Ic7ddO.TKhmcuMrGz01LL/kbw.nlkuuKv8KyW',1,26,70), -- pwd : H4}Ur<2SPb[:
-    ('18935750','Robert','Walker','rwalker@iut.univ-paris8.fr','07.22.97.15.48','$2b$12$p0WszL6EYzKQWjHeb2ZQ2urJww17YXCEO4J1iudPPCFsv/acnLQy2',1,26,70), -- pwd : P{~<3~[m.V[o
-    ('88791089','Jacob','Caldwell','jcaldwell@iut.univ-paris8.fr','06.11.21.07.00','$2b$12$600D/tkJCM3IDfPG3wNgkeutCVLPH7S4DnPQBJZlSSwmXBQ9V0Npm',1,26,114), -- pwd : 4-|%IlfCv3t6
-    ('45734361','Joshua','Bates','jbates@iut.univ-paris8.fr','06.37.40.57.65','$2b$12$.zoW1qQ3.ucZ72eYqerG9OiBJOj5/XfjE4PmCIJtgy/97LWHVicrO',1,26,114), -- pwd : 1m7It1&9T+H>
-    ('96328289','Stephen','Blackwell','sblackwell@iut.univ-paris8.fr','06.34.03.37.68','$2b$12$Y6Ux7LQiYikToYvn/63x4.kzhLB18odnW84AMhkLOySQADkziKKsC',1,26,114), -- pwd : \71>71kO*qL(
-    ('33856820','Evan','Anderson','eanderson@iut.univ-paris8.fr','07.45.33.94.32','$2b$12$cC9gu9rxM.S37rvQHaZggeCgECTNsogNdWjHyyjRFaB/98SKg2rZe',1,26,114), -- pwd : ,<q}E4+JkV,*
-    ('90326981','Amy','Davis','adavis@iut.univ-paris8.fr','07.36.71.90.13','$2b$12$NPITy.m6599TqGRUWDiL..xyCejKZRoAmVCnmaVAyr1SgH7VkhzE.',1,26,114), -- pwd : ~4x4CeW`KP2g
-    ('73742746','Erica','Burke','eburke@iut.univ-paris8.fr','06.33.94.80.18','$2b$12$2doFrJ6QSQD7Th8TvrdA1enMoZ5RCANz3fj20VW/oe17u6IiyABUe',1,26,114), -- pwd : -5<Yt0-HNuQ;
-    ('55746705','Jake','Rogers','jrogers@iut.univ-paris8.fr','07.12.95.76.48','$2b$12$81mn4eCrlVx.ywwcaSBVhO.jnChn7iT2oodMdRzESJ1ncEHlbWi6y',1,26,114), -- pwd : qFAi]Ocu&xFW
-    ('27943682','Michael','Robbins','mrobbins@iut.univ-paris8.fr','07.44.21.35.28','$2b$12$cfMWPDZW4WD8LyRYtpLebeTEyzzsb0V94EN4ywMZpJCYiE11HGYiW',1,26,114), -- pwd : v7w,{mxGAPpx
-    ('01390286','Amanda','Flores','aflores@iut.univ-paris8.fr','06.82.79.56.63','$2b$12$XARDZnmOSh3PVeopKfKMdOD/FdBVTytX/sl7a/iOtOudapE.RcjdW',1,26,114), -- pwd : nRvd'w~LD&:\
-    ('18110511','Cody','Holmes','cholmes@iut.univ-paris8.fr','07.95.70.78.59','$2b$12$CZ/6BYc.PEs4ZSL276XyFOnjOsfsWgv63IgPrWhtD.jSUnFH6Eufa',1,26,114), -- pwd : qq+4W]D,2n'M
-    ('65612421','Julia','Kelly','jkelly@iut.univ-paris8.fr','07.91.97.55.60','$2b$12$hU7Z8tBoZjmd.MdCiMbQzevdFBQDa892tSmGN4CujXQO7ozFC66.i',1,25,25), -- pwd : Hrw8tSQHezj0
-    ('87544371','Julie','Larson','jlarson@iut.univ-paris8.fr','07.46.20.90.61','$2b$12$Ai1D44jTiuPtX8VN/nNSguL0rgIQpbfXVzLuX5yOpEO41MaDm2ap2',1,25,25), -- pwd : ibQ!%}LVY(CD
-    ('07435032','Joshua','Smith','jsmith@iut.univ-paris8.fr','07.44.82.38.84','$2b$12$ytwzo5MoGMSRUNVSnFfcIOMvIwpkCrtx7WfAFqwYtZaDjXxe7TQcS',1,25,25), -- pwd : \C{NVt8mj{Q4
-    ('17628733','Brian','Jordan','bjordan@iut.univ-paris8.fr','06.97.21.53.02','$2b$12$WTaJAZ/dQZmpYtvs1pDI.e7CWWbde.2Pu7CjQDxsFE8dGIF08ksd.',1,25,25), -- pwd : ]%2$}V*a>+3r
-    ('76014497','Jennifer','Pearson','jpearson@iut.univ-paris8.fr','07.40.03.60.12','$2b$12$TwnG1KRCgkSnpN0UGxYcIunwqCK1l8krykSm92EgTo1ipbRnms0.C',1,25,25), -- pwd : ]2X?J99O0:a@
-    ('41353653','Susan','Miller','smiller@iut.univ-paris8.fr','07.64.10.88.12','$2b$12$bkyEtHRJ/7k7FAI6mxBByO8x1Fc0on9Xcsm9GWnNPxyyRur.hgKsm',1,25,25), -- pwd : A$I6(b3@2kO:
-    ('90680337','Lauren','Donaldson','ldonaldson@iut.univ-paris8.fr','07.10.57.23.86','$2b$12$O3sPrBL1JaeV07zW2pQsGuKXhOtwBYnP9P3bKsKO7BBmoTLNE0LU2',1,25,25), -- pwd : GFPuVB~4>7<m
-    ('32533989','Monica','Sanchez','msanchez@iut.univ-paris8.fr','07.27.78.26.90','$2b$12$pNijgjfgic/AJX8P.nwYcuBFjGfZTiyHvEfsFpHdLTGbsOAsWSjmO',1,25,25), -- pwd : `&\}L>4XZS%|
-    ('88318906','Jill','Mcgee','jmcgee@iut.univ-paris8.fr','07.68.83.26.02','$2b$12$CPxEC6zuqNDQvIH0HJKpeOLitN1E5mFOUO8gBRn9rhcYwNQtnPTyy',1,25,25), -- pwd : '~[_lxp`$wuu
-    ('27333875','Brandi','Allison','ballison@iut.univ-paris8.fr','06.41.43.75.98','$2b$12$zD2LBWAgTXx5UuVhLnkCReCFBvL9nkOkZL4x6keKrLrk01MTk32VG',1,25,25), -- pwd : Ym1Qfouk;8Rh
-    ('19086804','Derek','Parker','dparker@iut.univ-paris8.fr','07.22.49.24.35','$2b$12$iqwCa8h.1eixiXhwJBqjIO/oEwCFaHz2OviZalSlUc3YM2XTlfF5W',1,25,69), -- pwd : 4|,cH(fH`J!i
-    ('99250365','Margaret','Fields','mfields@iut.univ-paris8.fr','07.40.75.23.19','$2b$12$2Eow39FH.4f.C852iOuRH.sLkE0n/MFjjwq8EqvWTI8tOKSJEwkWO',1,25,69), -- pwd : r+i"BCBe_Pgo
-    ('86750218','Sabrina','Anderson','sanderson@iut.univ-paris8.fr','06.54.68.16.47','$2b$12$ipXyT2Sl187i5P8RcB63..qpVe.g.k6mArD2QzY6GEd8JVBtXVcfy',1,25,69), -- pwd : PQ;Ch`)Xcn8p
-    ('33129738','Alex','Dixon','adixon@iut.univ-paris8.fr','06.85.91.87.27','$2b$12$7jGrhljpXnyQJs.hMkXxLenH2UTH4OK4senMvjB1HtkfrsWvDkTLW',1,25,69), -- pwd : Sn%ue3+yu;P^
-    ('65659764','Dennis','Richard','drichard@iut.univ-paris8.fr','07.33.71.38.26','$2b$12$jgfU1wKEiNMYNamb0HvgGOmjzIiLJfhf86H8dnlwWOFRZdQG/2F22',1,25,69), -- pwd : #'1>1&O'iT*&
-    ('53840510','Steven','Robinson','srobinson@iut.univ-paris8.fr','07.27.91.46.47','$2b$12$3nrCUR3y3N1L7t5ClsJfJOPNRs/1SWPN35n2ktZ21G4zsy3lpL51a',1,25,69), -- pwd : 7"d8VHQUbS(e
-    ('82671900','Spencer','Morales','smorales@iut.univ-paris8.fr','06.11.46.31.36','$2b$12$dBpIrzyKqB8kdaospmnpUuHpDGGmbie5kLAWvfhioWe3eRwTmMscG',1,25,69), -- pwd : (x-agEa45g(x
-    ('27284156','Elizabeth','Landry','elandry@iut.univ-paris8.fr','06.95.79.29.73','$2b$12$07N6/uL89c13trWZsIkP8eXuMSw/kAC7an4KnfgkpQJR9.5pPPAgO',1,25,69), -- pwd : CM2?pV4<B=IM
-    ('18245627','Michael','Castillo','mcastillo@iut.univ-paris8.fr','06.20.78.12.58','$2b$12$EuMUkJussJvAUS3zMfDgdej.8C2Zws8pGIsgJp/2Q/74YFPBBFYBO',1,25,69), -- pwd : TAw-z0pcQmv>
-    ('88155359','Erika','Snyder','esnyder@iut.univ-paris8.fr','06.36.64.88.80','$2b$12$kAlfTQ9mtiJcHXKYYLPDGOFerB39LAXJWAAkCWIXu2JUaLEpIspLi',1,25,69), -- pwd : F#y0{gc;T`IV
-    ('25145392','Jeremy','Williamson','jwilliamson@iut.univ-paris8.fr','07.14.00.25.98','$2b$12$Pt4ChG3Cm30.DYNHbT1oXu2uCxd2ip2UP0w.7.V3HcWvkanm6o10C',1,25,113), -- pwd : $)M::;e]d4`6
-    ('13027716','Robyn','Johnson','rjohnson@iut.univ-paris8.fr','06.15.21.74.77','$2b$12$LyApIZA6SbPtQIFAzLrCV.OMvW6MlahFz5R8hM5Quxk.ROvfIwUD2',1,25,113), -- pwd : 3V,pX\^T*Sl[
-    ('94102933','Christopher','Hamilton','chamilton@iut.univ-paris8.fr','07.91.17.42.72','$2b$12$JzagGgLioTV1fQika47Ugu.qFpe9bJuWNEDri8ktkjTlw790/h1fO',1,25,113), -- pwd : "&_d<w7K?~lx
-    ('93935668','Barry','Lopez','blopez@iut.univ-paris8.fr','07.87.32.28.52','$2b$12$C5.511qKuQbIG./d78fnFO3UHRQ9a5xgnhlQc3AO8Z.P6FdvisCR6',1,25,113), -- pwd : qz0`cRAx!pXE
-    ('22531085','Robert','Walker','rwalker@iut.univ-paris8.fr','06.64.59.64.69','$2b$12$cdRuYZmRSB3kBGKhFM43FOBnyIwL0Be1aGjiTcXL3Af3EwPJmipMa',1,25,113), -- pwd : ClNK|z_;}3#K
-    ('22158281','Barbara','Davis','bdavis@iut.univ-paris8.fr','06.86.82.76.19','$2b$12$nBWEe3wa8KMPdlfjX3a/o.UNl49X9K8hucg.1ggdqSSJ3jY7YQkjW',1,25,113), -- pwd : B6FOG:]n~]vY
-    ('96334632','Wesley','Jacobson','wjacobson@iut.univ-paris8.fr','06.66.40.96.00','$2b$12$tHqHKqAjB4ZSDvRLrVguceyhHe4Na.KQ9diI1CTNPVpFIlbdYtXA6',1,25,113), -- pwd : l})8lK9n7/f"
-    ('10293812','James','Powell','jpowell@iut.univ-paris8.fr','07.46.20.64.85','$2b$12$4/vA.aUFYMhu56sFCya4EebIT1MaHFbYPdR7O7ZHupjtHbQmT5ynC',1,25,113), -- pwd : XMh48J>2v>i?
-    ('71363465','Cindy','Horn','chorn@iut.univ-paris8.fr','07.30.48.96.06','$2b$12$0wils5LGzmzTeJsAK6dLxuMXslMrCNhl3FvW1xG.mon96p3442ZDS',1,25,113), -- pwd : 9.;N;s$fs|aZ
-    ('45195055','James','Gray','jgray@iut.univ-paris8.fr','07.59.38.60.73','$2b$12$gdgyZXEYEDiKjGcIQRbCyOLLLkdZF7JDPVW9Vy/yZGJYGt1ih/ETu',1,25,113), -- pwd : =ci.8{scrP\V
-    ('48424760','Anthony','Swanson','aswanson@iut.univ-paris8.fr','07.17.25.49.34','$2b$12$XUvuTsj0UoHWQFoN5hEbMO6yUTUyOAya.CjfDJe8LTk1SDZQaohW.',1,3,3), -- pwd : [Gh!i-B+q-YM
-    ('52280873','Wayne','Gaines','wgaines@iut.univ-paris8.fr','06.84.04.42.43','$2b$12$GkWKENd1WVYrtAJB/ndOcuxb7WIAtakB0CYYmw63x0WeSWtc/NQf.',1,3,3), -- pwd : nizx5i^U,VO7
-    ('36276641','Frederick','Wood','fwood@iut.univ-paris8.fr','06.08.74.73.47','$2b$12$zno/VGI3oXZzg2S1wGfp/eYI/E1DP4cZFXDJWfXpAD4FR3BcphmYq',1,3,3), -- pwd : ~5m[LQ4Mm9SC
-    ('38614564','Ann','Mccormick','amccormick@iut.univ-paris8.fr','07.82.40.35.17','$2b$12$GKHooN5WZgp3iWXjjWVtBOtR6nVDwd7b9obGlqkUugQtAhqSOGvRC',1,3,3), -- pwd : En<1=i7*Neh)
-    ('23990390','Ashley','Cortez','acortez@iut.univ-paris8.fr','07.50.42.54.82','$2b$12$k9lXgT1G75lYeUMJfpGyOuFnhckH9RXgaNm7vKZEPSrXXwt1qPSyO',1,3,3), -- pwd : ,V[rx")TXaUZ
-    ('27457779','Lisa','Ellis','lellis@iut.univ-paris8.fr','06.31.80.35.39','$2b$12$kJMSCtgJZ1rZUkoLLNM4YuyciOCR3k3CCyZEYpxlklvZJEXbq2Cj.',1,3,3), -- pwd : 7FabBF\RLTM"
-    ('12796538','Traci','Johnston','tjohnston@iut.univ-paris8.fr','06.31.26.72.96','$2b$12$FDIAEzA9Ytz/Ab6YIrwbq.t.rxEYZRfLAqp1htGf6OTTOZf4OuWtq',1,3,3), -- pwd : nI@D6_#f1__V
-    ('67801338','Ricardo','Rojas','rrojas@iut.univ-paris8.fr','06.51.41.15.85','$2b$12$zU5Ngm3BoQbTTo6AbWNKu.mvPcGF3gwQMfYlQQ1.fYBTO56BhpKDW',1,3,3), -- pwd : ZS0B83MPr%"q
-    ('66446498','Kimberly','Flores','kflores@iut.univ-paris8.fr','07.62.01.73.65','$2b$12$o7Vn7j6RcXribAS22r6Qd.C5FXYyPnSEL9t3b6LPUwmsXBfwizUVW',1,3,3), -- pwd : rt[Sz)YolI|6
-    ('27438638','Gregory','Goodwin','ggoodwin@iut.univ-paris8.fr','07.56.62.94.06','$2b$12$62BfbWLeXibzCVS1IMl.B.DOx1nz88Lcbf58amPDfyAGoVp5H/086',1,3,3), -- pwd : dCzp=qm:+Dt`
-    ('64337415','Carlos','Conrad','cconrad@iut.univ-paris8.fr','06.81.64.27.21','$2b$12$NQjKO0OBm5D.t6RDPkKP/uyeSjaajsLW3ZOZHMbqBxPoUaN1UoPc2',1,3,47), -- pwd : ZtK?lRA4RQ`~
-    ('22293308','Joseph','Powell','jpowell@iut.univ-paris8.fr','07.26.89.16.77','$2b$12$ioLGiayw/KNTjYB0frgi2O8SkJfEq7rg.WHwktzFPRrOuqCgiNzG6',1,3,47), -- pwd : q!CWQXt!X?x+
-    ('10813885','Brandi','Wells','bwells@iut.univ-paris8.fr','07.05.03.05.92','$2b$12$PX5nvtDQlNPDB.NE3piY5O.o7y34bh40zoW.azXlrl5FBDi97pRaq',1,3,47), -- pwd : M:m?,i,5.0ef
-    ('89956259','Robyn','Smith','rsmith@iut.univ-paris8.fr','07.02.38.19.70','$2b$12$W.pjyuRKtP5tXk/BtuRC9uyXvpoDq923MEVmxm8IYQEosqB/n/xCC',1,3,47), -- pwd : $1dDB^FK*!\4
-    ('29094743','Valerie','Shelton','vshelton@iut.univ-paris8.fr','07.58.05.75.90','$2b$12$6u/vf7gHC8gHtEMSarGxgevr8et4dfYgAwm2RaJPNHPrPNzaqQws.',1,3,47), -- pwd : [)D^6az+tfGe
-    ('14270777','Jessica','Bates','jbates@iut.univ-paris8.fr','07.25.01.33.40','$2b$12$T9XalEbv6CSc98JRzdghXulTRuNiAuxONp0iVeUZQVAIJmZpl.ku6',1,3,47), -- pwd : CS`LhN$zIDdg
-    ('77616053','Manuel','Watson','mwatson@iut.univ-paris8.fr','07.90.85.54.50','$2b$12$8DCEtCfpojxJe6FNuJYgheghjOYeSMiYX69rz8pClMeRAkVRCYsuu',1,3,47), -- pwd : V2tK,a~}k5Ej
-    ('04394464','Guy','Castaneda','gcastaneda@iut.univ-paris8.fr','07.92.33.27.28','$2b$12$wENGMHkwMgxi1KBzfEOXp.axi5LbRvxyQfPQU8SCLHjA4WQeDLZBa',1,3,47), -- pwd : wP@qb+bh.<^U
-    ('30720424','Melissa','Richardson','mrichardson@iut.univ-paris8.fr','07.16.13.60.70','$2b$12$4bM08tovGjPsFg/C3GCcguqgzWBWGbgtb6FKa9mBPNCVBblS1/QNe',1,3,47), -- pwd : f*p`%Krq%>k4
-    ('75982316','Paula','Huynh','phuynh@iut.univ-paris8.fr','07.61.62.31.69','$2b$12$HoZIdqx8KR41rmy/vhE.iO..0fOSOyLI/RFbjQs7TM8cluj2hyWlq',1,3,47), -- pwd : xAfs[CsMx@_/
-    ('55323829','Kathleen','Mcdaniel','kmcdaniel@iut.univ-paris8.fr','06.45.60.40.38','$2b$12$aZDGnkko2M6N3IdAFGAXFuuK6WPaAG/q9cRsRO/4JBXjQTA8naKMa',1,3,91), -- pwd : LatW$Q?>]]a.
-    ('61120570','Angelica','Nicholson','anicholson@iut.univ-paris8.fr','07.95.54.52.05','$2b$12$HOcs3SVZEsRjkQFIrCXzNur.t/qlNbUDohaA5m7b6UTPHIC6d3URG',1,3,91), -- pwd : VuKe$T"(BS9h
-    ('74044493','John','Chapman','jchapman@iut.univ-paris8.fr','07.05.02.64.51','$2b$12$gCaErJinx1bHH5Nx9muXkuaV4iShqpKNBQyXN6AotoI655rVJVXdG',1,3,91), -- pwd : 6_$n;>_XeC8F
-    ('90489360','Felicia','James','fjames@iut.univ-paris8.fr','06.55.96.63.89','$2b$12$aS0pC.S2LEND7t5rrSQDgOIcb7BTjSDFwn2R3RJH02XRWcNRVd9ni',1,3,91), -- pwd : ~";vuqD[xZ`Z
-    ('04095208','John','Goodman','jgoodman@iut.univ-paris8.fr','07.80.07.80.47','$2b$12$HY8VD/g6vHDdhorS/BgCqOv9QNmb30Ovh6YfjxyfT8UXKrhz8ZHJW',1,3,91), -- pwd : O)Atee'.Ss.j
-    ('20157670','Billy','Booth','bbooth@iut.univ-paris8.fr','06.27.51.86.13','$2b$12$RuqoeIYzMaL/gZ94XDvnouBgiqcs8de2IJkWytTBnN5xZOAFWCT5y',1,3,91), -- pwd : 7wZZ/jz0pQd8
-    ('29208040','Edward','Johnson','ejohnson@iut.univ-paris8.fr','07.31.41.25.26','$2b$12$mAhFO9JMp6g4PthYuKty9.s5iY2e/owtwaOSbNWXI/4cLeq3R641O',1,3,91), -- pwd : lSc?3xAQWUdL
-    ('96999194','Cynthia','Miller','cmiller@iut.univ-paris8.fr','06.82.46.48.57','$2b$12$jG8jYKCLgt9a7NVfeNuT6ONtpZ2mnkRhzujzpKaqmPCMke/Lauivm',1,3,91), -- pwd : u8FDX-yPX`Kz
-    ('10074649','Melanie','Gutierrez','mgutierrez@iut.univ-paris8.fr','07.76.04.13.22','$2b$12$7iaOM5i61xNgMVoSJQn6LeCvoPynLnvkoaEUDXNngU01QkLpo8uVi',1,3,91), -- pwd : uFLCMxWX6o]2
-    ('66670102','Emily','Ward','eward@iut.univ-paris8.fr','07.29.88.61.58','$2b$12$pVpBuHbM4XL5lxSTvIBQS..imlXp9FVry5s1gRTB9UnCfT4Ldue/u',1,3,91) -- pwd : aR6zp56FE9{S
+    ('65857267', 'Yujiro', 'Hanma', 'yhanma@iut.univ-paris8.fr', '07.76.01.23.29', 'yhanma', 1, 15, 15), -- username : yhanma 
+    ('26211358', 'Baki', 'Hanma', 'bhanma@iut.univ-paris8.fr', '07.24.20.80.26', 'bhanma', 1, 15, 15), -- username : bhanma 
+    ('68294080', 'Christine', 'Brown', 'cbrown1@iut.univ-paris8.fr', '06.55.09.93.34', 'cbrown1', 1, 15, 15), -- username : cbrown1 
+    ('70518598', 'Jeffery', 'Gross', 'jgross@iut.univ-paris8.fr', '06.42.67.36.18', 'jgross', 1, 15, 15), -- username : jgross 
+    ('71530085', 'Craig', 'Russell', 'crussell@iut.univ-paris8.fr', '06.59.53.18.00', 'crussell', 1, 15, 15), -- username : crussell 
+    ('89352328', 'Laura', 'Gregory', 'lgregory@iut.univ-paris8.fr', '06.54.56.02.04', 'lgregory', 1, 15, 15), -- username : lgregory 
+    ('73388259', 'Vincent', 'Fisher', 'vfisher@iut.univ-paris8.fr', '06.20.01.39.30', 'vfisher', 1, 15, 15), -- username : vfisher 
+    ('55571619', 'Adrian', 'Vasquez', 'avasquez1@iut.univ-paris8.fr', '06.75.46.29.93', 'avasquez1', 1, 15, 15), -- username : avasquez1 
+    ('93243283', 'Lauren', 'Miller', 'lmiller@iut.univ-paris8.fr', '06.70.85.39.54', 'lmiller', 1, 15, 15), -- username : lmiller 
+    ('15382554', 'Jamie', 'Jackson', 'jjackson3@iut.univ-paris8.fr', '07.39.17.17.12', 'jjackson3', 1, 15, 15), -- username : jjackson3 
+    ('74935450', 'Alexandra', 'Hamilton', 'ahamilton@iut.univ-paris8.fr', '06.85.31.21.60', 'ahamilton', 1, 15, 59), -- username : ahamilton 
+    ('16106025', 'Kristen', 'Robinson', 'krobinson1@iut.univ-paris8.fr', '07.18.42.16.10', 'krobinson1', 1, 15, 59), -- username : krobinson1 
+    ('99270479', 'Grant', 'Smith', 'gsmith@iut.univ-paris8.fr', '07.79.87.78.43', 'gsmith', 1, 15, 59), -- username : gsmith 
+    ('96677459', 'Bobby', 'Nelson', 'bnelson@iut.univ-paris8.fr', '07.09.12.11.85', 'bnelson', 1, 15, 59), -- username : bnelson 
+    ('57045266', 'Laura', 'Olson', 'lolson@iut.univ-paris8.fr', '06.92.70.92.97', 'lolson', 1, 15, 59), -- username : lolson 
+    ('05879612', 'Sherry', 'Smith', 'ssmith1@iut.univ-paris8.fr', '06.27.80.21.57', 'ssmith1', 1, 15, 59), -- username : ssmith1 
+    ('92734986', 'David', 'Warner', 'dwarner@iut.univ-paris8.fr', '07.98.31.81.18', 'dwarner', 1, 15, 59), -- username : dwarner 
+    ('84459738', 'Kenneth', 'Stewart', 'kstewart@iut.univ-paris8.fr', '06.07.27.70.17', 'kstewart', 1, 15, 59), -- username : kstewart 
+    ('56827659', 'Jeremy', 'Brown', 'jbrown2@iut.univ-paris8.fr', '06.98.66.49.23', 'jbrown2', 1, 15, 59), -- username : jbrown2 
+    ('42052066', 'Jennifer', 'Mitchell', 'jmitchell@iut.univ-paris8.fr', '07.53.40.75.40', 'jmitchell', 1, 15, 59), -- username : jmitchell 
+    ('08341526', 'Matthew', 'Bradley', 'mbradley@iut.univ-paris8.fr', '06.68.36.75.31', 'mbradley', 1, 15, 103), -- username : mbradley 
+    ('11241892', 'Kevin', 'Ward', 'kward@iut.univ-paris8.fr', '06.28.91.74.20', 'kward', 1, 15, 103), -- username : kward 
+    ('65772919', 'Jason', 'Zamora', 'jzamora@iut.univ-paris8.fr', '07.74.72.14.06', 'jzamora', 1, 15, 103), -- username : jzamora 
+    ('16487090', 'Martin', 'Humphrey', 'mhumphrey@iut.univ-paris8.fr', '07.24.67.74.65', 'mhumphrey', 1, 15, 103), -- username : mhumphrey 
+    ('47277510', 'Mark', 'Johnson', 'mjohnson2@iut.univ-paris8.fr', '07.22.88.94.55', 'mjohnson2', 1, 15, 103), -- username : mjohnson2 
+    ('34787446', 'Travis', 'Hopkins', 'thopkins@iut.univ-paris8.fr', '07.06.47.39.54', 'thopkins', 1, 15, 103), -- username : thopkins 
+    ('90625942', 'Brandon', 'Cobb', 'bcobb@iut.univ-paris8.fr', '06.50.59.61.52', 'bcobb', 1, 15, 103), -- username : bcobb 
+    ('82676250', 'Zachary', 'Simmons', 'zsimmons@iut.univ-paris8.fr', '06.00.57.70.06', 'zsimmons', 1, 15, 103), -- username : zsimmons 
+    ('99932870', 'Samantha', 'White', 'swhite1@iut.univ-paris8.fr', '07.69.23.17.25', 'swhite1', 1, 15, 103), -- username : swhite1 
+    ('17814527', 'Lauren', 'Beard', 'lbeard@iut.univ-paris8.fr', '07.70.07.87.83', 'lbeard', 1, 15, 103), -- username : lbeard 
+    ('61291902', 'Timothy', 'Bauer', 'tbauer@iut.univ-paris8.fr', '06.42.06.78.03', 'tbauer', 1, 13, 13), -- username : tbauer 
+    ('87898875', 'John', 'Stevens', 'jstevens@iut.univ-paris8.fr', '07.99.04.64.44', 'jstevens', 1, 13, 13), -- username : jstevens 
+    ('74570494', 'Matthew', 'Garcia', 'mgarcia1@iut.univ-paris8.fr', '06.70.26.44.84', 'mgarcia1', 1, 13, 13), -- username : mgarcia1 
+    ('11983616', 'Debbie', 'Griffith', 'dgriffith1@iut.univ-paris8.fr', '07.77.81.61.16', 'dgriffith1', 1, 13, 13), -- username : dgriffith1 
+    ('85839074', 'Patricia', 'Miller', 'pmiller1@iut.univ-paris8.fr', '07.71.38.48.33', 'pmiller1', 1, 13, 13), -- username : pmiller1 
+    ('02558325', 'Connor', 'Scott', 'cscott@iut.univ-paris8.fr', '06.53.76.78.28', 'cscott', 1, 13, 13), -- username : cscott 
+    ('12457808', 'Angela', 'White', 'awhite1@iut.univ-paris8.fr', '07.61.13.16.08', 'awhite1', 1, 13, 13), -- username : awhite1 
+    ('47156601', 'Shannon', 'Ball', 'sball@iut.univ-paris8.fr', '07.62.47.09.83', 'sball', 1, 13, 13), -- username : sball 
+    ('79123117', 'Michael', 'Jennings', 'mjennings@iut.univ-paris8.fr', '06.06.86.76.71', 'mjennings', 1, 13, 13), -- username : mjennings 
+    ('00111812', 'Alexander', 'Roth', 'aroth@iut.univ-paris8.fr', '06.74.01.28.30', 'aroth', 1, 13, 13), -- username : aroth 
+    ('30092089', 'Ryan', 'Rivera', 'rrivera@iut.univ-paris8.fr', '07.31.62.15.92', 'rrivera', 1, 13, 57), -- username : rrivera 
+    ('29991330', 'Ernest', 'Richard', 'erichard@iut.univ-paris8.fr', '06.74.59.19.69', 'erichard', 1, 13, 57), -- username : erichard 
+    ('91425260', 'Mary', 'Gutierrez', 'mgutierrez1@iut.univ-paris8.fr', '06.40.61.42.22', 'mgutierrez1', 1, 13, 57), -- username : mgutierrez1 
+    ('78527635', 'Daniel', 'Stein', 'dstein@iut.univ-paris8.fr', '07.96.54.81.26', 'dstein', 1, 13, 57), -- username : dstein 
+    ('41616270', 'Marvin', 'Patel', 'mpatel@iut.univ-paris8.fr', '07.32.79.08.65', 'mpatel', 1, 13, 57), -- username : mpatel 
+    ('38271798', 'Christopher', 'Gray', 'cgray@iut.univ-paris8.fr', '06.58.41.18.76', 'cgray', 1, 13, 57), -- username : cgray 
+    ('96423171', 'Lisa', 'Williams', 'lwilliams1@iut.univ-paris8.fr', '06.27.69.05.91', 'lwilliams1', 1, 13, 57), -- username : lwilliams1 
+    ('63187888', 'Sonia', 'Hall', 'shall@iut.univ-paris8.fr', '06.09.18.08.56', 'shall', 1, 13, 57), -- username : shall 
+    ('94359465', 'Mary', 'Watson', 'mwatson1@iut.univ-paris8.fr', '06.33.58.86.98', 'mwatson1', 1, 13, 57), -- username : mwatson1 
+    ('29310058', 'Derrick', 'Gonzalez', 'dgonzalez@iut.univ-paris8.fr', '06.28.12.40.53', 'dgonzalez', 1, 13, 57), -- username : dgonzalez 
+    ('54031514', 'Alicia', 'Robinson', 'arobinson@iut.univ-paris8.fr', '06.07.11.42.31', 'arobinson', 1, 13, 101), -- username : arobinson 
+    ('02652655', 'Debbie', 'Kane', 'dkane@iut.univ-paris8.fr', '06.10.87.13.50', 'dkane', 1, 13, 101), -- username : dkane 
+    ('34767318', 'Andrew', 'Klein', 'aklein1@iut.univ-paris8.fr', '07.44.71.53.82', 'aklein1', 1, 13, 101), -- username : aklein1 
+    ('73424439', 'Patrick', 'Obrien', 'pobrien@iut.univ-paris8.fr', '07.19.10.00.21', 'pobrien', 1, 13, 101), -- username : pobrien 
+    ('21527621', 'Cynthia', 'Foley', 'cfoley@iut.univ-paris8.fr', '07.17.60.87.85', 'cfoley', 1, 13, 101), -- username : cfoley 
+    ('74714761', 'Juan', 'Garcia', 'jgarcia1@iut.univ-paris8.fr', '07.56.73.31.77', 'jgarcia1', 1, 13, 101), -- username : jgarcia1 
+    ('92059001', 'Sabrina', 'Brown', 'sbrown@iut.univ-paris8.fr', '07.01.87.05.24', 'sbrown', 1, 13, 101), -- username : sbrown 
+    ('68674097', 'Marcus', 'Skinner', 'mskinner@iut.univ-paris8.fr', '07.56.96.95.00', 'mskinner', 1, 13, 101), -- username : mskinner 
+    ('19913242', 'Michael', 'Fowler', 'mfowler@iut.univ-paris8.fr', '07.49.92.62.19', 'mfowler', 1, 13, 101), -- username : mfowler 
+    ('38601147', 'Dwayne', 'Morrison', 'dmorrison@iut.univ-paris8.fr', '07.76.90.33.65', 'dmorrison', 1, 13, 101), -- username : dmorrison 
+    ('09500750', 'Nicole', 'White', 'nwhite@iut.univ-paris8.fr', '06.77.86.99.06', 'nwhite', 1, 14, 14), -- username : nwhite 
+    ('00642225', 'Kristin', 'Johnson', 'kjohnson1@iut.univ-paris8.fr', '07.07.62.56.15', 'kjohnson1', 1, 14, 14), -- username : kjohnson1 
+    ('56066929', 'Donald', 'Santos', 'dsantos@iut.univ-paris8.fr', '06.46.29.97.13', 'dsantos', 1, 14, 14), -- username : dsantos 
+    ('23546788', 'Donna', 'Foster', 'dfoster@iut.univ-paris8.fr', '07.71.41.54.06', 'dfoster', 1, 14, 14), -- username : dfoster 
+    ('22048201', 'James', 'Smith', 'jsmith4@iut.univ-paris8.fr', '07.77.92.14.18', 'jsmith4', 1, 14, 14), -- username : jsmith4 
+    ('40438249', 'James', 'Santiago', 'jsantiago@iut.univ-paris8.fr', '07.54.61.55.30', 'jsantiago', 1, 14, 14), -- username : jsantiago 
+    ('37107617', 'Gary', 'Martin', 'gmartin@iut.univ-paris8.fr', '06.79.71.94.17', 'gmartin', 1, 14, 14), -- username : gmartin 
+    ('52859475', 'Kari', 'Williams', 'kwilliams@iut.univ-paris8.fr', '07.48.68.17.77', 'kwilliams', 1, 14, 14), -- username : kwilliams 
+    ('69993633', 'Michael', 'Henry', 'mhenry@iut.univ-paris8.fr', '06.65.90.84.20', 'mhenry', 1, 14, 14), -- username : mhenry 
+    ('70190947', 'Shawn', 'Velez', 'svelez1@iut.univ-paris8.fr', '06.71.16.12.20', 'svelez1', 1, 14, 14), -- username : svelez1 
+    ('33834534', 'Lori', 'Jennings', 'ljennings@iut.univ-paris8.fr', '07.37.27.73.40', 'ljennings', 1, 14, 58), -- username : ljennings 
+    ('38495728', 'Michael', 'Davis', 'mdavis2@iut.univ-paris8.fr', '07.69.12.55.37', 'mdavis2', 1, 14, 58), -- username : mdavis2 
+    ('08854418', 'Ryan', 'Reeves', 'rreeves@iut.univ-paris8.fr', '07.30.64.71.18', 'rreeves', 1, 14, 58), -- username : rreeves 
+    ('74349205', 'Jenna', 'Jackson', 'jjackson2@iut.univ-paris8.fr', '07.65.10.03.09', 'jjackson2', 1, 14, 58), -- username : jjackson2
+    ('14349828', 'Sherry', 'Kemp', 'skemp@iut.univ-paris8.fr', '06.06.38.67.24', 'skemp', 1, 14, 58), -- username : skemp 
+    ('13584401', 'James', 'Peters', 'jpeters@iut.univ-paris8.fr', '06.16.30.18.43', 'jpeters', 1, 14, 58), -- username : jpeters 
+    ('86321711', 'Kristy', 'Hunt', 'khunt@iut.univ-paris8.fr', '07.59.87.89.80', 'khunt', 1, 14, 58), -- username : khunt 
+    ('02492664', 'Mark', 'Dudley', 'mdudley@iut.univ-paris8.fr', '06.98.31.75.95', 'mdudley', 1, 14, 58), -- username : mdudley 
+    ('81833335', 'Andrew', 'Vasquez', 'avasquez@iut.univ-paris8.fr', '06.17.12.46.78', 'avasquez', 1, 14, 58), -- username : avasquez 
+    ('90527699', 'Kelly', 'Doyle', 'kdoyle@iut.univ-paris8.fr', '06.43.04.39.67', 'kdoyle', 1, 14, 58), -- username : kdoyle 
+    ('86912725', 'Roy', 'Clarke', 'rclarke@iut.univ-paris8.fr', '06.18.81.48.97', 'rclarke', 1, 14, 102), -- username : rclarke 
+    ('54596217', 'Heidi', 'Moore', 'hmoore1@iut.univ-paris8.fr', '07.46.34.48.14', 'hmoore1', 1, 14, 102), -- username : hmoore1 
+    ('42729938', 'Kayla', 'Cox', 'kcox@iut.univ-paris8.fr', '07.13.96.35.27', 'kcox', 1, 14, 102), -- username : kcox 
+    ('38329565', 'Anne', 'Willis', 'awillis1@iut.univ-paris8.fr', '07.14.72.24.78', 'awillis1', 1, 14, 102), -- username : awillis1 
+    ('00568988', 'Joyce', 'Skinner', 'jskinner@iut.univ-paris8.fr', '06.87.76.33.60', 'jskinner', 1, 14, 102), -- username : jskinner 
+    ('20218411', 'Andrea', 'James', 'ajames@iut.univ-paris8.fr', '06.12.61.09.81', 'ajames', 1, 14, 102), -- username : ajames 
+    ('45184670', 'Jamie', 'Maddox', 'jmaddox@iut.univ-paris8.fr', '06.94.71.10.41', 'jmaddox', 1, 14, 102), -- username : jmaddox 
+    ('87850228', 'Jerry', 'Cooley', 'jcooley@iut.univ-paris8.fr', '07.19.57.29.72', 'jcooley', 1, 14, 102), -- username : jcooley 
+    ('73785487', 'Stacy', 'Gould', 'sgould@iut.univ-paris8.fr', '06.54.37.92.66', 'sgould', 1, 14, 102), -- username : sgould 
+    ('16520846', 'Ralph', 'Peters', 'rpeters@iut.univ-paris8.fr', '07.73.44.41.91', 'rpeters', 1, 14, 102), -- username : rpeters 
+    ('72229698', 'Laura', 'White', 'lwhite1@iut.univ-paris8.fr', '07.59.03.02.68', 'lwhite1', 1, 2, 2), -- username : lwhite1 
+    ('30978751', 'Christopher', 'Gonzalez', 'cgonzalez@iut.univ-paris8.fr', '07.38.72.68.78', 'cgonzalez', 1, 2, 2), -- username : cgonzalez 
+    ('82621157', 'Sarah', 'Jordan', 'sjordan1@iut.univ-paris8.fr', '06.24.38.84.24', 'sjordan1', 1, 2, 2), -- username : sjordan1 
+    ('09485438', 'James', 'Love', 'jlove@iut.univ-paris8.fr', '06.15.20.80.36', 'jlove', 1, 2, 2), -- username : jlove 
+    ('28816470', 'Levi', 'Heath', 'lheath@iut.univ-paris8.fr', '07.21.04.46.53', 'lheath', 1, 2, 2), -- username : lheath 
+    ('82031888', 'Brandy', 'Ramos', 'bramos@iut.univ-paris8.fr', '06.99.68.56.46', 'bramos', 1, 2, 2), -- username : bramos 
+    ('65572328', 'Daniel', 'Brown', 'dbrown1@iut.univ-paris8.fr', '07.12.92.94.71', 'dbrown1', 1, 2, 2), -- username : dbrown1 
+    ('54838849', 'Mark', 'Phillips', 'mphillips@iut.univ-paris8.fr', '06.24.88.10.27', 'mphillips', 1, 2, 2), -- username : mphillips 
+    ('81411527', 'Larry', 'Jackson', 'ljackson@iut.univ-paris8.fr', '07.30.59.03.13', 'ljackson', 1, 2, 2), -- username : ljackson 
+    ('34084059', 'Donald', 'Smith', 'dsmith2@iut.univ-paris8.fr', '06.37.46.64.08', 'dsmith2', 1, 2, 2), -- username : dsmith2 
+    ('39262602', 'Patricia', 'Klein', 'pklein@iut.univ-paris8.fr', '06.43.62.51.81', 'pklein', 1, 2, 46), -- username : pklein 
+    ('40199913', 'Jonathan', 'Martinez', 'jmartinez@iut.univ-paris8.fr', '07.72.99.88.41', 'jmartinez', 1, 2, 46), -- username : jmartinez 
+    ('21700930', 'Jesse', 'Reynolds', 'jreynolds@iut.univ-paris8.fr', '07.70.37.78.75', 'jreynolds', 1, 2, 46), -- username : jreynolds 
+    ('52613544', 'Caleb', 'Jarvis', 'cjarvis@iut.univ-paris8.fr', '06.01.14.37.59', 'cjarvis', 1, 2, 46), -- username : cjarvis 
+    ('25405560', 'Annette', 'Cook', 'acook@iut.univ-paris8.fr', '07.78.61.33.89', 'acook', 1, 2, 46), -- username : acook 
+    ('01698392', 'Renee', 'Gonzales', 'rgonzales@iut.univ-paris8.fr', '07.87.87.99.96', 'rgonzales', 1, 2, 46), -- username : rgonzales 
+    ('25772667', 'Laura', 'Campbell', 'lcampbell1@iut.univ-paris8.fr', '06.33.13.09.83', 'lcampbell1', 1, 2, 46), -- username : lcampbell1 
+    ('65456495', 'Angela', 'Perry', 'aperry1@iut.univ-paris8.fr', '07.70.39.37.19', 'aperry1', 1, 2, 46), -- username : aperry1 
+    ('62175240', 'John', 'Johnston', 'jjohnston@iut.univ-paris8.fr', '06.70.24.87.85', 'jjohnston', 1, 2, 46), -- username : jjohnston 
+    ('16208979', 'Stephanie', 'Gordon', 'sgordon@iut.univ-paris8.fr', '06.08.90.26.61', 'sgordon', 1, 2, 46), -- username : sgordon 
+    ('17874761', 'Cynthia', 'Sanchez', 'csanchez@iut.univ-paris8.fr', '06.29.39.13.19', 'csanchez', 1, 2, 90), -- username : csanchez 
+    ('44961166', 'Laura', 'Shelton', 'lshelton@iut.univ-paris8.fr', '06.22.20.55.04', 'lshelton', 1, 2, 90), -- username : lshelton 
+    ('98873456', 'Angela', 'Adams', 'aadams2@iut.univ-paris8.fr', '07.40.50.34.95', 'aadams2', 1, 2, 90), -- username : aadams2 
+    ('73208753', 'Raymond', 'Williams', 'rwilliams@iut.univ-paris8.fr', '07.82.11.62.69', 'rwilliams', 1, 2, 90), -- username : rwilliams 
+    ('56108136', 'Linda', 'Mcdonald', 'lmcdonald@iut.univ-paris8.fr', '07.21.54.71.63', 'lmcdonald', 1, 2, 90), -- username : lmcdonald 
+    ('56645338', 'Chelsea', 'Johnston', 'cjohnston@iut.univ-paris8.fr', '07.33.25.77.86', 'cjohnston', 1, 2, 90), -- username : cjohnston 
+    ('17543274', 'Jason', 'Smith', 'jsmith3@iut.univ-paris8.fr', '07.35.85.84.76', 'jsmith3', 1, 2, 90), -- username : jsmith3 
+    ('21116224', 'Brandi', 'Coffey', 'bcoffey@iut.univ-paris8.fr', '07.67.24.60.31', 'bcoffey', 1, 2, 90), -- username : bcoffey 
+    ('31710493', 'Robert', 'Edwards', 'redwards@iut.univ-paris8.fr', '06.60.49.54.48', 'redwards', 1, 2, 90), -- username : redwards 
+    ('51137848', 'Stephanie', 'Sanders', 'ssanders@iut.univ-paris8.fr', '06.34.51.50.91', 'ssanders', 1, 2, 90), -- username : ssanders 
+    ('19499037', 'Jonathan', 'Luna', 'jluna@iut.univ-paris8.fr', '07.12.58.81.51', 'jluna', 1, 3, 3), -- username : jluna 
+    ('77604399', 'Alexander', 'Goodwin', 'agoodwin@iut.univ-paris8.fr', '07.23.78.59.17', 'agoodwin', 1, 3, 3), -- username : agoodwin 
+    ('47884030', 'Douglas', 'Rodriguez', 'drodriguez1@iut.univ-paris8.fr', '06.35.43.89.96', 'drodriguez1', 1, 3, 3), -- username : drodriguez1 
+    ('65934134', 'Joel', 'Stewart', 'jstewart2@iut.univ-paris8.fr', '07.43.81.46.68', 'jstewart2', 1, 3, 3), -- username : jstewart2 
+    ('53205042', 'Todd', 'Bradford', 'tbradford@iut.univ-paris8.fr', '07.24.08.31.87', 'tbradford', 1, 3, 3), -- username : tbradford 
+    ('32717464', 'Stephanie', 'Schroeder', 'sschroeder@iut.univ-paris8.fr', '07.87.29.71.51', 'sschroeder', 1, 3, 3), -- username : sschroeder 
+    ('64988521', 'Lori', 'Wilkerson', 'lwilkerson@iut.univ-paris8.fr', '06.57.21.59.79', 'lwilkerson', 1, 3, 3), -- username : lwilkerson 
+    ('83889933', 'Kathleen', 'Thompson', 'kthompson@iut.univ-paris8.fr', '07.12.76.36.26', 'kthompson', 1, 3, 3), -- username : kthompson 
+    ('97991178', 'Cathy', 'Berry', 'cberry@iut.univ-paris8.fr', '06.02.05.86.32', 'cberry', 1, 3, 3), -- username : cberry 
+    ('39805609', 'Jill', 'Morales', 'jmorales@iut.univ-paris8.fr', '06.10.91.15.31', 'jmorales', 1, 3, 3), -- username : jmorales 
+    ('81511681', 'Steven', 'Hoffman', 'shoffman@iut.univ-paris8.fr', '07.68.29.11.34', 'shoffman', 1, 3, 47), -- username : shoffman 
+    ('37955110', 'Jesse', 'Meadows', 'jmeadows1@iut.univ-paris8.fr', '06.53.02.53.39', 'jmeadows1', 1, 3, 47), -- username : jmeadows1 
+    ('04860278', 'Christopher', 'Joyce', 'cjoyce@iut.univ-paris8.fr', '06.35.62.24.19', 'cjoyce', 1, 3, 47), -- username : cjoyce 
+    ('52355521', 'Melissa', 'Winters', 'mwinters@iut.univ-paris8.fr', '06.50.82.02.53', 'mwinters', 1, 3, 47), -- username : mwinters 
+    ('81757963', 'Olivia', 'Jackson', 'ojackson@iut.univ-paris8.fr', '06.58.75.02.22', 'ojackson', 1, 3, 47), -- username : ojackson 
+    ('57669106', 'Barry', 'Robinson', 'brobinson@iut.univ-paris8.fr', '06.06.79.04.05', 'brobinson', 1, 3, 47), -- username : brobinson 
+    ('84747211', 'Anthony', 'Turner', 'aturner@iut.univ-paris8.fr', '07.41.46.71.00', 'aturner', 1, 3, 47), -- username : aturner 
+    ('47989975', 'Jessica', 'Anderson', 'janderson@iut.univ-paris8.fr', '07.24.78.56.69', 'janderson', 1, 3, 47), -- username : janderson 
+    ('15672397', 'Katie', 'Garcia', 'kgarcia2@iut.univ-paris8.fr', '06.54.94.94.51', 'kgarcia2', 1, 3, 47), -- username : kgarcia2 
+    ('03779068', 'Daniel', 'Elliott', 'delliott@iut.univ-paris8.fr', '06.67.51.99.47', 'delliott', 1, 3, 47), -- username : delliott 
+    ('20237532', 'Frederick', 'Hunter', 'fhunter@iut.univ-paris8.fr', '07.53.65.75.28', 'fhunter', 1, 3, 91), -- username : fhunter 
+    ('43302558', 'Brandon', 'Gonzalez', 'bgonzalez1@iut.univ-paris8.fr', '06.96.67.33.99', 'bgonzalez1', 1, 3, 91), -- username : bgonzalez1 
+    ('34868036', 'Christina', 'Cameron', 'ccameron@iut.univ-paris8.fr', '06.95.41.15.66', 'ccameron', 1, 3, 91), -- username : ccameron 
+    ('57646436', 'Felicia', 'Lopez', 'flopez@iut.univ-paris8.fr', '07.53.74.44.20', 'flopez', 1, 3, 91), -- username : flopez 
+    ('23859280', 'Wendy', 'Ponce', 'wponce@iut.univ-paris8.fr', '06.40.66.89.32', 'wponce', 1, 3, 91), -- username : wponce 
+    ('43967778', 'Joshua', 'Ramirez', 'jramirez@iut.univ-paris8.fr', '07.10.12.66.89', 'jramirez', 1, 3, 91), -- username : jramirez 
+    ('47700084', 'Michael', 'Burton', 'mburton@iut.univ-paris8.fr', '06.32.31.33.20', 'mburton', 1, 3, 91), -- username : mburton 
+    ('99600919', 'Anthony', 'Nolan', 'anolan@iut.univ-paris8.fr', '07.99.43.63.54', 'anolan', 1, 3, 91), -- username : anolan 
+    ('31019697', 'Mark', 'Conner', 'mconner@iut.univ-paris8.fr', '06.27.50.02.67', 'mconner', 1, 3, 91), -- username : mconner 
+    ('12734102', 'James', 'Howard', 'jhoward1@iut.univ-paris8.fr', '07.76.76.32.58', 'jhoward1', 1, 3, 91), -- username : jhoward1 
+    ('51634363', 'Christina', 'Nguyen', 'cnguyen@iut.univ-paris8.fr', '06.01.92.36.00', 'cnguyen', 1, 1, 1), -- username : cnguyen 
+    ('89453839', 'Nichole', 'Kaiser', 'nkaiser@iut.univ-paris8.fr', '07.87.08.49.26', 'nkaiser', 1, 1, 1), -- username : nkaiser 
+    ('61699350', 'Stacy', 'Craig', 'scraig@iut.univ-paris8.fr', '06.12.23.69.02', 'scraig', 1, 1, 1), -- username : scraig 
+    ('23356490', 'Sarah', 'Osborne', 'sosborne@iut.univ-paris8.fr', '06.79.89.72.48', 'sosborne', 1, 1, 1), -- username : sosborne 
+    ('36180693', 'Joseph', 'Hendrix', 'jhendrix@iut.univ-paris8.fr', '07.88.41.96.48', 'jhendrix', 1, 1, 1), -- username : jhendrix 
+    ('12992605', 'Dale', 'Reed', 'dreed@iut.univ-paris8.fr', '07.61.73.58.98', 'dreed', 1, 1, 1), -- username : dreed 
+    ('69484518', 'Mary', 'Butler', 'mbutler@iut.univ-paris8.fr', '07.86.85.35.27', 'mbutler', 1, 1, 1), -- username : mbutler 
+    ('23720050', 'Edwin', 'Fischer', 'efischer@iut.univ-paris8.fr', '06.21.61.58.79', 'efischer', 1, 1, 1), -- username : efischer 
+    ('63174696', 'Kaylee', 'Castillo', 'kcastillo@iut.univ-paris8.fr', '06.48.96.14.31', 'kcastillo', 1, 1, 1), -- username : kcastillo 
+    ('22189532', 'Courtney', 'Carter', 'ccarter2@iut.univ-paris8.fr', '06.34.28.92.92', 'ccarter2', 1, 1, 1), -- username : ccarter2 
+    ('70368688', 'Krista', 'Kent', 'kkent@iut.univ-paris8.fr', '06.07.68.41.86', 'kkent', 1, 1, 45), -- username : kkent 
+    ('87346382', 'Holly', 'Johnson', 'hjohnson@iut.univ-paris8.fr', '06.70.69.13.56', 'hjohnson', 1, 1, 45), -- username : hjohnson 
+    ('17147542', 'Chad', 'Dixon', 'cdixon@iut.univ-paris8.fr', '06.36.37.86.57', 'cdixon', 1, 1, 45), -- username : cdixon 
+    ('84537858', 'Angela', 'Mccarthy', 'amccarthy@iut.univ-paris8.fr', '06.42.96.03.03', 'amccarthy', 1, 1, 45), -- username : amccarthy 
+    ('53688242', 'William', 'Nguyen', 'wnguyen@iut.univ-paris8.fr', '06.82.09.97.33', 'wnguyen', 1, 1, 45), -- username : wnguyen 
+    ('42300921', 'Michael', 'Chang', 'mchang@iut.univ-paris8.fr', '06.37.84.46.87', 'mchang', 1, 1, 45), -- username : mchang 
+    ('18997480', 'Kristin', 'Parks', 'kparks@iut.univ-paris8.fr', '07.13.73.76.80', 'kparks', 1, 1, 45), -- username : kparks 
+    ('03317942', 'Jennifer', 'Stephens', 'jstephens1@iut.univ-paris8.fr', '07.02.08.10.35', 'jstephens1', 1, 1, 45), -- username : jstephens1 
+    ('60267872', 'Rachel', 'Merritt', 'rmerritt@iut.univ-paris8.fr', '07.39.59.54.05', 'rmerritt', 1, 1, 45), -- username : rmerritt 
+    ('20805439', 'Cory', 'Smith', 'csmith1@iut.univ-paris8.fr', '06.29.28.61.85', 'csmith1', 1, 1, 45), -- username : csmith1 
+    ('22299182', 'Robin', 'Brown', 'rbrown1@iut.univ-paris8.fr', '06.92.75.86.36', 'rbrown1', 1, 1, 89), -- username : rbrown1 
+    ('60353886', 'Cheryl', 'Simpson', 'csimpson@iut.univ-paris8.fr', '06.03.83.68.89', 'csimpson', 1, 1, 89), -- username : csimpson 
+    ('59904869', 'Mark', 'Carson', 'mcarson@iut.univ-paris8.fr', '06.63.10.91.78', 'mcarson', 1, 1, 89), -- username : mcarson 
+    ('59032188', 'Jason', 'Johnson', 'jjohnson1@iut.univ-paris8.fr', '06.79.49.76.65', 'jjohnson1', 1, 1, 89), -- username : jjohnson1 
+    ('98689539', 'Matthew', 'Rodgers', 'mrodgers@iut.univ-paris8.fr', '07.68.95.01.01', 'mrodgers', 1, 1, 89), -- username : mrodgers 
+    ('64701508', 'Sean', 'Rosario', 'srosario@iut.univ-paris8.fr', '07.48.39.20.47', 'srosario', 1, 1, 89), -- username : srosario 
+    ('95817804', 'Mary', 'Miller', 'mmiller1@iut.univ-paris8.fr', '06.92.69.79.18', 'mmiller1', 1, 1, 89), -- username : mmiller1 
+    ('83201783', 'Daniel', 'Herrera', 'dherrera@iut.univ-paris8.fr', '07.06.14.00.66', 'dherrera', 1, 1, 89), -- username : dherrera 
+    ('20069554', 'Brittany', 'Moore', 'bmoore@iut.univ-paris8.fr', '06.27.90.55.38', 'bmoore', 1, 1, 89), -- username : bmoore 
+    ('66643312', 'Allison', 'Walker', 'awalker@iut.univ-paris8.fr', '06.23.73.57.44', 'awalker', 1, 1, 89), -- username : awalker 
+    ('18614271', 'Rodney', 'Hall', 'rhall@iut.univ-paris8.fr', '07.53.82.80.75', 'rhall', 1, 38, 38), -- username : rhall 
+    ('89039625', 'Jason', 'Singleton', 'jsingleton@iut.univ-paris8.fr', '07.53.95.30.72', 'jsingleton', 1, 38, 38), -- username : jsingleton 
+    ('93486604', 'Amanda', 'Rodriguez', 'arodriguez1@iut.univ-paris8.fr', '07.74.26.87.87', 'arodriguez1', 1, 38, 38), -- username : arodriguez1 
+    ('79972285', 'Kimberly', 'Russell', 'krussell1@iut.univ-paris8.fr', '06.09.00.37.00', 'krussell1', 1, 38, 38), -- username : krussell1 
+    ('76989167', 'Kimberly', 'Hill', 'khill@iut.univ-paris8.fr', '06.27.58.24.33', 'khill', 1, 38, 38), -- username : khill 
+    ('32627103', 'Alexander', 'Smith', 'asmith2@iut.univ-paris8.fr', '07.71.08.54.79', 'asmith2', 1, 38, 38), -- username : asmith2 
+    ('95280694', 'Karen', 'Rose', 'krose1@iut.univ-paris8.fr', '06.03.20.81.15', 'krose1', 1, 38, 38), -- username : krose1 
+    ('61220317', 'Christopher', 'Thompson', 'cthompson1@iut.univ-paris8.fr', '06.72.24.87.98', 'cthompson1', 1, 38, 38), -- username : cthompson1 
+    ('22036090', 'Michael', 'Marsh', 'mmarsh@iut.univ-paris8.fr', '06.68.05.77.87', 'mmarsh', 1, 38, 38), -- username : mmarsh 
+    ('16714539', 'Rachel', 'Hicks', 'rhicks@iut.univ-paris8.fr', '07.11.00.33.25', 'rhicks', 1, 38, 38), -- username : rhicks 
+    ('35509567', 'Colleen', 'Brown', 'cbrown@iut.univ-paris8.fr', '06.27.67.08.41', 'cbrown', 1, 38, 82), -- username : cbrown 
+    ('98500675', 'Mitchell', 'Galvan', 'mgalvan@iut.univ-paris8.fr', '06.19.49.88.86', 'mgalvan', 1, 38, 82), -- username : mgalvan 
+    ('96512739', 'Kimberly', 'Schmidt', 'kschmidt@iut.univ-paris8.fr', '06.34.96.08.92', 'kschmidt', 1, 38, 82), -- username : kschmidt 
+    ('44411182', 'Casey', 'Le', 'cle@iut.univ-paris8.fr', '06.40.56.89.08', 'cle', 1, 38, 82), -- username : cle 
+    ('04844346', 'Ryan', 'Phelps', 'rphelps@iut.univ-paris8.fr', '06.13.43.03.43', 'rphelps', 1, 38, 82), -- username : rphelps 
+    ('66775024', 'Heidi', 'Wagner', 'hwagner@iut.univ-paris8.fr', '06.94.94.32.01', 'hwagner', 1, 38, 82), -- username : hwagner 
+    ('86012923', 'Robert', 'Wright', 'rwright1@iut.univ-paris8.fr', '07.12.02.93.70', 'rwright1', 1, 38, 82), -- username : rwright1 
+    ('63887688', 'Emily', 'Hunter', 'ehunter@iut.univ-paris8.fr', '07.30.31.74.38', 'ehunter', 1, 38, 82), -- username : ehunter 
+    ('38524401', 'Ivan', 'Martin', 'imartin@iut.univ-paris8.fr', '07.70.08.86.92', 'imartin', 1, 38, 82), -- username : imartin 
+    ('47913785', 'Jacqueline', 'Chambers', 'jchambers1@iut.univ-paris8.fr', '06.24.95.70.35', 'jchambers1', 1, 38, 82), -- username : jchambers1 
+    ('77616049', 'Monica', 'Lindsey', 'mlindsey@iut.univ-paris8.fr', '06.21.24.38.09', 'mlindsey', 1, 38, 126), -- username : mlindsey 
+    ('75032692', 'Mary', 'Sanchez', 'msanchez1@iut.univ-paris8.fr', '06.62.31.64.18', 'msanchez1', 1, 38, 126), -- username : msanchez1 
+    ('38614228', 'Sarah', 'Novak', 'snovak@iut.univ-paris8.fr', '07.05.25.89.09', 'snovak', 1, 38, 126), -- username : snovak 
+    ('15864611', 'Donna', 'Hernandez', 'dhernandez@iut.univ-paris8.fr', '06.24.87.36.08', 'dhernandez', 1, 38, 126), -- username : dhernandez 
+    ('66540523', 'Jennifer', 'Foster', 'jfoster@iut.univ-paris8.fr', '07.79.66.04.59', 'jfoster', 1, 38, 126), -- username : jfoster 
+    ('32564152', 'Jason', 'Jones', 'jjones1@iut.univ-paris8.fr', '06.97.37.04.77', 'jjones1', 1, 38, 126), -- username : jjones1 
+    ('43984648', 'Erin', 'Cross', 'ecross@iut.univ-paris8.fr', '06.94.03.06.61', 'ecross', 1, 38, 126), -- username : ecross 
+    ('79064072', 'Patricia', 'Velazquez', 'pvelazquez@iut.univ-paris8.fr', '07.44.47.92.17', 'pvelazquez', 1, 38, 126), -- username : pvelazquez 
+    ('41222913', 'Michael', 'Norman', 'mnorman@iut.univ-paris8.fr', '07.96.33.07.99', 'mnorman', 1, 38, 126), -- username : mnorman 
+    ('64000096', 'Frank', 'Salazar', 'fsalazar@iut.univ-paris8.fr', '07.84.59.42.85', 'fsalazar', 1, 38, 126), -- username : fsalazar 
+    ('03619602', 'Karen', 'Gibbs', 'kgibbs@iut.univ-paris8.fr', '06.99.00.50.28', 'kgibbs', 1, 37, 37), -- username : kgibbs 
+    ('93398173', 'Kristi', 'Obrien', 'kobrien@iut.univ-paris8.fr', '06.35.15.54.32', 'kobrien', 1, 37, 37), -- username : kobrien 
+    ('65341757', 'Brenda', 'Silva', 'bsilva@iut.univ-paris8.fr', '07.27.80.18.80', 'bsilva', 1, 37, 37), -- username : bsilva 
+    ('79174458', 'David', 'Rodriguez', 'drodriguez@iut.univ-paris8.fr', '07.38.51.79.54', 'drodriguez', 1, 37, 37), -- username : drodriguez 
+    ('74720700', 'Michelle', 'Lopez', 'mlopez@iut.univ-paris8.fr', '07.96.58.87.27', 'mlopez', 1, 37, 37), -- username : mlopez 
+    ('02267340', 'Katie', 'Wilson', 'kwilson@iut.univ-paris8.fr', '07.02.77.41.74', 'kwilson', 1, 37, 37), -- username : kwilson 
+    ('77924614', 'Bryan', 'Hughes', 'bhughes@iut.univ-paris8.fr', '06.33.08.40.99', 'bhughes', 1, 37, 37), -- username : bhughes 
+    ('50801891', 'Sharon', 'Howard', 'showard@iut.univ-paris8.fr', '06.71.65.18.88', 'showard', 1, 37, 37), -- username : showard 
+    ('80096851', 'John', 'Weaver', 'jweaver@iut.univ-paris8.fr', '07.32.79.90.64', 'jweaver', 1, 37, 37), -- username : jweaver 
+    ('24080165', 'Logan', 'Benton', 'lbenton@iut.univ-paris8.fr', '07.30.97.09.37', 'lbenton', 1, 37, 37), -- username : lbenton 
+    ('43072561', 'Emily', 'Foster', 'efoster@iut.univ-paris8.fr', '07.88.60.55.31', 'efoster', 1, 37, 81), -- username : efoster 
+    ('92343728', 'John', 'Blankenship', 'jblankenship@iut.univ-paris8.fr', '06.59.52.88.70', 'jblankenship', 1, 37, 81), -- username : jblankenship 
+    ('84482690', 'Amanda', 'Mccann', 'amccann@iut.univ-paris8.fr', '06.66.54.70.69', 'amccann', 1, 37, 81), -- username : amccann 
+    ('75078367', 'Michael', 'Smith', 'msmith2@iut.univ-paris8.fr', '06.72.60.68.57', 'msmith2', 1, 37, 81), -- username : msmith2 
+    ('35741163', 'Frank', 'Kelly', 'fkelly@iut.univ-paris8.fr', '07.39.67.48.21', 'fkelly', 1, 37, 81), -- username : fkelly 
+    ('48177534', 'Alexander', 'Blackburn', 'ablackburn@iut.univ-paris8.fr', '06.68.80.01.49', 'ablackburn', 1, 37, 81), -- username : ablackburn 
+    ('67623913', 'Victor', 'Wilkinson', 'vwilkinson@iut.univ-paris8.fr', '07.01.12.36.53', 'vwilkinson', 1, 37, 81), -- username : vwilkinson 
+    ('70713160', 'Kathryn', 'Andrews', 'kandrews@iut.univ-paris8.fr', '07.02.29.51.90', 'kandrews', 1, 37, 81), -- username : kandrews 
+    ('80425660', 'Andrew', 'Rodriguez', 'arodriguez@iut.univ-paris8.fr', '07.57.36.51.03', 'arodriguez', 1, 37, 81), -- username : arodriguez 
+    ('03927856', 'Aaron', 'Garcia', 'agarcia@iut.univ-paris8.fr', '07.09.66.73.90', 'agarcia', 1, 37, 81), -- username : agarcia 
+    ('21043567', 'Rebecca', 'Black', 'rblack@iut.univ-paris8.fr', '06.30.85.67.81', 'rblack', 1, 37, 125), -- username : rblack 
+    ('41512715', 'Ashley', 'Christian', 'achristian2@iut.univ-paris8.fr', '06.93.09.54.46', 'achristian2', 1, 37, 125), -- username : achristian2 
+    ('47539038', 'Tasha', 'Abbott', 'tabbott@iut.univ-paris8.fr', '06.94.29.12.08', 'tabbott', 1, 37, 125), -- username : tabbott 
+    ('46902751', 'Ronald', 'Mccarthy', 'rmccarthy@iut.univ-paris8.fr', '07.51.24.16.48', 'rmccarthy', 1, 37, 125), -- username : rmccarthy 
+    ('27887732', 'Taylor', 'Wood', 'twood@iut.univ-paris8.fr', '07.23.79.88.44', 'twood', 1, 37, 125), -- username : twood 
+    ('04218397', 'Wendy', 'Coleman', 'wcoleman1@iut.univ-paris8.fr', '06.95.32.73.68', 'wcoleman1', 1, 37, 125), -- username : wcoleman1 
+    ('11051654', 'Lisa', 'Ware', 'lware@iut.univ-paris8.fr', '07.02.83.51.21', 'lware', 1, 37, 125), -- username : lware 
+    ('70428664', 'Joseph', 'Wilson', 'jwilson@iut.univ-paris8.fr', '06.79.85.45.37', 'jwilson', 1, 37, 125), -- username : jwilson 
+    ('03570303', 'Tracy', 'Jacobs', 'tjacobs@iut.univ-paris8.fr', '07.32.51.14.05', 'tjacobs', 1, 37, 125), -- username : tjacobs 
+    ('01966536', 'Brian', 'Rodriguez', 'brodriguez@iut.univ-paris8.fr', '07.44.57.39.75', 'brodriguez', 1, 37, 125), -- username : brodriguez 
+    ('46233690', 'Angela', 'Collins', 'acollins@iut.univ-paris8.fr', '07.67.03.51.37', 'acollins', 1, 27, 27), -- username : acollins 
+    ('18389102', 'Nicole', 'Clay', 'nclay@iut.univ-paris8.fr', '06.06.19.10.35', 'nclay', 1, 27, 27), -- username : nclay 
+    ('80425096', 'Timothy', 'Robles', 'trobles@iut.univ-paris8.fr', '07.50.47.19.90', 'trobles', 1, 27, 27), -- username : trobles 
+    ('14220118', 'Brian', 'Wall', 'bwall@iut.univ-paris8.fr', '07.95.96.60.45', 'bwall', 1, 27, 27), -- username : bwall 
+    ('97905864', 'Justin', 'Flores', 'jflores@iut.univ-paris8.fr', '06.92.97.12.89', 'jflores', 1, 27, 27), -- username : jflores 
+    ('92507924', 'Katie', 'Graham', 'kgraham@iut.univ-paris8.fr', '06.41.81.27.37', 'kgraham', 1, 27, 27), -- username : kgraham 
+    ('32229949', 'Destiny', 'Mckenzie', 'dmckenzie@iut.univ-paris8.fr', '07.93.93.40.69', 'dmckenzie', 1, 27, 27), -- username : dmckenzie 
+    ('15163174', 'Eric', 'Burton', 'eburton@iut.univ-paris8.fr', '06.45.20.46.71', 'eburton', 1, 27, 27), -- username : eburton 
+    ('82550213', 'Whitney', 'Freeman', 'wfreeman@iut.univ-paris8.fr', '07.30.06.41.03', 'wfreeman', 1, 27, 27), -- username : wfreeman 
+    ('92248626', 'Christina', 'Blackburn', 'cblackburn@iut.univ-paris8.fr', '06.61.90.84.64', 'cblackburn', 1, 27, 27), -- username : cblackburn 
+    ('17079261', 'Kathy', 'Holt', 'kholt@iut.univ-paris8.fr', '07.41.06.42.67', 'kholt', 1, 27, 71), -- username : kholt 
+    ('76963937', 'Tricia', 'Weber', 'tweber@iut.univ-paris8.fr', '07.39.27.43.67', 'tweber', 1, 27, 71), -- username : tweber 
+    ('50649357', 'Diane', 'Petty', 'dpetty@iut.univ-paris8.fr', '07.37.11.74.53', 'dpetty', 1, 27, 71), -- username : dpetty 
+    ('51774615', 'Denise', 'Simpson', 'dsimpson@iut.univ-paris8.fr', '07.08.56.25.91', 'dsimpson', 1, 27, 71), -- username : dsimpson 
+    ('03501998', 'Brittany', 'Johnson', 'bjohnson1@iut.univ-paris8.fr', '06.03.79.20.26', 'bjohnson1', 1, 27, 71), -- username : bjohnson1 
+    ('93469637', 'Jose', 'Duran', 'jduran@iut.univ-paris8.fr', '06.92.93.30.09', 'jduran', 1, 27, 71), -- username : jduran 
+    ('71008369', 'Angela', 'Adams', 'aadams1@iut.univ-paris8.fr', '06.71.37.88.20', 'aadams1', 1, 27, 71), -- username : aadams1 
+    ('48183487', 'Barbara', 'Knight', 'bknight@iut.univ-paris8.fr', '06.07.60.58.96', 'bknight', 1, 27, 71), -- username : bknight 
+    ('17814036', 'Colleen', 'Reid', 'creid@iut.univ-paris8.fr', '07.41.96.06.82', 'creid', 1, 27, 71), -- username : creid 
+    ('31314008', 'Emily', 'Lamb', 'elamb@iut.univ-paris8.fr', '06.13.11.90.37', 'elamb', 1, 27, 71), -- username : elamb 
+    ('68220415', 'Nancy', 'Lester', 'nlester@iut.univ-paris8.fr', '07.02.22.63.39', 'nlester', 1, 27, 115), -- username : nlester 
+    ('09711018', 'Henry', 'Haney', 'hhaney@iut.univ-paris8.fr', '06.54.24.04.31', 'hhaney', 1, 27, 115), -- username : hhaney 
+    ('86889501', 'Adam', 'Davis', 'adavis2@iut.univ-paris8.fr', '06.21.19.39.77', 'adavis2', 1, 27, 115), -- username : adavis2 
+    ('94443964', 'Joel', 'Taylor', 'jtaylor@iut.univ-paris8.fr', '07.87.67.80.69', 'jtaylor', 1, 27, 115), -- username : jtaylor 
+    ('43966419', 'Marc', 'Porter', 'mporter@iut.univ-paris8.fr', '07.44.39.59.79', 'mporter', 1, 27, 115), -- username : mporter 
+    ('67538204', 'Kevin', 'Fernandez', 'kfernandez@iut.univ-paris8.fr', '06.32.27.14.82', 'kfernandez', 1, 27, 115), -- username : kfernandez 
+    ('10589333', 'Alexandra', 'Nash', 'anash@iut.univ-paris8.fr', '06.19.22.67.50', 'anash', 1, 27, 115), -- username : anash 
+    ('42003373', 'Daniel', 'Clark', 'dclark@iut.univ-paris8.fr', '07.53.97.22.99', 'dclark', 1, 27, 115), -- username : dclark 
+    ('33963975', 'Erica', 'Sanford', 'esanford@iut.univ-paris8.fr', '06.69.52.76.52', 'esanford', 1, 27, 115), -- username : esanford 
+    ('69139375', 'Kyle', 'Jones', 'kjones@iut.univ-paris8.fr', '06.51.46.38.82', 'kjones', 1, 27, 115), -- username : kjones 
+    ('53074140', 'Mitchell', 'Leonard', 'mleonard@iut.univ-paris8.fr', '07.81.56.74.71', 'mleonard', 1, 26, 26), -- username : mleonard 
+    ('59761172', 'Robert', 'Bennett', 'rbennett1@iut.univ-paris8.fr', '06.76.66.27.72', 'rbennett1', 1, 26, 26), -- username : rbennett1 
+    ('83281083', 'Wendy', 'Wolf', 'wwolf@iut.univ-paris8.fr', '06.42.65.29.02', 'wwolf', 1, 26, 26), -- username : wwolf 
+    ('51229774', 'Deanna', 'Hicks', 'dhicks@iut.univ-paris8.fr', '07.14.34.62.69', 'dhicks', 1, 26, 26), -- username : dhicks 
+    ('58914740', 'Tyler', 'Walker', 'twalker@iut.univ-paris8.fr', '07.69.98.31.52', 'twalker', 1, 26, 26), -- username : twalker 
+    ('16329117', 'Belinda', 'Williams', 'bwilliams@iut.univ-paris8.fr', '07.58.87.03.43', 'bwilliams', 1, 26, 26), -- username : bwilliams 
+    ('49751054', 'Mary', 'Scott', 'mscott@iut.univ-paris8.fr', '06.41.85.77.51', 'mscott', 1, 26, 26), -- username : mscott 
+    ('87442063', 'Nicole', 'Cook', 'ncook1@iut.univ-paris8.fr', '06.33.91.77.21', 'ncook1', 1, 26, 26), -- username : ncook1 
+    ('58602060', 'Christine', 'Hall', 'chall@iut.univ-paris8.fr', '06.75.37.58.78', 'chall', 1, 26, 26), -- username : chall 
+    ('22715078', 'Martin', 'Dyer', 'mdyer@iut.univ-paris8.fr', '06.89.73.72.18', 'mdyer', 1, 26, 26), -- username : mdyer 
+    ('26598594', 'Amanda', 'Bailey', 'abailey1@iut.univ-paris8.fr', '06.83.13.12.41', 'abailey1', 1, 26, 70), -- username : abailey1 
+    ('16029498', 'John', 'Perez', 'jperez1@iut.univ-paris8.fr', '07.56.75.32.07', 'jperez1', 1, 26, 70), -- username : jperez1 
+    ('00904808', 'Michael', 'Lynch', 'mlynch@iut.univ-paris8.fr', '07.99.58.43.07', 'mlynch', 1, 26, 70), -- username : mlynch 
+    ('99631929', 'Jeffrey', 'Mcintyre', 'jmcintyre1@iut.univ-paris8.fr', '07.90.77.24.76', 'jmcintyre1', 1, 26, 70), -- username : jmcintyre1 
+    ('35298495', 'Joel', 'Jackson', 'jjackson1@iut.univ-paris8.fr', '07.24.54.05.73', 'jjackson1', 1, 26, 70), -- username : jjackson1 
+    ('82188981', 'James', 'Lee', 'jlee2@iut.univ-paris8.fr', '07.58.43.09.01', 'jlee2', 1, 26, 70), -- username : jlee2 
+    ('23057911', 'Aaron', 'Christian', 'achristian1@iut.univ-paris8.fr', '07.42.95.38.12', 'achristian1', 1, 26, 70), -- username : achristian1 
+    ('95721880', 'Faith', 'Osborne', 'fosborne@iut.univ-paris8.fr', '07.89.68.49.78', 'fosborne', 1, 26, 70), -- username : fosborne 
+    ('02751988', 'Hannah', 'Smith', 'hsmith@iut.univ-paris8.fr', '07.14.30.98.17', 'hsmith', 1, 26, 70), -- username : hsmith 
+    ('18935750', 'Robert', 'Walker', 'rwalker1@iut.univ-paris8.fr', '07.22.97.15.48', 'rwalker1', 1, 26, 70), -- username : rwalker1 
+    ('88791089', 'Jacob', 'Caldwell', 'jcaldwell@iut.univ-paris8.fr', '06.11.21.07.00', 'jcaldwell', 1, 26, 114), -- username : jcaldwell 
+    ('45734361', 'Joshua', 'Bates', 'jbates1@iut.univ-paris8.fr', '06.37.40.57.65', 'jbates1', 1, 26, 114), -- username : jbates1 
+    ('96328289', 'Stephen', 'Blackwell', 'sblackwell@iut.univ-paris8.fr', '06.34.03.37.68', 'sblackwell', 1, 26, 114), -- username : sblackwell 
+    ('33856820', 'Evan', 'Anderson', 'eanderson1@iut.univ-paris8.fr', '07.45.33.94.32', 'eanderson1', 1, 26, 114), -- username : eanderson1 
+    ('90326981', 'Amy', 'Davis', 'adavis1@iut.univ-paris8.fr', '07.36.71.90.13', 'adavis1', 1, 26, 114), -- username : adavis1 
+    ('73742746', 'Erica', 'Burke', 'eburke@iut.univ-paris8.fr', '06.33.94.80.18', 'eburke', 1, 26, 114), -- username : eburke 
+    ('55746705', 'Jake', 'Rogers', 'jrogers@iut.univ-paris8.fr', '07.12.95.76.48', 'jrogers', 1, 26, 114), -- username : jrogers 
+    ('27943682', 'Michael', 'Robbins', 'mrobbins1@iut.univ-paris8.fr', '07.44.21.35.28', 'mrobbins1', 1, 26, 114), -- username : mrobbins1 
+    ('01390286', 'Amanda', 'Flores', 'aflores@iut.univ-paris8.fr', '06.82.79.56.63', 'aflores', 1, 26, 114), -- username : aflores 
+    ('18110511', 'Cody', 'Holmes', 'cholmes@iut.univ-paris8.fr', '07.95.70.78.59', 'cholmes', 1, 26, 114), -- username : cholmes 
+    ('65612421', 'Julia', 'Kelly', 'jkelly1@iut.univ-paris8.fr', '07.91.97.55.60', 'jkelly1', 1, 25, 25), -- username : jkelly1 
+    ('87544371', 'Julie', 'Larson', 'jlarson@iut.univ-paris8.fr', '07.46.20.90.61', 'jlarson', 1, 25, 25), -- username : jlarson 
+    ('07435032', 'Joshua', 'Smith', 'jsmith2@iut.univ-paris8.fr', '07.44.82.38.84', 'jsmith2', 1, 25, 25), -- username : jsmith2 
+    ('17628733', 'Brian', 'Jordan', 'bjordan@iut.univ-paris8.fr', '06.97.21.53.02', 'bjordan', 1, 25, 25), -- username : bjordan 
+    ('76014497', 'Jennifer', 'Pearson', 'jpearson@iut.univ-paris8.fr', '07.40.03.60.12', 'jpearson', 1, 25, 25), -- username : jpearson 
+    ('41353653', 'Susan', 'Miller', 'smiller1@iut.univ-paris8.fr', '07.64.10.88.12', 'smiller1', 1, 25, 25), -- username : smiller1 
+    ('90680337', 'Lauren', 'Donaldson', 'ldonaldson@iut.univ-paris8.fr', '07.10.57.23.86', 'ldonaldson', 1, 25, 25), -- username : ldonaldson 
+    ('32533989', 'Monica', 'Sanchez', 'msanchez@iut.univ-paris8.fr', '07.27.78.26.90', 'msanchez', 1, 25, 25), -- username : msanchez 
+    ('88318906', 'Jill', 'Mcgee', 'jmcgee@iut.univ-paris8.fr', '07.68.83.26.02', 'jmcgee', 1, 25, 25), -- username : jmcgee 
+    ('27333875', 'Brandi', 'Allison', 'ballison@iut.univ-paris8.fr', '06.41.43.75.98', 'ballison', 1, 25, 25), -- username : ballison 
+    ('19086804', 'Derek', 'Parker', 'dparker@iut.univ-paris8.fr', '07.22.49.24.35', 'dparker', 1, 25, 69), -- username : dparker 
+    ('99250365', 'Margaret', 'Fields', 'mfields@iut.univ-paris8.fr', '07.40.75.23.19', 'mfields', 1, 25, 69), -- username : mfields 
+    ('86750218', 'Sabrina', 'Anderson', 'sanderson@iut.univ-paris8.fr', '06.54.68.16.47', 'sanderson', 1, 25, 69), -- username : sanderson 
+    ('33129738', 'Alex', 'Dixon', 'adixon@iut.univ-paris8.fr', '06.85.91.87.27', 'adixon', 1, 25, 69), -- username : adixon 
+    ('65659764', 'Dennis', 'Richard', 'drichard@iut.univ-paris8.fr', '07.33.71.38.26', 'drichard', 1, 25, 69), -- username : drichard 
+    ('53840510', 'Steven', 'Robinson', 'srobinson@iut.univ-paris8.fr', '07.27.91.46.47', 'srobinson', 1, 25, 69), -- username : srobinson 
+    ('82671900', 'Spencer', 'Morales', 'smorales@iut.univ-paris8.fr', '06.11.46.31.36', 'smorales', 1, 25, 69), -- username : smorales 
+    ('27284156', 'Elizabeth', 'Landry', 'elandry@iut.univ-paris8.fr', '06.95.79.29.73', 'elandry', 1, 25, 69), -- username : elandry 
+    ('18245627', 'Michael', 'Castillo', 'mcastillo@iut.univ-paris8.fr', '06.20.78.12.58', 'mcastillo', 1, 25, 69), -- username : mcastillo 
+    ('88155359', 'Erika', 'Snyder', 'esnyder@iut.univ-paris8.fr', '06.36.64.88.80', 'esnyder', 1, 25, 69), -- username : esnyder 
+    ('25145392', 'Jeremy', 'Williamson', 'jwilliamson@iut.univ-paris8.fr', '07.14.00.25.98', 'jwilliamson', 1, 25, 113), -- username : jwilliamson 
+    ('13027716', 'Robyn', 'Johnson', 'rjohnson1@iut.univ-paris8.fr', '06.15.21.74.77', 'rjohnson1', 1, 25, 113), -- username : rjohnson1 
+    ('94102933', 'Christopher', 'Hamilton', 'chamilton@iut.univ-paris8.fr', '07.91.17.42.72', 'chamilton', 1, 25, 113), -- username : chamilton 
+    ('93935668', 'Barry', 'Lopez', 'blopez@iut.univ-paris8.fr', '07.87.32.28.52', 'blopez', 1, 25, 113), -- username : blopez 
+    ('22531085', 'Robert', 'Walker', 'rwalker@iut.univ-paris8.fr', '06.64.59.64.69', 'rwalker', 1, 25, 113), -- username : rwalker 
+    ('22158281', 'Barbara', 'Davis', 'bdavis1@iut.univ-paris8.fr', '06.86.82.76.19', 'bdavis1', 1, 25, 113), -- username : bdavis1 
+    ('96334632', 'Wesley', 'Jacobson', 'wjacobson@iut.univ-paris8.fr', '06.66.40.96.00', 'wjacobson', 1, 25, 113), -- username : wjacobson 
+    ('10293812', 'James', 'Powell', 'jpowell2@iut.univ-paris8.fr', '07.46.20.64.85', 'jpowell2', 1, 25, 113), -- username : jpowell2 
+    ('71363465', 'Cindy', 'Horn', 'chorn@iut.univ-paris8.fr', '07.30.48.96.06', 'chorn', 1, 25, 113), -- username : chorn 
+    ('45195055', 'James', 'Gray', 'jgray@iut.univ-paris8.fr', '07.59.38.60.73', 'jgray', 1, 25, 113), -- username : jgray 
+    ('48424760', 'Anthony', 'Swanson', 'aswanson@iut.univ-paris8.fr', '07.17.25.49.34', 'aswanson', 1, 3, 3), -- username : aswanson 
+    ('52280873', 'Wayne', 'Gaines', 'wgaines@iut.univ-paris8.fr', '06.84.04.42.43', 'wgaines', 1, 3, 3), -- username : wgaines 
+    ('36276641', 'Frederick', 'Wood', 'fwood@iut.univ-paris8.fr', '06.08.74.73.47', 'fwood', 1, 3, 3), -- username : fwood 
+    ('38614564', 'Ann', 'Mccormick', 'amccormick@iut.univ-paris8.fr', '07.82.40.35.17', 'amccormick', 1, 3, 3), -- username : amccormick 
+    ('23990390', 'Ashley', 'Cortez', 'acortez@iut.univ-paris8.fr', '07.50.42.54.82', 'acortez', 1, 3, 3), -- username : acortez 
+    ('27457779', 'Lisa', 'Ellis', 'lellis@iut.univ-paris8.fr', '06.31.80.35.39', 'lellis', 1, 3, 3), -- username : lellis 
+    ('12796538', 'Traci', 'Johnston', 'tjohnston@iut.univ-paris8.fr', '06.31.26.72.96', 'tjohnston', 1, 3, 3), -- username : tjohnston 
+    ('67801338', 'Ricardo', 'Rojas', 'rrojas@iut.univ-paris8.fr', '06.51.41.15.85', 'rrojas', 1, 3, 3), -- username : rrojas 
+    ('66446498', 'Kimberly', 'Flores', 'kflores@iut.univ-paris8.fr', '07.62.01.73.65', 'kflores', 1, 3, 3), -- username : kflores 
+    ('27438638', 'Gregory', 'Goodwin', 'ggoodwin@iut.univ-paris8.fr', '07.56.62.94.06', 'ggoodwin', 1, 3, 3), -- username : ggoodwin 
+    ('64337415', 'Carlos', 'Conrad', 'cconrad@iut.univ-paris8.fr', '06.81.64.27.21', 'cconrad', 1, 3, 47), -- username : cconrad 
+    ('22293308', 'Joseph', 'Powell', 'jpowell1@iut.univ-paris8.fr', '07.26.89.16.77', 'jpowell1', 1, 3, 47), -- username : jpowell1 
+    ('10813885', 'Brandi', 'Wells', 'bwells@iut.univ-paris8.fr', '07.05.03.05.92', 'bwells', 1, 3, 47), -- username : bwells 
+    ('89956259', 'Robyn', 'Smith', 'rsmith3@iut.univ-paris8.fr', '07.02.38.19.70', 'rsmith3', 1, 3, 47), -- username : rsmith3 
+    ('29094743', 'Valerie', 'Shelton', 'vshelton@iut.univ-paris8.fr', '07.58.05.75.90', 'vshelton', 1, 3, 47), -- username : vshelton 
+    ('14270777', 'Jessica', 'Bates', 'jbates@iut.univ-paris8.fr', '07.25.01.33.40', 'jbates', 1, 3, 47), -- username : jbates 
+    ('77616053', 'Manuel', 'Watson', 'mwatson@iut.univ-paris8.fr', '07.90.85.54.50', 'mwatson', 1, 3, 47), -- username : mwatson 
+    ('04394464', 'Guy', 'Castaneda', 'gcastaneda@iut.univ-paris8.fr', '07.92.33.27.28', 'gcastaneda', 1, 3, 47), -- username : gcastaneda 
+    ('30720424', 'Melissa', 'Richardson', 'mrichardson1@iut.univ-paris8.fr', '07.16.13.60.70', 'mrichardson1', 1, 3, 47), -- username : mrichardson1 
+    ('75982316', 'Paula', 'Huynh', 'phuynh@iut.univ-paris8.fr', '07.61.62.31.69', 'phuynh', 1, 3, 47), -- username : phuynh 
+    ('55323829', 'Kathleen', 'Mcdaniel', 'kmcdaniel@iut.univ-paris8.fr', '06.45.60.40.38', 'kmcdaniel', 1, 3, 91), -- username : kmcdaniel 
+    ('61120570', 'Angelica', 'Nicholson', 'anicholson@iut.univ-paris8.fr', '07.95.54.52.05', 'anicholson', 1, 3, 91), -- username : anicholson 
+    ('74044493', 'John', 'Chapman', 'jchapman@iut.univ-paris8.fr', '07.05.02.64.51', 'jchapman', 1, 3, 91), -- username : jchapman 
+    ('90489360', 'Felicia', 'James', 'fjames@iut.univ-paris8.fr', '06.55.96.63.89', 'fjames', 1, 3, 91), -- username : fjames 
+    ('04095208', 'John', 'Goodman', 'jgoodman@iut.univ-paris8.fr', '07.80.07.80.47', 'jgoodman', 1, 3, 91), -- username : jgoodman 
+    ('20157670', 'Billy', 'Booth', 'bbooth@iut.univ-paris8.fr', '06.27.51.86.13', 'bbooth', 1, 3, 91), -- username : bbooth 
+    ('29208040', 'Edward', 'Johnson', 'ejohnson@iut.univ-paris8.fr', '07.31.41.25.26', 'ejohnson', 1, 3, 91), -- username : ejohnson 
+    ('96999194', 'Cynthia', 'Miller', 'cmiller1@iut.univ-paris8.fr', '06.82.46.48.57', 'cmiller1', 1, 3, 91), -- username : cmiller1 
+    ('10074649', 'Melanie', 'Gutierrez', 'mgutierrez@iut.univ-paris8.fr', '07.76.04.13.22', 'mgutierrez', 1, 3, 91), -- username : mgutierrez 
+    ('66670102', 'Emily', 'Ward', 'eward@iut.univ-paris8.fr', '07.29.88.61.58', 'eward', 1, 3,91) -- username : eeward 
 ;
--- university.students(@student_number,last_name, first_name, mail, phone_number, password, #department_id, #group_id, #subgroup_id)
+
+-- university.students(@student_number,last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
 -- FAKE for departement QLIO
-INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, password, department_id, group_id, subgroup_id)
+INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, user_username, department_id, group_id, subgroup_id)
 VALUES
-    ('05018235','Naruto','Uzumaki','nuzumaki@iut.univ-paris8.fr','07.20.63.10.81','$2b$12$9PmKASZM1hE8u/I/ChNmK.3NdF45gOpwISfceLrJMLsavYpm0Dzpq',2,16,16), -- pwd : 1@'N/$}[K=24
-    ('99087589','Sasuke','Uchiha','suchiha@iut.univ-paris8.fr','07.48.97.52.44','$2b$12$ZY8HGxKBoDjwOIztBig7munPoGm2JhY9eMMNuefYzmlK/jP6TxxlO',2,16,16), -- pwd : w]+jXH'TrG,4
-    ('65324915','Jennifer','Christensen','jchristensen@iut.univ-paris8.fr','07.52.70.40.56','$2b$12$u9fntSjDnJQ4TY4W10O7uePFivKiUZP7ZPi7HYq7fbXe7rzc9KhHW',2,16,16), -- pwd : 8GZAT+O)!2^=
-    ('38746816','Michael','Dixon','mdixon@iut.univ-paris8.fr','07.96.07.46.21','$2b$12$fItqXGFcl9GnYbuZW06phuQnk2Pmzpf9rbPDSSDVU9WiIQhQ1SlSy',2,16,16), -- pwd : Z)oeymUbyT@]
-    ('71790205','Wayne','Mills','wmills@iut.univ-paris8.fr','07.17.26.75.35','$2b$12$AKiPQQkybIX40Z7eCjkfienuyMXy2aYNrinr2lB6xBI5B6TJgqBd6',2,16,16), -- pwd : /$Vb/X#>wyC-
-    ('69018898','Bryan','Walsh','bwalsh@iut.univ-paris8.fr','06.95.61.69.31','$2b$12$.SpAQULYN6Yk.9gv00Wb..4I.m4ZVpoNDhBkTH8PGrdRuATg12lke',2,16,16), -- pwd : c,_0\d5cBTC\
-    ('70660305','Ethan','Kaufman','ekaufman@iut.univ-paris8.fr','06.17.61.44.69','$2b$12$E469NWIQ8BMTWhBE6nMFMOMPn4w5kfVZRkjqNy9vTm/YVqv4AsMFC',2,16,16), -- pwd : J?Dc['6KdTZC
-    ('53910465','Lindsay','Oliver','loliver@iut.univ-paris8.fr','07.66.48.66.67','$2b$12$5rL8ud3yC7YNl0dBLwzoau2YdwlgWbrRxg.X7rZgvHcuWthAkFo12',2,16,16), -- pwd : mNy&suJ8`h`s
-    ('75029798','Mark','Garcia','mgarcia@iut.univ-paris8.fr','06.12.90.32.42','$2b$12$ncOXkJc6kf.vCPlqb4o9HeuxLV1vxJ5Zm49TUo/1G7GfcmEiShXNy',2,16,16), -- pwd : k/$n,d<)l@{>
-    ('52838257','Taylor','Paul','tpaul@iut.univ-paris8.fr','06.66.85.01.11','$2b$12$Kem3sEIEVViBQs/2g.AHl.Agr5qT77/kp4KU.yH8jiRibA34gXerm',2,16,16), -- pwd : VJ0h'wYZP>Xr
-    ('26314046','Felicia','Harper','fharper@iut.univ-paris8.fr','07.86.11.69.74','$2b$12$8MGcjgGQHpnAk9fRuJFlGO97AbHQnt/ldDnzqIeIKqrJkFbTuG3kO',2,16,60), -- pwd : vVg,cfdH_gDp
-    ('73868463','Jennifer','Hamilton','jhamilton@iut.univ-paris8.fr','06.27.08.15.01','$2b$12$WqqDZvr6Y1BBVLciDwGbEeS4F.gLCUOtkG.g2emWLTdopGDTCPm/m',2,16,60), -- pwd : E']=#zh4GVeV
-    ('90572577','Stephanie','Keith','skeith@iut.univ-paris8.fr','07.19.20.78.61','$2b$12$FUY.eKKZSbPwY56NZRmir.JcF6hZxQS29o9aUu4nxIt1ppuvBspJC',2,16,60), -- pwd : i|I^c%=ZgA^d
-    ('39517131','David','Mcdonald','dmcdonald@iut.univ-paris8.fr','07.21.61.88.13','$2b$12$hWe6gHhHweA.hGQmm4MwFOvtVSSLxVMIDDCXMk5WZrvFbPaPT4ZtK',2,16,60), -- pwd : |&6po55.IMT6
-    ('54516035','Deborah','Briggs','dbriggs@iut.univ-paris8.fr','06.30.01.40.86','$2b$12$c/NxpFtfAI/0dpJr0wWAdONpOvbVOLZEgKyISo5fMEhwD4xPiPBg6',2,16,60), -- pwd : {5m%{8ZRIm%Y
-    ('18536362','Ryan','King','rking@iut.univ-paris8.fr','07.14.07.57.33','$2b$12$o0hp3jH6Caivo.vHY0N4LOPn9qTofP.Gf9ITCOStEyGt5g9Km3t4i',2,16,60), -- pwd : o(b^>}B:hkC*
-    ('13773420','Ryan','Meyer','rmeyer@iut.univ-paris8.fr','07.27.39.42.52','$2b$12$MgOxJRb0IJ8Ga1hOrhVYaOoOSiaJ.6ay/0NoE0itDiRUANfjwQ.LS',2,16,60), -- pwd : P1uyQ^dl-@_;
-    ('16634869','Christina','Wagner','cwagner@iut.univ-paris8.fr','06.53.27.93.20','$2b$12$ZoxmwS9fAeZURVH3HB/eKu8w68K0nwhZXKeV54ujuiuwce9DXCzwG',2,16,60), -- pwd : &l_R^eQ!X[C8
-    ('28014225','Christina','Potts','cpotts@iut.univ-paris8.fr','06.95.49.86.30','$2b$12$FQAfWT1Icu5Tt1jiB6ldq.DFNDfDSWotDuC2gOW1GNK65RY6EfmD.',2,16,60), -- pwd : `'Y/f/Pw^OB|
-    ('03304232','Lisa','Martinez','lmartinez@iut.univ-paris8.fr','06.06.63.85.59','$2b$12$jw/5MFyzSORPBhAgf4fTYO03igG41N21Tbt5106ro7I0aUbbbmgEy',2,16,60), -- pwd : slG85]~SN?g,
-    ('64764777','Charles','Mccarty','cmccarty@iut.univ-paris8.fr','07.38.96.09.75','$2b$12$9f06FZLflMJ9jMP0tsJIU.h6Noc4W/Jeu3OMgm/6FIRgtZRf4brHS',2,16,104), -- pwd : QTx)$*'T_q)'
-    ('48363685','Paul','Diaz','pdiaz@iut.univ-paris8.fr','06.42.88.76.98','$2b$12$4zJHnReyQlhGP4phoGN22.qHs/VfzxoqY.Qk5u6L.suVswhv0aO7u',2,16,104), -- pwd : d:P8Y"e7Waz%
-    ('57012724','Mitchell','Ward','mward@iut.univ-paris8.fr','07.69.48.09.69','$2b$12$ok0NrO478U.SFbPSKvkSd.NFc1dHWCNQaVg4uXU0GYufFwbIjrkB2',2,16,104), -- pwd : ^M$='b9NVB{Y
-    ('82427096','Michael','Beard','mbeard@iut.univ-paris8.fr','07.67.59.12.13','$2b$12$Vpw53f8uIF/WWZsdlSmop.Zs5/xvpgYit8xvC3AT8vdj2psVUEpNy',2,16,104), -- pwd : uLY5dSE"('KB
-    ('00816327','Ryan','Wright','rwright@iut.univ-paris8.fr','06.60.49.55.26','$2b$12$y.vl87FF22stNalJRe.YjOxxcMku4b3XjVu.tZB/EBH9QBnNhFqfu',2,16,104), -- pwd : 7mXS|O#M-0Dn
-    ('00062954','Stacie','Wells','swells@iut.univ-paris8.fr','06.11.48.17.80','$2b$12$MIRC2fd5s2DvpxVY2Wy0nevlxBrV3CckNcv.PTdwq/S85NAwWYgYa',2,16,104), -- pwd : sGVB/~'c0{t^
-    ('33882750','Anthony','Freeman','afreeman@iut.univ-paris8.fr','07.30.32.24.87','$2b$12$h8v0ac.tRbPscsMYLGWDK.LMNu0FvijRjI2gqvlabrYzWEZSolH5W',2,16,104), -- pwd : qQJ_Q}ff~ZR;
-    ('03585710','Sandra','Hansen','shansen@iut.univ-paris8.fr','06.44.45.95.28','$2b$12$d.nw7KHuuJ6243r5vvM.ouNyQbZhm4JqVA4Y3EUhr.8bqDeMY2JhG',2,16,104), -- pwd : u7bF`H9egz0S
-    ('75174374','Mary','Harmon','mharmon@iut.univ-paris8.fr','06.72.20.88.17','$2b$12$2PcG9604JrHhxStY2qPs1.lAFqdZB1i00h0Faqv8it2TofbK/H69q',2,16,104), -- pwd : d*geMk$]Y`Ah
-    ('52706581','Allison','Casey','acasey@iut.univ-paris8.fr','06.19.71.76.47','$2b$12$3mDJmVEGvY5q7ogjgJuG7.GwdrIeYuZbMNzcXHJQlt/23dWjSVgwe',2,16,104), -- pwd : {B9j8G2I_~(Y
-    ('63323672','Jacob','Meadows','jmeadows@iut.univ-paris8.fr','07.19.73.60.43','$2b$12$6tJzSII5FdPtI1lTD7NSMuYu3i1Kcaf5xyySjGPBcYfePftmKevfq',2,17,17), -- pwd : 9JO{Q*sFPD:4
-    ('16591616','Michael','Collins','mcollins@iut.univ-paris8.fr','06.04.67.23.61','$2b$12$2TOpzXK3lPAu5VB.9WqDMu/DvWuNt5xQhjC/G/qfFDjloFqVhEIWC',2,17,17), -- pwd : *bAN):k}O_Vi
-    ('74101134','Sarah','Williams','swilliams@iut.univ-paris8.fr','06.92.21.19.06','$2b$12$r3M5JSk07/8zRdLbXK5QNuGNQPjZhfqKbYgUlJPgEzna6MnLDeu8G',2,17,17), -- pwd : pQ=4.@Kj2gh}
-    ('41375500','Robin','Perry','rperry@iut.univ-paris8.fr','07.81.24.36.68','$2b$12$4vJCtuJxQtZRUB40ONziy.mA7cqb39d/6l7B7P/EEMbjWURdpPava',2,17,17), -- pwd : ;Z6cO[U<*zA"
-    ('67185765','Ann','Hanson','ahanson@iut.univ-paris8.fr','07.76.69.29.83','$2b$12$dkjGhEFvAMj2W814PpMcFeUsPnk6vrW8oDdSZUkbkTqdVXp5Kr3QK',2,17,17), -- pwd : MHK(mFrbZTCb
-    ('96954921','Katherine','Cooper','kcooper@iut.univ-paris8.fr','06.96.37.20.45','$2b$12$oiBZ1LBLWekYZuxqpTUytO4gonLZ7/expjYRXN4Hi0YEsRImlR.vG',2,17,17), -- pwd : A0)9WdlV$ko;
-    ('85886517','Lisa','Frazier','lfrazier@iut.univ-paris8.fr','06.60.65.93.61','$2b$12$QQ3Ns2NfNECT1v7Tq2sr1eAOtlEYgr7m5YfYBo7JN95ZqFO/9JZau',2,17,17), -- pwd : YujJS)rkYF.w
-    ('56035200','Allen','Bailey','abailey@iut.univ-paris8.fr','06.12.63.53.55','$2b$12$9/bN37r/7aioa4b41sAh..H3WomZatOm1fpaMw7dO6g4Jqo5/1sT2',2,17,17), -- pwd : A'Ym$ks+RCGH
-    ('60727544','John','Andrade','jandrade@iut.univ-paris8.fr','07.92.65.63.99','$2b$12$iimfJriHijU4CdF9qo7JNuUDI4rN3yHMqs1jpPjBOq2BJOUXg8RtG',2,17,17), -- pwd : =<xk9Tq2|Ob}
-    ('45178327','Justin','Bryant','jbryant@iut.univ-paris8.fr','06.30.52.00.11','$2b$12$dU7Q6et2BG5YUoIj4JuqTeH9W0UAMLzNY7ms8mvjl4NOs81cUNwdK',2,17,17), -- pwd : B*m#,Z~r0q%f
-    ('18693259','Sharon','Brewer','sbrewer@iut.univ-paris8.fr','06.62.67.41.02','$2b$12$/tufAy3Ln9DLNJ2A9sC71e5K7QHI9e5qdFEF61cIrFl/I4cVQgu5K',2,17,61), -- pwd : 8{WWc1um'8P8
-    ('84512874','Michelle','Adams','madams@iut.univ-paris8.fr','07.95.28.58.98','$2b$12$JYHqpoEzn96sc22D5fhyiu9r89LezWGMoGxSukjBprTDrLVxGyqiG',2,17,61), -- pwd : T@KCCU!w.ne)
-    ('91466902','Joel','Shaw','jshaw@iut.univ-paris8.fr','07.02.00.96.21','$2b$12$kgO.UdAWtjEqHkK2j0Hhf.8D1jgghg1F4H4V5Sb2KmayAm3g8itAm',2,17,61), -- pwd : wJlwa!y%:Id2
-    ('10279904','Corey','Moore','cmoore@iut.univ-paris8.fr','06.01.98.48.63','$2b$12$oRAanxLO.LaVwvt5gMxWIueM5EzwLsbA2SRDcpHfnVwkEg6IAeY2K',2,17,61), -- pwd : G'!JR`S?Z;Ee
-    ('60345342','Sarah','Thompson','sthompson@iut.univ-paris8.fr','07.87.44.20.38','$2b$12$aER14.fWuVNak3LdzovkF.Emr6ojNiN62nCFa30TRd5p1etFGYuOm',2,17,61), -- pwd : L<\?FfFa%@9=
-    ('68984811','John','Green','jgreen@iut.univ-paris8.fr','06.45.48.68.35','$2b$12$Q.w0tG6wFEMpESGN3RAcsOWxE.8zEbuAi1m5upfFwCWwm0o2Xmgwm',2,17,61), -- pwd : 1UcvMsB]3jIP
-    ('03756504','Jack','Garcia','jgarcia@iut.univ-paris8.fr','06.82.82.17.00','$2b$12$VgIZNK/dx9ZkqIejqrnw9eesQgGFs69KpgrwBapL3piItl8l1YzSO',2,17,61), -- pwd : Kj=M9'M]:$~M
-    ('47839431','Lawrence','Smith','lsmith@iut.univ-paris8.fr','07.11.93.46.80','$2b$12$dyWWOtcF/UvnUSDw3NgVzejbqIoanj1J4j3Ng.J1/CLbx1pfr4lJi',2,17,61), -- pwd : )FL-zc_gi2V"
-    ('50495442','Meghan','Maxwell','mmaxwell@iut.univ-paris8.fr','06.17.46.29.30','$2b$12$aka5xJ8x5gMOJFE/vUCjbup90pUbey0ar9SNCpaoltkMplqZAMNGq',2,17,61), -- pwd : ?w"\dgi&BFtq
-    ('11562077','Ryan','Brady','rbrady@iut.univ-paris8.fr','06.53.26.61.13','$2b$12$gLpM1H0DPokzh7cKzCtEve0xcNJvcuzchfChLvTKnmc0R3iMcC.wG',2,17,61), -- pwd : '4Q>,r?;oKbr
-    ('79375860','Michael','Thomas','mthomas@iut.univ-paris8.fr','07.56.16.27.60','$2b$12$s1/6YS8S.xIiyhUoEWuLTOb5vqNz7CCvxyzhFwwCC9NTktv5KXnFS',2,17,105), -- pwd : !l8(84*=#cT[
-    ('63197921','Caroline','Durham','cdurham@iut.univ-paris8.fr','06.17.49.55.90','$2b$12$3JPU/WP7PAufRNlk9HwGpOYXsIEQPRfga2nkqse5vjasEpQoZyfmu',2,17,105), -- pwd : 9d501)N63[=F
-    ('48495539','Larry','Hunter','lhunter@iut.univ-paris8.fr','07.17.99.04.26','$2b$12$tudmQPY9rjUt7aARLOZZpuasjOei7Hd.p2ZM8.UBCh4siWotfwboS',2,17,105), -- pwd : ]|4&^U4!Zw=4
-    ('81786019','Jonathan','Macdonald','jmacdonald@iut.univ-paris8.fr','07.02.44.13.33','$2b$12$gHyShqRFupjGNZX0wSWYhOZiSKIEiNzXYS9GlLkW5ZR/Dcrdw7Usa',2,17,105), -- pwd : Tq'-MSV54l$3
-    ('30080633','Karen','Bennett','kbennett@iut.univ-paris8.fr','07.42.47.42.67','$2b$12$vvQ650IS6Zqbs1M/cit73O1CDhnQ4g4JAvWLan/0ovoSZJQEuZH3q',2,17,105), -- pwd : &Q%i:"p$>e'$
-    ('47131000','Lauren','Carter','lcarter@iut.univ-paris8.fr','06.26.50.48.13','$2b$12$vnA0nCjogNQx9q79zdA38uwEGcDyMNt16QmXvbzaFII5oad.MJ6iq',2,17,105), -- pwd : iSzh:(;18$,I
-    ('82625966','Becky','Phillips','bphillips@iut.univ-paris8.fr','06.54.14.44.38','$2b$12$bzCdzYnNEZVomkDl3WWsre9ai8vUXr2WrzmIM83qsX8Jh1LwQUIvq',2,17,105), -- pwd : nB,xd0d~32oC
-    ('46410707','Heather','Blair','hblair@iut.univ-paris8.fr','07.72.01.14.07','$2b$12$Tg7Qut0KgJ5Ypb4IATmKCODT5eHJYwUkiBn6tO.DmBJgzwF/S07fi',2,17,105), -- pwd : Z@m9W\XuTs.-
-    ('40399568','Denise','Bolton','dbolton@iut.univ-paris8.fr','06.21.72.89.53','$2b$12$Y7/2e2/7SYiHEYZG3VUzYeJr/r.DoWdcZgwuG5PjJZzaEB1R2J4ye',2,17,105), -- pwd : DtrAOx9=aWLA
-    ('90939848','Eric','Harris','eharris@iut.univ-paris8.fr','06.21.46.93.87','$2b$12$gKArbVTWiTMOat6LVLCFVek3jO10cwV2FarEHkx3ZzTU8RJ6tdGmC',2,17,105), -- pwd : LvgDl[dj~o*?
-    ('60281018','David','Brown','dbrown@iut.univ-paris8.fr','07.43.21.55.27','$2b$12$Qs4SXGcMMkgFKJ3hAytowewX8fP3RLHUOMwFY63UsgwxVoxtqZINq',2,18,18), -- pwd : 1!nyf3$<*JR\
-    ('84009440','Melanie','Pratt','mpratt@iut.univ-paris8.fr','06.65.84.97.99','$2b$12$RTuUzdEzGGoG84gEqY1cSuZGYtYcJSIGjiJ6Nr6/imPxFINEhbcYa',2,18,18), -- pwd : A[n1$:+6G'Yv
-    ('54955356','Emily','Yoder','eyoder@iut.univ-paris8.fr','06.41.53.92.21','$2b$12$2QqKIn2PnTKag7Ro.6TUm.TVjrycMWMEAyCqn063KJiS/tBopPMAi',2,18,18), -- pwd : ^1};o"x(dGe;
-    ('83751200','Donald','Lee','dlee@iut.univ-paris8.fr','07.36.64.12.88','$2b$12$PLsHquqBk8g7ouViWX0oSu6UxPSqE8JSrqHWeZUVfuU0nTJlmK0sa',2,18,18), -- pwd : ZM~RnAd0{,&*
-    ('13370378','Kara','Russell','krussell@iut.univ-paris8.fr','07.43.81.48.13','$2b$12$G6u7tXsMxWX2ciWBAow.Ie2PYntlekDkvmZiTuC46nqOT1OWE1Tb.',2,18,18), -- pwd : F4Tv02O"\2T{
-    ('05136515','Nicholas','Barnes','nbarnes@iut.univ-paris8.fr','07.99.35.24.75','$2b$12$IntjikcGoktmJ2AerxLf9uFm3xWzC3BbaP/fbWy4pRZ1eM2wzAW6S',2,18,18), -- pwd : $;0Cnq$dLU13
-    ('92442352','Larry','Williams','lwilliams@iut.univ-paris8.fr','07.86.96.72.01','$2b$12$npdCEu9YSsudMynuaZDFke0fIfykjcpw.k7lPo67XGRwMzpFdTZIe',2,18,18), -- pwd : }b(\6HqqtZY%
-    ('17879547','Clayton','Carter','ccarter@iut.univ-paris8.fr','07.70.41.84.27','$2b$12$/YqbpXSdOKDtpYdPNhPTLeNR1Bzwbei1Mc5ScIvkFHC1nmvU2Sxr2',2,18,18), -- pwd : wO.`Y@aXkFvW
-    ('74531137','Randall','Ball','rball@iut.univ-paris8.fr','06.79.66.91.74','$2b$12$i74jOU06APSYPjMQ17WXs..9QkcMaorMqeorqkBb412Dda0fku9Y.',2,18,18), -- pwd : EGZ~{E@]{|}(
-    ('90895160','Joy','Hudson','jhudson@iut.univ-paris8.fr','07.30.09.04.48','$2b$12$IvdmzH7V1TlKP/6hLQhZmOAb4QvWHayke64z.TmvYA39RGtq6q5ve',2,18,18), -- pwd : &>wytl#\W45?
-    ('62824166','Angela','Morales','amorales@iut.univ-paris8.fr','06.70.14.39.06','$2b$12$JtIvkx48HlZOAt/oyXNUduh7elhmtJjoXhmHIOHurBYHweL0xmbiC',2,18,62), -- pwd : OztDKnk8'GR5
-    ('44477178','Pamela','Schmidt','pschmidt@iut.univ-paris8.fr','07.17.89.74.52','$2b$12$YmPjH42sfhQ5PqZ2zvc3euypF3kAhul1WT7bLM3PB18V54FWYtn9.',2,18,62), -- pwd : EbLuTbQhwweO
-    ('46812740','Adriana','Christian','achristian@iut.univ-paris8.fr','06.56.40.72.95','$2b$12$Hg3YS6Dl1bQxXwWhpgTW1uxjSJ0A3kTfkKrmKZvhv1qAFjoLd5vs2',2,18,62), -- pwd : #Xbkk\oyj;E#
-    ('20633662','Anthony','Romero','aromero@iut.univ-paris8.fr','07.48.14.53.09','$2b$12$iY150bju7zj8MnV7e.13defFI5XR.9wxmiB3F/DhIye9Cp3Qq2O0.',2,18,62), -- pwd : Ug.w'EnMNa~<
-    ('03247001','Bradley','Bryant','bbryant@iut.univ-paris8.fr','07.56.23.34.03','$2b$12$Ant0UG5p2zfDxbpEBvTCx.EXsPwmPDYMpmE7mBZssoUjrxFxvXI0e',2,18,62), -- pwd : fKO*Vt&S$G}k
-    ('58951308','Robert','Rodriguez','rrodriguez@iut.univ-paris8.fr','06.49.24.06.76','$2b$12$OVOPngUc8zA6Mpk3yUrY8em0Qzp9VeB1UdfV89xD0eNFehKxqz9Xq',2,18,62), -- pwd : Mon*Pr6<pFvC
-    ('70687645','Brian','Baker','bbaker@iut.univ-paris8.fr','06.25.09.44.24','$2b$12$8gED96Yn3PzH1GMG.qCDe.5PIe8vZIw.50MHdYdLLtUdxYdP4Gi36',2,18,62), -- pwd : Rn|>Vvu<o2W^
-    ('25863549','Nicholas','Tucker','ntucker@iut.univ-paris8.fr','07.19.34.01.94','$2b$12$Z0zLnor1fJxsuJjcWA0w4e5hIgOqFHpMRWw.yFExSLVv6o2rtBIum',2,18,62), -- pwd : -I(T/f`4oYxx
-    ('49193098','Maria','Brown','mbrown@iut.univ-paris8.fr','07.12.54.98.60','$2b$12$PeDsQYQ7ABw5WsE90q/cfO7X6EhzYWqyqd8gaWXLXZPB7D7.f0aCe',2,18,62), -- pwd : Mxp!3?PutE&B
-    ('86102852','Monica','James','mjames@iut.univ-paris8.fr','06.73.00.33.51','$2b$12$uTaaY.5kovzW.wWnNGPt0e0MARCChMlz8.mtbGyybHLeNzEUoSI6.',2,18,62), -- pwd : PFZb4e8F"7rN
-    ('18449239','Kristin','Patel','kpatel@iut.univ-paris8.fr','06.14.99.09.04','$2b$12$3CKy8sUp8JyuKct5TFypJ.OSyOyO/xJiyrm3ZDKm1IGvbsdxKuiMq',2,18,106), -- pwd : jUoE&Rhm{=}}
-    ('14588009','Harold','Moore','hmoore@iut.univ-paris8.fr','06.46.99.15.23','$2b$12$V4exhNi/g/pzf9.aMqOmuuKky0VseR2NNCSJr.PLZpbcOuiE/Ehry',2,18,106), -- pwd : >CfZ[]^1[G<t
-    ('47695880','Stephen','Simmons','ssimmons@iut.univ-paris8.fr','06.32.13.54.40','$2b$12$lK7xQWcQFeUIuYlyJDzVY.xWKCIaBTvs/2o4x.ns8moDp2VmMts0m',2,18,106), -- pwd : kaeqa6X9Ad,P
-    ('14758183','Jason','Gill','jgill@iut.univ-paris8.fr','06.73.45.12.80','$2b$12$xoxYwoMo.d6OPFnEUR0jyOIFh2st/27CKT5UFwsiO0Aorore107iO',2,18,106), -- pwd : X]A;f)mv5E=W
-    ('30380203','Debbie','Moore','dmoore@iut.univ-paris8.fr','06.22.68.37.15','$2b$12$2vmy3.yquCgB1CIAL9VSL.LeC3VEELhzxrQI1um9/3Nr2vclou6Ce',2,18,106), -- pwd : <aY6[=c?\wEo
-    ('61696550','Michael','Moran','mmoran@iut.univ-paris8.fr','07.24.59.22.83','$2b$12$iKL/Z8sEyEBnvaLxO2vkte6YokbhCpeJNGDcnu7Fdvex8WWRMY992',2,18,106), -- pwd : "z?qh,nAuqgy
-    ('27740090','Robert','Johnson','rjohnson@iut.univ-paris8.fr','07.21.03.30.01','$2b$12$fFM9OtOnpghqyAHxGEhlP.YmAkw7WoriZi1uJFR4MHfhlRX9.Jj5S',2,18,106), -- pwd : ff\)ng2\+[2\
-    ('62843182','Ryan','Keith','rkeith@iut.univ-paris8.fr','06.50.03.87.45','$2b$12$7Te.EquuzuSMTeBA6NtjDuajepXXcpXSky4soCSWcgpL9d8ShZU7e',2,18,106), -- pwd : S-!g6R$y0]S`
-    ('68389509','Christopher','Baker','cbaker@iut.univ-paris8.fr','07.24.69.56.43','$2b$12$/y4XJ4MDd3oiFJa0vvPtKeD7UzctmwhbtHDYvePoIdBdieLcw5bue',2,18,106), -- pwd : P1W)lhw?NEf}
-    ('37636736','Kelly','White','kwhite@iut.univ-paris8.fr','06.54.30.24.45','$2b$12$L6OxhdM2cmonfdI.5KZAbumX1DyhXu/Pr1hapxb.cY.cSSq4N48b6',2,18,106), -- pwd : +FeSxIVDiXeJ
-    ('22622122','Mark','Sanders','msanders@iut.univ-paris8.fr','06.23.11.75.90','$2b$12$MBqV6dHmvriVwhr8XdURBe1X2.Wlw/T9bCth561wlxKDFWuBWn.9u',2,6,6), -- pwd : s&r\')W?tBNj
-    ('06473610','Tyler','Vaughn','tvaughn@iut.univ-paris8.fr','06.86.30.85.33','$2b$12$rYhzT36xNdvkN7XEdJW4x.IuZn0P0U9cyzusN8guaio.9geHji0da',2,6,6), -- pwd : `HoU9`V9>2eo
-    ('80444174','Jacqueline','Roberts','jroberts@iut.univ-paris8.fr','06.68.76.05.65','$2b$12$/xbmCCQHut9OgKdbxKlFwOievSZ6LE0EocvPWeeG5I16H8bfmmuc2',2,6,6), -- pwd : Gq'U>+)JhXrT
-    ('61299940','Debra','Sanders','dsanders@iut.univ-paris8.fr','07.63.99.03.42','$2b$12$ittv1TobKrHdMyLjdnmL5OrbEqwm3aGAmpAnuQHZdvxv/j8Y0oH76',2,6,6), -- pwd : }&\ODc9z88#b
-    ('76123460','Bill','Boyle','bboyle@iut.univ-paris8.fr','07.36.73.33.72','$2b$12$h4qtc1HHVizltM0XC4rMyejct3erCgSn1HfMm43S47c2kaP1krfgu',2,6,6), -- pwd : +;{@W{hB}AB!
-    ('64077337','Felicia','Smith','fsmith@iut.univ-paris8.fr','07.76.35.83.73','$2b$12$801WzQ9mpepgda2F.6AhdusYkf1HpKAENhvjmLfbMpfVMJ9BeH0y6',2,6,6), -- pwd : &4H=gQ"yQy,4
-    ('31340100','Patrick','Williams','pwilliams@iut.univ-paris8.fr','07.92.19.27.51','$2b$12$M91Z7KpoPu1KZrTbJpFriuJ2tP6sl28ZfopaAsrWLxYnB8V/wZR6W',2,6,6), -- pwd : 2yY~Izs(vi*5
-    ('29519610','Michael','Bean','mbean@iut.univ-paris8.fr','07.95.51.77.10','$2b$12$GwnBb1kxqrrZhbRRbq96W.lUHm7LsJIiico69.Esm5Jic7j9/OvqG',2,6,6), -- pwd : X%#X~a+MlsYf
-    ('26050239','Kyle','Werner','kwerner@iut.univ-paris8.fr','07.98.64.45.65','$2b$12$RVfz73ovHcEIMLdfxeYUWeyL8/BS5wmf9ADq9lGeHUgIQYEsw2blC',2,6,6), -- pwd : TMtY`Er;F,ot
-    ('17426121','Justin','Gallagher','jgallagher@iut.univ-paris8.fr','07.49.59.38.15','$2b$12$C6F7xo/AIhewELdXKFG8z.8RQ/MtBy6Pk7V5oz22Ctgu77RD.Nwcm',2,6,6), -- pwd : aP6$\-9+S&N.
-    ('08776855','Alan','Walls','awalls@iut.univ-paris8.fr','06.67.48.91.25','$2b$12$fLq8gJb99amrKQbB21TJVOGrFLrL8ArfUHuShfMtI7hrIG1MVCddC',2,6,50), -- pwd : zZ;z{dpj@FE5
-    ('05102507','Michelle','Riley','mriley@iut.univ-paris8.fr','07.85.97.48.80','$2b$12$lLoWXhZxI4peiBXRWWP5W.4FRBKt/xWjT8oXQQLKLeYHEjcY9vqE6',2,6,50), -- pwd : EB5l|'-DmIWd
-    ('31705121','Laura','Martinez','lmartinez@iut.univ-paris8.fr','06.41.10.27.08','$2b$12$hqtb7BJtOv/X9ZhwyzNc/ucn7y0QbgUGkasWtSZCEEI4Pmvx9yqRi',2,6,50), -- pwd : rALC<%a?w@)D
-    ('03173759','Angela','Foster','afoster@iut.univ-paris8.fr','06.38.35.14.63','$2b$12$JTjkWnZUF.YTLGiaMW4/pupTvEEB8otPbClyLDYMSeOayLUvFBhQq',2,6,50), -- pwd : THxMZ*x/&H9@
-    ('56768702','Riley','Rogers','rrogers@iut.univ-paris8.fr','06.64.82.54.40','$2b$12$5qmjv6vu4ZLMxPnj0E5I4u1VV2B.PresiizEAYLLICZ4BuMQ8/.1C',2,6,50), -- pwd : IfL2"!+"'ZL\
-    ('86448435','Fernando','Vargas','fvargas@iut.univ-paris8.fr','07.63.42.37.71','$2b$12$VOG6LQQUrTl1hcPhnoSc4e/9Vduwoyf00ePXw7eoOe9TCmA4OCNLa',2,6,50), -- pwd : fab_8ka\O)*]
-    ('09352731','Christina','Benson','cbenson@iut.univ-paris8.fr','06.22.13.78.91','$2b$12$XXk6eo9tJJKxONT1zjO.rOkkWaGLC/wrTIs1OZODwchHU9kPBRYB2',2,6,50), -- pwd : <z&}gSoCyVZ+
-    ('84256900','Meghan','Dalton','mdalton@iut.univ-paris8.fr','06.02.68.76.05','$2b$12$6bUYcZscp1bGAKS1TdL4Uu5a4lNXyTHzdqxoWEH0Xb26N2RurMR..',2,6,50), -- pwd : L9T^nX2_B$ad
-    ('08429653','Johnny','Blackwell','jblackwell@iut.univ-paris8.fr','07.65.04.98.88','$2b$12$QwzNPArCmx22vR5xzhRd.e7XeDncNNpJ6rPHTipzVaudtz0vl0XpO',2,6,50), -- pwd : J8DtRu;d{mzX
-    ('36684016','Judy','Harrison','jharrison@iut.univ-paris8.fr','06.34.50.29.72','$2b$12$TtD9FOEJ7RAtIroVE4PLqO128goZltCIGcierLUR0dvefIdoGVOEG',2,6,50), -- pwd : `E^o%'DTA|w)
-    ('24950887','April','Smith','asmith@iut.univ-paris8.fr','06.68.39.58.96','$2b$12$uFu8hUMa/tyf15Cs1U54VOUV0KN3cH3OvKu.8I3NUNCPqJ9K5sXaW',2,6,94), -- pwd : P<S<hX1^[DwJ
-    ('90886841','Amy','Myers','amyers@iut.univ-paris8.fr','07.54.20.52.29','$2b$12$z0z6x3gIuvzgg0qnQotnJ.HmES.qPVvvoP5X2GNj8ju5U2BeiM.Te',2,6,94), -- pwd : yQ'U\S*Sec-h
-    ('01984967','Laura','Cline','lcline@iut.univ-paris8.fr','06.54.95.31.80','$2b$12$uFlGZ5jqCJQn7BnfAGoQOOX4Oidye..LNNVdU7JRlGOKNHbdqN.du',2,6,94), -- pwd : :LC)wnIx9@]p
-    ('96509250','Stephen','Allen','sallen@iut.univ-paris8.fr','07.41.75.82.17','$2b$12$jhCsM1p3MJUKzDYiUXqewOCUHKuERbVeRu/6MzlbJUa20Ecx/P.we',2,6,94), -- pwd : ;eU#eYA=}<.?
-    ('74743246','Kathryn','Bauer','kbauer@iut.univ-paris8.fr','06.21.74.06.11','$2b$12$uW.s2GOxz0fMixC7d0aUGeLEm2ol4.pCJ2MQc5kPFPQcXwMo8Mltm',2,6,94), -- pwd : ,0NTDnKT\&M>
-    ('11719296','Stephanie','Martinez','smartinez@iut.univ-paris8.fr','06.16.44.30.60','$2b$12$kuYX2WDNuiSo9DGtnth3PeCVny8vKg0zoE3Ymjzz77vvTFF3f.8um',2,6,94), -- pwd : DXe7d^*NGA$T
-    ('87349139','Leslie','Johnson','ljohnson@iut.univ-paris8.fr','06.77.20.85.08','$2b$12$z66.JERG29QLIOGqre22eeF6x6eBWKcGVFD3xEEvYlIWV0NT8UZKO',2,6,94), -- pwd : Ysf)Kp[:wtU6
-    ('06566164','Jesus','Vargas','jvargas@iut.univ-paris8.fr','06.51.49.65.56','$2b$12$WKIXCGY72c8jpSmOdi8Ur.Y5spkICAH5q.l2mWXj2g3aSgXR2AsJu',2,6,94), -- pwd : >Q\G`a7+XBgW
-    ('65078518','Michelle','Vang','mvang@iut.univ-paris8.fr','06.68.17.60.95','$2b$12$qmNSijUS0NZJvFryeD1kZuvE/8YYLKgxR6dtygrW/iIAX/mTxjTQO',2,6,94), -- pwd : r`Vy]72TX!kz
-    ('81063482','Austin','Hart','ahart@iut.univ-paris8.fr','06.58.84.94.10','$2b$12$h.hjf8jiVEzCcRhWQmhlROIL3tR76./wLfhkaFGxo0BKn5NgGY332',2,6,94), -- pwd : JnpGZ%%mNe{&
-    ('11001837','Arthur','Reynolds','areynolds@iut.univ-paris8.fr','07.66.14.24.37','$2b$12$2s13x.HZt1SXhgeGMKFbme6ogGzMp2tOj1vmyl3I5YPbGbJCbnEhi',2,4,4), -- pwd : p-U6(MmG>S<)
-    ('17202017','Wendy','Ruiz','wruiz@iut.univ-paris8.fr','06.52.81.27.78','$2b$12$zUQAYtTM1kMRoQhLLKaz4uiak2BjdKgFKJGFWpszDkvsoEApI2E.e',2,4,4), -- pwd : <M(vtup#b|q}
-    ('29751348','John','Silva','jsilva@iut.univ-paris8.fr','06.70.41.85.50','$2b$12$lsJgmFjlldFlTF0vgDG3w.ojOR4htT07tPX6.0n5tXzGeW4C6Ttca',2,4,4), -- pwd : fJGcIlTg^?`2
-    ('02890746','Megan','Allen','mallen@iut.univ-paris8.fr','06.88.20.61.76','$2b$12$FfBbhZVp41CbsAW9QwOC8eu0AUM6InqaSTYm1MFptyQlbhT8Hhpai',2,4,4), -- pwd : O>i!TP;:h_|b
-    ('59837851','Danielle','Fischer','dfischer@iut.univ-paris8.fr','06.06.26.91.63','$2b$12$qFzEw9VboCeUeXe6rnU6s.Op51YjNeOTY8xxOshSeN/7qTZlOMray',2,4,4), -- pwd : u@.W}bEcu[s&
-    ('46082926','Oscar','Robinson','orobinson@iut.univ-paris8.fr','06.92.01.65.81','$2b$12$6poWP78Mds80hYwvPgJ3de2UtjrmdihrSDIGz44Kwko1pho0/ZBKu',2,4,4), -- pwd : XnFWfuO'iN+_
-    ('54476897','Sarah','Nunez','snunez@iut.univ-paris8.fr','07.51.03.76.06','$2b$12$9e06Pm//Vr1ITWpZ0s/4s.BOjLe6cCwD9Q/Nv3C3k7LpUVFxz03b2',2,4,4), -- pwd : EP>_Y`Q6uHt*
-    ('11183713','Garrett','Burns','gburns@iut.univ-paris8.fr','07.90.99.22.19','$2b$12$SUuzI0bzqujAg9i4G1SZFeBoo.owUhB2OA5YUfUF6.Yvs673FFq92',2,4,4), -- pwd : !Fn)E+rLi!<n
-    ('65859550','Ricardo','Cisneros','rcisneros@iut.univ-paris8.fr','07.63.20.31.36','$2b$12$LUetv9EE8MnIEDbhL8SpteUM1yjV9oNmVXL.nWGgt4d1zvuzivo4W',2,4,4), -- pwd : ^G>O?#.YMpyd
-    ('17092003','Michael','Perry','mperry@iut.univ-paris8.fr','07.77.95.22.23','$2b$12$vYwcPsuF3GIq73GT42Xt9.NTi5OhBkpQJ8zLdm6r9YiW0xJ2kPqIm',2,4,4), -- pwd : 0zgZ4:k6U+hE
-    ('27296238','James','Mcintyre','jmcintyre@iut.univ-paris8.fr','06.18.99.89.08','$2b$12$/5WeQrcp.m4Rf0pK2cg5h.PB7iEGNFM5D7jj4d5RDd6Rd5cB.35Tm',2,4,48), -- pwd : Q8N8LB#I>S2y
-    ('19910956','Joseph','Bowman','jbowman@iut.univ-paris8.fr','06.60.62.15.23','$2b$12$F0lP5gDwiciq0RN.rlWjIukNXagXQEDQE2joBlrPUimo9YGUao0Qy',2,4,48), -- pwd : :9;`J/p+-#dY
-    ('52470413','Brooke','Petersen','bpetersen@iut.univ-paris8.fr','07.82.51.66.90','$2b$12$n1MfREIFkLeQUPufaCU0o.g.I6AcOtOdyJLds2kTFT39vKL/ZWaya',2,4,48), -- pwd : gw%IT:N=sR$4
-    ('07253343','Richard','Smith','rsmith@iut.univ-paris8.fr','06.13.81.14.67','$2b$12$1ARUoCkc2GSZuPcqglXDnu9Rs.IC03edo2b8Ve8iijEVhtFWS0EMa',2,4,48), -- pwd : V|\MM0AY'EUa
-    ('58207710','Calvin','Valenzuela','cvalenzuela@iut.univ-paris8.fr','07.73.17.41.05','$2b$12$AMMXX1Lxzz0wLmoi7Ttmfe3rQFvp5NbqypKN3lOZuePTCy1Z2g6tG',2,4,48), -- pwd : BiM"C(b7=TO!
-    ('47054929','Lisa','Orozco','lorozco@iut.univ-paris8.fr','06.55.22.19.51','$2b$12$byyyhYbMpQPPx2BCrDvqL.DOtE8tGTINi0kMazswVJ8GIqA1eRLu.',2,4,48), -- pwd : ODv|SNZ(f35j
-    ('00349073','Tina','Ramirez','tramirez@iut.univ-paris8.fr','07.81.60.66.00','$2b$12$vZ7VtiSkgiSBDbWH5tYTtOBMjzQe/4//6Z4hGAHYAM0P8YNVfFARS',2,4,48), -- pwd : F[N$Aa,^,Z0-
-    ('44472422','Alex','Holder','aholder@iut.univ-paris8.fr','06.45.37.10.26','$2b$12$CDILYNTG7N3Ecf0DdjZkuefH3FG5gWosOUtrZg3hkYHjg66FvTaze',2,4,48), -- pwd : ZiI&A8M4tw$&
-    ('65358482','Nicole','Larsen','nlarsen@iut.univ-paris8.fr','06.24.34.80.66','$2b$12$x/cuaEzqOnUX0RqwLeaIrOCz8dHHuqN9QJP2De/WZYUgJlt8EKCpy',2,4,48), -- pwd : o{1`pztN<sGY
-    ('46763864','Tina','Davidson','tdavidson@iut.univ-paris8.fr','06.07.57.83.54','$2b$12$k3idQtZvac/yDJsWRKjYZu8ajt4n246ntmQ2sTtoySClsaIWlODdG',2,4,48), -- pwd : I^4.gm)_g!A.
-    ('75920416','Holly','Turner','hturner@iut.univ-paris8.fr','06.70.39.12.79','$2b$12$IdoFNqUIOh.jy1iS6dLWQ.BGAMacZqBKY7SXCy5kg.3q3eub6rwgK',2,4,92), -- pwd : 7d%D4ZhA%w+f
-    ('57860673','Melanie','Harris','mharris@iut.univ-paris8.fr','07.50.73.04.66','$2b$12$uc7NYNE2DMu7l0G.P7nq..MQm/Jbp9ay4Q6Yk3Mu41MYqhmRaRphm',2,4,92), -- pwd : $"-SaXk5JahJ
-    ('77375152','Sean','Hanson','shanson@iut.univ-paris8.fr','06.45.79.47.94','$2b$12$gsiQVknKs0Fw1IE3u4odhO3SDIzS8HsFEMz1c6JqucgkYGuMuMk.2',2,4,92), -- pwd : "i\W`})BF*m3
-    ('52541933','Amanda','Cunningham','acunningham@iut.univ-paris8.fr','07.42.04.41.71','$2b$12$dRQL7S6KBQpTvSlndn/fSOU8QcVqBmqj4v/rGJyGruG5nCoVWqCXG',2,4,92), -- pwd : Dc~;])JJ1gZ<
-    ('66938022','Andrew','Williams','awilliams@iut.univ-paris8.fr','06.98.86.28.45','$2b$12$rHdqFJTRQ6ORhqrKKIuCEunjTZQno8o.HSFI6eJ8LYXctZng7pYzq',2,4,92), -- pwd : s6*2J4g-UtR4
-    ('33858096','Joseph','Duncan','jduncan@iut.univ-paris8.fr','07.16.19.52.64','$2b$12$cedcUzvksZ4rdSkFbAoFi.DeGfHALClgmOl1pDzN.cZUlEPRknWEy',2,4,92), -- pwd : 6!5%zPL!(K~v
-    ('97814225','Debra','Small','dsmall@iut.univ-paris8.fr','06.13.64.98.93','$2b$12$bKYYa8q7f6rNW/mK.6Y94Owy3sILDW7F.1/m.T97PeqFu/GfHOuEO',2,4,92), -- pwd : qTjtH:,VqLrO
-    ('90190606','Erin','Olson','eolson@iut.univ-paris8.fr','06.84.86.31.15','$2b$12$.VqP3N4JuWGXiryrCrJIJOdWaFmS6w9zfU.Rrg5wJ04qVZdRiaGFu',2,4,92), -- pwd : 6'_<(E&Wu"WQ
-    ('00842444','Craig','Lowery','clowery@iut.univ-paris8.fr','06.62.75.54.71','$2b$12$pzZd3nMrWuYV4Cn/MH7biONUQY.OnJBT.GP.cfVYyZ0/0QwbCgQrq',2,4,92), -- pwd : &p@daX/uqWd@
-    ('42088109','Mike','Carroll','mcarroll@iut.univ-paris8.fr','07.88.94.74.85','$2b$12$.yvNleg31kMUoDRykRP7c.QUyZ/ihWmSjZ6L6U7CepuuTn2h60Cnq',2,4,92), -- pwd : f5`/i>-2[Xp5
-    ('02237173','John','Fisher','jfisher@iut.univ-paris8.fr','06.81.65.24.15','$2b$12$OUDHy8AIGyalDq15rt6qJ.lJkMMUf8t/aAtj1HpiN5Jscsbgi5v2e',2,5,5), -- pwd : '~{PXWsMeqVg
-    ('33911177','Hayden','Williams','hwilliams@iut.univ-paris8.fr','06.78.63.47.07','$2b$12$lnzZa.9zTL7iY8ENi4N3Iea1Q32kqzV/3EQRWHHpu/WMMrr2zehfy',2,5,5), -- pwd : a=[[{kBOv'P)
-    ('80976517','Ruth','Casey','rcasey@iut.univ-paris8.fr','07.99.76.17.74','$2b$12$MUYB5eq0fg/QFLlYsGIhIeRhQEioCXFKhQSECvVqN7c1Se0vazuRK',2,5,5), -- pwd : C0>P2H4qetrp
-    ('83420591','Marisa','Olson','molson@iut.univ-paris8.fr','06.63.41.16.80','$2b$12$8uVWMVOxeq/6vr8.Dfcqa.Q/0eAGtAr.k2AlcPZpjvcMK.P3n0Q3u',2,5,5), -- pwd : b]nR:DU-DaH9
-    ('44565954','Brandon','Harris','bharris@iut.univ-paris8.fr','06.38.17.39.25','$2b$12$/7jEtuHwmCUFqytfvJGZk.gkB06AppxGytzFFbfESvZqlxIJA2812',2,5,5), -- pwd : N(|CH#TxOi$P
-    ('58912099','Erica','Bridges','ebridges@iut.univ-paris8.fr','06.92.29.08.91','$2b$12$wjqwF7CcL1iSC01g862Gj.GIlfmm94mfFm2RFLSeqmHcnYtKSVYzK',2,5,5), -- pwd : <&Ge]RNys%EO
-    ('78485820','Alyssa','Hopkins','ahopkins@iut.univ-paris8.fr','07.60.78.96.33','$2b$12$9GZT8SDiUwEF6k5Bd6nc4uz6XeOwDijBjKEYW6ayMWVnLgP2CJa8S',2,5,5), -- pwd : x+XWN=Q2!y:*
-    ('74553423','Rebecca','Osborne','rosborne@iut.univ-paris8.fr','06.47.23.08.20','$2b$12$xzFImRoblOj8uQZMTztyCuvkbNpculx0mzpXNW.Hytyqk6SiAxzqe',2,5,5), -- pwd : <<X'T>$_N<du
-    ('97740668','Michael','Hall','mhall@iut.univ-paris8.fr','06.93.89.53.24','$2b$12$ObByTuW1cXCtBX651ld.RuqnOYyNvIx.vztsa6iMPny9M699nef7e',2,5,5), -- pwd : z{3-4i:Kkv:w
-    ('30902030','Damon','Baker','dbaker@iut.univ-paris8.fr','06.42.62.73.73','$2b$12$Dy5eVlI43Jx8ydZ5Ai1JIuNlL13MIy7L/1.1..aP8pjD.9uEEop7.',2,5,5), -- pwd : oF}*p4X4,j+D
-    ('60745402','Erin','Morris','emorris@iut.univ-paris8.fr','07.74.36.36.74','$2b$12$uwEq4/g6O13Oj1lgz.BXteCT9FwdYEcHngu0AKyvb9vLNrWDoPYUy',2,5,49), -- pwd : =;PDn(Js*$I_
-    ('31034374','Benjamin','Yoder','byoder@iut.univ-paris8.fr','07.21.55.45.42','$2b$12$o81YxqWZlMIME7woZqmAZ.uAhsmBrt5eQaiPPQuMee7/DptHCDbUe',2,5,49), -- pwd : Io*,K(E~T`PR
-    ('09522927','Kenneth','Johnson','kjohnson@iut.univ-paris8.fr','07.39.52.03.58','$2b$12$SqQtFUAZRz0zLiTa0F3L8.syD9G1LbmKGJs2xhKAA4WjFeBnrSUBK',2,5,49), -- pwd : Wj&HTpfEB8EK
-    ('07361666','Emily','Taylor','etaylor@iut.univ-paris8.fr','07.97.24.16.36','$2b$12$O9bw/1bqc6hOSSlw3JxtpO1Me2VNMRYkyUCd9Pt/mkUg/wngIMwi.',2,5,49), -- pwd : #(]I'a6s<!FP
-    ('79696264','Patricia','Maldonado','pmaldonado@iut.univ-paris8.fr','06.51.08.11.28','$2b$12$kXms8V9112.ych29HbS5B.tw6o7oYLATP5mkGiay7LFgNk5vYRcOq',2,5,49), -- pwd : Ysw^6oCO$Jjs
-    ('78088781','Keith','Rivera','krivera@iut.univ-paris8.fr','07.91.00.11.18','$2b$12$th.rpyGTxeYrXDvbch7cXuFwx2FZJd/gyOJBt9iv4WV75pFBu5fLi',2,5,49), -- pwd : P:3leprc=46^
-    ('81316718','Daniel','Smith','dsmith@iut.univ-paris8.fr','06.24.99.29.50','$2b$12$le0jQrQPmb4bUBVmMVPeROZZmJvYj8iH13Rj27HyMIl6TOer6vzYC',2,5,49), -- pwd : g.R1sV=soW,<
-    ('93960951','Julie','Guzman','jguzman@iut.univ-paris8.fr','07.29.67.57.22','$2b$12$JkLWCHTWVcmoLtT9wiYBVOmqbYXcBHyFs1jLwZQx1yqmYTIqvJF0i',2,5,49), -- pwd : ?U'9!nT!Ngv2
-    ('80611610','Harry','Giles','hgiles@iut.univ-paris8.fr','06.58.65.62.20','$2b$12$1B8MMIKI5ldcrhClNlGQ6.l/mX8Tt6RthPmTrq6LMjOfdwnOcTjs6',2,5,49), -- pwd : -}~Bgi4K)x.~
-    ('69516784','Barbara','Weber','bweber@iut.univ-paris8.fr','06.71.02.09.53','$2b$12$bx65BtOa96piN/QRHF4cwu8G7dbqXSO09BfHv2Hx5PR9f4DtNpRtq',2,5,49), -- pwd : MTuDd@-pR+"[
-    ('46405249','Dylan','Anderson','danderson@iut.univ-paris8.fr','06.00.70.31.56','$2b$12$WjFE/hq4Z6v7VIenyCd5QupmZSyEqs97n00M1unWuG6UT74omQXWK',2,5,93), -- pwd : ~Ivp4|kA:Uy5
-    ('78029752','David','Lawrence','dlawrence@iut.univ-paris8.fr','06.49.92.92.59','$2b$12$V.kBrP.Hkqv9pN3lUryEtec4ulXkXx79TviOg6tT7j.5HUTUpeJ0m',2,5,93), -- pwd : 8.=r|0DKSyAU
-    ('26729660','Michelle','Payne','mpayne@iut.univ-paris8.fr','06.10.65.11.42','$2b$12$zq9lBgA6BVwmweA62b0LluTTZhi.FewloU/nrQNUjgX2cORIyiBy.',2,5,93), -- pwd : Ik(ld&rB5;$V
-    ('56228551','Michael','Clark','mclark@iut.univ-paris8.fr','07.73.23.09.77','$2b$12$Bts0k0QwkUhYTPMMoLT0JefmoEx5bfCHceI2fM8vlfsluvY/RVjDC',2,5,93), -- pwd : pBW<"9mG1iTC
-    ('46892094','Erin','Lawrence','elawrence@iut.univ-paris8.fr','06.15.14.71.65','$2b$12$j1zEBnZaU/vbFnsujfVJg.KbpkT/VyaQMo9N9K1JVaL6gzU.C0Ne6',2,5,93), -- pwd : @:?|UhT;INO5
-    ('61186019','Rebecca','Cole','rcole@iut.univ-paris8.fr','07.05.38.27.24','$2b$12$Gw7X8ii5tVb1T9pZggX9CONm3myJOFbFiiAemd.h8XHNJF6Pbe9pi',2,5,93), -- pwd : EN3uPA%^|=!<
-    ('60970698','April','Hardy','ahardy@iut.univ-paris8.fr','06.71.86.26.19','$2b$12$Qq57nxR1I.1LRKDPxIk4aeIN.lvJ6UD/T1fMsg2S9kgK9VWFURRke',2,5,93), -- pwd : aYV|phMR!*Jj
-    ('05200898','James','Kelley','jkelley@iut.univ-paris8.fr','07.99.60.09.92','$2b$12$c.D9KTjzd07lbpXtRmbeBOO.o.Y5LuanopS57UMYAhVLcXy7VdHT.',2,5,93), -- pwd : D)N{-2K2'Z.k
-    ('29830217','Anthony','Gilmore','agilmore@iut.univ-paris8.fr','06.99.72.11.47','$2b$12$VGlVQzgGkSSxHk5Rh5anmeRs2uGc.ZQbY6C0In/yq9rOHuEybQIGS',2,5,93), -- pwd : &gpBabOQy8T)
-    ('27474814','Jerome','Parker','jparker@iut.univ-paris8.fr','07.67.12.85.50','$2b$12$CS06RaBJGpYN70LpJY5rrOWH23x8tqBOhjiAGINCwDllkGiLMuxxS',2,5,93), -- pwd : QGNrWwL>MN,k
-    ('90151534','Kimberly','Mcfarland','kmcfarland@iut.univ-paris8.fr','07.98.29.62.87','$2b$12$1kKE3OQJYonGHakcFn1vee3sKL6ODRt7xeu4WVYXk6ZhEWmzbRIhe',2,39,39), -- pwd : is1ynjlGM#i)
-    ('58382168','Karen','Wood','kwood@iut.univ-paris8.fr','07.36.10.61.62','$2b$12$ZOC8ZEUOqBz01nE2gCRJT.gBc9v8HiFjoOh58/MYkvkJ1VggQBzxq',2,39,39), -- pwd : j#__z$OVuHW:
-    ('36595448','Amy','Elliott','aelliott@iut.univ-paris8.fr','07.72.61.99.41','$2b$12$aMBHxVvefKS4BJj/mU8xa.1VwPrIXEIv5XXtqd8/usAMYle1Os9T2',2,39,39), -- pwd : H}qR:'DVPsH*
-    ('40599243','Hannah','Greene','hgreene@iut.univ-paris8.fr','07.68.34.51.03','$2b$12$qbnHZxFEBNBHNmSmNo/mjeST2dbZgioJeeOubyD7C8iMnfHBpOhhm',2,39,39), -- pwd : })S@8+wjb1L$
-    ('61959995','Kaitlyn','Lam','klam@iut.univ-paris8.fr','07.35.70.63.65','$2b$12$w2gSvcmim8TOfuI0at1lPOh5eo/IJrBmmJoCMzjev.L8vRAn.AoHq',2,39,39), -- pwd : SE!'k=d*B<TQ
-    ('55144955','Joseph','Reed','jreed@iut.univ-paris8.fr','06.24.29.48.19','$2b$12$z7HPoQzPFkdy/G9pz6twPusSsHQOyZgFPn7UukMRjk8gR.CdvXGDa',2,39,39), -- pwd : S#0r[cB;M*y>
-    ('04323838','Jennifer','Pierce','jpierce@iut.univ-paris8.fr','06.18.81.03.67','$2b$12$12NxZaDlcsoLpylvN271h.96u6W1HDUkXoPUFU18E0mcxNTbwyA1q',2,39,39), -- pwd : ,4'GSSL+M(wQ
-    ('01580403','Tanya','Miller','tmiller@iut.univ-paris8.fr','06.13.22.94.52','$2b$12$ZC19vXVGT31/ItNcFrsVNOrqA9AWMbl.0o8vadUGQjX/ZvfgBb8KK',2,39,39), -- pwd : V>vyO!Kw\7|@
-    ('42452220','John','Johns','jjohns@iut.univ-paris8.fr','06.27.88.72.44','$2b$12$lrV37JA4R96Z7cb.EtAPU.gV1aZrRb0GdogNOLpVbHddS/6klZYW2',2,39,39), -- pwd : zZeKN4ej:7f?
-    ('78404571','Rebecca','Hill','rhill@iut.univ-paris8.fr','07.64.50.47.47','$2b$12$1PKTdDB2KNYHKN05NhcineFy4v6V5bZLo5ZG3KmTTGW1UZf5G.siW',2,39,39), -- pwd : [wDcmls3@4OY
-    ('08396546','Angel','Hogan','ahogan@iut.univ-paris8.fr','06.67.80.76.92','$2b$12$gO8bbBjCyw4wmCGzo8tx.OL9DYkdjempxFjmfoZykXcGnZImRdtaW',2,39,83), -- pwd : zHxfC$<QQ}m3
-    ('55020600','Rodney','Bennett','rbennett@iut.univ-paris8.fr','07.92.11.11.06','$2b$12$mRpEAz16e0ID8sLAI.NX1uby7cL0x/eqGUYfZMv1ku5A5rO7sfQN6',2,39,83), -- pwd : &/.8SoX*I58Z
-    ('49357535','Kayla','Dixon','kdixon@iut.univ-paris8.fr','06.69.03.89.11','$2b$12$Mn1GhlKG093a48qE9CUyre6O.HvWaNV3Yyz6jzBmCY8qtgNiMb7JO',2,39,83), -- pwd : .<ZTs%q`$`]}
-    ('27439803','Mark','Rogers','mrogers@iut.univ-paris8.fr','06.90.64.34.31','$2b$12$bM1kVtqEQPV8NbIDTiCuDODiTfkD1hLVA3YOyVTDKfLIJIlRpzKY6',2,39,83), -- pwd : |{G`^6qK|]U:
-    ('80108955','Susan','Mccarthy','smccarthy@iut.univ-paris8.fr','07.24.77.71.58','$2b$12$nUprOCckvJjsYOVIRcZjjOirWr3C.qWG6nQyugT1BPeo6S7J6NrHC',2,39,83), -- pwd : mPi3EYMr[z+-
-    ('30370648','Damon','Kim','dkim@iut.univ-paris8.fr','06.62.64.46.55','$2b$12$VOQhB9Nluk8JAh/E8oZrmuELUMLkETKNZ900lTLOxd6Tr4TSdrAWi',2,39,83), -- pwd : *;{vZ-uA0X2[
-    ('15088571','James','Allen','jallen@iut.univ-paris8.fr','06.00.62.56.72','$2b$12$VyaDt9Morbz9TmGa.EMzl.mzbCCpOKqE6VtgezknBX0j3Y8aBFlVa',2,39,83), -- pwd : yV-|@l`61@aW
-    ('55279573','Samantha','Moreno','smoreno@iut.univ-paris8.fr','07.24.80.38.05','$2b$12$LJi4zCJnJv5WnlIwM3k5X.V8DiKYP7J4uoHkXT8bPVReljz0FkxcW',2,39,83), -- pwd : O9(Q4${1@6'*
-    ('49608781','Tonya','Patel','tpatel@iut.univ-paris8.fr','07.59.02.47.01','$2b$12$uxQ1zgPVQnL4xVmqSX83QuczOCSPAWRwR4pXpcTiHnHGbZyMYIhxi',2,39,83), -- pwd : N1S_[m&8@/>4
-    ('23414889','Yvonne','Kramer','ykramer@iut.univ-paris8.fr','07.38.79.95.73','$2b$12$isCUFNEOybJcvhoizlYAPOAOcCe7cbe36/lct6BbJtcbeXNULh4Ty',2,39,83), -- pwd : (t#Qrvk,wH[o
-    ('52094902','Janet','Mckinney','jmckinney@iut.univ-paris8.fr','07.28.91.08.47','$2b$12$MV2RYPTmMdpFAByABpVmJO7d7wr2YoqGJk4qMkjnaFyJQ80jyo7c.',2,39,127), -- pwd : %rhOj%9Ehn-I
-    ('72637128','Jonathan','Chung','jchung@iut.univ-paris8.fr','07.94.75.61.30','$2b$12$cuWgKVePnnRwyljSmIYeW.kqMXoav1sKWRhMR0dtcl5.vfafKk4jK',2,39,127), -- pwd : &="p5v+=~Z;Z
-    ('71153591','Robin','Davis','rdavis@iut.univ-paris8.fr','06.45.73.45.66','$2b$12$jCZ92IU5eDW.5Z.zipPCeeLGMzdshDie.bcOcC0FGmgpN1cHmm1nm',2,39,127), -- pwd : Nk{\8K6^7M[N
-    ('19929669','Rachael','Phillips','rphillips@iut.univ-paris8.fr','07.25.51.52.26','$2b$12$4VOq1jm1h7mbN6SXLm1oLuXHDBrZNeqQ.SZesegNt5MHK2ySAoBHK',2,39,127), -- pwd : +0]<V<%+WJL{
-    ('72024256','Tyler','Anderson','tanderson@iut.univ-paris8.fr','06.74.67.91.93','$2b$12$qtP9jbIXFb4PJwSnWd/I7On8kIwxRVd3zNmkHCqAlvdxUxDW27tAi',2,39,127), -- pwd : 235.Ks@O>k<E
-    ('71733702','Brett','Ramsey','bramsey@iut.univ-paris8.fr','06.97.80.96.79','$2b$12$gfjheo0i70sKrhxs.yOLouzy/nTXj6aTp2ui4k2dqAQICB8lcJDR2',2,39,127), -- pwd : ">()RaP<&_#^
-    ('60961330','Christy','Molina','cmolina@iut.univ-paris8.fr','06.65.67.29.06','$2b$12$Swc4eZgVl5Tp5ibW7X27/.XvadS1Q7iIK.zCdtzl7eflaVDc22sDy',2,39,127), -- pwd : 7s=FjB@4!FHP
-    ('97403198','Alexis','Mccoy','amccoy@iut.univ-paris8.fr','07.89.87.90.03','$2b$12$9vZsxW.vENe157IP4ryhjOOMwpUgxua/xco/Vrarg6Oaxg2Ohjhky',2,39,127), -- pwd : C7ci8pm@(k|2
-    ('93947042','Debra','Chen','dchen@iut.univ-paris8.fr','06.93.80.87.87','$2b$12$E6JdaWX/3zzu82orkKxbk.c7YnXgc.MFLYanp/zp.GU3Egd/va3Wa',2,39,127), -- pwd : (\)PQYGB>w,.
-    ('77810093','Anthony','Ferguson','aferguson@iut.univ-paris8.fr','06.39.62.99.72','$2b$12$rt9UO57IIAaVdPxswWlU8eIYXKFnlXAQHz7KiGliGOik1FiXobpTO',2,39,127), -- pwd : |V~vcS@YvFhy
-    ('53056600','Sara','Hayes','shayes@iut.univ-paris8.fr','06.92.31.36.96','$2b$12$M3N2roICIGSxYbUHl7ghWuleN1ezowxuMEiyMbKufZOKX/.2kEH8e',2,40,40), -- pwd : Ro`L'&7yvnk7
-    ('86255688','Bradley','Smith','bsmith@iut.univ-paris8.fr','06.82.22.69.39','$2b$12$4/8najdl7wZhbN9jT7juAufSRD5xh36G79R5C.G2SSFbyYgwLUhgK',2,40,40), -- pwd : z~LA17gKb#l*
-    ('77239906','Ashley','Klein','aklein@iut.univ-paris8.fr','07.54.61.11.44','$2b$12$A6u/K0lbNWocDaY19g0cJ.J0Km8FYtTjIFLVI4SmscrndMCBpf1Ju',2,40,40), -- pwd : %s%~;F'<i-hI
-    ('58946781','Susan','Mcdaniel','smcdaniel@iut.univ-paris8.fr','06.92.51.77.33','$2b$12$Bl8MO0EnLIJ18KCjaapa8e6O7z19uMm1OlpmLSkK.B/oi8ZmhI76e',2,40,40), -- pwd : xPcq2?aEsu*-
-    ('69644533','Pamela','Mcbride','pmcbride@iut.univ-paris8.fr','06.68.02.65.25','$2b$12$OweTVwVNyZ/5S/zVwHVM6OBFnb99vRgU4g7Q86bQwrUqtd.H2Mhr6',2,40,40), -- pwd : Fw*)W08~fa<{
-    ('05633804','Sandra','Chang','schang@iut.univ-paris8.fr','06.48.03.40.38','$2b$12$Du05lex2uDsJQllsyuVBAeQ50aFg8LUFpcBL1PYI1kbAYpE1K0x66',2,40,40), -- pwd : |NnC,aDg4tm;
-    ('80004797','Jeffrey','Rhodes','jrhodes@iut.univ-paris8.fr','07.33.33.78.81','$2b$12$YpWfTeAG6SjzCXxd2VEOHeJ3LAh0Le5YM3e7xJbeE9w/KMwMSBo9S',2,40,40), -- pwd : ziK]&@4FOxE,
-    ('09214404','Jacob','Chandler','jchandler@iut.univ-paris8.fr','06.24.24.54.69','$2b$12$wk95mMymM6KCBUgPdWLRMurixDU.G0nU5xq/rsjJk6EB36Xe6iXP6',2,40,40), -- pwd : |tFV'X!&n=Lp
-    ('50479939','Sabrina','Watson','swatson@iut.univ-paris8.fr','07.77.65.87.48','$2b$12$FJterQP/OzeojtzAlD/rd.h6VjphkB2Efqi9oCpGhn3vtk99Y5zR6',2,40,40), -- pwd : KsU$+N,-^~Rf
-    ('50093567','Michael','Tapia','mtapia@iut.univ-paris8.fr','06.35.43.39.49','$2b$12$6Wi4KlJ5YUSF0ZmabzJUp.setziBmgDw.nFtHt0QaDdOFIXpj9ITW',2,40,40), -- pwd : w;LR$'?W&<kx
-    ('10947582','Chelsea','Johnson','cjohnson@iut.univ-paris8.fr','07.53.75.86.02','$2b$12$K7w6g56kR.5PwlYKZ9M4VuGMto.QCluYyD8ODSGvRDjAL4RVcFE2K',2,40,84), -- pwd : IlLTU^Go%+)+
-    ('73113468','Rebecca','Brown','rbrown@iut.univ-paris8.fr','07.37.06.04.86','$2b$12$xcGa71mK7k.kHBDk6KHhbel7UHPPDgHHo2LVaN7tMeQgfqeq6drQu',2,40,84), -- pwd : FJ=bJ#UKT/H%
-    ('34976231','James','Soto','jsoto@iut.univ-paris8.fr','07.33.44.53.04','$2b$12$/I0c6lTbWITvWCaiOM7UyubrbaHsO1gIlZTUNdldW2rtWmthvfnoG',2,40,84), -- pwd : 3R?lArGF<sZ^
-    ('62094352','Jessica','Hunt','jhunt@iut.univ-paris8.fr','06.68.99.71.30','$2b$12$uCgyNdH9UaB.LQwXTWHe4eE4rwv14fuiAl.DFbO4hhjchCrd.JQHu',2,40,84), -- pwd : cQC3:%O&Bh]q
-    ('78855572','Kathryn','Brown','kbrown@iut.univ-paris8.fr','07.18.32.47.70','$2b$12$vfIUoBwG0pGo8S2Ggk3aI.FyNf6nKNL15q6.h0PC/3Q5Authk0vUe',2,40,84), -- pwd : 0cblccP}jgd6
-    ('92954470','Robert','Roberts','rroberts@iut.univ-paris8.fr','06.41.60.36.78','$2b$12$fRuKECpBPBVlVub3qSuwfO53oMSQPQDbwTHua0xUhUnAmxCK9SslC',2,40,84), -- pwd : .OB7nytv*}>X
-    ('84263441','Ashley','Cruz','acruz@iut.univ-paris8.fr','07.70.87.36.68','$2b$12$zZlKZSailcSUlyPd7cge4uYHhxY8AtdflcTy8UKIyFFg15G9OsAeG',2,40,84), -- pwd : BC=m{}uXH>0=
-    ('47953848','John','Shaw','jshaw@iut.univ-paris8.fr','07.57.86.32.34','$2b$12$YWRjEj8htBgS6uHL5N5iUeffExeW8nEd3c/gZ7ECWTTmjddkji7A6',2,40,84), -- pwd : !tU_1eFp;^|e
-    ('17668698','Michael','Schaefer','mschaefer@iut.univ-paris8.fr','06.64.39.48.87','$2b$12$ob4qGnp.icIEn3G0SM1ZD.ek7SWpLDtKNhfjVH2fkyJd/wh3mtASC',2,40,84), -- pwd : 'dP]j]PX/U=F
-    ('18482532','Douglas','Peters','dpeters@iut.univ-paris8.fr','07.15.17.51.11','$2b$12$Enr2fXpTAj7mtTICIE/.MuaAwdU/KS6MITguANqYwQ8rk.MHvLHfi',2,40,84), -- pwd : HEC%H.>@E.T=
-    ('18674656','Joseph','Boyd','jboyd@iut.univ-paris8.fr','07.28.44.99.43','$2b$12$t0fncCGkRjkgvCdX7GKZveN6wHhNZA8sjZuo9qq47jVcgq202u8XK',2,40,128), -- pwd : P}=&_O':A9nV
-    ('76651164','Melissa','Lee','mlee@iut.univ-paris8.fr','07.17.03.12.55','$2b$12$TOZLHzUEJRKurqPjH5Cumu0E7M1rz7/Hw1CMZvFYaWwFpCoOYJzom',2,40,128), -- pwd : Sen2_Q"HhgH6
-    ('47723568','Elizabeth','Hobbs','ehobbs@iut.univ-paris8.fr','06.46.71.01.45','$2b$12$01K9QrtZLXrNxFeUrptOSu2SFh4E.8Dn2LcllYsWzAd0eCH63DcK2',2,40,128), -- pwd : ELANqb[/K~ig
-    ('23210498','John','Silva','jsilva@iut.univ-paris8.fr','07.85.37.48.29','$2b$12$tWD1oOrJjgeRsU8Idy0qeOuIReYUgUtBJgrZB8bCBWL/nk2l/5SkG',2,40,128), -- pwd : mOgD<,Wx8qJf
-    ('20682194','Cheyenne','Miller','cmiller@iut.univ-paris8.fr','07.97.27.46.15','$2b$12$Xt0mHXSQYvQ70I3gklfTGO8AqPtZbaYF5G23v.JavRVXHA.HAX7fu',2,40,128), -- pwd : oWBA^K`~Hq0!
-    ('09715150','Bryce','Buchanan','bbuchanan@iut.univ-paris8.fr','07.39.86.87.70','$2b$12$bvMOSXzn907i5xxnsas68uTKfOMwWh4gntGrjMd4OxJC3mHRJZW2i',2,40,128), -- pwd : 85)mgRP\o)i<
-    ('42906715','Danielle','Villegas','dvillegas@iut.univ-paris8.fr','07.32.79.17.40','$2b$12$4lANRsXWme.G17ee7T87rONZj9869PUBNjwu1naURo9.IaNqdfW1e',2,40,128), -- pwd : 9aZ&JQF8srnu
-    ('64692649','Ryan','Cortez','rcortez@iut.univ-paris8.fr','07.95.08.82.85','$2b$12$OZ.dKBQ1K371flmre68uvOt84a5t.Thbiw3CtCuRiYLGznckCT8La',2,40,128), -- pwd : 6q8XVQ`;#rpU
-    ('53967843','Jonathan','Dunn','jdunn@iut.univ-paris8.fr','07.38.74.22.24','$2b$12$Xs6NdL.EgzIH3tP/FUW7GeeovU4DZdOVMINqcDXyOieKgkCSgFl4m',2,40,128), -- pwd : 7pp44PZZm_nD
-    ('73753631','Kenneth','Davis','kdavis@iut.univ-paris8.fr','06.47.67.18.86','$2b$12$iYHNWQ43ziUFGSK/1FbF2O1s3c7Mjn0Sm8JZhhkIz4d6nvcxWoyYG',2,40,128), -- pwd : oepmG@XG:1F9
-    ('57785528','Joann','Griffith','jgriffith@iut.univ-paris8.fr','06.51.05.23.87','$2b$12$WsFfiJmvDDUwegXVxqrcDe3q8JUaFQ.8HdrcquXRiYoMZibhPHMIi',2,28,28), -- pwd : q9vJ7B19qG:s
-    ('02693141','Emily','Perkins','eperkins@iut.univ-paris8.fr','06.46.03.70.03','$2b$12$rgUkP0JODiivFhYQOH2CV.2sBKr33FDsQXrQlCRBd0j2UWOQ/nxrq',2,28,28), -- pwd : FfOC`2p@+F<g
-    ('63134090','Carmen','Davenport','cdavenport@iut.univ-paris8.fr','06.63.08.97.09','$2b$12$XRAO4zC6Wte.076DHpHmzekjIf8wqeTrVFBCFj.XF5n37gRIMOUv6',2,28,28), -- pwd : Eg,$Xe6u6$ow
-    ('73854923','Jessica','Fleming','jfleming@iut.univ-paris8.fr','07.99.36.22.51','$2b$12$lZHUWZ1J5Xwg9ppf1op64.JmqdFraKtouJy//xRzyfTJZIfOI3IFS',2,28,28), -- pwd : lQR4cG~gYoWt
-    ('07620805','Molly','Watkins','mwatkins@iut.univ-paris8.fr','07.69.56.34.71','$2b$12$6FMDaaeaiHU7.Y7o66Pjzeqdq//kyxQP6R2pz.BIOuxZLdfRie/ly',2,28,28), -- pwd : ;'K0*x"lS/F*
-    ('45394894','Brent','Lewis','blewis@iut.univ-paris8.fr','07.34.24.37.78','$2b$12$E1/fQs3d7C82TNgaK9pnR.DWVzX6dt2WtCnNGT4KuiC0eCn.Zj4la',2,28,28), -- pwd : aSIUP"X~/FW=
-    ('55914982','Stacy','Mathews','smathews@iut.univ-paris8.fr','07.74.96.56.17','$2b$12$A.ncGDMXJanKPzMLRnybQ.MoWwoxqZx..ifxqAr61hKGYXBMzBz12',2,28,28), -- pwd : 5o-J~*{!.,eo
-    ('18991208','Tyler','Lee','tlee@iut.univ-paris8.fr','06.19.65.81.55','$2b$12$HdIv0IgwecXtWEgJrX4wKODk3xHf0XCpVvs.4HGDapr6HiecFjYCq',2,28,28), -- pwd : F}uK90,vI+s@
-    ('08566457','Carla','Avila','cavila@iut.univ-paris8.fr','06.48.06.09.25','$2b$12$1MEo56IsJu9OwnAAmzIt7O2vtnlZ2fpyNok/0n4tZO.Q0icgvWV96',2,28,28), -- pwd : G~D7zhnzBSYW
-    ('62057047','Dominic','Miller','dmiller@iut.univ-paris8.fr','07.83.54.65.29','$2b$12$E0T63IqHgqpKHIUr9eV6JOQ6J8Ths1TyIff30HP.MU14RFglqE4ba',2,28,28), -- pwd : 9I-"{|q4>_(Y
-    ('88055579','Tyler','Mcgee','tmcgee@iut.univ-paris8.fr','06.96.77.66.78','$2b$12$zXt8.GsLZJWlrK4iEE54K.x2dxjQ9Dul4ODcmd.kI8DePi9FASMNG',2,28,72), -- pwd : ^5?*J*2WRrX?
-    ('47254067','Annette','Mckinney','amckinney@iut.univ-paris8.fr','06.16.96.75.73','$2b$12$v1cn9II5KfYswx8DYoxxS.CVbr9jhoYdjT43jg7lVGLFrjXriQkd6',2,28,72), -- pwd : Ze~$fKEc:c,^
-    ('52589649','Dylan','Schneider','dschneider@iut.univ-paris8.fr','07.29.48.18.36','$2b$12$YpxJqY8PxUuvRKPi0A1kEO2ZZz1BsWibAbdRv0piGfbD//vkxXTYy',2,28,72), -- pwd : wRlB\uVjP:bu
-    ('70332419','Cynthia','Phillips','cphillips@iut.univ-paris8.fr','06.87.48.36.80','$2b$12$Uunxaripnym5XgTUCqKzoOTipw4RLIOcKo1LuQsaE/ERoY/Tixywm',2,28,72), -- pwd : V%'f3(`;eh<o
-    ('91513130','Shannon','Martinez','smartinez@iut.univ-paris8.fr','07.22.84.87.78','$2b$12$1oMWCnXHDemJpQbC3CRAT.Bl3COIQ87hr4lmVAQ9SyJsRLW8LViYu',2,28,72), -- pwd : @h$@}.VXoCGb
-    ('83515294','Nicholas','Johnson','njohnson@iut.univ-paris8.fr','06.45.44.47.34','$2b$12$zIkDZPb6ioZ/hdP3rGEGX.a8yGF96oaREHke6ATnzqFzfgaGE0KzW',2,28,72), -- pwd : wcA~C0n$4sl#
-    ('01633881','Matthew','Hunter','mhunter@iut.univ-paris8.fr','06.57.81.39.85','$2b$12$5YrKSbFVqjuff8dpgdLFherAcUGdN1uJUYqkyRdfzaSR5KV9PNPDm',2,28,72), -- pwd : '=}}v<F)efz'
-    ('40646230','James','King','jking@iut.univ-paris8.fr','07.43.16.83.35','$2b$12$40d3PJkxquWxcpWTXcAk8Op3uqR3f7xxovLZtlUYWj3yuhv6YOSLe',2,28,72), -- pwd : h!se}p$sTtH,
-    ('75244422','Jose','Davis','jdavis@iut.univ-paris8.fr','06.22.86.64.62','$2b$12$tKCc9vf/Vndgc58/E63h6ea4zTZig8JMXHSAVMLuSys56OM5GUsoy',2,28,72), -- pwd : tZBesjjy&Q30
-    ('01901507','Jon','Graves','jgraves@iut.univ-paris8.fr','07.22.19.89.87','$2b$12$z6h./LP7rkPdkLgqt5i5NOwiUD34B/5UHSaiSgi6MJxgnjWfaDXeO',2,28,72), -- pwd : i"`/AJ9geli+
-    ('12880447','Johnny','Watson','jwatson@iut.univ-paris8.fr','06.27.00.26.76','$2b$12$cH7nRIUWse6osnatdQO2cem60KbMSWAtTG16yTU7zOv/5BvpQBwYC',2,28,116), -- pwd : Q(e7,@*=3>Au
-    ('95015737','John','Lee','jlee@iut.univ-paris8.fr','06.89.67.01.47','$2b$12$2Q.N4LYdZUex9ZU3NtkZNuzAotK6UV2K3O5UUyWV41LmagVWdntiq',2,28,116), -- pwd : .zEUt7Sihjvs
-    ('48393050','Monique','Medina','mmedina@iut.univ-paris8.fr','07.51.98.05.13','$2b$12$HQhL92idPIT0qz/I/9a/CueAJTyxAjipn4Omdf0uk/dj.tvs2zOAW',2,28,116), -- pwd : :\+98(GDpG.c
-    ('38709963','Elizabeth','Allen','eallen@iut.univ-paris8.fr','07.64.89.46.19','$2b$12$oDz6ve9jGJMJbBVAbuNA2OCpUtL.G.zuKfKnHfgzJwMVAQRflk1v.',2,28,116), -- pwd : iXz(WT8BOQA/
-    ('59652174','Deborah','Perry','dperry@iut.univ-paris8.fr','07.39.25.04.31','$2b$12$K9bV1S0VITqa7t/51eET0eZ4X01XwAD9fBGzzPpPeMlrcyycKTV/m',2,28,116), -- pwd : ll}*hxH&m*Po
-    ('09494517','Christina','Huang','chuang@iut.univ-paris8.fr','06.94.93.24.52','$2b$12$R7bMJgAlsDJctSUE.41.ze6NswEni3J3.CcXhauyYJzxn3WAhI81u',2,28,116), -- pwd : nwa4y?A`n|na
-    ('75420649','Matthew','Johnson','mjohnson@iut.univ-paris8.fr','07.17.87.79.37','$2b$12$y2RqSh1effmfG/qzjOtVt.4Ts7l1YDJtbibJJj9AJ1EV/hQF9A8q.',2,28,116), -- pwd : 5{aLw)]L.k5V
-    ('43305480','Kendra','Armstrong','karmstrong@iut.univ-paris8.fr','07.50.02.22.66','$2b$12$SKki5G5qGnQt34PEsNsbHuMIfI/GnN2dQ1TirGjptNBqmKH2yNrkG',2,28,116), -- pwd : <VF6>kp&9)h^
-    ('15364145','Lisa','Luna','lluna@iut.univ-paris8.fr','07.65.35.03.56','$2b$12$cKqL7dSColB2z2p/FnUSGOw9w.fXjRNMbITJnae8QUDBr5yxfddLG',2,28,116), -- pwd : nUC"Z[YdTw4q
-    ('63699597','Patrick','Harris','pharris@iut.univ-paris8.fr','07.93.05.72.86','$2b$12$DoolCF0RkRAt4As2h27QZemvust9EHnuBiDCaIOfs3WxhgF0LC/Ma',2,28,116), -- pwd : 41IIX$JEi8#2
-    ('24325872','Brandon','Smith','bsmith@iut.univ-paris8.fr','06.76.61.70.16','$2b$12$jaZc5/85mqpHibOlqzaG/exBzFsOJBqzbSOsAFwKJLegwWhpR/C9i',2,29,29), -- pwd : y`vr<zb$_7%3
-    ('34022257','Joseph','Brown','jbrown@iut.univ-paris8.fr','06.46.08.53.62','$2b$12$NOeJJYuulel5Xl/7UPdsFuaaecIgxhPgWdbwYObGz78tN40b1nSyi',2,29,29), -- pwd : Q09#r+Cyu+{9
-    ('02291935','April','Price','aprice@iut.univ-paris8.fr','07.26.40.52.55','$2b$12$LmAKXNll0dL7xQf64c6teOcI6pFCnMlqtLas4G38iIsVaPhvKOx8K',2,29,29), -- pwd : !-cs>!j5Vb.{
-    ('19457896','Stacie','Lewis','slewis@iut.univ-paris8.fr','06.39.52.07.92','$2b$12$c0z2cjrgkx6Fdv2sqgDjY.S9maehFfrUV/43eo/.g7dn2anU1ViD2',2,29,29), -- pwd : [)_t`?E.=_1&
-    ('01433025','Leroy','Rhodes','lrhodes@iut.univ-paris8.fr','06.43.38.62.42','$2b$12$PimVAxgg3CJgoppz2XK0Q.pYNlkLtqfvL4H6AYUnEwrE3otu.sf5y',2,29,29), -- pwd : fR;XNsIU4Ra]
-    ('17959076','Mark','Davis','mdavis@iut.univ-paris8.fr','07.59.56.44.60','$2b$12$ajvTR8coCgLZfFZDQgHXkOYcK8KONC2dFfyjA0UxIBimGpNrjb4Nu',2,29,29), -- pwd : +V8[0ug.s*7\
-    ('81988599','Eric','Sanchez','esanchez@iut.univ-paris8.fr','06.72.89.23.63','$2b$12$V5H2fv7BykNizuCq8ZrOQ.VDm.uigF/cRRqBA3e8Pa4DYrzECbsGq',2,29,29), -- pwd : Vd@6(DAG56rI
-    ('46387246','Valerie','Jackson','vjackson@iut.univ-paris8.fr','07.96.74.96.46','$2b$12$j311XvFQXoqLILZ2mDDCWOgHqjEFQEeL5Ce9KN9Z2b76K5ItvRUW6',2,29,29), -- pwd : %L<!\q9_1KfE
-    ('55370592','Gordon','Lawrence','glawrence@iut.univ-paris8.fr','06.28.38.41.38','$2b$12$cc5UVXIveE2DStGJIwv3PO3S4/eqD.wHhPKXvYUvPtiEr16B8AD7a',2,29,29), -- pwd : v=FEBL>~Qomx
-    ('24007418','Todd','Wilson','twilson@iut.univ-paris8.fr','06.63.49.35.49','$2b$12$XSgfu//SGUQmttMjwpC4dunQED8.GW/uyZjkhSvd6i3ucnEoCvy/W',2,29,29), -- pwd : 3,,BB7AcefOg
-    ('57222156','Dustin','Lynch','dlynch@iut.univ-paris8.fr','06.06.66.30.50','$2b$12$lyPLpApT2MVaXfaQFA8dUuOG/q1qENE5N.w65rMWSdlj97VRYi3KK',2,29,73), -- pwd : <q~e4TE7m}r5
-    ('48054794','Jamie','Bautista','jbautista@iut.univ-paris8.fr','06.41.80.12.77','$2b$12$Tc5ty4NZ197C9zcWK1yiXeFxgBM5A7Hbtp/qBuyBocAibGAoIEHCm',2,29,73), -- pwd : kZO[K-zZI<n_
-    ('90822298','Richard','Mccormick','rmccormick@iut.univ-paris8.fr','06.09.61.40.83','$2b$12$9Pl3QZxA3KFH40oIPDxceurPrgJXMLy455425OyGD3J24zuSbA3QC',2,29,73), -- pwd : zU;qgNrY[LZ,
-    ('15193199','Matthew','Cox','mcox@iut.univ-paris8.fr','07.56.50.29.82','$2b$12$9un8BkWBJir8mQyBYKUTyOtdxDdQTEni6xO/jDbafEgPTYQEjc5K6',2,29,73), -- pwd : .Vxh\H=W-`S{
-    ('83472059','Steven','Wilson','swilson@iut.univ-paris8.fr','07.46.45.69.73','$2b$12$2sfNg0qfemsSK4MtSMkupuz7tnz9Sw/jfs2C0u6thCcAA1oNxfG4m',2,29,73), -- pwd : R\8.}+6)(xtE
-    ('82940313','Daniel','Hendrix','dhendrix@iut.univ-paris8.fr','07.64.34.27.70','$2b$12$vkjeLQaLTcOsQJWIAKiiV.A1HhBOOtBc3TtAk5o4ZtHlTsyNZkLzO',2,29,73), -- pwd : Ix?H_eU9|alo
-    ('95748892','Shane','Cruz','scruz@iut.univ-paris8.fr','07.68.50.84.79','$2b$12$HrXXGAs0GSlE22F7IPlSbOpeDnWNVkPTXzSYbXkM2iStY7tomkKHq',2,29,73), -- pwd : 9K0pr*,Te%H(
-    ('98007348','Anthony','Webster','awebster@iut.univ-paris8.fr','07.79.43.55.74','$2b$12$WjP6auCJXABKXDcBLSuKaOdfyOfZ.tSQCe/46gU6pMYGW1l5uqrp2',2,29,73), -- pwd : "(O'?w*V:gy)
-    ('90333574','Kurt','Maxwell','kmaxwell@iut.univ-paris8.fr','07.73.39.61.40','$2b$12$9gi5P0N2Xe0WaA.FRrCEQ.6k4PdrlaU7LOHXf5emAdX2s.do7rBcK',2,29,73), -- pwd : KbS}R]=)cc@2
-    ('40516830','Jose','Perez','jperez@iut.univ-paris8.fr','06.12.60.94.51','$2b$12$/EROqM9G6TPTIP9Be2HXL.ldkle1jq7xGCrKDDpP5RjVtosuU5O1a',2,29,73), -- pwd : \FUeca_N3Rr>
-    ('80659617','Rebekah','Vasquez','rvasquez@iut.univ-paris8.fr','07.26.64.30.55','$2b$12$LkzTg0ue424dSW2g5EzjLOd55ZEKu.IzgJaOd7Jx96FWRUUFm3oB6',2,29,117), -- pwd : ~j12fk%!Cvfq
-    ('67640398','Terrence','Fowler','tfowler@iut.univ-paris8.fr','07.71.85.59.97','$2b$12$mfxogFEAj7qPevTATbALzu8I59bTWv8d.7sd2MoVZZwDtZ8arj1nW',2,29,117), -- pwd : hc[Y:OFDNXES
-    ('21118209','Suzanne','Carroll','scarroll@iut.univ-paris8.fr','07.58.85.72.07','$2b$12$M1ylNrGoNhO5/ztUk9QZC.h3BiudhUNBqbS0jefe/hPo4zgvB8Yde',2,29,117), -- pwd : S^[G4'`KV$Ca
-    ('17326106','Clinton','Carter','ccarter@iut.univ-paris8.fr','07.10.93.59.08','$2b$12$j1E1NX0OcWDMgpfoKJNpROBiEpOWMrLaItQiu9/yHTtuSjbi.PSgq',2,29,117), -- pwd : :N[v^\ecVxfp
-    ('17558966','Matthew','Jackson','mjackson@iut.univ-paris8.fr','06.26.04.03.15','$2b$12$joUa3lXy.s1cRutavwu/KecVoKtC65Dif.c8Y619oxHh6TX72eDPy',2,29,117), -- pwd : 7xNyS(b(w)?p
-    ('39461322','Melanie','Johnson','mjohnson@iut.univ-paris8.fr','06.79.39.31.00','$2b$12$L05IgXx92oAvjqzEyJdexu6PdhDp4/rIJAPudBPYZC3z7wTuT4bHC',2,29,117), -- pwd : SFs+.GH51>_]
-    ('59347451','Matthew','Perkins','mperkins@iut.univ-paris8.fr','07.86.82.25.11','$2b$12$gsxHontbIawih9CaJ6gpeuafD83O0QLQES21/w5L0zNifvkWdOHeW',2,29,117), -- pwd : p!M|8NOsQV'Y
-    ('45292518','Stacy','White','swhite@iut.univ-paris8.fr','06.99.37.91.37','$2b$12$o.CoP0YStIl6njL5SQZAquIAL4htMTCpoyFIOwTGWLfD/UZ4cKFGq',2,29,117), -- pwd : ip=lIWz70tP{
-    ('02168287','Nathan','Higgins','nhiggins@iut.univ-paris8.fr','06.85.74.85.96','$2b$12$utZNUzJ1FdlllgGm2R8v1uA.bBxAHCedmKic1WjuzLfM2NURPaw82',2,29,117), -- pwd : 'f5Rf[bw@G3z
-    ('08845248','John','Daniels','jdaniels@iut.univ-paris8.fr','07.82.76.40.05','$2b$12$xnrLS9JXXlm5gt4Yx8Sb8uCp5AOV/rcR..N7Oytccy8pozaEGRKf6',2,29,117), -- pwd : bj?FEuTD`xcB
-    ('83192209','Amy','Murphy','amurphy@iut.univ-paris8.fr','06.94.70.56.27','$2b$12$Ahbbddp0TF8TJbdgNem96OzJjazf4D7C3L/UozDiitEO7EoXQSyBC',2,28,28), -- pwd : S=oU4hM^9S"'
-    ('12136434','Bradley','Jacobs','bjacobs@iut.univ-paris8.fr','07.62.57.51.36','$2b$12$zpZ/Bf9x1sOno3YAtrone.VkRFvoOOLJcpaTVaz9ucAkpmgxsHUfy',2,28,28), -- pwd : d'%a!65Deg2Q
-    ('24474793','Todd','Bridges','tbridges@iut.univ-paris8.fr','06.71.73.77.05','$2b$12$evYLNKshiPOUqxr68SWQRu2IVdNvH7LdJiqhPglrw/kzsV/9IpEZi',2,28,28), -- pwd : /.)qLaC)PDHr
-    ('02860915','Douglas','Espinoza','despinoza@iut.univ-paris8.fr','07.44.58.02.15','$2b$12$CIvwZyDItbroiGOEPCFGn.44dh4UoQ9bO4XzsWz4tS283nrCteWy.',2,28,28), -- pwd : ?T6=2D}>Dw}5
-    ('18507236','Joseph','Schultz','jschultz@iut.univ-paris8.fr','06.98.82.57.15','$2b$12$6fHa1TgaTkBPPiYsKFRJw.OFy8Nou0tf9o.5.H5ZEv6s6cPjYazHm',2,28,28), -- pwd : BLZ!Nw8"@=8~
-    ('43741000','Dale','Ramos','dramos@iut.univ-paris8.fr','06.68.16.10.78','$2b$12$yXiZ6DHJx520y7yLNWTXRenHIIYGDLjCKov.fLdAO9Qbz5g/UAM12',2,28,28), -- pwd : vFH0!QM2bxiL
-    ('54552385','Jill','Holder','jholder@iut.univ-paris8.fr','07.46.45.07.18','$2b$12$GAXxSw2KNsyQj9AFa0bhze2Iw/X0auTZ6JkThJNWbcm688dUKjEdm',2,28,28), -- pwd : >-jN9U8H6j\J
-    ('23736990','Crystal','Arnold','carnold@iut.univ-paris8.fr','07.91.33.02.76','$2b$12$r9AaR.QlT8UZtsC.fNU/buIGfFpNvKj2Edi1xjaoseac2Am9ZF2IO',2,28,28), -- pwd : ${p#F?Mlxobx
-    ('76773446','Kevin','Sanford','ksanford@iut.univ-paris8.fr','06.87.33.74.55','$2b$12$lrQhWcE/kMkS5Jcg.1SwFuF3bpg99SwiQB0PUmav.iO.7iDQoSO4e',2,28,28), -- pwd : 5U?Onf8iZ9>j
-    ('37929930','Tina','Tapia','ttapia@iut.univ-paris8.fr','07.11.27.25.18','$2b$12$dC4.198LmCuZx4V8PKemKO6Ij4x4iCSbThJihXiIbITD3xW5aW8e.',2,28,28), -- pwd : [CYpSL-[<ZhA
-    ('74042822','Patricia','Miller','pmiller@iut.univ-paris8.fr','07.75.15.95.43','$2b$12$94i07oLL/5xcizNv.f6RR.w6.UsMzvqNLB8K9HTproUqBSufR5LPO',2,28,72), -- pwd : iDv2R3k.UCnO
-    ('88955166','Eric','Brown','ebrown@iut.univ-paris8.fr','06.52.46.60.92','$2b$12$pJK5cE1hVoBY/ThmrAuQxONHLgV8GS2s5YhHsg.5Mh9S9lliQFvOS',2,28,72), -- pwd : Mf-"1ipA{g\m
-    ('46719401','James','Singh','jsingh@iut.univ-paris8.fr','06.33.57.16.92','$2b$12$fdo4LXT33wNUmfHPgWHD5eXSWfyV7Nb6Ws8Q.4BroI2fbSqUaeIe6',2,28,72), -- pwd : CNp1ML0sj>Ui
-    ('81268085','Ryan','Howard','rhoward@iut.univ-paris8.fr','07.07.62.55.35','$2b$12$e15/tcOHipotIIBuya7kReirZfIAxABl9xGYn3rgZBdzDhujmpPfC',2,28,72), -- pwd : TtBy7[?|O/A^
-    ('57643046','Jennifer','Long','jlong@iut.univ-paris8.fr','06.69.82.67.22','$2b$12$ZDeicWBjTZrlsCvZPE2.V.WcF6nG9hSZrgvqTfoHVLiCwYB5g1lLa',2,28,72), -- pwd : P)2]qG@@j2(&
-    ('63270385','Manuel','Mcmillan','mmcmillan@iut.univ-paris8.fr','07.33.48.35.52','$2b$12$3EhQx9B3kl9Tk1/Q9A78DudOyq5W8myeEFmv1aHAYhcwHV3SOjHcq',2,28,72), -- pwd : uxCz0NpQ#'V,
-    ('38534691','Kylie','Barron','kbarron@iut.univ-paris8.fr','07.66.31.39.98','$2b$12$IPOXZRWhWd1vVTWRQMjXE.wc.ZOGLqt8/xCPH0wpgoN6kC0CLWOHS',2,28,72), -- pwd : \:Q(Vp|n?lEn
-    ('19467806','Jason','Peterson','jpeterson@iut.univ-paris8.fr','07.88.54.05.46','$2b$12$N8wUa3UKvDY/Jk8EgyVJhOulwjyFqBqRko1KRKQgq0HmnMoFc1yFe',2,28,72), -- pwd : t,9|,gmY#"+]
-    ('95098891','Katherine','Reyes','kreyes@iut.univ-paris8.fr','06.44.47.94.71','$2b$12$K3lN83milMWA5e3vZ3gbme0fQi3SyIjt3KJn9Xcapl42iV.HHJ6iy',2,28,72), -- pwd : ti}H=7x}c4u"
-    ('38864544','Dylan','Campbell','dcampbell@iut.univ-paris8.fr','06.84.20.93.53','$2b$12$H8PALdpUpJIoxwQh/Jtk2uDUxe2I0mMPcBu80E60TGl3S6l9n.tX6',2,28,72), -- pwd : l<m[_UP=fQZ3
-    ('32570936','Walter','Morris','wmorris@iut.univ-paris8.fr','06.86.43.62.12','$2b$12$ISZgJJEXrQFV4T1Q6q/37uQEZ.7oj.hwJTRt4ElhymmTlwDRK0YbC',2,28,116), -- pwd : R1bkuM^`)bL6
-    ('02574457','William','Mills','wmills@iut.univ-paris8.fr','06.38.19.20.47','$2b$12$Cnpmppy9EbyLqsnisWHzcuCoKC5aqQWWqa7fR9BawIh47.5IyTHOq',2,28,116), -- pwd : <l"(o;8BIqBU
-    ('62543772','Gregory','Case','gcase@iut.univ-paris8.fr','07.90.86.07.97','$2b$12$48FAvxPqBHX2QKfEj54nuOW8Qa0p/PbCe0Gbk4SyCwbDUKqprx8em',2,28,116), -- pwd : s[s(eIF51wS#
-    ('71268945','Lisa','Thomas','lthomas@iut.univ-paris8.fr','06.16.85.77.82','$2b$12$i8Yq3n03xtkVMY4jYzEQM.XTTdXhrJOvwF.Fo0/FHg.WIO7AYJ1jS',2,28,116), -- pwd : ]/F;b+Xq-y!M
-    ('38162490','Katherine','Middleton','kmiddleton@iut.univ-paris8.fr','06.69.32.44.03','$2b$12$Qmn/YmPNsoxQEYdUEEPrgeKkoaQElLSYII0OJILhNU4rujK39hIm6',2,28,116), -- pwd : ;nMRVptei&Hj
-    ('20105981','Kyle','Fowler','kfowler@iut.univ-paris8.fr','06.56.85.16.09','$2b$12$6bUp4HAyqUvSuKxJ5hoI8eKBsGnqieubb9xMzLXWQJFAu7gEVPSua',2,28,116), -- pwd : |W{/Gx<k&iO5
-    ('64876438','Tara','Brennan','tbrennan@iut.univ-paris8.fr','06.56.32.01.86','$2b$12$FT6i1.X12negV4Nkv3uI8uHRZsLnVCGjhUj1SOCMRVOFbJfKT.uEO',2,28,116), -- pwd : `aJ/[5WfQ{}#
-    ('05729664','Tracy','Hernandez','thernandez@iut.univ-paris8.fr','06.71.47.54.96','$2b$12$EdWt.5EfiabwwXvky8CwpOWGXmdu12hPupAIZmotBBITjPpLqZo9i',2,28,116), -- pwd : )LV%V0tgFl$G
-    ('56608087','Elizabeth','Clay','eclay@iut.univ-paris8.fr','06.19.95.69.30','$2b$12$2WVJ6P2D/A4rjefqzE0aaeC9OhaPxc7C/nn0oPdgu992YPaD.eK5i',2,28,116), -- pwd : Y0s:b>&|HW*@
-    ('58873695','Evan','Young','eyoung@iut.univ-paris8.fr','06.65.70.21.84','$2b$12$cygHstFZmRr7mrgx4omP0.0GhpZUS6toCrvAFpP6SfGQ/lZNSpSk.',2,28,116), -- pwd : gRubRaOM63G*
-    ('37568076','Mary','Ross','mross@iut.univ-paris8.fr','07.08.15.04.24','$2b$12$/gtgItA/YSAGROMcBTdS8OF1qGQFFVhmG/.jdNSjIUgLSKD1PvtgK',2,5,5), -- pwd : &ib/wJk=$A)@
-    ('92165465','Sheena','Roth','sroth@iut.univ-paris8.fr','06.20.95.45.11','$2b$12$gy7d.Vl0D75sOMAWAH3qUOC9iOYOJRTinMnPLZHD6s48Y25GPATD6',2,5,5), -- pwd : $fcFSm9~Q+#o
-    ('06747260','Megan','Warren','mwarren@iut.univ-paris8.fr','06.04.57.57.65','$2b$12$/lzrwP2gxctwqZ4nLnT3E.uLU8Ed8UKGAKsVTDq8MvZ6PvfEXgCNu',2,5,5), -- pwd : rz7rPdN(Q>rO
-    ('56565549','Joe','Price','jprice@iut.univ-paris8.fr','06.08.03.81.53','$2b$12$JXMUONbAtQMaiD7PyCwEV.ykpX0B.OmE1vIzXyYXRX1PLJ/TyZfhS',2,5,5), -- pwd : mA%T{Y`dep&E
-    ('55455808','Jeff','Pineda','jpineda@iut.univ-paris8.fr','06.00.61.44.37','$2b$12$AztvZU1T4rGwis98FCWPge2WY2VTD6YvkH/zLmO6A.DMUHaKyGR8y',2,5,5), -- pwd : 2IxV"]x/1lLo
-    ('45240831','Kathryn','Brandt','kbrandt@iut.univ-paris8.fr','07.07.67.54.27','$2b$12$z.jzvAVjGh/MwRu0/hOHP.2hgBQIfMVGx95qkssERm7fYRBZ3KcgK',2,5,5), -- pwd : PA9KuBDk`vDo
-    ('23848114','Tracie','Robinson','trobinson@iut.univ-paris8.fr','07.82.13.49.38','$2b$12$SZEfN0ol2w7IaBX/.d3vauE3PPaiODQh.aYiubif4tk1HioJ6Kddy',2,5,5), -- pwd : SoxC50$[0aBj
-    ('06915981','Wanda','Garcia','wgarcia@iut.univ-paris8.fr','07.80.57.45.36','$2b$12$Hcs8JqhK7PghHZlR8IzZhOmIycB3KvxZnQKrpPS1axojDiVoeSEvC',2,5,5), -- pwd : `2S3\/EY8chN
-    ('24226298','Kimberly','Stevens','kstevens@iut.univ-paris8.fr','06.07.09.47.81','$2b$12$uPHPSbBra6iStvUSqy8LjOhtRRtpvBBZL4u7qr3wPUCOxfz6nZcYC',2,5,5), -- pwd : 5c(mq;4''1.j
-    ('99674548','Stephen','Barnett','sbarnett@iut.univ-paris8.fr','07.07.67.26.89','$2b$12$A4VTFQVriegHk3ZzmtGLUunn8D1AFSgTWUUCrhVhubY4wcEDBPQYW',2,5,5), -- pwd : ^M`V%<t'6m>r
-    ('32293771','Jacob','Crawford','jcrawford@iut.univ-paris8.fr','07.43.31.89.36','$2b$12$nHxWPvCMP/7U.hL2jBluoer1jMKsLV8burzm8qptN2Hhq5yHg2XCm',2,5,49), -- pwd : 2.j?S+WQ\wW&
-    ('73620092','Steven','Lee','slee@iut.univ-paris8.fr','06.83.37.70.10','$2b$12$ggub.a0hKy6E2rJGZwDNHuYcKoIwnGS8Kz741mTUWRwnLdLmIKmem',2,5,49), -- pwd : LG_yd%e!8-9d
-    ('20935867','Sydney','Bailey','sbailey@iut.univ-paris8.fr','06.21.87.83.98','$2b$12$wMos2XqBHX75Zf6MroMfu.EmQ6rKW4QXmYt5Ggtt2LJYuB9v2jHUu',2,5,49), -- pwd : sp\>yy1T)GY3
-    ('35062779','Richard','Austin','raustin@iut.univ-paris8.fr','07.41.68.33.68','$2b$12$aLcq/SInc5..bfPJY/hYlehWuE5m/HFDtG0gBLR7ACmHGyTQ3ug.y',2,5,49), -- pwd : UUP+;R[1"#X]
-    ('07809037','Rhonda','Campbell','rcampbell@iut.univ-paris8.fr','07.82.36.39.53','$2b$12$qrMftu4fd1obJvoWfFFEoOwK1wVbK2utv4gxtwpKlVvFdLRVV0i4e',2,5,49), -- pwd : K}%'[1FNT];o
-    ('69206144','Kimberly','Castro','kcastro@iut.univ-paris8.fr','06.88.28.73.64','$2b$12$g7Cyb2Ousxavp6p5RoYt0O1UA0n.K.IqZ8yHZAImKiyG6cFuu0v62',2,5,49), -- pwd : FI>-;jC4VFs"
-    ('63666367','Christopher','Blair','cblair@iut.univ-paris8.fr','07.59.54.47.60','$2b$12$KktvyK/MKm1GILx1bJlJner5ARhMSeIg05OxziwODG1fpkbaQjRbG',2,5,49), -- pwd : iHRQOf>R!w:D
-    ('80265895','Tom','Mcdowell','tmcdowell@iut.univ-paris8.fr','06.27.78.83.43','$2b$12$t3z73EWr7nBmJ165x7iKA.t0.1cp729G1QeuKEa4894QfxxYvC9Ma',2,5,49), -- pwd : (8k%v<9_1l:v
-    ('20941471','Nicole','Lyons','nlyons@iut.univ-paris8.fr','06.88.98.96.99','$2b$12$oK0Gpkn0TsZho2pbv2yPXuuHmqujyE9VbgfDwH0FdxJkKEZ9us3Bu',2,5,49), -- pwd : gBTkqL$^@],3
-    ('05333216','Nicole','Johnston','njohnston@iut.univ-paris8.fr','06.79.13.36.23','$2b$12$.ooOBgSCgdsCX77fJeqSLemsX/dr8ZywduNx5E/T.rS5kEolaPVAi',2,5,49), -- pwd : +WS@i4+Ej_o/
-    ('68436409','Kathryn','Anderson','kanderson@iut.univ-paris8.fr','07.21.12.78.36','$2b$12$0WoLZI2m7v41ajb3b2NexeZslgBpAOTgfO8RYLrnxJVUY7IALIgv2',2,5,93), -- pwd : jJP|5lI.O$^Z
-    ('99029929','Bryan','Santos','bsantos@iut.univ-paris8.fr','06.85.29.91.20','$2b$12$xfm40Lvy4ny1p2yTIpyBFuSazDDzJM8uEs/LG3qJQP.P4eg.o9Ate',2,5,93), -- pwd : 9QO0M1`;TF=K
-    ('75105910','Shannon','Martinez','smartinez@iut.univ-paris8.fr','07.32.66.42.39','$2b$12$063anAJrmPvRjY5q95mrPuswqBJGDK1CCrWmyo1On/blmvWVVch9G',2,5,93), -- pwd : JIO0m!LZ/cn7
-    ('70992055','Mary','Moreno','mmoreno@iut.univ-paris8.fr','07.87.78.16.57','$2b$12$ZvmGQm6.F5nzkyVZVZa9zeuIWeK.sSDOCTlKtRP1mel0dHEAHjPQW',2,5,93), -- pwd : |*C+'Z?t|t/O
-    ('09298619','Brian','Cole','bcole@iut.univ-paris8.fr','06.33.48.41.42','$2b$12$1uQ9cyeOSK6XV4kL.H3KS.HeusZJMbFw0aUDDPdz03dXImo6R95oy',2,5,93), -- pwd : aM0O|O#K,KAX
-    ('77733514','Eric','Black','eblack@iut.univ-paris8.fr','06.90.50.78.36','$2b$12$TH5fmFQdTJ2hrHLnxcN2qOVerjYoSwJPyqbKtf/g6zGUE7W7ymQmK',2,5,93), -- pwd : 3:O7<.'b#3-K
-    ('23613242','Gina','Nguyen','gnguyen@iut.univ-paris8.fr','06.42.03.33.68','$2b$12$c01HYO2HXG/oi8fkIqdeeuknlkDdLC0PM/lzQ8PHWJ5mEFFYeAk1K',2,5,93), -- pwd : 'moQqSF"(M7L
-    ('38735857','Marcia','Robbins','mrobbins@iut.univ-paris8.fr','06.47.60.91.01','$2b$12$dWo2ej.cLExzRcgRRcY06OdXJ1Yc5PHjCLHRyZHF83sfnPpN3lK6W',2,5,93), -- pwd : q=L5D!m&3^n6
-    ('65869767','Annette','Crawford','acrawford@iut.univ-paris8.fr','07.44.87.28.57','$2b$12$ACLgdwmXGoOUR3e2ZuADR.mjKn4uepcUl3qDFgldD9V65dtUq7joK',2,5,93), -- pwd : IVg0pt2Tnp^O
-    ('02564651','Samantha','Campbell','scampbell@iut.univ-paris8.fr','07.83.15.74.05','$2b$12$qM/Uf/4aG8ioPSKZfXtvQ.lH4kUP9cJNj4rlIXMSEXxXf9DZGH2Xu',2,5,93) -- pwd : z0l`xT$=emEE
+    ('05018235', 'Naruto', 'Uzumaki', 'nuzumaki@iut.univ-paris8.fr', '07.20.63.10.81', 'nuzumaki', 2, 16, 16), -- username : nuzumaki 
+    ('99087589', 'Sasuke', 'Uchiha', 'suchiha@iut.univ-paris8.fr', '07.48.97.52.44', 'suchiha', 2, 16, 16), -- username : suchiha 
+    ('65324915', 'Jennifer', 'Christensen', 'jchristensen@iut.univ-paris8.fr', '07.52.70.40.56', 'jchristensen', 2, 16, 16), -- username : jchristensen 
+    ('38746816', 'Michael', 'Dixon', 'mdixon@iut.univ-paris8.fr', '07.96.07.46.21', 'mdixon', 2, 16, 16), -- username : mdixon 
+    ('71790205', 'Wayne', 'Mills', 'wmills1@iut.univ-paris8.fr', '07.17.26.75.35', 'wmills1', 2, 16, 16), -- username : wmills1 
+    ('69018898', 'Bryan', 'Walsh', 'bwalsh@iut.univ-paris8.fr', '06.95.61.69.31', 'bwalsh', 2, 16, 16), -- username : bwalsh 
+    ('70660305', 'Ethan', 'Kaufman', 'ekaufman@iut.univ-paris8.fr', '06.17.61.44.69', 'ekaufman', 2, 16, 16), -- username : ekaufman 
+    ('53910465', 'Lindsay', 'Oliver', 'loliver@iut.univ-paris8.fr', '07.66.48.66.67', 'loliver', 2, 16, 16), -- username : loliver 
+    ('75029798', 'Mark', 'Garcia', 'mgarcia@iut.univ-paris8.fr', '06.12.90.32.42', 'mgarcia', 2, 16, 16), -- username : mgarcia 
+    ('52838257', 'Taylor', 'Paul', 'tpaul@iut.univ-paris8.fr', '06.66.85.01.11', 'tpaul', 2, 16, 16), -- username : tpaul 
+    ('26314046', 'Felicia', 'Harper', 'fharper@iut.univ-paris8.fr', '07.86.11.69.74', 'fharper', 2, 16, 60), -- username : fharper 
+    ('73868463', 'Jennifer', 'Hamilton', 'jhamilton@iut.univ-paris8.fr', '06.27.08.15.01', 'jhamilton', 2, 16, 60), -- username : jhamilton 
+    ('90572577', 'Stephanie', 'Keith', 'skeith@iut.univ-paris8.fr', '07.19.20.78.61', 'skeith', 2, 16, 60), -- username : skeith 
+    ('39517131', 'David', 'Mcdonald', 'dmcdonald@iut.univ-paris8.fr', '07.21.61.88.13', 'dmcdonald', 2, 16, 60), -- username : dmcdonald 
+    ('54516035', 'Deborah', 'Briggs', 'dbriggs@iut.univ-paris8.fr', '06.30.01.40.86', 'dbriggs', 2, 16, 60), -- username : dbriggs 
+    ('18536362', 'Ryan', 'King', 'rking@iut.univ-paris8.fr', '07.14.07.57.33', 'rking', 2, 16, 60), -- username : rking 
+    ('13773420', 'Ryan', 'Meyer', 'rmeyer@iut.univ-paris8.fr', '07.27.39.42.52', 'rmeyer', 2, 16, 60), -- username : rmeyer 
+    ('16634869', 'Christina', 'Wagner', 'cwagner@iut.univ-paris8.fr', '06.53.27.93.20', 'cwagner', 2, 16, 60), -- username : cwagner 
+    ('28014225', 'Christina', 'Potts', 'cpotts@iut.univ-paris8.fr', '06.95.49.86.30', 'cpotts', 2, 16, 60), -- username : cpotts 
+    ('03304232', 'Lisa', 'Martinez', 'lmartinez2@iut.univ-paris8.fr', '06.06.63.85.59', 'lmartinez2', 2, 16, 60), -- username : lmartinez2 
+    ('64764777', 'Charles', 'Mccarty', 'cmccarty@iut.univ-paris8.fr', '07.38.96.09.75', 'cmccarty', 2, 16, 104), -- username : cmccarty 
+    ('48363685', 'Paul', 'Diaz', 'pdiaz@iut.univ-paris8.fr', '06.42.88.76.98', 'pdiaz', 2, 16, 104), -- username : pdiaz 
+    ('57012724', 'Mitchell', 'Ward', 'mward@iut.univ-paris8.fr', '07.69.48.09.69', 'mward', 2, 16, 104), -- username : mward 
+    ('82427096', 'Michael', 'Beard', 'mbeard@iut.univ-paris8.fr', '07.67.59.12.13', 'mbeard', 2, 16, 104), -- username : mbeard 
+    ('00816327', 'Ryan', 'Wright', 'rwright@iut.univ-paris8.fr', '06.60.49.55.26', 'rwright', 2, 16, 104), -- username : rwright 
+    ('00062954', 'Stacie', 'Wells', 'swells@iut.univ-paris8.fr', '06.11.48.17.80', 'swells', 2, 16, 104), -- username : swells 
+    ('33882750', 'Anthony', 'Freeman', 'afreeman@iut.univ-paris8.fr', '07.30.32.24.87', 'afreeman', 2, 16, 104), -- username : afreeman 
+    ('03585710', 'Sandra', 'Hansen', 'shansen@iut.univ-paris8.fr', '06.44.45.95.28', 'shansen', 2, 16, 104), -- username : shansen 
+    ('75174374', 'Mary', 'Harmon', 'mharmon1@iut.univ-paris8.fr', '06.72.20.88.17', 'mharmon1', 2, 16, 104), -- username : mharmon1 
+    ('52706581', 'Allison', 'Casey', 'acasey@iut.univ-paris8.fr', '06.19.71.76.47', 'acasey', 2, 16, 104), -- username : acasey 
+    ('63323672', 'Jacob', 'Meadows', 'jmeadows@iut.univ-paris8.fr', '07.19.73.60.43', 'jmeadows', 2, 17, 17), -- username : jmeadows 
+    ('16591616', 'Michael', 'Collins', 'mcollins@iut.univ-paris8.fr', '06.04.67.23.61', 'mcollins', 2, 17, 17), -- username : mcollins 
+    ('74101134', 'Sarah', 'Williams', 'swilliams1@iut.univ-paris8.fr', '06.92.21.19.06', 'swilliams1', 2, 17, 17), -- username : swilliams1 
+    ('41375500', 'Robin', 'Perry', 'rperry@iut.univ-paris8.fr', '07.81.24.36.68', 'rperry', 2, 17, 17), -- username : rperry 
+    ('67185765', 'Ann', 'Hanson', 'ahanson@iut.univ-paris8.fr', '07.76.69.29.83', 'ahanson', 2, 17, 17), -- username : ahanson 
+    ('96954921', 'Katherine', 'Cooper', 'kcooper@iut.univ-paris8.fr', '06.96.37.20.45', 'kcooper', 2, 17, 17), -- username : kcooper 
+    ('85886517', 'Lisa', 'Frazier', 'lfrazier@iut.univ-paris8.fr', '06.60.65.93.61', 'lfrazier', 2, 17, 17), -- username : lfrazier 
+    ('56035200', 'Allen', 'Bailey', 'abailey@iut.univ-paris8.fr', '06.12.63.53.55', 'abailey', 2, 17, 17), -- username : abailey 
+    ('60727544', 'John', 'Andrade', 'jandrade@iut.univ-paris8.fr', '07.92.65.63.99', 'jandrade', 2, 17, 17), -- username : jandrade 
+    ('45178327', 'Justin', 'Bryant', 'jbryant@iut.univ-paris8.fr', '06.30.52.00.11', 'jbryant', 2, 17, 17), -- username : jbryant 
+    ('18693259', 'Sharon', 'Brewer', 'sbrewer@iut.univ-paris8.fr', '06.62.67.41.02', 'sbrewer', 2, 17, 61), -- username : sbrewer 
+    ('84512874', 'Michelle', 'Adams', 'madams@iut.univ-paris8.fr', '07.95.28.58.98', 'madams', 2, 17, 61), -- username : madams 
+    ('91466902', 'Joel', 'Shaw', 'jshaw1@iut.univ-paris8.fr', '07.02.00.96.21', 'jshaw1', 2, 17, 61), -- username : jshaw1 
+    ('10279904', 'Corey', 'Moore', 'cmoore2@iut.univ-paris8.fr', '06.01.98.48.63', 'cmoore2', 2, 17, 61), -- username : cmoore2 
+    ('60345342', 'Sarah', 'Thompson', 'sthompson1@iut.univ-paris8.fr', '07.87.44.20.38', 'sthompson1', 2, 17, 61), -- username : sthompson1 
+    ('68984811', 'John', 'Green', 'jgreen1@iut.univ-paris8.fr', '06.45.48.68.35', 'jgreen1', 2, 17, 61), -- username : jgreen1 
+    ('03756504', 'Jack', 'Garcia', 'jgarcia@iut.univ-paris8.fr', '06.82.82.17.00', 'jgarcia', 2, 17, 61), -- username : jgarcia 
+    ('47839431', 'Lawrence', 'Smith', 'lsmith@iut.univ-paris8.fr', '07.11.93.46.80', 'lsmith', 2, 17, 61), -- username : lsmith 
+    ('50495442', 'Meghan', 'Maxwell', 'mmaxwell@iut.univ-paris8.fr', '06.17.46.29.30', 'mmaxwell', 2, 17, 61), -- username : mmaxwell 
+    ('11562077', 'Ryan', 'Brady', 'rbrady@iut.univ-paris8.fr', '06.53.26.61.13', 'rbrady', 2, 17, 61), -- username : rbrady 
+    ('79375860', 'Michael', 'Thomas', 'mthomas@iut.univ-paris8.fr', '07.56.16.27.60', 'mthomas', 2, 17, 105), -- username : mthomas 
+    ('63197921', 'Caroline', 'Durham', 'cdurham@iut.univ-paris8.fr', '06.17.49.55.90', 'cdurham', 2, 17, 105), -- username : cdurham 
+    ('48495539', 'Larry', 'Hunter', 'lhunter@iut.univ-paris8.fr', '07.17.99.04.26', 'lhunter', 2, 17, 105), -- username : lhunter 
+    ('81786019', 'Jonathan', 'Macdonald', 'jmacdonald@iut.univ-paris8.fr', '07.02.44.13.33', 'jmacdonald', 2, 17, 105), -- username : jmacdonald 
+    ('30080633', 'Karen', 'Bennett', 'kbennett@iut.univ-paris8.fr', '07.42.47.42.67', 'kbennett', 2, 17, 105), -- username : kbennett 
+    ('47131000', 'Lauren', 'Carter', 'lcarter@iut.univ-paris8.fr', '06.26.50.48.13', 'lcarter', 2, 17, 105), -- username : lcarter 
+    ('82625966', 'Becky', 'Phillips', 'bphillips@iut.univ-paris8.fr', '06.54.14.44.38', 'bphillips', 2, 17, 105), -- username : bphillips 
+    ('46410707', 'Heather', 'Blair', 'hblair@iut.univ-paris8.fr', '07.72.01.14.07', 'hblair', 2, 17, 105), -- username : hblair 
+    ('40399568', 'Denise', 'Bolton', 'dbolton@iut.univ-paris8.fr', '06.21.72.89.53', 'dbolton', 2, 17, 105), -- username : dbolton 
+    ('90939848', 'Eric', 'Harris', 'eharris@iut.univ-paris8.fr', '06.21.46.93.87', 'eharris', 2, 17, 105), -- username : eharris 
+    ('60281018', 'David', 'Brown', 'dbrown@iut.univ-paris8.fr', '07.43.21.55.27', 'dbrown', 2, 18, 18), -- username : dbrown 
+    ('84009440', 'Melanie', 'Pratt', 'mpratt@iut.univ-paris8.fr', '06.65.84.97.99', 'mpratt', 2, 18, 18), -- username : mpratt 
+    ('54955356', 'Emily', 'Yoder', 'eyoder@iut.univ-paris8.fr', '06.41.53.92.21', 'eyoder', 2, 18, 18), -- username : eyoder 
+    ('83751200', 'Donald', 'Lee', 'dlee1@iut.univ-paris8.fr', '07.36.64.12.88', 'dlee1', 2, 18, 18), -- username : dlee1 
+    ('13370378', 'Kara', 'Russell', 'krussell@iut.univ-paris8.fr', '07.43.81.48.13', 'krussell', 2, 18, 18), -- username : krussell 
+    ('05136515', 'Nicholas', 'Barnes', 'nbarnes@iut.univ-paris8.fr', '07.99.35.24.75', 'nbarnes', 2, 18, 18), -- username : nbarnes 
+    ('92442352', 'Larry', 'Williams', 'lwilliams@iut.univ-paris8.fr', '07.86.96.72.01', 'lwilliams', 2, 18, 18), -- username : lwilliams 
+    ('17879547', 'Clayton', 'Carter', 'ccarter1@iut.univ-paris8.fr', '07.70.41.84.27', 'ccarter1', 2, 18, 18), -- username : ccarter1 
+    ('74531137', 'Randall', 'Ball', 'rball@iut.univ-paris8.fr', '06.79.66.91.74', 'rball', 2, 18, 18), -- username : rball 
+    ('90895160', 'Joy', 'Hudson', 'jhudson@iut.univ-paris8.fr', '07.30.09.04.48', 'jhudson', 2, 18, 18), -- username : jhudson 
+    ('62824166', 'Angela', 'Morales', 'amorales@iut.univ-paris8.fr', '06.70.14.39.06', 'amorales', 2, 18, 62), -- username : amorales 
+    ('44477178', 'Pamela', 'Schmidt', 'pschmidt@iut.univ-paris8.fr', '07.17.89.74.52', 'pschmidt', 2, 18, 62), -- username : pschmidt 
+    ('46812740', 'Adriana', 'Christian', 'achristian@iut.univ-paris8.fr', '06.56.40.72.95', 'achristian', 2, 18, 62), -- username : achristian 
+    ('20633662', 'Anthony', 'Romero', 'aromero1@iut.univ-paris8.fr', '07.48.14.53.09', 'aromero1', 2, 18, 62), -- username : aromero1 
+    ('03247001', 'Bradley', 'Bryant', 'bbryant@iut.univ-paris8.fr', '07.56.23.34.03', 'bbryant', 2, 18, 62), -- username : bbryant 
+    ('58951308', 'Robert', 'Rodriguez', 'rrodriguez@iut.univ-paris8.fr', '06.49.24.06.76', 'rrodriguez', 2, 18, 62), -- username : rrodriguez 
+    ('70687645', 'Brian', 'Baker', 'bbaker@iut.univ-paris8.fr', '06.25.09.44.24', 'bbaker', 2, 18, 62), -- username : bbaker 
+    ('25863549', 'Nicholas', 'Tucker', 'ntucker@iut.univ-paris8.fr', '07.19.34.01.94', 'ntucker', 2, 18, 62), -- username : ntucker 
+    ('49193098', 'Maria', 'Brown', 'mbrown1@iut.univ-paris8.fr', '07.12.54.98.60', 'mbrown1', 2, 18, 62), -- username : mbrown1 
+    ('86102852', 'Monica', 'James', 'mjames@iut.univ-paris8.fr', '06.73.00.33.51', 'mjames', 2, 18, 62), -- username : mjames 
+    ('18449239', 'Kristin', 'Patel', 'kpatel@iut.univ-paris8.fr', '06.14.99.09.04', 'kpatel', 2, 18, 106), -- username : kpatel 
+    ('14588009', 'Harold', 'Moore', 'hmoore@iut.univ-paris8.fr', '06.46.99.15.23', 'hmoore', 2, 18, 106), -- username : hmoore 
+    ('47695880', 'Stephen', 'Simmons', 'ssimmons@iut.univ-paris8.fr', '06.32.13.54.40', 'ssimmons', 2, 18, 106), -- username : ssimmons 
+    ('14758183', 'Jason', 'Gill', 'jgill1@iut.univ-paris8.fr', '06.73.45.12.80', 'jgill1', 2, 18, 106), -- username : jgill1 
+    ('30380203', 'Debbie', 'Moore', 'dmoore1@iut.univ-paris8.fr', '06.22.68.37.15', 'dmoore1', 2, 18, 106), -- username : dmoore1 
+    ('61696550', 'Michael', 'Moran', 'mmoran@iut.univ-paris8.fr', '07.24.59.22.83', 'mmoran', 2, 18, 106), -- username : mmoran 
+    ('27740090', 'Robert', 'Johnson', 'rjohnson@iut.univ-paris8.fr', '07.21.03.30.01', 'rjohnson', 2, 18, 106), -- username : rjohnson 
+    ('62843182', 'Ryan', 'Keith', 'rkeith@iut.univ-paris8.fr', '06.50.03.87.45', 'rkeith', 2, 18, 106), -- username : rkeith 
+    ('68389509', 'Christopher', 'Baker', 'cbaker@iut.univ-paris8.fr', '07.24.69.56.43', 'cbaker', 2, 18, 106), -- username : cbaker 
+    ('37636736', 'Kelly', 'White', 'kwhite@iut.univ-paris8.fr', '06.54.30.24.45', 'kwhite', 2, 18, 106), -- username : kwhite 
+    ('22622122', 'Mark', 'Sanders', 'msanders@iut.univ-paris8.fr', '06.23.11.75.90', 'msanders', 2, 6, 6), -- username : msanders 
+    ('06473610', 'Tyler', 'Vaughn', 'tvaughn@iut.univ-paris8.fr', '06.86.30.85.33', 'tvaughn', 2, 6, 6), -- username : tvaughn 
+    ('80444174', 'Jacqueline', 'Roberts', 'jroberts@iut.univ-paris8.fr', '06.68.76.05.65', 'jroberts', 2, 6, 6), -- username : jroberts 
+    ('61299940', 'Debra', 'Sanders', 'dsanders@iut.univ-paris8.fr', '07.63.99.03.42', 'dsanders', 2, 6, 6), -- username : dsanders 
+    ('76123460', 'Bill', 'Boyle', 'bboyle@iut.univ-paris8.fr', '07.36.73.33.72', 'bboyle', 2, 6, 6), -- username : bboyle 
+    ('64077337', 'Felicia', 'Smith', 'fsmith@iut.univ-paris8.fr', '07.76.35.83.73', 'fsmith', 2, 6, 6), -- username : fsmith 
+    ('31340100', 'Patrick', 'Williams', 'pwilliams@iut.univ-paris8.fr', '07.92.19.27.51', 'pwilliams', 2, 6, 6), -- username : pwilliams 
+    ('29519610', 'Michael', 'Bean', 'mbean@iut.univ-paris8.fr', '07.95.51.77.10', 'mbean', 2, 6, 6), -- username : mbean 
+    ('26050239', 'Kyle', 'Werner', 'kwerner@iut.univ-paris8.fr', '07.98.64.45.65', 'kwerner', 2, 6, 6), -- username : kwerner 
+    ('17426121', 'Justin', 'Gallagher', 'jgallagher@iut.univ-paris8.fr', '07.49.59.38.15', 'jgallagher', 2, 6, 6), -- username : jgallagher 
+    ('08776855', 'Alan', 'Walls', 'awalls@iut.univ-paris8.fr', '06.67.48.91.25', 'awalls', 2, 6, 50), -- username : awalls 
+    ('05102507', 'Michelle', 'Riley', 'mriley@iut.univ-paris8.fr', '07.85.97.48.80', 'mriley', 2, 6, 50), -- username : mriley 
+    ('31705121', 'Laura', 'Martinez', 'lmartinez1@iut.univ-paris8.fr', '06.41.10.27.08', 'lmartinez1', 2, 6, 50), -- username : lmartinez1 
+    ('03173759', 'Angela', 'Foster', 'afoster@iut.univ-paris8.fr', '06.38.35.14.63', 'afoster', 2, 6, 50), -- username : afoster 
+    ('56768702', 'Riley', 'Rogers', 'rrogers1@iut.univ-paris8.fr', '06.64.82.54.40', 'rrogers1', 2, 6, 50), -- username : rrogers1 
+    ('86448435', 'Fernando', 'Vargas', 'fvargas@iut.univ-paris8.fr', '07.63.42.37.71', 'fvargas', 2, 6, 50), -- username : fvargas 
+    ('09352731', 'Christina', 'Benson', 'cbenson@iut.univ-paris8.fr', '06.22.13.78.91', 'cbenson', 2, 6, 50), -- username : cbenson 
+    ('84256900', 'Meghan', 'Dalton', 'mdalton@iut.univ-paris8.fr', '06.02.68.76.05', 'mdalton', 2, 6, 50), -- username : mdalton 
+    ('08429653', 'Johnny', 'Blackwell', 'jblackwell@iut.univ-paris8.fr', '07.65.04.98.88', 'jblackwell', 2, 6, 50), -- username : jblackwell 
+    ('36684016', 'Judy', 'Harrison', 'jharrison@iut.univ-paris8.fr', '06.34.50.29.72', 'jharrison', 2, 6, 50), -- username : jharrison 
+    ('24950887', 'April', 'Smith', 'asmith1@iut.univ-paris8.fr', '06.68.39.58.96', 'asmith1', 2, 6, 94), -- username : asmith1 
+    ('90886841', 'Amy', 'Myers', 'amyers@iut.univ-paris8.fr', '07.54.20.52.29', 'amyers', 2, 6, 94), -- username : amyers 
+    ('01984967', 'Laura', 'Cline', 'lcline@iut.univ-paris8.fr', '06.54.95.31.80', 'lcline', 2, 6, 94), -- username : lcline 
+    ('96509250', 'Stephen', 'Allen', 'sallen@iut.univ-paris8.fr', '07.41.75.82.17', 'sallen', 2, 6, 94), -- username : sallen 
+    ('74743246', 'Kathryn', 'Bauer', 'kbauer1@iut.univ-paris8.fr', '06.21.74.06.11', 'kbauer1', 2, 6, 94), -- username : kbauer1 
+    ('11719296', 'Stephanie', 'Martinez', 'smartinez3@iut.univ-paris8.fr', '06.16.44.30.60', 'smartinez3', 2, 6, 94), -- username : smartinez3 
+    ('87349139', 'Leslie', 'Johnson', 'ljohnson@iut.univ-paris8.fr', '06.77.20.85.08', 'ljohnson', 2, 6, 94), -- username : ljohnson 
+    ('06566164', 'Jesus', 'Vargas', 'jvargas@iut.univ-paris8.fr', '06.51.49.65.56', 'jvargas', 2, 6, 94), -- username : jvargas 
+    ('65078518', 'Michelle', 'Vang', 'mvang@iut.univ-paris8.fr', '06.68.17.60.95', 'mvang', 2, 6, 94), -- username : mvang 
+    ('81063482', 'Austin', 'Hart', 'ahart@iut.univ-paris8.fr', '06.58.84.94.10', 'ahart', 2, 6, 94), -- username : ahart 
+    ('11001837', 'Arthur', 'Reynolds', 'areynolds@iut.univ-paris8.fr', '07.66.14.24.37', 'areynolds', 2, 4, 4), -- username : areynolds 
+    ('17202017', 'Wendy', 'Ruiz', 'wruiz@iut.univ-paris8.fr', '06.52.81.27.78', 'wruiz', 2, 4, 4), -- username : wruiz 
+    ('29751348', 'John', 'Silva', 'jsilva1@iut.univ-paris8.fr', '06.70.41.85.50', 'jsilva1', 2, 4, 4), -- username : jsilva1 
+    ('02890746', 'Megan', 'Allen', 'mallen@iut.univ-paris8.fr', '06.88.20.61.76', 'mallen', 2, 4, 4), -- username : mallen 
+    ('59837851', 'Danielle', 'Fischer', 'dfischer@iut.univ-paris8.fr', '06.06.26.91.63', 'dfischer', 2, 4, 4), -- username : dfischer 
+    ('46082926', 'Oscar', 'Robinson', 'orobinson@iut.univ-paris8.fr', '06.92.01.65.81', 'orobinson', 2, 4, 4), -- username : orobinson 
+    ('54476897', 'Sarah', 'Nunez', 'snunez@iut.univ-paris8.fr', '07.51.03.76.06', 'snunez', 2, 4, 4), -- username : snunez 
+    ('11183713', 'Garrett', 'Burns', 'gburns@iut.univ-paris8.fr', '07.90.99.22.19', 'gburns', 2, 4, 4), -- username : gburns 
+    ('65859550', 'Ricardo', 'Cisneros', 'rcisneros@iut.univ-paris8.fr', '07.63.20.31.36', 'rcisneros', 2, 4, 4), -- username : rcisneros 
+    ('17092003', 'Michael', 'Perry', 'mperry1@iut.univ-paris8.fr', '07.77.95.22.23', 'mperry1', 2, 4, 4), -- username : mperry1 
+    ('27296238', 'James', 'Mcintyre', 'jmcintyre@iut.univ-paris8.fr', '06.18.99.89.08', 'jmcintyre', 2, 4, 48), -- username : jmcintyre 
+    ('19910956', 'Joseph', 'Bowman', 'jbowman1@iut.univ-paris8.fr', '06.60.62.15.23', 'jbowman1', 2, 4, 48), -- username : jbowman1 
+    ('52470413', 'Brooke', 'Petersen', 'bpetersen@iut.univ-paris8.fr', '07.82.51.66.90', 'bpetersen', 2, 4, 48), -- username : bpetersen 
+    ('07253343', 'Richard', 'Smith', 'rsmith2@iut.univ-paris8.fr', '06.13.81.14.67', 'rsmith2', 2, 4, 48), -- username : rsmith2 
+    ('58207710', 'Calvin', 'Valenzuela', 'cvalenzuela@iut.univ-paris8.fr', '07.73.17.41.05', 'cvalenzuela', 2, 4, 48), -- username : cvalenzuela 
+    ('47054929', 'Lisa', 'Orozco', 'lorozco@iut.univ-paris8.fr', '06.55.22.19.51', 'lorozco', 2, 4, 48), -- username : lorozco 
+    ('00349073', 'Tina', 'Ramirez', 'tramirez@iut.univ-paris8.fr', '07.81.60.66.00', 'tramirez', 2, 4, 48), -- username : tramirez 
+    ('44472422', 'Alex', 'Holder', 'aholder@iut.univ-paris8.fr', '06.45.37.10.26', 'aholder', 2, 4, 48), -- username : aholder 
+    ('65358482', 'Nicole', 'Larsen', 'nlarsen@iut.univ-paris8.fr', '06.24.34.80.66', 'nlarsen', 2, 4, 48), -- username : nlarsen 
+    ('46763864', 'Tina', 'Davidson', 'tdavidson@iut.univ-paris8.fr', '06.07.57.83.54', 'tdavidson', 2, 4, 48), -- username : tdavidson 
+    ('75920416', 'Holly', 'Turner', 'hturner@iut.univ-paris8.fr', '06.70.39.12.79', 'hturner', 2, 4, 92), -- username : hturner 
+    ('57860673', 'Melanie', 'Harris', 'mharris@iut.univ-paris8.fr', '07.50.73.04.66', 'mharris', 2, 4, 92), -- username : mharris 
+    ('77375152', 'Sean', 'Hanson', 'shanson@iut.univ-paris8.fr', '06.45.79.47.94', 'shanson', 2, 4, 92), -- username : shanson 
+    ('52541933', 'Amanda', 'Cunningham', 'acunningham@iut.univ-paris8.fr', '07.42.04.41.71', 'acunningham', 2, 4, 92), -- username : acunningham 
+    ('66938022', 'Andrew', 'Williams', 'awilliams1@iut.univ-paris8.fr', '06.98.86.28.45', 'awilliams1', 2, 4, 92), -- username : awilliams1 
+    ('33858096', 'Joseph', 'Duncan', 'jduncan@iut.univ-paris8.fr', '07.16.19.52.64', 'jduncan', 2, 4, 92), -- username : jduncan 
+    ('97814225', 'Debra', 'Small', 'dsmall@iut.univ-paris8.fr', '06.13.64.98.93', 'dsmall', 2, 4, 92), -- username : dsmall 
+    ('90190606', 'Erin', 'Olson', 'eolson@iut.univ-paris8.fr', '06.84.86.31.15', 'eolson', 2, 4, 92), -- username : eolson 
+    ('00842444', 'Craig', 'Lowery', 'clowery@iut.univ-paris8.fr', '06.62.75.54.71', 'clowery', 2, 4, 92), -- username : clowery 
+    ('42088109', 'Mike', 'Carroll', 'mcarroll@iut.univ-paris8.fr', '07.88.94.74.85', 'mcarroll', 2, 4, 92), -- username : mcarroll 
+    ('02237173', 'John', 'Fisher', 'jfisher@iut.univ-paris8.fr', '06.81.65.24.15', 'jfisher', 2, 5, 5), -- username : jfisher 
+    ('33911177', 'Hayden', 'Williams', 'hwilliams1@iut.univ-paris8.fr', '06.78.63.47.07', 'hwilliams1', 2, 5, 5), -- username : hwilliams1 
+    ('80976517', 'Ruth', 'Casey', 'rcasey@iut.univ-paris8.fr', '07.99.76.17.74', 'rcasey', 2, 5, 5), -- username : rcasey 
+    ('83420591', 'Marisa', 'Olson', 'molson@iut.univ-paris8.fr', '06.63.41.16.80', 'molson', 2, 5, 5), -- username : molson 
+    ('44565954', 'Brandon', 'Harris', 'bharris@iut.univ-paris8.fr', '06.38.17.39.25', 'bharris', 2, 5, 5), -- username : bharris 
+    ('58912099', 'Erica', 'Bridges', 'ebridges@iut.univ-paris8.fr', '06.92.29.08.91', 'ebridges', 2, 5, 5), -- username : ebridges 
+    ('78485820', 'Alyssa', 'Hopkins', 'ahopkins@iut.univ-paris8.fr', '07.60.78.96.33', 'ahopkins', 2, 5, 5), -- username : ahopkins 
+    ('74553423', 'Rebecca', 'Osborne', 'rosborne@iut.univ-paris8.fr', '06.47.23.08.20', 'rosborne', 2, 5, 5), -- username : rosborne 
+    ('97740668', 'Michael', 'Hall', 'mhall1@iut.univ-paris8.fr', '06.93.89.53.24', 'mhall1', 2, 5, 5), -- username : mhall1 
+    ('30902030', 'Damon', 'Baker', 'dbaker@iut.univ-paris8.fr', '06.42.62.73.73', 'dbaker', 2, 5, 5), -- username : dbaker 
+    ('60745402', 'Erin', 'Morris', 'emorris@iut.univ-paris8.fr', '07.74.36.36.74', 'emorris', 2, 5, 49), -- username : emorris 
+    ('31034374', 'Benjamin', 'Yoder', 'byoder@iut.univ-paris8.fr', '07.21.55.45.42', 'byoder', 2, 5, 49), -- username : byoder 
+    ('09522927', 'Kenneth', 'Johnson', 'kjohnson@iut.univ-paris8.fr', '07.39.52.03.58', 'kjohnson', 2, 5, 49), -- username : kjohnson 
+    ('07361666', 'Emily', 'Taylor', 'etaylor@iut.univ-paris8.fr', '07.97.24.16.36', 'etaylor', 2, 5, 49), -- username : etaylor 
+    ('79696264', 'Patricia', 'Maldonado', 'pmaldonado@iut.univ-paris8.fr', '06.51.08.11.28', 'pmaldonado', 2, 5, 49), -- username : pmaldonado 
+    ('78088781', 'Keith', 'Rivera', 'krivera1@iut.univ-paris8.fr', '07.91.00.11.18', 'krivera1', 2, 5, 49), -- username : krivera1 
+    ('81316718', 'Daniel', 'Smith', 'dsmith1@iut.univ-paris8.fr', '06.24.99.29.50', 'dsmith1', 2, 5, 49), -- username : dsmith1 
+    ('93960951', 'Julie', 'Guzman', 'jguzman@iut.univ-paris8.fr', '07.29.67.57.22', 'jguzman', 2, 5, 49), -- username : jguzman 
+    ('80611610', 'Harry', 'Giles', 'hgiles@iut.univ-paris8.fr', '06.58.65.62.20', 'hgiles', 2, 5, 49), -- username : hgiles 
+    ('69516784', 'Barbara', 'Weber', 'bweber@iut.univ-paris8.fr', '06.71.02.09.53', 'bweber', 2, 5, 49), -- username : bweber 
+    ('46405249', 'Dylan', 'Anderson', 'danderson@iut.univ-paris8.fr', '06.00.70.31.56', 'danderson', 2, 5, 93), -- username : danderson 
+    ('78029752', 'David', 'Lawrence', 'dlawrence@iut.univ-paris8.fr', '06.49.92.92.59', 'dlawrence', 2, 5, 93), -- username : dlawrence 
+    ('26729660', 'Michelle', 'Payne', 'mpayne@iut.univ-paris8.fr', '06.10.65.11.42', 'mpayne', 2, 5, 93), -- username : mpayne 
+    ('56228551', 'Michael', 'Clark', 'mclark1@iut.univ-paris8.fr', '07.73.23.09.77', 'mclark1', 2, 5, 93), -- username : mclark1 
+    ('46892094', 'Erin', 'Lawrence', 'elawrence@iut.univ-paris8.fr', '06.15.14.71.65', 'elawrence', 2, 5, 93), -- username : elawrence 
+    ('61186019', 'Rebecca', 'Cole', 'rcole@iut.univ-paris8.fr', '07.05.38.27.24', 'rcole', 2, 5, 93), -- username : rcole 
+    ('60970698', 'April', 'Hardy', 'ahardy@iut.univ-paris8.fr', '06.71.86.26.19', 'ahardy', 2, 5, 93), -- username : ahardy 
+    ('05200898', 'James', 'Kelley', 'jkelley@iut.univ-paris8.fr', '07.99.60.09.92', 'jkelley', 2, 5, 93), -- username : jkelley 
+    ('29830217', 'Anthony', 'Gilmore', 'agilmore@iut.univ-paris8.fr', '06.99.72.11.47', 'agilmore', 2, 5, 93), -- username : agilmore 
+    ('27474814', 'Jerome', 'Parker', 'jparker@iut.univ-paris8.fr', '07.67.12.85.50', 'jparker', 2, 5, 93), -- username : jparker 
+    ('90151534', 'Kimberly', 'Mcfarland', 'kmcfarland@iut.univ-paris8.fr', '07.98.29.62.87', 'kmcfarland', 2, 39, 39), -- username : kmcfarland 
+    ('58382168', 'Karen', 'Wood', 'kwood1@iut.univ-paris8.fr', '07.36.10.61.62', 'kwood1', 2, 39, 39), -- username : kwood1 
+    ('36595448', 'Amy', 'Elliott', 'aelliott@iut.univ-paris8.fr', '07.72.61.99.41', 'aelliott', 2, 39, 39), -- username : aelliott 
+    ('40599243', 'Hannah', 'Greene', 'hgreene@iut.univ-paris8.fr', '07.68.34.51.03', 'hgreene', 2, 39, 39), -- username : hgreene 
+    ('61959995', 'Kaitlyn', 'Lam', 'klam@iut.univ-paris8.fr', '07.35.70.63.65', 'klam', 2, 39, 39), -- username : klam 
+    ('55144955', 'Joseph', 'Reed', 'jreed@iut.univ-paris8.fr', '06.24.29.48.19', 'jreed', 2, 39, 39), -- username : jreed 
+    ('04323838', 'Jennifer', 'Pierce', 'jpierce@iut.univ-paris8.fr', '06.18.81.03.67', 'jpierce', 2, 39, 39), -- username : jpierce 
+    ('01580403', 'Tanya', 'Miller', 'tmiller@iut.univ-paris8.fr', '06.13.22.94.52', 'tmiller', 2, 39, 39), -- username : tmiller 
+    ('42452220', 'John', 'Johns', 'jjohns@iut.univ-paris8.fr', '06.27.88.72.44', 'jjohns', 2, 39, 39), -- username : jjohns 
+    ('78404571', 'Rebecca', 'Hill', 'rhill@iut.univ-paris8.fr', '07.64.50.47.47', 'rhill', 2, 39, 39), -- username : rhill 
+    ('08396546', 'Angel', 'Hogan', 'ahogan@iut.univ-paris8.fr', '06.67.80.76.92', 'ahogan', 2, 39, 83), -- username : ahogan 
+    ('55020600', 'Rodney', 'Bennett', 'rbennett@iut.univ-paris8.fr', '07.92.11.11.06', 'rbennett', 2, 39, 83), -- username : rbennett 
+    ('49357535', 'Kayla', 'Dixon', 'kdixon@iut.univ-paris8.fr', '06.69.03.89.11', 'kdixon', 2, 39, 83), -- username : kdixon 
+    ('27439803', 'Mark', 'Rogers', 'mrogers@iut.univ-paris8.fr', '06.90.64.34.31', 'mrogers', 2, 39, 83), -- username : mrogers 
+    ('80108955', 'Susan', 'Mccarthy', 'smccarthy1@iut.univ-paris8.fr', '07.24.77.71.58', 'smccarthy1', 2, 39, 83), -- username : smccarthy1 
+    ('30370648', 'Damon', 'Kim', 'dkim1@iut.univ-paris8.fr', '06.62.64.46.55', 'dkim1', 2, 39, 83), -- username : dkim1 
+    ('15088571', 'James', 'Allen', 'jallen1@iut.univ-paris8.fr', '06.00.62.56.72', 'jallen1', 2, 39, 83), -- username : jallen1 
+    ('55279573', 'Samantha', 'Moreno', 'smoreno@iut.univ-paris8.fr', '07.24.80.38.05', 'smoreno', 2, 39, 83), -- username : smoreno 
+    ('49608781', 'Tonya', 'Patel', 'tpatel@iut.univ-paris8.fr', '07.59.02.47.01', 'tpatel', 2, 39, 83), -- username : tpatel 
+    ('23414889', 'Yvonne', 'Kramer', 'ykramer@iut.univ-paris8.fr', '07.38.79.95.73', 'ykramer', 2, 39, 83), -- username : ykramer 
+    ('52094902', 'Janet', 'Mckinney', 'jmckinney@iut.univ-paris8.fr', '07.28.91.08.47', 'jmckinney', 2, 39, 127), -- username : jmckinney 
+    ('72637128', 'Jonathan', 'Chung', 'jchung@iut.univ-paris8.fr', '07.94.75.61.30', 'jchung', 2, 39, 127), -- username : jchung 
+    ('71153591', 'Robin', 'Davis', 'rdavis@iut.univ-paris8.fr', '06.45.73.45.66', 'rdavis', 2, 39, 127), -- username : rdavis 
+    ('19929669', 'Rachael', 'Phillips', 'rphillips@iut.univ-paris8.fr', '07.25.51.52.26', 'rphillips', 2, 39, 127), -- username : rphillips 
+    ('72024256', 'Tyler', 'Anderson', 'tanderson@iut.univ-paris8.fr', '06.74.67.91.93', 'tanderson', 2, 39, 127), -- username : tanderson 
+    ('71733702', 'Brett', 'Ramsey', 'bramsey@iut.univ-paris8.fr', '06.97.80.96.79', 'bramsey', 2, 39, 127), -- username : bramsey 
+    ('60961330', 'Christy', 'Molina', 'cmolina@iut.univ-paris8.fr', '06.65.67.29.06', 'cmolina', 2, 39, 127), -- username : cmolina 
+    ('97403198', 'Alexis', 'Mccoy', 'amccoy@iut.univ-paris8.fr', '07.89.87.90.03', 'amccoy', 2, 39, 127), -- username : amccoy 
+    ('93947042', 'Debra', 'Chen', 'dchen@iut.univ-paris8.fr', '06.93.80.87.87', 'dchen', 2, 39, 127), -- username : dchen 
+    ('77810093', 'Anthony', 'Ferguson', 'aferguson@iut.univ-paris8.fr', '06.39.62.99.72', 'aferguson', 2, 39, 127), -- username : aferguson 
+    ('53056600', 'Sara', 'Hayes', 'shayes@iut.univ-paris8.fr', '06.92.31.36.96', 'shayes', 2, 40, 40), -- username : shayes 
+    ('86255688', 'Bradley', 'Smith', 'bsmith3@iut.univ-paris8.fr', '06.82.22.69.39', 'bsmith3', 2, 40, 40), -- username : bsmith3 
+    ('77239906', 'Ashley', 'Klein', 'aklein@iut.univ-paris8.fr', '07.54.61.11.44', 'aklein', 2, 40, 40), -- username : aklein 
+    ('58946781', 'Susan', 'Mcdaniel', 'smcdaniel@iut.univ-paris8.fr', '06.92.51.77.33', 'smcdaniel', 2, 40, 40), -- username : smcdaniel 
+    ('69644533', 'Pamela', 'Mcbride', 'pmcbride@iut.univ-paris8.fr', '06.68.02.65.25', 'pmcbride', 2, 40, 40), -- username : pmcbride 
+    ('05633804', 'Sandra', 'Chang', 'schang@iut.univ-paris8.fr', '06.48.03.40.38', 'schang', 2, 40, 40), -- username : schang 
+    ('80004797', 'Jeffrey', 'Rhodes', 'jrhodes@iut.univ-paris8.fr', '07.33.33.78.81', 'jrhodes', 2, 40, 40), -- username : jrhodes 
+    ('09214404', 'Jacob', 'Chandler', 'jchandler@iut.univ-paris8.fr', '06.24.24.54.69', 'jchandler', 2, 40, 40), -- username : jchandler 
+    ('50479939', 'Sabrina', 'Watson', 'swatson@iut.univ-paris8.fr', '07.77.65.87.48', 'swatson', 2, 40, 40), -- username : swatson 
+    ('50093567', 'Michael', 'Tapia', 'mtapia@iut.univ-paris8.fr', '06.35.43.39.49', 'mtapia', 2, 40, 40), -- username : mtapia 
+    ('10947582', 'Chelsea', 'Johnson', 'cjohnson1@iut.univ-paris8.fr', '07.53.75.86.02', 'cjohnson1', 2, 40, 84), -- username : cjohnson1 
+    ('73113468', 'Rebecca', 'Brown', 'rbrown@iut.univ-paris8.fr', '07.37.06.04.86', 'rbrown', 2, 40, 84), -- username : rbrown 
+    ('34976231', 'James', 'Soto', 'jsoto@iut.univ-paris8.fr', '07.33.44.53.04', 'jsoto', 2, 40, 84), -- username : jsoto 
+    ('62094352', 'Jessica', 'Hunt', 'jhunt1@iut.univ-paris8.fr', '06.68.99.71.30', 'jhunt1', 2, 40, 84), -- username : jhunt1 
+    ('78855572', 'Kathryn', 'Brown', 'kbrown1@iut.univ-paris8.fr', '07.18.32.47.70', 'kbrown1', 2, 40, 84), -- username : kbrown1 
+    ('92954470', 'Robert', 'Roberts', 'rroberts@iut.univ-paris8.fr', '06.41.60.36.78', 'rroberts', 2, 40, 84), -- username : rroberts 
+    ('84263441', 'Ashley', 'Cruz', 'acruz@iut.univ-paris8.fr', '07.70.87.36.68', 'acruz', 2, 40, 84), -- username : acruz 
+    ('47953848', 'John', 'Shaw', 'jshaw@iut.univ-paris8.fr', '07.57.86.32.34', 'jshaw', 2, 40, 84), -- username : jshaw 
+    ('17668698', 'Michael', 'Schaefer', 'mschaefer@iut.univ-paris8.fr', '06.64.39.48.87', 'mschaefer', 2, 40, 84), -- username : mschaefer 
+    ('18482532', 'Douglas', 'Peters', 'dpeters@iut.univ-paris8.fr', '07.15.17.51.11', 'dpeters', 2, 40, 84), -- username : dpeters 
+    ('18674656', 'Joseph', 'Boyd', 'jboyd@iut.univ-paris8.fr', '07.28.44.99.43', 'jboyd', 2, 40, 128), -- username : jboyd 
+    ('76651164', 'Melissa', 'Lee', 'mlee@iut.univ-paris8.fr', '07.17.03.12.55', 'mlee', 2, 40, 128), -- username : mlee 
+    ('47723568', 'Elizabeth', 'Hobbs', 'ehobbs@iut.univ-paris8.fr', '06.46.71.01.45', 'ehobbs', 2, 40, 128), -- username : ehobbs 
+    ('23210498', 'John', 'Silva', 'jsilva@iut.univ-paris8.fr', '07.85.37.48.29', 'jsilva', 2, 40, 128), -- username : jsilva 
+    ('20682194', 'Cheyenne', 'Miller', 'cmiller@iut.univ-paris8.fr', '07.97.27.46.15', 'cmiller', 2, 40, 128), -- username : cmiller 
+    ('09715150', 'Bryce', 'Buchanan', 'bbuchanan@iut.univ-paris8.fr', '07.39.86.87.70', 'bbuchanan', 2, 40, 128), -- username : bbuchanan 
+    ('42906715', 'Danielle', 'Villegas', 'dvillegas@iut.univ-paris8.fr', '07.32.79.17.40', 'dvillegas', 2, 40, 128), -- username : dvillegas 
+    ('64692649', 'Ryan', 'Cortez', 'rcortez@iut.univ-paris8.fr', '07.95.08.82.85', 'rcortez', 2, 40, 128), -- username : rcortez 
+    ('53967843', 'Jonathan', 'Dunn', 'jdunn1@iut.univ-paris8.fr', '07.38.74.22.24', 'jdunn1', 2, 40, 128), -- username : jdunn1 
+    ('73753631', 'Kenneth', 'Davis', 'kdavis@iut.univ-paris8.fr', '06.47.67.18.86', 'kdavis', 2, 40, 128), -- username : kdavis 
+    ('57785528', 'Joann', 'Griffith', 'jgriffith1@iut.univ-paris8.fr', '06.51.05.23.87', 'jgriffith1', 2, 28, 28), -- username : jgriffith1 
+    ('02693141', 'Emily', 'Perkins', 'eperkins@iut.univ-paris8.fr', '06.46.03.70.03', 'eperkins', 2, 28, 28), -- username : eperkins 
+    ('63134090', 'Carmen', 'Davenport', 'cdavenport@iut.univ-paris8.fr', '06.63.08.97.09', 'cdavenport', 2, 28, 28), -- username : cdavenport 
+    ('73854923', 'Jessica', 'Fleming', 'jfleming@iut.univ-paris8.fr', '07.99.36.22.51', 'jfleming', 2, 28, 28), -- username : jfleming 
+    ('07620805', 'Molly', 'Watkins', 'mwatkins@iut.univ-paris8.fr', '07.69.56.34.71', 'mwatkins', 2, 28, 28), -- username : mwatkins 
+    ('45394894', 'Brent', 'Lewis', 'blewis1@iut.univ-paris8.fr', '07.34.24.37.78', 'blewis1', 2, 28, 28), -- username : blewis1 
+    ('55914982', 'Stacy', 'Mathews', 'smathews1@iut.univ-paris8.fr', '07.74.96.56.17', 'smathews1', 2, 28, 28), -- username : smathews1 
+    ('18991208', 'Tyler', 'Lee', 'tlee@iut.univ-paris8.fr', '06.19.65.81.55', 'tlee', 2, 28, 28), -- username : tlee 
+    ('08566457', 'Carla', 'Avila', 'cavila@iut.univ-paris8.fr', '06.48.06.09.25', 'cavila', 2, 28, 28), -- username : cavila 
+    ('62057047', 'Dominic', 'Miller', 'dmiller@iut.univ-paris8.fr', '07.83.54.65.29', 'dmiller', 2, 28, 28), -- username : dmiller 
+    ('88055579', 'Tyler', 'Mcgee', 'tmcgee@iut.univ-paris8.fr', '06.96.77.66.78', 'tmcgee', 2, 28, 72), -- username : tmcgee 
+    ('47254067', 'Annette', 'Mckinney', 'amckinney@iut.univ-paris8.fr', '06.16.96.75.73', 'amckinney', 2, 28, 72), -- username : amckinney 
+    ('52589649', 'Dylan', 'Schneider', 'dschneider1@iut.univ-paris8.fr', '07.29.48.18.36', 'dschneider1', 2, 28, 72), -- username : dschneider1 
+    ('70332419', 'Cynthia', 'Phillips', 'cphillips1@iut.univ-paris8.fr', '06.87.48.36.80', 'cphillips1', 2, 28, 72), -- username : cphillips1 
+    ('91513130', 'Shannon', 'Martinez', 'smartinez2@iut.univ-paris8.fr', '07.22.84.87.78', 'smartinez2', 2, 28, 72), -- username : smartinez2 
+    ('83515294', 'Nicholas', 'Johnson', 'njohnson@iut.univ-paris8.fr', '06.45.44.47.34', 'njohnson', 2, 28, 72), -- username : njohnson 
+    ('01633881', 'Matthew', 'Hunter', 'mhunter@iut.univ-paris8.fr', '06.57.81.39.85', 'mhunter', 2, 28, 72), -- username : mhunter 
+    ('40646230', 'James', 'King', 'jking@iut.univ-paris8.fr', '07.43.16.83.35', 'jking', 2, 28, 72), -- username : jking 
+    ('75244422', 'Jose', 'Davis', 'jdavis1@iut.univ-paris8.fr', '06.22.86.64.62', 'jdavis1', 2, 28, 72), -- username : jdavis1 
+    ('01901507', 'Jon', 'Graves', 'jgraves@iut.univ-paris8.fr', '07.22.19.89.87', 'jgraves', 2, 28, 72), -- username : jgraves 
+    ('12880447', 'Johnny', 'Watson', 'jwatson1@iut.univ-paris8.fr', '06.27.00.26.76', 'jwatson1', 2, 28, 116), -- username : jwatson1 
+    ('95015737', 'John', 'Lee', 'jlee1@iut.univ-paris8.fr', '06.89.67.01.47', 'jlee1', 2, 28, 116), -- username : jlee1 
+    ('48393050', 'Monique', 'Medina', 'mmedina@iut.univ-paris8.fr', '07.51.98.05.13', 'mmedina', 2, 28, 116), -- username : mmedina 
+    ('38709963', 'Elizabeth', 'Allen', 'eallen@iut.univ-paris8.fr', '07.64.89.46.19', 'eallen', 2, 28, 116), -- username : eallen 
+    ('59652174', 'Deborah', 'Perry', 'dperry@iut.univ-paris8.fr', '07.39.25.04.31', 'dperry', 2, 28, 116), -- username : dperry 
+    ('09494517', 'Christina', 'Huang', 'chuang@iut.univ-paris8.fr', '06.94.93.24.52', 'chuang', 2, 28, 116), -- username : chuang 
+    ('75420649', 'Matthew', 'Johnson', 'mjohnson1@iut.univ-paris8.fr', '07.17.87.79.37', 'mjohnson1', 2, 28, 116), -- username : mjohnson1 
+    ('43305480', 'Kendra', 'Armstrong', 'karmstrong@iut.univ-paris8.fr', '07.50.02.22.66', 'karmstrong', 2, 28, 116), -- username : karmstrong 
+    ('15364145', 'Lisa', 'Luna', 'lluna@iut.univ-paris8.fr', '07.65.35.03.56', 'lluna', 2, 28, 116), -- username : lluna 
+    ('63699597', 'Patrick', 'Harris', 'pharris@iut.univ-paris8.fr', '07.93.05.72.86', 'pharris', 2, 28, 116), -- username : pharris 
+    ('24325872', 'Brandon', 'Smith', 'bsmith2@iut.univ-paris8.fr', '06.76.61.70.16', 'bsmith2', 2, 29, 29), -- username : bsmith2 
+    ('34022257', 'Joseph', 'Brown', 'jbrown1@iut.univ-paris8.fr', '06.46.08.53.62', 'jbrown1', 2, 29, 29), -- username : jbrown1 
+    ('02291935', 'April', 'Price', 'aprice@iut.univ-paris8.fr', '07.26.40.52.55', 'aprice', 2, 29, 29), -- username : aprice 
+    ('19457896', 'Stacie', 'Lewis', 'slewis@iut.univ-paris8.fr', '06.39.52.07.92', 'slewis', 2, 29, 29), -- username : slewis 
+    ('01433025', 'Leroy', 'Rhodes', 'lrhodes@iut.univ-paris8.fr', '06.43.38.62.42', 'lrhodes', 2, 29, 29), -- username : lrhodes 
+    ('17959076', 'Mark', 'Davis', 'mdavis1@iut.univ-paris8.fr', '07.59.56.44.60', 'mdavis1', 2, 29, 29), -- username : mdavis1 
+    ('81988599', 'Eric', 'Sanchez', 'esanchez@iut.univ-paris8.fr', '06.72.89.23.63', 'esanchez', 2, 29, 29), -- username : esanchez 
+    ('46387246', 'Valerie', 'Jackson', 'vjackson@iut.univ-paris8.fr', '07.96.74.96.46', 'vjackson', 2, 29, 29), -- username : vjackson 
+    ('55370592', 'Gordon', 'Lawrence', 'glawrence@iut.univ-paris8.fr', '06.28.38.41.38', 'glawrence', 2, 29, 29), -- username : glawrence 
+    ('24007418', 'Todd', 'Wilson', 'twilson@iut.univ-paris8.fr', '06.63.49.35.49', 'twilson', 2, 29, 29), -- username : twilson 
+    ('57222156', 'Dustin', 'Lynch', 'dlynch1@iut.univ-paris8.fr', '06.06.66.30.50', 'dlynch1', 2, 29, 73), -- username : dlynch1 
+    ('48054794', 'Jamie', 'Bautista', 'jbautista@iut.univ-paris8.fr', '06.41.80.12.77', 'jbautista', 2, 29, 73), -- username : jbautista 
+    ('90822298', 'Richard', 'Mccormick', 'rmccormick@iut.univ-paris8.fr', '06.09.61.40.83', 'rmccormick', 2, 29, 73), -- username : rmccormick 
+    ('15193199', 'Matthew', 'Cox', 'mcox@iut.univ-paris8.fr', '07.56.50.29.82', 'mcox', 2, 29, 73), -- username : mcox 
+    ('83472059', 'Steven', 'Wilson', 'swilson@iut.univ-paris8.fr', '07.46.45.69.73', 'swilson', 2, 29, 73), -- username : swilson 
+    ('82940313', 'Daniel', 'Hendrix', 'dhendrix@iut.univ-paris8.fr', '07.64.34.27.70', 'dhendrix', 2, 29, 73), -- username : dhendrix 
+    ('95748892', 'Shane', 'Cruz', 'scruz@iut.univ-paris8.fr', '07.68.50.84.79', 'scruz', 2, 29, 73), -- username : scruz 
+    ('98007348', 'Anthony', 'Webster', 'awebster@iut.univ-paris8.fr', '07.79.43.55.74', 'awebster', 2, 29, 73), -- username : awebster 
+    ('90333574', 'Kurt', 'Maxwell', 'kmaxwell1@iut.univ-paris8.fr', '07.73.39.61.40', 'kmaxwell1', 2, 29, 73), -- username : kmaxwell1 
+    ('40516830', 'Jose', 'Perez', 'jperez@iut.univ-paris8.fr', '06.12.60.94.51', 'jperez', 2, 29, 73), -- username : jperez 
+    ('80659617', 'Rebekah', 'Vasquez', 'rvasquez@iut.univ-paris8.fr', '07.26.64.30.55', 'rvasquez', 2, 29, 117), -- username : rvasquez 
+    ('67640398', 'Terrence', 'Fowler', 'tfowler@iut.univ-paris8.fr', '07.71.85.59.97', 'tfowler', 2, 29, 117), -- username : tfowler 
+    ('21118209', 'Suzanne', 'Carroll', 'scarroll@iut.univ-paris8.fr', '07.58.85.72.07', 'scarroll', 2, 29, 117), -- username : scarroll 
+    ('17326106', 'Clinton', 'Carter', 'ccarter@iut.univ-paris8.fr', '07.10.93.59.08', 'ccarter', 2, 29, 117), -- username : ccarter 
+    ('17558966', 'Matthew', 'Jackson', 'mjackson1@iut.univ-paris8.fr', '06.26.04.03.15', 'mjackson1', 2, 29, 117), -- username : mjackson1 
+    ('39461322', 'Melanie', 'Johnson', 'mjohnson@iut.univ-paris8.fr', '06.79.39.31.00', 'mjohnson', 2, 29, 117), -- username : mjohnson 
+    ('59347451', 'Matthew', 'Perkins', 'mperkins@iut.univ-paris8.fr', '07.86.82.25.11', 'mperkins', 2, 29, 117), -- username : mperkins 
+    ('45292518', 'Stacy', 'White', 'swhite@iut.univ-paris8.fr', '06.99.37.91.37', 'swhite', 2, 29, 117), -- username : swhite 
+    ('02168287', 'Nathan', 'Higgins', 'nhiggins@iut.univ-paris8.fr', '06.85.74.85.96', 'nhiggins', 2, 29, 117), -- username : nhiggins 
+    ('08845248', 'John', 'Daniels', 'jdaniels@iut.univ-paris8.fr', '07.82.76.40.05', 'jdaniels', 2, 29, 117), -- username : jdaniels 
+    ('83192209', 'Amy', 'Murphy', 'amurphy@iut.univ-paris8.fr', '06.94.70.56.27', 'amurphy', 2, 28, 28), -- username : amurphy 
+    ('12136434', 'Bradley', 'Jacobs', 'bjacobs@iut.univ-paris8.fr', '07.62.57.51.36', 'bjacobs', 2, 28, 28), -- username : bjacobs 
+    ('24474793', 'Todd', 'Bridges', 'tbridges@iut.univ-paris8.fr', '06.71.73.77.05', 'tbridges', 2, 28, 28), -- username : tbridges 
+    ('02860915', 'Douglas', 'Espinoza', 'despinoza@iut.univ-paris8.fr', '07.44.58.02.15', 'despinoza', 2, 28, 28), -- username : despinoza 
+    ('18507236', 'Joseph', 'Schultz', 'jschultz@iut.univ-paris8.fr', '06.98.82.57.15', 'jschultz', 2, 28, 28), -- username : jschultz 
+    ('43741000', 'Dale', 'Ramos', 'dramos@iut.univ-paris8.fr', '06.68.16.10.78', 'dramos', 2, 28, 28), -- username : dramos 
+    ('54552385', 'Jill', 'Holder', 'jholder@iut.univ-paris8.fr', '07.46.45.07.18', 'jholder', 2, 28, 28), -- username : jholder 
+    ('23736990', 'Crystal', 'Arnold', 'carnold@iut.univ-paris8.fr', '07.91.33.02.76', 'carnold', 2, 28, 28), -- username : carnold 
+    ('76773446', 'Kevin', 'Sanford', 'ksanford@iut.univ-paris8.fr', '06.87.33.74.55', 'ksanford', 2, 28, 28), -- username : ksanford 
+    ('37929930', 'Tina', 'Tapia', 'ttapia@iut.univ-paris8.fr', '07.11.27.25.18', 'ttapia', 2, 28, 28), -- username : ttapia 
+    ('74042822', 'Patricia', 'Miller', 'pmiller@iut.univ-paris8.fr', '07.75.15.95.43', 'pmiller', 2, 28, 72), -- username : pmiller 
+    ('88955166', 'Eric', 'Brown', 'ebrown1@iut.univ-paris8.fr', '06.52.46.60.92', 'ebrown1', 2, 28, 72), -- username : ebrown1 
+    ('46719401', 'James', 'Singh', 'jsingh@iut.univ-paris8.fr', '06.33.57.16.92', 'jsingh', 2, 28, 72), -- username : jsingh 
+    ('81268085', 'Ryan', 'Howard', 'rhoward@iut.univ-paris8.fr', '07.07.62.55.35', 'rhoward', 2, 28, 72), -- username : rhoward 
+    ('57643046', 'Jennifer', 'Long', 'jlong1@iut.univ-paris8.fr', '06.69.82.67.22', 'jlong1', 2, 28, 72), -- username : jlong1 
+    ('63270385', 'Manuel', 'Mcmillan', 'mmcmillan@iut.univ-paris8.fr', '07.33.48.35.52', 'mmcmillan', 2, 28, 72), -- username : mmcmillan 
+    ('38534691', 'Kylie', 'Barron', 'kbarron@iut.univ-paris8.fr', '07.66.31.39.98', 'kbarron', 2, 28, 72), -- username : kbarron 
+    ('19467806', 'Jason', 'Peterson', 'jpeterson@iut.univ-paris8.fr', '07.88.54.05.46', 'jpeterson', 2, 28, 72), -- username : jpeterson 
+    ('95098891', 'Katherine', 'Reyes', 'kreyes1@iut.univ-paris8.fr', '06.44.47.94.71', 'kreyes1', 2, 28, 72), -- username : kreyes1 
+    ('38864544', 'Dylan', 'Campbell', 'dcampbell@iut.univ-paris8.fr', '06.84.20.93.53', 'dcampbell', 2, 28, 72), -- username : dcampbell 
+    ('32570936', 'Walter', 'Morris', 'wmorris@iut.univ-paris8.fr', '06.86.43.62.12', 'wmorris', 2, 28, 116), -- username : wmorris 
+    ('02574457', 'William', 'Mills', 'wmills@iut.univ-paris8.fr', '06.38.19.20.47', 'wmills', 2, 28, 116), -- username : wmills 
+    ('62543772', 'Gregory', 'Case', 'gcase@iut.univ-paris8.fr', '07.90.86.07.97', 'gcase', 2, 28, 116), -- username : gcase 
+    ('71268945', 'Lisa', 'Thomas', 'lthomas@iut.univ-paris8.fr', '06.16.85.77.82', 'lthomas', 2, 28, 116), -- username : lthomas 
+    ('38162490', 'Katherine', 'Middleton', 'kmiddleton@iut.univ-paris8.fr', '06.69.32.44.03', 'kmiddleton', 2, 28, 116), -- username : kmiddleton 
+    ('20105981', 'Kyle', 'Fowler', 'kfowler@iut.univ-paris8.fr', '06.56.85.16.09', 'kfowler', 2, 28, 116), -- username : kfowler 
+    ('64876438', 'Tara', 'Brennan', 'tbrennan@iut.univ-paris8.fr', '06.56.32.01.86', 'tbrennan', 2, 28, 116), -- username : tbrennan 
+    ('05729664', 'Tracy', 'Hernandez', 'thernandez1@iut.univ-paris8.fr', '06.71.47.54.96', 'thernandez1', 2, 28, 116), -- username : thernandez1 
+    ('56608087', 'Elizabeth', 'Clay', 'eclay@iut.univ-paris8.fr', '06.19.95.69.30', 'eclay', 2, 28, 116), -- username : eclay 
+    ('58873695', 'Evan', 'Young', 'eyoung@iut.univ-paris8.fr', '06.65.70.21.84', 'eyoung', 2, 28, 116), -- username : eyoung 
+    ('37568076', 'Mary', 'Ross', 'mross@iut.univ-paris8.fr', '07.08.15.04.24', 'mross', 2, 5, 5), -- username : mross 
+    ('92165465', 'Sheena', 'Roth', 'sroth@iut.univ-paris8.fr', '06.20.95.45.11', 'sroth', 2, 5, 5), -- username : sroth 
+    ('06747260', 'Megan', 'Warren', 'mwarren@iut.univ-paris8.fr', '06.04.57.57.65', 'mwarren', 2, 5, 5), -- username : mwarren 
+    ('56565549', 'Joe', 'Price', 'jprice@iut.univ-paris8.fr', '06.08.03.81.53', 'jprice', 2, 5, 5), -- username : jprice 
+    ('55455808', 'Jeff', 'Pineda', 'jpineda@iut.univ-paris8.fr', '06.00.61.44.37', 'jpineda', 2, 5, 5), -- username : jpineda 
+    ('45240831', 'Kathryn', 'Brandt', 'kbrandt@iut.univ-paris8.fr', '07.07.67.54.27', 'kbrandt', 2, 5, 5), -- username : kbrandt 
+    ('23848114', 'Tracie', 'Robinson', 'trobinson@iut.univ-paris8.fr', '07.82.13.49.38', 'trobinson', 2, 5, 5), -- username : trobinson 
+    ('06915981', 'Wanda', 'Garcia', 'wgarcia@iut.univ-paris8.fr', '07.80.57.45.36', 'wgarcia', 2, 5, 5), -- username : wgarcia 
+    ('24226298', 'Kimberly', 'Stevens', 'kstevens@iut.univ-paris8.fr', '06.07.09.47.81', 'kstevens', 2, 5, 5), -- username : kstevens 
+    ('99674548', 'Stephen', 'Barnett', 'sbarnett1@iut.univ-paris8.fr', '07.07.67.26.89', 'sbarnett1', 2, 5, 5), -- username : sbarnett1 
+    ('32293771', 'Jacob', 'Crawford', 'jcrawford1@iut.univ-paris8.fr', '07.43.31.89.36', 'jcrawford1', 2, 5, 49), -- username : jcrawford1 
+    ('73620092', 'Steven', 'Lee', 'slee@iut.univ-paris8.fr', '06.83.37.70.10', 'slee', 2, 5, 49), -- username : slee 
+    ('20935867', 'Sydney', 'Bailey', 'sbailey@iut.univ-paris8.fr', '06.21.87.83.98', 'sbailey', 2, 5, 49), -- username : sbailey 
+    ('35062779', 'Richard', 'Austin', 'raustin@iut.univ-paris8.fr', '07.41.68.33.68', 'raustin', 2, 5, 49), -- username : raustin 
+    ('07809037', 'Rhonda', 'Campbell', 'rcampbell1@iut.univ-paris8.fr', '07.82.36.39.53', 'rcampbell1', 2, 5, 49), -- username : rcampbell1 
+    ('69206144', 'Kimberly', 'Castro', 'kcastro1@iut.univ-paris8.fr', '06.88.28.73.64', 'kcastro1', 2, 5, 49), -- username : kcastro1 
+    ('63666367', 'Christopher', 'Blair', 'cblair1@iut.univ-paris8.fr', '07.59.54.47.60', 'cblair1', 2, 5, 49), -- username : cblair1 
+    ('80265895', 'Tom', 'Mcdowell', 'tmcdowell@iut.univ-paris8.fr', '06.27.78.83.43', 'tmcdowell', 2, 5, 49), -- username : tmcdowell 
+    ('20941471', 'Nicole', 'Lyons', 'nlyons@iut.univ-paris8.fr', '06.88.98.96.99', 'nlyons', 2, 5, 49), -- username : nlyons 
+    ('05333216', 'Nicole', 'Johnston', 'njohnston@iut.univ-paris8.fr', '06.79.13.36.23', 'njohnston', 2, 5, 49), -- username : njohnston 
+    ('68436409', 'Kathryn', 'Anderson', 'kanderson@iut.univ-paris8.fr', '07.21.12.78.36', 'kanderson', 2, 5, 93), -- username : kanderson 
+    ('99029929', 'Bryan', 'Santos', 'bsantos@iut.univ-paris8.fr', '06.85.29.91.20', 'bsantos', 2, 5, 93), -- username : bsantos 
+    ('75105910', 'Shannon', 'Martinez', 'smartinez1@iut.univ-paris8.fr', '07.32.66.42.39', 'smartinez1', 2, 5, 93), -- username : smartinez1 
+    ('70992055', 'Mary', 'Moreno', 'mmoreno1@iut.univ-paris8.fr', '07.87.78.16.57', 'mmoreno1', 2, 5, 93), -- username : mmoreno1 
+    ('09298619', 'Brian', 'Cole', 'bcole@iut.univ-paris8.fr', '06.33.48.41.42', 'bcole', 2, 5, 93), -- username : bcole 
+    ('77733514', 'Eric', 'Black', 'eblack@iut.univ-paris8.fr', '06.90.50.78.36', 'eblack', 2, 5, 93), -- username : eblack 
+    ('23613242', 'Gina', 'Nguyen', 'gnguyen@iut.univ-paris8.fr', '06.42.03.33.68', 'gnguyen', 2, 5, 93), -- username : gnguyen 
+    ('38735857', 'Marcia', 'Robbins', 'mrobbins@iut.univ-paris8.fr', '06.47.60.91.01', 'mrobbins', 2, 5, 93), -- username : mrobbins 
+    ('65869767', 'Annette', 'Crawford', 'acrawford1@iut.univ-paris8.fr', '07.44.87.28.57', 'acrawford1', 2, 5, 93), -- username : acrawford1 
+    ('02564651', 'Samantha', 'Campbell', 'scampbell@iut.univ-paris8.fr', '07.83.15.74.05', 'scampbell', 2, 5,93) -- username : sscampbell 
 ;
 
--- university.students(@student_number,last_name, first_name, mail, phone_number, password, #department_id, #group_id, #subgroup_id)
+-- university.students(@student_number,last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
 -- FAKE for departement INFOCOM
-INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, password, department_id, group_id, subgroup_id)
+INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, user_username, department_id, group_id, subgroup_id)
 VALUES
-    ('68469024','Itadori','Yuji','iyuji@iut.univ-paris8.fr','06.88.88.88.88','$2b$12$h6B09cEG.kERdxmfRB1TieNBCpD9eUJZY9Z0./sPpHpfXwlKewyta',3,19,19), -- pwd : Al`ERTd<Vy9v
-    ('70555486','Satoru','Gojo','sgojo@iut.univ-paris8.fr','06.66.66.66.66','$2b$12$N3I47V5GoDN89Ubl5aeAUO7Rk8tyWcbycRFdOksTrRir7uRytYu0i',3,19,19), -- pwd : :E<7)_W11[5P
-    ('07092122','Patricia','Woods','pwoods@iut.univ-paris8.fr','07.79.23.15.60','$2b$12$ohzgtjGkeFYWyo/W7Rwj8eefABb2OfFVjVOn29gglUblUPFObRJQy',3,19,19), -- pwd : z\3D<|"<g&qj
-    ('90224613','Benjamin','Collins','bcollins@iut.univ-paris8.fr','06.80.82.67.55','$2b$12$DqWsZWWJPwpKx3ytIw0Dw.IeVs/rmzZ5SlIFJfx5ai0flc5y2wkg2',3,19,19), -- pwd : +20;ktH1\S?0
-    ('55544860','Frances','Wolf','fwolf@iut.univ-paris8.fr','06.48.21.91.49','$2b$12$noHBx1Iijb9tl91yzxYE2eZhLps.0f.Eb0KczKG0hCuw55LhUFW8.',3,19,19), -- pwd : p*scdLD~>jQ@
-    ('01639851','Eric','Smith','esmith@iut.univ-paris8.fr','06.51.38.19.47','$2b$12$C9zONmAR.9pVlQ6lLZRfFOwyj10Ob8qhwEP1/NNmiZrmXiWoL.AFS',3,19,19), -- pwd : Pm~I`Fy1Olc6
-    ('14213219','Jocelyn','Curtis','jcurtis@iut.univ-paris8.fr','06.45.20.40.43','$2b$12$7oYu5u0ZEVDwN80tcdoC4uRvltVI12W25jel2Irkz/sqBEwTR1TsG',3,19,19), -- pwd : qn)&x9Wi0Ksf
-    ('35364890','Michelle','Torres','mtorres@iut.univ-paris8.fr','07.26.07.96.53','$2b$12$PmNLvs3hpeMgGUPEww3//.nm.GrHjqYb7wLfAUzZrY.MXsj6F0.wC',3,19,19), -- pwd : c6|-K4ES=!`9
-    ('05380172','Hannah','Lopez','hlopez@iut.univ-paris8.fr','06.24.60.68.52','$2b$12$wkjZPXWs3pjHjtEFipeitee30izNpA.QEsncfzfDRbSEjqmsjpg0W',3,19,19), -- pwd : UJwnLAZen)qv
-    ('02025961','Anthony','Peters','apeters@iut.univ-paris8.fr','07.12.50.58.91','$2b$12$A1jgEX3Bcg78.LTa1rbPLO4L03KbX6WHOK87tlGd6Vj1Tywng5Gty',3,19,19), -- pwd : >{KS7bKYtBW[
-    ('44886687','Walter','Patrick','wpatrick@iut.univ-paris8.fr','07.09.35.73.41','$2b$12$iByIYjMcwXPYxTBs.0mU9ezv.0SpBdPo.NcR9sHYlSh/obLUSna2W',3,19,63), -- pwd : 7eT}5YvnmZEs
-    ('39208918','Marcus','Green','mgreen@iut.univ-paris8.fr','07.62.35.58.52','$2b$12$CJxlttmrNdP/OtL/zj.AMeqWdCNayr3xYpYl/wl5Fal0wB9NF/sY6',3,19,63), -- pwd : (0}TiodqQ5't
-    ('41267751','Carolyn','Lopez','clopez@iut.univ-paris8.fr','07.84.95.86.29','$2b$12$UVVIZAdm/LwEst/7sEZNlu4WPGSMCMAS5TnQRiP6p.HWWeWMLX5bG',3,19,63), -- pwd : N`gb&fh`c%yW
-    ('43841024','Darlene','Wood','dwood@iut.univ-paris8.fr','06.17.49.27.15','$2b$12$mNZOQn1V3cj824ZwB27ssOJhd4M6yrNDGbYqCFSKHL1ZFaG/r3nRG',3,19,63), -- pwd : mdfoY?1v:}gj
-    ('96448943','Sandra','Shelton','sshelton@iut.univ-paris8.fr','06.62.63.48.08','$2b$12$xxlBNMAeaSQbqwJ/eAmlQeHKMEQPJSI1gbwG8HV./feV/miM0j96C',3,19,63), -- pwd : `z1PqCPBrV'8
-    ('44363671','Jorge','Richards','jrichards@iut.univ-paris8.fr','06.87.48.73.68','$2b$12$tgjyTWmwEsz53Rd0T2b2w.DtX9hPHS6xZajyxp7ldMgxq3c/HBT5W',3,19,63), -- pwd : K"V3KVugs|"K
-    ('86088518','Ann','Cox','acox@iut.univ-paris8.fr','07.64.98.24.40','$2b$12$Flft8Qyg03vmmywLzXdATuJ5tFiDRpAc8tx1s3MooNxncwkzqMCyi',3,19,63), -- pwd : Q<O|i#a<hl!'
-    ('11002964','Anthony','Smith','asmith@iut.univ-paris8.fr','07.66.99.65.46','$2b$12$0rs2ym5DxqRqr/is6XBCse.vqeSMIe.srMuPdrTIWdLwLbzjZzSm2',3,19,63), -- pwd : SK:7+4Qw3:pJ
-    ('46994345','Donna','Lee','dlee@iut.univ-paris8.fr','06.74.23.50.83','$2b$12$96Rwmdq1fN5DxVpdIvX1nOalgcj/wAcbdGiap9xPjtmh4iLeBGQr2',3,19,63), -- pwd : Qx!K+/Jmiv1D
-    ('08892453','Caroline','Jones','cjones@iut.univ-paris8.fr','06.62.86.15.36','$2b$12$D.O/6L9Hbo2oyTd4uZJsAuOUNo5U/RUG2w8rCdqTOuxD2kgvBzn3a',3,19,63), -- pwd : J'l)EuS6*8Q1
-    ('03800421','Matthew','Davis','mdavis@iut.univ-paris8.fr','07.93.39.45.03','$2b$12$Ip/Eoi5yE2K62F/o0FwU8Ot/bO85nkkqXIT8UFwhCsi5lsd4Ab3.K',3,19,107), -- pwd : AG+"=lZP{YeY
-    ('88648035','Amy','Arnold','aarnold@iut.univ-paris8.fr','07.17.80.55.05','$2b$12$l3lc4ObtV5yKYPcixxnIDexOL4regJGpGpGzkFMRKSzQf8PClLmsu',3,19,107), -- pwd : ?r.%,~Gc+C=N
-    ('07368189','David','Dixon','ddixon@iut.univ-paris8.fr','07.33.62.74.14','$2b$12$s81ue8jx5ANioEunHdiTMOlQV6fUsQkBZ5XafT8jm1gvujvv05W5y',3,19,107), -- pwd : vJxPNRKj}ryC
-    ('00242434','Andres','Roberts','aroberts@iut.univ-paris8.fr','07.80.11.07.58','$2b$12$ZmZEsHXTzkjHKLcB51GwduD2Smi2TGxtFmJ9jYo6PUYFoXclFmHJK',3,19,107), -- pwd : fn},lHgT:P[;
-    ('85408922','Edward','Ellis','eellis@iut.univ-paris8.fr','07.53.27.88.68','$2b$12$5/FL8GfmR6OBi3gmmWcVsuX9Y.584k/32PCGaYLdk1ZPHVNWqVUSG',3,19,107), -- pwd : YwnPN\Ff%"ER
-    ('12261046','Jacob','Rose','jrose@iut.univ-paris8.fr','06.39.49.05.85','$2b$12$xMTMK6OUhZhq.WjffvA4EuKgfl0Z9g8q53QkDFQufQ6QibHYDM3/m',3,19,107), -- pwd : *wkZ/KdWoZ)O
-    ('97197652','Patrick','Martinez','pmartinez@iut.univ-paris8.fr','06.04.53.79.17','$2b$12$llaNhdSXZ5lUN3HRukqeZ./7xmFMQfNOtwHE5B7BNBBNLUkMF9cTe',3,19,107), -- pwd : yON6@A$)QGdo
-    ('19229921','Nichole','Lewis','nlewis@iut.univ-paris8.fr','07.22.32.75.63','$2b$12$F13WMAjGFyq6pTv2pZjaluxaKGgjYnJUOWwSDInjLnefwbSZfa84G',3,19,107), -- pwd : \R#~A#=D^vp*
-    ('58934894','Stephanie','Carlson','scarlson@iut.univ-paris8.fr','06.55.63.89.79','$2b$12$qcUrOXtzRNbDFj2vzue0L.WdSb5HtCuWRddZUfRJdRTJvdLki0r8W',3,19,107), -- pwd : bPj[w]n+Pi!|
-    ('33798546','Gary','Keller','gkeller@iut.univ-paris8.fr','07.32.18.66.95','$2b$12$Bpts/N0fEcKxx3R97WVlOuYc2MBC1QTnSys3zUJZNf2BiUzpoIbVS',3,19,107), -- pwd : QnkQ/u-.%MF@
-    ('93888181','Tina','Bowers','tbowers@iut.univ-paris8.fr','06.00.41.80.28','$2b$12$Oi5uKpCghTstk35QiNeGue1rozdQfLuBwbreaiw7yi7W/l6HDRSS2',3,21,21), -- pwd : p;`NFpX!3fel
-    ('89963978','Kelli','George','kgeorge@iut.univ-paris8.fr','07.41.26.75.25','$2b$12$NW5KvngKtR4fcwRRAsjJne4VPRcnvH75lOqUUpndmsLU73Kk7x6mK',3,21,21), -- pwd : z8@`#Bm9*9BH
-    ('22150393','Laura','Rosales','lrosales@iut.univ-paris8.fr','06.72.07.81.16','$2b$12$jgrgqQ5IOExDKNxjb1P7ZOevpLqwPADh8KgpFIRnuZT2RNMyGkejO',3,21,21), -- pwd : mAvV1},5b~;0
-    ('75839542','Derrick','Chang','dchang@iut.univ-paris8.fr','07.47.04.19.25','$2b$12$GFgZOVXvKq1hlkOUkoA0CORJoPp4SNkp2T5WIyPEKTXv0BaO4uMae',3,21,21), -- pwd : 6kE.QfeWa$$@
-    ('81130001','Brent','Hernandez','bhernandez@iut.univ-paris8.fr','07.38.51.91.91','$2b$12$Uszklb5adf0m4xCvorz54uiUU7LiHEsGxywyUrs4xiJifgaFyrqsy',3,21,21), -- pwd : Q5?T}iNSNm1T
-    ('51834009','Kirsten','Bender','kbender@iut.univ-paris8.fr','06.69.53.06.54','$2b$12$2bBfsxodGRQCaVt/eifUbePyxgOgGI.YPdtaI.UjqkgCHxmdJPhka',3,21,21), -- pwd : %1nQ;"=KDD7G
-    ('88840409','Anna','Boyd','aboyd@iut.univ-paris8.fr','06.94.01.49.19','$2b$12$rDDu5hloFQv86ZbLVF.6M.BIAtaYt8E.AiIvqLMcic4YeQs129c7i',3,21,21), -- pwd : `stkTogHmnb#
-    ('78986442','Catherine','Gutierrez','cgutierrez@iut.univ-paris8.fr','07.19.19.25.74','$2b$12$ldq9b2NyDasRaUYwXFkP2.7AbGFDbdKK9gQ4YGNJgl/9J5FZ6nsf.',3,21,21), -- pwd : zFG&B@STMqA;
-    ('19719715','Elizabeth','Baker','ebaker@iut.univ-paris8.fr','07.81.05.43.64','$2b$12$FmKjZ8NVoySWWecJoUqsb.xkKS5ZWx41fifRBHR2VcmRXoRRXZz3S',3,21,21), -- pwd : H/#Q,P&e1TLC
-    ('09584415','Vanessa','Fitzpatrick','vfitzpatrick@iut.univ-paris8.fr','06.98.00.59.39','$2b$12$7cEZ7ZV7IY21W47pm.Wl5uh8UohF4xeB9dPquaU1/GqL7oq2qQJKi',3,21,21), -- pwd : $MDMM\z,GEs2
-    ('81405088','Tammy','Gonzales','tgonzales@iut.univ-paris8.fr','07.59.93.59.80','$2b$12$t/kZ9KFoXUEAZHa/J/.LkuBJtGQq8t1QaQKGpb1HTZBe0RfbO6aeO',3,21,65), -- pwd : 4TOGpc{WPLb{
-    ('27213203','Brandon','Smith','bsmith@iut.univ-paris8.fr','07.37.30.15.39','$2b$12$4w6ViddKnyngdLjuJ6MU2.xfASbt.uJYQpB.bi3vJyIrh5cE3kX8m',3,21,65), -- pwd : r~dAG-E>@-qP
-    ('84180170','Jennifer','Jones','jjones@iut.univ-paris8.fr','06.37.62.79.85','$2b$12$eiU2jJB1xVaSGkV0NL7yi.M2wzalVo6x1jJvpjlRIlClr2OkM9Yli',3,21,65), -- pwd : ZZ/?J=AHPr_7
-    ('10404693','Kevin','Hall','khall@iut.univ-paris8.fr','06.82.71.83.02','$2b$12$KQzaDN1pQQR3NMIs5SReK.xKUvwyXJVNjWzuKWmBeRYKgVBJKu0Lm',3,21,65), -- pwd : kT7?xUwE5Y4+
-    ('43037888','Andrew','Erickson','aerickson@iut.univ-paris8.fr','06.83.64.22.67','$2b$12$iZp6fd3IadDU/FEpcgm68.Y76Dip4PHS4qZ6z9ssGgvITNzFK41je',3,21,65), -- pwd : 5_[\:v_~^.Jw
-    ('33999197','Jay','Chambers','jchambers@iut.univ-paris8.fr','06.80.08.61.59','$2b$12$ChPLFssYM2eLGEH6q2dMoO.xQ2SJj7IB9r59Ea16nmVl9Tq7vuA4C',3,21,65), -- pwd : gdq&K2o7UuuV
-    ('49007663','Wendy','Fischer','wfischer@iut.univ-paris8.fr','06.15.40.15.09','$2b$12$zhCLM3dG8kgaj6Nsco3CS.U25e9vErkbDal1c99fV4kgz3PI9qlTi',3,21,65), -- pwd : BJ-Mt!f*J)6z
-    ('53777556','Jennifer','Webb','jwebb@iut.univ-paris8.fr','06.94.07.34.36','$2b$12$055k15kgIoF5uBtPJNgodeBVkeAJgHuRv51lQDZUbI3xrCN6YU5l2',3,21,65), -- pwd : s/\HS8W(u0tz
-    ('92516761','Stephen','Smith','ssmith@iut.univ-paris8.fr','07.23.16.54.88','$2b$12$eLGGfGQhboLlUkEn29dk4.aDk5zZRNWbtnPTHMgQmNFN5ZU7ATvei',3,21,65), -- pwd : kcB;g>QkJUN<
-    ('59588759','Jesus','Harrington','jharrington@iut.univ-paris8.fr','07.95.44.30.43','$2b$12$8tyOgqsejhxCI7mrE7LhWOOVzm0PIjJz6MTtEMfPl5xcUI0CBB96W',3,21,65), -- pwd : <gxSPsp!^8cH
-    ('26380664','Lee','Sullivan','lsullivan@iut.univ-paris8.fr','06.77.86.38.90','$2b$12$FFkjqnI3/rvliw1aF4iKAucq8Uq0g0uKvscQTd2vayKS2JWKrrWl.',3,21,109), -- pwd : 0FGW;/81W'61
-    ('43886059','Matthew','Weaver','mweaver@iut.univ-paris8.fr','07.15.33.20.83','$2b$12$49EhLXlQyMFu2zc.N0s/v.CsgOO/yeLqmLVLOLdBKCsurm5lTVtAK',3,21,109), -- pwd : 8+W5aVvCl8(&
-    ('84854071','Michael','Haney','mhaney@iut.univ-paris8.fr','07.51.97.20.50','$2b$12$21h109THBlUQi7Nl05FtVuiMa5w.f8lMKcw/qPUWpxYHluwwWsQ3K',3,21,109), -- pwd : WZtHe{'1qpn1
-    ('15442041','Sarah','Martin','smartin@iut.univ-paris8.fr','07.62.49.09.98','$2b$12$opuV/hyZrDwEEkRQ9ggLpu/YpJNIEtAwPM9swxgKZF9dW07p5Dscm',3,21,109), -- pwd : xjvW;aMtE$7A
-    ('91248241','George','Dorsey','gdorsey@iut.univ-paris8.fr','06.48.78.97.38','$2b$12$TfGU/Iwuf4jpZo/K1uur6uKHGCdC5xsa6LACFFJcr1Aa6Y/rk4mU.',3,21,109), -- pwd : UFqL*3eT]~]"
-    ('24478502','Jose','Griffith','jgriffith@iut.univ-paris8.fr','06.13.26.97.84','$2b$12$S/pseaadFIrgtKzV8BLiseTxQz8sx54Oxj210RiPrtpJoldA4O20y',3,21,109), -- pwd : :YfJo4Fs[ipC
-    ('77501501','Kayla','Larson','klarson@iut.univ-paris8.fr','06.95.44.59.80','$2b$12$9By9Nefo40TGaF5pU10qleRKQks3py43VT3C8oLHt9g54nQmxe3nW',3,21,109), -- pwd : ~gYmzEbE7q>*
-    ('22377605','Steven','Liu','sliu@iut.univ-paris8.fr','06.12.67.54.68','$2b$12$H2Sbwg/BmtbqNsDUxRP1H.FpjahVWimTmJs.JGqo1eHjca9XkpwNy',3,21,109), -- pwd : iMSY0o:_'($l
-    ('83308588','Carlos','Savage','csavage@iut.univ-paris8.fr','06.34.20.33.82','$2b$12$jfr2M7duS4QcRPUw5jbrTOV84XZ1O1dG3uLLVwlaYsXazUs7lgEIO',3,21,109), -- pwd : n&!8[RE2a}s0
-    ('32354508','Joseph','Horn','jhorn@iut.univ-paris8.fr','07.07.88.51.07','$2b$12$FDuM6FJ0Gwp9dThF.sQb1uRZ3kA1jIwZxkaPBWk3VCtcohgIhlpI6',3,21,109), -- pwd : %%o&&m?>x3\!
-    ('61908378','Robert','Harrington','rharrington@iut.univ-paris8.fr','06.33.71.40.39','$2b$12$1wg3xWIZeqytuHVwz2xjl.3EdRpt1BNZJxgvy8cb6Oo3NvYTzBKd.',3,20,20), -- pwd : 3$ID25[5S#>*
-    ('83710708','Levi','Browning','lbrowning@iut.univ-paris8.fr','07.88.29.29.64','$2b$12$zR2b6u6gqPuouh0d7Qzgwubpz8Zb.Q4sbX2e1QDOO0Mc8uuWgPeA6',3,20,20), -- pwd : 7*tAlCe0Et@l
-    ('97077165','James','Stewart','jstewart@iut.univ-paris8.fr','07.68.74.94.78','$2b$12$T16ZY9L2aumS32s2CwlqYeWra/hWFgZJov4eOe0NL.yiM37vkH2Pi',3,20,20), -- pwd : "&QD7K"^2Oie
-    ('08238070','Kevin','Collins','kcollins@iut.univ-paris8.fr','06.20.98.97.03','$2b$12$COV4D9ART0LmqjS2w0E7N.dgnImhqeA6H7GXwFWA0lHFnfXiW0k9y',3,20,20), -- pwd : P8B|`o7o]=p#
-    ('96882277','Victoria','Pope','vpope@iut.univ-paris8.fr','07.87.54.19.75','$2b$12$M2yxH3gwObRBIOgsHN.OZ.3bnLIhydkGNnX9/vKMvOHBknUegsYLe',3,20,20), -- pwd : ?j*|v)hNab#O
-    ('63206175','Nicole','Henderson','nhenderson@iut.univ-paris8.fr','06.60.49.65.17','$2b$12$LKBLSt9CS9SnFn/OfwwpG.6eq65Jrv0jrGtKjScQ5LX5EesHqjOKq',3,20,20), -- pwd : I,N)BbgTQds^
-    ('74363500','Troy','Blackwell','tblackwell@iut.univ-paris8.fr','07.37.31.30.10','$2b$12$ZIMDB/VItXc8KSDjXNxTsOE66k0F0s94s9WEXYLC4bXSqZObBZh6m',3,20,20), -- pwd : (Te2{%FE=8+m
-    ('78937791','Jonathan','Cordova','jcordova@iut.univ-paris8.fr','07.11.34.92.59','$2b$12$FcLPHOTFdS/PQcxopcMn..VbfQIRN5XjVvy0pQsHq.sTN8Qbk5dzK',3,20,20), -- pwd : kiWsAR}xyh6+
-    ('85300873','Andrea','Farmer','afarmer@iut.univ-paris8.fr','07.05.09.16.66','$2b$12$jBgmqzNgE1H85sJAo.eiu.4xzZiEQqHZ2stmfvSXCIe.DMx6IZuwi',3,20,20), -- pwd : rhH4d(\4L]`0
-    ('05591751','Brian','Jones','bjones@iut.univ-paris8.fr','06.39.47.41.05','$2b$12$LzKt/BsBJAe7uXUIR2RF5O4x7tC/27oZocdU2MzHK3kMyTWhIR5gu',3,20,20), -- pwd : a5m#jI+HhM7L
-    ('93898648','Lisa','Martinez','lmartinez@iut.univ-paris8.fr','06.30.83.11.17','$2b$12$XmU9mupq/6AmwuF9rcpQduRh7cf0cZf6WnJhJE8aJKBqad9GtLBO.',3,20,64), -- pwd : 49<ej`2WwA`b
-    ('06451956','Kathy','Steele','ksteele@iut.univ-paris8.fr','06.23.62.74.92','$2b$12$q4JjTkyLav/HAYHUtYDKMeEmWPdSBc5t33pBQxRmJvTQE2p37RFpi',3,20,64), -- pwd : KDQFPKp=BDf3
-    ('76294129','Michael','Simmons','msimmons@iut.univ-paris8.fr','06.98.76.28.85','$2b$12$PXDquCSk6.ZH03BbJg0Xn.Y1r1oLGDPKFITS62LkhgHIBBjCGF7dy',3,20,64), -- pwd : T`2s?IT[/"$0
-    ('20328749','William','Marshall','wmarshall@iut.univ-paris8.fr','06.56.78.73.36','$2b$12$qbV9hFUIECKoJFmZHOJFbuoB0T4iJJdgVzz8OogJ7N1ftmnwP4AgS',3,20,64), -- pwd : sF!ev3OJg2w[
-    ('66325803','Nicole','Brown','nbrown@iut.univ-paris8.fr','06.44.07.87.21','$2b$12$tQZf1syKRtnfkG4eSLHHnOkMx/yz1E6/y2kKHi33OzW5.EnpYTRnq',3,20,64), -- pwd : =bq:)a-",0V=
-    ('44405381','Paul','Blair','pblair@iut.univ-paris8.fr','06.17.58.51.46','$2b$12$lO3eZaBkMOWKcmGEnRXpUeWhM.1aP4uSeEdLRZBVTC04kXsL/eHdC',3,20,64), -- pwd : ,d1?GDoE|+Tx
-    ('03953986','Sara','Yu','syu@iut.univ-paris8.fr','07.67.63.22.99','$2b$12$8LOq.9Qq1a7W2/lmBzfxz.UecS8qNXlTsDlp6lcoiZRnYgjp57A1G',3,20,64), -- pwd : gw/\`{D"CQ@l
-    ('14779874','Nicole','Thompson','nthompson@iut.univ-paris8.fr','07.68.99.18.51','$2b$12$0dpnZAVIV5138l0UEXhXr.Gb.iKJ6DWcJPPLvSKbrgLJEdfoTqYzO',3,20,64), -- pwd : gkO6HVd$VLXs
-    ('50242408','Jennifer','Huff','jhuff@iut.univ-paris8.fr','07.01.28.77.01','$2b$12$uRjwXht.bgc6kxWMLpaT7OeZrn4zMRJ8M/glHVaHBEhLENeeZGaV.',3,20,64), -- pwd : \f_0*aahQxTx
-    ('81761741','Rebecca','Martinez','rmartinez@iut.univ-paris8.fr','07.47.83.58.61','$2b$12$Oq3kMmvdkwM.LPfKphxjXeOYVRtYQ49A8QL/PBLPk46fh0Ak3iVJO',3,20,64), -- pwd : @rG4Vjjq~aO!
-    ('44477069','Joseph','Phillips','jphillips@iut.univ-paris8.fr','07.69.73.85.06','$2b$12$mEW6lk0UmKrWFEKzPjCnKOs4GHV0M2OMXv23QsGzqboiTxe2XvzeG',3,20,108), -- pwd : Tunor0n&(=!"
-    ('50392609','Lisa','Giles','lgiles@iut.univ-paris8.fr','06.04.75.60.45','$2b$12$RpW3F4jdcysEjLKWHLWm9O54tjCCJgRBTZEjsFCtlFGQl4b/ScuS6',3,20,108), -- pwd : wk%a#i%Kj(Q.
-    ('93779867','Samantha','Johnson','sjohnson@iut.univ-paris8.fr','07.72.97.62.69','$2b$12$WcIi02Ys97yEjqcqGxgHYO1vtKFkCmxYzfCnBTVctpBeUV7S8EfQW',3,20,108), -- pwd : K"BrRS*&%2+Q
-    ('63692133','Joseph','Austin','jaustin@iut.univ-paris8.fr','07.87.18.33.38','$2b$12$Re08TpWd.gOXt1PBIVuXduGqefhLb4UkMvazKwZeNAi/Uqh6mNjMS',3,20,108), -- pwd : .-=IJ~z:[5s[
-    ('33089735','Justin','Anthony','janthony@iut.univ-paris8.fr','07.86.77.49.39','$2b$12$9j45xR42nIHW22HZJRQkyOmxzfrM4TW71dN37yUSVN1QOmNfg67/e',3,20,108), -- pwd : 2|6kv;J:N6$"
-    ('62174530','Calvin','Whitaker','cwhitaker@iut.univ-paris8.fr','07.62.60.87.79','$2b$12$ngDAbw1ns0rYIL3mAl.q2.hd7kuMpkeKawy.tnP/mAlTchZn18kFa',3,20,108), -- pwd : 6R`f0An[~~nl
-    ('66278156','Scott','Ward','sward@iut.univ-paris8.fr','06.53.00.03.14','$2b$12$Mu6pCfoYrDylJ1Vc.vV.8.ToI3S41ZyQi81.qlbyHoy.9IFQdvsDu',3,20,108), -- pwd : M4C{'ps=L5ct
-    ('01638329','Anne','Lawson','alawson@iut.univ-paris8.fr','06.08.60.63.97','$2b$12$kfWO7tSI7rG2VvZuql4MqOljWuAcqF93E.MI7DosV.XkoyeM.g4CW',3,20,108), -- pwd : 3WGU@;s04kyQ
-    ('77291764','Samuel','Jensen','sjensen@iut.univ-paris8.fr','06.36.74.96.13','$2b$12$w93UFXMQqHjRaMh8pTLiee1MeiPWwRJa8Y/LhnrExYV1pmsGO2VoO',3,20,108), -- pwd : \j))&(j}++vp
-    ('28095973','Michele','Taylor','mtaylor@iut.univ-paris8.fr','06.78.70.18.10','$2b$12$ZyqHsDL1OFb2f9XEoXt2aulUfGEjsxzy0tpZ6IsqOtFcb0DzCtdD6',3,20,108), -- pwd : ;s)iXT\PAE?m
-    ('71171331','Katie','Hoffman','khoffman@iut.univ-paris8.fr','06.85.18.45.01','$2b$12$AQcndur05urr3fedsEY30eYe4n7KfKJ54yAW1vx.uEt9s44a3F5bW',3,7,7), -- pwd : 03t*2y8ewOxT
-    ('92525418','Christopher','Decker','cdecker@iut.univ-paris8.fr','06.06.71.81.47','$2b$12$Oa8emha4mj0yeUM4Pdfl0.xGUe4lC0j.5EwywESDKhJ0oOg4vEva.',3,7,7), -- pwd : :QHgHUI4zFqY
-    ('69396379','John','Stephenson','jstephenson@iut.univ-paris8.fr','06.26.14.81.30','$2b$12$1VGP4B5Tp3p/oL.w.s2a0uu.xsLWDtWPrRrVkfgu/K5oGQMqLD/za',3,7,7), -- pwd : L/Eem{-cX/)-
-    ('55229858','Aaron','Peterson','apeterson@iut.univ-paris8.fr','06.87.25.98.17','$2b$12$T5kuvTVs8nK.TDQKucwZZO0AvAHZOKYTLB2jJYbCtvNMcXd49SEMe',3,7,7), -- pwd : )dWEn<riGL-j
-    ('61020929','Scott','Washington','swashington@iut.univ-paris8.fr','06.26.12.43.38','$2b$12$21rRgwGi9.klBGHhyqbK6uiYm5/JdUMx.ssGYBYT1LmcEVlLZS.aS',3,7,7), -- pwd : u(0GreRD4}ED
-    ('13927333','Alyssa','Hansen','ahansen@iut.univ-paris8.fr','07.43.12.82.41','$2b$12$zUWSTV8tTkF0wRf2XK1.eeSTXVnlxSQYbcXGTlO/3M.29OKNg.qeW',3,7,7), -- pwd : Rm*gX0p2LM+H
-    ('30682289','Tina','Price','tprice@iut.univ-paris8.fr','07.23.45.07.94','$2b$12$ITqvbufej3EH9rERDjsdgOeZy5Njz9Tqzb5zLilUMRxCMf9uksG3S',3,7,7), -- pwd : E4<Lnb#T^}\2
-    ('42012946','Craig','Jackson','cjackson@iut.univ-paris8.fr','07.64.16.00.78','$2b$12$uBt.blM5C52Raf5E5Ml8T.Y2AyOwde/d0bhQVXBrBqbIKT6UqjRKS',3,7,7), -- pwd : >Xy4<N_*EpN%
-    ('79649585','Joe','Rice','jrice@iut.univ-paris8.fr','06.12.81.68.06','$2b$12$v3BP8qSbMuoGnqpLRvwtSOrzZ576Zr62sdRPkuTdCerizbUivfKkC',3,7,7), -- pwd : =u&CO8.-1d\E
-    ('08759451','Lisa','Hanson','lhanson@iut.univ-paris8.fr','06.00.05.86.59','$2b$12$z7Hrpwx5y6ApvMv59wSKney0o2KtdUdjpN/oj9cuWHyDGh9.t2ODy',3,7,7), -- pwd : /M;BMG:rk5#~
-    ('50058415','Tonya','Olson','tolson@iut.univ-paris8.fr','07.74.68.98.26','$2b$12$t4tAZZ6SCrAHewooLK5nc.QGYoosRSQaIS4JLmG.btMi6gs0bN2XS',3,7,95), -- pwd : DDl:i]8:eRp:
-    ('44522648','Michael','Hays','mhays@iut.univ-paris8.fr','06.69.01.02.11','$2b$12$SvY1k8sxRDwy5tI6pEQRKeT2eRTuB9PlHvSWN8c8HhszkNNgEkZEu',3,7,95), -- pwd : 3md#LB[ic;0N
-    ('91162399','Kristin','Mcdonald','kmcdonald@iut.univ-paris8.fr','07.24.27.76.05','$2b$12$qcvxH/iiuxxs2bUXfay.febqIOhgTq5lOtcjK3LhU3osdOsLGCY06',3,7,95), -- pwd : OgCpB56"w@!K
-    ('09973518','Micheal','Wade','mwade@iut.univ-paris8.fr','06.83.33.95.24','$2b$12$SBSDtFinfMdOTcR6lW/6uew1bpaOUhfIqoMvi6w3rsr01uAnR.7ci',3,7,95), -- pwd : ~d*z77IL`'L<
-    ('66633986','William','Sanchez','wsanchez@iut.univ-paris8.fr','06.72.52.92.82','$2b$12$ziHx4K5OsvqsmNdf0aa/Q.lBeDlKJSZIcxYcBwV2EmiN2BRfs.BX.',3,7,95), -- pwd : ;s2]g6GR>-C~
-    ('18938991','Colleen','Willis','cwillis@iut.univ-paris8.fr','07.15.37.62.39','$2b$12$PZliCBBwWrL1PbW3YCSQlONjVmruz1ixtbFV4GhREgcG83ICg6qOC',3,7,95), -- pwd : X/V]sw)"Ry:r
-    ('48575364','Andrew','Adams','aadams@iut.univ-paris8.fr','06.26.74.71.34','$2b$12$ZcUsDcWYxYxDlda4zo3Uwu8M2POSDN4UeRlazgrBcav5Fcyjezi0i',3,7,95), -- pwd : bOw.GCLC:T@I
-    ('05291189','Kyle','Wood','kwood@iut.univ-paris8.fr','07.23.84.17.98','$2b$12$vKwccZPWScMMb7VOtqriHeM7XwafMFzTM2t7.cFwljbgU6Orcf7fC',3,7,95), -- pwd : s]5p$.y/+935
-    ('99329926','Robert','Smith','rsmith@iut.univ-paris8.fr','07.00.29.30.89','$2b$12$L0mgKd/ax5KDaYqgfMCHy.3Ehlva/eumfyxfG3bct4nVI/MIvoN.u',3,7,95), -- pwd : x1WUBt;-TR"t
-    ('04090157','Timothy','Cole','tcole@iut.univ-paris8.fr','07.65.96.19.39','$2b$12$.gOkSnGOByOZGBDobbBRSuUNcxVIXEmxP3h99vYJCkpOEkGqlJ.TK',3,7,95), -- pwd : lse\q+#!fpeC
-    ('40890464','Dawn','Lynch','dlynch@iut.univ-paris8.fr','06.77.44.48.86','$2b$12$uAru0JysClXeILQCQtj5AOn6iIiYdf2l/YLJ0WqzYN7uCHRkCdXTG',3,7,95), -- pwd : _#4Z$!4~$[-*
-    ('74863961','Brandon','Jones','bjones@iut.univ-paris8.fr','06.10.75.43.69','$2b$12$Dv6jdhUjmKchg5tQFoj5IeTZm4XccLhfLs7cKVo6EhcrSH9lglYi.',3,7,95), -- pwd : Hs.KxLFev>B$
-    ('74938047','Jesse','Nelson','jnelson@iut.univ-paris8.fr','07.44.92.62.77','$2b$12$mdyg5ZaoJsYMa0eiKHgmteigwJiw3WdVje7sBRbz1.QStcjlLg8Me',3,7,95), -- pwd : L<yjZ*v3nq>z
-    ('91105479','Laura','Rich','lrich@iut.univ-paris8.fr','07.21.25.48.85','$2b$12$NFGzzZddYM5DkiU4ceyvS.Vu4ZuA8Hdvyp0lSOhCk8KTchubGOfn2',3,7,95), -- pwd : 5_)em`DT[{@]
-    ('51186658','Jeffrey','Underwood','junderwood@iut.univ-paris8.fr','07.46.42.58.72','$2b$12$37oxd32aoqaZ25gbBKCC6eaPAD6PMZqLVbhzBCmUjH9XkQYEzXyci',3,7,95), -- pwd : dygFi2x`pz&;
-    ('56902596','Brittany','Gonzalez','bgonzalez@iut.univ-paris8.fr','07.91.90.14.45','$2b$12$1AJ3KOask/SKEzu8UFm1KuSwzmGsJ6y0GLmy84TpzrdfcoATGFjoy',3,7,95), -- pwd : -&%6^rS@@9>L
-    ('12607510','Joshua','Bennett','jbennett@iut.univ-paris8.fr','07.14.84.40.83','$2b$12$Qn0MrdcplbXsP.TT/0USwOdKalW6RnxLis2YgB/nOvQAZPzGs7E0m',3,7,95), -- pwd : #B~B~x@zZ|5x
-    ('10332673','Sonia','Hatfield','shatfield@iut.univ-paris8.fr','06.09.16.48.93','$2b$12$p53UbZD5ICEdqXHS1DN6BO4lX2iuWMnLznYzo2BrkCU1ukYjYEqgu',3,7,95), -- pwd : +y?/_(p{j1rs
-    ('37894276','Margaret','Nunez','mnunez@iut.univ-paris8.fr','06.01.25.69.33','$2b$12$x9saTLDlTfW2lFL86kZHWOn.pck58pcjzveLUmRN84i80qjlUQTja',3,7,95), -- pwd : {+f2]j3w+wj!
-    ('81577467','Shawn','Johnston','sjohnston@iut.univ-paris8.fr','07.52.72.82.70','$2b$12$tgspCiYFDrBlzAeaj2w7N.QC2m0rco/HUhtFowRcQ1jgahQdjo7su',3,7,95), -- pwd : *pUK~_Laz8ib
-    ('35923148','Kim','Noble','knoble@iut.univ-paris8.fr','07.83.89.49.81','$2b$12$mtrSeZJQybAfU41Zy27Ua.B8c/oBfJo9Fk7vH/dmlUEN7347drUCW',3,8,8), -- pwd : c%;{\^#.I!>0
-    ('43918504','Douglas','Thomas','dthomas@iut.univ-paris8.fr','06.91.41.11.57','$2b$12$h6tCXQS72XSTFVl002VQtOIyfk.xmAhmC29exhiqN0y515G/ySHZC',3,8,8), -- pwd : *G9R|Ce<Cp8R
-    ('07061129','Tammy','Kim','tkim@iut.univ-paris8.fr','07.95.53.76.89','$2b$12$dGUnBIerbv6EHDB8hBZ3NOQcfDoE6G8ip9zq/nLdyB5nqCUTNsi5u',3,8,8), -- pwd : HNb@i#'K';(r
-    ('01207936','Rodney','Riley','rriley@iut.univ-paris8.fr','07.91.56.33.39','$2b$12$Tu51U6xgK/OGBwCbsXoUQe57nxGZuiYeF.oyHFr2NjXHKA4sfbs2i',3,8,8), -- pwd : ?kwuh.]|#p{v
-    ('78860691','Nicole','Richardson','nrichardson@iut.univ-paris8.fr','07.29.68.39.70','$2b$12$Q5HQnk7gyVA/UfnN8YChCOLIumEKCU35KTPt61LB0Ovrf/uoXJ5Pu',3,8,8), -- pwd : ^T_/'Kr>HEK\
-    ('56681208','Chase','Howard','choward@iut.univ-paris8.fr','07.96.73.45.91','$2b$12$XBID8Sis1BFDF5ZsZMcnXO16bOJL1rdZyRUsJKKJ1qC6Pm73vXxPS',3,8,8), -- pwd : /-njev5>SKJz
-    ('31978207','John','Walters','jwalters@iut.univ-paris8.fr','06.31.56.06.54','$2b$12$lbD1OtOXPlg2xlB.nNOoiO5yJA89a0S6SrbKj4xJVJtgQoAml33mu',3,8,8), -- pwd : .*}sG}+{!muW
-    ('77093347','Aaron','Mays','amays@iut.univ-paris8.fr','06.00.26.81.03','$2b$12$B29IUQjrhvRAag1TSMbhXOOQrIX6LJkTeRmTPGHVLmOeosxHy08yy',3,8,8), -- pwd : U<a5|Vr_C/:.
-    ('92547283','Traci','Ruiz','truiz@iut.univ-paris8.fr','07.83.10.55.05','$2b$12$KxAZ9xrafTVJFFMboYNIYeHxu65cqoGZHlOmvMVtbn7YQElwK5476',3,8,8), -- pwd : AG(/|hTM2Zmb
-    ('68704523','Kenneth','Golden','kgolden@iut.univ-paris8.fr','07.03.76.31.20','$2b$12$qInA7fHsCvIxJKM1ZBNkoOSF4syJiay0WifEgEIOlkOGS3M1PBSme',3,8,8), -- pwd : #0a`m1t#g5/I
-    ('29092665','Rachel','Smith','rsmith@iut.univ-paris8.fr','07.35.52.10.48','$2b$12$g9nZEwvqIbQYHjNbxCkZNe3DkC835xfBrKvoX4DhXOPT6zxHrWowS',3,8,52), -- pwd : VTgnc}sC8>Zs
-    ('45819690','Stanley','Mathews','smathews@iut.univ-paris8.fr','07.74.18.16.42','$2b$12$3ULxvzbx2ODaglBRUeGnmuE9gdI3lnSYJrS3dfASOwgVCrs9DWgvu',3,8,52), -- pwd : 0UYM'T)N*hVg
-    ('63768384','Cesar','Mullen','cmullen@iut.univ-paris8.fr','06.00.17.38.52','$2b$12$GLBWLqFqBnJzqdNArb.tpeBchnY2GoR0ouym6oCsdMLffGaN3t3Vm',3,8,52), -- pwd : -v4/OI!,>emx
-    ('80125273','Claire','Giles','cgiles@iut.univ-paris8.fr','06.46.54.86.52','$2b$12$79Q/OzZDpS6L3wsj/0tZO.jlKUDgXHu5mAkVeUT5JC2lQX.DrNZE6',3,8,52), -- pwd : 7{C-7Kv+KBg*
-    ('54086035','Sean','Armstrong','sarmstrong@iut.univ-paris8.fr','06.79.74.33.79','$2b$12$rrc.wD/tt5xRcX0ATdH4EOZAveXs8EsW3bHjX3jYs1Nkve/3ybiqy',3,8,52), -- pwd : _;j,$"Eu=p}{
-    ('65377400','Christopher','Vazquez','cvazquez@iut.univ-paris8.fr','06.54.18.60.01','$2b$12$LLpgNmldy4bmtr5YFrOaxeG3dK/IfOEbxoJmNmoHD6pqgmcJfbSyS',3,8,52), -- pwd : <}G(v`]h/nQ'
-    ('97092125','Alexander','Guzman','aguzman@iut.univ-paris8.fr','07.34.49.30.60','$2b$12$pq8yM137UVv9z3817m83ferHocmqhsJ0gJFNQqwNZD9N9qDGQXL7y',3,8,52), -- pwd : &-m"(T71]>;\
-    ('07476441','Stuart','Ramos','sramos@iut.univ-paris8.fr','07.18.84.65.89','$2b$12$6rq6nHCCs2r2Sd0NnvL3CeHiASKj.Juv3HRlFZ3VRPTKQym/Yxp2y',3,8,52), -- pwd : qPW.c^H:YKyc
-    ('81649581','Mary','Perez','mperez@iut.univ-paris8.fr','07.01.45.31.44','$2b$12$gSiJ.40iA0IR6OvTbsutdOh/fW8n00u3omSU0lqr252T9vaagAmfm',3,8,52), -- pwd : mRRmNE#>3\Oh
-    ('51360388','Thomas','Olson','tolson@iut.univ-paris8.fr','07.56.49.69.85','$2b$12$dxA2cCFYjI/xr.HwH/EMOuKb4KJqSEo6OE6WHK1EqCXz7l1rQqshS',3,8,52), -- pwd : em)I?(Qc(JZ6
-    ('14888268','Robert','Thompson','rthompson@iut.univ-paris8.fr','06.75.50.80.19','$2b$12$QJCWQXtXwQkRw1ihs9hbQ.fS3ui9zAlAvO62swz9MENrPN0d1yyAS',3,8,96), -- pwd : l:2BH=K(c'Kw
-    ('22481721','Anna','Miller','amiller@iut.univ-paris8.fr','06.60.51.52.79','$2b$12$zdEgAqiOrBMNSSHrnfLe/OhrwSTYd7yjqB9mm75B7tnVHyGDo0lSm',3,8,96), -- pwd : d:c.oH=/;!FZ
-    ('09299054','Jeffery','Evans','jevans@iut.univ-paris8.fr','07.41.06.90.72','$2b$12$PYixe2e5SBfWnvyopnXlf.S7H9w0UFHxER7jjiI7xLsQJrnqLuIMO',3,8,96), -- pwd : Lrrv5F%?l<a~
-    ('79997541','Wendy','Coleman','wcoleman@iut.univ-paris8.fr','06.04.49.04.29','$2b$12$tVL6t4aHHronV9Rdb/G7i.WaZwqPZGayXb6.tsA.adPAqz/bTAEwK',3,8,96), -- pwd : 7Ne-ko6z_|TX
-    ('62949265','Jodi','Campbell','jcampbell@iut.univ-paris8.fr','07.72.14.00.47','$2b$12$tC3L57B5jcemZLHYrGAOyOv5OokUjxXlHoj3rsBBEvff5x31QeMTe',3,8,96), -- pwd : P"5+oTeksqC9
-    ('40171718','Traci','Krueger','tkrueger@iut.univ-paris8.fr','06.13.46.53.56','$2b$12$qqImXf/kK6dCQ9bdeiTtkeOLT4EGhj4uOb2KN4gmJ8UoNYW3uyYVe',3,8,96), -- pwd : 9Cd?}T8z\RqI
-    ('49819532','Jack','Dunn','jdunn@iut.univ-paris8.fr','07.85.58.25.78','$2b$12$z.Dxz3qN.XthTjgli/siAeJNhM8q2VdjVQ8XpRWNgcnAFdyYgYA8G',3,8,96), -- pwd : %.vKDo=JEk(d
-    ('25896516','Deborah','Wilson','dwilson@iut.univ-paris8.fr','07.63.67.25.57','$2b$12$YKDTQ6mm4h4PIgczdIJv2eUHS22IzXcO.inQb6fmCTHIb6Y0B1B6K',3,8,96), -- pwd : nS9Umi*\'7b`
-    ('99258776','Philip','Robinson','probinson@iut.univ-paris8.fr','07.25.95.24.50','$2b$12$m0vs7kZ74wV.anD3p2da0uCjo/pMDkuHXirrubKTsLNBlrnRgGIQO',3,8,96), -- pwd : Z4*tEtEGMSQ5
-    ('21793015','Anna','Wilson','awilson@iut.univ-paris8.fr','07.83.12.61.59','$2b$12$8QqUAKDD.6Sz2fr.SpJ/jePmEyAoPBEf.1bIlhKqxPjjyb8yYBLuK',3,8,96), -- pwd : >FU:S?)[18Za
-    ('48885993','Troy','Mason','tmason@iut.univ-paris8.fr','07.97.28.22.59','$2b$12$LHNbwFmJ2eM1VyXZL/rQde.bQ3tOZs4ZMH4Pk1gVYQTOYPRqgc5l2',3,9,9), -- pwd : 6^rO&1X0%i"/
-    ('42410621','Ashley','Ray','aray@iut.univ-paris8.fr','07.32.82.33.23','$2b$12$6nhHW/I2ipVWsQwkTQKVTuvu6D0unA/5WvU01AKdLR8E2GGy5juh.',3,9,9), -- pwd : hi_B^49.,;Vh
-    ('09418642','Kimberly','Chapman','kchapman@iut.univ-paris8.fr','07.75.94.12.23','$2b$12$bnTqz5o6OsGM3KHzzWXHn.L6XqfEszqG2D6iD8eJTsoVWoJYLS4WC',3,9,9), -- pwd : qzj-!>]TN8|Q
-    ('16434563','Brett','Gray','bgray@iut.univ-paris8.fr','07.39.09.20.38','$2b$12$OxQDAQXUrJrorF4qiI14Yu4AhmTuhXRPguMnHbsKD/8ZZw7le2RN.',3,9,9), -- pwd : SQ6F*HVDUCcY
-    ('41805988','Dawn','Horn','dhorn@iut.univ-paris8.fr','07.76.91.91.95','$2b$12$2ogvLEqRAKp4umy/E/1XjO3DEL/R.pbY.O5W5n25qkWjPTEBH3Urq',3,9,9), -- pwd : |kC7D$lU|i,!
-    ('31272225','Emily','Hernandez','ehernandez@iut.univ-paris8.fr','06.53.87.21.91','$2b$12$SFZP5E4mfkAlBpXrk/rGZeW3lK3cB6Rw9YPqWY0Ijd9DCu4AL5NHq',3,9,9), -- pwd : fbjC"-ZW`+B1
-    ('70829776','John','Stewart','jstewart@iut.univ-paris8.fr','07.45.59.82.00','$2b$12$YKBh8spQphMX3lZf.Wd1KuiIHvy6tWT7bngn6ZLtri3uGjDqUFWyG',3,9,9), -- pwd : WRg,;1[;y5Xd
-    ('65261957','Michael','Heath','mheath@iut.univ-paris8.fr','07.72.00.81.73','$2b$12$uxD.DloHwqEUEQ8R0aQ0Vuo1d6.zVenGaOZzJdn3ugw7cx0O.jh6q',3,9,9), -- pwd : X%ka##(<lll)
-    ('87550824','Julia','Long','jlong@iut.univ-paris8.fr','07.17.79.62.63','$2b$12$MJjeqQwDUK3BFUvPlDTC7ubbUbXSD7OTKJ4awYwrwvjgip08vtDWa',3,9,9), -- pwd : |`v{'[L4#q(-
-    ('60881626','Wanda','Cabrera','wcabrera@iut.univ-paris8.fr','07.67.00.57.26','$2b$12$K/yl3ZwFbB32bPwM0TJyxONp/UVtTCBgRARRDcPionG8Gq1.KJrGW',3,9,9), -- pwd : 8t=<s68kA!%|
-    ('09884147','Michelle','Gordon','mgordon@iut.univ-paris8.fr','07.68.72.40.68','$2b$12$N851WLCxl44Ml2HRVhefKuvGVVJkDJeiRXtCFX5eC/DMSmPUzt2mC',3,9,53), -- pwd : ,WOHN`yz9_H>
-    ('44097949','Mindy','Fisher','mfisher@iut.univ-paris8.fr','06.04.75.42.27','$2b$12$rM4WFshmalw8cpLpjZddLe631f8sKCU42e4iwsmhfJqzY3ANg800.',3,9,53), -- pwd : k_8ScOTH;k;B
-    ('52558982','Mariah','Mckinney','mmckinney@iut.univ-paris8.fr','07.84.50.35.63','$2b$12$7WwCdBezloVxni2uXlFBIeIHow6G.pr7wdLuvmvpC87x7pCz3rlR.',3,9,53), -- pwd : Yvmb^z`r"V}D
-    ('99558832','Ralph','Graham','rgraham@iut.univ-paris8.fr','06.12.71.68.56','$2b$12$ioeKRyHdiknSNQIfqXLHNencTLmIkK3GPdi2V7hWbBjHckyWwhcF2',3,9,53), -- pwd : gtTxgyEodI+:
-    ('97279228','Paul','Steele','psteele@iut.univ-paris8.fr','07.94.88.18.25','$2b$12$OMBnRmhzPCTM.BRu7YLSnu5P2QOJr53OySM7jJiZtgvxyDrl4mSO6',3,9,53), -- pwd : uq5o;4BoP0y@
-    ('03272737','Stephanie','Mcgee','smcgee@iut.univ-paris8.fr','06.74.55.42.13','$2b$12$N.lzGQM0Qpye8J4f4l9K7uisUweayQoF7PJ3nmvIzPS4Mo1Sd4R5e',3,9,53), -- pwd : [GiwrOT>SST7
-    ('73081737','Jill','Smith','jsmith@iut.univ-paris8.fr','06.61.52.61.52','$2b$12$DEsY1CRLhWIZJAR7BfZDiuWC/hJfLoqM/wJxDteZPZbEodwiCH6zi',3,9,53), -- pwd : "==4Z|}SWrgo
-    ('15860207','Anna','Jones','ajones@iut.univ-paris8.fr','06.60.77.61.28','$2b$12$qTSa08VzSEzJH8aRzzXxtODLFg3xAm8u0qZIkRjkM5r6U9HIyMmTS',3,9,53), -- pwd : w4e*/"B>f`dr
-    ('65901311','Tim','Turner','tturner@iut.univ-paris8.fr','06.85.95.53.03','$2b$12$Bqqevfv57Ervj1SN2g7i6ejqw2GhLRQpwoC8Uc3.olAsm7pG0lZtW',3,9,53), -- pwd : &N<PE=''^;;b
-    ('45968468','Sheri','Mcclain','smcclain@iut.univ-paris8.fr','07.95.27.05.78','$2b$12$.Bx7.RIyxNXCg.dU9yK4kuowb5FZjza6wR983rY/.IQq9DB5AmqlC',3,9,53), -- pwd : Y2;!(6wprly*
-    ('96196467','Rachel','Fry','rfry@iut.univ-paris8.fr','06.38.90.52.72','$2b$12$zjF9BwfvE6lNSotnd1crdu0.zMbdyE1/5mt5qw2t8Sx5b76HuGuqS',3,9,97), -- pwd : Cb68`+T`M:,m
-    ('00452115','Eric','Sullivan','esullivan@iut.univ-paris8.fr','07.60.18.94.83','$2b$12$JGOpbHMGoUW.IdwWb8xTpukT/m9y9x98LGEaVt3kedlyWc6SkCDli',3,9,97), -- pwd : *,@fk33.`t|k
-    ('18270342','Michele','Harmon','mharmon@iut.univ-paris8.fr','06.56.15.53.43','$2b$12$UcwMZ.GEMGwFYw53T95AvuNxk/QmZCyuldlKXpZFqjw7WFwR4pS3q',3,9,97), -- pwd : }xF"i{1aqky4
-    ('80946090','Jennifer','Gill','jgill@iut.univ-paris8.fr','06.42.34.71.39','$2b$12$fd9Bjw9bAzmZK7YteU7QmOY/M6y/Y0Upmr8uK31vReQTbwZX6Ka7W',3,9,97), -- pwd : A`1ss[m9f_]|
-    ('79539131','Vincent','Sutton','vsutton@iut.univ-paris8.fr','06.94.87.70.47','$2b$12$7imVoRvkRcc01ffdIC.rIeqLSj2B3T5gp6QMYn2ZteULsVR3ZTI8y',3,9,97), -- pwd : ?u&buZyso:&L
-    ('29588016','Tony','Mitchell','tmitchell@iut.univ-paris8.fr','07.14.25.85.49','$2b$12$0c4KfH6MehfG9Rqb6ctX5uHwPwobHRMsuw3sm1iVCPS6x.tteZKom',3,9,97), -- pwd : ?#WzMf)TsJc+
-    ('65489309','Nicole','Mcdaniel','nmcdaniel@iut.univ-paris8.fr','06.59.86.64.00','$2b$12$BtKJTjFIvvk.UJEfN4CBpuI.0ihWoqOkuz4GBdEahQM7PUQJm35F.',3,9,97), -- pwd : SFvFi`3DZ%qI
-    ('69306443','Nicole','Powell','npowell@iut.univ-paris8.fr','07.63.82.13.16','$2b$12$5F8USO/wTbX.KocFinuYUOSsTUIbQZfzQPOZTYED7XF2tg7RRbrEG',3,9,97), -- pwd : ql]?|s<ThP@6
-    ('47054174','Virginia','Hale','vhale@iut.univ-paris8.fr','07.84.72.10.93','$2b$12$BoAbwf6yV/Asd5EuLUcK5eIs.iE4sSHXoJQz.Dr2/jlH8NEaHk/gy',3,9,97), -- pwd : 7X\)Yedz.^(b
-    ('92249860','Kenneth','Smith','ksmith@iut.univ-paris8.fr','06.64.08.74.61','$2b$12$fn7D0U.tqhPIz8C9uJZDTOSzpsimBR2jX8nPnh8Fh/IDegIys33dq',3,9,97), -- pwd : [IV')Z|Y`7A`
-    ('63526323','Samantha','Perez','sperez@iut.univ-paris8.fr','07.07.25.22.58','$2b$12$NJvXHlSgLhOdNK.v0j7x9eF3FhYV.PfGptadXEtXcK0iekx/H9JlW',3,41,41), -- pwd : k%l<3muCIxt3
-    ('48738859','Christopher','Walsh','cwalsh@iut.univ-paris8.fr','07.11.06.90.40','$2b$12$Ly61RXLKWowXkFeirfooZ.905ALVp3pSx1SLzSg7FQ7f8cIZA7chy',3,41,41), -- pwd : Mx;mJ"Du>$,A
-    ('54409309','Angela','Melendez','amelendez@iut.univ-paris8.fr','07.39.49.77.92','$2b$12$gXIGRrZupL/YDeXjIXnQZOicFqN95Hy7fZcqwx/2y0/D4wjgGkxue',3,41,41), -- pwd : q";A=T~]2ToX
-    ('14474347','Pam','Wong','pwong@iut.univ-paris8.fr','07.66.00.76.22','$2b$12$4F9dHDzt8TbHBiq6YHwMjOsR.tIzfGsbn9AqTYWfig4GUOxQjNoLu',3,41,41), -- pwd : G;{GbmesPOd0
-    ('87511457','Phillip','Barker','pbarker@iut.univ-paris8.fr','06.83.32.41.49','$2b$12$ifVaL.d/U8R34dPEI0hhseKGMql6FPWY1VX5D8nebWNA7gcaEOpla',3,41,41), -- pwd : NmRDP/6qfa3u
-    ('09428510','Alejandro','Edwards','aedwards@iut.univ-paris8.fr','06.19.32.75.27','$2b$12$WGFcSFy/ywUBxsJbba7r5uLUoHjpVkT3JGi4IopxTkvXJWGVAvB5W',3,41,41), -- pwd : jTAZ)@}~}=C9
-    ('24260016','Evan','Johnston','ejohnston@iut.univ-paris8.fr','06.96.65.01.33','$2b$12$T4QvB8OLpepenFyZpv7c9eyViyPGjKoWhGXHfppGbCkJjvZ/n5gPq',3,41,41), -- pwd : Hvi-6EDQ(b+I
-    ('70429212','Jennifer','Martin','jmartin@iut.univ-paris8.fr','07.19.48.10.80','$2b$12$JBICgoynolRg1OSiUo4E2ec.sZIfsYZljPIO9OwU/RJ4Bj4QOHAGG',3,41,41), -- pwd : j(9oOc[bdEqI
-    ('80413637','Kathleen','Lara','klara@iut.univ-paris8.fr','07.29.71.41.15','$2b$12$FjtZSn1YKXLA88wtZ2G7deezWTURNRL0HGwHmI5idv4PMiPn1wuou',3,41,41), -- pwd : "?=BfocP0cFt
-    ('25169355','Kerry','Nolan','knolan@iut.univ-paris8.fr','06.45.79.89.47','$2b$12$g.R2ICKJmHRz/7Do2kcha.mFtY5lVGfzrpvDzTNU2AHsv8MiEiNQG',3,41,41), -- pwd : "0PA)@w;3Lkf
-    ('22271531','Denise','Evans','devans@iut.univ-paris8.fr','06.30.04.08.11','$2b$12$UQfAVmeME90N86mtsLb8D.Q7ocSVQbujp4JE06k8UbAq2nYGNYJFS',3,41,85), -- pwd : e('6-0~5bI$j
-    ('38959728','Danielle','Jones','djones@iut.univ-paris8.fr','06.30.50.70.40','$2b$12$d0IM.SfF8eeYpl4nS4nLTeTOe6HuEfmnl.1bfpDWYvG2kjeGuVzU6',3,41,85), -- pwd : 0{fGeDW=qAMs
-    ('44031381','Kathleen','Lee','klee@iut.univ-paris8.fr','07.57.58.31.94','$2b$12$PlNSx.msEJwDR4Jw89R3DuqJ1nNRono6mBuCvUDU0HlWEBGYGHgy6',3,41,85), -- pwd : svWE5Y)'-Z^v
-    ('36502621','Christopher','Matthews','cmatthews@iut.univ-paris8.fr','06.56.19.25.12','$2b$12$6FBil/qGinxM8MdPKy7IU.VzQtcmFJGB4SIofBs5peZInSEhB/qSS',3,41,85), -- pwd : EKHEho&w)_;t
-    ('66709929','Daniel','Griffin','dgriffin@iut.univ-paris8.fr','06.57.11.84.47','$2b$12$LR9BDYRBC4NbfYBAfaYBAOaDFsR032UPvWay1lvdENqiHIO1KbYa2',3,41,85), -- pwd : QxF9!$z+oIoK
-    ('73711545','Michael','Miller','mmiller@iut.univ-paris8.fr','06.55.51.21.67','$2b$12$wKaJqFy81EvDnNDFfHteT.cADnzjr95gcKACVOl/nImu/zF8pOpvW',3,41,85), -- pwd : LPzMeVq\Cf~4
-    ('09211379','Isabel','Davenport','idavenport@iut.univ-paris8.fr','06.41.39.85.92','$2b$12$ex0AjNZAetEWGxSss0nuPu7HpCleqXxu7Nkd31V5Simp453qo69WS',3,41,85), -- pwd : !Wd{?mi.js?u
-    ('21831631','Suzanne','Bradley','sbradley@iut.univ-paris8.fr','06.41.04.63.03','$2b$12$x9pM3dyDB8La8bC/RaiP5OqMWLcR8TG3PoTDE/s.ujlF2sa2Vq/Dy',3,41,85), -- pwd : V"9*2c[eOZ!f
-    ('88522207','Ricardo','Galvan','rgalvan@iut.univ-paris8.fr','06.06.58.47.20','$2b$12$zF7NTyxvzFFAi3nhYv4ns.juMKRgBhk31PQNIySmaVT1p4y.T8o1y',3,41,85), -- pwd : cx`WmM^GDJOF
-    ('66022078','Matthew','Green','mgreen@iut.univ-paris8.fr','06.88.59.01.07','$2b$12$wChRkySATZk7FZfXpLw/Q.tPOrCrgxKLh3R7NysFRsFcnA78ovMpK',3,41,85), -- pwd : W}8]f(a$E@U#
-    ('13271760','Keith','Garcia','kgarcia@iut.univ-paris8.fr','06.22.33.20.03','$2b$12$XI59qKUvYSONMq7bjKO9jeF5qGYqKuH00dfyyOW33ZmTzFo235/D6',3,41,129), -- pwd : ,4SY8a!WId$]
-    ('31931016','Matthew','Berry','mberry@iut.univ-paris8.fr','07.14.30.36.01','$2b$12$hvyCYwl01c6zRF.sB509cuY89ALqTh3ifbkPXkZuJlJF/rcYkCkGG',3,41,129), -- pwd : yLWTD6,g&vd#
-    ('96191561','Kenneth','Patrick','kpatrick@iut.univ-paris8.fr','06.67.90.79.90','$2b$12$6IRRnFkHi9BrEZ6MWNgwEua6E08KWmKJP/KfcwirnyxKKyPJH4CgO',3,41,129), -- pwd : )~|WVCt&T+CL
-    ('63138035','Matthew','Powell','mpowell@iut.univ-paris8.fr','06.14.13.13.28','$2b$12$lwGGtszADW8JzLjkf6Z.o.8BkJPEKS7RZZeEkcmUN908bD5ywWZoq',3,41,129), -- pwd : f[P/+)b5}tV1
-    ('05072068','Brandon','Gilmore','bgilmore@iut.univ-paris8.fr','06.78.58.44.15','$2b$12$mp50/ctRVgn6KsM3btYlRuw7.OVxzH10N6E/rYKnKpUdRJUNQqKD6',3,41,129), -- pwd : N#'L}tuBY_Ed
-    ('26574996','Joseph','Torres','jtorres@iut.univ-paris8.fr','07.40.58.29.44','$2b$12$0OV.t/To4hPGDdHx1/oI1e03bjj/I2xg3YYqQxZf8n3mYTk.n9imy',3,41,129), -- pwd : M)-qBN`Vo"_K
-    ('57583722','Sergio','Harding','sharding@iut.univ-paris8.fr','07.19.24.84.68','$2b$12$uaeGZLAIaGtrPpwsExh7mekVYRcGYuVp1jacj6ljgc5fqUOZGRwBm',3,41,129), -- pwd : MglGk|9K2D!)
-    ('46393792','Chelsea','Rivera','crivera@iut.univ-paris8.fr','07.64.33.87.92','$2b$12$mAie8ZJU7V4QfOefZh5CpOmxhGvApMlHrwMwkhB9pz1bjbZPV6ZMW',3,41,129), -- pwd : h_:xci}\\>]<
-    ('28529513','Jamie','Eaton','jeaton@iut.univ-paris8.fr','07.80.71.71.26','$2b$12$eQbNiLEeP62cNhr1J3G3l.ucend..h0K2J0UXre/dIa8N.k5Nu9cq',3,41,129), -- pwd : }@M,8hhU.*_`
-    ('45101044','Daniel','Bautista','dbautista@iut.univ-paris8.fr','07.99.51.67.66','$2b$12$/OAJM7GPNHRFEDS3hgML/..pYQTVAwkYSXwJiqKg.i.tsg8wz3ZIS',3,41,129), -- pwd : .}oJ%d^@}:U]
-    ('97182223','Scott','Carlson','scarlson@iut.univ-paris8.fr','06.41.65.59.03','$2b$12$/4v8EcoJd6WyCec6QxMdOOAXswUfaojrTcygWUUGXNQrcwvbb3WA.',3,42,42), -- pwd : @>peEA5jL2u:
-    ('12803988','Cassandra','Carrillo','ccarrillo@iut.univ-paris8.fr','07.55.79.27.21','$2b$12$xznBft2NNd2Ho2p.O5SChu908byqiDoGR7BlBsi0jj8b8Pr6TDjmS',3,42,42), -- pwd : MF'A\{E`i),2
-    ('72645926','Jeffrey','Burke','jburke@iut.univ-paris8.fr','06.43.56.01.80','$2b$12$kwjQPEVDAZFUC5Df23GuU.KAv1VpIjI45zsO3K13BZ2Pzd1ti0z2.',3,42,42), -- pwd : 4;4`"7|V`[})
-    ('85327721','Kevin','Bradley','kbradley@iut.univ-paris8.fr','06.51.66.08.91','$2b$12$WejiGYYZRoGRwItqmrRYPOtZTcrv3lqwsFU3MDN6CiuWDOpuAHHDy',3,42,42), -- pwd : k2_;1b~j"<&1
-    ('39839625','Laura','Owens','lowens@iut.univ-paris8.fr','07.42.15.46.96','$2b$12$fuIORSeMHKCOrRihKRq0qOx4qPos3fO9S0OXOwT8dpkJ3YkoVsfNO',3,42,42), -- pwd : {3;kzBzX=_T-
-    ('05046416','Joseph','Allen','jallen@iut.univ-paris8.fr','06.90.92.94.26','$2b$12$wur1i9t55krj/o3HaWkwRODORIL9HaxmsEy1s6dc2/1UaoxESpL46',3,42,42), -- pwd : sxX\Ux[pP~nw
-    ('34975741','Mary','Johns','mjohns@iut.univ-paris8.fr','07.94.54.24.58','$2b$12$ZhPRHz1dIhQbBw0Xx5MhweX14cM/B9JLDip5BH1JBk/.lxEYB0r8e',3,42,42), -- pwd : ~BPPtCeO/l?8
-    ('61700128','Scott','Roberts','sroberts@iut.univ-paris8.fr','07.59.88.11.10','$2b$12$WkxNhdrvMaM5ELSSyEnLDeremLfKsy6LHmJJKuQK2X4ejuS./Ia26',3,42,42), -- pwd : 8gc,UP_[SJ*3
-    ('53465820','Christopher','Cole','ccole@iut.univ-paris8.fr','06.94.94.96.98','$2b$12$53B10ZX8e81GaM7piKlRB.aSsM.6QpQsXpUGg8th4KM5qvC5yL9h6',3,42,42), -- pwd : qt6a=a-Q$f)R
-    ('83239826','Nicholas','Cox','ncox@iut.univ-paris8.fr','07.11.05.39.84','$2b$12$dv29I004ncnQ4qT6zHSjs.DffX8h/E09OOoxUUNoaH9lr94xb4gf.',3,42,42), -- pwd : .|Ki'MJk|kZY
-    ('27682878','Lisa','Burnett','lburnett@iut.univ-paris8.fr','07.57.32.85.05','$2b$12$5gLGX3vBjx2uLY4ROu/Edewgw/s/6CmFStPPNoC9NKl8JZQdy4E5m',3,42,86), -- pwd : [.I:7('<$7W/
-    ('94191882','Manuel','Dunn','mdunn@iut.univ-paris8.fr','07.28.20.49.43','$2b$12$kho08wtR/ghDaaIeLpv51uRnL328jv1PM6AlO2CiBEqGV9TupLZR6',3,42,86), -- pwd : ^%Jzpt%YBoOk
-    ('61659801','Anthony','Riley','ariley@iut.univ-paris8.fr','07.14.38.90.56','$2b$12$YMaghTuhjcS6hXb0s7rN9ODVAtz3IAmyke.aeOD4oHYDkqV7/Oy0u',3,42,86), -- pwd : M_xzUK&}&*8j
-    ('67245791','Brenda','Bartlett','bbartlett@iut.univ-paris8.fr','07.16.03.32.73','$2b$12$69ZAn2xEFVFUVFkf7yuJweDHAE5SN9YiW3TkKkiZ7saqNmCX6Lpj6',3,42,86), -- pwd : *eU3W)13x]qK
-    ('61209740','Stephanie','Velez','svelez@iut.univ-paris8.fr','07.46.75.30.05','$2b$12$CNPXKyRULS5M.qMx20l55Oi3b20SivRnjbwEkrC3x9yBdYZqkg6r2',3,42,86), -- pwd : [5^>,l*Bm&\%
-    ('60370156','Susan','Johnston','sjohnston@iut.univ-paris8.fr','06.66.82.11.34','$2b$12$QMG/bia58QOJssvK3rooGOHXAZKO1w4II5gAz/7QSxnsnauQNeSHS',3,42,86), -- pwd : $\^6T.'DW#!X
-    ('58810260','Matthew','Brown','mbrown@iut.univ-paris8.fr','06.29.67.11.57','$2b$12$hz5Hpo7jXc7.ex6KbUxK5.QK2y2/9puNVIx/1MycLbB2e4z/3GBz.',3,42,86), -- pwd : Cnx/87&f\4EF
-    ('67136347','Michael','Smith','msmith@iut.univ-paris8.fr','07.52.10.17.15','$2b$12$MRByB.F.lqO3Z.jWTPc55.kVe.7kppzqm2mJA/TAFXl5n9hDWVQna',3,42,86), -- pwd : W@u<e[DuQS38
-    ('97988292','Carolyn','Ingram','cingram@iut.univ-paris8.fr','06.09.27.67.90','$2b$12$yMSiy4pTabjixewOxG2N4eXOgDSHi9KNChq9w3TXtZ1oSXY1obami',3,42,86), -- pwd : (KW!Px0FQ&12
-    ('86046584','Madison','Rodriguez','mrodriguez@iut.univ-paris8.fr','07.83.47.12.08','$2b$12$tnoGFLgqwgoI6JW0h0p9JuLD86raoZLpRAfs0HAfyATNyDpke9X3G',3,42,86), -- pwd : Vj~A(Sz>(yS=
-    ('03889614','Stephanie','Young','syoung@iut.univ-paris8.fr','07.56.18.56.98','$2b$12$9K2bt.wdT9mxnHQHUQmX4eEnC1Q6Ltz5Dbsdst0bmWmepEh7HTkyC',3,42,130), -- pwd : ,a&R^<uK=&hQ
-    ('57593565','Tammy','Matthews','tmatthews@iut.univ-paris8.fr','06.11.42.92.73','$2b$12$2BrnP3m/N4Cq7.bCp8Koau3Xz/Cl4jo28Eo9/NDQ3mW/UkjdSKWBy',3,42,130), -- pwd : y.r5ozok}N@,
-    ('90162045','Shelby','Robertson','srobertson@iut.univ-paris8.fr','07.46.56.28.66','$2b$12$uZXAQ2oCKgrsaOOgNx3cu.0guiVCOPh60t44qh4.4QnU2rGkBwmUi',3,42,130), -- pwd : DD{)YKB{1>r#
-    ('61157378','Christian','Schultz','cschultz@iut.univ-paris8.fr','07.17.54.92.76','$2b$12$VVd2DuXyH4KjS0VXVeTvM.rLP7rM7gplDAqpeEOJvpTvAHNTsk.uW',3,42,130), -- pwd : /g<Rg3iv^\S#
-    ('48700879','Christian','Robinson','crobinson@iut.univ-paris8.fr','07.15.36.58.84','$2b$12$5v7upSJlTvJ13yCDR9818uWnz5JeTulSLQxx3fc/IfaTxUblwXXTW',3,42,130), -- pwd : C0q+*9eHxd;S
-    ('22246929','Nancy','Arnold','narnold@iut.univ-paris8.fr','06.30.10.59.02','$2b$12$hKSK3ql6oq2ASwkLFjBHJeLe06lR5CADTizbJmJuXY3xocrZhyJMq',3,42,130), -- pwd : frf`9AxH)SGj
-    ('82273541','Gary','Todd','gtodd@iut.univ-paris8.fr','06.15.11.94.88','$2b$12$SYAQHizr8lI7vGtOsHAiKOsJYNlHD5JUUNTae4XT.f.cYBcqLF5tO',3,42,130), -- pwd : Fr<r+(GMs<Q!
-    ('11218512','Michael','Turner','mturner@iut.univ-paris8.fr','06.43.39.96.12','$2b$12$G2IY3Miertb0taGiR70hQ.n3QE/sTLvjPjlbYBXjm/c9zNh5dC4Gy',3,42,130), -- pwd : YD@d9WVG2[(-
-    ('23427435','Jade','Hodge','jhodge@iut.univ-paris8.fr','06.99.10.47.24','$2b$12$f/DIj/RfaZohYcfHzOlSeuA.CHbUbmRUMSDM6XRRa66K/kBrEEA4G',3,42,130), -- pwd : s\S$MPgKIdF6
-    ('63812744','Jeffrey','George','jgeorge@iut.univ-paris8.fr','07.97.12.21.20','$2b$12$.aH6/xVcCcY7FGMcUVCM7OU.PUVD7OAHVSVbXud3.DxA9h7lvuTRK',3,42,130), -- pwd : #1[+<vaZ,-{U
-    ('50096494','Drew','Collins','dcollins@iut.univ-paris8.fr','06.04.85.73.34','$2b$12$0SDawaTk2VAGA5losW4hWu5L2JaM3MRIhTgvRRLLIG8mADXzoySsy',3,32,32), -- pwd : mBRc^1_%9\XV
-    ('24656168','Joseph','Mann','jmann@iut.univ-paris8.fr','07.86.95.49.68','$2b$12$A0TrhB.fiGOH3xA6xy8sh.E6Bx1JvyFXKrbi44/daZno7kJkdQo7K',3,32,32), -- pwd : ?Mr*VFLpBP|r
-    ('03318362','Gabriel','Stanley','gstanley@iut.univ-paris8.fr','07.05.63.62.62','$2b$12$dAdXExHLCMyW3mSvJ6HvnO3vrDfrlWq02eZqO7vWp54ND3AJ/kgLO',3,32,32), -- pwd : JDk=44Jua&X^
-    ('72623260','Nicholas','Fischer','nfischer@iut.univ-paris8.fr','06.08.08.36.61','$2b$12$tdAm85pr0eUSxKGC3NlM1e8Fzuf1oNKEN3LAaCqPd1TfdX1pu8igW',3,32,32), -- pwd : AL+oH"4uV6"*
-    ('32604759','Thomas','Morris','tmorris@iut.univ-paris8.fr','07.11.41.50.44','$2b$12$lGRaz8fS.V9KfaAGAkF9gOVBf/ELWBXB06tnPRi1CMzslTFHxvFoW',3,32,32), -- pwd : .rvYIY>pMmEY
-    ('53075951','Kyle','Lee','klee@iut.univ-paris8.fr','07.09.99.74.60','$2b$12$PZUsXYB6ncGdJ1rRCrusve8yT1ORwTGQs3/CFJzSpMChU0ptgJEXa',3,32,32), -- pwd : (P~RQ9663\0v
-    ('82217924','Whitney','Becker','wbecker@iut.univ-paris8.fr','07.49.95.58.58','$2b$12$/ixtk.7WX6T6nyqQSnPXTONXfCwhmAmt.BMhfBHGMr1uYBF1tpNyi',3,32,32), -- pwd : "(hN6)'bkcFU
-    ('40041983','Dana','Singh','dsingh@iut.univ-paris8.fr','07.99.24.92.16','$2b$12$PZEy4.qvB480VHKzNEMiauFt2a0gMDcbSEeUim/4AZm1r0T/sFnxi',3,32,32), -- pwd : =$Hp+#v:impf
-    ('34257159','Michael','Carr','mcarr@iut.univ-paris8.fr','07.20.28.33.62','$2b$12$LxbibUoYEQjZWTJQvtstPONT0fquEsApkSjgkBwoOKZzJti/t1Ooq',3,32,32), -- pwd : ?{Q*wFUMZ8^o
-    ('48074989','James','Bowers','jbowers@iut.univ-paris8.fr','07.02.78.38.70','$2b$12$ROkJB/KqTRE9VfpFYZVAaecbClVGyP.Yq0ZUbyOmv3IsKHS2vaGpq',3,32,32), -- pwd : hKQO\I;9/*NI
-    ('09864878','Linda','Wallace','lwallace@iut.univ-paris8.fr','06.94.54.83.55','$2b$12$b3NRP75iA26sFfu.oqwNbO9jLpBLd8oldKMeEGN3PAk6vwHyg0/kq',3,32,76), -- pwd : eoY;ZLL\E#a-
-    ('00448365','Mary','Williams','mwilliams@iut.univ-paris8.fr','07.00.48.01.96','$2b$12$.cka8Jig49RY5NG6QkMZke5Gc60LFew0zh86O7h5Zrsq1xIMp0AZy',3,32,76), -- pwd : ^l0k>OtBkx[L
-    ('00529996','Evelyn','Coleman','ecoleman@iut.univ-paris8.fr','06.71.87.35.85','$2b$12$QU95md..UaijcRnB5Pf.GOVKWxsxUG35GmqegvosGo3FfzqkoRxM6',3,32,76), -- pwd : w>^?`5pq4rs<
-    ('28927531','Jill','Brown','jbrown@iut.univ-paris8.fr','07.82.78.79.85','$2b$12$qdpnmUmzb9472sWmHHidy.ov1v9vY2dc.39ncide1CqjgbjggyStC',3,32,76), -- pwd : \z>Okf1'|:4o
-    ('43444697','Matthew','Smith','msmith@iut.univ-paris8.fr','06.03.21.32.55','$2b$12$rkplHGO1hnnA1QeD7RIwwehjSKu8XqEmeawwAjoPQ9i4zvSc.VLfC',3,32,76), -- pwd : wFJB[`!^F_N|
-    ('60564055','Melissa','Gilbert','mgilbert@iut.univ-paris8.fr','06.36.64.18.02','$2b$12$eBmo9R77TDGJIQ0f5TGsyeKxRdgdQGuJe763YKw5Mh57/4i0OFvfe',3,32,76), -- pwd : M1"5G#}=Ba-J
-    ('44653053','Craig','Walker','cwalker@iut.univ-paris8.fr','06.12.74.49.48','$2b$12$CNg0owyQZ6ALVzemvGGn1uPYSCbH1aBr317a6zjUgIfW7P/yqi9xe',3,32,76), -- pwd : uk>w=s'jNYKA
-    ('48112271','Brooke','Anderson','banderson@iut.univ-paris8.fr','07.38.64.25.31','$2b$12$75x93phC4OhhJKxxTcANr.RGdpCk.or4DbX1Q1WE/QwReOvmub/5e',3,32,76), -- pwd : h']W6lq[K9dw
-    ('57917835','Drew','Smith','dsmith@iut.univ-paris8.fr','06.30.47.59.78','$2b$12$Y70unUVFsGHBxENTJgKdU.WPIYUyBcIN8ujV3mTP.JTHAY8gZlfm.',3,32,76), -- pwd : ";"!Xr88WQ+.
-    ('25658512','Brian','Wise','bwise@iut.univ-paris8.fr','06.32.44.57.66','$2b$12$Pv.krzvH34F6IXwzOOzZ8.m0r8r9ERc8Cv1IhMZ6haxO24CRvFpZW',3,32,76), -- pwd : p=caS^*sU\lW
-    ('24289612','Melissa','Jones','mjones@iut.univ-paris8.fr','06.31.24.22.86','$2b$12$JXyeIefiUq3x.PSGJCF2OuvheX7CdQU8Jad.i38vf7xxN5bBXx1OK',3,32,120), -- pwd : u!:NV;eQ-fEO
-    ('63441701','Robert','Mendez','rmendez@iut.univ-paris8.fr','07.71.18.12.78','$2b$12$mFma4Gzl6EbG.IluhnQw2.mSjlOcj53/626jnaCmrwutvzEduxItK',3,32,120), -- pwd : P8jW[2wW'eJ&
-    ('04815293','Brian','Anderson','banderson@iut.univ-paris8.fr','06.77.55.50.70','$2b$12$JlGSYVV55qcHVwdxKGPhpebLKS30fXn8/2pCU3Ilcidt4iG3woaZi',3,32,120), -- pwd : .\<c\('p,XTU
-    ('68837672','Andrew','Harrison','aharrison@iut.univ-paris8.fr','06.51.99.44.59','$2b$12$9MH13RXJKZ4yYjC9IyDLieZ0aeCrSCFXqSkIx.1UHP.3xxriISXd6',3,32,120), -- pwd : g^Qc[Nzp{8W-
-    ('44228074','Roy','Daniels','rdaniels@iut.univ-paris8.fr','06.62.79.47.40','$2b$12$S/IractwsGIQuhp9oG9WuOxqwMfmQp/GU/aWd7FULL7V0Xcw60Ucq',3,32,120), -- pwd : h{XHfdxUf%p^
-    ('56547951','Donna','Mcclain','dmcclain@iut.univ-paris8.fr','06.38.64.61.94','$2b$12$vtLJaYxYmZuuXKkiXqOY3uUqqXTHq/5LR/A//zjaLLeUekNQRaMta',3,32,120), -- pwd : Q[[2[pro}[zg
-    ('34235172','Amber','Williams','awilliams@iut.univ-paris8.fr','06.92.82.84.61','$2b$12$Ml8TkTWffd5Glo.lmHMHyeHnp4SXNrYS7bvoZ.8JoBJiZy2Q6xEpK',3,32,120), -- pwd : zTTP|3oz8dXo
-    ('81792476','David','Yang','dyang@iut.univ-paris8.fr','07.39.93.51.17','$2b$12$9NR3gk3UVzdUDcEt3ZH3YONeS.3VZdiykNSd8xRaQ1bCPQc2S0D0q',3,32,120), -- pwd : _7##iM3N+OXV
-    ('16695334','Richard','Harris','rharris@iut.univ-paris8.fr','07.87.46.59.65','$2b$12$ABlYRHZ6AKjNJseu3tZwkOKC1KIEGIxqFbdxeMo1/b5IT8PZnFfrS',3,32,120), -- pwd : X{lwGqg]YMa\
-    ('42029038','Charlene','Peters','cpeters@iut.univ-paris8.fr','07.74.78.14.29','$2b$12$VbGj.6oPxvGcNLoor8WflOOT6GPa85rwc4hXR/vNgbDU6G9Cf9Ty2',3,32,120), -- pwd : XTx!:|"s]s\7
-    ('72934906','Ronald','Lee','rlee@iut.univ-paris8.fr','06.91.42.78.21','$2b$12$MADkmd9YbLmVvZQPywQII.1/I236vbtC1JcGX05dLdXr4bWg1syW.',3,31,31), -- pwd : 7j|5PY^qkTE=
-    ('90471047','Megan','Edwards','medwards@iut.univ-paris8.fr','07.79.58.58.40','$2b$12$.j43bH4ATXMeX/f/ZfjMhe5ouYp03hT7y80aIM/pTSMdbRY9qF68G',3,31,31), -- pwd : ,9$Z=:zxOU|`
-    ('71538399','Vincent','Williams','vwilliams@iut.univ-paris8.fr','07.20.32.35.68','$2b$12$hzkd29TqOi4DlTAewiA4eOQ4Am3951qevQEXzB4uX.I4JJjDrC2Am',3,31,31), -- pwd : r?1I40(l3^UE
-    ('04216737','Charlene','Sullivan','csullivan@iut.univ-paris8.fr','06.67.05.76.09','$2b$12$Lnh.dY5YZ7OQCh365ON5iOOeogKEJQuCHgbFbp0Bum7dkQffyJKam',3,31,31), -- pwd : ,jpP**:ufc~Y
-    ('31681059','David','Tyler','dtyler@iut.univ-paris8.fr','07.91.96.89.17','$2b$12$E12CuOicWIiaeWY6RGQCAOVI8Rux7n/r9qZ.fs75AgosrvScgKb3K',3,31,31), -- pwd : [.E'$nx$"i~v
-    ('55077420','Sharon','Gonzalez','sgonzalez@iut.univ-paris8.fr','07.96.02.95.22','$2b$12$7MSezThX2aOCpqY7cBjh0OWLiqx1qLDIA3B3TCMzkAqD5RrnOA20.',3,31,31), -- pwd : w'K|FuD4BDu4
-    ('56787478','Kathleen','Ramos','kramos@iut.univ-paris8.fr','06.56.70.94.24','$2b$12$9TFnHgaMbfNTv54lJgDg7eBNY8Q2WRcHVrb8U922lpNvaItaQ56YK',3,31,31), -- pwd : 4uo84/o_lK=.
-    ('24462723','Nicole','Robinson','nrobinson@iut.univ-paris8.fr','06.32.47.99.07','$2b$12$s.Mlnhdg9xWsQVBEx.HngOVqWxlt7wkjx/JbJNwa49wUNqWsfmJIS',3,31,31), -- pwd : l=XTw3vPf2C'
-    ('95227604','Traci','Rose','trose@iut.univ-paris8.fr','07.99.69.13.92','$2b$12$jyhFZX0NwKoMI7OGD6pEXei7YJVyNLx42oSngin10EWJwxUP94KXG',3,31,31), -- pwd : /D='0f|O:<s+
-    ('70313445','Jean','Gaines','jgaines@iut.univ-paris8.fr','06.93.39.89.26','$2b$12$LL2sJoQf6yt0QmALRYSbue86wH6eheSLpxkUTBCTyQULKe.2jdQcS',3,31,31), -- pwd : #{UoSIJ1]s~t
-    ('93024847','Karla','Reyes','kreyes@iut.univ-paris8.fr','06.67.23.59.74','$2b$12$HxgzmPZJUN7FIKA2YNyOcueJqt.UcZwxk6ZzCPldTNIJ0.na1WB1W',3,31,75), -- pwd : >o&1}VB4:&eD
-    ('55947953','Brett','Ellis','bellis@iut.univ-paris8.fr','06.03.47.90.28','$2b$12$pvKd5YqwZUdPnH6sKHUL/uRbQNC/k5V4eaODwgQgzcMkrEqQ8Cj5m',3,31,75), -- pwd : @['}r6FolMHW
-    ('46435781','Daniel','Taylor','dtaylor@iut.univ-paris8.fr','07.16.84.14.85','$2b$12$RrglXAuQ0CG48HTAeA6IS.ZaVWn4BHuBr5XqOMrvzXG5dLNEj8dzy',3,31,75), -- pwd : }!]2-nKMJ!:6
-    ('54593169','Nicholas','Brown','nbrown@iut.univ-paris8.fr','06.64.92.76.91','$2b$12$yNd4PEZBBqOOtp36BE.04.er0unO6rURHrFt8eDThSMxpQrUin8Tu',3,31,75), -- pwd : 6<~93=a)=Xft
-    ('69641181','Kathy','Bauer','kbauer@iut.univ-paris8.fr','07.62.24.12.07','$2b$12$teM0RuDHbLql75SxfWhNUON5LaeA4s.JzzJ4SOT1T6dgPASjHWYjq',3,31,75), -- pwd : pQe(e#c<=|3l
-    ('31301010','Samuel','Brady','sbrady@iut.univ-paris8.fr','07.61.41.15.65','$2b$12$UY/L9.zoCM1qbreUGwcfSOlszugtHtZEL8/hLjzxKfLX.oxaBkOIu',3,31,75), -- pwd : 9FRTP?XrA*m~
-    ('63065792','Rebecca','Guzman','rguzman@iut.univ-paris8.fr','06.35.53.00.45','$2b$12$jhRIMfKsm7Ac8P5PzSFEtuJV6uXFr4nyh2ys/gXIy3NbqL4vnIojG',3,31,75), -- pwd : pK}veZdGiW9^
-    ('62904728','Christopher','Jackson','cjackson@iut.univ-paris8.fr','07.31.01.33.10','$2b$12$R7Ac9Gq.V/xdtu20cuN3rOCeWhjFbQKzuTtS1zBOkO8Ke3JWM9W0W',3,31,75), -- pwd : Iy>T|W>]m_x>
-    ('13736525','David','Robertson','drobertson@iut.univ-paris8.fr','06.72.35.47.02','$2b$12$dmuYYQmnDZd4v2MnPrZezuZHF5qsh9ieCHEaA.SFDXabCYhKOwSlC',3,31,75), -- pwd : )}$.60\laW9G
-    ('02701805','Alicia','Chen','achen@iut.univ-paris8.fr','06.06.55.28.06','$2b$12$a62y.L0lbrCExt7e1JpV3.VOjH.C5Cb4V8yszobIeXb0JtdqkT4BS',3,31,75), -- pwd : fTK>;*SP]zf|
-    ('93748757','Gregory','Miller','gmiller@iut.univ-paris8.fr','07.60.88.14.46','$2b$12$J7PA7Dtu/zyXzNCpRcFda.sQiTK7F.CXI.q3Dv1R31du5pmx9BMd2',3,31,119), -- pwd : pXK$|?_',qcX
-    ('14175404','Stephanie','Mcintyre','smcintyre@iut.univ-paris8.fr','07.86.73.95.83','$2b$12$BkI9sr.ErgXLlF.c2/.BF..thmRon7h3HUKmuokI1PoWhLxAxKm/m',3,31,119), -- pwd : 63t@6j/,S>9i
-    ('65514984','Meghan','Moreno','mmoreno@iut.univ-paris8.fr','07.04.66.16.28','$2b$12$WvUsq6lr1/lcHNxpf5RJxuHnnpeLZxHYezsmvUsgKgO/25Gxb..Pe',3,31,119), -- pwd : E7:|_nsR@|n^
-    ('43447127','Doris','Jones','djones@iut.univ-paris8.fr','06.67.67.50.87','$2b$12$QE00rCzaVor2d6UPqm6hZOI71PifyPa9hN.4Sd0ulJxieNpP2K4wi',3,31,119), -- pwd : v|\A}VeF"z>_
-    ('60889620','Michael','Gibbs','mgibbs@iut.univ-paris8.fr','07.28.98.38.46','$2b$12$vdkIuY1ieVhTMgta.M8tP.2M7J4Nc79toWD6IzaAu9rFl3LF5Bx.S',3,31,119), -- pwd : 4ur!!CK".$-Y
-    ('24912056','Connie','Stewart','cstewart@iut.univ-paris8.fr','06.22.09.37.36','$2b$12$wJ2n/aB89lhCmY3.lu/.DOKNXEdfgPWbi/epOzHYl9OqqMcrPlHHm',3,31,119), -- pwd : Jm=S6'{S#uL]
-    ('38995733','Lisa','Carey','lcarey@iut.univ-paris8.fr','07.63.76.01.65','$2b$12$THpHMZurg8wv9bEt1qSbKu/lTX3EIu9PeDj4BXEfXbKZ39jqYUKE2',3,31,119), -- pwd : .Y?4>WzW~X~b
-    ('11316402','Mike','Nelson','mnelson@iut.univ-paris8.fr','06.95.18.70.99','$2b$12$HInrWlTIgAmJMiv8xbjTveJkJBbeEdU/BfwYzkp65O1JU.SZg/QWO',3,31,119), -- pwd : lN>^D<.-~3MZ
-    ('21859484','Brian','Mitchell','bmitchell@iut.univ-paris8.fr','06.05.90.80.86','$2b$12$WVuwVCTsBCMJW8H/cu5HheoQGst4ZToLjXPNRChhQO1BttVxQn4U6',3,31,119), -- pwd : rEBtNi|DIcM@
-    ('27391560','Joshua','Merritt','jmerritt@iut.univ-paris8.fr','07.04.34.04.98','$2b$12$jcKPBzKzZIZJDh3t.MSC3.2SFfrxO05LPhzJAo6PVDmv46TGx2vJy',3,31,119), -- pwd : p$5&[y<8TLPW
-    ('70679823','Brittney','Brown','bbrown@iut.univ-paris8.fr','07.54.66.68.27','$2b$12$TZYVmB8t3cAmymPAW96S5.jFCiCDMxHmEyvGvn7QvL3LRpXI/hsz6',3,33,33), -- pwd : +PN8nWDW1Ttg
-    ('31282791','Jennifer','Ward','jward@iut.univ-paris8.fr','06.99.83.92.82','$2b$12$wzrE8cIErVbrU8jLyZv3o.KEzf3SDXInejT1DrfpBmEs0XHJXl/rO',3,33,33), -- pwd : %#IYMtlmtr$f
-    ('21028309','Michael','Bennett','mbennett@iut.univ-paris8.fr','06.10.51.07.47','$2b$12$4nPuZJ3dzXVbwPjCJYZpq.reZP7qgR4EzCIqHftG4DUKfvAlPqxni',3,33,33), -- pwd : #~Mm0h[L\rsq
-    ('32375523','Martin','King','mking@iut.univ-paris8.fr','07.39.37.58.00','$2b$12$vsk.CamOcHcXuIKpNysFV.y/RMEq3/leaxjmwsbrCcUFKr/qRZo2u',3,33,33), -- pwd : YpP^Oex:BEK)
-    ('68098590','Evan','Osborne','eosborne@iut.univ-paris8.fr','06.07.52.22.08','$2b$12$ZerLJw.UmOzQxHgB0UXDGe/eM.i.1IPN3.Dc9UaxRSJ.JZRLZrFIm',3,33,33), -- pwd : JqxN29&eg.|Z
-    ('64737382','Sean','Chung','schung@iut.univ-paris8.fr','06.87.83.85.06','$2b$12$LDRnOF9Npe0LLm7Qxi4b5ucRao3LtRbeMWYt96Qj1ICrNwUoHNoCi',3,33,33), -- pwd : %FG1?/HNgxT_
-    ('22229855','Brenda','Mcclure','bmcclure@iut.univ-paris8.fr','06.69.34.00.41','$2b$12$.5ye/BuDta3e7EuWCGp/befK9zxL85PmRWIorZTU6yM/cWNFZjB9u',3,33,33), -- pwd : xl`LI2rAq'G%
-    ('47923286','Diana','Gilbert','dgilbert@iut.univ-paris8.fr','06.13.07.75.74','$2b$12$Jrma9ZVRzIUcsTEKpXnp/uD7Krgctt3EcnKx8VLk8qcfLm7mZB/gO',3,33,33), -- pwd : bZ.E<",Mt/^;
-    ('74256995','William','Miller','wmiller@iut.univ-paris8.fr','07.16.30.71.59','$2b$12$NX9V7Pk9N1m5r4.JhBFSu.VGkATe.qk/guFVtVEdhHbWOomIO/guq',3,33,33), -- pwd : 2O^*cUi!.{g$
-    ('81386395','Shelly','Walsh','swalsh@iut.univ-paris8.fr','07.35.45.68.94','$2b$12$hXfyo8XnP8kVRGUhG/.bZO5xDeOec6q0V5r7HIUlPVYcvFdemKL3m',3,33,33), -- pwd : xW>'lx4[(%2m
-    ('24336587','Robert','Holden','rholden@iut.univ-paris8.fr','07.43.37.17.73','$2b$12$.xMhetT0MXPaTZrQNkEb5e38xYF0R1POTXjKMyiSxHOA2kpWjefX6',3,33,77), -- pwd : acd}:MS35E>{
-    ('73457420','Dawn','Cox','dcox@iut.univ-paris8.fr','07.92.47.87.11','$2b$12$tlj2ZAbX11zM3WGuCb9OI.VRj7Xk8Nd.NuJM9WYmyRdF0DTngI4Qy',3,33,77), -- pwd : }WLF6ViMw<#F
-    ('06978739','Matthew','Chavez','mchavez@iut.univ-paris8.fr','07.96.61.79.53','$2b$12$FomHddcwXIefnA3cF5yYJ.JMt8Np7mevsiiJBeG42YjBgcgEzBmPW',3,33,77), -- pwd : dcubWH/WPz/O
-    ('69500164','Cameron','Mckinney','cmckinney@iut.univ-paris8.fr','07.54.70.37.54','$2b$12$7gZGNKuB4jhDqIjS3ABtW.my7uihCH/08D983SnXKWwMzgAlvm9CC',3,33,77), -- pwd : Ho^;7`|G($y2
-    ('68796671','Richard','Tanner','rtanner@iut.univ-paris8.fr','06.22.12.03.97','$2b$12$eohMSiZVHtchhzuhGIj41O1Il/NjiDEmop/E1I8MBSYv1p/yp/6Wm',3,33,77), -- pwd : |#c,Oh0R#60b
-    ('68615248','Belinda','Strong','bstrong@iut.univ-paris8.fr','06.98.91.99.92','$2b$12$7nIBInYR/s6tYnpDJsm4L.5IXMZyOSbNR3.tg6sEE8rJ8NUfaglCC',3,33,77), -- pwd : AypISbkO1A\+
-    ('76587719','Tracey','Rodriguez','trodriguez@iut.univ-paris8.fr','07.63.32.68.63','$2b$12$7QS9x6N2ccJeCjGSmRamResEE0/ObKwCHjOE.5PihRqUAEJ0D5QPS',3,33,77), -- pwd : CFLT]VhKX;2%
-    ('38461204','Sheila','Oneill','soneill@iut.univ-paris8.fr','06.08.05.07.89','$2b$12$XoHa9eSYydhhDSrfAPk8P..4rhNkspRdyofmnk9YVuSMDswqLHmgG',3,33,77), -- pwd : 2eH}(%h|jlGo
-    ('72467108','David','Rosales','drosales@iut.univ-paris8.fr','06.89.31.06.00','$2b$12$2kro0cN7.woDPeX5U0jBoOMgYDTAwkwl48faPI/c/6hqpDSgi68Xm',3,33,77), -- pwd : ^/)@c]M`Y/~#
-    ('80033328','Sharon','Solis','ssolis@iut.univ-paris8.fr','06.82.48.82.84','$2b$12$8kH.5aG0/C7ihb85uc6jkOiXi6xhhsyquqVPXtv30BNKR2VurIxle',3,33,77), -- pwd : b.Jp2#^S+MP9
-    ('05188739','Jamie','Smith','jsmith@iut.univ-paris8.fr','07.81.84.54.85','$2b$12$0lqKmIa62TYbFuyHerQCq.gFd30UpGwYN1T1pkpgdfYUnXYzBM9P6',3,33,121), -- pwd : 9@Haxx(aRYSO
-    ('72639053','Pamela','Stephens','pstephens@iut.univ-paris8.fr','06.53.48.24.49','$2b$12$BlhZWA09bq8wpdCbb0GZiuImFa0jEhjvDr2VbH8dZ92L3IJVzTW9O',3,33,121), -- pwd : @v#kRe@.~mtS
-    ('47267137','Cory','Johnson','cjohnson@iut.univ-paris8.fr','07.75.80.89.49','$2b$12$be4xR58kPdI3E1t/2JYd7.0F2LRUMdRO2v0PrJTuWIcxzAfTrtVvK',3,33,121), -- pwd : |C5|Mi`f9kPw
-    ('27694428','Debbie','Griffith','dgriffith@iut.univ-paris8.fr','07.27.40.63.28','$2b$12$hQg4KDhf/2yDAfvz2lBWAuwqYz93ywh0/XVxey7gy.NkhMvm2Zl0y',3,33,121), -- pwd : yPF6}U$Yw6wk
-    ('79980222','Kelly','Jackson','kjackson@iut.univ-paris8.fr','07.03.04.25.38','$2b$12$if5qhERWNthttTlgR6l6zeeZ4CQN05dAY36K7zER26jBUSZOXuLWS',3,33,121), -- pwd : #x26W,}U(RM5
-    ('84100021','Shelby','Castro','scastro@iut.univ-paris8.fr','07.32.98.63.69','$2b$12$wlBF2cu87hED85tnSQ0AoO4o17olc8Pfb/lpnEfl9uk2h4bgzd3A.',3,33,121), -- pwd : ruqA!^Fp?}5:
-    ('58277882','James','Manning','jmanning@iut.univ-paris8.fr','06.64.10.65.42','$2b$12$LSDKRAZDWMiahv8hUqcW/ecsYN8NQaDY3zu.4ag1JKNoNcLQQE1GO',3,33,121), -- pwd : A;2TB-4qEeqz
-    ('65010221','David','Kim','dkim@iut.univ-paris8.fr','07.95.15.90.78','$2b$12$fPCuVkrnbZCIw/dPVnzMVuhjkF0CZqH2P2qVZbWybOQ6kX8BVPKrm',3,33,121), -- pwd : {hWdi\';'ptf
-    ('73371683','Kevin','Murphy','kmurphy@iut.univ-paris8.fr','07.06.62.57.93','$2b$12$LEAN.3/AWWVE8YxPup81/eMskyUa8uXURO.A33mpvY0tkw8SYlzCa',3,33,121), -- pwd : j|e4k[vu661Q
-    ('39387847','Tammy','Freeman','tfreeman@iut.univ-paris8.fr','06.73.19.64.00','$2b$12$uNMoDKSb9CQjAqEPU2hZMeerHAK4JXC8CAtUTGShWpDbX9PVm.5XS',3,33,121), -- pwd : "n7)oQ{om<1E
-    ('29996849','Jennifer','Manning','jmanning@iut.univ-paris8.fr','07.25.96.76.80','$2b$12$ANU2x1t/ZdVF0AGuhcuNo.m6wqQDdiR4csgGrxtqpI2MtxM/WN89G',3,8,8), -- pwd : $25<C_Lb_ucJ
-    ('19118587','Jared','Kelly','jkelly@iut.univ-paris8.fr','06.44.22.69.32','$2b$12$QhppDnpGy588J1h3.FEhk.Z8yPv805.gTFqhngdYN/SelCPdt.dFG',3,8,8), -- pwd : ppSc4}}#{Gk>
-    ('79808851','Russell','Joseph','rjoseph@iut.univ-paris8.fr','07.32.19.56.68','$2b$12$fBllGG5ScikC/fSDE1sH3ujqiv7NWI3vFDYWJ6g8fkDe1K0iZxFI6',3,8,8), -- pwd : LXY=2=,YbIcM
-    ('99642991','Amber','Nelson','anelson@iut.univ-paris8.fr','06.30.67.63.10','$2b$12$LL10Ypog76GjbS5RSQi4DO4v8JtwidaB2Bx.MX8lz48XNtvWiT8Ha',3,8,8), -- pwd : =/Q;d=9_M424
-    ('61109811','Erica','Williams','ewilliams@iut.univ-paris8.fr','07.33.02.27.06','$2b$12$C0NMng0DaUdNOTO4zQLVw.R5CsRzfXeRXKAgDqxL3n.fIZlXEe6i.',3,8,8), -- pwd : aIa*f5FGT1'v
-    ('23536743','Haley','Duke','hduke@iut.univ-paris8.fr','07.92.07.18.06','$2b$12$x7E2N0q9W/.UoaT1vbnEV.V2DHMck9NSAliHU5s4M37Ye4vMGpgNm',3,8,8), -- pwd : V=4P0rtThQ/{
-    ('71420286','Margaret','Farley','mfarley@iut.univ-paris8.fr','07.01.94.90.56','$2b$12$Oyibw0WSvjAZM2JQxMUwB.cipSHiBpfm6j.Au5vigr57jkqeG/QGG',3,8,8), -- pwd : pCEfn=jU`OkI
-    ('86252357','Philip','Hebert','phebert@iut.univ-paris8.fr','07.65.55.51.19','$2b$12$WURG4bIUZDHD./oM5xF9BOJEFBoP1NxvJsadu8LL7JmX1Sg3Z.gcu',3,8,8), -- pwd : q_!JK?B[@]82
-    ('41222896','Joanne','Thomas','jthomas@iut.univ-paris8.fr','06.63.82.90.39','$2b$12$.v2kPxfY769UEFwe2E6GF.VMaTFRFU6Sew.UgyPNBqmZFdwG2Tw52',3,8,8), -- pwd : N-8+)_Ujq&zC
-    ('67777962','Pamela','Flynn','pflynn@iut.univ-paris8.fr','07.70.27.39.93','$2b$12$9dOv63vAHZ5j.zxB7tTreeuofGBVmFEiUCmLsgqTXFZNckYT80jnu',3,8,8), -- pwd : P'uk*u!b}#H=
-    ('81429502','Nicole','Jones','njones@iut.univ-paris8.fr','07.26.24.07.51','$2b$12$j1jo4yZOCLM2resperhM5.c0KLT5oeLZglTtyTqXB0dK1QriuaDFu',3,8,52), -- pwd : nUE.-J_L&8aL
-    ('30774932','Elizabeth','Anderson','eanderson@iut.univ-paris8.fr','07.62.90.65.80','$2b$12$z4qXrqOFWROWPWVbzfqzoOXZv1dY6k5ocEG5IYkTmOaYBRyhEwvhS',3,8,52), -- pwd : c%l+AEojr@\$
-    ('90522460','Daniel','Curtis','dcurtis@iut.univ-paris8.fr','07.02.08.67.87','$2b$12$0yiMH1VmJNCkwgnyCUpTmeyDR6HnMfUC0xT0V7eKuLFpA9Y2by0CC',3,8,52), -- pwd : /d7tXsqJ0+1&
-    ('53104247','Lisa','Hicks','lhicks@iut.univ-paris8.fr','07.22.45.03.15','$2b$12$D65Tv.U.YpinG58.r8aKI.ZD.qag21K9qfFtptYP8htwRe3FnSMya',3,8,52), -- pwd : :S%qVrkMO:1>
-    ('84184073','Gerald','White','gwhite@iut.univ-paris8.fr','06.87.61.57.61','$2b$12$DSc4KFFwHS.wE6agP/.cCeTIV8BoYvfxa2EFht4kY/S5nGxDykOkO',3,8,52), -- pwd : sG^Fz?E!dHNs
-    ('13460070','Holly','Rivera','hrivera@iut.univ-paris8.fr','06.72.35.76.70','$2b$12$iV3P2liB/mhD.Lx3SJ7QNeuzenjgdk.pynXFsZLKDD5TZiZFVBkvK',3,8,52), -- pwd : <4"-t9[V<='%
-    ('83788155','Joseph','Best','jbest@iut.univ-paris8.fr','06.30.92.71.82','$2b$12$IkIlvX8gEBAXFrzziHIbW.LRgClzba2YPBCniiyEijKu0ME3l1zq2',3,8,52), -- pwd : $gpX*Un"lG2h
-    ('39133598','Michael','Garza','mgarza@iut.univ-paris8.fr','07.67.37.99.66','$2b$12$aimYV0aw2Fbifx1DIO798eQKR9J6vHNnTT.ChKJ2s9G2v4ZACwcr2',3,8,52), -- pwd : C$sJU6tHCzwL
-    ('56809928','Jared','Bowman','jbowman@iut.univ-paris8.fr','06.42.06.16.18','$2b$12$EJSg/lHQ9NX5vVvQl/7XQevcqRaY6C0x4Z5ij8CxLXc8BAXcsmv1.',3,8,52), -- pwd : J}*E'72u_B1V
-    ('93089735','Kevin','Baker','kbaker@iut.univ-paris8.fr','07.76.08.06.68','$2b$12$AINg57KKOmhbPhh2TvtWkel4PLEOqQ327bMj0Taa6xjZhqUAl.5LG',3,8,52), -- pwd : }H{md`xoTDB~
-    ('55818582','Robert','Miller','rmiller@iut.univ-paris8.fr','06.67.54.87.47','$2b$12$iOW6pXC0WXVOtl9YbBR/Y.8C1Pz2/x/Uzrw4geAbCq17C6Pue2efe',3,8,96), -- pwd : )V"[g#q{nol#
-    ('44038549','Joshua','Stephens','jstephens@iut.univ-paris8.fr','06.99.42.77.57','$2b$12$V1O6fPEeG/QezpeZcTCPa.jccK66yyprrOtbB1ynXpcEWAIjUTH8i',3,8,96), -- pwd : \r6UuPUV6S/F
-    ('06709994','Claudia','Davidson','cdavidson@iut.univ-paris8.fr','07.93.60.15.44','$2b$12$kHT5M/R8BPfBI7U9Sf2Hy.QUmx7/H189HYH4mxYtN2.jC1mw./5XW',3,8,96), -- pwd : n]2b0CRZyCib
-    ('79810703','Kimberly','Rose','krose@iut.univ-paris8.fr','06.25.05.35.01','$2b$12$VgKafPbrVHKxQxhhcpgVRuBkt.en.RRNF0ZVacjVzGa6XQlTf4q6S',3,8,96), -- pwd : `j<a2j#cq#cX
-    ('03802564','Claire','Moore','cmoore@iut.univ-paris8.fr','06.55.14.37.31','$2b$12$HPRdLVYxccYNTUYLg844U.v.7Xm.whCdSfApdQkEs8c2yXAOiW9B2',3,8,96), -- pwd : 6wis0\S2t0[-
-    ('38058755','Aaron','Gonzales','agonzales@iut.univ-paris8.fr','06.40.01.10.15','$2b$12$ojNdKACydneqKToBxYgef.W1SzZY6YC3.V7fWC.ftL12H9lC6Caii',3,8,96), -- pwd : gA"/vCH?)^aV
-    ('79548551','Jonathan','Fischer','jfischer@iut.univ-paris8.fr','07.54.71.12.30','$2b$12$CWK5siA3Cys0yPa5xohxC.4No0hGrmfarIWs79G7WRhQjGdMEpeM2',3,8,96), -- pwd : =lwamS?YMnU&
-    ('84073931','Scott','Jordan','sjordan@iut.univ-paris8.fr','07.33.29.68.90','$2b$12$UitNDuEl3IauaNQ.dogc2e5Ak7DUYvx2Diopq5nZtZKky75a4zf6O',3,8,96), -- pwd : uP5w7AO4r_x{
-    ('82072017','Tiffany','Burke','tburke@iut.univ-paris8.fr','06.65.69.17.81','$2b$12$beAQyXKT8TRZ0rhUfKnxFOII5NtGJxjITfUb.PgrapahrvcEsaN8.',3,8,96), -- pwd : lpSLOXC8acD~
-    ('49427545','Lauren','Hughes','lhughes@iut.univ-paris8.fr','06.15.47.03.35','$2b$12$pvhQXNc1si8aj9AD5/cl4OeZCkl/fmc7p8HZSDhycSqtFEWkz1GTC',3,8,96) -- pwd : NfH]p^|][gXS
+    ('68469024', 'Itadori', 'Yuji', 'iyuji@iut.univ-paris8.fr', '06.88.88.88.88', 'iyuji', 3, 19, 19), -- username : iyuji 
+    ('70555486', 'Satoru', 'Gojo', 'sgojo@iut.univ-paris8.fr', '06.66.66.66.66', 'sgojo', 3, 19, 19), -- username : sgojo 
+    ('07092122', 'Patricia', 'Woods', 'pwoods@iut.univ-paris8.fr', '07.79.23.15.60', 'pwoods', 3, 19, 19), -- username : pwoods 
+    ('90224613', 'Benjamin', 'Collins', 'bcollins@iut.univ-paris8.fr', '06.80.82.67.55', 'bcollins', 3, 19, 19), -- username : bcollins 
+    ('55544860', 'Frances', 'Wolf', 'fwolf@iut.univ-paris8.fr', '06.48.21.91.49', 'fwolf', 3, 19, 19), -- username : fwolf 
+    ('01639851', 'Eric', 'Smith', 'esmith@iut.univ-paris8.fr', '06.51.38.19.47', 'esmith', 3, 19, 19), -- username : esmith 
+    ('14213219', 'Jocelyn', 'Curtis', 'jcurtis1@iut.univ-paris8.fr', '06.45.20.40.43', 'jcurtis1', 3, 19, 19), -- username : jcurtis1 
+    ('35364890', 'Michelle', 'Torres', 'mtorres@iut.univ-paris8.fr', '07.26.07.96.53', 'mtorres', 3, 19, 19), -- username : mtorres 
+    ('05380172', 'Hannah', 'Lopez', 'hlopez@iut.univ-paris8.fr', '06.24.60.68.52', 'hlopez', 3, 19, 19), -- username : hlopez 
+    ('02025961', 'Anthony', 'Peters', 'apeters1@iut.univ-paris8.fr', '07.12.50.58.91', 'apeters1', 3, 19, 19), -- username : apeters1 
+    ('44886687', 'Walter', 'Patrick', 'wpatrick@iut.univ-paris8.fr', '07.09.35.73.41', 'wpatrick', 3, 19, 63), -- username : wpatrick 
+    ('39208918', 'Marcus', 'Green', 'mgreen1@iut.univ-paris8.fr', '07.62.35.58.52', 'mgreen1', 3, 19, 63), -- username : mgreen1 
+    ('41267751', 'Carolyn', 'Lopez', 'clopez@iut.univ-paris8.fr', '07.84.95.86.29', 'clopez', 3, 19, 63), -- username : clopez 
+    ('43841024', 'Darlene', 'Wood', 'dwood@iut.univ-paris8.fr', '06.17.49.27.15', 'dwood', 3, 19, 63), -- username : dwood 
+    ('96448943', 'Sandra', 'Shelton', 'sshelton@iut.univ-paris8.fr', '06.62.63.48.08', 'sshelton', 3, 19, 63), -- username : sshelton 
+    ('44363671', 'Jorge', 'Richards', 'jrichards@iut.univ-paris8.fr', '06.87.48.73.68', 'jrichards', 3, 19, 63), -- username : jrichards 
+    ('86088518', 'Ann', 'Cox', 'acox@iut.univ-paris8.fr', '07.64.98.24.40', 'acox', 3, 19, 63), -- username : acox 
+    ('11002964', 'Anthony', 'Smith', 'asmith@iut.univ-paris8.fr', '07.66.99.65.46', 'asmith', 3, 19, 63), -- username : asmith 
+    ('46994345', 'Donna', 'Lee', 'dlee@iut.univ-paris8.fr', '06.74.23.50.83', 'dlee', 3, 19, 63), -- username : dlee 
+    ('08892453', 'Caroline', 'Jones', 'cjones1@iut.univ-paris8.fr', '06.62.86.15.36', 'cjones1', 3, 19, 63), -- username : cjones1 
+    ('03800421', 'Matthew', 'Davis', 'mdavis@iut.univ-paris8.fr', '07.93.39.45.03', 'mdavis', 3, 19, 107), -- username : mdavis 
+    ('88648035', 'Amy', 'Arnold', 'aarnold@iut.univ-paris8.fr', '07.17.80.55.05', 'aarnold', 3, 19, 107), -- username : aarnold 
+    ('07368189', 'David', 'Dixon', 'ddixon@iut.univ-paris8.fr', '07.33.62.74.14', 'ddixon', 3, 19, 107), -- username : ddixon 
+    ('00242434', 'Andres', 'Roberts', 'aroberts@iut.univ-paris8.fr', '07.80.11.07.58', 'aroberts', 3, 19, 107), -- username : aroberts 
+    ('85408922', 'Edward', 'Ellis', 'eellis@iut.univ-paris8.fr', '07.53.27.88.68', 'eellis', 3, 19, 107), -- username : eellis 
+    ('12261046', 'Jacob', 'Rose', 'jrose@iut.univ-paris8.fr', '06.39.49.05.85', 'jrose', 3, 19, 107), -- username : jrose 
+    ('97197652', 'Patrick', 'Martinez', 'pmartinez@iut.univ-paris8.fr', '06.04.53.79.17', 'pmartinez', 3, 19, 107), -- username : pmartinez 
+    ('19229921', 'Nichole', 'Lewis', 'nlewis@iut.univ-paris8.fr', '07.22.32.75.63', 'nlewis', 3, 19, 107), -- username : nlewis 
+    ('58934894', 'Stephanie', 'Carlson', 'scarlson2@iut.univ-paris8.fr', '06.55.63.89.79', 'scarlson2', 3, 19, 107), -- username : scarlson2 
+    ('33798546', 'Gary', 'Keller', 'gkeller@iut.univ-paris8.fr', '07.32.18.66.95', 'gkeller', 3, 19, 107), -- username : gkeller 
+    ('93888181', 'Tina', 'Bowers', 'tbowers@iut.univ-paris8.fr', '06.00.41.80.28', 'tbowers', 3, 21, 21), -- username : tbowers 
+    ('89963978', 'Kelli', 'George', 'kgeorge@iut.univ-paris8.fr', '07.41.26.75.25', 'kgeorge', 3, 21, 21), -- username : kgeorge 
+    ('22150393', 'Laura', 'Rosales', 'lrosales@iut.univ-paris8.fr', '06.72.07.81.16', 'lrosales', 3, 21, 21), -- username : lrosales 
+    ('75839542', 'Derrick', 'Chang', 'dchang@iut.univ-paris8.fr', '07.47.04.19.25', 'dchang', 3, 21, 21), -- username : dchang 
+    ('81130001', 'Brent', 'Hernandez', 'bhernandez@iut.univ-paris8.fr', '07.38.51.91.91', 'bhernandez', 3, 21, 21), -- username : bhernandez 
+    ('51834009', 'Kirsten', 'Bender', 'kbender@iut.univ-paris8.fr', '06.69.53.06.54', 'kbender', 3, 21, 21), -- username : kbender 
+    ('88840409', 'Anna', 'Boyd', 'aboyd@iut.univ-paris8.fr', '06.94.01.49.19', 'aboyd', 3, 21, 21), -- username : aboyd 
+    ('78986442', 'Catherine', 'Gutierrez', 'cgutierrez@iut.univ-paris8.fr', '07.19.19.25.74', 'cgutierrez', 3, 21, 21), -- username : cgutierrez 
+    ('19719715', 'Elizabeth', 'Baker', 'ebaker@iut.univ-paris8.fr', '07.81.05.43.64', 'ebaker', 3, 21, 21), -- username : ebaker 
+    ('09584415', 'Vanessa', 'Fitzpatrick', 'vfitzpatrick@iut.univ-paris8.fr', '06.98.00.59.39', 'vfitzpatrick', 3, 21, 21), -- username : vfitzpatrick 
+    ('81405088', 'Tammy', 'Gonzales', 'tgonzales@iut.univ-paris8.fr', '07.59.93.59.80', 'tgonzales', 3, 21, 65), -- username : tgonzales 
+    ('27213203', 'Brandon', 'Smith', 'bsmith1@iut.univ-paris8.fr', '07.37.30.15.39', 'bsmith1', 3, 21, 65), -- username : bsmith1 
+    ('84180170', 'Jennifer', 'Jones', 'jjones@iut.univ-paris8.fr', '06.37.62.79.85', 'jjones', 3, 21, 65), -- username : jjones 
+    ('10404693', 'Kevin', 'Hall', 'khall@iut.univ-paris8.fr', '06.82.71.83.02', 'khall', 3, 21, 65), -- username : khall 
+    ('43037888', 'Andrew', 'Erickson', 'aerickson@iut.univ-paris8.fr', '06.83.64.22.67', 'aerickson', 3, 21, 65), -- username : aerickson 
+    ('33999197', 'Jay', 'Chambers', 'jchambers@iut.univ-paris8.fr', '06.80.08.61.59', 'jchambers', 3, 21, 65), -- username : jchambers 
+    ('49007663', 'Wendy', 'Fischer', 'wfischer@iut.univ-paris8.fr', '06.15.40.15.09', 'wfischer', 3, 21, 65), -- username : wfischer 
+    ('53777556', 'Jennifer', 'Webb', 'jwebb@iut.univ-paris8.fr', '06.94.07.34.36', 'jwebb', 3, 21, 65), -- username : jwebb 
+    ('92516761', 'Stephen', 'Smith', 'ssmith@iut.univ-paris8.fr', '07.23.16.54.88', 'ssmith', 3, 21, 65), -- username : ssmith 
+    ('59588759', 'Jesus', 'Harrington', 'jharrington@iut.univ-paris8.fr', '07.95.44.30.43', 'jharrington', 3, 21, 65), -- username : jharrington 
+    ('26380664', 'Lee', 'Sullivan', 'lsullivan@iut.univ-paris8.fr', '06.77.86.38.90', 'lsullivan', 3, 21, 109), -- username : lsullivan 
+    ('43886059', 'Matthew', 'Weaver', 'mweaver@iut.univ-paris8.fr', '07.15.33.20.83', 'mweaver', 3, 21, 109), -- username : mweaver 
+    ('84854071', 'Michael', 'Haney', 'mhaney@iut.univ-paris8.fr', '07.51.97.20.50', 'mhaney', 3, 21, 109), -- username : mhaney 
+    ('15442041', 'Sarah', 'Martin', 'smartin@iut.univ-paris8.fr', '07.62.49.09.98', 'smartin', 3, 21, 109), -- username : smartin 
+    ('91248241', 'George', 'Dorsey', 'gdorsey@iut.univ-paris8.fr', '06.48.78.97.38', 'gdorsey', 3, 21, 109), -- username : gdorsey 
+    ('24478502', 'Jose', 'Griffith', 'jgriffith@iut.univ-paris8.fr', '06.13.26.97.84', 'jgriffith', 3, 21, 109), -- username : jgriffith 
+    ('77501501', 'Kayla', 'Larson', 'klarson@iut.univ-paris8.fr', '06.95.44.59.80', 'klarson', 3, 21, 109), -- username : klarson 
+    ('22377605', 'Steven', 'Liu', 'sliu@iut.univ-paris8.fr', '06.12.67.54.68', 'sliu', 3, 21, 109), -- username : sliu 
+    ('83308588', 'Carlos', 'Savage', 'csavage@iut.univ-paris8.fr', '06.34.20.33.82', 'csavage', 3, 21, 109), -- username : csavage 
+    ('32354508', 'Joseph', 'Horn', 'jhorn@iut.univ-paris8.fr', '07.07.88.51.07', 'jhorn', 3, 21, 109), -- username : jhorn 
+    ('61908378', 'Robert', 'Harrington', 'rharrington@iut.univ-paris8.fr', '06.33.71.40.39', 'rharrington', 3, 20, 20), -- username : rharrington 
+    ('83710708', 'Levi', 'Browning', 'lbrowning@iut.univ-paris8.fr', '07.88.29.29.64', 'lbrowning', 3, 20, 20), -- username : lbrowning 
+    ('97077165', 'James', 'Stewart', 'jstewart1@iut.univ-paris8.fr', '07.68.74.94.78', 'jstewart1', 3, 20, 20), -- username : jstewart1 
+    ('08238070', 'Kevin', 'Collins', 'kcollins@iut.univ-paris8.fr', '06.20.98.97.03', 'kcollins', 3, 20, 20), -- username : kcollins 
+    ('96882277', 'Victoria', 'Pope', 'vpope@iut.univ-paris8.fr', '07.87.54.19.75', 'vpope', 3, 20, 20), -- username : vpope 
+    ('63206175', 'Nicole', 'Henderson', 'nhenderson@iut.univ-paris8.fr', '06.60.49.65.17', 'nhenderson', 3, 20, 20), -- username : nhenderson 
+    ('74363500', 'Troy', 'Blackwell', 'tblackwell@iut.univ-paris8.fr', '07.37.31.30.10', 'tblackwell', 3, 20, 20), -- username : tblackwell 
+    ('78937791', 'Jonathan', 'Cordova', 'jcordova@iut.univ-paris8.fr', '07.11.34.92.59', 'jcordova', 3, 20, 20), -- username : jcordova 
+    ('85300873', 'Andrea', 'Farmer', 'afarmer@iut.univ-paris8.fr', '07.05.09.16.66', 'afarmer', 3, 20, 20), -- username : afarmer 
+    ('05591751', 'Brian', 'Jones', 'bjones1@iut.univ-paris8.fr', '06.39.47.41.05', 'bjones1', 3, 20, 20), -- username : bjones1 
+    ('93898648', 'Lisa', 'Martinez', 'lmartinez@iut.univ-paris8.fr', '06.30.83.11.17', 'lmartinez', 3, 20, 64), -- username : lmartinez 
+    ('06451956', 'Kathy', 'Steele', 'ksteele@iut.univ-paris8.fr', '06.23.62.74.92', 'ksteele', 3, 20, 64), -- username : ksteele 
+    ('76294129', 'Michael', 'Simmons', 'msimmons@iut.univ-paris8.fr', '06.98.76.28.85', 'msimmons', 3, 20, 64), -- username : msimmons 
+    ('20328749', 'William', 'Marshall', 'wmarshall@iut.univ-paris8.fr', '06.56.78.73.36', 'wmarshall', 3, 20, 64), -- username : wmarshall 
+    ('66325803', 'Nicole', 'Brown', 'nbrown1@iut.univ-paris8.fr', '06.44.07.87.21', 'nbrown1', 3, 20, 64), -- username : nbrown1 
+    ('44405381', 'Paul', 'Blair', 'pblair@iut.univ-paris8.fr', '06.17.58.51.46', 'pblair', 3, 20, 64), -- username : pblair 
+    ('03953986', 'Sara', 'Yu', 'syu1@iut.univ-paris8.fr', '07.67.63.22.99', 'syu1', 3, 20, 64), -- username : syu1 
+    ('14779874', 'Nicole', 'Thompson', 'nthompson@iut.univ-paris8.fr', '07.68.99.18.51', 'nthompson', 3, 20, 64), -- username : nthompson 
+    ('50242408', 'Jennifer', 'Huff', 'jhuff@iut.univ-paris8.fr', '07.01.28.77.01', 'jhuff', 3, 20, 64), -- username : jhuff 
+    ('81761741', 'Rebecca', 'Martinez', 'rmartinez@iut.univ-paris8.fr', '07.47.83.58.61', 'rmartinez', 3, 20, 64), -- username : rmartinez 
+    ('44477069', 'Joseph', 'Phillips', 'jphillips@iut.univ-paris8.fr', '07.69.73.85.06', 'jphillips', 3, 20, 108), -- username : jphillips 
+    ('50392609', 'Lisa', 'Giles', 'lgiles@iut.univ-paris8.fr', '06.04.75.60.45', 'lgiles', 3, 20, 108), -- username : lgiles 
+    ('93779867', 'Samantha', 'Johnson', 'sjohnson@iut.univ-paris8.fr', '07.72.97.62.69', 'sjohnson', 3, 20, 108), -- username : sjohnson 
+    ('63692133', 'Joseph', 'Austin', 'jaustin@iut.univ-paris8.fr', '07.87.18.33.38', 'jaustin', 3, 20, 108), -- username : jaustin 
+    ('33089735', 'Justin', 'Anthony', 'janthony@iut.univ-paris8.fr', '07.86.77.49.39', 'janthony', 3, 20, 108), -- username : janthony 
+    ('62174530', 'Calvin', 'Whitaker', 'cwhitaker@iut.univ-paris8.fr', '07.62.60.87.79', 'cwhitaker', 3, 20, 108), -- username : cwhitaker 
+    ('66278156', 'Scott', 'Ward', 'sward@iut.univ-paris8.fr', '06.53.00.03.14', 'sward', 3, 20, 108), -- username : sward 
+    ('01638329', 'Anne', 'Lawson', 'alawson@iut.univ-paris8.fr', '06.08.60.63.97', 'alawson', 3, 20, 108), -- username : alawson 
+    ('77291764', 'Samuel', 'Jensen', 'sjensen@iut.univ-paris8.fr', '06.36.74.96.13', 'sjensen', 3, 20, 108), -- username : sjensen 
+    ('28095973', 'Michele', 'Taylor', 'mtaylor@iut.univ-paris8.fr', '06.78.70.18.10', 'mtaylor', 3, 20, 108), -- username : mtaylor 
+    ('71171331', 'Katie', 'Hoffman', 'khoffman@iut.univ-paris8.fr', '06.85.18.45.01', 'khoffman', 3, 7, 7), -- username : khoffman 
+    ('92525418', 'Christopher', 'Decker', 'cdecker@iut.univ-paris8.fr', '06.06.71.81.47', 'cdecker', 3, 7, 7), -- username : cdecker 
+    ('69396379', 'John', 'Stephenson', 'jstephenson@iut.univ-paris8.fr', '06.26.14.81.30', 'jstephenson', 3, 7, 7), -- username : jstephenson 
+    ('55229858', 'Aaron', 'Peterson', 'apeterson@iut.univ-paris8.fr', '06.87.25.98.17', 'apeterson', 3, 7, 7), -- username : apeterson 
+    ('61020929', 'Scott', 'Washington', 'swashington@iut.univ-paris8.fr', '06.26.12.43.38', 'swashington', 3, 7, 7), -- username : swashington 
+    ('13927333', 'Alyssa', 'Hansen', 'ahansen@iut.univ-paris8.fr', '07.43.12.82.41', 'ahansen', 3, 7, 7), -- username : ahansen 
+    ('30682289', 'Tina', 'Price', 'tprice@iut.univ-paris8.fr', '07.23.45.07.94', 'tprice', 3, 7, 7), -- username : tprice 
+    ('42012946', 'Craig', 'Jackson', 'cjackson1@iut.univ-paris8.fr', '07.64.16.00.78', 'cjackson1', 3, 7, 7), -- username : cjackson1 
+    ('79649585', 'Joe', 'Rice', 'jrice@iut.univ-paris8.fr', '06.12.81.68.06', 'jrice', 3, 7, 7), -- username : jrice 
+    ('08759451', 'Lisa', 'Hanson', 'lhanson@iut.univ-paris8.fr', '06.00.05.86.59', 'lhanson', 3, 7, 7), -- username : lhanson 
+    ('50058415', 'Tonya', 'Olson', 'tolson1@iut.univ-paris8.fr', '07.74.68.98.26', 'tolson1', 3, 7, 95), -- username : tolson1 
+    ('44522648', 'Michael', 'Hays', 'mhays@iut.univ-paris8.fr', '06.69.01.02.11', 'mhays', 3, 7, 95), -- username : mhays 
+    ('91162399', 'Kristin', 'Mcdonald', 'kmcdonald@iut.univ-paris8.fr', '07.24.27.76.05', 'kmcdonald', 3, 7, 95), -- username : kmcdonald 
+    ('09973518', 'Micheal', 'Wade', 'mwade@iut.univ-paris8.fr', '06.83.33.95.24', 'mwade', 3, 7, 95), -- username : mwade 
+    ('66633986', 'William', 'Sanchez', 'wsanchez1@iut.univ-paris8.fr', '06.72.52.92.82', 'wsanchez1', 3, 7, 95), -- username : wsanchez1 
+    ('18938991', 'Colleen', 'Willis', 'cwillis@iut.univ-paris8.fr', '07.15.37.62.39', 'cwillis', 3, 7, 95), -- username : cwillis 
+    ('48575364', 'Andrew', 'Adams', 'aadams@iut.univ-paris8.fr', '06.26.74.71.34', 'aadams', 3, 7, 95), -- username : aadams 
+    ('05291189', 'Kyle', 'Wood', 'kwood@iut.univ-paris8.fr', '07.23.84.17.98', 'kwood', 3, 7, 95), -- username : kwood 
+    ('99329926', 'Robert', 'Smith', 'rsmith1@iut.univ-paris8.fr', '07.00.29.30.89', 'rsmith1', 3, 7, 95), -- username : rsmith1 
+    ('04090157', 'Timothy', 'Cole', 'tcole@iut.univ-paris8.fr', '07.65.96.19.39', 'tcole', 3, 7, 95), -- username : tcole 
+    ('40890464', 'Dawn', 'Lynch', 'dlynch@iut.univ-paris8.fr', '06.77.44.48.86', 'dlynch', 3, 7, 95), -- username : dlynch 
+    ('74863961', 'Brandon', 'Jones', 'bjones@iut.univ-paris8.fr', '06.10.75.43.69', 'bjones', 3, 7, 95), -- username : bjones 
+    ('74938047', 'Jesse', 'Nelson', 'jnelson@iut.univ-paris8.fr', '07.44.92.62.77', 'jnelson', 3, 7, 95), -- username : jnelson 
+    ('91105479', 'Laura', 'Rich', 'lrich@iut.univ-paris8.fr', '07.21.25.48.85', 'lrich', 3, 7, 95), -- username : lrich 
+    ('51186658', 'Jeffrey', 'Underwood', 'junderwood@iut.univ-paris8.fr', '07.46.42.58.72', 'junderwood', 3, 7, 95), -- username : junderwood 
+    ('56902596', 'Brittany', 'Gonzalez', 'bgonzalez@iut.univ-paris8.fr', '07.91.90.14.45', 'bgonzalez', 3, 7, 95), -- username : bgonzalez 
+    ('12607510', 'Joshua', 'Bennett', 'jbennett@iut.univ-paris8.fr', '07.14.84.40.83', 'jbennett', 3, 7, 95), -- username : jbennett 
+    ('10332673', 'Sonia', 'Hatfield', 'shatfield@iut.univ-paris8.fr', '06.09.16.48.93', 'shatfield', 3, 7, 95), -- username : shatfield 
+    ('37894276', 'Margaret', 'Nunez', 'mnunez@iut.univ-paris8.fr', '06.01.25.69.33', 'mnunez', 3, 7, 95), -- username : mnunez 
+    ('81577467', 'Shawn', 'Johnston', 'sjohnston1@iut.univ-paris8.fr', '07.52.72.82.70', 'sjohnston1', 3, 7, 95), -- username : sjohnston1 
+    ('35923148', 'Kim', 'Noble', 'knoble@iut.univ-paris8.fr', '07.83.89.49.81', 'knoble', 3, 8, 8), -- username : knoble 
+    ('43918504', 'Douglas', 'Thomas', 'dthomas@iut.univ-paris8.fr', '06.91.41.11.57', 'dthomas', 3, 8, 8), -- username : dthomas 
+    ('07061129', 'Tammy', 'Kim', 'tkim@iut.univ-paris8.fr', '07.95.53.76.89', 'tkim', 3, 8, 8), -- username : tkim 
+    ('01207936', 'Rodney', 'Riley', 'rriley@iut.univ-paris8.fr', '07.91.56.33.39', 'rriley', 3, 8, 8), -- username : rriley 
+    ('78860691', 'Nicole', 'Richardson', 'nrichardson@iut.univ-paris8.fr', '07.29.68.39.70', 'nrichardson', 3, 8, 8), -- username : nrichardson 
+    ('56681208', 'Chase', 'Howard', 'choward@iut.univ-paris8.fr', '07.96.73.45.91', 'choward', 3, 8, 8), -- username : choward 
+    ('31978207', 'John', 'Walters', 'jwalters@iut.univ-paris8.fr', '06.31.56.06.54', 'jwalters', 3, 8, 8), -- username : jwalters 
+    ('77093347', 'Aaron', 'Mays', 'amays@iut.univ-paris8.fr', '06.00.26.81.03', 'amays', 3, 8, 8), -- username : amays 
+    ('92547283', 'Traci', 'Ruiz', 'truiz@iut.univ-paris8.fr', '07.83.10.55.05', 'truiz', 3, 8, 8), -- username : truiz 
+    ('68704523', 'Kenneth', 'Golden', 'kgolden@iut.univ-paris8.fr', '07.03.76.31.20', 'kgolden', 3, 8, 8), -- username : kgolden 
+    ('29092665', 'Rachel', 'Smith', 'rsmith@iut.univ-paris8.fr', '07.35.52.10.48', 'rsmith', 3, 8, 52), -- username : rsmith 
+    ('45819690', 'Stanley', 'Mathews', 'smathews@iut.univ-paris8.fr', '07.74.18.16.42', 'smathews', 3, 8, 52), -- username : smathews 
+    ('63768384', 'Cesar', 'Mullen', 'cmullen@iut.univ-paris8.fr', '06.00.17.38.52', 'cmullen', 3, 8, 52), -- username : cmullen 
+    ('80125273', 'Claire', 'Giles', 'cgiles@iut.univ-paris8.fr', '06.46.54.86.52', 'cgiles', 3, 8, 52), -- username : cgiles 
+    ('54086035', 'Sean', 'Armstrong', 'sarmstrong@iut.univ-paris8.fr', '06.79.74.33.79', 'sarmstrong', 3, 8, 52), -- username : sarmstrong 
+    ('65377400', 'Christopher', 'Vazquez', 'cvazquez@iut.univ-paris8.fr', '06.54.18.60.01', 'cvazquez', 3, 8, 52), -- username : cvazquez 
+    ('97092125', 'Alexander', 'Guzman', 'aguzman@iut.univ-paris8.fr', '07.34.49.30.60', 'aguzman', 3, 8, 52), -- username : aguzman 
+    ('07476441', 'Stuart', 'Ramos', 'sramos@iut.univ-paris8.fr', '07.18.84.65.89', 'sramos', 3, 8, 52), -- username : sramos 
+    ('81649581', 'Mary', 'Perez', 'mperez@iut.univ-paris8.fr', '07.01.45.31.44', 'mperez', 3, 8, 52), -- username : mperez 
+    ('51360388', 'Thomas', 'Olson', 'tolson@iut.univ-paris8.fr', '07.56.49.69.85', 'tolson', 3, 8, 52), -- username : tolson 
+    ('14888268', 'Robert', 'Thompson', 'rthompson@iut.univ-paris8.fr', '06.75.50.80.19', 'rthompson', 3, 8, 96), -- username : rthompson 
+    ('22481721', 'Anna', 'Miller', 'amiller@iut.univ-paris8.fr', '06.60.51.52.79', 'amiller', 3, 8, 96), -- username : amiller 
+    ('09299054', 'Jeffery', 'Evans', 'jevans@iut.univ-paris8.fr', '07.41.06.90.72', 'jevans', 3, 8, 96), -- username : jevans 
+    ('79997541', 'Wendy', 'Coleman', 'wcoleman@iut.univ-paris8.fr', '06.04.49.04.29', 'wcoleman', 3, 8, 96), -- username : wcoleman 
+    ('62949265', 'Jodi', 'Campbell', 'jcampbell@iut.univ-paris8.fr', '07.72.14.00.47', 'jcampbell', 3, 8, 96), -- username : jcampbell 
+    ('40171718', 'Traci', 'Krueger', 'tkrueger@iut.univ-paris8.fr', '06.13.46.53.56', 'tkrueger', 3, 8, 96), -- username : tkrueger 
+    ('49819532', 'Jack', 'Dunn', 'jdunn@iut.univ-paris8.fr', '07.85.58.25.78', 'jdunn', 3, 8, 96), -- username : jdunn 
+    ('25896516', 'Deborah', 'Wilson', 'dwilson@iut.univ-paris8.fr', '07.63.67.25.57', 'dwilson', 3, 8, 96), -- username : dwilson 
+    ('99258776', 'Philip', 'Robinson', 'probinson@iut.univ-paris8.fr', '07.25.95.24.50', 'probinson', 3, 8, 96), -- username : probinson 
+    ('21793015', 'Anna', 'Wilson', 'awilson1@iut.univ-paris8.fr', '07.83.12.61.59', 'awilson1', 3, 8, 96), -- username : awilson1 
+    ('48885993', 'Troy', 'Mason', 'tmason@iut.univ-paris8.fr', '07.97.28.22.59', 'tmason', 3, 9, 9), -- username : tmason 
+    ('42410621', 'Ashley', 'Ray', 'aray@iut.univ-paris8.fr', '07.32.82.33.23', 'aray', 3, 9, 9), -- username : aray 
+    ('09418642', 'Kimberly', 'Chapman', 'kchapman@iut.univ-paris8.fr', '07.75.94.12.23', 'kchapman', 3, 9, 9), -- username : kchapman 
+    ('16434563', 'Brett', 'Gray', 'bgray@iut.univ-paris8.fr', '07.39.09.20.38', 'bgray', 3, 9, 9), -- username : bgray 
+    ('41805988', 'Dawn', 'Horn', 'dhorn@iut.univ-paris8.fr', '07.76.91.91.95', 'dhorn', 3, 9, 9), -- username : dhorn 
+    ('31272225', 'Emily', 'Hernandez', 'ehernandez@iut.univ-paris8.fr', '06.53.87.21.91', 'ehernandez', 3, 9, 9), -- username : ehernandez 
+    ('70829776', 'John', 'Stewart', 'jstewart@iut.univ-paris8.fr', '07.45.59.82.00', 'jstewart', 3, 9, 9), -- username : jstewart 
+    ('65261957', 'Michael', 'Heath', 'mheath@iut.univ-paris8.fr', '07.72.00.81.73', 'mheath', 3, 9, 9), -- username : mheath 
+    ('87550824', 'Julia', 'Long', 'jlong@iut.univ-paris8.fr', '07.17.79.62.63', 'jlong', 3, 9, 9), -- username : jlong 
+    ('60881626', 'Wanda', 'Cabrera', 'wcabrera@iut.univ-paris8.fr', '07.67.00.57.26', 'wcabrera', 3, 9, 9), -- username : wcabrera 
+    ('09884147', 'Michelle', 'Gordon', 'mgordon@iut.univ-paris8.fr', '07.68.72.40.68', 'mgordon', 3, 9, 53), -- username : mgordon 
+    ('44097949', 'Mindy', 'Fisher', 'mfisher@iut.univ-paris8.fr', '06.04.75.42.27', 'mfisher', 3, 9, 53), -- username : mfisher 
+    ('52558982', 'Mariah', 'Mckinney', 'mmckinney@iut.univ-paris8.fr', '07.84.50.35.63', 'mmckinney', 3, 9, 53), -- username : mmckinney 
+    ('99558832', 'Ralph', 'Graham', 'rgraham@iut.univ-paris8.fr', '06.12.71.68.56', 'rgraham', 3, 9, 53), -- username : rgraham 
+    ('97279228', 'Paul', 'Steele', 'psteele@iut.univ-paris8.fr', '07.94.88.18.25', 'psteele', 3, 9, 53), -- username : psteele 
+    ('03272737', 'Stephanie', 'Mcgee', 'smcgee@iut.univ-paris8.fr', '06.74.55.42.13', 'smcgee', 3, 9, 53), -- username : smcgee 
+    ('73081737', 'Jill', 'Smith', 'jsmith1@iut.univ-paris8.fr', '06.61.52.61.52', 'jsmith1', 3, 9, 53), -- username : jsmith1 
+    ('15860207', 'Anna', 'Jones', 'ajones@iut.univ-paris8.fr', '06.60.77.61.28', 'ajones', 3, 9, 53), -- username : ajones 
+    ('65901311', 'Tim', 'Turner', 'tturner@iut.univ-paris8.fr', '06.85.95.53.03', 'tturner', 3, 9, 53), -- username : tturner 
+    ('45968468', 'Sheri', 'Mcclain', 'smcclain@iut.univ-paris8.fr', '07.95.27.05.78', 'smcclain', 3, 9, 53), -- username : smcclain 
+    ('96196467', 'Rachel', 'Fry', 'rfry@iut.univ-paris8.fr', '06.38.90.52.72', 'rfry', 3, 9, 97), -- username : rfry 
+    ('00452115', 'Eric', 'Sullivan', 'esullivan@iut.univ-paris8.fr', '07.60.18.94.83', 'esullivan', 3, 9, 97), -- username : esullivan 
+    ('18270342', 'Michele', 'Harmon', 'mharmon@iut.univ-paris8.fr', '06.56.15.53.43', 'mharmon', 3, 9, 97), -- username : mharmon 
+    ('80946090', 'Jennifer', 'Gill', 'jgill@iut.univ-paris8.fr', '06.42.34.71.39', 'jgill', 3, 9, 97), -- username : jgill 
+    ('79539131', 'Vincent', 'Sutton', 'vsutton@iut.univ-paris8.fr', '06.94.87.70.47', 'vsutton', 3, 9, 97), -- username : vsutton 
+    ('29588016', 'Tony', 'Mitchell', 'tmitchell@iut.univ-paris8.fr', '07.14.25.85.49', 'tmitchell', 3, 9, 97), -- username : tmitchell 
+    ('65489309', 'Nicole', 'Mcdaniel', 'nmcdaniel@iut.univ-paris8.fr', '06.59.86.64.00', 'nmcdaniel', 3, 9, 97), -- username : nmcdaniel 
+    ('69306443', 'Nicole', 'Powell', 'npowell@iut.univ-paris8.fr', '07.63.82.13.16', 'npowell', 3, 9, 97), -- username : npowell 
+    ('47054174', 'Virginia', 'Hale', 'vhale@iut.univ-paris8.fr', '07.84.72.10.93', 'vhale', 3, 9, 97), -- username : vhale 
+    ('92249860', 'Kenneth', 'Smith', 'ksmith@iut.univ-paris8.fr', '06.64.08.74.61', 'ksmith', 3, 9, 97), -- username : ksmith 
+    ('63526323', 'Samantha', 'Perez', 'sperez@iut.univ-paris8.fr', '07.07.25.22.58', 'sperez', 3, 41, 41), -- username : sperez 
+    ('48738859', 'Christopher', 'Walsh', 'cwalsh@iut.univ-paris8.fr', '07.11.06.90.40', 'cwalsh', 3, 41, 41), -- username : cwalsh 
+    ('54409309', 'Angela', 'Melendez', 'amelendez@iut.univ-paris8.fr', '07.39.49.77.92', 'amelendez', 3, 41, 41), -- username : amelendez 
+    ('14474347', 'Pam', 'Wong', 'pwong@iut.univ-paris8.fr', '07.66.00.76.22', 'pwong', 3, 41, 41), -- username : pwong 
+    ('87511457', 'Phillip', 'Barker', 'pbarker@iut.univ-paris8.fr', '06.83.32.41.49', 'pbarker', 3, 41, 41), -- username : pbarker 
+    ('09428510', 'Alejandro', 'Edwards', 'aedwards@iut.univ-paris8.fr', '06.19.32.75.27', 'aedwards', 3, 41, 41), -- username : aedwards 
+    ('24260016', 'Evan', 'Johnston', 'ejohnston@iut.univ-paris8.fr', '06.96.65.01.33', 'ejohnston', 3, 41, 41), -- username : ejohnston 
+    ('70429212', 'Jennifer', 'Martin', 'jmartin@iut.univ-paris8.fr', '07.19.48.10.80', 'jmartin', 3, 41, 41), -- username : jmartin 
+    ('80413637', 'Kathleen', 'Lara', 'klara@iut.univ-paris8.fr', '07.29.71.41.15', 'klara', 3, 41, 41), -- username : klara 
+    ('25169355', 'Kerry', 'Nolan', 'knolan1@iut.univ-paris8.fr', '06.45.79.89.47', 'knolan1', 3, 41, 41), -- username : knolan1 
+    ('22271531', 'Denise', 'Evans', 'devans@iut.univ-paris8.fr', '06.30.04.08.11', 'devans', 3, 41, 85), -- username : devans 
+    ('38959728', 'Danielle', 'Jones', 'djones1@iut.univ-paris8.fr', '06.30.50.70.40', 'djones1', 3, 41, 85), -- username : djones1 
+    ('44031381', 'Kathleen', 'Lee', 'klee1@iut.univ-paris8.fr', '07.57.58.31.94', 'klee1', 3, 41, 85), -- username : klee1 
+    ('36502621', 'Christopher', 'Matthews', 'cmatthews@iut.univ-paris8.fr', '06.56.19.25.12', 'cmatthews', 3, 41, 85), -- username : cmatthews 
+    ('66709929', 'Daniel', 'Griffin', 'dgriffin@iut.univ-paris8.fr', '06.57.11.84.47', 'dgriffin', 3, 41, 85), -- username : dgriffin 
+    ('73711545', 'Michael', 'Miller', 'mmiller@iut.univ-paris8.fr', '06.55.51.21.67', 'mmiller', 3, 41, 85), -- username : mmiller 
+    ('09211379', 'Isabel', 'Davenport', 'idavenport@iut.univ-paris8.fr', '06.41.39.85.92', 'idavenport', 3, 41, 85), -- username : idavenport 
+    ('21831631', 'Suzanne', 'Bradley', 'sbradley@iut.univ-paris8.fr', '06.41.04.63.03', 'sbradley', 3, 41, 85), -- username : sbradley 
+    ('88522207', 'Ricardo', 'Galvan', 'rgalvan@iut.univ-paris8.fr', '06.06.58.47.20', 'rgalvan', 3, 41, 85), -- username : rgalvan 
+    ('66022078', 'Matthew', 'Green', 'mgreen@iut.univ-paris8.fr', '06.88.59.01.07', 'mgreen', 3, 41, 85), -- username : mgreen 
+    ('13271760', 'Keith', 'Garcia', 'kgarcia1@iut.univ-paris8.fr', '06.22.33.20.03', 'kgarcia1', 3, 41, 129), -- username : kgarcia1 
+    ('31931016', 'Matthew', 'Berry', 'mberry1@iut.univ-paris8.fr', '07.14.30.36.01', 'mberry1', 3, 41, 129), -- username : mberry1 
+    ('96191561', 'Kenneth', 'Patrick', 'kpatrick@iut.univ-paris8.fr', '06.67.90.79.90', 'kpatrick', 3, 41, 129), -- username : kpatrick 
+    ('63138035', 'Matthew', 'Powell', 'mpowell@iut.univ-paris8.fr', '06.14.13.13.28', 'mpowell', 3, 41, 129), -- username : mpowell 
+    ('05072068', 'Brandon', 'Gilmore', 'bgilmore@iut.univ-paris8.fr', '06.78.58.44.15', 'bgilmore', 3, 41, 129), -- username : bgilmore 
+    ('26574996', 'Joseph', 'Torres', 'jtorres@iut.univ-paris8.fr', '07.40.58.29.44', 'jtorres', 3, 41, 129), -- username : jtorres 
+    ('57583722', 'Sergio', 'Harding', 'sharding@iut.univ-paris8.fr', '07.19.24.84.68', 'sharding', 3, 41, 129), -- username : sharding 
+    ('46393792', 'Chelsea', 'Rivera', 'crivera@iut.univ-paris8.fr', '07.64.33.87.92', 'crivera', 3, 41, 129), -- username : crivera 
+    ('28529513', 'Jamie', 'Eaton', 'jeaton@iut.univ-paris8.fr', '07.80.71.71.26', 'jeaton', 3, 41, 129), -- username : jeaton 
+    ('45101044', 'Daniel', 'Bautista', 'dbautista@iut.univ-paris8.fr', '07.99.51.67.66', 'dbautista', 3, 41, 129), -- username : dbautista 
+    ('97182223', 'Scott', 'Carlson', 'scarlson1@iut.univ-paris8.fr', '06.41.65.59.03', 'scarlson1', 3, 42, 42), -- username : scarlson1 
+    ('12803988', 'Cassandra', 'Carrillo', 'ccarrillo@iut.univ-paris8.fr', '07.55.79.27.21', 'ccarrillo', 3, 42, 42), -- username : ccarrillo 
+    ('72645926', 'Jeffrey', 'Burke', 'jburke@iut.univ-paris8.fr', '06.43.56.01.80', 'jburke', 3, 42, 42), -- username : jburke 
+    ('85327721', 'Kevin', 'Bradley', 'kbradley@iut.univ-paris8.fr', '06.51.66.08.91', 'kbradley', 3, 42, 42), -- username : kbradley 
+    ('39839625', 'Laura', 'Owens', 'lowens@iut.univ-paris8.fr', '07.42.15.46.96', 'lowens', 3, 42, 42), -- username : lowens 
+    ('05046416', 'Joseph', 'Allen', 'jallen@iut.univ-paris8.fr', '06.90.92.94.26', 'jallen', 3, 42, 42), -- username : jallen 
+    ('34975741', 'Mary', 'Johns', 'mjohns@iut.univ-paris8.fr', '07.94.54.24.58', 'mjohns', 3, 42, 42), -- username : mjohns 
+    ('61700128', 'Scott', 'Roberts', 'sroberts@iut.univ-paris8.fr', '07.59.88.11.10', 'sroberts', 3, 42, 42), -- username : sroberts 
+    ('53465820', 'Christopher', 'Cole', 'ccole@iut.univ-paris8.fr', '06.94.94.96.98', 'ccole', 3, 42, 42), -- username : ccole 
+    ('83239826', 'Nicholas', 'Cox', 'ncox@iut.univ-paris8.fr', '07.11.05.39.84', 'ncox', 3, 42, 42), -- username : ncox 
+    ('27682878', 'Lisa', 'Burnett', 'lburnett@iut.univ-paris8.fr', '07.57.32.85.05', 'lburnett', 3, 42, 86), -- username : lburnett 
+    ('94191882', 'Manuel', 'Dunn', 'mdunn@iut.univ-paris8.fr', '07.28.20.49.43', 'mdunn', 3, 42, 86), -- username : mdunn 
+    ('61659801', 'Anthony', 'Riley', 'ariley@iut.univ-paris8.fr', '07.14.38.90.56', 'ariley', 3, 42, 86), -- username : ariley 
+    ('67245791', 'Brenda', 'Bartlett', 'bbartlett@iut.univ-paris8.fr', '07.16.03.32.73', 'bbartlett', 3, 42, 86), -- username : bbartlett 
+    ('61209740', 'Stephanie', 'Velez', 'svelez@iut.univ-paris8.fr', '07.46.75.30.05', 'svelez', 3, 42, 86), -- username : svelez 
+    ('60370156', 'Susan', 'Johnston', 'sjohnston@iut.univ-paris8.fr', '06.66.82.11.34', 'sjohnston', 3, 42, 86), -- username : sjohnston 
+    ('58810260', 'Matthew', 'Brown', 'mbrown@iut.univ-paris8.fr', '06.29.67.11.57', 'mbrown', 3, 42, 86), -- username : mbrown 
+    ('67136347', 'Michael', 'Smith', 'msmith1@iut.univ-paris8.fr', '07.52.10.17.15', 'msmith1', 3, 42, 86), -- username : msmith1 
+    ('97988292', 'Carolyn', 'Ingram', 'cingram@iut.univ-paris8.fr', '06.09.27.67.90', 'cingram', 3, 42, 86), -- username : cingram 
+    ('86046584', 'Madison', 'Rodriguez', 'mrodriguez@iut.univ-paris8.fr', '07.83.47.12.08', 'mrodriguez', 3, 42, 86), -- username : mrodriguez 
+    ('03889614', 'Stephanie', 'Young', 'syoung@iut.univ-paris8.fr', '07.56.18.56.98', 'syoung', 3, 42, 130), -- username : syoung 
+    ('57593565', 'Tammy', 'Matthews', 'tmatthews@iut.univ-paris8.fr', '06.11.42.92.73', 'tmatthews', 3, 42, 130), -- username : tmatthews 
+    ('90162045', 'Shelby', 'Robertson', 'srobertson@iut.univ-paris8.fr', '07.46.56.28.66', 'srobertson', 3, 42, 130), -- username : srobertson 
+    ('61157378', 'Christian', 'Schultz', 'cschultz@iut.univ-paris8.fr', '07.17.54.92.76', 'cschultz', 3, 42, 130), -- username : cschultz 
+    ('48700879', 'Christian', 'Robinson', 'crobinson@iut.univ-paris8.fr', '07.15.36.58.84', 'crobinson', 3, 42, 130), -- username : crobinson 
+    ('22246929', 'Nancy', 'Arnold', 'narnold@iut.univ-paris8.fr', '06.30.10.59.02', 'narnold', 3, 42, 130), -- username : narnold 
+    ('82273541', 'Gary', 'Todd', 'gtodd@iut.univ-paris8.fr', '06.15.11.94.88', 'gtodd', 3, 42, 130), -- username : gtodd 
+    ('11218512', 'Michael', 'Turner', 'mturner@iut.univ-paris8.fr', '06.43.39.96.12', 'mturner', 3, 42, 130), -- username : mturner 
+    ('23427435', 'Jade', 'Hodge', 'jhodge@iut.univ-paris8.fr', '06.99.10.47.24', 'jhodge', 3, 42, 130), -- username : jhodge 
+    ('63812744', 'Jeffrey', 'George', 'jgeorge@iut.univ-paris8.fr', '07.97.12.21.20', 'jgeorge', 3, 42, 130), -- username : jgeorge 
+    ('50096494', 'Drew', 'Collins', 'dcollins@iut.univ-paris8.fr', '06.04.85.73.34', 'dcollins', 3, 32, 32), -- username : dcollins 
+    ('24656168', 'Joseph', 'Mann', 'jmann@iut.univ-paris8.fr', '07.86.95.49.68', 'jmann', 3, 32, 32), -- username : jmann 
+    ('03318362', 'Gabriel', 'Stanley', 'gstanley@iut.univ-paris8.fr', '07.05.63.62.62', 'gstanley', 3, 32, 32), -- username : gstanley 
+    ('72623260', 'Nicholas', 'Fischer', 'nfischer@iut.univ-paris8.fr', '06.08.08.36.61', 'nfischer', 3, 32, 32), -- username : nfischer 
+    ('32604759', 'Thomas', 'Morris', 'tmorris@iut.univ-paris8.fr', '07.11.41.50.44', 'tmorris', 3, 32, 32), -- username : tmorris 
+    ('53075951', 'Kyle', 'Lee', 'klee@iut.univ-paris8.fr', '07.09.99.74.60', 'klee', 3, 32, 32), -- username : klee 
+    ('82217924', 'Whitney', 'Becker', 'wbecker@iut.univ-paris8.fr', '07.49.95.58.58', 'wbecker', 3, 32, 32), -- username : wbecker 
+    ('40041983', 'Dana', 'Singh', 'dsingh@iut.univ-paris8.fr', '07.99.24.92.16', 'dsingh', 3, 32, 32), -- username : dsingh 
+    ('34257159', 'Michael', 'Carr', 'mcarr@iut.univ-paris8.fr', '07.20.28.33.62', 'mcarr', 3, 32, 32), -- username : mcarr 
+    ('48074989', 'James', 'Bowers', 'jbowers@iut.univ-paris8.fr', '07.02.78.38.70', 'jbowers', 3, 32, 32), -- username : jbowers 
+    ('09864878', 'Linda', 'Wallace', 'lwallace@iut.univ-paris8.fr', '06.94.54.83.55', 'lwallace', 3, 32, 76), -- username : lwallace 
+    ('00448365', 'Mary', 'Williams', 'mwilliams1@iut.univ-paris8.fr', '07.00.48.01.96', 'mwilliams1', 3, 32, 76), -- username : mwilliams1 
+    ('00529996', 'Evelyn', 'Coleman', 'ecoleman@iut.univ-paris8.fr', '06.71.87.35.85', 'ecoleman', 3, 32, 76), -- username : ecoleman 
+    ('28927531', 'Jill', 'Brown', 'jbrown@iut.univ-paris8.fr', '07.82.78.79.85', 'jbrown', 3, 32, 76), -- username : jbrown 
+    ('43444697', 'Matthew', 'Smith', 'msmith@iut.univ-paris8.fr', '06.03.21.32.55', 'msmith', 3, 32, 76), -- username : msmith 
+    ('60564055', 'Melissa', 'Gilbert', 'mgilbert@iut.univ-paris8.fr', '06.36.64.18.02', 'mgilbert', 3, 32, 76), -- username : mgilbert 
+    ('44653053', 'Craig', 'Walker', 'cwalker@iut.univ-paris8.fr', '06.12.74.49.48', 'cwalker', 3, 32, 76), -- username : cwalker 
+    ('48112271', 'Brooke', 'Anderson', 'banderson2@iut.univ-paris8.fr', '07.38.64.25.31', 'banderson2', 3, 32, 76), -- username : banderson2 
+    ('57917835', 'Drew', 'Smith', 'dsmith@iut.univ-paris8.fr', '06.30.47.59.78', 'dsmith', 3, 32, 76), -- username : dsmith 
+    ('25658512', 'Brian', 'Wise', 'bwise@iut.univ-paris8.fr', '06.32.44.57.66', 'bwise', 3, 32, 76), -- username : bwise 
+    ('24289612', 'Melissa', 'Jones', 'mjones3@iut.univ-paris8.fr', '06.31.24.22.86', 'mjones3', 3, 32, 120), -- username : mjones3 
+    ('63441701', 'Robert', 'Mendez', 'rmendez@iut.univ-paris8.fr', '07.71.18.12.78', 'rmendez', 3, 32, 120), -- username : rmendez 
+    ('04815293', 'Brian', 'Anderson', 'banderson1@iut.univ-paris8.fr', '06.77.55.50.70', 'banderson1', 3, 32, 120), -- username : banderson1 
+    ('68837672', 'Andrew', 'Harrison', 'aharrison@iut.univ-paris8.fr', '06.51.99.44.59', 'aharrison', 3, 32, 120), -- username : aharrison 
+    ('44228074', 'Roy', 'Daniels', 'rdaniels@iut.univ-paris8.fr', '06.62.79.47.40', 'rdaniels', 3, 32, 120), -- username : rdaniels 
+    ('56547951', 'Donna', 'Mcclain', 'dmcclain@iut.univ-paris8.fr', '06.38.64.61.94', 'dmcclain', 3, 32, 120), -- username : dmcclain 
+    ('34235172', 'Amber', 'Williams', 'awilliams@iut.univ-paris8.fr', '06.92.82.84.61', 'awilliams', 3, 32, 120), -- username : awilliams 
+    ('81792476', 'David', 'Yang', 'dyang@iut.univ-paris8.fr', '07.39.93.51.17', 'dyang', 3, 32, 120), -- username : dyang 
+    ('16695334', 'Richard', 'Harris', 'rharris@iut.univ-paris8.fr', '07.87.46.59.65', 'rharris', 3, 32, 120), -- username : rharris 
+    ('42029038', 'Charlene', 'Peters', 'cpeters@iut.univ-paris8.fr', '07.74.78.14.29', 'cpeters', 3, 32, 120), -- username : cpeters 
+    ('72934906', 'Ronald', 'Lee', 'rlee@iut.univ-paris8.fr', '06.91.42.78.21', 'rlee', 3, 31, 31), -- username : rlee 
+    ('90471047', 'Megan', 'Edwards', 'medwards@iut.univ-paris8.fr', '07.79.58.58.40', 'medwards', 3, 31, 31), -- username : medwards 
+    ('71538399', 'Vincent', 'Williams', 'vwilliams@iut.univ-paris8.fr', '07.20.32.35.68', 'vwilliams', 3, 31, 31), -- username : vwilliams 
+    ('04216737', 'Charlene', 'Sullivan', 'csullivan@iut.univ-paris8.fr', '06.67.05.76.09', 'csullivan', 3, 31, 31), -- username : csullivan 
+    ('31681059', 'David', 'Tyler', 'dtyler@iut.univ-paris8.fr', '07.91.96.89.17', 'dtyler', 3, 31, 31), -- username : dtyler 
+    ('55077420', 'Sharon', 'Gonzalez', 'sgonzalez@iut.univ-paris8.fr', '07.96.02.95.22', 'sgonzalez', 3, 31, 31), -- username : sgonzalez 
+    ('56787478', 'Kathleen', 'Ramos', 'kramos@iut.univ-paris8.fr', '06.56.70.94.24', 'kramos', 3, 31, 31), -- username : kramos 
+    ('24462723', 'Nicole', 'Robinson', 'nrobinson@iut.univ-paris8.fr', '06.32.47.99.07', 'nrobinson', 3, 31, 31), -- username : nrobinson 
+    ('95227604', 'Traci', 'Rose', 'trose@iut.univ-paris8.fr', '07.99.69.13.92', 'trose', 3, 31, 31), -- username : trose 
+    ('70313445', 'Jean', 'Gaines', 'jgaines@iut.univ-paris8.fr', '06.93.39.89.26', 'jgaines', 3, 31, 31), -- username : jgaines 
+    ('93024847', 'Karla', 'Reyes', 'kreyes@iut.univ-paris8.fr', '06.67.23.59.74', 'kreyes', 3, 31, 75), -- username : kreyes 
+    ('55947953', 'Brett', 'Ellis', 'bellis@iut.univ-paris8.fr', '06.03.47.90.28', 'bellis', 3, 31, 75), -- username : bellis 
+    ('46435781', 'Daniel', 'Taylor', 'dtaylor@iut.univ-paris8.fr', '07.16.84.14.85', 'dtaylor', 3, 31, 75), -- username : dtaylor 
+    ('54593169', 'Nicholas', 'Brown', 'nbrown@iut.univ-paris8.fr', '06.64.92.76.91', 'nbrown', 3, 31, 75), -- username : nbrown 
+    ('69641181', 'Kathy', 'Bauer', 'kbauer@iut.univ-paris8.fr', '07.62.24.12.07', 'kbauer', 3, 31, 75), -- username : kbauer 
+    ('31301010', 'Samuel', 'Brady', 'sbrady@iut.univ-paris8.fr', '07.61.41.15.65', 'sbrady', 3, 31, 75), -- username : sbrady 
+    ('63065792', 'Rebecca', 'Guzman', 'rguzman@iut.univ-paris8.fr', '06.35.53.00.45', 'rguzman', 3, 31, 75), -- username : rguzman 
+    ('62904728', 'Christopher', 'Jackson', 'cjackson@iut.univ-paris8.fr', '07.31.01.33.10', 'cjackson', 3, 31, 75), -- username : cjackson 
+    ('13736525', 'David', 'Robertson', 'drobertson@iut.univ-paris8.fr', '06.72.35.47.02', 'drobertson', 3, 31, 75), -- username : drobertson 
+    ('02701805', 'Alicia', 'Chen', 'achen@iut.univ-paris8.fr', '06.06.55.28.06', 'achen', 3, 31, 75), -- username : achen 
+    ('93748757', 'Gregory', 'Miller', 'gmiller@iut.univ-paris8.fr', '07.60.88.14.46', 'gmiller', 3, 31, 119), -- username : gmiller 
+    ('14175404', 'Stephanie', 'Mcintyre', 'smcintyre@iut.univ-paris8.fr', '07.86.73.95.83', 'smcintyre', 3, 31, 119), -- username : smcintyre 
+    ('65514984', 'Meghan', 'Moreno', 'mmoreno@iut.univ-paris8.fr', '07.04.66.16.28', 'mmoreno', 3, 31, 119), -- username : mmoreno 
+    ('43447127', 'Doris', 'Jones', 'djones@iut.univ-paris8.fr', '06.67.67.50.87', 'djones', 3, 31, 119), -- username : djones 
+    ('60889620', 'Michael', 'Gibbs', 'mgibbs@iut.univ-paris8.fr', '07.28.98.38.46', 'mgibbs', 3, 31, 119), -- username : mgibbs 
+    ('24912056', 'Connie', 'Stewart', 'cstewart1@iut.univ-paris8.fr', '06.22.09.37.36', 'cstewart1', 3, 31, 119), -- username : cstewart1 
+    ('38995733', 'Lisa', 'Carey', 'lcarey@iut.univ-paris8.fr', '07.63.76.01.65', 'lcarey', 3, 31, 119), -- username : lcarey 
+    ('11316402', 'Mike', 'Nelson', 'mnelson@iut.univ-paris8.fr', '06.95.18.70.99', 'mnelson', 3, 31, 119), -- username : mnelson 
+    ('21859484', 'Brian', 'Mitchell', 'bmitchell@iut.univ-paris8.fr', '06.05.90.80.86', 'bmitchell', 3, 31, 119), -- username : bmitchell 
+    ('27391560', 'Joshua', 'Merritt', 'jmerritt@iut.univ-paris8.fr', '07.04.34.04.98', 'jmerritt', 3, 31, 119), -- username : jmerritt 
+    ('70679823', 'Brittney', 'Brown', 'bbrown@iut.univ-paris8.fr', '07.54.66.68.27', 'bbrown', 3, 33, 33), -- username : bbrown 
+    ('31282791', 'Jennifer', 'Ward', 'jward@iut.univ-paris8.fr', '06.99.83.92.82', 'jward', 3, 33, 33), -- username : jward 
+    ('21028309', 'Michael', 'Bennett', 'mbennett@iut.univ-paris8.fr', '06.10.51.07.47', 'mbennett', 3, 33, 33), -- username : mbennett 
+    ('32375523', 'Martin', 'King', 'mking@iut.univ-paris8.fr', '07.39.37.58.00', 'mking', 3, 33, 33), -- username : mking 
+    ('68098590', 'Evan', 'Osborne', 'eosborne@iut.univ-paris8.fr', '06.07.52.22.08', 'eosborne', 3, 33, 33), -- username : eosborne 
+    ('64737382', 'Sean', 'Chung', 'schung@iut.univ-paris8.fr', '06.87.83.85.06', 'schung', 3, 33, 33), -- username : schung 
+    ('22229855', 'Brenda', 'Mcclure', 'bmcclure@iut.univ-paris8.fr', '06.69.34.00.41', 'bmcclure', 3, 33, 33), -- username : bmcclure 
+    ('47923286', 'Diana', 'Gilbert', 'dgilbert@iut.univ-paris8.fr', '06.13.07.75.74', 'dgilbert', 3, 33, 33), -- username : dgilbert 
+    ('74256995', 'William', 'Miller', 'wmiller@iut.univ-paris8.fr', '07.16.30.71.59', 'wmiller', 3, 33, 33), -- username : wmiller 
+    ('81386395', 'Shelly', 'Walsh', 'swalsh@iut.univ-paris8.fr', '07.35.45.68.94', 'swalsh', 3, 33, 33), -- username : swalsh 
+    ('24336587', 'Robert', 'Holden', 'rholden@iut.univ-paris8.fr', '07.43.37.17.73', 'rholden', 3, 33, 77), -- username : rholden 
+    ('73457420', 'Dawn', 'Cox', 'dcox@iut.univ-paris8.fr', '07.92.47.87.11', 'dcox', 3, 33, 77), -- username : dcox 
+    ('06978739', 'Matthew', 'Chavez', 'mchavez@iut.univ-paris8.fr', '07.96.61.79.53', 'mchavez', 3, 33, 77), -- username : mchavez 
+    ('69500164', 'Cameron', 'Mckinney', 'cmckinney@iut.univ-paris8.fr', '07.54.70.37.54', 'cmckinney', 3, 33, 77), -- username : cmckinney 
+    ('68796671', 'Richard', 'Tanner', 'rtanner@iut.univ-paris8.fr', '06.22.12.03.97', 'rtanner', 3, 33, 77), -- username : rtanner 
+    ('68615248', 'Belinda', 'Strong', 'bstrong@iut.univ-paris8.fr', '06.98.91.99.92', 'bstrong', 3, 33, 77), -- username : bstrong 
+    ('76587719', 'Tracey', 'Rodriguez', 'trodriguez@iut.univ-paris8.fr', '07.63.32.68.63', 'trodriguez', 3, 33, 77), -- username : trodriguez 
+    ('38461204', 'Sheila', 'Oneill', 'soneill@iut.univ-paris8.fr', '06.08.05.07.89', 'soneill', 3, 33, 77), -- username : soneill 
+    ('72467108', 'David', 'Rosales', 'drosales@iut.univ-paris8.fr', '06.89.31.06.00', 'drosales', 3, 33, 77), -- username : drosales 
+    ('80033328', 'Sharon', 'Solis', 'ssolis@iut.univ-paris8.fr', '06.82.48.82.84', 'ssolis', 3, 33, 77), -- username : ssolis 
+    ('05188739', 'Jamie', 'Smith', 'jsmith@iut.univ-paris8.fr', '07.81.84.54.85', 'jsmith', 3, 33, 121), -- username : jsmith 
+    ('72639053', 'Pamela', 'Stephens', 'pstephens@iut.univ-paris8.fr', '06.53.48.24.49', 'pstephens', 3, 33, 121), -- username : pstephens 
+    ('47267137', 'Cory', 'Johnson', 'cjohnson@iut.univ-paris8.fr', '07.75.80.89.49', 'cjohnson', 3, 33, 121), -- username : cjohnson 
+    ('27694428', 'Debbie', 'Griffith', 'dgriffith@iut.univ-paris8.fr', '07.27.40.63.28', 'dgriffith', 3, 33, 121), -- username : dgriffith 
+    ('79980222', 'Kelly', 'Jackson', 'kjackson@iut.univ-paris8.fr', '07.03.04.25.38', 'kjackson', 3, 33, 121), -- username : kjackson 
+    ('84100021', 'Shelby', 'Castro', 'scastro@iut.univ-paris8.fr', '07.32.98.63.69', 'scastro', 3, 33, 121), -- username : scastro 
+    ('58277882', 'James', 'Manning', 'jmanning1@iut.univ-paris8.fr', '06.64.10.65.42', 'jmanning1', 3, 33, 121), -- username : jmanning1 
+    ('65010221', 'David', 'Kim', 'dkim@iut.univ-paris8.fr', '07.95.15.90.78', 'dkim', 3, 33, 121), -- username : dkim 
+    ('73371683', 'Kevin', 'Murphy', 'kmurphy@iut.univ-paris8.fr', '07.06.62.57.93', 'kmurphy', 3, 33, 121), -- username : kmurphy 
+    ('39387847', 'Tammy', 'Freeman', 'tfreeman@iut.univ-paris8.fr', '06.73.19.64.00', 'tfreeman', 3, 33, 121), -- username : tfreeman 
+    ('29996849', 'Jennifer', 'Manning', 'jmanning@iut.univ-paris8.fr', '07.25.96.76.80', 'jmanning', 3, 8, 8), -- username : jmanning 
+    ('19118587', 'Jared', 'Kelly', 'jkelly@iut.univ-paris8.fr', '06.44.22.69.32', 'jkelly', 3, 8, 8), -- username : jkelly 
+    ('79808851', 'Russell', 'Joseph', 'rjoseph@iut.univ-paris8.fr', '07.32.19.56.68', 'rjoseph', 3, 8, 8), -- username : rjoseph 
+    ('99642991', 'Amber', 'Nelson', 'anelson@iut.univ-paris8.fr', '06.30.67.63.10', 'anelson', 3, 8, 8), -- username : anelson 
+    ('61109811', 'Erica', 'Williams', 'ewilliams@iut.univ-paris8.fr', '07.33.02.27.06', 'ewilliams', 3, 8, 8), -- username : ewilliams 
+    ('23536743', 'Haley', 'Duke', 'hduke@iut.univ-paris8.fr', '07.92.07.18.06', 'hduke', 3, 8, 8), -- username : hduke 
+    ('71420286', 'Margaret', 'Farley', 'mfarley@iut.univ-paris8.fr', '07.01.94.90.56', 'mfarley', 3, 8, 8), -- username : mfarley 
+    ('86252357', 'Philip', 'Hebert', 'phebert1@iut.univ-paris8.fr', '07.65.55.51.19', 'phebert1', 3, 8, 8), -- username : phebert1 
+    ('41222896', 'Joanne', 'Thomas', 'jthomas@iut.univ-paris8.fr', '06.63.82.90.39', 'jthomas', 3, 8, 8), -- username : jthomas 
+    ('67777962', 'Pamela', 'Flynn', 'pflynn@iut.univ-paris8.fr', '07.70.27.39.93', 'pflynn', 3, 8, 8), -- username : pflynn 
+    ('81429502', 'Nicole', 'Jones', 'njones@iut.univ-paris8.fr', '07.26.24.07.51', 'njones', 3, 8, 52), -- username : njones 
+    ('30774932', 'Elizabeth', 'Anderson', 'eanderson@iut.univ-paris8.fr', '07.62.90.65.80', 'eanderson', 3, 8, 52), -- username : eanderson 
+    ('90522460', 'Daniel', 'Curtis', 'dcurtis@iut.univ-paris8.fr', '07.02.08.67.87', 'dcurtis', 3, 8, 52), -- username : dcurtis 
+    ('53104247', 'Lisa', 'Hicks', 'lhicks@iut.univ-paris8.fr', '07.22.45.03.15', 'lhicks', 3, 8, 52), -- username : lhicks 
+    ('84184073', 'Gerald', 'White', 'gwhite@iut.univ-paris8.fr', '06.87.61.57.61', 'gwhite', 3, 8, 52), -- username : gwhite 
+    ('13460070', 'Holly', 'Rivera', 'hrivera@iut.univ-paris8.fr', '06.72.35.76.70', 'hrivera', 3, 8, 52), -- username : hrivera 
+    ('83788155', 'Joseph', 'Best', 'jbest@iut.univ-paris8.fr', '06.30.92.71.82', 'jbest', 3, 8, 52), -- username : jbest 
+    ('39133598', 'Michael', 'Garza', 'mgarza@iut.univ-paris8.fr', '07.67.37.99.66', 'mgarza', 3, 8, 52), -- username : mgarza 
+    ('56809928', 'Jared', 'Bowman', 'jbowman@iut.univ-paris8.fr', '06.42.06.16.18', 'jbowman', 3, 8, 52), -- username : jbowman 
+    ('93089735', 'Kevin', 'Baker', 'kbaker@iut.univ-paris8.fr', '07.76.08.06.68', 'kbaker', 3, 8, 52), -- username : kbaker 
+    ('55818582', 'Robert', 'Miller', 'rmiller1@iut.univ-paris8.fr', '06.67.54.87.47', 'rmiller1', 3, 8, 96), -- username : rmiller1 
+    ('44038549', 'Joshua', 'Stephens', 'jstephens@iut.univ-paris8.fr', '06.99.42.77.57', 'jstephens', 3, 8, 96), -- username : jstephens 
+    ('06709994', 'Claudia', 'Davidson', 'cdavidson@iut.univ-paris8.fr', '07.93.60.15.44', 'cdavidson', 3, 8, 96), -- username : cdavidson 
+    ('79810703', 'Kimberly', 'Rose', 'krose@iut.univ-paris8.fr', '06.25.05.35.01', 'krose', 3, 8, 96), -- username : krose 
+    ('03802564', 'Claire', 'Moore', 'cmoore1@iut.univ-paris8.fr', '06.55.14.37.31', 'cmoore1', 3, 8, 96), -- username : cmoore1 
+    ('38058755', 'Aaron', 'Gonzales', 'agonzales1@iut.univ-paris8.fr', '06.40.01.10.15', 'agonzales1', 3, 8, 96), -- username : agonzales1 
+    ('79548551', 'Jonathan', 'Fischer', 'jfischer1@iut.univ-paris8.fr', '07.54.71.12.30', 'jfischer1', 3, 8, 96), -- username : jfischer1 
+    ('84073931', 'Scott', 'Jordan', 'sjordan@iut.univ-paris8.fr', '07.33.29.68.90', 'sjordan', 3, 8, 96), -- username : sjordan 
+    ('82072017', 'Tiffany', 'Burke', 'tburke@iut.univ-paris8.fr', '06.65.69.17.81', 'tburke', 3, 8, 96), -- username : tburke 
+    ('49427545', 'Lauren', 'Hughes', 'lhughes@iut.univ-paris8.fr', '06.15.47.03.35', 'lhughes', 3, 8,96) -- username : llhughes 
 ;
 
--- university.students(@student_number,last_name, first_name, mail, phone_number, password, #department_id, #group_id, #subgroup_id)
 -- FAKE for departement GACO
-INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, password, department_id, group_id, subgroup_id)
+-- university.students(@student_number,last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
+INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, user_username, department_id, group_id, subgroup_id)
 VALUES
-    ('82110480','Ichigo','Kurosaki','ikurosaki@iut.univ-paris8.fr','07.31.18.90.10','$2b$12$6XWo52wcpDbz5n66/k9fVeUPvcHRlY5BtvDln33bJkBInudHkaNJa',4,24,24), -- pwd : *1(`{^=`}_/%
-    ('12954159','Rukia','Kuchiki','rkuchiki@iut.univ-paris8.fr','07.16.11.67.69','$2b$12$pdCdleMtnGE/DVBpV8z0aOdP09RgVN7KFI2L5LRbPnantfx2e/0xa',4,24,24), -- pwd : z:|V(on1|pLS
-    ('51013542','William','Ross','wross@iut.univ-paris8.fr','07.97.24.83.04','$2b$12$/CeEbP/ekgP6WgjunbQrp.XZSMyz4fAFX7J/He9fmc6VyObcJXtA6',4,24,24), -- pwd : H)Q.TKGL/};y
-    ('05381263','Julia','Spencer','jspencer@iut.univ-paris8.fr','07.30.95.49.76','$2b$12$maDSc3Gmf3c5J2esKfTCs.4Og0H.WzV6T.EWx9uTlRhl.9tCm9tyi',4,24,24), -- pwd : O2tuT2pg^HX,
-    ('56788690','Angela','Richardson','arichardson@iut.univ-paris8.fr','06.12.25.16.12','$2b$12$XjMiaugt89.4TW8IVeBiVOWGxgUvRw0itZ5zKNNPUEh2e8ZDcpo3W',4,24,24), -- pwd : 2%p+G$'i;w:F
-    ('32256608','William','Bender','wbender@iut.univ-paris8.fr','06.81.85.93.35','$2b$12$JO5cjsRJWaZl1NxOKpSRvOm3KzTm1DsLK6AEXXjDJRyuWbVRX4Die',4,24,24), -- pwd : OU#Fr15*o;q]
-    ('12414367','Andrew','Gibbs','agibbs@iut.univ-paris8.fr','07.73.15.96.74','$2b$12$ypODPEF5PUcv8Afk.t3qoO.SZAZiL4DL8.VjmpmNXr7YWuXtyj31O',4,24,24), -- pwd : (R=.W>7s[<5K
-    ('13489903','Kevin','Nolan','knolan@iut.univ-paris8.fr','07.23.22.82.06','$2b$12$HhOLvg/J/6FlIgD1ry4vgeFut50tHWgwFQv1artOhDRdkrYaY284m',4,24,24), -- pwd : T/*Db{8Gv}Af
-    ('09317093','Tyler','Boyer','tboyer@iut.univ-paris8.fr','07.59.27.18.68','$2b$12$cLWkl0XA2GZ6WYCsNtSOCOKS128mFXvmJ4GFKOXvAeZQdNOg7Zhyq',4,24,24), -- pwd : m4*j"mR!W[P_
-    ('38850039','Taylor','Santos','tsantos@iut.univ-paris8.fr','06.78.32.49.09','$2b$12$cNWyhOb444F6C19Ew8HnLe/y678qPwiIOP3W2sJO9jAc7BvzEeYRu',4,24,24), -- pwd : IE;8r:>%pLzV
-    ('79910389','Mercedes','Franklin','mfranklin@iut.univ-paris8.fr','06.60.92.93.57','$2b$12$U3C1nHjyWAX.tc6O1gLVw.mEVqwuTk1gwfOxgWjzSM4BFU7lglCJy',4,24,68), -- pwd : MPm&P<^u`6^}
-    ('77178576','Aaron','Mullins','amullins@iut.univ-paris8.fr','06.71.37.91.65','$2b$12$9nY3z8F3ZCA0Fu4f3D2F8.2Y2CLyw015CnhvwJWtxwLcGtdtroC1a',4,24,68), -- pwd : #{FHy)-ZDAD7
-    ('67236215','Daniel','Nelson','dnelson@iut.univ-paris8.fr','06.43.44.03.14','$2b$12$zprE/0oA1voXb91QOlzlbeY6MnlCohdIxYJ5RcMw1NmdFByJTkzP6',4,24,68), -- pwd : 1jbPppr$vT$?
-    ('25075962','Sheila','Gomez','sgomez@iut.univ-paris8.fr','06.71.34.91.55','$2b$12$5uOfAIZg3qBM0/0NnjaIb.3A9xaHnguiTM0SqMq518VXLCpPaiOkG',4,24,68), -- pwd : r#~_R!?4Ov$O
-    ('65951003','Christopher','Adams','cadams@iut.univ-paris8.fr','07.42.35.55.32','$2b$12$K.4JQcfrqPZ9FHNo/d3AJ.lIxsFhXkyewwAc5myMSxD4IA86bHgAa',4,24,68), -- pwd : DNPsRAzB=6m{
-    ('05846520','Sherri','Fischer','sfischer@iut.univ-paris8.fr','06.28.10.96.15','$2b$12$yAzPWGwQalPTyQgN4PwIpO3lRCw97pOdbefgyl6scBYdt.PJBIqku',4,24,68), -- pwd : 9x4bsw3.:/8L
-    ('51308951','Isaiah','Molina','imolina@iut.univ-paris8.fr','07.19.79.71.13','$2b$12$jYe725SFZVGZmo7/UsRoveRWhnfQTEPjH/nduXnn.qkL2fEHlID4m',4,24,68), -- pwd : [uHSFDABMwgG
-    ('75990313','Kara','Oliver','koliver@iut.univ-paris8.fr','06.74.81.59.16','$2b$12$RIjaWiRGXWju/9kRDIZkl.RzFFAWY.z5L/Cckuf/daIHuDfqAF5MC',4,24,68), -- pwd : -]b,c("(jQUn
-    ('10541038','Michael','Jackson','mjackson@iut.univ-paris8.fr','07.69.45.71.99','$2b$12$pkUT.mRpt.YVu583IAHe8eMCBDIVV6Od4zGjKIBzzse2ftD.jmQku',4,24,68), -- pwd : 1fFB%3SG_4Ki
-    ('51982555','Michele','Clark','mclark@iut.univ-paris8.fr','06.97.91.06.74','$2b$12$3mBrVwUOzywBg8QgR72vEuTuKZ1vk/7wKoU3xRe4zU9p3xA4OnOBC',4,24,68), -- pwd : -2WNgboSfxvc
-    ('42085607','Gabrielle','Ramirez','gramirez@iut.univ-paris8.fr','07.24.46.95.69','$2b$12$Xeki8QdUvGee0BnSVF7QU.6HmESmOZxj9AUVJ2tdMR/3yvlK1wkQ2',4,24,112), -- pwd : brAO$p)6+y];
-    ('46708797','Kimberly','Sullivan','ksullivan@iut.univ-paris8.fr','07.80.27.04.54','$2b$12$bGvipXSwYFROkdE3J9pryeNia9NNzq/WfWPxC5s7XG5bqXX2BBSDS',4,24,112), -- pwd : <nos9#t5"SN:
-    ('45315225','Steven','Murphy','smurphy@iut.univ-paris8.fr','06.79.75.70.30','$2b$12$/1usLl5DF3RoMpFmNBBu3eoomolE0t3P78PqikzWjPGy7Q1VBat4O',4,24,112), -- pwd : YrV9][FBL^yS
-    ('01905990','Tyler','Kirby','tkirby@iut.univ-paris8.fr','07.86.82.60.64','$2b$12$sdkAwlGh3dAPvi2KXehr/ecQiePSGaRxtdq.gKEGlAoukcluJ6D3m',4,24,112), -- pwd : rZQprY|,^]+G
-    ('74763899','April','Barron','abarron@iut.univ-paris8.fr','07.39.47.03.05','$2b$12$dlOoszi5.XvzWyQ/kcuMJe.8mkVjht7gNe0wsFjuqAwU4/dC8q1r6',4,24,112), -- pwd : oBqe1w`{G#57
-    ('31696139','Joyce','Dickerson','jdickerson@iut.univ-paris8.fr','07.37.80.19.85','$2b$12$BCyisify6i7yMP1gSVpWUOzRbyQJTV5IuSx8MOBt2Vk9HTWALK/GG',4,24,112), -- pwd : XM^(3R8H]u)e
-    ('77465051','Nancy','Jacobs','njacobs@iut.univ-paris8.fr','07.94.31.23.61','$2b$12$fU0/mDNT4.cqXI8ZTDxAhuOyi71jyECX7JdTmFRsMssAqi04uBR7.',4,24,112), -- pwd : EJi(97DVqd2P
-    ('63171557','Cody','Hogan','chogan@iut.univ-paris8.fr','06.63.48.54.25','$2b$12$qEClMqSvSCwz7Sh8nVTX6u.2clynPcjd9q8jnBKk7e2CoaWXJ8wzW',4,24,112), -- pwd : EtIiW+mWz<5m
-    ('68970935','Chad','Weeks','cweeks@iut.univ-paris8.fr','06.72.77.43.25','$2b$12$G87bvMSoejb0KvnmxnwUn.gKRQeV7ybYLmkOrCNk75BjzdJIdPLwm',4,24,112), -- pwd : d||>Vt63&610
-    ('63026387','David','Harvey','dharvey@iut.univ-paris8.fr','07.12.76.35.09','$2b$12$TnKSHSvEKyl/7gh2pZJcpOh0tlZMqK.7iCYPI29GX.FiywQOvxuvK',4,24,112), -- pwd : mSh!Z\*z7:\n
-    ('51756062','Larry','Harris','lharris@iut.univ-paris8.fr','06.55.95.41.48','$2b$12$ldozgKW647GvOLb04tTTtuwkrf3WMs02WecpBMiuO71iRbdH/G1DG',4,23,23), -- pwd : j=om$/Ap3OjG
-    ('05572909','Kristy','Mosley','kmosley@iut.univ-paris8.fr','07.37.98.76.25','$2b$12$5OcA5jpVTggmDqsW4mRdk.OBhPCMhThfCxjXkOtA63KpSO.YrEEei',4,23,23), -- pwd : WI?=~p3kd](%
-    ('09908723','Corey','Soto','csoto@iut.univ-paris8.fr','07.19.48.48.93','$2b$12$1KrgWc0wx/zqk6COKHTXMuo5knUyK/Qmrwx73rkS6XX7SsH.5WYxK',4,23,23), -- pwd : RK!N;LVc/*7,
-    ('64732645','Rebecca','Lopez','rlopez@iut.univ-paris8.fr','06.16.13.83.59','$2b$12$UdzUzwljlFAB5yqa0F2loeMcXka62a48wDtNpHrqwaKVGprPnGEm.',4,23,23), -- pwd : vMV'pP'"A_+N
-    ('93438523','Allison','Logan','alogan@iut.univ-paris8.fr','06.89.97.94.74','$2b$12$YhRfB2OHFICTs6t0Kr10q.XMs2QhqEJWf5.MHF9Limz9.qggG07Lm',4,23,23), -- pwd : Bm_G7MR{ftsG
-    ('08910192','Katelyn','Gentry','kgentry@iut.univ-paris8.fr','06.71.39.57.78','$2b$12$3XJxNADvojIqT0jvajgti.EK4MwNk3rWQHeJ30nM.oqn1rNTY7m5y',4,23,23), -- pwd : W9/!?R%iZ.kd
-    ('74758387','Julie','Hurst','jhurst@iut.univ-paris8.fr','07.37.47.36.15','$2b$12$4E/qzSuDVCggG/ZWW9k8AebtYq0CYDGgXlXGYhKAvzQLMjfGDwSCG',4,23,23), -- pwd : \tU:&iM.r$?]
-    ('72601403','Aaron','Gutierrez','agutierrez@iut.univ-paris8.fr','06.05.75.49.06','$2b$12$2QQf7jg.hvomakS6r.jUueLVv35625/4pU7czcGkLz3sFEAlc2UQG',4,23,23), -- pwd : \T$s1Hu2!#qt
-    ('76229139','Courtney','Tucker','ctucker@iut.univ-paris8.fr','06.75.61.72.81','$2b$12$9j/YQjXbGs6zawWv62bOjuTegiOePVbz5txPEEvul/a5hk1zOWney',4,23,23), -- pwd : bx+(2~Lr5L5J
-    ('82626380','Robert','Gates','rgates@iut.univ-paris8.fr','07.02.46.00.68','$2b$12$TfFj2Q7yikOZwUoBMTy4OOvw1nm0njAIZtSDKhhwwGloTUvzvu1F6',4,23,23), -- pwd : yEZp%`{Bv?+m
-    ('49218448','Heather','Nielsen','hnielsen@iut.univ-paris8.fr','07.70.06.29.13','$2b$12$GS6FGfFS.Iy1t/p4OgKKUufA.KJ683tNze1P522VJddMW.OSLdr.2',4,23,67), -- pwd : -h[`r4Nai$^(
-    ('17370097','Andrew','Long','along@iut.univ-paris8.fr','07.64.57.61.76','$2b$12$wHnEYTWYupO6WrREBWt0OuKk/4yZ2c1Y1JT8sV2AWxUdbQzqxoVDa',4,23,67), -- pwd : O~[T_w`_+K*Z
-    ('66391588','Maria','Evans','mevans@iut.univ-paris8.fr','06.90.73.31.18','$2b$12$qPTgJB/FTD7kDahMkuc7deDAo6quIFaGB47A/ueQxoJQyAz/uWJoq',4,23,67), -- pwd : Vu>/![~M-`j]
-    ('74730474','Billy','Steele','bsteele@iut.univ-paris8.fr','06.30.89.93.60','$2b$12$3.NT42H.6f5iVKLKOiyQQ.Bo4QtqlgONOg8paAWp9BNMnPdfPeH1S',4,23,67), -- pwd : ,-(PwT-cG(gp
-    ('32946066','Linda','Schneider','lschneider@iut.univ-paris8.fr','07.76.95.02.97','$2b$12$VfKu3TtCMgbFm7QknONpPu8qPNn3rdqBNibS/3ZGa1BqK2xEvtk7G',4,23,67), -- pwd : {]!fZ>rEPO<*
-    ('08975144','Tonya','Long','tlong@iut.univ-paris8.fr','07.95.97.41.07','$2b$12$U.GO4TLlfMC1kOZwuFK5M.0Hauq4/lw7H.dzL8tWJklrFVT5yhEza',4,23,67), -- pwd : 4w|"h)T>27D~
-    ('40713822','Amanda','Gonzalez','agonzalez@iut.univ-paris8.fr','06.80.82.09.61','$2b$12$ONA8Qr4O2FhML23Owk6hVO6Q/h7KatHQhXWHI6vIZmG03xyypg3ii',4,23,67), -- pwd : fRsaD7W4-}MF
-    ('06576587','Robert','Ryan','rryan@iut.univ-paris8.fr','06.49.58.40.91','$2b$12$N9VgiSvwBl6ci1oGTijLxuIbBhIugQP62W.LXYG/.Cq2.AbUSKAVi',4,23,67), -- pwd : iJOHxRhS%%R/
-    ('58906188','Tammy','Perez','tperez@iut.univ-paris8.fr','07.15.18.57.51','$2b$12$pCDGcFh.6wbTD40Q3K9O/uFsTTOGFAMgBZYGma8uvqT7V1qvshBr.',4,23,67), -- pwd : !\BB<(%-(Rks
-    ('00146381','Lucas','Oconnor','loconnor@iut.univ-paris8.fr','07.68.66.41.61','$2b$12$NkzgTUspv6YpygGn6S3L4O4aevQeq8qZVpszsGcjPAnohnev68lHK',4,23,67), -- pwd : =CSHW2yu=LG5
-    ('22614467','James','Daugherty','jdaugherty@iut.univ-paris8.fr','07.01.24.94.05','$2b$12$rdzcoIC9EbI5mqHayQhIsu50k5DxI74UPlLAAtMrsq8wHX8Cad42.',4,23,111), -- pwd : F-GFtzg;dziX
-    ('44544991','Elizabeth','Ortiz','eortiz@iut.univ-paris8.fr','06.58.64.99.33','$2b$12$zWZEYGmkp3.Y2Q.0gNcdMuRJwk.5EWas/cnAzEYOHHRDOj1tIi0aO',4,23,111), -- pwd : v=p&~L$Zy59[
-    ('83070504','Meagan','Hall','mhall@iut.univ-paris8.fr','07.70.94.75.88','$2b$12$KC2c396k8gmh.WYsqo0wx.R5JZuAICde34xb1ckc/JlZ4sORiAYSW',4,23,111), -- pwd : 5WOhjw=hVsh6
-    ('70674274','Gary','Sellers','gsellers@iut.univ-paris8.fr','06.97.68.35.00','$2b$12$nzvOfLaw9ABK7JShHD0ZnejuL7m8w2se71/IUnl4pgJI2jTOwCBsy',4,23,111), -- pwd : ZA}h,c]`,RuB
-    ('99150820','William','Guzman','wguzman@iut.univ-paris8.fr','07.98.33.35.56','$2b$12$biQ7.QiC6dBbNl8tmBoGnuoTa51w28ddjuDCIqMC.Z0QHIH9F4X.m',4,23,111), -- pwd : ?2GmW6:O4S<*
-    ('81801763','Jacqueline','Berger','jberger@iut.univ-paris8.fr','06.36.69.08.18','$2b$12$ag.VGiVJSLhE0zaTpzr18enCNbPms6.74mV6qgb44grWp8rDROd3q',4,23,111), -- pwd : {YS*y$X~pYOf
-    ('66734501','Michael','Berry','mberry@iut.univ-paris8.fr','06.52.10.96.19','$2b$12$eikzrtypWa3bf1XmW/8dz.my9FVXZBJbvyd6bKx9MgAro4oOYQpoq',4,23,111), -- pwd : A?ZTIn);bv2~
-    ('58232264','Sydney','Serrano','sserrano@iut.univ-paris8.fr','07.47.07.74.33','$2b$12$7LR4cDkdpxfTrnrJLqNoIeLBjrRJsQs8o8AfDuRYnW4yYpXRnS9Ju',4,23,111), -- pwd : ~A+LA2#:smF$
-    ('33941786','Kurt','Santana','ksantana@iut.univ-paris8.fr','07.31.69.88.12','$2b$12$07lp8KWCuOhPMtwDdz./lePAQvHPiZo9h7YNqY52cVNhLyqQoJE32',4,23,111), -- pwd : ORIh>Zbm+5be
-    ('86244140','Brandi','Miller','bmiller@iut.univ-paris8.fr','06.31.63.93.71','$2b$12$pHXKcdVxjejtsVU1ZDpIouzgrDa2bJPa0kRhGLQ4U/1AAnz388jWW',4,23,111), -- pwd : QPM@<^}vMWV5
-    ('99274260','Erika','Martinez','emartinez@iut.univ-paris8.fr','07.64.29.95.19','$2b$12$xL/xWMAlAkVbvqKG4yQ2guc7UHZ10EUCHC82N7R/y7PHuILxkSEZ.',4,22,22), -- pwd : qla3JL.DCipo
-    ('79450184','Julia','Powell','jpowell@iut.univ-paris8.fr','07.04.38.70.86','$2b$12$r4Esquoj.a0Q.u39EGU.7OleeXf3WUaU2H0JOsh5pagGwfJp24R62',4,22,22), -- pwd : T0G8a:NU7h53
-    ('00301077','Harry','Anderson','handerson@iut.univ-paris8.fr','07.50.84.25.58','$2b$12$ugCzcCVKz5X8HGW9ahKF7.BFUsEtWl3MoC2lxH1C7cXC2jzqcIyRC',4,22,22), -- pwd : jN5d^))RI!V0
-    ('52561885','Jeffrey','Curtis','jcurtis@iut.univ-paris8.fr','06.50.29.41.85','$2b$12$kKjvoPMGfXEfYrLNfWMfWufikUXmhgrcVkpRDVEiLKFXs5lNybIUO',4,22,22), -- pwd : @.-_7|$L}xPK
-    ('62827511','Darrell','Adkins','dadkins@iut.univ-paris8.fr','07.13.14.06.85','$2b$12$0P7SDknUvm1s0s9W0mLLIuH9Ys8FoucSTAZowuHS20LR3H.9fAp5a',4,22,22), -- pwd : M{x|mCef(S*e
-    ('92804994','Ashley','Martin','amartin@iut.univ-paris8.fr','07.74.97.74.09','$2b$12$8j5z2A9cmxytoBrzco7FG.HOgIvp5I4BqIog9XRuPcFYgEZNce.Wq',4,22,22), -- pwd : xheF25PzI-3B
-    ('99495555','David','Rowland','drowland@iut.univ-paris8.fr','06.10.67.45.91','$2b$12$cr/i1/Pywgk9sfaTiJpEue634gUKiIQllKtRjOQSisyKzKDiyQaf.',4,22,22), -- pwd : bqejm^b?%ry[
-    ('94502480','Matthew','Martinez','mmartinez@iut.univ-paris8.fr','07.94.19.84.82','$2b$12$oMAfYxwUVtOoVCj2g0FtFOhkqz4nK8KRRc8VI9ZEFQSuz9.e5aZ.m',4,22,22), -- pwd : ?=,@E}Zn%mXO
-    ('37322684','Miranda','Buck','mbuck@iut.univ-paris8.fr','07.46.53.06.73','$2b$12$sUFjYkU11/8xEPgvLMoOIOzYOlyJMFHJeKKxTJ0jzSi6emQG6R486',4,22,22), -- pwd : :NYLq*k!GG*~
-    ('66505084','Shane','Mclean','smclean@iut.univ-paris8.fr','07.02.27.52.02','$2b$12$etdzkpduFgD2YA/NAqYCDOzE/eEH88xw6iZbo3kgP54.cbWp0gNM6',4,22,22), -- pwd : 4iV[|i]Es7<R
-    ('24054107','Kevin','Robinson','krobinson@iut.univ-paris8.fr','07.09.84.81.53','$2b$12$ZDz/0V85wiDM4imia03hzuQKhBkX4YEEJyD4UR8yqOh2CupimuJu2',4,22,66), -- pwd : q0jW}b^oR@zP
-    ('62591118','Cody','Gilbert','cgilbert@iut.univ-paris8.fr','06.17.01.89.61','$2b$12$f3FE3taYrrCZ/NC9rssK2u3lPcBsyeTGNUH5SJ0RtVZ8bMHxD16/K',4,22,66), -- pwd : #u9WaBkRx<Y+
-    ('62292528','Jason','Hunt','jhunt@iut.univ-paris8.fr','06.92.19.22.30','$2b$12$iUMH084cyWdzI.dLea7tKOtJFfjQU5yAtvsZyxZSAThS6QQll7REq',4,22,66), -- pwd : [[y!@e'G<A~U
-    ('06819213','Mallory','Martin','mmartin@iut.univ-paris8.fr','06.25.80.32.11','$2b$12$3Qq4l721L5PV43DL1DInw.HjhSx/45cDRW5eG6t2ZtM4nfv.5UZyi',4,22,66), -- pwd : =V.aV2h3d\S'
-    ('70217781','Linda','Sanders','lsanders@iut.univ-paris8.fr','06.83.47.04.38','$2b$12$nvAPfg61TOnTR4h0JranQuC.82Oi4uO9aZ/tdFgfbz.ZdE7m5wh.m',4,22,66), -- pwd : ;(E|#xmQ)7v5
-    ('46333453','Kayla','Maxwell','kmaxwell@iut.univ-paris8.fr','06.18.73.57.18','$2b$12$eEczgUpmN3sCiLAePXZf3.6bYQQi3desED9SffDysUljuKp/r9SJ.',4,22,66), -- pwd : 3c#y+}?+tb+}
-    ('56504424','Katie','Castro','kcastro@iut.univ-paris8.fr','06.76.97.95.52','$2b$12$VGWmzO2zCho44sVcKQq0jORtkqpq0zLo3uADKX1L3Tsk0MJTmTQmq',4,22,66), -- pwd : 61$,QL_ULa7+
-    ('65628007','Anne','Shaw','ashaw@iut.univ-paris8.fr','07.06.27.03.36','$2b$12$i./2yITLudK03s8erdeghe7n3/89rS9ktoQOQ.tY52SrUhElXsOoG',4,22,66), -- pwd : g<I)oBK!'(wQ
-    ('76558188','Joshua','Howard','jhoward@iut.univ-paris8.fr','07.43.54.13.92','$2b$12$ItRZMff.0nRbfiht19PYAuuDj/lysyUGgwyVcyUwrkDo3yDkcntUi',4,22,66), -- pwd : ~$!4yBj#;9cM
-    ('32678142','Jennifer','Carter','jcarter@iut.univ-paris8.fr','07.93.98.69.53','$2b$12$eGp9aN8q3pU14U6I2uYGre4Y3XKO716WPik0rk84ZU8hSlJBAjLae',4,22,66), -- pwd : '*&x+36PKTO|
-    ('34083481','Colleen','Hill','chill@iut.univ-paris8.fr','07.80.13.12.13','$2b$12$adXkkIAfSd8vXndQWqisOuFqYy6y.LcMV4S3rEVlORJdOX5Jas7Qa',4,22,110), -- pwd : N$lxd'@.['8x
-    ('74586650','Rita','Shaw','rshaw@iut.univ-paris8.fr','06.13.79.52.22','$2b$12$wwaA.4d2aMroe6wj.1UgYelpFsGTnSumau0DsZ2/nJZHrPy9jIMaq',4,22,110), -- pwd : 'e-se3wu#0K)
-    ('60338698','Alexandria','Perry','aperry@iut.univ-paris8.fr','07.76.21.12.26','$2b$12$xlNZsoR9.6p1.uEMZzrEAeJs3uJj.76teO2P7Ip6bbyNQ3ddDFkc6',4,22,110), -- pwd : p6Jdxnfi2JE'
-    ('78478568','Theresa','Howell','thowell@iut.univ-paris8.fr','07.96.56.39.13','$2b$12$zSfZh9ZVnAiW4sgQyApjQ.tQMIXSnfcGuxAHfyn2lBGmwaWnXugES',4,22,110), -- pwd : Xd|Ua1CVok5N
-    ('83597605','Jose','Ferguson','jferguson@iut.univ-paris8.fr','07.77.40.18.58','$2b$12$ogVwQHgd0ikZlBzmXfKt.OngKIrOzeyrpgAWcuSe07e9JX9OCbfN2',4,22,110), -- pwd : 9c9a|SM6}@"#
-    ('72044007','Jose','Mccarty','jmccarty@iut.univ-paris8.fr','07.75.23.17.67','$2b$12$cJCLSBT12UVpFMkWPJkjp.5Yq.x/kDP.kPB5we6hIGa6hag6umv6a',4,22,110), -- pwd : M_p&;E2K,u9c
-    ('46779815','Jay','Crawford','jcrawford@iut.univ-paris8.fr','06.30.94.45.02','$2b$12$T8hXSoA2FHlTwuAwzpYNCObwV7u.JQxR8idTRjBW/hace6yvz9inq',4,22,110), -- pwd : '7[0Vj_Z)9+B
-    ('74666231','Christine','Calderon','ccalderon@iut.univ-paris8.fr','06.96.03.96.62','$2b$12$FuNRoAZoLsvqE7YU2GX3Eexf8z83Y6ICoGnjwR7/4mto8KVSnUSbe',4,22,110), -- pwd : /l7sApQtbcNa
-    ('67394098','Caitlin','Hale','chale@iut.univ-paris8.fr','07.87.84.83.40','$2b$12$ylaFiNczja17VlX5Yk4i4OAVidsXiKqxkljzIJnKIItlHZ0b/5DFa',4,22,110), -- pwd : ^Dq^&9\y-z,<
-    ('64155309','Ebony','Medina','emedina@iut.univ-paris8.fr','07.21.97.80.77','$2b$12$bfxbYzGKB2V7S84anOre/OLZjfhfJJr87b5o3Y7wSaC8353.RzBo2',4,22,110), -- pwd : A$x|j9RCUu4#
-    ('61630240','Alexis','Clark','aclark@iut.univ-paris8.fr','06.62.05.71.12','$2b$12$IJuuyLkt4XJPw9S5auFb3eIoPOV1zHYuOiIHjINBM28YNbsFOmHcK',4,10,10), -- pwd : 'J#H=m!7+.Vc
-    ('34007839','Joshua','Sanchez','jsanchez@iut.univ-paris8.fr','06.15.93.09.51','$2b$12$iLhryQV0Oq0ykU6SmJXMguTmD2M02rd09AN8pBJGn5sCvNAsN2dme',4,10,10), -- pwd : tE<}zHJ[bc`9
-    ('78109726','Teresa','Duran','tduran@iut.univ-paris8.fr','07.63.26.23.88','$2b$12$1bBjg5am88RknRv5Zh.PfewOxwaC04jzyRdug9K4.sDeqRRdTmTg6',4,10,10), -- pwd : OjV8P"D1u;{@
-    ('98460560','Julie','Romero','jromero@iut.univ-paris8.fr','06.14.83.41.64','$2b$12$4eQpwrPGYUmpXhUMhgPhLe1tblMVdNeywVR2La7/fayJfi6duxyHS',4,10,10), -- pwd : jI%yPWW+8Wti
-    ('42078373','Kimberly','Clay','kclay@iut.univ-paris8.fr','07.40.45.83.44','$2b$12$kAnf.1CJAJGkLdTSGQTiUezOswUGQatl9w5.QXe4qbpWYi/zFslfq',4,10,10), -- pwd : ;/]4[})oHdyb
-    ('63433885','Stephen','Rose','srose@iut.univ-paris8.fr','06.45.69.34.39','$2b$12$aZ8ZAV4tJGyK.U52CFe9j.2CiYf8.Q.qHa3jMZ1h2SOw4r76z.Abm',4,10,10), -- pwd : $EnKkA3sgZ6]
-    ('95747778','Martin','Holloway','mholloway@iut.univ-paris8.fr','06.54.42.76.28','$2b$12$iY4THo4Dy0vOcZjVy0dl0O5lBSiI0qwQAlg.I0uUaaC5GMNS47.tu',4,10,10), -- pwd : 5iKV2~\S.B0l
-    ('77824101','Sherry','Orozco','sorozco@iut.univ-paris8.fr','06.85.54.71.87','$2b$12$MkOKl.Nc0EtTyDnEJ5GoPu0jwcMXwsatd37kdlYJYCEbJZWUX4gdG',4,10,10), -- pwd : 4lO[1&+zQCwA
-    ('18196678','Debra','Quinn','dquinn@iut.univ-paris8.fr','07.58.52.79.43','$2b$12$oYeOIWiq.XCdxtX8xprUvO3.IRFMTL1tU9QjTK2wteyfXXcmT1InC',4,10,10), -- pwd : JBEG-~V{DwS<
-    ('57396202','Tonya','Smith','tsmith@iut.univ-paris8.fr','07.07.00.59.69','$2b$12$qKmbCbbRiJcyvt.qjx4Pt.nx4V18HqPAoDj5Q3eacTh/SBXVJQ59e',4,10,10), -- pwd : `J|EA`jG=h`U
-    ('89861397','Karen','Gibson','kgibson@iut.univ-paris8.fr','07.56.41.26.72','$2b$12$6gTqwkGvddPRY2hWtd6XxuzEpWyV70zzT..TRuIlZjefCB2uvSoa6',4,10,54), -- pwd : _6+'nhJj+yz9
-    ('90842667','Harry','Hartman','hhartman@iut.univ-paris8.fr','07.04.67.88.08','$2b$12$SrOgFLbfR6qTDCeWBXqsmehq6dE5Go31mfVWZ7hiijI78TZhyh55m',4,10,54), -- pwd : Z`Rb014vk=MX
-    ('47852814','Jon','Rivera','jrivera@iut.univ-paris8.fr','07.59.43.01.52','$2b$12$yUXelV1jccrX7nU0E1.N6Or7pbdgKHrCv60jAgJ7UilsYwCg.HDEO',4,10,54), -- pwd : r4C2_0z+\Sf/
-    ('45615312','Elizabeth','Russo','erusso@iut.univ-paris8.fr','06.89.62.22.35','$2b$12$bWkjOhM/QtW9g17HFwd/wevIlX.mblbk1zlCn1I/p0Q/if0.bv1fm',4,10,54), -- pwd : a8c)LX&>C\O/
-    ('91563259','Brett','Davis','bdavis@iut.univ-paris8.fr','06.88.36.49.63','$2b$12$uHJ6MzhxOekqglj704tme.Ixv9/G/NgQdIAb8PLpL9DTH7lAk3R96',4,10,54), -- pwd : (-yDa&%,zz^&
-    ('72476553','Heidi','Gilbert','hgilbert@iut.univ-paris8.fr','07.88.97.17.58','$2b$12$naX3pAvZselSOpU8KshifuO8e7j6f69arBOc2uNarP2ZLluGpxA82',4,10,54), -- pwd : OUh8;mnSeRI|
-    ('58588064','Samantha','Miller','smiller@iut.univ-paris8.fr','07.35.69.39.35','$2b$12$s8KnUke8qA3deUw5qukXbuvd1NkqeRxk9YjjimSrUboJtkpDHkD/G',4,10,54), -- pwd : >.Ay.Q_raVQ@
-    ('87086495','Amanda','Wright','awright@iut.univ-paris8.fr','06.34.88.30.93','$2b$12$MlRIFXH/z7ZxXjKgbRkrGOdc0OZscE2Uzv4Ng1TlPYVQu9Aij08i.',4,10,54), -- pwd : t8+6U<[7WS4-
-    ('60242361','Donna','Schneider','dschneider@iut.univ-paris8.fr','07.94.03.50.22','$2b$12$Sd6UNlcH9wN33b5zXNW1EeaHWfYRdaZ29xQa3dootlMljymBkFSs2',4,10,54), -- pwd : NXqj?5<>V`bg
-    ('70012656','Cheyenne','Taylor','ctaylor@iut.univ-paris8.fr','06.88.94.17.00','$2b$12$jyUtDkjyTMYyBUORPaeYROM9isFq8ORofYOReSedD//ibyiY/j7B6',4,10,54), -- pwd : ,cwki_+b1{^K
-    ('46925471','Douglas','Thompson','dthompson@iut.univ-paris8.fr','06.60.62.48.62','$2b$12$o9nLBwu9pj7IGKW6VFPR.OWBDzxU.12ptOf.4MaCsPvH5I.gF2F0G',4,10,98), -- pwd : vW<NIGk^\ACO
-    ('38386539','Joseph','Lee','jlee@iut.univ-paris8.fr','06.03.32.53.45','$2b$12$r2H0zp4b7KA9YqU/LbYhj.EHcxkky.NqMr7jzq9eBi51iMhRs5APe',4,10,98), -- pwd : =:f-lvf9I&D`
-    ('11155934','Gregory','Boyd','gboyd@iut.univ-paris8.fr','07.26.83.77.49','$2b$12$FQM62ElgzgfqhC50TdIgd.ThzojtxbqjHK456/ZP8c76LdxptILLK',4,10,98), -- pwd : \/"z@qQsyp`v
-    ('98573227','William','Hart','whart@iut.univ-paris8.fr','06.67.51.58.88','$2b$12$FBGlP2OH17bWlQ/XT8I0G.g4ucQ627d2qrHWTRp.vlGBt8GGBLC/q',4,10,98), -- pwd : S"&M_I@17f)L
-    ('52785734','Angela','Anderson','aanderson@iut.univ-paris8.fr','06.08.08.38.97','$2b$12$kWBaNgRcQdv3GifG0stEOex1maZ7vOZpr1xa2gxha0ZRJHcHreiJ6',4,10,98), -- pwd : +LC!w"c$jE/N
-    ('52674720','Peter','Smith','psmith@iut.univ-paris8.fr','07.76.83.85.08','$2b$12$8vX3MfvWfXHkO.Wl1Tako.1Bbrt7mV34xvFUhEbQ9OGte5kn4RZ3y',4,10,98), -- pwd : 533i|>b`K'!Z
-    ('15365270','Ricky','Park','rpark@iut.univ-paris8.fr','07.33.17.76.18','$2b$12$RcXf6CsE/Cyfy3KZcGb0yeHeLkt3vThaT2QPBkfbsqXJwpoTQYkzm',4,10,98), -- pwd : pwOaFk+|([I4
-    ('57742597','Ashley','Taylor','ataylor@iut.univ-paris8.fr','06.71.46.80.66','$2b$12$K.gnLyU5NRAhUcJKhEvYY..svCtgGo6TzIjgUzLHZq81A2clSrVUe',4,10,98), -- pwd : ;VY=aNKroSJc
-    ('26811095','Stephanie','Hobbs','shobbs@iut.univ-paris8.fr','06.00.79.13.57','$2b$12$SDDgineVMb2rssWshHihQersJVAV8Ual4p0dIGYJKt3Q5qeuARuXq',4,10,98), -- pwd : <nKB:vw6(/H=
-    ('44513448','Ian','Mcdowell','imcdowell@iut.univ-paris8.fr','07.84.02.56.07','$2b$12$DT6QrqMmAd6IAVqPgcQya.OaXpqKj3uwq5lmZV0k0/zrr4sexen2O',4,10,98), -- pwd : feTSEsT^))S+
-    ('77095331','Traci','Deleon','tdeleon@iut.univ-paris8.fr','06.34.10.83.11','$2b$12$6r.pv05X1rUiim/QaxMZZuqYCFuZUmadP8T/Ay9PLAUZDcwl/mxya',4,12,12), -- pwd : ;dI-V(xd();V
-    ('51101061','Lee','Moore','lmoore@iut.univ-paris8.fr','06.43.26.20.91','$2b$12$S2pUaQ1hlPlEVesRkD7Cc.7pOUw65vC3bIozxOofSGT.vVoQXHJxC',4,12,12), -- pwd : r.{1%xn[t3!/
-    ('19218230','Kevin','Walker','kwalker@iut.univ-paris8.fr','07.65.67.42.85','$2b$12$8KBqNX5Q4bH2rsLFr5UrR.PcJ9dofN3whn46YwIwuPEtYMuEBI5Xi',4,12,12), -- pwd : XU;OWQ6VW3\T
-    ('19766166','Elizabeth','Brown','ebrown@iut.univ-paris8.fr','06.23.34.20.36','$2b$12$/SbfpO8JMNUz0kqm9U0v5.QySfWnyOgiYNR7WoBvaSZdP4gq6TeZu',4,12,12), -- pwd : <*Sf9e"A>66r
-    ('70662618','Travis','Alexander','talexander@iut.univ-paris8.fr','06.48.80.35.79','$2b$12$mVFlBQzsWGcInww25wGfD.pXEfpW2F15w6q5pY7281SvWiAVedvcG',4,12,12), -- pwd : #6oeGAsXP6,e
-    ('93444019','Matthew','Evans','mevans@iut.univ-paris8.fr','06.94.39.14.98','$2b$12$gabqUaJGwDakQUjGMbrHved.2bxfF5ek6eLbBAgO7uVkSGkBHf2Re',4,12,12), -- pwd : Q``|XNk4jvj#
-    ('45358125','Anthony','Adkins','aadkins@iut.univ-paris8.fr','06.44.72.60.86','$2b$12$uIx/7tkQ44BLFIXBTCw3PeywDCQAhoRxwXgv/4hXiMfOLH9uB22WG',4,12,12), -- pwd : _&~yHzE&E3*x
-    ('85746309','Jose','Jackson','jjackson@iut.univ-paris8.fr','07.73.41.47.73','$2b$12$RasL9bdFdipnUW9YZzhN4.VuVi7T5TPnak552dDEzJl.pIB67Fhym',4,12,12), -- pwd : aB9;@q&m?TgR
-    ('73371925','Joshua','Bowen','jbowen@iut.univ-paris8.fr','07.44.44.78.59','$2b$12$./v16MBpgbOW/XB2oA8p5OQ19B/rhoO6afmSR44fGP38inmaO9Z3.',4,12,12), -- pwd : S(QyP5_%&[+m
-    ('33180226','Matthew','Gonzalez','mgonzalez@iut.univ-paris8.fr','07.63.58.15.36','$2b$12$udqdiPFmDrAbLOUxw7eIx.BvNgOTpj2D2L2MbIwPbUw.sUFdf.9zm',4,12,12), -- pwd : ]nX$bB/%Qxb@
-    ('93606802','Michael','Becker','mbecker@iut.univ-paris8.fr','07.30.39.15.37','$2b$12$7aFynhwGMShNgx8V.Ga4ou8BoGLDkAD645CWbknPx6mwqJFI.2QYC',4,12,56), -- pwd : M"RPC{ff<*1'
-    ('36458659','Pamela','Oconnor','poconnor@iut.univ-paris8.fr','07.31.03.92.56','$2b$12$lXELYZbcEVE1K9lnHg4Fn.9odDonNt2.gII2aUVAx7oCkngzENs.K',4,12,56), -- pwd : )K#:`Og8Z*`X
-    ('87384552','Gabriel','Davis','gdavis@iut.univ-paris8.fr','06.60.49.50.14','$2b$12$jenUMABOx97z1C0f6FPEzOmroCjxfq2LK.TafRrjEeo053.41h3N2',4,12,56), -- pwd : gj-c1W@@/>e6
-    ('91894117','Tim','Mercado','tmercado@iut.univ-paris8.fr','06.83.32.46.23','$2b$12$vuT37.pbi1fVWTkQiZDwzOVtjsO5fdTUpUMA9jFyAi8sWGBu0Jsfa',4,12,56), -- pwd : #YR}M@}yHmrN
-    ('77272336','Krista','Lopez','klopez@iut.univ-paris8.fr','07.63.30.94.87','$2b$12$iKWW0.yxSJPsgKNi33M8q.XX.FZv9iYYfbmQ28cr1J2435cY8VXQu',4,12,56), -- pwd : We$iKj$ANGy3
-    ('21554678','Austin','Rojas','arojas@iut.univ-paris8.fr','07.07.38.99.53','$2b$12$ok.GkwIAZqk3vxzhqxvqYeA/cR1FbZrk0zWl8K3TdjeaxPT4SmZHG',4,12,56), -- pwd : E>C^<,0zhmFB
-    ('68747064','Alexandra','Morris','amorris@iut.univ-paris8.fr','06.27.79.22.96','$2b$12$0NM0id71a5Jlm.tx4MCX4umRrzxQJmMK2Q0NXVhqMHQHTXA7Hn/RS',4,12,56), -- pwd : h!&CzV4lpV\G
-    ('44418173','Renee','Watson','rwatson@iut.univ-paris8.fr','07.06.13.14.02','$2b$12$tm2WU7PrY4TtH19VDv.Op.bzJC4kiveD8rHcXcvQ2HfWnhfar7m6i',4,12,56), -- pwd : >o(:Uod>i-~v
-    ('17741003','Katelyn','Kaufman','kkaufman@iut.univ-paris8.fr','06.25.30.50.15','$2b$12$kWrec0D6zo6vs76u/grju.rRMKNQZe24L8iVbQwaa2XjgmP2ZVGA6',4,12,56), -- pwd : q8SIw[rRRB+i
-    ('05346005','Cory','Phillips','cphillips@iut.univ-paris8.fr','07.09.27.41.90','$2b$12$QBLx.cpDbFgd1THhqW0rCe0Pd96qAISAtVYnfK2Jm7NlHRJn7NfTi',4,12,56), -- pwd : 3VS"Ga[EuAIy
-    ('45393057','James','Moore','jmoore@iut.univ-paris8.fr','07.84.84.74.86','$2b$12$/A9sH.3HJWpZaENfxGixdOh88ZTSbixwvMHZZZ0FLwvc7yOCFus.i',4,12,100), -- pwd : iW'-T8}9agq|
-    ('30605679','Joseph','James','jjames@iut.univ-paris8.fr','07.72.38.18.92','$2b$12$s3GPE70W0uMPuazFhbxLA.72C0STpO5zaEuvOqWOwJjZgxsi7tRFC',4,12,100), -- pwd : #Lc!KIC)g0!v
-    ('00748490','Timothy','Webster','twebster@iut.univ-paris8.fr','06.25.46.32.01','$2b$12$36pjXQhxo5W1EiMUPLJxqePy3sCBXGa61oUabwEHcG6AeD7hXVRcm',4,12,100), -- pwd : 5R]e88azy1Mh
-    ('11226668','Zachary','Lee','zlee@iut.univ-paris8.fr','07.14.25.47.94','$2b$12$2D4RbBP1OLht2xiDo0rsDOI8.R.ONVYM5T.o.Hi1rOkyvkfXSMO/q',4,12,100), -- pwd : [fi-q6l%OWWy
-    ('41339836','Cynthia','Stewart','cstewart@iut.univ-paris8.fr','07.36.41.13.50','$2b$12$nC2cAq6zxD0ODAyCKJ3O9eh5xeeRZb0XVEbFEyGcv6eiGks7BQfXG',4,12,100), -- pwd : 2K<Uy2H8a@uN
-    ('77807697','Benjamin','Smith','bsmith@iut.univ-paris8.fr','06.39.13.25.45','$2b$12$je27T989qYWiciRhSLWwcuQZ.QhI4Xy6InYenJnb024bvcBM6AGzu',4,12,100), -- pwd : t\p})p<l>tc#
-    ('59231874','Eric','Martin','emartin@iut.univ-paris8.fr','06.25.56.01.66','$2b$12$MmRX3s0UsJilydbRSMAEiuv64XeQD6hY2Snc2Qt4S/6d8lhojVM8y',4,12,100), -- pwd : $+MXiM%vWHqL
-    ('48426574','Leslie','Allen','lallen@iut.univ-paris8.fr','06.90.05.28.67','$2b$12$uB9O5bX4MipUX7AdP9.qWeSYlVNMNOZT264vW2mxXQa/j.J6T4HQG',4,12,100), -- pwd : o`aya86Q+HV1
-    ('33418012','Elizabeth','Jones','ejones@iut.univ-paris8.fr','06.82.37.68.78','$2b$12$DIyXBJ6ZAwn7Q.7P7hFxw.WeGzGTdb.dWH5WHbQ9QpExjYJ4X0v0i',4,12,100), -- pwd : gSm)liENzt))
-    ('15692994','Savannah','Ramirez','sramirez@iut.univ-paris8.fr','06.45.07.45.84','$2b$12$mRHMY6GSjgMSOyOTJSan.ekLp2ssclLekSymS6C3BiyI3JJdHZnfW',4,12,100), -- pwd : b\C>d}vfYA,=
-    ('46573714','Mary','Erickson','merickson@iut.univ-paris8.fr','07.06.97.06.84','$2b$12$RVZk8v5DjO7vEgTl84B8V.6sC.Q150EmXJjjgjU9BszpZbEcJ8rc6',4,11,11), -- pwd : rd!)/.oZ8NA=
-    ('30981736','Bruce','Lewis','blewis@iut.univ-paris8.fr','06.55.46.54.11','$2b$12$aw4W/UJagNIjuiE/y0Vpwu8/9.to8CBt/QSmlQDa6MBiPuIOYIx8W',4,11,11), -- pwd : :ukks1@\\<P3
-    ('75295703','William','Eaton','weaton@iut.univ-paris8.fr','06.09.74.34.90','$2b$12$X3XSTSEyGETims.hwNhuc.8W8zVSwwiYF6AUQf8/9/LBgT0GFMKP6',4,11,11), -- pwd : svN}GG!|ocD\
-    ('50520383','Elizabeth','Burns','eburns@iut.univ-paris8.fr','07.72.19.77.87','$2b$12$fV9GIgjT5zApVe5vF.UnEORR4jYh/JGtw5OSFhQ/3KJDaF1OKMbRS',4,11,11), -- pwd : p%jiX[*_m4\f
-    ('02517538','Kelly','Mills','kmills@iut.univ-paris8.fr','06.64.09.57.75','$2b$12$ePdpsogGLyfrzyRSqESf0ON1bDbndfY4O/ZbV5cp3c95Iowea0T4S',4,11,11), -- pwd : h:h)p}D{-8-x
-    ('29957833','Sarah','Harris','sharris@iut.univ-paris8.fr','07.18.52.13.69','$2b$12$caRyvz/cZ8Pf8Rbos11Ki.culiVYUtl4frhDjwvCKsGf6bGqBBd/u',4,11,11), -- pwd : /cQx~zWzTog(
-    ('20994643','Denise','Johnson','djohnson@iut.univ-paris8.fr','06.54.29.13.91','$2b$12$wwCExAAN9.2L.v1/nC3zcOVhjOSonSLXwx.AgugvpOHcxdne9CrRe',4,11,11), -- pwd : _E/f<vAoufnK
-    ('56142152','Adam','Ward','award@iut.univ-paris8.fr','07.83.02.12.56','$2b$12$PXvvLJmrNAvJFlQtzZ4dQOzbfbwsv01pbYxOxjmuaGbdKsDWCXX0e',4,11,11), -- pwd : e!rDaWvuQcbA
-    ('67000044','Michelle','Jones','mjones@iut.univ-paris8.fr','07.50.90.83.90','$2b$12$FJGsJEK5VH2FngHxDJtY6.va/v1y264JCkKLyQ6AAWjWLCpv2TE5i',4,11,11), -- pwd : J`PGPArGE8sX
-    ('48822514','Natasha','Cook','ncook@iut.univ-paris8.fr','06.73.17.07.01','$2b$12$7WB6POjODmD598fBdKuxW.1ko/kURmGmqesbzKtfQkWeEOFXKc2ka',4,11,11), -- pwd : :QTu%qs;7cUt
-    ('93906112','Roger','Fowler','rfowler@iut.univ-paris8.fr','06.26.25.32.72','$2b$12$i/WW9fSP8qycXOSCDkrMpOD58g2kejQyUqoI/DXx92fj7m0SfLVt6',4,36,124), -- pwd : 2ySigi?x-i\)
-    ('22443815','David','Marquez','dmarquez@iut.univ-paris8.fr','07.43.56.51.56','$2b$12$dRQjgr8MKEje6Y4GFpq4TuFSmGENlStQvFxrH5hkzyyR4MpcWmTpm',4,36,124), -- pwd : eIhO!9XtKBaJ
-    ('88814584','Tiffany','Villa','tvilla@iut.univ-paris8.fr','06.13.10.15.26','$2b$12$GtZpX5DhJHmRTtLNAJPyyeonZWgWKVjcgpQCFgPniBM5naMBK2hTK',4,36,124), -- pwd : u2eTR(+'v_Sw
-    ('29279674','Samantha','Mccarthy','smccarthy@iut.univ-paris8.fr','06.36.39.74.20','$2b$12$KE/MqdnrN2AhdXCCfXwwQOn1z2AqJ73HBFH.YSsp3vW2OkXHHwuom',4,36,124), -- pwd : [E"wWy)3m0J{
-    ('55142836','Tyler','Spence','tspence@iut.univ-paris8.fr','06.26.65.41.40','$2b$12$G2t38RgATQuYIW1ioIIrFerfTdrbdTSDIa9JatcJvbopCZArt1UpK',4,36,124), -- pwd : $MF;WG.y.5N+
-    ('50571986','Christopher','Hartman','chartman@iut.univ-paris8.fr','06.25.43.30.71','$2b$12$A45S.DAK4x/.2yZ2dyOrhuDq/Z/QY8zfWpOmPX0lzq/GvVAYXNega',4,36,124), -- pwd : ~t$T'_U,1`q?
-    ('14621799','Melanie','Jones','mjones@iut.univ-paris8.fr','06.83.23.58.04','$2b$12$dtNJkR/gftdytdyDyiy4weEnzKl11u4oAeJqXHFC6KeuGRjF7/wfe',4,36,124), -- pwd : E-ptEOC/>>Ov
-    ('91172041','Samantha','Williams','swilliams@iut.univ-paris8.fr','07.52.80.53.67','$2b$12$ARI.1Fwc3hEFNCWuPrYaD.8/WqiXxJf5AiKz2uxTUBSRlhhYV4.r2',4,36,124), -- pwd : (W=<L8uStr';
-    ('85869064','Brian','Johnson','bjohnson@iut.univ-paris8.fr','06.16.34.35.43','$2b$12$ODXl4lIf6ijYA0e1uF75nOkMrOT/YWscmD2khuLXI33d3ZvfDIcmS',4,36,124), -- pwd : kpBQ]ALxY@M^
-    ('91540939','David','Lawson','dlawson@iut.univ-paris8.fr','06.51.25.47.18','$2b$12$k/gpXhJok48lAvTcIn8eh.M54q0pT4zDrtC4ZelwBxHob5VsyL4c6',4,36,124), -- pwd : :"QDw147uC)m
-    ('76295443','Maria','Jones','mjones@iut.univ-paris8.fr','07.51.03.23.10','$2b$12$lCzMd3hBmPhtjrtMc10dX.QMcWTY.1yFfbLK7rsb4Y/EwooeHA4EG',4,11,99), -- pwd : aa0d&#2dP-bN
-    ('87741085','Amy','Peters','apeters@iut.univ-paris8.fr','07.85.11.61.75','$2b$12$UFQcoTB/GhbVQRo55R/kpOWRLhZmJ9Mz7KgU9rzwXcdilC8AF2WIG',4,11,99), -- pwd : s>0stsmLqJVc
-    ('59095734','Misty','Richardson','mrichardson@iut.univ-paris8.fr','06.70.53.58.12','$2b$12$xYV0cngZlPUgQXYRLOW8Pepra7gvjHQE/mxgMzG1UqMQLSUG.8Ppi',4,11,99), -- pwd : eB?$CA^fbbdh
-    ('21113883','Bernard','Hamilton','bhamilton@iut.univ-paris8.fr','06.28.19.32.93','$2b$12$wsoF5428fRTSPWx5ugMJ9.BFFr07WJVxH3guHUqY5fNT7Wq2.Z/16',4,11,99), -- pwd : K`GmOc8j="Wr
-    ('03304988','Julie','Kidd','jkidd@iut.univ-paris8.fr','07.93.09.19.24','$2b$12$f6kT28FkDoWiaenPXT6...0EFdEnCFmibbN86dFL8qrxChfvilRO.',4,11,99), -- pwd : iw4:<)"!&Pd/
-    ('63233991','Dylan','Garcia','dgarcia@iut.univ-paris8.fr','07.95.20.31.57','$2b$12$qt7n/Py.Qte6bNTqqGHeo.fhX5h6.a9FmVDUYAwiSxJCT7CuqA.cW',4,11,99), -- pwd : J_)HHjm$4A=m
-    ('45284345','Lauren','Lee','llee@iut.univ-paris8.fr','06.15.72.13.43','$2b$12$a2PXCuDMj6u00OCNl.lyHun8wAwq6c4rv5S9Jz/Hp6Q8Vq0zg6b9y',4,11,99), -- pwd : `D,7u3"OI00]
-    ('89164250','Robin','Walters','rwalters@iut.univ-paris8.fr','07.54.53.53.54','$2b$12$mHBQm39roqRhEzWE24t6hul7d2GazGwdIX7WdoU0XY63RGPvr9sfe',4,11,99), -- pwd : }']B&A^x]Fo(
-    ('32857376','George','Collins','gcollins@iut.univ-paris8.fr','07.16.10.57.16','$2b$12$7ah7/HdIx.6cHFNRP6cqcOu5OkH57OY7hCcPDFdh4QiDMQPucwTw2',4,11,99), -- pwd : RP_@b+(:fT%*
-    ('04830527','Anne','Diaz','adiaz@iut.univ-paris8.fr','06.85.94.05.83','$2b$12$Cq8weUiQd2VfdFP4nFi4p.RT1iiGP/9MrFG/Sld5B9k9uICMrHio2',4,11,99), -- pwd : ^JG|ch4jvC9V
-    ('15409326','Jerry','Rosales','jrosales@iut.univ-paris8.fr','06.26.12.14.91','$2b$12$z2kvL9PWncp52Jfarr559.H4o3uLdosCntxPK2oDONp1Jmtak9nNq',4,43,43), -- pwd : 7wjt<Rw=?e9<
-    ('78851718','Brian','Howell','bhowell@iut.univ-paris8.fr','07.85.70.63.25','$2b$12$oIVyVJ/eJ25W.W0Y2InyxeLRz5/RXjglIQb08VMLAtZwwAFeru/tq',4,43,43), -- pwd : "F.?^1M8/c^p
-    ('83932637','Brenda','Anderson','banderson@iut.univ-paris8.fr','06.34.37.27.66','$2b$12$RUMkM7yryc.bxISoZW8b6u2tEVr17SRllfJiMPb7m8jERnYcsrMGC',4,43,43), -- pwd : v*\'E^HKGs@W
-    ('52757147','Jillian','Wolfe','jwolfe@iut.univ-paris8.fr','06.38.76.18.17','$2b$12$xkAR.dvFmRnv6C9VsqweQOorwaZam1iEFIYZCG4deTUiKZ7pARw0e',4,43,43), -- pwd : 1J3I|c"[X\y}
-    ('18288023','Edward','Nelson','enelson@iut.univ-paris8.fr','07.05.23.58.92','$2b$12$vyr4.i5YXxLqCmtQcC4DXuZNjdxhJk6XV03Gvv0FtZI.le/6zZHfi',4,43,43), -- pwd : ?,+h6TeZ\:a5
-    ('21688744','Yvonne','Powers','ypowers@iut.univ-paris8.fr','07.42.59.15.65','$2b$12$5dahzyieuKkMnV9osk4sHemk0TUBb1rmIakVMMwA/hWuJa2MF0GKW',4,43,43), -- pwd : XmJ}2z.-]+s|
-    ('24986894','Anna','Hayes','ahayes@iut.univ-paris8.fr','07.11.83.88.68','$2b$12$MFhEiQ4sshn3zOg412dhJOT2Yamv/pdiZlSxVRddr/hn7OkpXwtKi',4,43,43), -- pwd : *qXgmu1-6vwo
-    ('01724059','Jody','Tucker','jtucker@iut.univ-paris8.fr','07.81.78.17.76','$2b$12$w5/a3p7Y08ExgAy4OW6HqumJQD.GIogrVNUv4PYfj/4htTa4Iokji',4,43,43), -- pwd : }/}o+;&xO5w#
-    ('93302713','Jeffrey','Walker','jwalker@iut.univ-paris8.fr','07.85.77.04.42','$2b$12$8.EQFxNQGzZjb0yblNR/1.LnmN1jOQpiuhYTsMSa.QImQOXdgYPYq',4,43,43), -- pwd : kzu1YR>o+26y
-    ('25798085','Amanda','Crawford','acrawford@iut.univ-paris8.fr','07.11.98.38.30','$2b$12$pAMnXh24fJzg2scyKU37LOQLg.pAGy5NpoijF0IUKtUKePrhZFLmC',4,43,43), -- pwd : j=%qP461M|IO
-    ('02568745','Julie','Davis','jdavis@iut.univ-paris8.fr','07.06.23.96.08','$2b$12$5GVOswVianHztDbFURWLseRkYjPY0UEOTAZdTwtZIkli7KGEDSMWS',4,43,87), -- pwd : N|{-u|)H@h7$
-    ('86657262','Wendy','Phillips','wphillips@iut.univ-paris8.fr','07.35.12.20.24','$2b$12$5mz0FoacQt//HJ5mZ92lL.TFblc4HlO6BE.vsxREixaj81x5K0uAC',4,43,87), -- pwd : W{C"I?KlsG0Y
-    ('97727988','Craig','Moore','cmoore@iut.univ-paris8.fr','06.13.59.97.09','$2b$12$idzh/u1XS1IF7K729vXmCetXp2u2Tam5W94hRf0t48eYTKymp2bWG',4,43,87), -- pwd : U|r{h7+dc7u,
-    ('86683545','Stephanie','Thompson','sthompson@iut.univ-paris8.fr','07.20.67.46.94','$2b$12$x44RWXhDHqaLijfDwloBOeGByU1ShhvoQCS9NqhKmzzIbOVBL6zNC',4,43,87), -- pwd : b8><:3m}FsNr
-    ('32719739','Christina','Sloan','csloan@iut.univ-paris8.fr','07.68.78.45.66','$2b$12$Lq8RbQC1/WsG84Xwe0ooQuThUEGafwG3vMT88GTcyekcUYmjLMx1S',4,43,87), -- pwd : xY*?#lQUb+,8
-    ('04983304','Shane','Burns','sburns@iut.univ-paris8.fr','07.57.35.53.58','$2b$12$7PNmHFV1M.Fgo.QxRvdKi.Lc1WqAV.0eN.OKvurOZVx0G6u.d3Bue',4,43,87), -- pwd : =-_mr9%FLb4c
-    ('12038577','John','Cruz','jcruz@iut.univ-paris8.fr','07.01.77.64.07','$2b$12$Gqo1.RqA6P.YZSiaVtbxHeyqs0YZvBFgsHL9X9MD.eIfP/StjIAQm',4,43,87), -- pwd : E<~`FoLnwr;$
-    ('45469766','Christina','Thompson','cthompson@iut.univ-paris8.fr','07.00.46.18.34','$2b$12$Ff0GBZTuJjFC5siR3B/rZ.BX.wy1Kq6LjV/8o/xmJb0PN.vZvLgR6',4,43,87), -- pwd : O{q/x2AolOz\
-    ('76314164','Jennifer','Jensen','jjensen@iut.univ-paris8.fr','07.72.69.02.46','$2b$12$tZvmm5Vt7f.C4C2nOYS8u.lfnyveJAN9fNzm9YsdrRIFbSyHkf/4y',4,43,87), -- pwd : %9yIXBZ7HThm
-    ('02002383','Christopher','Smith','csmith@iut.univ-paris8.fr','07.72.97.11.22','$2b$12$eGFYNrMoQRZ1Gi.ysBr8geBoVyEnjCx2H9zEFAeoZpeJ0cJOURS12',4,43,87), -- pwd : 3o6j{u{Uq}bO
-    ('93540661','Cheyenne','Williams','cwilliams@iut.univ-paris8.fr','07.22.95.16.57','$2b$12$Wmnx.w46AVbBA1PqQAlJ/.wIR61KcwnfUV7cX1sSgpsahwLtEjdpO',4,43,131), -- pwd : 0YIyUQQ@}1_N
-    ('57390122','James','Johnson','jjohnson@iut.univ-paris8.fr','06.10.84.65.78','$2b$12$uLrRKSlvf/AJrheufG24GOHkHM/3fbnCu.MBC.vwGOYdfZS5JZzPi',4,43,131), -- pwd : ;Nf`b]=iNGCp
-    ('58211449','Robert','Kennedy','rkennedy@iut.univ-paris8.fr','07.52.04.24.02','$2b$12$9bWazro1.hxBn6ev73SKxODRDPLWIFnh6HBo478IwK9LSx.4a8WCW',4,43,131), -- pwd : |_^1J*qI~}Hs
-    ('63524413','Ryan','Miller','rmiller@iut.univ-paris8.fr','06.12.41.11.16','$2b$12$vpXZj5W2iR/638uaHcxZL.yzMcPfNmWc/cynqtCC2nw3jj4sB6/aC',4,43,131), -- pwd : 7Ba]\#:HtjYR
-    ('09291057','David','Fisher','dfisher@iut.univ-paris8.fr','07.64.36.16.96','$2b$12$6Blb5g2HXJRJQLtiusJ3B.IMyfRmFcz8CZfkFJ9J.wdxGSKmiZ09m',4,43,131), -- pwd : rt@,C/C1h~\X
-    ('26578922','Sarah','Barnett','sbarnett@iut.univ-paris8.fr','07.75.18.12.87','$2b$12$fL.9VuHcj//xAXHvVTEUHOowt4l1B3g3dL3RxQhaAXJ.j1eXCuWnC',4,43,131), -- pwd : !*{{J)'_hjj'
-    ('19901492','Deborah','Willis','dwillis@iut.univ-paris8.fr','07.12.61.31.22','$2b$12$S8Ik7M7wmYQ7ZaZreRrcV.U./0kwVEfu0pNExbLkjkJ4LKSxhVclW',4,43,131), -- pwd : A}yrD8ee0N){
-    ('07777292','Tracey','Willis','twillis@iut.univ-paris8.fr','06.12.95.78.89','$2b$12$8lvM8Zpbeve.JaEEVBRVveGGFLl/yBJ/NmNrK5rcyIflRrKRmiwoK',4,43,131), -- pwd : }Ehv8Wam,#:y
-    ('92949059','Cassie','Tanner','ctanner@iut.univ-paris8.fr','07.53.42.33.93','$2b$12$OF/PzNYAnjEfGQv9K3/opOxzpa3tYIz2ZKw5jzXQeKp6E/aoQri/q',4,43,131), -- pwd : rHFsTp;WpG\E
-    ('61331748','Patrick','Hebert','phebert@iut.univ-paris8.fr','06.46.53.71.83','$2b$12$8FEtpodAi767L/hkNcFTkea2.EM3Nld76MjbWdZh9qtHx9xZRrDxq',4,43,131), -- pwd : ?<SI{2?,H3|y
-    ('38529314','Scott','Vega','svega@iut.univ-paris8.fr','06.14.94.13.45','$2b$12$2aTWxy5cgd.FH4tyH9JXa.xs6BOzvkQSKQxe0pOgxbQPv4oqUZ0x.',4,44,44), -- pwd : !fUcV$[$_ET^
-    ('38886783','Kathryn','Price','kprice@iut.univ-paris8.fr','06.56.41.14.39','$2b$12$kmMMQ5Ci7vAenSmo.GuAhu5Ux459tPtbzBpCWSbPsebaiSdo9FdmO',4,44,44), -- pwd : t1_3LKQ+iG:-
-    ('83190026','Ralph','Duran','rduran@iut.univ-paris8.fr','07.31.53.98.82','$2b$12$GBOHP8Oncq4v4Rxqw3s/yewg370quw6xPzSUNcvpLUoV7FOrJYMKy',4,44,44), -- pwd : ~_`mp"BPbc5/
-    ('62135663','Crystal','Hebert','chebert@iut.univ-paris8.fr','07.22.59.26.60','$2b$12$LVvg4cQcTyMsBlNZl494POBd7tTYDh6cP4uAKINeqGDyrySjLo8Ua',4,44,44), -- pwd : $qa8Sec-*|);
-    ('84785152','Melissa','Glover','mglover@iut.univ-paris8.fr','07.23.24.49.76','$2b$12$43n4txahnAKk.T0z3EwEQuLWkgy4YCBC8.xAiUW/YBbVPsTLtCbq2',4,44,44), -- pwd : :aQBcthhZl@@
-    ('59993344','Joshua','Velazquez','jvelazquez@iut.univ-paris8.fr','07.95.89.74.72','$2b$12$uMbSQVLnHHW8M/Z6vlRfc.CiYfn.syutDEtSPGMS7MU3EUn0AMYuW',4,44,44), -- pwd : $R~3<tTgOe$=
-    ('46320130','April','White','awhite@iut.univ-paris8.fr','07.05.80.01.60','$2b$12$XSSsBnyjSWDkDY6g.4WQge/aWBgbENIkWOrUtbDi3FFZdatCTybZ6',4,44,44), -- pwd : uKHKO-Vf.t}N
-    ('58725380','George','Thomas','gthomas@iut.univ-paris8.fr','07.46.79.03.12','$2b$12$NrQE0AbuePYY87whRib5m.uUBzxMkRuxSGLVytx7w33xcvrm8TdO6',4,44,44), -- pwd : hhR-)]m]H]s]
-    ('60175427','Sydney','Garcia','sgarcia@iut.univ-paris8.fr','06.59.31.01.72','$2b$12$UZxBEKX0vpGnLKRLvqfhf.OLGWx2weECvRZ2TAo1QsFg2XR1wfqN6',4,44,44), -- pwd : Mn1ogA='!Ge@
-    ('58048804','Joel','Baker','jbaker@iut.univ-paris8.fr','07.64.68.72.90','$2b$12$SE2ARUH2t5xvCD0H/VM9UOi.bjezYxjNGKQPG8dsT0o1O8M3t6c1S',4,44,44), -- pwd : .!H=N`l=qEAO
-    ('12302510','Cheryl','Olson','colson@iut.univ-paris8.fr','06.96.33.55.24','$2b$12$juhkWAJPKwjgS7BrGewQ8OVIBWuhs0nYtkRuoPblE/iYnuHXtXdJ2',4,44,88), -- pwd : %p8KXMxg1#J0
-    ('97811547','Mary','Shelton','mshelton@iut.univ-paris8.fr','06.33.96.05.37','$2b$12$IOVrUnBHC/CBdY.c5zDucu5KrSCX8M7Glt2OB6N55SbNfB.SMHF3a',4,44,88), -- pwd : %|7IJ&t/JgVG
-    ('05535643','Hannah','Williams','hwilliams@iut.univ-paris8.fr','06.17.36.47.45','$2b$12$7IwblzCsWpQ133DQkdOGaujP5wAZCIQz3aoFqijX8LAsfnmwx8W6y',4,44,88), -- pwd : Uj_Ey0jf;x>D
-    ('25993662','Karen','Shaw','kshaw@iut.univ-paris8.fr','07.30.15.81.02','$2b$12$JKYRUnplqUN15vI.NrTHseB8C68ukZCl4EcA57yNQCkiWaN80N5T.',4,44,88), -- pwd : w1Pao6A[y{5D
-    ('49557721','Kathryn','Jacobs','kjacobs@iut.univ-paris8.fr','07.02.59.92.11','$2b$12$fQm.HqCLqIkBErzaxjqDFu4NiVhhleKgnGpO2cD/otTJN4.sfhF3W',4,44,88), -- pwd : |6+S%bRaTP&P
-    ('81721576','Alexander','Jarvis','ajarvis@iut.univ-paris8.fr','07.95.44.46.60','$2b$12$UcG0xzZ4hO6vcMxCUhML4uBiJuiprxE/jGqb8fO1ZK98n4bRfKZ.a',4,44,88), -- pwd : QFx6(QBKom0R
-    ('11602644','Shane','Walker','swalker@iut.univ-paris8.fr','06.38.05.18.37','$2b$12$GKdmHMNR323H0VGJIdUMxeeg941ZpEY2Yy2fHDbb8pjPLO0JHDIS.',4,44,88), -- pwd : eL8&VJJk@A%n
-    ('67472131','Andrea','Gordon','agordon@iut.univ-paris8.fr','07.89.04.48.83','$2b$12$uGgFq6RiF/r/1i0MbFcK1Oh2KQTSFWHcMRD80QDF9D2Mz97wp9EaC',4,44,88), -- pwd : jDym*=!W01nm
-    ('74668828','Jennifer','Miller','jmiller@iut.univ-paris8.fr','07.27.02.61.81','$2b$12$vxcAMsBM6GP1AL.xBngYbe4gS5EwPUIrQXQiRrIx8NzqtWITfPH8G',4,44,88), -- pwd : %DR2D0-r\HE`
-    ('13773128','Sandra','Paul','spaul@iut.univ-paris8.fr','07.44.45.43.11','$2b$12$tf0IX58/P/683cMevX3XlO404Oz60sDma4Oeh.1oxQ4bHaEOlD87m',4,44,88), -- pwd : #6O[X3r_N:~E
-    ('06987383','Eric','Park','epark@iut.univ-paris8.fr','07.09.78.59.81','$2b$12$BXg5.lWE1/bkZpwUzH.7mO68Is2g7dXturdniddSV/FozrBNhRjAG',4,44,132), -- pwd : a`L'UL_FCW\E
-    ('89035492','David','Randolph','drandolph@iut.univ-paris8.fr','07.53.55.33.65','$2b$12$GBJhpmg31Uc30iWrxLql3OFLvccyg1IAW5cUv2qm7rIf54A/bnwx2',4,44,132), -- pwd : E]3)X1.$\I?N
-    ('50962677','Darlene','Hutchinson','dhutchinson@iut.univ-paris8.fr','06.90.45.07.62','$2b$12$kU6cULmwBcKdbDn4aqG8kOhm97hhFFYKCdwSGtvh2t3Ny68.vlDbe',4,44,132), -- pwd : 8"T>[Ab2(o_B
-    ('24287795','Thomas','Johnson','tjohnson@iut.univ-paris8.fr','06.57.43.93.13','$2b$12$DfEk6GuobySYE9vw1L7b4ObqbWDM8WYryT6i5nBQgtCktkfQqBb3u',4,44,132), -- pwd : %*E'nnW"Y`'?
-    ('07637062','Kimberly','Rivera','krivera@iut.univ-paris8.fr','06.69.78.28.46','$2b$12$HmH4D2fbyd.hbVdv5m84JeeUUAC9TRgZSTiwbzX6NfB5HQy21GZ/.',4,44,132), -- pwd : b-nJF#x\ce5}
-    ('27365101','Angela','Moore','amoore@iut.univ-paris8.fr','07.27.09.89.09','$2b$12$rturi5CZHWbd4a0tLfMVQuWFGnebakd5oU9L45aMG6U8ys3g.Kaoy',4,44,132), -- pwd : 1zNGk*<zy;21
-    ('12751715','Amy','Romero','aromero@iut.univ-paris8.fr','07.03.82.19.59','$2b$12$YbpuSIvWILm1V5S3sHjWnO/yD9bK990.vNFFaM/uJPcdvH8c7HzQK',4,44,132), -- pwd : .W6Jl\uJXk=,
-    ('24272163','Stacy','Carlson','scarlson@iut.univ-paris8.fr','06.70.18.36.24','$2b$12$fxciU9loRB3FnORekYircelYuNCx6Y8KO9d2kr3Vlnem7QNMuxwRO',4,44,132), -- pwd : $YF-u:..^hPk
-    ('64268964','Frederick','Hoffman','fhoffman@iut.univ-paris8.fr','06.16.98.40.27','$2b$12$WLyWGMOf/aO.tGz.vwznt.kMcGHVhbqmuZMucnpvLHoC./Pz40VBW',4,44,132), -- pwd : 6(.Iz]_9CU2S
-    ('83384822','George','Ayers','gayers@iut.univ-paris8.fr','06.32.06.80.62','$2b$12$m6pGNYpNzLkPopbA/70PVOcgqNnLpV0F7BP5leQR9JNsUILIYfYga',4,44,132), -- pwd : #b&Yka{FT]`_
-    ('31055189','Jennifer','Sexton','jsexton@iut.univ-paris8.fr','07.42.94.25.85','$2b$12$Ds9.ef4REyx3EyRuqEmndu0OTuDq9X.vhfqd9r7wqeUo9F0WYxum6',4,36,36), -- pwd : ccX@b='')<Lg
-    ('20689578','Lori','Campbell','lcampbell@iut.univ-paris8.fr','06.07.44.04.32','$2b$12$w/A.59SdSHr9TI36y.OtLudthpNbez/Qb7hR7fG6nITTG0NYy5rDW',4,36,36), -- pwd : P}7q1wB3:wC6
-    ('99590976','Whitney','Weiss','wweiss@iut.univ-paris8.fr','07.16.26.70.52','$2b$12$9fGqZgD7Wi1XmBM.5IBCaOHnq8wqYHWTy4S8fDVFIx7qrTtEgKiHq',4,36,36), -- pwd : ^eB]@r13qNe7
-    ('14102962','Lawrence','Boyle','lboyle@iut.univ-paris8.fr','07.13.99.14.29','$2b$12$0bS9USA8JmFtIWOhum7lZOR3HuXQtQcE9kCOP46458m.wHgJjbuua',4,36,36), -- pwd : Xb9arTI*Qdto
-    ('78267612','Christopher','Jenkins','cjenkins@iut.univ-paris8.fr','06.33.91.20.10','$2b$12$FLWRpZAOKtLCa1NDY.hpluGcyx8BkOQiLrJuAb1xEooQqtZFkaBMu',4,36,36), -- pwd : mBZCg_T0e{dw
-    ('13359424','Lisa','Flores','lflores@iut.univ-paris8.fr','06.88.68.30.11','$2b$12$/al/shU8mk17YNHBrCsN/uPWgCxnhzB1xhqmd4p07/U72P.EexLcu',4,36,36), -- pwd : }*6X[B1*=C&\
-    ('33344254','Todd','Hernandez','thernandez@iut.univ-paris8.fr','07.21.81.56.49','$2b$12$ihuXzpsSAaN3/mlYtdXese1M9kG8wdfc9R7m3PD.cY9uBknpGeJTy',4,36,36), -- pwd : K=1!b/\S"M'8
-    ('54641352','Jacob','Adams','jadams@iut.univ-paris8.fr','06.38.29.68.76','$2b$12$vB9BI8.Rcp9McRrCId.mj.v.H0aiuxXQrQtmiBGoi1kHDBQvzLN1G',4,36,36), -- pwd : ZK5E\<Aqq|=)
-    ('85497128','Taylor','Bishop','tbishop@iut.univ-paris8.fr','07.37.61.03.66','$2b$12$XvolTyRoVV.aqZhFSckOourqKIXh6s06ayvxFt4Lc.StohWgy5Ive',4,36,36), -- pwd : |$>T#(iH|+>,
-    ('67188402','Michael','Hawkins','mhawkins@iut.univ-paris8.fr','06.64.51.17.51','$2b$12$.JonS6X2UVIwUzNlgPSh/e4blnA0ImWdmmwejAxaqE.6iCnksT5LO',4,36,36), -- pwd : QR&M=%O7-sl}
-    ('28035410','Jeffrey','Watson','jwatson@iut.univ-paris8.fr','06.93.13.51.04','$2b$12$ug.6swti3k8YzxSAsbnv4OKffSkqutVPfwSmPKizYb8rgA07Y3gUW',4,36,80), -- pwd : qYq=s;CHy@r.
-    ('72215630','Kathleen','Martin','kmartin@iut.univ-paris8.fr','06.32.00.37.38','$2b$12$SKOyLzeXaekCerqh1MEyYeimBbXHuwjCf9x9k2JNe907O8i.E20Gq',4,36,80), -- pwd : 5<gG9F%1v[Us
-    ('39305054','Jeffery','Brooks','jbrooks@iut.univ-paris8.fr','07.18.77.07.38','$2b$12$xnjwLeX1266wh10tmBJj8ervrzLYTdzUnhdOt2Tcip2SAdhDozXiG',4,36,80), -- pwd : X`/BqO~cNC61
-    ('13741976','Lisa','White','lwhite@iut.univ-paris8.fr','07.52.10.77.18','$2b$12$0ryaMgdsp8lnGfjRyELN3ObqOJn6y5DXjkxJIPThRorBwJVR4b.Rq',4,36,80), -- pwd : NaR:yJl3m0b>
-    ('29022960','Tamara','Cross','tcross@iut.univ-paris8.fr','06.90.00.08.92','$2b$12$DzQ7YVzFquP4gNLDQqlUr.TwrCqX0v/aUcT0ycnBAnCN6JwHWVcPu',4,36,80), -- pwd : `IFhdE%Q4^jE
-    ('32941425','Jasmine','Ford','jford@iut.univ-paris8.fr','06.88.88.67.49','$2b$12$g6jBLTeJ0HeYfTEHlpKD6uRUbTfnJBhTn2j9OawPWVYUkgeVw5y2O',4,36,80), -- pwd : Od8&/d|y84;H
-    ('84708103','Debbie','Jacobs','djacobs@iut.univ-paris8.fr','06.27.40.14.48','$2b$12$ZvH1jO0d4F5ywyD7P.cUcOeQSV7eAAtPONQxGkeB54qOXVEvx.tMy',4,36,80), -- pwd : lBGK;6WRswC&
-    ('61720832','Stephanie','Moran','smoran@iut.univ-paris8.fr','06.79.15.12.39','$2b$12$ZYRgcm1VGX63HmiMBifLxuEp6s.47V9XwUs3LlD2OrTS4lcH7ZV42',4,36,80), -- pwd : E*#q?spl01S.
-    ('53253819','Isaiah','Bowman','ibowman@iut.univ-paris8.fr','06.50.50.17.59','$2b$12$odofEirAfc3nhLXGy6jZ0.BfZX4QN//C5AEG5qaefAP3Tn1oejhPi',4,36,80), -- pwd : DudLO55Y<6"/
-    ('71664116','Sheila','Stark','sstark@iut.univ-paris8.fr','07.55.11.61.27','$2b$12$TBh/.oKsrnK1sHTcyMhyT.CoGTCoW5W2o19U2lWsTZYwQCOtChRIi',4,36,80), -- pwd : s,$&G[~n]?:?
-    ('05476284','Alan','Thompson','athompson@iut.univ-paris8.fr','06.10.98.23.33','$2b$12$gsD6qrLM9X2NVE0R59GksenfVDiSTlUAF2e5VmRPf5wcS5yM3vKeW',4,36,124), -- pwd : M%^:Hm#$l=#\
-    ('70725989','Rhonda','Bell','rbell@iut.univ-paris8.fr','06.38.43.74.50','$2b$12$3UX7HJ2ne2dPN2T3xupHGOxEDFn/3QejtOFONjHV2T7yBXmgEXxiG',4,36,124), -- pwd : r|gM'w'y5~qz
-    ('29069411','Randy','Castillo','rcastillo@iut.univ-paris8.fr','07.90.99.55.56','$2b$12$057sY3cQg1esYQ9XE.ylseYsaRmvcbi29HuPn3TPhvKBDSd8LNVCO',4,36,124), -- pwd : D'OeV,hT,g>i
-    ('31088294','Jo','Harris','jharris@iut.univ-paris8.fr','06.26.27.73.80','$2b$12$Ss7DwikdIH4sAaOfqsYrHOJL2.OU345E5Zq0/xIqHJthbV.sNPwcW',4,36,124), -- pwd : JG6zPk.2^:ue
-    ('94670208','Kimberly','Nelson','knelson@iut.univ-paris8.fr','07.01.11.07.21','$2b$12$Qn5RBD6qcCRW9Clvy02dpOlWFRe6vNj4Bnx3uuKKJwPKzfcvoLKoW',4,36,124), -- pwd : (9!~}:.p40u9
-    ('03241904','Patricia','Farmer','pfarmer@iut.univ-paris8.fr','06.31.57.33.44','$2b$12$ro6Xj8PFnfsCJ.wm83xHhuMzhTXno7pytiC1P.L.j6iBxcKrSf6Qy',4,36,124), -- pwd : 7[ZTAhpuGtZ;
-    ('30523853','Lisa','Hanna','lhanna@iut.univ-paris8.fr','07.44.55.97.34','$2b$12$og7.x4/ylwSyi.OzBfUcMeju2xz3wVW6hCJRYX6vztEjbik26Az2i',4,36,124), -- pwd : c(-R.KH`+o"D
-    ('42586035','Breanna','Haas','bhaas@iut.univ-paris8.fr','06.87.22.73.60','$2b$12$UtpOS.TCmXV3tfvEg5Sw9O3eMTQGsYhxqzgAT5p4JbkKJRnYxnlwq',4,36,124), -- pwd : E^[)~qEFVO}4
-    ('22347338','Jessica','Williams','jwilliams@iut.univ-paris8.fr','07.19.33.47.24','$2b$12$mnmmCd1YyyCKM1hL.zIipOQPF20yBUNMeVs5a6QRciIAk6.19M5CW',4,36,124), -- pwd : K"Imgmt:tJ%#
-    ('79555373','Ernest','Carey','ecarey@iut.univ-paris8.fr','07.82.41.80.37','$2b$12$Ybsf9hk5jSaBzKiWXgeYX.K30iL8Ec9TQXi5l8qJW0LJ/BxD6oX9K',4,36,124), -- pwd : ykHyAWa9Y(z3
-    ('61331760','Kristen','Hernandez','khernandez@iut.univ-paris8.fr','06.44.20.95.20','$2b$12$OU1rVCEqwUOUxERL/2OyE.Gj42hRNrGf91lpo7w8I5LT2jeQzGRpa',4,34,34), -- pwd : %24Z0;y{miMK
-    ('14110500','Megan','Williams','mwilliams@iut.univ-paris8.fr','07.90.55.98.68','$2b$12$2M4Bd14VRKQKrIU1yFQeGu/aCWeIq.7z2/30rLpi/11G8DEz60a5i',4,34,34), -- pwd : F(IaxfP#4A<\
-    ('14790194','Janet','Wheeler','jwheeler@iut.univ-paris8.fr','06.75.26.75.80','$2b$12$UPaeoimeLkV23ekGFLGaCOEZuzhj8VtKJrQJAfEMCwqolYUzIJ6Qm',4,34,34), -- pwd : QP:K;;~b/rHF
-    ('66204500','Willie','Gross','wgross@iut.univ-paris8.fr','07.59.82.43.05','$2b$12$mNLAQVj3IU2ne9ZASoL7qOXnVN5b3OkhtFCQsKDEiGkc1jIcpFcJu',4,34,34), -- pwd : 'nd_;/Sk*9c,
-    ('99205403','Amanda','Jacobs','ajacobs@iut.univ-paris8.fr','06.34.84.51.01','$2b$12$ZSPR40x5Mij1A3TVVRFPHuf4QtSADXHKVm0KTaJxHeOBseh0HeI2W',4,34,34), -- pwd : l+0~)A){yzIr
-    ('11415997','Crystal','Harris','charris@iut.univ-paris8.fr','06.70.17.04.77','$2b$12$pOe9WBm.oagfMhRWKQsdvuwRaByKny7V/WgYBHE8.8mL18/JUStcy',4,34,34), -- pwd : [W!$6W1,M+dZ
-    ('58779488','Kristine','Brown','kbrown@iut.univ-paris8.fr','06.78.86.41.59','$2b$12$QpcVEYkhZjHxDheUpNPhpOgf.fpYKu/m1DStEB27eNSvHOfpkh1hi',4,34,34), -- pwd : e#R=E"EL78(n
-    ('38188862','Andrew','Wagner','awagner@iut.univ-paris8.fr','07.47.72.87.04','$2b$12$wk3AzKeaoOJZ5HtF2DmfBuKbZuZhuC1dVKfVDNAIdhI5e.K029mNu',4,34,34), -- pwd : 4#YhJBYUdu8m
-    ('76910893','Paige','Carter','pcarter@iut.univ-paris8.fr','07.65.72.42.23','$2b$12$PpVN7hpHHIrLvSGrzWVf8O3MWGXRM5kFDUjpVz.61BgIR4ueWRPBK',4,34,34), -- pwd : f})_\VA`Hs#n
-    ('18697585','Elizabeth','Kerr','ekerr@iut.univ-paris8.fr','06.59.52.48.15','$2b$12$yPQIrWkfPyEt2VhqbZf5xuLh1MO9a6gF/uBXbcYcJ9aTxnSSgOIiy',4,34,34), -- pwd : ,+D_kr(7]R1N
-    ('97418340','Shannon','Parrish','sparrish@iut.univ-paris8.fr','07.19.02.74.57','$2b$12$Pdf9uIwoMJfbmqCZUHyrm.4tiGAh/W/UlnHbYsOQ5nbjXQRv1lmXS',4,34,78), -- pwd : >%4Xm7j(,9qp
-    ('49171004','Terri','Brown','tbrown@iut.univ-paris8.fr','07.76.90.52.65','$2b$12$mWAlsf2LyMRJfNzjQGOyz.NkB0.oL.3fcyNjP3VDlq/1rGNMEtPL.',4,34,78), -- pwd : p31HdD0IA(uW
-    ('96628888','Taylor','Flores','tflores@iut.univ-paris8.fr','06.45.97.09.79','$2b$12$wA5OX9PXkR4NVE4iwIT0Bu1STczg8XRAx0BD9z4o6b5I.dwbH6hsS',4,34,78), -- pwd : tjGKckh'2CWJ
-    ('16631212','Nicholas','Conley','nconley@iut.univ-paris8.fr','06.83.59.56.99','$2b$12$l7cLo76QkVFZ70I36XMJyOmcoYE4XPfmwzqxdnUyHErHJsZ0nyX3.',4,34,78), -- pwd : k\1cjW_-RA72
-    ('21938917','Emily','Blankenship','eblankenship@iut.univ-paris8.fr','06.38.58.38.12','$2b$12$XfZgBbvYUvSsWosiXyHX8Ohqnm5RAWdOS9750flE1KuVFvazwa0Ia',4,34,78), -- pwd : }|F])%4bysDO
-    ('90901518','April','Wilson','awilson@iut.univ-paris8.fr','06.29.08.95.17','$2b$12$IpWTIkhZob.83THU29188emcVDdxsJGbsWAjDLAp3rAbaMu1VNCeW',4,34,78), -- pwd : xKz(=_Ras^ki
-    ('68962278','Olivia','Lawson','olawson@iut.univ-paris8.fr','07.56.72.83.95','$2b$12$RL3WPXIFbVO7x0SGMFTYzeKBBk8zY4M7STybiDYgmokRYaPmEK3TO',4,34,78), -- pwd : -&.V`c*xqFSL
-    ('93139775','Lori','Huynh','lhuynh@iut.univ-paris8.fr','06.82.59.86.11','$2b$12$D7KYJOtc7812oyTYUoWLZ.Yk3esLB/OCdSzUQzSveddSOzVRXEeS2',4,34,78), -- pwd : `bygSi=R+-`3
-    ('61417727','Marie','Holden','mholden@iut.univ-paris8.fr','07.84.93.51.10','$2b$12$zA46NYNRNnsTSkGiFURpee7Ls6LWWYUMvlPZycP0E/svthNKWESpS',4,34,78), -- pwd : VU`/*;[@+!:%
-    ('09500646','Tabitha','Morales','tmorales@iut.univ-paris8.fr','07.69.42.20.53','$2b$12$.KY63WzSErh3RNqSFsKtOuMYXr85UiFt4TvuG68FbJwciZvfcvYHK',4,34,78), -- pwd : r5rP.iLX'X1P
-    ('71635339','Jennifer','Cooper','jcooper@iut.univ-paris8.fr','07.98.37.59.39','$2b$12$LKzzhhXiOj3oRBzGbtIKY./i7I5He528AnqRCSDZN6kELZFniTEQK',4,34,122), -- pwd : ]xn\rz_:%lEO
-    ('26819264','Kevin','Sanders','ksanders@iut.univ-paris8.fr','07.75.16.47.93','$2b$12$XnjqTVxqenAqZxz79MJ6juj0dxvFTY20qPeM7B8EOdPmdH4EjwjRK',4,34,122), -- pwd : v|Ek6J/ct--q
-    ('24984521','Christine','Blair','cblair@iut.univ-paris8.fr','07.97.71.21.37','$2b$12$OQuOi2M4J/2Tz6oZPNqqmeKb9SC3nH3RDJ4zAV7A7J5lDaliQ1kkC',4,34,122), -- pwd : pH%irA6|\_uc
-    ('62765253','Vanessa','Villa','vvilla@iut.univ-paris8.fr','06.18.62.75.88','$2b$12$KDP0e0TAe/t5si84N8D/T.AP3BQijIcw89qhU1Fs5VEWVEfBeBTre',4,34,122), -- pwd : 14+#woS]ci)P
-    ('57629130','Tyler','Morgan','tmorgan@iut.univ-paris8.fr','06.89.54.02.90','$2b$12$VYqqyqQnh4ZvOMG1uneba.lU.rutPdrQqN95gNKs3fMfKUD9Juvda',4,34,122), -- pwd : Alw$3&KLk5Bj
-    ('69411834','Karen','Tate','ktate@iut.univ-paris8.fr','07.51.98.05.43','$2b$12$Van1yYy9UAS9QYQWTT4.ne3dBUe/xBw1cjUhWK.uK7LeZRiOw0Y/O',4,34,122), -- pwd : E4VI@jROiE)n
-    ('27015085','Ashley','Gonzales','agonzales@iut.univ-paris8.fr','07.85.92.59.81','$2b$12$aQ/xcfv3NVfugr4pRiSL1.MtyHnRMVicsuBZAsLfJ7iUkfYWqZUZq',4,34,122), -- pwd : 4TZ.HQlSI6cZ
-    ('93140895','Christina','Gordon','cgordon@iut.univ-paris8.fr','06.35.94.70.87','$2b$12$PQQpxrnIBWmqR6FgWBrTH.sDF.vvc1k05hQ7jCQjOTGv1cqH0Q6PK',4,34,122), -- pwd : ?k;]{@Q[GsI4
-    ('29917651','Ryan','Sanchez','rsanchez@iut.univ-paris8.fr','06.34.55.44.24','$2b$12$CXyUtMVmiNk2ircqmox8MO1.ASFceTi8SNu4aBFWCMvd5UWehQXJi',4,34,122), -- pwd : T~r;y\Gv$fG=
-    ('31349843','David','Moore','dmoore@iut.univ-paris8.fr','06.71.97.12.52','$2b$12$E1fIxe8wPcRyavU6TnIfieALHUiuVUXeLgxCkbREc.iz.rdnw8zIa',4,34,122), -- pwd : yU34NN2pXkjI
-    ('95195948','Randy','Campbell','rcampbell@iut.univ-paris8.fr','07.28.74.71.04','$2b$12$dT7OxYqWHVnQ6hakGHtdk.Ry3eJmk0x6CjiZF17UmY0H.EkZ2u0Du',4,35,35), -- pwd : $f3p|QE(,?U@
-    ('50702605','Russell','Rogers','rrogers@iut.univ-paris8.fr','07.47.87.32.04','$2b$12$Im/jGSaezp0mfUsxvsJNhO7aYrAcZZp/.kXxL.fMsv.3xB9Vgzpmy',4,35,35), -- pwd : zxiLp2,D:$l[
-    ('63241690','William','Meyer','wmeyer@iut.univ-paris8.fr','07.46.10.65.57','$2b$12$biZjVN..C3On0NpPatOEcOdj7fPkB64O5STMRNmhMdP7.SIIXe/46',4,35,35), -- pwd : E&-96{X;[+V@
-    ('89224536','David','King','dking@iut.univ-paris8.fr','07.93.05.56.11','$2b$12$1uLLKRFdOFH4F5KVEaHII.gHM8liPSvNJMev71BJaFJ0RC9G.LVQa',4,35,35), -- pwd : N*NdrN?TNb[A
-    ('90656539','Tyler','Austin','taustin@iut.univ-paris8.fr','07.65.60.48.49','$2b$12$yBhzUi96fxC6l2m00lMWNe6eSkxs100u.CD/ViQawvnN5tcHiFyNq',4,35,35), -- pwd : lY~F2{Ev>%SK
-    ('08774062','Matthew','Giles','mgiles@iut.univ-paris8.fr','07.63.62.24.22','$2b$12$8cLTNWww4uvGY0FiY2XXhO/40Q5fNgfYuwIt.OA7PwsgbDrXKr44G',4,35,35), -- pwd : %A@`dxc'kiX;
-    ('42513214','Anna','Tran','atran@iut.univ-paris8.fr','06.37.39.36.40','$2b$12$HgPgVGEOxaOs0kN34Nn1o.9g1HFNZ1WwNSs9FKY2Vvxkjz9bA.kVC',4,35,35), -- pwd : x`Gqn1[5iaS^
-    ('56200950','Herbert','Gonzalez','hgonzalez@iut.univ-paris8.fr','07.43.55.63.32','$2b$12$vOgJ8ERQqq.DlkfmfjzjWO32N8YYOL4V/2foW97G7AS0phoOL01Gq',4,35,35), -- pwd : <EgE~RcPQm).
-    ('89696180','Tina','Perry','tperry@iut.univ-paris8.fr','07.81.77.52.76','$2b$12$E.KcMxvQsV9SbGeasmSMLe007LYqKC/AyVVm1YyrRcNKXYCYelgfy',4,35,35), -- pwd : L"OG&%~HMTRh
-    ('62092363','Nicole','Cain','ncain@iut.univ-paris8.fr','07.25.23.05.24','$2b$12$WPHbrIdRLZYOYjKmWcNoCO5fYGDLN9r2DdWogQ0smBWT0zAX1L5Cm',4,35,35), -- pwd : ;'A>aegIDTP`
-    ('84324621','Melinda','Lewis','mlewis@iut.univ-paris8.fr','07.41.83.18.99','$2b$12$qXBCBKkYeV3FmEUcjiouB.eV35dplV6TTseXE5w.nnJ3he0n6j/RC',4,35,79), -- pwd : Oo~Fa:7I{cxJ
-    ('87221462','Robert','Santana','rsantana@iut.univ-paris8.fr','07.43.30.12.09','$2b$12$ujuKVyvDFl.UXSpYf9.cnuW3lVyc5khFGKU3FlSMeNm2FSSp0z4hu',4,35,79), -- pwd : vaSo{9:f"Txc
-    ('29171001','Nicholas','Mack','nmack@iut.univ-paris8.fr','07.57.30.28.74','$2b$12$5gzRXR.oc/o3rG9TFgrZWeCQlHwMQfjka7ZZURpMudzfbkg.UQcbW',4,35,79), -- pwd : 1\ucW3X`/e/G
-    ('54862612','Rachel','Bishop','rbishop@iut.univ-paris8.fr','07.06.13.78.88','$2b$12$OtuJTnArV6EAnvYIXab3repsv9kqGtYgsfy44vtWa8o1LotrEiRGe',4,35,79), -- pwd : '-ARx`La(fH_
-    ('12451754','Jill','Casey','jcasey@iut.univ-paris8.fr','07.08.59.76.22','$2b$12$ViWvmvayuH3gABuETqCg3ONbzPcvamrekuRlIfzw6CfuPJtdqU46a',4,35,79), -- pwd : WWwVpVX*g~JQ
-    ('94822493','Samantha','Kelly','skelly@iut.univ-paris8.fr','07.66.80.00.19','$2b$12$rm1lpf3ZtNct7y.WUTb0hOIIx2C1JM2tykTwG43nWwvJgA/lKsDx6',4,35,79), -- pwd : `,)DjVZ{5Xza
-    ('23024341','Melissa','Reed','mreed@iut.univ-paris8.fr','07.98.53.10.76','$2b$12$90O4Exwd0zzx7eNOMC1axeui1smy47Vv6.mMy0ROBUNsTh2Z91Ln2',4,35,79), -- pwd : {uca@uRf?FJG
-    ('31184072','Tamara','James','tjames@iut.univ-paris8.fr','06.26.45.04.28','$2b$12$ZS6y3BlGDJUf4MUeU9BwhufvUB/10gKK3FwHAqBhqxAVF0YjgY8Uu',4,35,79), -- pwd : E1-$TWl^&F~:
-    ('36381702','Jason','Green','jgreen@iut.univ-paris8.fr','06.85.34.96.03','$2b$12$.QbzyzklaznbLZwUIuFPquCwlpFoeFXyrK6bTNxt6SLWaUqlNEfFu',4,35,79), -- pwd : }tU_'!&{!{_|
-    ('15706934','Sarah','Fox','sfox@iut.univ-paris8.fr','06.56.47.61.78','$2b$12$mmwhybrfWBL8ZYQCJn9dsOEOEAIFMhKq6okscOZ0raVdjXRkHjRTm',4,35,79), -- pwd : hJU/[Kmu>fs*
-    ('91698965','Brian','Sandoval','bsandoval@iut.univ-paris8.fr','07.71.67.49.23','$2b$12$1bfExq1pL4haSXaptTkVruoVDSyVSQ3n0q0xkkGHjZDTKSeTAtPlG',4,35,123), -- pwd : zb9PTD'Bh&k_
-    ('91506368','Anthony','Wells','awells@iut.univ-paris8.fr','07.39.25.43.18','$2b$12$Vhd3ieFYGpL0O1IxT5NQEuE8RT0xU190TTvO0vhZL1BOVXDq7hvPG',4,35,123), -- pwd : Vo7i;@9xFq\2
-    ('69816247','Mark','Bishop','mbishop@iut.univ-paris8.fr','06.32.78.37.76','$2b$12$xD2xbi6opPpL/tnvnurAB..eyRBgFCsCaW/OMt7rdm/DLvt.Qi2Dy',4,35,123), -- pwd : 7>!`?(zMh_5r
-    ('83882181','Wanda','Sanchez','wsanchez@iut.univ-paris8.fr','06.34.44.62.63','$2b$12$Tll35BDQI8weHQBqLFIWROo4laZu8HqutLn1boRy6UZA.Fb.pRcrW',4,35,123), -- pwd : 8e,[kCBKD2*N
-    ('82557910','Karen','Bell','kbell@iut.univ-paris8.fr','06.49.09.40.97','$2b$12$5smz2qyAJCX.gWKyZBAimerAQjyAc/2y3xXGQh9g.GoKq0flGh3nO',4,35,123), -- pwd : y0MO.Fgg]?T1
-    ('04243540','Seth','Yu','syu@iut.univ-paris8.fr','06.01.79.53.96','$2b$12$d7naScwf7k.QcKhpbLVYNeufM7qJppUHQ.FtACNb3BzyQB4ea3u9i',4,35,123), -- pwd : i:$KQ7Jd5%Q4
-    ('70398693','Angela','Huang','ahuang@iut.univ-paris8.fr','07.84.72.57.20','$2b$12$BUNSwFtCCFrDrOt8qovc1uPAKjPBF/.Rzu89HzrKLi3mFVudV354i',4,35,123), -- pwd : d2P]={tZb.4F
-    ('93055275','Vanessa','Simpson','vsimpson@iut.univ-paris8.fr','07.53.45.31.94','$2b$12$mUHOZHq.iBEY6wIQyP3gZeW7OHvChPL1vb12uelaBBePdzRRFT.Be',4,35,123), -- pwd : gCB8TQiF=u=T
-    ('89068271','Fernando','Pena','fpena@iut.univ-paris8.fr','07.85.30.16.79','$2b$12$KhruM5rRgkNkyTSB7pwxTe2HjkUxjacai.gpJbdoJV0eqqcy0tLku',4,35,123), -- pwd : b:uR(`M?d88-
-    ('64397875','Christina','Jones','cjones@iut.univ-paris8.fr','06.95.86.82.80','$2b$12$D6xWAVSQ8r3lqwAJorP/XehiSGCj1GbUSlHMfR19P0H7PXegp8YZy',4,35,123), -- pwd : Aot2Ep,CpUD3
-    ('32238536','Margaret','Marks','mmarks@iut.univ-paris8.fr','07.07.30.78.09','$2b$12$LPseQxUeoBhV6/CqYEliX.Nrr2.WLqJpQZ2CemLZxR1XOnTlX7nT6',4,12,12), -- pwd : <C=p^(8F7BZC
-    ('57318908','Tammy','Hester','thester@iut.univ-paris8.fr','06.48.09.08.01','$2b$12$xmzdrFNZKYnqIMzV1hmGReGgBYSNye5/NjnJn5rOoXiXOhVKpVpue',4,12,12), -- pwd : o]QoJ3WQC&<Z
-    ('04918993','Benjamin','Patterson','bpatterson@iut.univ-paris8.fr','07.69.10.22.89','$2b$12$rXU8JNOLeFlFyEEEjywBMOAZfQobCxJnGo9EMIFxnBMx1HCKbNo7S',4,12,12), -- pwd : ^(]6j=MPG:wi
-    ('54397979','Brittney','Finley','bfinley@iut.univ-paris8.fr','06.93.04.39.57','$2b$12$Ll83He/CTTiRxIYgR.ZLjOAH0IILcBu//7RqoI.o960VsY4nVbMi.',4,12,12), -- pwd : ?mH??!$F!5~U
-    ('54977363','Valerie','Cruz','vcruz@iut.univ-paris8.fr','07.92.12.75.95','$2b$12$rGJNDVIeMDKGuj.kJnNsJeVGGbWutGw4b30PpolkKzA5MHDrFB5y6',4,12,12), -- pwd : [&w_Fr3noyiK
-    ('43401445','Katie','Campbell','kcampbell@iut.univ-paris8.fr','06.77.92.19.10','$2b$12$i1b5wBL1m9SYajdIYriS.O3rKk8dIl49yKqcCJjMH520A8aIWsC.a',4,12,12), -- pwd : no<n@14[/aV;
-    ('50213284','Matthew','Perry','mperry@iut.univ-paris8.fr','07.93.62.20.66','$2b$12$XypV.w3Hp5TrLTQuHfP2R.xohruhLdHy76mxGsenxzLZQt/iWV4cq',4,12,12), -- pwd : +xo@(L!)<jm,
-    ('10417153','Ray','Nichols','rnichols@iut.univ-paris8.fr','07.87.44.74.40','$2b$12$2VuRneN4pEoAOKHI3cthqeQQroAMB8HKaLH.yxNczR0c6q8qAkKO.',4,12,12), -- pwd : A?,*ukYu^j}D
-    ('84969122','Kimberly','Garcia','kgarcia@iut.univ-paris8.fr','07.93.59.55.14','$2b$12$zuEr.5mO1hzjbrkFAM3ZyOjmJsuo4zoK3xDLC9uo8EbxJZKp9MOYK',4,12,12), -- pwd : b=g0k![ih]S'
-    ('68032725','Stephanie','Clark','sclark@iut.univ-paris8.fr','07.79.52.33.65','$2b$12$JRuwDjKLIvYSS4MPXbaHY.WpBcq0ryMemQ36py2mS30G6thGPaD/O',4,12,12), -- pwd : AGgv9bR&lHf,
-    ('68618211','Alexandra','Allen','aallen@iut.univ-paris8.fr','06.32.80.99.66','$2b$12$TmjX/sbVGRsrnjVi.OPoM.Qm38DkjEOXB71Xz/gg/zJATu4F1IoYK',4,23,67), -- pwd : 1xS``SMm~^Q!
-    ('83877019','Tracy','Perry','tperry@iut.univ-paris8.fr','06.65.44.70.73','$2b$12$0k5Yf8zX0DXTatX1bSYuHe.ymD3MXiH/tdsn/5Iqi.EYdQwcvw3Hu',4,23,67), -- pwd : `H-!@8weNFuK
-    ('08783200','Linda','Wright','lwright@iut.univ-paris8.fr','06.81.39.55.18','$2b$12$4zuB5X5/I1P8QskU6MvvhuO1BpWpsr8hg8qZHbtmYCBQowmIGFLHa',4,23,67), -- pwd : *EJ9mrZ+N@^U
-    ('22958887','Anthony','Davis','adavis@iut.univ-paris8.fr','07.52.60.91.52','$2b$12$KvK1kRT0Ei2RoqXMb9v9GuYkZjxV7m1lWcbqsPirCckhp4Ds74R96',4,23,67), -- pwd : ~sg;J]+--Y&s
-    ('90710844','Jennifer','Fischer','jfischer@iut.univ-paris8.fr','06.51.92.73.75','$2b$12$ibyysYSyy4LHUxkBvdxX3uNhII70/TmllOT0L8pkr/8H76B6N7Bly',4,23,67), -- pwd : G<_MI=u?RKkJ
-    ('79649503','Andrea','Calderon','acalderon@iut.univ-paris8.fr','06.67.49.87.28','$2b$12$mb6wxL4sZHANqx9d7pyP0eKyS/ks2ulQs1gQoRembTDo9VGtFWKVq',4,23,67), -- pwd : {n&I<ehmvi?M
-    ('71550034','Richard','Lawson','rlawson@iut.univ-paris8.fr','06.50.15.81.39','$2b$12$cJBaLUM2pzP6fTF5wtX9r.FTvgXKHACqM9XvXifWZQDvodeG2cxQ2',4,23,67), -- pwd : ue3~~xIz_Nv7
-    ('16713138','David','Zuniga','dzuniga@iut.univ-paris8.fr','07.53.58.09.82','$2b$12$9W09Vv34bpxzGGL9SLCUre2OqFHZRQ5qTACAnaAeXu5GBsUry4wty',4,23,67), -- pwd : gqx@EsO##DaX
-    ('82777835','Andrew','Willis','awillis@iut.univ-paris8.fr','07.51.72.52.28','$2b$12$259eBBS37TPaJO386Jac3.VHUah6jbQe16XRN2kcy8kRvsGtmq3bC',4,23,67), -- pwd : 4J`CBEH-O1\O
-    ('30396031','Vicki','Pugh','vpugh@iut.univ-paris8.fr','06.49.06.61.60','$2b$12$eTFhDUiXLZglV3pCvSEaUO1Mk42hOEPecJveI/jkmqLL5a9Sdm9UC',4,23,67), -- pwd : lX+TVt)~N[|1
-    ('99527325','Michelle','Mathis','mmathis@iut.univ-paris8.fr','07.20.73.50.22','$2b$12$zqd/yyJXOiGTvA3ne0UxM.DwiyDXyDg1AoIX/TsUiw.Y0KvLVObZ6',4,43,131), -- pwd : L-M'U!^kA<Hw
-    ('25932010','Paige','Miranda','pmiranda@iut.univ-paris8.fr','07.84.96.01.04','$2b$12$LnYfB.wXULQX.J1jK3wCgew9aEXCfcnSZ2Qcc1keTrVTG0mMFwLai',4,43,131), -- pwd : 0YmoB7B0+)gv
-    ('71756420','Melissa','Cooper','mcooper@iut.univ-paris8.fr','06.45.89.00.93','$2b$12$/ZlQQrQ2vhK8vDnpQ38AtuNhzFxZ4q4msCgZxegtJydMWwrKXLVGu',4,43,131), -- pwd : n*.rW79^r9'}
-    ('75438409','Angela','Mercado','amercado@iut.univ-paris8.fr','06.18.54.43.47','$2b$12$K8wy3Uwdas2bMu30tFEBb.Iz/OdiUiOG30zzcrQx9KlYdPXu2iggq',4,43,131), -- pwd : !/F>%F!vs,Pd
-    ('84210640','Christopher','Stokes','cstokes@iut.univ-paris8.fr','07.77.15.66.11','$2b$12$ieUI/zYCD5ORpdGFsan7vOx0N9Z5KyIGem1BTsWz1qL7TlyHLEy.O',4,43,131), -- pwd : xBQpy94;MlY,
-    ('16207268','Michael','Mccann','mmccann@iut.univ-paris8.fr','07.03.50.79.78','$2b$12$ai6HLRLlHTuxTNabMV1kue/81iNJ7bunyqJI06gk5A5/3IJnwcfIq',4,43,131), -- pwd : SP?xsAnh9O(5
-    ('74312119','Samantha','Martinez','smartinez@iut.univ-paris8.fr','07.83.66.44.41','$2b$12$ouDoAkRTBdANQqkDUBIqxe1deJ/ZoNmiciU2psILJyj3Gk.GScji.',4,43,131), -- pwd : cKcVVY%uSshI
-    ('07767752','Ethan','Rodriguez','erodriguez@iut.univ-paris8.fr','07.10.43.04.94','$2b$12$jp5XZ4owbj9ABFJ3RzpSpOIFYvdG48RALaBaFRhrIczpQsmEJvlm2',4,43,131), -- pwd : _&r0Vr1f-LC{
-    ('49193399','Paul','Johnson','pjohnson@iut.univ-paris8.fr','06.27.11.38.55','$2b$12$jAEvBTpSU6NGdEOOZJoPr.K6AoK3LhyaD.x/tUFJoRzQI1pB/l9/S',4,43,131), -- pwd : wO9Bv^W42{j#
-    ('93534416','Joseph','Gutierrez','jgutierrez@iut.univ-paris8.fr','07.67.96.78.91','$2b$12$DKsw6ubmZimfp5Vg.UNQb.jiwn7Au4fd7fb/JtzOitnEEXhiK9d7W',4,43,131) -- pwd : =RS`MM?8HSKw
+    ('82110480', 'Ichigo', 'Kurosaki', 'ikurosaki@iut.univ-paris8.fr', '07.31.18.90.10', 'ikurosaki', 4, 24, 24), -- username : ikurosaki 
+    ('12954159', 'Rukia', 'Kuchiki', 'rkuchiki@iut.univ-paris8.fr', '07.16.11.67.69', 'rkuchiki', 4, 24, 24), -- username : rkuchiki 
+    ('51013542', 'William', 'Ross', 'wross@iut.univ-paris8.fr', '07.97.24.83.04', 'wross', 4, 24, 24), -- username : wross 
+    ('05381263', 'Julia', 'Spencer', 'jspencer@iut.univ-paris8.fr', '07.30.95.49.76', 'jspencer', 4, 24, 24), -- username : jspencer 
+    ('56788690', 'Angela', 'Richardson', 'arichardson@iut.univ-paris8.fr', '06.12.25.16.12', 'arichardson', 4, 24, 24), -- username : arichardson 
+    ('32256608', 'William', 'Bender', 'wbender@iut.univ-paris8.fr', '06.81.85.93.35', 'wbender', 4, 24, 24), -- username : wbender 
+    ('12414367', 'Andrew', 'Gibbs', 'agibbs@iut.univ-paris8.fr', '07.73.15.96.74', 'agibbs', 4, 24, 24), -- username : agibbs 
+    ('13489903', 'Kevin', 'Nolan', 'knolan@iut.univ-paris8.fr', '07.23.22.82.06', 'knolan', 4, 24, 24), -- username : knolan 
+    ('09317093', 'Tyler', 'Boyer', 'tboyer@iut.univ-paris8.fr', '07.59.27.18.68', 'tboyer', 4, 24, 24), -- username : tboyer 
+    ('38850039', 'Taylor', 'Santos', 'tsantos@iut.univ-paris8.fr', '06.78.32.49.09', 'tsantos', 4, 24, 24), -- username : tsantos 
+    ('79910389', 'Mercedes', 'Franklin', 'mfranklin@iut.univ-paris8.fr', '06.60.92.93.57', 'mfranklin', 4, 24, 68), -- username : mfranklin 
+    ('77178576', 'Aaron', 'Mullins', 'amullins@iut.univ-paris8.fr', '06.71.37.91.65', 'amullins', 4, 24, 68), -- username : amullins 
+    ('67236215', 'Daniel', 'Nelson', 'dnelson@iut.univ-paris8.fr', '06.43.44.03.14', 'dnelson', 4, 24, 68), -- username : dnelson 
+    ('25075962', 'Sheila', 'Gomez', 'sgomez@iut.univ-paris8.fr', '06.71.34.91.55', 'sgomez', 4, 24, 68), -- username : sgomez 
+    ('65951003', 'Christopher', 'Adams', 'cadams@iut.univ-paris8.fr', '07.42.35.55.32', 'cadams', 4, 24, 68), -- username : cadams 
+    ('05846520', 'Sherri', 'Fischer', 'sfischer@iut.univ-paris8.fr', '06.28.10.96.15', 'sfischer', 4, 24, 68), -- username : sfischer 
+    ('51308951', 'Isaiah', 'Molina', 'imolina@iut.univ-paris8.fr', '07.19.79.71.13', 'imolina', 4, 24, 68), -- username : imolina 
+    ('75990313', 'Kara', 'Oliver', 'koliver@iut.univ-paris8.fr', '06.74.81.59.16', 'koliver', 4, 24, 68), -- username : koliver 
+    ('10541038', 'Michael', 'Jackson', 'mjackson@iut.univ-paris8.fr', '07.69.45.71.99', 'mjackson', 4, 24, 68), -- username : mjackson 
+    ('51982555', 'Michele', 'Clark', 'mclark@iut.univ-paris8.fr', '06.97.91.06.74', 'mclark', 4, 24, 68), -- username : mclark 
+    ('42085607', 'Gabrielle', 'Ramirez', 'gramirez@iut.univ-paris8.fr', '07.24.46.95.69', 'gramirez', 4, 24, 112), -- username : gramirez 
+    ('46708797', 'Kimberly', 'Sullivan', 'ksullivan@iut.univ-paris8.fr', '07.80.27.04.54', 'ksullivan', 4, 24, 112), -- username : ksullivan 
+    ('45315225', 'Steven', 'Murphy', 'smurphy@iut.univ-paris8.fr', '06.79.75.70.30', 'smurphy', 4, 24, 112), -- username : smurphy 
+    ('01905990', 'Tyler', 'Kirby', 'tkirby@iut.univ-paris8.fr', '07.86.82.60.64', 'tkirby', 4, 24, 112), -- username : tkirby 
+    ('74763899', 'April', 'Barron', 'abarron@iut.univ-paris8.fr', '07.39.47.03.05', 'abarron', 4, 24, 112), -- username : abarron 
+    ('31696139', 'Joyce', 'Dickerson', 'jdickerson@iut.univ-paris8.fr', '07.37.80.19.85', 'jdickerson', 4, 24, 112), -- username : jdickerson 
+    ('77465051', 'Nancy', 'Jacobs', 'njacobs@iut.univ-paris8.fr', '07.94.31.23.61', 'njacobs', 4, 24, 112), -- username : njacobs 
+    ('63171557', 'Cody', 'Hogan', 'chogan@iut.univ-paris8.fr', '06.63.48.54.25', 'chogan', 4, 24, 112), -- username : chogan 
+    ('68970935', 'Chad', 'Weeks', 'cweeks@iut.univ-paris8.fr', '06.72.77.43.25', 'cweeks', 4, 24, 112), -- username : cweeks 
+    ('63026387', 'David', 'Harvey', 'dharvey@iut.univ-paris8.fr', '07.12.76.35.09', 'dharvey', 4, 24, 112), -- username : dharvey 
+    ('51756062', 'Larry', 'Harris', 'lharris@iut.univ-paris8.fr', '06.55.95.41.48', 'lharris', 4, 23, 23), -- username : lharris 
+    ('05572909', 'Kristy', 'Mosley', 'kmosley@iut.univ-paris8.fr', '07.37.98.76.25', 'kmosley', 4, 23, 23), -- username : kmosley 
+    ('09908723', 'Corey', 'Soto', 'csoto@iut.univ-paris8.fr', '07.19.48.48.93', 'csoto', 4, 23, 23), -- username : csoto 
+    ('64732645', 'Rebecca', 'Lopez', 'rlopez@iut.univ-paris8.fr', '06.16.13.83.59', 'rlopez', 4, 23, 23), -- username : rlopez 
+    ('93438523', 'Allison', 'Logan', 'alogan@iut.univ-paris8.fr', '06.89.97.94.74', 'alogan', 4, 23, 23), -- username : alogan 
+    ('08910192', 'Katelyn', 'Gentry', 'kgentry@iut.univ-paris8.fr', '06.71.39.57.78', 'kgentry', 4, 23, 23), -- username : kgentry 
+    ('74758387', 'Julie', 'Hurst', 'jhurst@iut.univ-paris8.fr', '07.37.47.36.15', 'jhurst', 4, 23, 23), -- username : jhurst 
+    ('72601403', 'Aaron', 'Gutierrez', 'agutierrez@iut.univ-paris8.fr', '06.05.75.49.06', 'agutierrez', 4, 23, 23), -- username : agutierrez 
+    ('76229139', 'Courtney', 'Tucker', 'ctucker@iut.univ-paris8.fr', '06.75.61.72.81', 'ctucker', 4, 23, 23), -- username : ctucker 
+    ('82626380', 'Robert', 'Gates', 'rgates@iut.univ-paris8.fr', '07.02.46.00.68', 'rgates', 4, 23, 23), -- username : rgates 
+    ('49218448', 'Heather', 'Nielsen', 'hnielsen@iut.univ-paris8.fr', '07.70.06.29.13', 'hnielsen', 4, 23, 67), -- username : hnielsen 
+    ('17370097', 'Andrew', 'Long', 'along@iut.univ-paris8.fr', '07.64.57.61.76', 'along', 4, 23, 67), -- username : along 
+    ('66391588', 'Maria', 'Evans', 'mevans1@iut.univ-paris8.fr', '06.90.73.31.18', 'mevans1', 4, 23, 67), -- username : mevans1 
+    ('74730474', 'Billy', 'Steele', 'bsteele@iut.univ-paris8.fr', '06.30.89.93.60', 'bsteele', 4, 23, 67), -- username : bsteele 
+    ('32946066', 'Linda', 'Schneider', 'lschneider@iut.univ-paris8.fr', '07.76.95.02.97', 'lschneider', 4, 23, 67), -- username : lschneider 
+    ('08975144', 'Tonya', 'Long', 'tlong@iut.univ-paris8.fr', '07.95.97.41.07', 'tlong', 4, 23, 67), -- username : tlong 
+    ('40713822', 'Amanda', 'Gonzalez', 'agonzalez@iut.univ-paris8.fr', '06.80.82.09.61', 'agonzalez', 4, 23, 67), -- username : agonzalez 
+    ('06576587', 'Robert', 'Ryan', 'rryan@iut.univ-paris8.fr', '06.49.58.40.91', 'rryan', 4, 23, 67), -- username : rryan 
+    ('58906188', 'Tammy', 'Perez', 'tperez@iut.univ-paris8.fr', '07.15.18.57.51', 'tperez', 4, 23, 67), -- username : tperez 
+    ('00146381', 'Lucas', 'Oconnor', 'loconnor@iut.univ-paris8.fr', '07.68.66.41.61', 'loconnor', 4, 23, 67), -- username : loconnor 
+    ('22614467', 'James', 'Daugherty', 'jdaugherty@iut.univ-paris8.fr', '07.01.24.94.05', 'jdaugherty', 4, 23, 111), -- username : jdaugherty 
+    ('44544991', 'Elizabeth', 'Ortiz', 'eortiz@iut.univ-paris8.fr', '06.58.64.99.33', 'eortiz', 4, 23, 111), -- username : eortiz 
+    ('83070504', 'Meagan', 'Hall', 'mhall@iut.univ-paris8.fr', '07.70.94.75.88', 'mhall', 4, 23, 111), -- username : mhall 
+    ('70674274', 'Gary', 'Sellers', 'gsellers@iut.univ-paris8.fr', '06.97.68.35.00', 'gsellers', 4, 23, 111), -- username : gsellers 
+    ('99150820', 'William', 'Guzman', 'wguzman@iut.univ-paris8.fr', '07.98.33.35.56', 'wguzman', 4, 23, 111), -- username : wguzman 
+    ('81801763', 'Jacqueline', 'Berger', 'jberger@iut.univ-paris8.fr', '06.36.69.08.18', 'jberger', 4, 23, 111), -- username : jberger 
+    ('66734501', 'Michael', 'Berry', 'mberry@iut.univ-paris8.fr', '06.52.10.96.19', 'mberry', 4, 23, 111), -- username : mberry 
+    ('58232264', 'Sydney', 'Serrano', 'sserrano@iut.univ-paris8.fr', '07.47.07.74.33', 'sserrano', 4, 23, 111), -- username : sserrano 
+    ('33941786', 'Kurt', 'Santana', 'ksantana@iut.univ-paris8.fr', '07.31.69.88.12', 'ksantana', 4, 23, 111), -- username : ksantana 
+    ('86244140', 'Brandi', 'Miller', 'bmiller@iut.univ-paris8.fr', '06.31.63.93.71', 'bmiller', 4, 23, 111), -- username : bmiller 
+    ('99274260', 'Erika', 'Martinez', 'emartinez@iut.univ-paris8.fr', '07.64.29.95.19', 'emartinez', 4, 22, 22), -- username : emartinez 
+    ('79450184', 'Julia', 'Powell', 'jpowell@iut.univ-paris8.fr', '07.04.38.70.86', 'jpowell', 4, 22, 22), -- username : jpowell 
+    ('00301077', 'Harry', 'Anderson', 'handerson@iut.univ-paris8.fr', '07.50.84.25.58', 'handerson', 4, 22, 22), -- username : handerson 
+    ('52561885', 'Jeffrey', 'Curtis', 'jcurtis@iut.univ-paris8.fr', '06.50.29.41.85', 'jcurtis', 4, 22, 22), -- username : jcurtis 
+    ('62827511', 'Darrell', 'Adkins', 'dadkins@iut.univ-paris8.fr', '07.13.14.06.85', 'dadkins', 4, 22, 22), -- username : dadkins 
+    ('92804994', 'Ashley', 'Martin', 'amartin@iut.univ-paris8.fr', '07.74.97.74.09', 'amartin', 4, 22, 22), -- username : amartin 
+    ('99495555', 'David', 'Rowland', 'drowland@iut.univ-paris8.fr', '06.10.67.45.91', 'drowland', 4, 22, 22), -- username : drowland 
+    ('94502480', 'Matthew', 'Martinez', 'mmartinez@iut.univ-paris8.fr', '07.94.19.84.82', 'mmartinez', 4, 22, 22), -- username : mmartinez 
+    ('37322684', 'Miranda', 'Buck', 'mbuck@iut.univ-paris8.fr', '07.46.53.06.73', 'mbuck', 4, 22, 22), -- username : mbuck 
+    ('66505084', 'Shane', 'Mclean', 'smclean@iut.univ-paris8.fr', '07.02.27.52.02', 'smclean', 4, 22, 22), -- username : smclean 
+    ('24054107', 'Kevin', 'Robinson', 'krobinson@iut.univ-paris8.fr', '07.09.84.81.53', 'krobinson', 4, 22, 66), -- username : krobinson 
+    ('62591118', 'Cody', 'Gilbert', 'cgilbert@iut.univ-paris8.fr', '06.17.01.89.61', 'cgilbert', 4, 22, 66), -- username : cgilbert 
+    ('62292528', 'Jason', 'Hunt', 'jhunt@iut.univ-paris8.fr', '06.92.19.22.30', 'jhunt', 4, 22, 66), -- username : jhunt 
+    ('06819213', 'Mallory', 'Martin', 'mmartin@iut.univ-paris8.fr', '06.25.80.32.11', 'mmartin', 4, 22, 66), -- username : mmartin 
+    ('70217781', 'Linda', 'Sanders', 'lsanders@iut.univ-paris8.fr', '06.83.47.04.38', 'lsanders', 4, 22, 66), -- username : lsanders 
+    ('46333453', 'Kayla', 'Maxwell', 'kmaxwell@iut.univ-paris8.fr', '06.18.73.57.18', 'kmaxwell', 4, 22, 66), -- username : kmaxwell 
+    ('56504424', 'Katie', 'Castro', 'kcastro@iut.univ-paris8.fr', '06.76.97.95.52', 'kcastro', 4, 22, 66), -- username : kcastro 
+    ('65628007', 'Anne', 'Shaw', 'ashaw@iut.univ-paris8.fr', '07.06.27.03.36', 'ashaw', 4, 22, 66), -- username : ashaw 
+    ('76558188', 'Joshua', 'Howard', 'jhoward@iut.univ-paris8.fr', '07.43.54.13.92', 'jhoward', 4, 22, 66), -- username : jhoward 
+    ('32678142', 'Jennifer', 'Carter', 'jcarter@iut.univ-paris8.fr', '07.93.98.69.53', 'jcarter', 4, 22, 66), -- username : jcarter 
+    ('34083481', 'Colleen', 'Hill', 'chill@iut.univ-paris8.fr', '07.80.13.12.13', 'chill', 4, 22, 110), -- username : chill 
+    ('74586650', 'Rita', 'Shaw', 'rshaw@iut.univ-paris8.fr', '06.13.79.52.22', 'rshaw', 4, 22, 110), -- username : rshaw 
+    ('60338698', 'Alexandria', 'Perry', 'aperry@iut.univ-paris8.fr', '07.76.21.12.26', 'aperry', 4, 22, 110), -- username : aperry 
+    ('78478568', 'Theresa', 'Howell', 'thowell@iut.univ-paris8.fr', '07.96.56.39.13', 'thowell', 4, 22, 110), -- username : thowell 
+    ('83597605', 'Jose', 'Ferguson', 'jferguson@iut.univ-paris8.fr', '07.77.40.18.58', 'jferguson', 4, 22, 110), -- username : jferguson 
+    ('72044007', 'Jose', 'Mccarty', 'jmccarty@iut.univ-paris8.fr', '07.75.23.17.67', 'jmccarty', 4, 22, 110), -- username : jmccarty 
+    ('46779815', 'Jay', 'Crawford', 'jcrawford@iut.univ-paris8.fr', '06.30.94.45.02', 'jcrawford', 4, 22, 110), -- username : jcrawford 
+    ('74666231', 'Christine', 'Calderon', 'ccalderon@iut.univ-paris8.fr', '06.96.03.96.62', 'ccalderon', 4, 22, 110), -- username : ccalderon 
+    ('67394098', 'Caitlin', 'Hale', 'chale@iut.univ-paris8.fr', '07.87.84.83.40', 'chale', 4, 22, 110), -- username : chale 
+    ('64155309', 'Ebony', 'Medina', 'emedina@iut.univ-paris8.fr', '07.21.97.80.77', 'emedina', 4, 22, 110), -- username : emedina 
+    ('61630240', 'Alexis', 'Clark', 'aclark@iut.univ-paris8.fr', '06.62.05.71.12', 'aclark', 4, 10, 10), -- username : aclark 
+    ('34007839', 'Joshua', 'Sanchez', 'jsanchez@iut.univ-paris8.fr', '06.15.93.09.51', 'jsanchez', 4, 10, 10), -- username : jsanchez 
+    ('78109726', 'Teresa', 'Duran', 'tduran@iut.univ-paris8.fr', '07.63.26.23.88', 'tduran', 4, 10, 10), -- username : tduran 
+    ('98460560', 'Julie', 'Romero', 'jromero@iut.univ-paris8.fr', '06.14.83.41.64', 'jromero', 4, 10, 10), -- username : jromero 
+    ('42078373', 'Kimberly', 'Clay', 'kclay@iut.univ-paris8.fr', '07.40.45.83.44', 'kclay', 4, 10, 10), -- username : kclay 
+    ('63433885', 'Stephen', 'Rose', 'srose@iut.univ-paris8.fr', '06.45.69.34.39', 'srose', 4, 10, 10), -- username : srose 
+    ('95747778', 'Martin', 'Holloway', 'mholloway@iut.univ-paris8.fr', '06.54.42.76.28', 'mholloway', 4, 10, 10), -- username : mholloway 
+    ('77824101', 'Sherry', 'Orozco', 'sorozco@iut.univ-paris8.fr', '06.85.54.71.87', 'sorozco', 4, 10, 10), -- username : sorozco 
+    ('18196678', 'Debra', 'Quinn', 'dquinn@iut.univ-paris8.fr', '07.58.52.79.43', 'dquinn', 4, 10, 10), -- username : dquinn 
+    ('57396202', 'Tonya', 'Smith', 'tsmith@iut.univ-paris8.fr', '07.07.00.59.69', 'tsmith', 4, 10, 10), -- username : tsmith 
+    ('89861397', 'Karen', 'Gibson', 'kgibson@iut.univ-paris8.fr', '07.56.41.26.72', 'kgibson', 4, 10, 54), -- username : kgibson 
+    ('90842667', 'Harry', 'Hartman', 'hhartman@iut.univ-paris8.fr', '07.04.67.88.08', 'hhartman', 4, 10, 54), -- username : hhartman 
+    ('47852814', 'Jon', 'Rivera', 'jrivera@iut.univ-paris8.fr', '07.59.43.01.52', 'jrivera', 4, 10, 54), -- username : jrivera 
+    ('45615312', 'Elizabeth', 'Russo', 'erusso@iut.univ-paris8.fr', '06.89.62.22.35', 'erusso', 4, 10, 54), -- username : erusso 
+    ('91563259', 'Brett', 'Davis', 'bdavis@iut.univ-paris8.fr', '06.88.36.49.63', 'bdavis', 4, 10, 54), -- username : bdavis 
+    ('72476553', 'Heidi', 'Gilbert', 'hgilbert@iut.univ-paris8.fr', '07.88.97.17.58', 'hgilbert', 4, 10, 54), -- username : hgilbert 
+    ('58588064', 'Samantha', 'Miller', 'smiller@iut.univ-paris8.fr', '07.35.69.39.35', 'smiller', 4, 10, 54), -- username : smiller 
+    ('87086495', 'Amanda', 'Wright', 'awright@iut.univ-paris8.fr', '06.34.88.30.93', 'awright', 4, 10, 54), -- username : awright 
+    ('60242361', 'Donna', 'Schneider', 'dschneider@iut.univ-paris8.fr', '07.94.03.50.22', 'dschneider', 4, 10, 54), -- username : dschneider 
+    ('70012656', 'Cheyenne', 'Taylor', 'ctaylor@iut.univ-paris8.fr', '06.88.94.17.00', 'ctaylor', 4, 10, 54), -- username : ctaylor 
+    ('46925471', 'Douglas', 'Thompson', 'dthompson@iut.univ-paris8.fr', '06.60.62.48.62', 'dthompson', 4, 10, 98), -- username : dthompson 
+    ('38386539', 'Joseph', 'Lee', 'jlee@iut.univ-paris8.fr', '06.03.32.53.45', 'jlee', 4, 10, 98), -- username : jlee 
+    ('11155934', 'Gregory', 'Boyd', 'gboyd@iut.univ-paris8.fr', '07.26.83.77.49', 'gboyd', 4, 10, 98), -- username : gboyd 
+    ('98573227', 'William', 'Hart', 'whart@iut.univ-paris8.fr', '06.67.51.58.88', 'whart', 4, 10, 98), -- username : whart 
+    ('52785734', 'Angela', 'Anderson', 'aanderson@iut.univ-paris8.fr', '06.08.08.38.97', 'aanderson', 4, 10, 98), -- username : aanderson 
+    ('52674720', 'Peter', 'Smith', 'psmith@iut.univ-paris8.fr', '07.76.83.85.08', 'psmith', 4, 10, 98), -- username : psmith 
+    ('15365270', 'Ricky', 'Park', 'rpark@iut.univ-paris8.fr', '07.33.17.76.18', 'rpark', 4, 10, 98), -- username : rpark 
+    ('57742597', 'Ashley', 'Taylor', 'ataylor@iut.univ-paris8.fr', '06.71.46.80.66', 'ataylor', 4, 10, 98), -- username : ataylor 
+    ('26811095', 'Stephanie', 'Hobbs', 'shobbs@iut.univ-paris8.fr', '06.00.79.13.57', 'shobbs', 4, 10, 98), -- username : shobbs 
+    ('44513448', 'Ian', 'Mcdowell', 'imcdowell@iut.univ-paris8.fr', '07.84.02.56.07', 'imcdowell', 4, 10, 98), -- username : imcdowell 
+    ('77095331', 'Traci', 'Deleon', 'tdeleon@iut.univ-paris8.fr', '06.34.10.83.11', 'tdeleon', 4, 12, 12), -- username : tdeleon 
+    ('51101061', 'Lee', 'Moore', 'lmoore@iut.univ-paris8.fr', '06.43.26.20.91', 'lmoore', 4, 12, 12), -- username : lmoore 
+    ('19218230', 'Kevin', 'Walker', 'kwalker@iut.univ-paris8.fr', '07.65.67.42.85', 'kwalker', 4, 12, 12), -- username : kwalker 
+    ('19766166', 'Elizabeth', 'Brown', 'ebrown@iut.univ-paris8.fr', '06.23.34.20.36', 'ebrown', 4, 12, 12), -- username : ebrown 
+    ('70662618', 'Travis', 'Alexander', 'talexander@iut.univ-paris8.fr', '06.48.80.35.79', 'talexander', 4, 12, 12), -- username : talexander 
+    ('93444019', 'Matthew', 'Evans', 'mevans@iut.univ-paris8.fr', '06.94.39.14.98', 'mevans', 4, 12, 12), -- username : mevans 
+    ('45358125', 'Anthony', 'Adkins', 'aadkins@iut.univ-paris8.fr', '06.44.72.60.86', 'aadkins', 4, 12, 12), -- username : aadkins 
+    ('85746309', 'Jose', 'Jackson', 'jjackson@iut.univ-paris8.fr', '07.73.41.47.73', 'jjackson', 4, 12, 12), -- username : jjackson 
+    ('73371925', 'Joshua', 'Bowen', 'jbowen@iut.univ-paris8.fr', '07.44.44.78.59', 'jbowen', 4, 12, 12), -- username : jbowen 
+    ('33180226', 'Matthew', 'Gonzalez', 'mgonzalez@iut.univ-paris8.fr', '07.63.58.15.36', 'mgonzalez', 4, 12, 12), -- username : mgonzalez 
+    ('93606802', 'Michael', 'Becker', 'mbecker@iut.univ-paris8.fr', '07.30.39.15.37', 'mbecker', 4, 12, 56), -- username : mbecker 
+    ('36458659', 'Pamela', 'Oconnor', 'poconnor@iut.univ-paris8.fr', '07.31.03.92.56', 'poconnor', 4, 12, 56), -- username : poconnor 
+    ('87384552', 'Gabriel', 'Davis', 'gdavis@iut.univ-paris8.fr', '06.60.49.50.14', 'gdavis', 4, 12, 56), -- username : gdavis 
+    ('91894117', 'Tim', 'Mercado', 'tmercado@iut.univ-paris8.fr', '06.83.32.46.23', 'tmercado', 4, 12, 56), -- username : tmercado 
+    ('77272336', 'Krista', 'Lopez', 'klopez@iut.univ-paris8.fr', '07.63.30.94.87', 'klopez', 4, 12, 56), -- username : klopez 
+    ('21554678', 'Austin', 'Rojas', 'arojas@iut.univ-paris8.fr', '07.07.38.99.53', 'arojas', 4, 12, 56), -- username : arojas 
+    ('68747064', 'Alexandra', 'Morris', 'amorris@iut.univ-paris8.fr', '06.27.79.22.96', 'amorris', 4, 12, 56), -- username : amorris 
+    ('44418173', 'Renee', 'Watson', 'rwatson@iut.univ-paris8.fr', '07.06.13.14.02', 'rwatson', 4, 12, 56), -- username : rwatson 
+    ('17741003', 'Katelyn', 'Kaufman', 'kkaufman@iut.univ-paris8.fr', '06.25.30.50.15', 'kkaufman', 4, 12, 56), -- username : kkaufman 
+    ('05346005', 'Cory', 'Phillips', 'cphillips@iut.univ-paris8.fr', '07.09.27.41.90', 'cphillips', 4, 12, 56), -- username : cphillips 
+    ('45393057', 'James', 'Moore', 'jmoore@iut.univ-paris8.fr', '07.84.84.74.86', 'jmoore', 4, 12, 100), -- username : jmoore 
+    ('30605679', 'Joseph', 'James', 'jjames@iut.univ-paris8.fr', '07.72.38.18.92', 'jjames', 4, 12, 100), -- username : jjames 
+    ('00748490', 'Timothy', 'Webster', 'twebster@iut.univ-paris8.fr', '06.25.46.32.01', 'twebster', 4, 12, 100), -- username : twebster 
+    ('11226668', 'Zachary', 'Lee', 'zlee@iut.univ-paris8.fr', '07.14.25.47.94', 'zlee', 4, 12, 100), -- username : zlee 
+    ('41339836', 'Cynthia', 'Stewart', 'cstewart@iut.univ-paris8.fr', '07.36.41.13.50', 'cstewart', 4, 12, 100), -- username : cstewart 
+    ('77807697', 'Benjamin', 'Smith', 'bsmith@iut.univ-paris8.fr', '06.39.13.25.45', 'bsmith', 4, 12, 100), -- username : bsmith 
+    ('59231874', 'Eric', 'Martin', 'emartin@iut.univ-paris8.fr', '06.25.56.01.66', 'emartin', 4, 12, 100), -- username : emartin 
+    ('48426574', 'Leslie', 'Allen', 'lallen@iut.univ-paris8.fr', '06.90.05.28.67', 'lallen', 4, 12, 100), -- username : lallen 
+    ('33418012', 'Elizabeth', 'Jones', 'ejones@iut.univ-paris8.fr', '06.82.37.68.78', 'ejones', 4, 12, 100), -- username : ejones 
+    ('15692994', 'Savannah', 'Ramirez', 'sramirez@iut.univ-paris8.fr', '06.45.07.45.84', 'sramirez', 4, 12, 100), -- username : sramirez 
+    ('46573714', 'Mary', 'Erickson', 'merickson@iut.univ-paris8.fr', '07.06.97.06.84', 'merickson', 4, 11, 11), -- username : merickson 
+    ('30981736', 'Bruce', 'Lewis', 'blewis@iut.univ-paris8.fr', '06.55.46.54.11', 'blewis', 4, 11, 11), -- username : blewis 
+    ('75295703', 'William', 'Eaton', 'weaton@iut.univ-paris8.fr', '06.09.74.34.90', 'weaton', 4, 11, 11), -- username : weaton 
+    ('50520383', 'Elizabeth', 'Burns', 'eburns@iut.univ-paris8.fr', '07.72.19.77.87', 'eburns', 4, 11, 11), -- username : eburns 
+    ('02517538', 'Kelly', 'Mills', 'kmills@iut.univ-paris8.fr', '06.64.09.57.75', 'kmills', 4, 11, 11), -- username : kmills 
+    ('29957833', 'Sarah', 'Harris', 'sharris@iut.univ-paris8.fr', '07.18.52.13.69', 'sharris', 4, 11, 11), -- username : sharris 
+    ('20994643', 'Denise', 'Johnson', 'djohnson@iut.univ-paris8.fr', '06.54.29.13.91', 'djohnson', 4, 11, 11), -- username : djohnson 
+    ('56142152', 'Adam', 'Ward', 'award@iut.univ-paris8.fr', '07.83.02.12.56', 'award', 4, 11, 11), -- username : award 
+    ('67000044', 'Michelle', 'Jones', 'mjones2@iut.univ-paris8.fr', '07.50.90.83.90', 'mjones2', 4, 11, 11), -- username : mjones2 
+    ('48822514', 'Natasha', 'Cook', 'ncook@iut.univ-paris8.fr', '06.73.17.07.01', 'ncook', 4, 11, 11), -- username : ncook 
+    ('93906112', 'Roger', 'Fowler', 'rfowler@iut.univ-paris8.fr', '06.26.25.32.72', 'rfowler', 4, 36, 124), -- username : rfowler 
+    ('22443815', 'David', 'Marquez', 'dmarquez@iut.univ-paris8.fr', '07.43.56.51.56', 'dmarquez', 4, 36, 124), -- username : dmarquez 
+    ('88814584', 'Tiffany', 'Villa', 'tvilla@iut.univ-paris8.fr', '06.13.10.15.26', 'tvilla', 4, 36, 124), -- username : tvilla 
+    ('29279674', 'Samantha', 'Mccarthy', 'smccarthy@iut.univ-paris8.fr', '06.36.39.74.20', 'smccarthy', 4, 36, 124), -- username : smccarthy 
+    ('55142836', 'Tyler', 'Spence', 'tspence@iut.univ-paris8.fr', '06.26.65.41.40', 'tspence', 4, 36, 124), -- username : tspence 
+    ('50571986', 'Christopher', 'Hartman', 'chartman@iut.univ-paris8.fr', '06.25.43.30.71', 'chartman', 4, 36, 124), -- username : chartman 
+    ('14621799', 'Melanie', 'Jones', 'mjones1@iut.univ-paris8.fr', '06.83.23.58.04', 'mjones1', 4, 36, 124), -- username : mjones1 
+    ('91172041', 'Samantha', 'Williams', 'swilliams@iut.univ-paris8.fr', '07.52.80.53.67', 'swilliams', 4, 36, 124), -- username : swilliams 
+    ('85869064', 'Brian', 'Johnson', 'bjohnson@iut.univ-paris8.fr', '06.16.34.35.43', 'bjohnson', 4, 36, 124), -- username : bjohnson 
+    ('91540939', 'David', 'Lawson', 'dlawson@iut.univ-paris8.fr', '06.51.25.47.18', 'dlawson', 4, 36, 124), -- username : dlawson 
+    ('76295443', 'Maria', 'Jones', 'mjones@iut.univ-paris8.fr', '07.51.03.23.10', 'mjones', 4, 11, 99), -- username : mjones 
+    ('87741085', 'Amy', 'Peters', 'apeters@iut.univ-paris8.fr', '07.85.11.61.75', 'apeters', 4, 11, 99), -- username : apeters 
+    ('59095734', 'Misty', 'Richardson', 'mrichardson@iut.univ-paris8.fr', '06.70.53.58.12', 'mrichardson', 4, 11, 99), -- username : mrichardson 
+    ('21113883', 'Bernard', 'Hamilton', 'bhamilton@iut.univ-paris8.fr', '06.28.19.32.93', 'bhamilton', 4, 11, 99), -- username : bhamilton 
+    ('03304988', 'Julie', 'Kidd', 'jkidd@iut.univ-paris8.fr', '07.93.09.19.24', 'jkidd', 4, 11, 99), -- username : jkidd 
+    ('63233991', 'Dylan', 'Garcia', 'dgarcia@iut.univ-paris8.fr', '07.95.20.31.57', 'dgarcia', 4, 11, 99), -- username : dgarcia 
+    ('45284345', 'Lauren', 'Lee', 'llee@iut.univ-paris8.fr', '06.15.72.13.43', 'llee', 4, 11, 99), -- username : llee 
+    ('89164250', 'Robin', 'Walters', 'rwalters@iut.univ-paris8.fr', '07.54.53.53.54', 'rwalters', 4, 11, 99), -- username : rwalters 
+    ('32857376', 'George', 'Collins', 'gcollins@iut.univ-paris8.fr', '07.16.10.57.16', 'gcollins', 4, 11, 99), -- username : gcollins 
+    ('04830527', 'Anne', 'Diaz', 'adiaz@iut.univ-paris8.fr', '06.85.94.05.83', 'adiaz', 4, 11, 99), -- username : adiaz 
+    ('15409326', 'Jerry', 'Rosales', 'jrosales@iut.univ-paris8.fr', '06.26.12.14.91', 'jrosales', 4, 43, 43), -- username : jrosales 
+    ('78851718', 'Brian', 'Howell', 'bhowell@iut.univ-paris8.fr', '07.85.70.63.25', 'bhowell', 4, 43, 43), -- username : bhowell 
+    ('83932637', 'Brenda', 'Anderson', 'banderson@iut.univ-paris8.fr', '06.34.37.27.66', 'banderson', 4, 43, 43), -- username : banderson 
+    ('52757147', 'Jillian', 'Wolfe', 'jwolfe@iut.univ-paris8.fr', '06.38.76.18.17', 'jwolfe', 4, 43, 43), -- username : jwolfe 
+    ('18288023', 'Edward', 'Nelson', 'enelson@iut.univ-paris8.fr', '07.05.23.58.92', 'enelson', 4, 43, 43), -- username : enelson 
+    ('21688744', 'Yvonne', 'Powers', 'ypowers@iut.univ-paris8.fr', '07.42.59.15.65', 'ypowers', 4, 43, 43), -- username : ypowers 
+    ('24986894', 'Anna', 'Hayes', 'ahayes@iut.univ-paris8.fr', '07.11.83.88.68', 'ahayes', 4, 43, 43), -- username : ahayes 
+    ('01724059', 'Jody', 'Tucker', 'jtucker@iut.univ-paris8.fr', '07.81.78.17.76', 'jtucker', 4, 43, 43), -- username : jtucker 
+    ('93302713', 'Jeffrey', 'Walker', 'jwalker@iut.univ-paris8.fr', '07.85.77.04.42', 'jwalker', 4, 43, 43), -- username : jwalker 
+    ('25798085', 'Amanda', 'Crawford', 'acrawford@iut.univ-paris8.fr', '07.11.98.38.30', 'acrawford', 4, 43, 43), -- username : acrawford 
+    ('02568745', 'Julie', 'Davis', 'jdavis@iut.univ-paris8.fr', '07.06.23.96.08', 'jdavis', 4, 43, 87), -- username : jdavis 
+    ('86657262', 'Wendy', 'Phillips', 'wphillips@iut.univ-paris8.fr', '07.35.12.20.24', 'wphillips', 4, 43, 87), -- username : wphillips 
+    ('97727988', 'Craig', 'Moore', 'cmoore@iut.univ-paris8.fr', '06.13.59.97.09', 'cmoore', 4, 43, 87), -- username : cmoore 
+    ('86683545', 'Stephanie', 'Thompson', 'sthompson@iut.univ-paris8.fr', '07.20.67.46.94', 'sthompson', 4, 43, 87), -- username : sthompson 
+    ('32719739', 'Christina', 'Sloan', 'csloan@iut.univ-paris8.fr', '07.68.78.45.66', 'csloan', 4, 43, 87), -- username : csloan 
+    ('04983304', 'Shane', 'Burns', 'sburns@iut.univ-paris8.fr', '07.57.35.53.58', 'sburns', 4, 43, 87), -- username : sburns 
+    ('12038577', 'John', 'Cruz', 'jcruz@iut.univ-paris8.fr', '07.01.77.64.07', 'jcruz', 4, 43, 87), -- username : jcruz 
+    ('45469766', 'Christina', 'Thompson', 'cthompson@iut.univ-paris8.fr', '07.00.46.18.34', 'cthompson', 4, 43, 87), -- username : cthompson 
+    ('76314164', 'Jennifer', 'Jensen', 'jjensen@iut.univ-paris8.fr', '07.72.69.02.46', 'jjensen', 4, 43, 87), -- username : jjensen 
+    ('02002383', 'Christopher', 'Smith', 'csmith@iut.univ-paris8.fr', '07.72.97.11.22', 'csmith', 4, 43, 87), -- username : csmith 
+    ('93540661', 'Cheyenne', 'Williams', 'cwilliams@iut.univ-paris8.fr', '07.22.95.16.57', 'cwilliams', 4, 43, 131), -- username : cwilliams 
+    ('57390122', 'James', 'Johnson', 'jjohnson@iut.univ-paris8.fr', '06.10.84.65.78', 'jjohnson', 4, 43, 131), -- username : jjohnson 
+    ('58211449', 'Robert', 'Kennedy', 'rkennedy@iut.univ-paris8.fr', '07.52.04.24.02', 'rkennedy', 4, 43, 131), -- username : rkennedy 
+    ('63524413', 'Ryan', 'Miller', 'rmiller@iut.univ-paris8.fr', '06.12.41.11.16', 'rmiller', 4, 43, 131), -- username : rmiller 
+    ('09291057', 'David', 'Fisher', 'dfisher@iut.univ-paris8.fr', '07.64.36.16.96', 'dfisher', 4, 43, 131), -- username : dfisher 
+    ('26578922', 'Sarah', 'Barnett', 'sbarnett@iut.univ-paris8.fr', '07.75.18.12.87', 'sbarnett', 4, 43, 131), -- username : sbarnett 
+    ('19901492', 'Deborah', 'Willis', 'dwillis@iut.univ-paris8.fr', '07.12.61.31.22', 'dwillis', 4, 43, 131), -- username : dwillis 
+    ('07777292', 'Tracey', 'Willis', 'twillis@iut.univ-paris8.fr', '06.12.95.78.89', 'twillis', 4, 43, 131), -- username : twillis 
+    ('92949059', 'Cassie', 'Tanner', 'ctanner@iut.univ-paris8.fr', '07.53.42.33.93', 'ctanner', 4, 43, 131), -- username : ctanner 
+    ('61331748', 'Patrick', 'Hebert', 'phebert@iut.univ-paris8.fr', '06.46.53.71.83', 'phebert', 4, 43, 131), -- username : phebert 
+    ('38529314', 'Scott', 'Vega', 'svega@iut.univ-paris8.fr', '06.14.94.13.45', 'svega', 4, 44, 44), -- username : svega 
+    ('38886783', 'Kathryn', 'Price', 'kprice@iut.univ-paris8.fr', '06.56.41.14.39', 'kprice', 4, 44, 44), -- username : kprice 
+    ('83190026', 'Ralph', 'Duran', 'rduran@iut.univ-paris8.fr', '07.31.53.98.82', 'rduran', 4, 44, 44), -- username : rduran 
+    ('62135663', 'Crystal', 'Hebert', 'chebert@iut.univ-paris8.fr', '07.22.59.26.60', 'chebert', 4, 44, 44), -- username : chebert 
+    ('84785152', 'Melissa', 'Glover', 'mglover@iut.univ-paris8.fr', '07.23.24.49.76', 'mglover', 4, 44, 44), -- username : mglover 
+    ('59993344', 'Joshua', 'Velazquez', 'jvelazquez@iut.univ-paris8.fr', '07.95.89.74.72', 'jvelazquez', 4, 44, 44), -- username : jvelazquez 
+    ('46320130', 'April', 'White', 'awhite@iut.univ-paris8.fr', '07.05.80.01.60', 'awhite', 4, 44, 44), -- username : awhite 
+    ('58725380', 'George', 'Thomas', 'gthomas@iut.univ-paris8.fr', '07.46.79.03.12', 'gthomas', 4, 44, 44), -- username : gthomas 
+    ('60175427', 'Sydney', 'Garcia', 'sgarcia@iut.univ-paris8.fr', '06.59.31.01.72', 'sgarcia', 4, 44, 44), -- username : sgarcia 
+    ('58048804', 'Joel', 'Baker', 'jbaker@iut.univ-paris8.fr', '07.64.68.72.90', 'jbaker', 4, 44, 44), -- username : jbaker 
+    ('12302510', 'Cheryl', 'Olson', 'colson@iut.univ-paris8.fr', '06.96.33.55.24', 'colson', 4, 44, 88), -- username : colson 
+    ('97811547', 'Mary', 'Shelton', 'mshelton@iut.univ-paris8.fr', '06.33.96.05.37', 'mshelton', 4, 44, 88), -- username : mshelton 
+    ('05535643', 'Hannah', 'Williams', 'hwilliams@iut.univ-paris8.fr', '06.17.36.47.45', 'hwilliams', 4, 44, 88), -- username : hwilliams 
+    ('25993662', 'Karen', 'Shaw', 'kshaw@iut.univ-paris8.fr', '07.30.15.81.02', 'kshaw', 4, 44, 88), -- username : kshaw 
+    ('49557721', 'Kathryn', 'Jacobs', 'kjacobs@iut.univ-paris8.fr', '07.02.59.92.11', 'kjacobs', 4, 44, 88), -- username : kjacobs 
+    ('81721576', 'Alexander', 'Jarvis', 'ajarvis@iut.univ-paris8.fr', '07.95.44.46.60', 'ajarvis', 4, 44, 88), -- username : ajarvis 
+    ('11602644', 'Shane', 'Walker', 'swalker@iut.univ-paris8.fr', '06.38.05.18.37', 'swalker', 4, 44, 88), -- username : swalker 
+    ('67472131', 'Andrea', 'Gordon', 'agordon@iut.univ-paris8.fr', '07.89.04.48.83', 'agordon', 4, 44, 88), -- username : agordon 
+    ('74668828', 'Jennifer', 'Miller', 'jmiller@iut.univ-paris8.fr', '07.27.02.61.81', 'jmiller', 4, 44, 88), -- username : jmiller 
+    ('13773128', 'Sandra', 'Paul', 'spaul@iut.univ-paris8.fr', '07.44.45.43.11', 'spaul', 4, 44, 88), -- username : spaul 
+    ('06987383', 'Eric', 'Park', 'epark@iut.univ-paris8.fr', '07.09.78.59.81', 'epark', 4, 44, 132), -- username : epark 
+    ('89035492', 'David', 'Randolph', 'drandolph@iut.univ-paris8.fr', '07.53.55.33.65', 'drandolph', 4, 44, 132), -- username : drandolph 
+    ('50962677', 'Darlene', 'Hutchinson', 'dhutchinson@iut.univ-paris8.fr', '06.90.45.07.62', 'dhutchinson', 4, 44, 132), -- username : dhutchinson 
+    ('24287795', 'Thomas', 'Johnson', 'tjohnson@iut.univ-paris8.fr', '06.57.43.93.13', 'tjohnson', 4, 44, 132), -- username : tjohnson 
+    ('07637062', 'Kimberly', 'Rivera', 'krivera@iut.univ-paris8.fr', '06.69.78.28.46', 'krivera', 4, 44, 132), -- username : krivera 
+    ('27365101', 'Angela', 'Moore', 'amoore@iut.univ-paris8.fr', '07.27.09.89.09', 'amoore', 4, 44, 132), -- username : amoore 
+    ('12751715', 'Amy', 'Romero', 'aromero@iut.univ-paris8.fr', '07.03.82.19.59', 'aromero', 4, 44, 132), -- username : aromero 
+    ('24272163', 'Stacy', 'Carlson', 'scarlson@iut.univ-paris8.fr', '06.70.18.36.24', 'scarlson', 4, 44, 132), -- username : scarlson 
+    ('64268964', 'Frederick', 'Hoffman', 'fhoffman@iut.univ-paris8.fr', '06.16.98.40.27', 'fhoffman', 4, 44, 132), -- username : fhoffman 
+    ('83384822', 'George', 'Ayers', 'gayers@iut.univ-paris8.fr', '06.32.06.80.62', 'gayers', 4, 44, 132), -- username : gayers 
+    ('31055189', 'Jennifer', 'Sexton', 'jsexton@iut.univ-paris8.fr', '07.42.94.25.85', 'jsexton', 4, 36, 36), -- username : jsexton 
+    ('20689578', 'Lori', 'Campbell', 'lcampbell@iut.univ-paris8.fr', '06.07.44.04.32', 'lcampbell', 4, 36, 36), -- username : lcampbell 
+    ('99590976', 'Whitney', 'Weiss', 'wweiss@iut.univ-paris8.fr', '07.16.26.70.52', 'wweiss', 4, 36, 36), -- username : wweiss 
+    ('14102962', 'Lawrence', 'Boyle', 'lboyle@iut.univ-paris8.fr', '07.13.99.14.29', 'lboyle', 4, 36, 36), -- username : lboyle 
+    ('78267612', 'Christopher', 'Jenkins', 'cjenkins@iut.univ-paris8.fr', '06.33.91.20.10', 'cjenkins', 4, 36, 36), -- username : cjenkins 
+    ('13359424', 'Lisa', 'Flores', 'lflores@iut.univ-paris8.fr', '06.88.68.30.11', 'lflores', 4, 36, 36), -- username : lflores 
+    ('33344254', 'Todd', 'Hernandez', 'thernandez@iut.univ-paris8.fr', '07.21.81.56.49', 'thernandez', 4, 36, 36), -- username : thernandez 
+    ('54641352', 'Jacob', 'Adams', 'jadams@iut.univ-paris8.fr', '06.38.29.68.76', 'jadams', 4, 36, 36), -- username : jadams 
+    ('85497128', 'Taylor', 'Bishop', 'tbishop@iut.univ-paris8.fr', '07.37.61.03.66', 'tbishop', 4, 36, 36), -- username : tbishop 
+    ('67188402', 'Michael', 'Hawkins', 'mhawkins@iut.univ-paris8.fr', '06.64.51.17.51', 'mhawkins', 4, 36, 36), -- username : mhawkins 
+    ('28035410', 'Jeffrey', 'Watson', 'jwatson@iut.univ-paris8.fr', '06.93.13.51.04', 'jwatson', 4, 36, 80), -- username : jwatson 
+    ('72215630', 'Kathleen', 'Martin', 'kmartin@iut.univ-paris8.fr', '06.32.00.37.38', 'kmartin', 4, 36, 80), -- username : kmartin 
+    ('39305054', 'Jeffery', 'Brooks', 'jbrooks@iut.univ-paris8.fr', '07.18.77.07.38', 'jbrooks', 4, 36, 80), -- username : jbrooks 
+    ('13741976', 'Lisa', 'White', 'lwhite@iut.univ-paris8.fr', '07.52.10.77.18', 'lwhite', 4, 36, 80), -- username : lwhite 
+    ('29022960', 'Tamara', 'Cross', 'tcross@iut.univ-paris8.fr', '06.90.00.08.92', 'tcross', 4, 36, 80), -- username : tcross 
+    ('32941425', 'Jasmine', 'Ford', 'jford@iut.univ-paris8.fr', '06.88.88.67.49', 'jford', 4, 36, 80), -- username : jford 
+    ('84708103', 'Debbie', 'Jacobs', 'djacobs@iut.univ-paris8.fr', '06.27.40.14.48', 'djacobs', 4, 36, 80), -- username : djacobs 
+    ('61720832', 'Stephanie', 'Moran', 'smoran@iut.univ-paris8.fr', '06.79.15.12.39', 'smoran', 4, 36, 80), -- username : smoran 
+    ('53253819', 'Isaiah', 'Bowman', 'ibowman@iut.univ-paris8.fr', '06.50.50.17.59', 'ibowman', 4, 36, 80), -- username : ibowman 
+    ('71664116', 'Sheila', 'Stark', 'sstark@iut.univ-paris8.fr', '07.55.11.61.27', 'sstark', 4, 36, 80), -- username : sstark 
+    ('05476284', 'Alan', 'Thompson', 'athompson@iut.univ-paris8.fr', '06.10.98.23.33', 'athompson', 4, 36, 124), -- username : athompson 
+    ('70725989', 'Rhonda', 'Bell', 'rbell@iut.univ-paris8.fr', '06.38.43.74.50', 'rbell', 4, 36, 124), -- username : rbell 
+    ('29069411', 'Randy', 'Castillo', 'rcastillo@iut.univ-paris8.fr', '07.90.99.55.56', 'rcastillo', 4, 36, 124), -- username : rcastillo 
+    ('31088294', 'Jo', 'Harris', 'jharris@iut.univ-paris8.fr', '06.26.27.73.80', 'jharris', 4, 36, 124), -- username : jharris 
+    ('94670208', 'Kimberly', 'Nelson', 'knelson@iut.univ-paris8.fr', '07.01.11.07.21', 'knelson', 4, 36, 124), -- username : knelson 
+    ('03241904', 'Patricia', 'Farmer', 'pfarmer@iut.univ-paris8.fr', '06.31.57.33.44', 'pfarmer', 4, 36, 124), -- username : pfarmer 
+    ('30523853', 'Lisa', 'Hanna', 'lhanna@iut.univ-paris8.fr', '07.44.55.97.34', 'lhanna', 4, 36, 124), -- username : lhanna 
+    ('42586035', 'Breanna', 'Haas', 'bhaas@iut.univ-paris8.fr', '06.87.22.73.60', 'bhaas', 4, 36, 124), -- username : bhaas 
+    ('22347338', 'Jessica', 'Williams', 'jwilliams@iut.univ-paris8.fr', '07.19.33.47.24', 'jwilliams', 4, 36, 124), -- username : jwilliams 
+    ('79555373', 'Ernest', 'Carey', 'ecarey@iut.univ-paris8.fr', '07.82.41.80.37', 'ecarey', 4, 36, 124), -- username : ecarey 
+    ('61331760', 'Kristen', 'Hernandez', 'khernandez@iut.univ-paris8.fr', '06.44.20.95.20', 'khernandez', 4, 34, 34), -- username : khernandez 
+    ('14110500', 'Megan', 'Williams', 'mwilliams@iut.univ-paris8.fr', '07.90.55.98.68', 'mwilliams', 4, 34, 34), -- username : mwilliams 
+    ('14790194', 'Janet', 'Wheeler', 'jwheeler@iut.univ-paris8.fr', '06.75.26.75.80', 'jwheeler', 4, 34, 34), -- username : jwheeler 
+    ('66204500', 'Willie', 'Gross', 'wgross@iut.univ-paris8.fr', '07.59.82.43.05', 'wgross', 4, 34, 34), -- username : wgross 
+    ('99205403', 'Amanda', 'Jacobs', 'ajacobs@iut.univ-paris8.fr', '06.34.84.51.01', 'ajacobs', 4, 34, 34), -- username : ajacobs 
+    ('11415997', 'Crystal', 'Harris', 'charris@iut.univ-paris8.fr', '06.70.17.04.77', 'charris', 4, 34, 34), -- username : charris 
+    ('58779488', 'Kristine', 'Brown', 'kbrown@iut.univ-paris8.fr', '06.78.86.41.59', 'kbrown', 4, 34, 34), -- username : kbrown 
+    ('38188862', 'Andrew', 'Wagner', 'awagner@iut.univ-paris8.fr', '07.47.72.87.04', 'awagner', 4, 34, 34), -- username : awagner 
+    ('76910893', 'Paige', 'Carter', 'pcarter@iut.univ-paris8.fr', '07.65.72.42.23', 'pcarter', 4, 34, 34), -- username : pcarter 
+    ('18697585', 'Elizabeth', 'Kerr', 'ekerr@iut.univ-paris8.fr', '06.59.52.48.15', 'ekerr', 4, 34, 34), -- username : ekerr 
+    ('97418340', 'Shannon', 'Parrish', 'sparrish@iut.univ-paris8.fr', '07.19.02.74.57', 'sparrish', 4, 34, 78), -- username : sparrish 
+    ('49171004', 'Terri', 'Brown', 'tbrown@iut.univ-paris8.fr', '07.76.90.52.65', 'tbrown', 4, 34, 78), -- username : tbrown 
+    ('96628888', 'Taylor', 'Flores', 'tflores@iut.univ-paris8.fr', '06.45.97.09.79', 'tflores', 4, 34, 78), -- username : tflores 
+    ('16631212', 'Nicholas', 'Conley', 'nconley@iut.univ-paris8.fr', '06.83.59.56.99', 'nconley', 4, 34, 78), -- username : nconley 
+    ('21938917', 'Emily', 'Blankenship', 'eblankenship@iut.univ-paris8.fr', '06.38.58.38.12', 'eblankenship', 4, 34, 78), -- username : eblankenship 
+    ('90901518', 'April', 'Wilson', 'awilson@iut.univ-paris8.fr', '06.29.08.95.17', 'awilson', 4, 34, 78), -- username : awilson 
+    ('68962278', 'Olivia', 'Lawson', 'olawson@iut.univ-paris8.fr', '07.56.72.83.95', 'olawson', 4, 34, 78), -- username : olawson 
+    ('93139775', 'Lori', 'Huynh', 'lhuynh@iut.univ-paris8.fr', '06.82.59.86.11', 'lhuynh', 4, 34, 78), -- username : lhuynh 
+    ('61417727', 'Marie', 'Holden', 'mholden@iut.univ-paris8.fr', '07.84.93.51.10', 'mholden', 4, 34, 78), -- username : mholden 
+    ('09500646', 'Tabitha', 'Morales', 'tmorales@iut.univ-paris8.fr', '07.69.42.20.53', 'tmorales', 4, 34, 78), -- username : tmorales 
+    ('71635339', 'Jennifer', 'Cooper', 'jcooper@iut.univ-paris8.fr', '07.98.37.59.39', 'jcooper', 4, 34, 122), -- username : jcooper 
+    ('26819264', 'Kevin', 'Sanders', 'ksanders@iut.univ-paris8.fr', '07.75.16.47.93', 'ksanders', 4, 34, 122), -- username : ksanders 
+    ('24984521', 'Christine', 'Blair', 'cblair@iut.univ-paris8.fr', '07.97.71.21.37', 'cblair', 4, 34, 122), -- username : cblair 
+    ('62765253', 'Vanessa', 'Villa', 'vvilla@iut.univ-paris8.fr', '06.18.62.75.88', 'vvilla', 4, 34, 122), -- username : vvilla 
+    ('57629130', 'Tyler', 'Morgan', 'tmorgan@iut.univ-paris8.fr', '06.89.54.02.90', 'tmorgan', 4, 34, 122), -- username : tmorgan 
+    ('69411834', 'Karen', 'Tate', 'ktate@iut.univ-paris8.fr', '07.51.98.05.43', 'ktate', 4, 34, 122), -- username : ktate 
+    ('27015085', 'Ashley', 'Gonzales', 'agonzales@iut.univ-paris8.fr', '07.85.92.59.81', 'agonzales', 4, 34, 122), -- username : agonzales 
+    ('93140895', 'Christina', 'Gordon', 'cgordon@iut.univ-paris8.fr', '06.35.94.70.87', 'cgordon', 4, 34, 122), -- username : cgordon 
+    ('29917651', 'Ryan', 'Sanchez', 'rsanchez@iut.univ-paris8.fr', '06.34.55.44.24', 'rsanchez', 4, 34, 122), -- username : rsanchez 
+    ('31349843', 'David', 'Moore', 'dmoore@iut.univ-paris8.fr', '06.71.97.12.52', 'dmoore', 4, 34, 122), -- username : dmoore 
+    ('95195948', 'Randy', 'Campbell', 'rcampbell@iut.univ-paris8.fr', '07.28.74.71.04', 'rcampbell', 4, 35, 35), -- username : rcampbell 
+    ('50702605', 'Russell', 'Rogers', 'rrogers@iut.univ-paris8.fr', '07.47.87.32.04', 'rrogers', 4, 35, 35), -- username : rrogers 
+    ('63241690', 'William', 'Meyer', 'wmeyer@iut.univ-paris8.fr', '07.46.10.65.57', 'wmeyer', 4, 35, 35), -- username : wmeyer 
+    ('89224536', 'David', 'King', 'dking@iut.univ-paris8.fr', '07.93.05.56.11', 'dking', 4, 35, 35), -- username : dking 
+    ('90656539', 'Tyler', 'Austin', 'taustin@iut.univ-paris8.fr', '07.65.60.48.49', 'taustin', 4, 35, 35), -- username : taustin 
+    ('08774062', 'Matthew', 'Giles', 'mgiles@iut.univ-paris8.fr', '07.63.62.24.22', 'mgiles', 4, 35, 35), -- username : mgiles 
+    ('42513214', 'Anna', 'Tran', 'atran@iut.univ-paris8.fr', '06.37.39.36.40', 'atran', 4, 35, 35), -- username : atran 
+    ('56200950', 'Herbert', 'Gonzalez', 'hgonzalez@iut.univ-paris8.fr', '07.43.55.63.32', 'hgonzalez', 4, 35, 35), -- username : hgonzalez 
+    ('89696180', 'Tina', 'Perry', 'tperry1@iut.univ-paris8.fr', '07.81.77.52.76', 'tperry1', 4, 35, 35), -- username : tperry1 
+    ('62092363', 'Nicole', 'Cain', 'ncain@iut.univ-paris8.fr', '07.25.23.05.24', 'ncain', 4, 35, 35), -- username : ncain 
+    ('84324621', 'Melinda', 'Lewis', 'mlewis@iut.univ-paris8.fr', '07.41.83.18.99', 'mlewis', 4, 35, 79), -- username : mlewis 
+    ('87221462', 'Robert', 'Santana', 'rsantana@iut.univ-paris8.fr', '07.43.30.12.09', 'rsantana', 4, 35, 79), -- username : rsantana 
+    ('29171001', 'Nicholas', 'Mack', 'nmack@iut.univ-paris8.fr', '07.57.30.28.74', 'nmack', 4, 35, 79), -- username : nmack 
+    ('54862612', 'Rachel', 'Bishop', 'rbishop@iut.univ-paris8.fr', '07.06.13.78.88', 'rbishop', 4, 35, 79), -- username : rbishop 
+    ('12451754', 'Jill', 'Casey', 'jcasey@iut.univ-paris8.fr', '07.08.59.76.22', 'jcasey', 4, 35, 79), -- username : jcasey 
+    ('94822493', 'Samantha', 'Kelly', 'skelly@iut.univ-paris8.fr', '07.66.80.00.19', 'skelly', 4, 35, 79), -- username : skelly 
+    ('23024341', 'Melissa', 'Reed', 'mreed@iut.univ-paris8.fr', '07.98.53.10.76', 'mreed', 4, 35, 79), -- username : mreed 
+    ('31184072', 'Tamara', 'James', 'tjames@iut.univ-paris8.fr', '06.26.45.04.28', 'tjames', 4, 35, 79), -- username : tjames 
+    ('36381702', 'Jason', 'Green', 'jgreen@iut.univ-paris8.fr', '06.85.34.96.03', 'jgreen', 4, 35, 79), -- username : jgreen 
+    ('15706934', 'Sarah', 'Fox', 'sfox@iut.univ-paris8.fr', '06.56.47.61.78', 'sfox', 4, 35, 79), -- username : sfox 
+    ('91698965', 'Brian', 'Sandoval', 'bsandoval@iut.univ-paris8.fr', '07.71.67.49.23', 'bsandoval', 4, 35, 123), -- username : bsandoval 
+    ('91506368', 'Anthony', 'Wells', 'awells@iut.univ-paris8.fr', '07.39.25.43.18', 'awells', 4, 35, 123), -- username : awells 
+    ('69816247', 'Mark', 'Bishop', 'mbishop@iut.univ-paris8.fr', '06.32.78.37.76', 'mbishop', 4, 35, 123), -- username : mbishop 
+    ('83882181', 'Wanda', 'Sanchez', 'wsanchez@iut.univ-paris8.fr', '06.34.44.62.63', 'wsanchez', 4, 35, 123), -- username : wsanchez 
+    ('82557910', 'Karen', 'Bell', 'kbell@iut.univ-paris8.fr', '06.49.09.40.97', 'kbell', 4, 35, 123), -- username : kbell 
+    ('04243540', 'Seth', 'Yu', 'syu@iut.univ-paris8.fr', '06.01.79.53.96', 'syu', 4, 35, 123), -- username : syu 
+    ('70398693', 'Angela', 'Huang', 'ahuang@iut.univ-paris8.fr', '07.84.72.57.20', 'ahuang', 4, 35, 123), -- username : ahuang 
+    ('93055275', 'Vanessa', 'Simpson', 'vsimpson@iut.univ-paris8.fr', '07.53.45.31.94', 'vsimpson', 4, 35, 123), -- username : vsimpson 
+    ('89068271', 'Fernando', 'Pena', 'fpena@iut.univ-paris8.fr', '07.85.30.16.79', 'fpena', 4, 35, 123), -- username : fpena 
+    ('64397875', 'Christina', 'Jones', 'cjones@iut.univ-paris8.fr', '06.95.86.82.80', 'cjones', 4, 35, 123), -- username : cjones 
+    ('32238536', 'Margaret', 'Marks', 'mmarks@iut.univ-paris8.fr', '07.07.30.78.09', 'mmarks', 4, 12, 12), -- username : mmarks 
+    ('57318908', 'Tammy', 'Hester', 'thester@iut.univ-paris8.fr', '06.48.09.08.01', 'thester', 4, 12, 12), -- username : thester 
+    ('04918993', 'Benjamin', 'Patterson', 'bpatterson@iut.univ-paris8.fr', '07.69.10.22.89', 'bpatterson', 4, 12, 12), -- username : bpatterson 
+    ('54397979', 'Brittney', 'Finley', 'bfinley@iut.univ-paris8.fr', '06.93.04.39.57', 'bfinley', 4, 12, 12), -- username : bfinley 
+    ('54977363', 'Valerie', 'Cruz', 'vcruz@iut.univ-paris8.fr', '07.92.12.75.95', 'vcruz', 4, 12, 12), -- username : vcruz 
+    ('43401445', 'Katie', 'Campbell', 'kcampbell@iut.univ-paris8.fr', '06.77.92.19.10', 'kcampbell', 4, 12, 12), -- username : kcampbell 
+    ('50213284', 'Matthew', 'Perry', 'mperry@iut.univ-paris8.fr', '07.93.62.20.66', 'mperry', 4, 12, 12), -- username : mperry 
+    ('10417153', 'Ray', 'Nichols', 'rnichols@iut.univ-paris8.fr', '07.87.44.74.40', 'rnichols', 4, 12, 12), -- username : rnichols 
+    ('84969122', 'Kimberly', 'Garcia', 'kgarcia@iut.univ-paris8.fr', '07.93.59.55.14', 'kgarcia', 4, 12, 12), -- username : kgarcia 
+    ('68032725', 'Stephanie', 'Clark', 'sclark@iut.univ-paris8.fr', '07.79.52.33.65', 'sclark', 4, 12, 12), -- username : sclark 
+    ('68618211', 'Alexandra', 'Allen', 'aallen@iut.univ-paris8.fr', '06.32.80.99.66', 'aallen', 4, 23, 67), -- username : aallen 
+    ('83877019', 'Tracy', 'Perry', 'tperry@iut.univ-paris8.fr', '06.65.44.70.73', 'tperry', 4, 23, 67), -- username : tperry 
+    ('08783200', 'Linda', 'Wright', 'lwright@iut.univ-paris8.fr', '06.81.39.55.18', 'lwright', 4, 23, 67), -- username : lwright 
+    ('22958887', 'Anthony', 'Davis', 'adavis@iut.univ-paris8.fr', '07.52.60.91.52', 'adavis', 4, 23, 67), -- username : adavis 
+    ('90710844', 'Jennifer', 'Fischer', 'jfischer@iut.univ-paris8.fr', '06.51.92.73.75', 'jfischer', 4, 23, 67), -- username : jfischer 
+    ('79649503', 'Andrea', 'Calderon', 'acalderon@iut.univ-paris8.fr', '06.67.49.87.28', 'acalderon', 4, 23, 67), -- username : acalderon 
+    ('71550034', 'Richard', 'Lawson', 'rlawson@iut.univ-paris8.fr', '06.50.15.81.39', 'rlawson', 4, 23, 67), -- username : rlawson 
+    ('16713138', 'David', 'Zuniga', 'dzuniga@iut.univ-paris8.fr', '07.53.58.09.82', 'dzuniga', 4, 23, 67), -- username : dzuniga 
+    ('82777835', 'Andrew', 'Willis', 'awillis@iut.univ-paris8.fr', '07.51.72.52.28', 'awillis', 4, 23, 67), -- username : awillis 
+    ('30396031', 'Vicki', 'Pugh', 'vpugh@iut.univ-paris8.fr', '06.49.06.61.60', 'vpugh', 4, 23, 67), -- username : vpugh 
+    ('99527325', 'Michelle', 'Mathis', 'mmathis@iut.univ-paris8.fr', '07.20.73.50.22', 'mmathis', 4, 43, 131), -- username : mmathis 
+    ('25932010', 'Paige', 'Miranda', 'pmiranda@iut.univ-paris8.fr', '07.84.96.01.04', 'pmiranda', 4, 43, 131), -- username : pmiranda 
+    ('71756420', 'Melissa', 'Cooper', 'mcooper@iut.univ-paris8.fr', '06.45.89.00.93', 'mcooper', 4, 43, 131), -- username : mcooper 
+    ('75438409', 'Angela', 'Mercado', 'amercado@iut.univ-paris8.fr', '06.18.54.43.47', 'amercado', 4, 43, 131), -- username : amercado 
+    ('84210640', 'Christopher', 'Stokes', 'cstokes@iut.univ-paris8.fr', '07.77.15.66.11', 'cstokes', 4, 43, 131), -- username : cstokes 
+    ('16207268', 'Michael', 'Mccann', 'mmccann@iut.univ-paris8.fr', '07.03.50.79.78', 'mmccann', 4, 43, 131), -- username : mmccann 
+    ('74312119', 'Samantha', 'Martinez', 'smartinez@iut.univ-paris8.fr', '07.83.66.44.41', 'smartinez', 4, 43, 131), -- username : smartinez 
+    ('07767752', 'Ethan', 'Rodriguez', 'erodriguez@iut.univ-paris8.fr', '07.10.43.04.94', 'erodriguez', 4, 43, 131), -- username : erodriguez 
+    ('49193399', 'Paul', 'Johnson', 'pjohnson@iut.univ-paris8.fr', '06.27.11.38.55', 'pjohnson', 4, 43, 131), -- username : pjohnson 
+    ('93534416', 'Joseph', 'Gutierrez', 'jgutierrez@iut.univ-paris8.fr', '07.67.96.78.91', 'jgutierrez', 4, 43,131) -- username : jjgutierrez 
 ;
