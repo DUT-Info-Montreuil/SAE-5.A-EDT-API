@@ -18,14 +18,14 @@ def get_teachings():
     """ Get all teachings in JSON format """
     _service = teaching_service()
     returnStatement = _service.get_teachings()
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @teaching_app.route('/teachings/get/<int:id>', methods=['GET'])
 def get_teaching_by_id(id):
     """ Get a teaching by ID in JSON format """
     _service = teaching_service()
     returnStatement = _service.get_teaching_by_id(id)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @teaching_app.route('/teachings/identify', methods=['POST'])
 def identify_teaching():
@@ -33,7 +33,7 @@ def identify_teaching():
     data = request.json
     _service = teaching_service()
     returnStatement = _service.identify_teaching(data)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @teaching_app.route('/teachings/add', methods=['POST'])
 def add_teaching():

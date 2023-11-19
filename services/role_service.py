@@ -1,3 +1,4 @@
+from entities.dto.Role import Role
 from services.main_service import Service
 
 import connect_pg
@@ -17,7 +18,7 @@ class role_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_role_statement(row))
+            returnStatement.append(Role.objectify(row))
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -28,7 +29,7 @@ class role_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
         if len(rows) > 0:
-            returnStatement = self.get_role_statement(rows[0])
+            returnStatement = Role.objectify(rows[0])
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -45,7 +46,7 @@ class role_service(Service):
     
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_role_statement(row))
+            returnStatement.append(Role.objectify(row))
     
         return returnStatement
     
@@ -102,13 +103,3 @@ class role_service(Service):
         # connect_pg.disconnect(conn)
 
         return updated_role_id
-
-    
-    def get_role_statement(self, row):
-        """ Formats role data in JSON """
-        return {
-            'id': row[0],              # L'ID du rôle
-            'name': row[1],            # Le nom du rôle
-            'description': row[2],     # La description du rôle
-            'personal_id': row[3]      # L'ID du personnel associé au rôle
-        }

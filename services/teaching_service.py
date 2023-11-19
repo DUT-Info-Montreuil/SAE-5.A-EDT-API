@@ -1,3 +1,4 @@
+from entities.dto.Teaching import Teaching
 from services.main_service import Service
 
 import connect_pg
@@ -17,7 +18,7 @@ class teaching_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_teaching_statement(row))
+            returnStatement.append(Teaching.objectify(row))
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -28,7 +29,7 @@ class teaching_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
         if len(rows) > 0:
-            returnStatement = self.get_teaching_statement(rows[0])
+            returnStatement = Teaching.objectify(rows[0])
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -48,7 +49,7 @@ class teaching_service(Service):
     
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_teaching_statement(row))
+            returnStatement.append(Teaching.objectify(row))
     
         return returnStatement
     
@@ -121,17 +122,3 @@ class teaching_service(Service):
         # connect_pg.disconnect(conn)
 
         return updated_teaching_id
-
-
-    def get_teaching_statement(self, row):
-        """ Formats teaching data in JSON """
-        return {
-            'id': row[0],                   # L'ID de l'enseignement
-            'title': row[1],                # Le titre de l'enseignement
-            'hour_number': row[2],          # Le nombre d'heures
-            'semestre': row[3],             # Le semestre
-            'sequence': row[4],             # La séquence
-            'description': row[5],          # La description
-            'teaching_type': row[6],        # Le type d'enseignement
-            'specialization_id': row[7]     # L'ID de la spécialisation associée à l'enseignement
-        }

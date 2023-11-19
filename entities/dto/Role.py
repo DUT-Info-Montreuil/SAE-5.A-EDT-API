@@ -17,7 +17,9 @@ class Role:
         }
 
     @staticmethod
-    def objectify(data, data_if_not_found=None):
+    def objectify(row, data_if_not_found=None):
+        data = Role.sql_row_to_dictionary(row)
+        
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
@@ -29,3 +31,13 @@ class Role:
         )
 
         return role
+    
+    @staticmethod
+    def sql_row_to_dictionary(row):
+        """ Formats role data in JSON """
+        return {
+            'id': row[0],              # L'ID du rôle
+            'name': row[1],            # Le nom du rôle
+            'description': row[2],     # La description du rôle
+            'personal_id': row[3]      # L'ID du personnel associé au rôle
+        }

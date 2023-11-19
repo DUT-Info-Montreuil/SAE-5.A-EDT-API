@@ -19,7 +19,9 @@ class Personal:
         }
     
     @staticmethod
-    def objectify(data, data_if_not_found=None):
+    def objectify(row, data_if_not_found=None):
+        data = Personal.sql_row_to_dictionary(row)
+
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
@@ -32,3 +34,14 @@ class Personal:
         )
 
         return personal
+    
+    @staticmethod
+    def sql_row_to_dictionary(row):
+        """ Formats personal data in JSON """
+        return {
+            'id': row[0],              # L'ID du personnel
+            'last_name': row[1],       # Le nom de famille du personnel
+            'first_name': row[2],      # Le prénom du personnel
+            'mail': row[3],            # L'adresse e-mail du personnel
+            'phone_number': row[4]     # Le numéro de téléphone du personnel
+        }

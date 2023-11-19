@@ -1,3 +1,4 @@
+from entities.dto.Absent import Absent
 from services.main_service import Service
 
 import connect_pg
@@ -17,7 +18,7 @@ class absent_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_absent_statement(row))
+            returnStatement.append(Absent.objectify(row))
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -28,7 +29,7 @@ class absent_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
         if len(rows) > 0:
-            returnStatement = self.get_absent_statement(rows[0])
+            returnStatement = Absent.objectify(rows[0])
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -47,7 +48,7 @@ class absent_service(Service):
     
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_absent_statement(row))
+            returnStatement.append(Absent.objectify(row))
     
         return returnStatement
     
@@ -104,13 +105,3 @@ class absent_service(Service):
         # connect_pg.disconnect(conn)
 
         return updated_absent_id
-
-    
-    def get_absent_statement(self, row):
-        """ Formats absent data in JSON """
-        return {
-            'id': row[0],              # L'ID de l'absent
-            'justified': row[1],     # La justification (t ou f)
-            'student_number': row[2],       # Le numero etudiant de l'absent
-            'course_id': row[3],           # L'ID du cours
-        }

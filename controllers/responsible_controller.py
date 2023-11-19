@@ -18,14 +18,14 @@ def get_responsibles():
     """ Get all responsibles in JSON format """
     _service = responsible_service()
     returnStatement = _service.get_responsibles()
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @responsible_app.route('/responsibles/get/<int:id>', methods=['GET'])
 def get_responsible_by_id(id):
     """ Get a responsible by ID in JSON format """
     _service = responsible_service()
     returnStatement = _service.get_responsible_by_id(id)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @responsible_app.route('/responsibles/identify', methods=['POST'])
 def identify_responsible():
@@ -33,7 +33,7 @@ def identify_responsible():
     data = request.json
     _service = responsible_service()
     returnStatement = _service.identify_responsible(data)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @responsible_app.route('/responsibles/add', methods=['POST'])
 def add_responsible():

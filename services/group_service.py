@@ -1,3 +1,4 @@
+from entities.dto.Group import Group
 from services.main_service import Service
 
 import connect_pg
@@ -17,7 +18,7 @@ class group_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_group_statement(row))
+            returnStatement.append(Group.objectify(row))
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -28,7 +29,7 @@ class group_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
         if len(rows) > 0:
-            returnStatement = self.get_group_statement(rows[0])
+            returnStatement = Group.objectify(rows[0])
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -47,7 +48,7 @@ class group_service(Service):
     
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_group_statement(row))
+            returnStatement.append(Group.objectify(row))
     
         return returnStatement
     
@@ -105,11 +106,4 @@ class group_service(Service):
 
         return updated_group_id
 
-    def get_group_statement(self, row):
-        """ Formats group data in JSON"""
-        return {
-            'id': row[0],              # L'ID du groupe
-            'promotion': row[1],       # La promotion du groupe
-            'type': row[2],            # Le type du groupe
-            'department_id': row[3]    # L'ID du département associé au groupe
-        }
+   

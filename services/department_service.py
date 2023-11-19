@@ -1,3 +1,4 @@
+from entities.dto.Department import Department
 from services.main_service import Service
 import connect_pg
 
@@ -11,7 +12,7 @@ class department_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_department_statement(row))
+            returnStatement.append(Department.objectify(row))
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -22,7 +23,7 @@ class department_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
         if len(rows) > 0:
-            returnStatement = self.get_department_statement(rows[0])
+            returnStatement = Department.objectify(rows[0])
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -39,7 +40,7 @@ class department_service(Service):
     
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_department_statement(row))
+            returnStatement.append(Department.objectify(row))
     
         return returnStatement
     
@@ -100,14 +101,3 @@ class department_service(Service):
         # connect_pg.disconnect(conn)
 
         return updated_department_id
-
-    
-    def get_department_statement(self, row):
-        """ Formats department data in JSON"""
-        return {
-            'id': row[0],              # L'ID du département
-            'name': row[1],            # Le nom du département
-            'description': row[2],     # La description du département
-            'degree_type': row[3],     # Le type de diplôme du département
-            'personal_id': row[4]      # L'ID du personnel associé au département
-        }

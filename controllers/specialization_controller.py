@@ -19,14 +19,14 @@ def get_specializations():
     """ Get all specializations in JSON format """
     _service = specialization_service()
     returnStatement = _service.get_specializations()
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @specialization_app.route('/specializations/get/<int:id>', methods=['GET'])
 def get_specialization_by_id(id):
     """ Get a specialization by ID in JSON format """
     _service = specialization_service()
     returnStatement = _service.get_specialization_by_id(id)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @specialization_app.route('/specializations/identify', methods=['POST'])
 def identify_specialization():
@@ -34,7 +34,7 @@ def identify_specialization():
     data = request.json
     _service = specialization_service()
     returnStatement = _service.identify_specialization(data)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @specialization_app.route('/specializations/add', methods=['POST'])
 def add_specialization():

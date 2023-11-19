@@ -18,14 +18,14 @@ def get_roles():
     """ Get all roles in JSON format """
     _service = role_service()
     returnStatement = _service.get_roles()
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @role_app.route('/roles/get/<int:id>', methods=['GET'])
 def get_role_by_id(id):
     """ Get a role by ID in JSON format """
     _service = role_service()
     returnStatement = _service.get_role_by_id(id)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @role_app.route('/roles/identify', methods=['POST'])
 def identify_role():
@@ -33,7 +33,7 @@ def identify_role():
     data = request.json
     _service = role_service()
     returnStatement = _service.identify_role(data)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @role_app.route('/roles/add', methods=['POST'])
 def add_role():

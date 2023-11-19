@@ -18,14 +18,14 @@ def get_subgroups():
     """ Get all subgroups in JSON format """
     _service = subgroup_service()
     returnStatement = _service.get_subgroups()
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @subgroup_app.route('/subgroups/get/<int:id>', methods=['GET'])
 def get_subgroup_by_id(id):
     """ Get a subgroup by ID in JSON format """
     _service = subgroup_service()
     returnStatement = _service.get_subgroup_by_id(id)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @subgroup_app.route('/subgroups/identify', methods=['POST'])
 def identify_subgroup():
@@ -33,7 +33,7 @@ def identify_subgroup():
     data = request.json
     _service = subgroup_service()
     returnStatement = _service.identify_subgroup(data)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @subgroup_app.route('/subgroups/add', methods=['POST'])
 def add_subgroup():

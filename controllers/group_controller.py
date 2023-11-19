@@ -18,14 +18,14 @@ def get_groups():
     """ Get all groups in JSON format """
     _service = group_service()
     returnStatement = _service.get_groups()
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @group_app.route('/groups/get/<int:id>', methods=['GET'])
 def get_group_by_id(id):
     """ Get a group by ID in JSON format """
     _service = group_service()
     returnStatement = _service.get_group_by_id(id)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @group_app.route('/groups/identify', methods=['POST'])
 def identify_group():
@@ -33,7 +33,7 @@ def identify_group():
     data = request.json
     _service = group_service()
     returnStatement = _service.identify_group(data)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @group_app.route('/groups/add', methods=['POST'])
 def add_group():

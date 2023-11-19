@@ -1,3 +1,4 @@
+from entities.dto.Participate import Participate
 from services.main_service import Service
 
 import connect_pg
@@ -17,7 +18,7 @@ class participate_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_participate_statement(row))
+            returnStatement.append(Participate.objectify(row))
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -28,7 +29,7 @@ class participate_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
         if len(rows) > 0:
-            returnStatement = self.get_participate_statement(rows[0])
+            returnStatement = Participate.objectify(rows[0])
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -45,7 +46,7 @@ class participate_service(Service):
     
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_participate_statement(row))
+            returnStatement.append(Participate.objectify(row))
     
         return returnStatement
     
@@ -98,11 +99,3 @@ class participate_service(Service):
         # connect_pg.disconnect(conn)
 
         return updated_participate_id
-    
-    def get_participate_statement(self, row):
-        """ Formats participate data in JSON """
-        return {
-            'id': row[0],              # L'ID du cours
-            'course_id': row[1],     # L'ID du subgroup associée au participate
-            'rooms_id': row[2]     # L'ID du subgroup associée au participate
-        }

@@ -18,14 +18,14 @@ def get_absents():
     """ Get all absents in JSON format """
     _service = absent_service()
     returnStatement = _service.get_absents()
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @absent_app.route('/absents/get/<int:id>', methods=['GET'])
 def get_absent_by_id(id):
     """ Get a absent by ID in JSON format """
     _service = absent_service()
     returnStatement = _service.get_absent_by_id(id)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @absent_app.route('/absents/identify', methods=['POST'])
 def identify_absent():
@@ -33,7 +33,7 @@ def identify_absent():
     data = request.json
     _service = absent_service()
     returnStatement = _service.identify_absent(data)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @absent_app.route('/absents/add', methods=['POST'])
 def add_absent():

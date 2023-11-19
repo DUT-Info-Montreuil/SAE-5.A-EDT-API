@@ -1,3 +1,4 @@
+from entities.dto.Subgroup import Subgroup
 
 from services.main_service import Service
 
@@ -18,7 +19,7 @@ class subgroup_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_subgroup_statement(row))
+            returnStatement.append(Subgroup.objectify(row))
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -29,7 +30,7 @@ class subgroup_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
         if len(rows) > 0:
-            returnStatement = self.get_subgroup_statement(rows[0])
+            returnStatement = Subgroup.objectify(rows[0])
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -46,7 +47,7 @@ class subgroup_service(Service):
     
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_subgroup_statement(row))
+            returnStatement.append(Subgroup.objectify(row))
     
         return returnStatement
     
@@ -99,13 +100,3 @@ class subgroup_service(Service):
         # connect_pg.disconnect(conn)
 
         return updated_subgroup_id
-
-
-    def get_subgroup_statement(self, row):
-        """ Formats subgroup data in JSON"""
-        return {
-            'id': row[0],              # L'ID du sous-groupe
-            'name': row[1],            # Le nom du sous-groupe
-            'group_id': row[2]         # L'ID du groupe associé au sous-groupe
-        }
-    

@@ -18,14 +18,14 @@ def get_courses():
     """ Get all courses in JSON format """
     _service = course_service()
     returnStatement = _service.get_courses()
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @course_app.route('/courses/get/<int:id>', methods=['GET'])
 def get_course_by_id(id):
     """ Get a course by ID in JSON format """
     _service = course_service()
     returnStatement = _service.get_course_by_id(id)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @course_app.route('/courses/identify', methods=['POST'])
 def identify_course():
@@ -33,7 +33,7 @@ def identify_course():
     data = request.json
     _service = course_service()
     returnStatement = _service.identify_course(data)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @course_app.route('/courses/add', methods=['POST'])
 def add_course():

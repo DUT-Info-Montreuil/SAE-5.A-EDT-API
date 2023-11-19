@@ -18,14 +18,14 @@ def get_departments():
     """ Get all department in JSON format """
     _service = department_service()
     returnStatement = _service.get_departments()
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @department_app.route('/departments/get/<int:id>', methods=['GET'])
 def get_department_by_id(id):
     """ Get a department by ID in JSON format """
     _service = department_service()
     returnStatement = _service.get_department_by_id(id)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @department_app.route('/departments/identify', methods=['POST'])
 def identify_department():
@@ -33,7 +33,7 @@ def identify_department():
     data = request.json
     _service = department_service()
     returnStatement = _service.identify_department(data)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @department_app.route('/departments/add', methods=['POST'])
 def add_department():

@@ -1,3 +1,4 @@
+from entities.dto.Student import Student
 from services.main_service import Service
 
 import connect_pg
@@ -18,7 +19,7 @@ class student_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_student_statement(row))
+            returnStatement.append(Student.objectify(row))
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -30,7 +31,7 @@ class student_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
         if len(rows) > 0:
-            returnStatement = self.get_student_statement(rows[0])
+            returnStatement = Student.objectify(rows[0])
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -52,7 +53,7 @@ class student_service(Service):
     
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_student_statement(row))
+            returnStatement.append(Student.objectify(row))
     
         return returnStatement
     
@@ -127,16 +128,3 @@ class student_service(Service):
         # connect_pg.disconnect(conn)
 
         return updated_student_number
-
-    
-    def get_student_statement(self, row):
-        return {
-            'student_number': row[0],    # Numero étudiant
-            'last_name': row[1],         # Le nom de famille de l'étudiant
-            'first_name': row[2],        # Le prénom de l'étudiant
-            'mail': row[3],              # L'adresse e-mail de l'étudiant
-            'phone_number': row[4],      # Le numéro de téléphone de l'étudiant
-            'department_id': row[5],     # L'ID du département auquel l'étudiant est affilié
-            'group_id': row[6],          # L'ID du groupe auquel l'étudiant appartient
-            'subgroup_id': row[7]        # L'ID du sous-groupe auquel l'étudiant est associé
-        }

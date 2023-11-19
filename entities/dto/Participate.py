@@ -15,7 +15,9 @@ class Participate:
         }
 
     @staticmethod
-    def objectify(data, data_if_not_found=None):
+    def objectify(row, data_if_not_found=None):
+        data = Participate.sql_row_to_dictionary(row)
+
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
@@ -26,3 +28,12 @@ class Participate:
         )
 
         return participate
+    
+    @staticmethod
+    def sql_row_to_dictionary(row):
+        """ Formats participate data in JSON """
+        return {
+            'id': row[0],              # L'ID du cours
+            'course_id': row[1],     # L'ID du subgroup associée au participate
+            'rooms_id': row[2]     # L'ID du subgroup associée au participate
+        }

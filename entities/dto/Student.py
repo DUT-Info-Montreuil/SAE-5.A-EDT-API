@@ -25,7 +25,9 @@ class Student:
         }
     
     @staticmethod
-    def objectify(data, data_if_not_found=None):
+    def objectify(row, data_if_not_found=None):
+        data = Student.sql_row_to_dictionary(row)
+        
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
@@ -41,3 +43,16 @@ class Student:
         )
 
         return student
+    
+    @staticmethod
+    def sql_row_to_dictionary(row):
+        return {
+            'student_number': row[0],    # Numero étudiant
+            'last_name': row[1],         # Le nom de famille de l'étudiant
+            'first_name': row[2],        # Le prénom de l'étudiant
+            'mail': row[3],              # L'adresse e-mail de l'étudiant
+            'phone_number': row[4],      # Le numéro de téléphone de l'étudiant
+            'department_id': row[5],     # L'ID du département auquel l'étudiant est affilié
+            'group_id': row[6],          # L'ID du groupe auquel l'étudiant appartient
+            'subgroup_id': row[7]        # L'ID du sous-groupe auquel l'étudiant est associé
+        }

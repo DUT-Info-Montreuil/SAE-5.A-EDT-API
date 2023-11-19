@@ -18,7 +18,7 @@ def get_rooms():
     """ Get all rooms in JSON format """
     _service = room_service()
     returnStatement = _service.get_rooms()
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @room_app.route('/rooms/get/<int:id>', methods=['GET'])
 def get_room_by_id(id):
@@ -26,7 +26,7 @@ def get_room_by_id(id):
     data = request.json
     _service = room_service()
     returnStatement = _service.get_room_by_id(id)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @room_app.route('/rooms/identify', methods=['POST'])
 def identify_room():
@@ -34,7 +34,7 @@ def identify_room():
     data = request.json
     _service = room_service()
     returnStatement = _service.identify_room(data)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @room_app.route('/rooms/add', methods=['POST'])
 def add_room():

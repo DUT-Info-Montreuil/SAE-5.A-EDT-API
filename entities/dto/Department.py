@@ -19,7 +19,9 @@ class Department:
         }
         
     @staticmethod
-    def objectify(data, data_if_not_found=None):
+    def objectify(row, data_if_not_found=None):
+        data = Department.sql_row_to_dictionary(row)
+
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
@@ -32,3 +34,14 @@ class Department:
         )
 
         return department
+    
+    @staticmethod
+    def sql_row_to_dictionary(row):
+        """ Formats department data in JSON"""
+        return {
+            'id': row[0],              # L'ID du département
+            'name': row[1],            # Le nom du département
+            'description': row[2],     # La description du département
+            'degree_type': row[3],     # Le type de diplôme du département
+            'personal_id': row[4]      # L'ID du personnel associé au département
+        }

@@ -1,3 +1,4 @@
+from entities.dto.Room import Room
 from services.main_service import Service
 
 import connect_pg
@@ -17,7 +18,7 @@ class room_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_room_statement(row))
+            returnStatement.append(Room.objectify(row))
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -28,7 +29,7 @@ class room_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
         if len(rows) > 0:
-            returnStatement = self.get_room_statement(rows[0])
+            returnStatement = Room.objectify(rows[0])
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -44,7 +45,7 @@ class room_service(Service):
     
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_room_statement(row))
+            returnStatement.append(Room.objectify(row))
     
         return returnStatement
     
@@ -105,14 +106,3 @@ class room_service(Service):
         # connect_pg.disconnect(conn)
 
         return updated_room_id
-
-    
-    def get_room_statement(self, row):
-        """ Formats room data in JSON """
-        return {
-            'id': row[0],              # L'ID de la salle
-            'code': row[1],            # Le code de la salle
-            'capacity': row[2],        # La capacité de la salle
-            'has_computer': row[3],    # Indique si la salle a un ordinateur (true ou false)
-            'has_projector': row[4]    # Indique si la salle a un projecteur (true ou false)
-        }

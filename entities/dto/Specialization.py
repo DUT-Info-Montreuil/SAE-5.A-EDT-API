@@ -17,7 +17,9 @@ class Specialization:
         }
     
     @staticmethod
-    def objectify(data, data_if_not_found=None):
+    def objectify(row, data_if_not_found=None):
+        data = Specialization.sql_row_to_dictionary(row)
+        
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
@@ -29,3 +31,13 @@ class Specialization:
         )
 
         return specialization
+    
+    @staticmethod
+    def sql_row_to_dictionary(row):
+        """ Formats specialization data in JSON """
+        return {
+            'id': row[0],               # L'ID de la spécialisation
+            'code': row[1],             # Le code de la spécialisation
+            'name': row[2],             # Le nom de la spécialisation
+            'department_id': row[3]     # L'ID du département associé à la spécialisation
+        }

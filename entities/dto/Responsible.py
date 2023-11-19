@@ -15,7 +15,9 @@ class Responsible:
         }
 
     @staticmethod
-    def objectify(data, data_if_not_found=None):
+    def objectify(row, data_if_not_found=None):
+        data = Responsible.sql_row_to_dictionary(row)
+        
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
@@ -26,3 +28,12 @@ class Responsible:
         )
 
         return responsible
+    
+    @staticmethod
+    def sql_row_to_dictionary(row):
+        """ Formats responsible data in JSON """
+        return {
+            'id': row[0],              # L'ID du cours
+            'personal_id': row[1],     # L'ID du personnel associée au responsible
+            'teaching_id': row[2]     # L'ID de la ressource associée au responsible
+        }

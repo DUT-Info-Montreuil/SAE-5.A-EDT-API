@@ -1,3 +1,4 @@
+from entities.dto.Personal import Personal
 from services.main_service import Service
 
 import connect_pg
@@ -17,7 +18,7 @@ class personal_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_personal_statement(row))
+            returnStatement.append(Personal.objectify(row))
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -28,7 +29,7 @@ class personal_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
         if len(rows) > 0:
-            returnStatement = self.get_personal_statement(rows[0])
+            returnStatement = Personal.objectify(rows[0])
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -44,7 +45,7 @@ class personal_service(Service):
     
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_personal_statement(row))
+            returnStatement.append(Personal.objectify(row))
     
         return returnStatement
     
@@ -107,12 +108,4 @@ class personal_service(Service):
         return updated_personal_id
 
     
-    def get_personal_statement(self, row):
-        """ Formats personal data in JSON """
-        return {
-            'id': row[0],              # L'ID du personnel
-            'last_name': row[1],       # Le nom de famille du personnel
-            'first_name': row[2],      # Le prénom du personnel
-            'mail': row[3],            # L'adresse e-mail du personnel
-            'phone_number': row[4]     # Le numéro de téléphone du personnel
-        }
+    

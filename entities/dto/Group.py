@@ -17,7 +17,9 @@ class Group:
         }
     
     @staticmethod
-    def objectify(data, data_if_not_found=None):
+    def objectify(row, data_if_not_found=None):
+        data = Group.sql_row_to_dictionary(row)
+
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
@@ -29,3 +31,13 @@ class Group:
         )
 
         return group
+    
+    @staticmethod
+    def sql_row_to_dictionary(row):
+        """ Formats group data in JSON"""
+        return {
+            'id': row[0],              # L'ID du groupe
+            'promotion': row[1],       # La promotion du groupe
+            'type': row[2],            # Le type du groupe
+            'department_id': row[3]    # L'ID du département associé au groupe
+        }

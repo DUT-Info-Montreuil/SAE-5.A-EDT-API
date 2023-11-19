@@ -19,14 +19,14 @@ def get_reminders():
     """ Get all reminders in JSON format """
     _service = reminder_service()
     returnStatement = _service.get_reminders()
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @reminder_app.route('/reminders/get/<int:id>', methods=['GET'])
 def get_reminder_by_id(id):
     """ Get a reminder by ID in JSON format """
     _service = reminder_service()
     returnStatement = _service.get_reminder_by_id(id)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @reminder_app.route('/reminders/identify', methods=['POST'])
 def identify_reminder():
@@ -34,7 +34,7 @@ def identify_reminder():
     data = request.json
     _service = reminder_service()
     returnStatement = _service.identify_reminder(data)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @reminder_app.route('/reminders/add', methods=['POST'])
 def add_reminder():

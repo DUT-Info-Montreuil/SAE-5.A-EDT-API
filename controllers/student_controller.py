@@ -18,7 +18,7 @@ def get_students():
     """ Get all students in JSON format """
     _service = student_service()
     returnStatement = _service.get_students()
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @student_app.route('/students/get/<string:student_number>', methods=['GET'])
 def get_student_by_student_number(student_number):
@@ -26,7 +26,7 @@ def get_student_by_student_number(student_number):
     
     _service = student_service()
     returnStatement = _service.get_student_by_student_number(student_number)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @student_app.route('/students/identify', methods=['POST'])
 def identify_student():
@@ -35,7 +35,7 @@ def identify_student():
     data = request.json
     _service = student_service()
     returnStatement = _service.identify_student(data)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @student_app.route('/students/add', methods=['POST'])
 def add_student():

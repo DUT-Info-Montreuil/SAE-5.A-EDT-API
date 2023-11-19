@@ -1,3 +1,4 @@
+from entities.dto.Specialization import Specialization
 from services.main_service import Service
 
 import connect_pg
@@ -18,7 +19,7 @@ class specialization_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_specialization_statement(row))
+            returnStatement.append(Specialization.objectify(row))
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -29,7 +30,7 @@ class specialization_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
         if len(rows) > 0:
-            returnStatement = self.get_specialization_statement(rows[0])
+            returnStatement = Specialization.objectify(rows[0])
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -45,7 +46,7 @@ class specialization_service(Service):
     
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_specialization_statement(row))
+            returnStatement.append(Specialization.objectify(row))
     
         return returnStatement
     
@@ -102,14 +103,3 @@ class specialization_service(Service):
         # connect_pg.disconnect(conn)
 
         return updated_specialization_id
-
-    
-    def get_specialization_statement(self, row):
-        """ Formats specialization data in JSON """
-        return {
-            'id': row[0],               # L'ID de la spécialisation
-            'code': row[1],             # Le code de la spécialisation
-            'name': row[2],             # Le nom de la spécialisation
-            'department_id': row[3]     # L'ID du département associé à la spécialisation
-        }
-    

@@ -17,7 +17,8 @@ class Absent:
         }
         
     @staticmethod
-    def objectify(data, data_if_not_found=None):
+    def objectify(row, data_if_not_found=None):
+        data = Absent.sql_row_to_dictionary(row)
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
@@ -29,3 +30,13 @@ class Absent:
         )
 
         return absent
+    
+    @staticmethod
+    def sql_row_to_dictionary(row):
+        """ Formats absent data in JSON """
+        return {
+            'id': row[0],              # L'ID de l'absent
+            'justified': row[1],     # La justification (t ou f)
+            'student_number': row[2],       # Le numero etudiant de l'absent
+            'course_id': row[3],           # L'ID du cours
+        }

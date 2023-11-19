@@ -19,7 +19,9 @@ class Room:
         }
 
     @staticmethod
-    def objectify(data, data_if_not_found=None):
+    def objectify(row, data_if_not_found=None):
+        data = Room.sql_row_to_dictionary(row)
+        
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
@@ -32,3 +34,14 @@ class Room:
         )
 
         return room
+    
+    @staticmethod
+    def sql_row_to_dictionary(row):
+        """ Formats room data in JSON """
+        return {
+            'id': row[0],              # L'ID de la salle
+            'code': row[1],            # Le code de la salle
+            'capacity': row[2],        # La capacité de la salle
+            'has_computer': row[3],    # Indique si la salle a un ordinateur (true ou false)
+            'has_projector': row[4]    # Indique si la salle a un projecteur (true ou false)
+        }

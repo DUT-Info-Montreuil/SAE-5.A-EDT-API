@@ -18,14 +18,14 @@ def get_participates():
     """ Get all participates in JSON format """
     _service = participate_service()
     returnStatement = _service.get_participates()
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @participate_app.route('/participates/get/<int:id>', methods=['GET'])
 def get_participate_by_id(id):
     """ Get a participate by ID in JSON format """
     _service = participate_service()
     returnStatement = _service.get_participate_by_id(id)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @participate_app.route('/participates/identify', methods=['POST'])
 def identify_participate():
@@ -33,7 +33,7 @@ def identify_participate():
     data = request.json
     _service = participate_service()
     returnStatement = _service.identify_participate(data)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @participate_app.route('/participates/add', methods=['POST'])
 def add_participate():

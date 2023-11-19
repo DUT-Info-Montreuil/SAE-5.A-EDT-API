@@ -1,3 +1,4 @@
+from entities.dto.Course import Course
 from services.main_service import Service
 
 import connect_pg
@@ -17,7 +18,7 @@ class course_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_course_statement(row))
+            returnStatement.append(Course.objectify(row))
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -28,7 +29,7 @@ class course_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
         if len(rows) > 0:
-            returnStatement = self.get_course_statement(rows[0])
+            returnStatement = Course.objectify(rows[0])
         # connect_pg.disconnect(conn)
         return returnStatement
     
@@ -48,7 +49,7 @@ class course_service(Service):
     
         returnStatement = []
         for row in rows:
-            returnStatement.append(self.get_course_statement(row))
+            returnStatement.append(Course.objectify(row))
     
         return returnStatement
     
@@ -121,17 +122,3 @@ class course_service(Service):
         # connect_pg.disconnect(conn)
 
         return updated_course_id
-
-    
-    def get_course_statement(self, row):
-        """ Formats course data in JSON """
-        return {
-            'id': row[0],              # L'ID du cours
-            'description': row[1],     # La description du cours
-            'starttime': row[2],       # L'heure de début du cours
-            'duree': row[3],           # La durée du cours
-            'course_type': row[4],     # Le type de cours
-            'personal_id': row[5],     # L'ID du personnel associé au cours
-            'rooms_id': row[6],        # L'ID de la salle associée au cours
-            'teaching_id': row[7]      # L'ID de l'enseignement associé au cours
-        }

@@ -18,14 +18,14 @@ def get_personals():
     """ Get all personals in JSON format """
     _service = personal_service()
     returnStatement = _service.get_personals()
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @personal_app.route('/personals/get/<int:id>', methods=['GET'])
 def get_personal_by_id(id):
     """ Get a personal by ID in JSON format """
     _service = personal_service()
     returnStatement = _service.get_personal_by_id(id)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @personal_app.route('/personals/identify', methods=['POST'])
 def identify_personal():
@@ -33,7 +33,7 @@ def identify_personal():
     data = request.json
     _service = personal_service()
     returnStatement = _service.identify_personal(data)
-    return jsonify(returnStatement)
+    return jsonify([obj.jsonify() for obj in returnStatement])
 
 @personal_app.route('/personals/add', methods=['POST'])
 def add_personal():

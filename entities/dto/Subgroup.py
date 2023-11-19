@@ -15,7 +15,9 @@ class Subgroup:
         }
     
     @staticmethod
-    def objectify(data, data_if_not_found=None):
+    def objectify(row, data_if_not_found=None):
+        data = Subgroup.sql_row_to_dictionary(row)
+        
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
@@ -26,3 +28,12 @@ class Subgroup:
         )
 
         return subgroup
+    
+    @staticmethod
+    def sql_row_to_dictionary(row):
+        """ Formats subgroup data in JSON"""
+        return {
+            'id': row[0],              # L'ID du sous-groupe
+            'name': row[1],            # Le nom du sous-groupe
+            'group_id': row[2]         # L'ID du groupe associé au sous-groupe
+        }

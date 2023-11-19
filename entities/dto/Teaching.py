@@ -25,7 +25,9 @@ class Teaching:
         }
 
     @staticmethod
-    def objectify(data, data_if_not_found=None):
+    def objectify(row, data_if_not_found=None):
+        data = Teaching.sql_row_to_dictionary(row)
+        
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
@@ -41,3 +43,17 @@ class Teaching:
         )
 
         return teaching
+    
+    @staticmethod
+    def sql_row_to_dictionary(row):
+        """ Formats teaching data in JSON """
+        return {
+            'id': row[0],                   # L'ID de l'enseignement
+            'title': row[1],                # Le titre de l'enseignement
+            'hour_number': row[2],          # Le nombre d'heures
+            'semestre': row[3],             # Le semestre
+            'sequence': row[4],             # La séquence
+            'description': row[5],          # La description
+            'teaching_type': row[6],        # Le type d'enseignement
+            'specialization_id': row[7]     # L'ID de la spécialisation associée à l'enseignement
+        }

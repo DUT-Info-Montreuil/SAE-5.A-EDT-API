@@ -17,7 +17,9 @@ class Reminder:
         }
 
     @staticmethod
-    def objectify(data, data_if_not_found=None):
+    def objectify(row, data_if_not_found=None):
+        data = Reminder.sql_row_to_dictionary(row)
+
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
@@ -29,3 +31,13 @@ class Reminder:
         )
 
         return reminder
+    
+    @staticmethod
+    def sql_row_to_dictionary(row):
+        """ Formats reminder data in JSON """
+        return {
+            'id': row[0],   # L'ID du cours
+            'name': row[1],     # Nom du rappel
+            'description': row[2],     # Description du rappel
+            'course_id': row[3]     # L'ID du cours
+        }
