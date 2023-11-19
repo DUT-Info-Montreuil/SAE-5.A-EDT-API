@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from datetime import timedelta
 from flask import Flask, request, jsonify
 from flask_restful import reqparse, abort, Api, Resource
 from flask_cors import CORS
@@ -36,7 +37,10 @@ from flask_jwt_extended import create_access_token
 
 # Register the main controller
 app = Flask(__name__)
-app.config["JWT_SECRET_KEY"] = "kdJa9OxjmY82xgn"
+
+# Config JWT
+app.config["JWT_SECRET_KEY"] = "hcohen_aclaude_achetouani_bseydi_mtoure"
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(minutes=15) 
 jwt = JWTManager(app)
 
 # Register the department controller
@@ -81,8 +85,8 @@ app.register_blueprint(absent_app)
 # Register the participate controller
 app.register_blueprint(participate_app)
 
+# Register the autentification controller
 app.register_blueprint(auth_app)
-
 
 cors = CORS(app, resources={r"*": {"origins": "*"}})
 api = Api(app)
@@ -105,12 +109,15 @@ def create_university_db():
     script_file_path = 'scripts/script_university_create.sql'
     result = connect_pg.execute_sql_script(script_file_path)
     
-    script_file_path = 'scripts/script_university_school_insert.sql'
+    script_file_path = 'scripts/script_university_user_insert.sql'
     result1 = connect_pg.execute_sql_script(script_file_path)
     
-    script_file_path = 'scripts/script_university_student_insert.sql'
+    script_file_path = 'scripts/script_university_school_insert.sql'
     result2 = connect_pg.execute_sql_script(script_file_path)
-    return jsonify( {"univesity_create" : result, "school_insert" : result1, "student_insert" : result2})
+    
+    script_file_path = 'scripts/script_university_student_insert.sql'
+    result3 = connect_pg.execute_sql_script(script_file_path)
+    return jsonify( {"univesity_create" : result, "user_insert" : result1, "school_insert" : result2, "student_insert" : result3})
 
 @app.route('/create_table_university_db', methods=['GET'])
 def create_table_university_db():

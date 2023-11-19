@@ -9,7 +9,7 @@
 -- university.users(@username, password)
 INSERT INTO university.users (username, password)
 VALUES
-    ('pbonnot', '$2b$12$L8HRBcF6e7QplnL416IUyeyXheyOL2zjTh9QyZOaYZUK5UoJFP5ye'), -- pwd : Bonnot_Philippe
+    ('pbonnot', '$2b$12$NyUZ8nMD7n9cbV.yBUbNVOom1TDWUUviZgXku63jMqPMMNzDebBRe'), -- pwd : pbonnot
     ('mlamolle', '$2b$12$VxKF33M6CjhwWw8WW50JFey/d0NgM4SFVRFfuBDr9n8lRzdZ6j33W'), -- pwd : kOSz3QNq1F),
     ('mboulanger', '$2b$12$5BEim4RxhcbgO4guc4WcreANTXmq9srvUopiOTKcOCiDMIlIlp786'), -- pwd : ;X9P,27/:N**
     ('edafaoui', '$2b$12$rCkasXSYh5nWSfTkz.9h6uuLQmPSx.y5tfXHDC6cdiCQ1pzCdfMFa'), -- pwd : u7MA]352Sec~
@@ -46,11 +46,11 @@ VALUES
 -- university.users(@username, password)
 INSERT INTO university.users (username, password)
 VALUES
-	('mtoure', '$2b$12$n9o/jbKgDAJrpC1ejpfWcug6dRTh.wpEmXdv2o4nWJHtiQVYhFZAa'), -- pwd : Mehedi_Toure
-	('hcohen', '$2b$12$7v3cwt6UnMwKbKwPWucXAeeGULIPpDL0qtzUbK2Sk7LRAvidh.uhi'), -- pwd : Hugo_COHENh1
-	('aclaude', '$2b$12$4uT0.g7slJG8HR810FhP6uOpsS7iBdW5lBbW2M.JU076Dp4w1dqxq'), -- pwd : Aldric_CLAUD
-	('achetouani', '$2b$12$foIsmgkwIiRDCpzl9FDcS.ox7crQ320ShFB1P79Iygny1PmdIlQ0q'), -- pwd : Adil_CHETOUA
-	('bseydi', '$2b$12$3tWrEuOGAtwERwLjmZeUl.Q4LYjE.yl/m6f.77Bs1VwYX2rCXuP22') -- pwd : Boulaye_SEYD
+	('mtoure', '$2b$12$.Y7L5exEbMNjccyVzNaHwuf0pNnCLrK.qW0L2Zq82hsOmxv8EDCae'), -- pwd : mtoure
+	('hcohen', '$2b$12$kzdJRxBr0kXw83khwHSHYe70CC9no6BlmSc1INfjFOkEC0AYDyx86'), -- pwd : hcohen
+	('aclaude', '$2b$12$eZ0w80bRmMjUSgzh7xCa4eHZ7e0kizq92GXAJjJRi5yQg2lklM11e'), -- pwd : aclaude
+	('achetouani', '$2b$12$cNDSxnJWhSz8vyMjvxdP0elEgKRSe4NqfEnqlhz0xMdK2QhQV4gWW'), -- pwd : achetouani
+	('bseydi', '$2b$12$PSXvoXYceXCa2jvUPcpfyuQ11sXAXk/NJVfAZc82hiB61ain9qxeG') -- pwd : bseydi
 ;
 
 -- FAKE for departement INFO
