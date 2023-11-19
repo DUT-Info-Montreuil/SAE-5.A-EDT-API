@@ -41,6 +41,17 @@ CREATE DOMAIN courses_types as varchar(32) check (value ~* '^(controles|TD|TP|co
 DROP DOMAIN IF EXISTS teachings_types ;
 CREATE DOMAIN teachings_types as varchar(32) check (value ~* '^(SAE|RT|RCC|Portfolio)$');
 -- \echo [INFO] Create ALL table
+
+-- User
+-- \echo [INFO] Create the university.uses table
+CREATE TABLE university.users(
+    -- PRIMARY KEY
+    username varchar(64) UNIQUE NOT NULL,
+    CONSTRAINT pk_university_users PRIMARY KEY (username),
+    -- ATTRIBUTE
+    password varchar(255) NOT NULL
+) ;
+
 -- Student
 -- \echo [INFO] Create the university.students table
 CREATE TABLE university.students(
@@ -53,7 +64,10 @@ CREATE TABLE university.students(
     first_name varchar(32) NOT NULL,
     mail email NOT NULL,
     phone_number numphone UNIQUE NOT NULL,  -- domain numphone,
-    password varchar(255) NOT NULL,
+    -- password varchar(255) NOT NULL,
+
+    -- FOREIGN KEY (users)
+    user_username varchar(64) UNIQUE NOT NULL,
     -- FOREIGN KEY (departments)
     department_id INT NOT NULL,
     -- FOREIGN KEY (groups)
@@ -110,18 +124,10 @@ CREATE TABLE university.personals(
 	last_name varchar(32) NOT NULL,
 	first_name varchar(32) NOT NULL,
 	mail email NOT NULL ,
-    password varchar(255) NOT NULL,
-	phone_number numphone UNIQUE NOT NULL	-- domaine numphone
-) ;
 
--- User
--- \echo [INFO] Create the university.uses table
-CREATE TABLE university.users(
-    -- PRIMARY KEY
-    username varchar(64) UNIQUE NOT NULL,
-    CONSTRAINT pk_university_users PRIMARY KEY (username),
-    -- ATTRIBUTE
-    password varchar(255) NOT NULL,
+    -- FOREIGN KEY (users)
+    user_username varchar(64) UNIQUE NOT NULL,
+	phone_number numphone UNIQUE NOT NULL	-- domaine numphone
 ) ;
 
 -- \echo [INFO] Create the university.roles table
@@ -327,6 +333,16 @@ ADD CONSTRAINT fk_university_students_subgroups
 FOREIGN KEY (subgroup_id) REFERENCES university.subgroups(id)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
+ALTER TABLE university.students
+ADD CONSTRAINT fk_university_students_users
+FOREIGN KEY (user_username) REFERENCES university.users(username)
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE university.personals
+ADD CONSTRAINT fk_university_personals_users
+FOREIGN KEY (user_username) REFERENCES university.users(username)
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
 -- For the table 'roles'
 -- \echo [INFO] Alter table roles
 ALTER TABLE university.roles
@@ -407,3 +423,36 @@ CREATE TRIGGER check_student_keys_trigger
     BEFORE INSERT OR UPDATE ON university.students
     FOR EACH ROW
 EXECUTE FUNCTION check_student_foreign_keys();
+
+-- CREATE OR REPLACE FUNCTION check_student_email_unique()
+-- RETURNS TRIGGER AS $$
+-- DECLARE
+--     counter INTEGER := 1;
+--     new_email text := NEW.mail;
+--     base_username text;
+--     domain text;
+-- BEGIN
+--     -- Split the email into username and domain
+--     base_username := split_part(new_email, '@', 1);
+--     domain := split_part(new_email, '@', 2);
+
+--     -- Check the student email
+--     WHILE (SELECT 1 FROM university.students WHERE mail = new_email) LOOP
+--         -- If duplicate found, modify the username
+--         new_email := base_username || counter || '@' || domain;
+--         RAISE NOTICE 'Email already exists. Modifying to: %', new_email;
+--         counter := counter + 1;
+--     END LOOP;
+
+--     -- Set the modified email back to NEW.email
+--     NEW.mail := new_email;
+
+--     RETURN NEW;
+-- END;
+-- $$ LANGUAGE plpgsql;
+
+-- -- Create the trigger
+-- CREATE TRIGGER check_student_email_trigger
+--     BEFORE INSERT OR UPDATE ON university.students
+--     FOR EACH ROW
+-- EXECUTE FUNCTION check_student_email_unique();

@@ -31,13 +31,6 @@ def login():
         access_token = create_access_token(identity=returnStatement)
         return jsonify({'token':access_token})
 
-
-
-
-
-
-
-
 # Protect a route with jwt_required, which will kick out requests
 # without a valid JWT present.
 @auth_app.route("/protected", methods=["GET"])

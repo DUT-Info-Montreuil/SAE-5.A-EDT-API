@@ -21,40 +21,43 @@
     -- university.participates(@id, #course_id, #subgroup_id)
 */
 
--- university.personals(@id, last_name, first_name, mail, phone_number)
-INSERT INTO university.personals (last_name, first_name, mail, phone_number, password)
+-- delete from university.users;
+
+
+
+INSERT INTO university.personals (last_name, first_name, mail, phone_number, user_username)
 VALUES
-('Bonnot', 'Philippe', 'p.bonnot@iut.univ-paris8.fr','07.67.59.80.46','$2b$12$L8HRBcF6e7QplnL416IUyeyXheyOL2zjTh9QyZOaYZUK5UoJFP5ye'), -- pwd : Bonnot_Philippe
-('Lamolle', 'Myriam', 'm.lamolle@iut.univ-paris8.fr','06.68.99.99.67','$2b$12$VxKF33M6CjhwWw8WW50JFey/d0NgM4SFVRFfuBDr9n8lRzdZ6j33W'), -- pwd : kOSz3QNq1F),
-('Boulanger', 'Max', 'm.boulanger@iut.univ-paris8.fr', '07.10.50.50.58','$2b$12$5BEim4RxhcbgO4guc4WcreANTXmq9srvUopiOTKcOCiDMIlIlp786'), -- pwd : ;X9P,27/:N**
-('Dafaoui', 'El Mouloudi', 'e.dafaoui@iut.univ-paris8.fr','07.44.29.15.71','$2b$12$rCkasXSYh5nWSfTkz.9h6uuLQmPSx.y5tfXHDC6cdiCQ1pzCdfMFa'), -- pwd : u7MA]352Sec~
-('Flauraud', 'Khamphou', 'k.flauraud@iut.univ-paris8.fr', '06.94.48.00.99','$2b$12$tErNviVNSog.eMlx.4FIyuW0XkWeVptVBjboJuvo1pWsr0q8og8wS'), -- pwd : "Vi\pg)vehLp
-('Hassoun', 'Abdallah', 'a.hassoun@iut.univ-paris8.fr','06.50.09.15.03','$2b$12$r2bFzUp0gmT01gxCwOY7TOUUWwi5Btynp8D4ob0NwAh4vpntLDEo6'), -- pwd : ZN|5,@.k5!L-
-('Filoche', 'Eddy', 'e.filoche@iut.univ-paris8.fr', '07.68.83.61.75','$2b$12$cIyMmCrdNrZ12AkbOwN.HuLrSkzoEepJN9zsMft1CE7JMeWDiKbEK'), -- pwd : 2ACJWbd1`$lZ
-('Kamal', 'Rachida', 'r.kamal@iut.univ-paris8.fr', '07.92.15.70.86','$2b$12$u6a7u9EmyfePBo7IURr/Ne.shhvFnQA7lOBt3yM9hIqpJJLFaocFG'), -- pwd : n,s8Y2fj#R|<
-('Bayoud', 'Khadija', 'k.bayoud@iut.univ-paris8.fr', '07.73.26.40.17','$2b$12$ZoV86TGOzL1ZbN4yibGl2uwDTDM4RvjyLBbO/NZckaF4Zjds5cLni'), -- pwd : (pg;<,Z1tSZc
-('Baboulall', 'Marielle', 'm.baboulall@iut.univ-paris8.fr', '06.16.61.84.81','$2b$12$MyMg2huZ.unse/hGETgjo.rB9mVlnhP/7KZzDNUCAKtCZBYGPqSH.'), -- pwd : Y+ts(Vby/KAw
-('Kaiser', 'Marc', 'm.kaiser@iut.univ-paris8.fr', '07.58.46.23.15','$2b$12$8cCOVKerw.vSY16QckP6POu5cLcqixsb49SVTixFFkefAU0L38YSe'), -- pwd : 5]H:hecpIN>C
-('Ricordeau', 'Anne', 'a.ricordeau@iut.univ-paris8.fr','06.41.28.19.19','$2b$12$vkL9H6U6BB6SKOgLBubjD.QBFwdk3Pc3r27UHm.4bdMPP63MYLd66'), -- pwd : +)Qrp$O~n=tQ
-('Georges', 'Rémi', 'r.georges@iut.univ-paris8.fr','06.03.90.17.73','$2b$12$gSy7m8bzpPo3sDy2qPDlZu14/7wRZKd.Ib9seroGlMwnLJNFAnkOK'), -- pwd : U38j'Y_Q/kvt
-('Emonides', 'Mireille', 'm.emonides@iut.univ-paris8.fr','06.26.10.43.02','$2b$12$tEhecmSlc154U0icMllS7eD8t8qqI.FBaeM21FD/8Njt07yryocGO'), -- pwd : TFa7Z[jO#{E"
-('Rety', 'Jean-Hugues', 'j.rety@iut.univ-paris8.fr', '07.86.87.03.82','$2b$12$Rey8HAakoWYg1cKQUCWttuaze9FLivlIajnqYF8Dso1wEbrdpdR6y'), -- pwd : ACAq#3Y<g5_1
-('Homps', 'Marc', 'm.homps@iut.univ-paris8.fr', '06.85.48.41.23','$2b$12$SfLrLzZYduUPE4XF2zc76O6hSQaMQMPHbQl95/HW6cinEEXJsmGty'), -- pwd : z4gyycBzlkg_
-('Simonot', 'Marianne', 'm.simonot@iut.univ-paris8.fr', '07.71.50.67.21','$2b$12$SzEdOV6ZHFQmFDVEojaFku/Ubcn8OmArBEWtf7VnTXmugdzLgaVRS'), -- pwd : Cu+DG]PQ`#h!
-('Delmas', 'Guylain', 'g.delmas@iut.univ-paris8.fr', '06.01.32.65.82','$2b$12$JxpGLw9k5n9rfGKafKCHtetOBGu57vjkCL5QUHuGlG3ojUZfT6pvm'), -- pwd : #X1TG4p.5,xS
-('Nauwynck', 'Nédra', 'n.nauwynck@iut.univ-paris8.fr', '06.72.53.57.70','$2b$12$fTRfk1W8f6Ly8BBMA/tMS.N.LLBVRNDOnLln0.t3K5sf3cvfhfoAu'), -- pwd : j_s@YDK1z]XX
-('Clément-Comparot', 'Véronique', 'v.clement-comparot@iut.univ-paris8.fr', '07.45.74.93.97','$2b$12$m6tpZtIV49W/Aeim6M.4aOOYMV2oMQzXf90N5tianhBy6GQ3KaTiW'), -- pwd : SE1ZO*HL$(Yy
-('Le Duc', 'Chan', 'c.leDuc@iut.univ-paris8.fr', '07.98.45.05.76','$2b$12$BDwj3jPet7i0vZ1KtMRVYOwt6kf.7Lefc39MeIPrfUKg8U.pGphm.'), -- pwd : sTs]9YXoJ+O;
-('Bossard', 'Aurélien', 'a.bossard@iut.univ-paris8.fr', '07.19.29.79.65','$2b$12$.OmvBIA1yYWZTc.APXbc/uO9jIbXSTqdhdEIe1CYMbeKBKi3r1CoO'), -- pwd : ]ed0H]:XO5eM
-('Cataldi', 'Mario', 'm.cataldi@iut.univ-paris8.fr', '07.79.24.19.54','$2b$12$wROjjoGuE040xLK2x/7teebNP3.xFX4YUZyvLiwDsBQWQoH0nqATe'), -- pwd : 4WGlP|.--Z_x
-('Golven', 'Amélie', 'a.golven@iut.univ-paris8.fr', '06.48.32.63.21','$2b$12$ptqh.Q7I9l/tMr1ZfbZjQuy.UyJF3rSs.Houcz.L.dZgzbYQPoca2'), -- pwd : 3GcSMDq/22tp
-('Ballay-Dally', 'Charlotte', 'c.ballay_dally@iut.univ-paris8.fr', '06.79.06.77.84','$2b$12$0P4f84IJLjUX2HQlKlMU8u5wCqSAZCvaKG/si0Kz3G0Mmc9DiOe3W'), -- pwd : AK!Tl`WNK{[C
-('Groff', 'Geoffrey', 'g.groff@iut.univ-paris8.fr', '07.40.01.70.39','$2b$12$S1bZRrORVJDx6sHkTgE4AuSZkudSZ3uTwhOf1sLYBD/w4ExWXgQKG'), -- pwd : `*KBnV|xSWph
-('Chebbi', 'Imen', 'i.chebbi@iut.univ-paris8.fr', '07.33.33.28.19','$2b$12$u49dy9N.Z/VC6hBVdCrp8OuXZjOkCudKbpGNkI6xbR28O9nv9h4Qe'), -- pwd : qR}k()mEB{^1
-('Tobbelem', 'Jocelin', 'j.tobbelem@iut.univ-paris8.fr', '06.97.24.53.70','$2b$12$odveejmZG9fiF2lllTRCVuQDU0xei133bR4TdlOCIMrDHR/xli6ve'), -- pwd : 'vlzcd.:c{?A
-('Mockel', 'Mehdi', 'm.mockel@iut.univ-paris8.fr', '06.45.07.64.29','$2b$12$D2NLE6qx/6e053/RCJS23eq/8hEC9CWnyL3h1Gt7B2cmSg2oPynEm'), -- pwd : l<,XCAH{WzHW
-('Mourel', 'Frédéric', 'f.mourel@iut.univ-paris8.fr', '06.69.18.17.81','$2b$12$CnW0K2BrNCe39.qEaxYoUelm2niBTezZ8GCk2hi/VvQpJ9XNAu8uW'), -- pwd : 6w-Sva#}u)+Z
-('Nyzam', 'Valentin', 'v.nyzam@iut.univ-paris8.fr', '06.88.49.45.84','$2b$12$k2cVg/mY392MNWDcjNLPn.QiU/4vcNIpfbYc9xo7n0.c0JpA/dtUq') -- pwd : ']'hP5~$>%RC
+    ('Bonnot', 'Philippe', 'p.bonnot@iut.univ-paris8.fr', '07.67.59.80.46', 'pbonnot'), -- username : pbonnot
+    ('Lamolle', 'Myriam', 'm.lamolle@iut.univ-paris8.fr', '06.68.99.99.67', 'mlamolle'), -- username : mlamolle
+    ('Boulanger', 'Max', 'm.boulanger@iut.univ-paris8.fr', '07.10.50.50.58', 'mboulanger'), -- username : mboulanger
+    ('Dafaoui', 'El Mouloudi', 'e.dafaoui@iut.univ-paris8.fr', '07.44.29.15.71', 'edafaoui'), -- username : edafaoui
+    ('Flauraud', 'Khamphou', 'k.flauraud@iut.univ-paris8.fr', '06.94.48.00.99', 'kflauraud'), -- username : kflauraud
+    ('Hassoun', 'Abdallah', 'a.hassoun@iut.univ-paris8.fr', '06.50.09.15.03', 'ahassoun'), -- username : ahassoun
+    ('Filoche', 'Eddy', 'e.filoche@iut.univ-paris8.fr', '07.68.83.61.75', 'efiloche'), -- username : efiloche
+    ('Kamal', 'Rachida', 'r.kamal@iut.univ-paris8.fr', '07.92.15.70.86', 'rkamal'), -- username : rkamal
+    ('Bayoud', 'Khadija', 'k.bayoud@iut.univ-paris8.fr', '07.73.26.40.17', 'kbayoud'), -- username : kbayoud
+    ('Baboulall', 'Marielle', 'm.baboulall@iut.univ-paris8.fr', '06.16.61.84.81', 'mbaboulall'), -- username : mbaboulall    
+    ('Kaiser', 'Marc', 'm.kaiser@iut.univ-paris8.fr', '07.58.46.23.15', 'mkaiser'), -- username : mkaiser
+    ('Ricordeau', 'Anne', 'a.ricordeau@iut.univ-paris8.fr', '06.41.28.19.19', 'aricordeau'), -- username : aricordeau
+    ('Georges', 'Rémi', 'r.georges@iut.univ-paris8.fr', '06.03.90.17.73', 'rgeorges'), -- username : rgeorges
+    ('Emonides', 'Mireille', 'm.emonides@iut.univ-paris8.fr', '06.26.10.43.02', 'memonides'), -- username : memonides        
+    ('Rety', 'Jean-Hugues', 'j.rety@iut.univ-paris8.fr', '07.86.87.03.82', 'jrety'), -- username : jrety
+    ('Homps', 'Marc', 'm.homps@iut.univ-paris8.fr', '06.85.48.41.23', 'mhomps'), -- username : mhomps
+    ('Simonot', 'Marianne', 'm.simonot@iut.univ-paris8.fr', '07.71.50.67.21', 'msimonot'), -- username : msimonot
+    ('Delmas', 'Guylain', 'g.delmas@iut.univ-paris8.fr', '06.01.32.65.82', 'gdelmas'), -- username : gdelmas
+    ('Nauwynck', 'Nédra', 'n.nauwynck@iut.univ-paris8.fr', '06.72.53.57.70', 'nnauwynck'), -- username : nnauwynck
+    ('Clément-Comparot', 'Véronique', 'v.clement-comparot@iut.univ-paris8.fr', '07.45.74.93.97', 'vclementcomparot'), -- username : vclementcomparot
+    ('Le Duc', 'Chan', 'c.leduc@iut.univ-paris8.fr', '07.98.45.05.76', 'cleduc'), -- username : cleduc
+    ('Bossard', 'Aurélien', 'a.bossard@iut.univ-paris8.fr', '07.19.29.79.65', 'abossard'), -- username : abossard
+    ('Cataldi', 'Mario', 'm.cataldi@iut.univ-paris8.fr', '07.79.24.19.54', 'mcataldi'), -- username : mcataldi
+    ('Golven', 'Amélie', 'a.golven@iut.univ-paris8.fr', '06.48.32.63.21', 'agolven'), -- username : agolven
+    ('Ballay-Dally', 'Charlotte', 'c.ballay_dally@iut.univ-paris8.fr', '06.79.06.77.84', 'cballaydally'), -- username : cballaydally
+    ('Groff', 'Geoffrey', 'g.groff@iut.univ-paris8.fr', '07.40.01.70.39', 'ggroff'), -- username : ggroff
+    ('Chebbi', 'Imen', 'i.chebbi@iut.univ-paris8.fr', '07.33.33.28.19', 'ichebbi'), -- username : ichebbi
+    ('Tobbelem', 'Jocelin', 'j.tobbelem@iut.univ-paris8.fr', '06.97.24.53.70', 'jtobbelem'), -- username : jtobbelem
+    ('Mockel', 'Mehdi', 'm.mockel@iut.univ-paris8.fr', '06.45.07.64.29', 'mmockel'), -- username : mmockel
+    ('Mourel', 'Frédéric', 'f.mourel@iut.univ-paris8.fr', '06.69.18.17.81', 'fmourel'), -- username : fmourel
+    ('Nyzam', 'Valentin', 'v.nyzam@iut.univ-paris8.fr', '06.88.49.45.84', 'vnyzam') -- username : vnyzam
 ;
 
 -- university.roles(@id, name, description, personal_id)
@@ -75,6 +78,7 @@ VALUES
     ('Responsable Apprentissage BUT', '', (SELECT id FROM university.personals WHERE mail = 'a.ricordeau@iut.univ-paris8.fr')),
     ('Responsable stage', '', (SELECT id FROM university.personals WHERE mail = 'r.georges@iut.univ-paris8.fr')),
     ('Responsable Contrat Apprentissage', '', (SELECT id FROM university.personals WHERE mail = 'm.emonides@iut.univ-paris8.fr')),
+
     ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'm.homps@iut.univ-paris8.fr')),
     ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'j.rety@iut.univ-paris8.fr')),
     ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'm.lamolle@iut.univ-paris8.fr')),
@@ -84,7 +88,7 @@ VALUES
     ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'n.nauwynck@iut.univ-paris8.fr')),
     ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'p.bonnot@iut.univ-paris8.fr')),
     ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'v.clement-comparot@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'c.leDuc@iut.univ-paris8.fr')),
+    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'c.leduc@iut.univ-paris8.fr')),
     ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'a.bossard@iut.univ-paris8.fr')),
     ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'm.cataldi@iut.univ-paris8.fr')),
     ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'a.golven@iut.univ-paris8.fr')),
@@ -102,10 +106,10 @@ VALUES
 -- university.departments(@id, name, description, department_type)
 INSERT into university.departments (name, description, degree_type,personal_id)
 VALUES
-    ('INFO', 'Informatique','BUT',(SELECT id FROM university.personals WHERE mail = 'a.ricordeau@iut.univ-paris8.fr')),
-    ('QLIO', 'Qualité, Logistique Industrielle et Organisation','BUT',(SELECT id FROM university.personals WHERE mail = 'e.dafaoui@iut.univ-paris8.fr')),
-    ('INFOCOM', 'Information et Communication','BUT',(SELECT id FROM university.personals WHERE mail = 'm.baboulall@iut.univ-paris8.fr')),
-    ('GACO', 'Gestion des Administrations et Commerce','BUT',(SELECT id FROM university.personals WHERE mail = 'm.kaiser@iut.univ-paris8.fr'))
+    ('INFO', 'Informatique', 'BUT',(SELECT id FROM university.personals WHERE mail = 'a.ricordeau@iut.univ-paris8.fr')),
+    ('QLIO', 'Qualité, Logistique Industrielle et Organisation', 'BUT',(SELECT id FROM university.personals WHERE mail = 'e.dafaoui@iut.univ-paris8.fr')),
+    ('INFOCOM', 'Information et Communication', 'BUT',(SELECT id FROM university.personals WHERE mail = 'm.baboulall@iut.univ-paris8.fr')),
+    ('GACO', 'Gestion des Administrations et Commerce', 'BUT',(SELECT id FROM university.personals WHERE mail = 'm.kaiser@iut.univ-paris8.fr'))
 ;
 -- university.groups(@id, promotion, type, #department_id)
 -- Insert group A for each promotion for Info department
@@ -308,37 +312,37 @@ INSERT INTO university.rooms (code, capacity, has_computer, has_projector) VALUE
 -- Parcours - INFO
 INSERT INTO university.specializations (code, name, department_id) 
 VALUES
-    ('INFO','Semestre de préparation au parcours',(SELECT id FROM university.departments WHERE name = 'INFO')),
-    ('INFO_TC','TRONC COMMUN',(SELECT id FROM university.departments WHERE name = 'INFO')),
-    ('INFO_A','Réalisation d’applications : conception, développement, validation',(SELECT id FROM university.departments WHERE name = 'INFO')),
-    ('INFO_C','Administration, gestion et exploitation des données',(SELECT id FROM university.departments WHERE name = 'INFO'))
+    ('INFO', 'Semestre de préparation au parcours',(SELECT id FROM university.departments WHERE name = 'INFO')),
+    ('INFO_TC', 'TRONC COMMUN',(SELECT id FROM university.departments WHERE name = 'INFO')),
+    ('INFO_A', 'Réalisation d’applications : conception, développement, validation',(SELECT id FROM university.departments WHERE name = 'INFO')),
+    ('INFO_C', 'Administration, gestion et exploitation des données',(SELECT id FROM university.departments WHERE name = 'INFO'))
 ;
 
 -- Parcours - QLIO
 INSERT INTO university.specializations (code, name, department_id) 
 VALUES
-    ('QLIO','Semestre de préparation au parcours',(SELECT id FROM university.departments WHERE name = 'QLIO')),
-    ('QLIO_TC','TRONC COMMUN',(SELECT id FROM university.departments WHERE name = 'QLIO')),
-    ('QLIO_MP','Management de la production de biens et de services',(SELECT id FROM university.departments WHERE name = 'QLIO')),
-    ('QLIO_PSC','Pilotage de la chaîne logistique globale',(SELECT id FROM university.departments WHERE name = 'QLIO'))
+    ('QLIO', 'Semestre de préparation au parcours',(SELECT id FROM university.departments WHERE name = 'QLIO')),
+    ('QLIO_TC', 'TRONC COMMUN',(SELECT id FROM university.departments WHERE name = 'QLIO')),
+    ('QLIO_MP', 'Management de la production de biens et de services',(SELECT id FROM university.departments WHERE name = 'QLIO')),
+    ('QLIO_PSC', 'Pilotage de la chaîne logistique globale',(SELECT id FROM university.departments WHERE name = 'QLIO'))
 ;
 
 -- Parcours - INFOCOM
 INSERT INTO university.specializations (code, name, department_id) 
 VALUES
-    ('INFOCOM','Semestre de préparation au parcours',(SELECT id FROM university.departments WHERE name = 'INFOCOM')),
-    ('INFOCOM_TC','TRONC COMMUN',(SELECT id FROM university.departments WHERE name = 'INFOCOM')),
-    ('INFOCOM_CO','Communication des organisations',(SELECT id FROM university.departments WHERE name = 'INFOCOM'))
+    ('INFOCOM', 'Semestre de préparation au parcours',(SELECT id FROM university.departments WHERE name = 'INFOCOM')),
+    ('INFOCOM_TC', 'TRONC COMMUN',(SELECT id FROM university.departments WHERE name = 'INFOCOM')),
+    ('INFOCOM_CO', 'Communication des organisations',(SELECT id FROM university.departments WHERE name = 'INFOCOM'))
 ;
 
 -- Parcours - GACO
 INSERT INTO university.specializations (code, name, department_id) 
 VALUES
-    ('GACO','Semestre de préparation au parcours',(SELECT id FROM university.departments WHERE name = 'GACO')),
-    ('GACO_TC','TRONC COMMUN',(SELECT id FROM university.departments WHERE name = 'GACO')),
-    ('GACO_MRPO','Management responsable de projet et entrepreneuriat',(SELECT id FROM university.departments WHERE name = 'GACO')),
-    ('GACO_MFS','Management des fonctions supports',(SELECT id FROM university.departments WHERE name = 'GACO')),
-    ('GACO_MCMO','Management commercial et marketing omni-canal',(SELECT id FROM university.departments WHERE name = 'GACO'))
+    ('GACO', 'Semestre de préparation au parcours',(SELECT id FROM university.departments WHERE name = 'GACO')),
+    ('GACO_TC', 'TRONC COMMUN',(SELECT id FROM university.departments WHERE name = 'GACO')),
+    ('GACO_MRPO', 'Management responsable de projet et entrepreneuriat',(SELECT id FROM university.departments WHERE name = 'GACO')),
+    ('GACO_MFS', 'Management des fonctions supports',(SELECT id FROM university.departments WHERE name = 'GACO')),
+    ('GACO_MCMO', 'Management commercial et marketing omni-canal',(SELECT id FROM university.departments WHERE name = 'GACO'))
 ;
 
 -- university.teachings(@id, title, hour_number, semestre, sequence, teaching_type #specialization_id)
@@ -391,7 +395,7 @@ VALUES
     ('Exploitation d’une base de données', 0, 2, '04', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO')),
     ('Gestion d’un projet', 0, 2, '05', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO')),
     ('Organisation d’un travail d’équipe', 0, 2, '06', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    
+        
     --Semestre 3 INFO
     --Ressources cœur de compétences (RCC)
     ('Développement Web', 0, 3, '01', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO')),
