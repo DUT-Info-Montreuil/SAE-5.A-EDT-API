@@ -1,39 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from datetime import timedelta
-from flask import Flask, request, jsonify
-from flask_restful import reqparse, abort, Api, Resource
+from flask import Flask, jsonify
+from flask_restful import Api
 from flask_cors import CORS
-from contextlib import closing
+from flask_jwt_extended import JWTManager
+
+from datetime import timedelta
 from config import config
 
 import connect_pg
-import psycopg2
-import requests
-import hashlib
-import json
-
-from controllers.department_controller import department_app
-from controllers.group_controller import group_app
-from controllers.subgroup_controller import subgroup_app
-from controllers.personal_controller import personal_app
-from controllers.specialization_controller import specialization_app
-from controllers.room_controller import room_app
-from controllers.teaching_controller import teaching_app
-from controllers.role_controller import role_app
-from controllers.course_controller import course_app
-from controllers.student_controller import student_app
-from controllers.responsible_controller import responsible_app
-from controllers.reminder_controller import reminder_app
-from controllers.absent_controller import absent_app
-from controllers.participate_controller import participate_app
-from controllers.auth_controller import auth_app
-
-from flask_jwt_extended import get_jwt_identity
-from flask_jwt_extended import jwt_required
-from flask_jwt_extended import JWTManager
-from flask_jwt_extended import create_access_token
+from controllers import *
 
 # Register the main controller
 app = Flask(__name__)
