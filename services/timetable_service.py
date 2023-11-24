@@ -25,7 +25,7 @@ class timetable_service(Service):
         monday = datetime.datetime.strptime(week_date,"%Y-%m-%d")
         friday = monday + datetime.timedelta(days=5)
 
-        query = """SELECT courses.description, course_type, personals.last_name, personals.first_name, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd'), duree 
+        query = """SELECT courses.description, course_type, personals.last_name, personals.first_name, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd HH24:MI:SS'), duree 
                     FROM university.courses 
                     INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
                     INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
