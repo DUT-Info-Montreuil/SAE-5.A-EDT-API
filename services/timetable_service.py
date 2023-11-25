@@ -8,9 +8,10 @@ class timetable_service(Service):
     #@todo invalid date exception, + rajouter exception au contrat
     def get_timetable_by_room(self, data):
         room_name = data.get('room_name', '')
-        week_date = data.get('week_date', '') #needs to be monday
+        week_date_start = data.get('week_date_start', '')
+        week_date_end = data.get('week_date_end', '')
 
-        if room_name == '' or week_date == '':
+        if room_name == '' or week_date_start == '' or week_date_end == '':
             return "Null arguments"
             
         query = "SELECT id FROM university.rooms WHERE code = '" + str(room_name) + "'"
@@ -22,15 +23,15 @@ class timetable_service(Service):
 
         room_id = rows[0][0]
 
-        monday = datetime.datetime.strptime(week_date,"%Y-%m-%d")
-        friday = monday + datetime.timedelta(days=5)
+        week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
+        week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
         query = """SELECT courses.description, course_type, personals.last_name, personals.first_name, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd HH24:MI:SS'), duree 
                     FROM university.courses 
                     INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
                     INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
                     WHERE rooms_id =""" +  str(room_id) + """ AND
-                    starttime >= '""" + str(monday) + """' AND starttime <= '""" + str(friday) + """'"""
+                    starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
         print(query)
         #utiliser model?
         rows = connect_pg.get_query(conn, query)
