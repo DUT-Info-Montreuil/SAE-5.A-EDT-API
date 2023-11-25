@@ -36,6 +36,7 @@ class timetable_service(Service):
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
         for row in rows:
+            row = row + (room_name,)
             returnStatement.append(self.get_student_statement(row))
         connect_pg.disconnect(conn)
         return returnStatement
@@ -48,5 +49,6 @@ class timetable_service(Service):
             'personal_first_name': row[3],
             'teachings.title': row[4],      # r1-01 développement web, sae, c'est les ressources
             'starttime': row[5],         # Le nom de famille de l'étudiant
-            'duree':  str(row[6])        # Le prénom de l'étudiant
+            'duree':  str(row[6]),        # Le prénom de l'étudiant
+            'room_name':  row[7]
         }
