@@ -32,12 +32,43 @@ class timetable_service(Service):
                     INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
                     WHERE rooms_id =""" +  str(room_id) + """ AND
                     starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
-        print(query)
         #utiliser model?
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
         for row in rows:
             row = row + (room_name,)
+            returnStatement.append(self.get_student_statement(row))
+        connect_pg.disconnect(conn)
+        return returnStatement
+    
+    def get_timetable_by_teacher(self, data):
+        # rajouter try catch si teacher n'existe pas
+        personnal_id = data.get('personnal_id', '')
+        week_date_start = data.get('week_date_start', '')
+        week_date_end = data.get('week_date_end', '')
+
+        if personnal_id == '' or week_date_start == '' or week_date_end == '':
+            return "Null arguments"
+        
+
+        week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
+        week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
+
+        query = """SELECT courses.description, course_type, personals.last_name, personals.first_name, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd HH24:MI:SS'), duree, rooms.code 
+                    FROM university.courses 
+                    INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
+                    INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
+                    INNER JOIN university.rooms ON university.courses.rooms_id = university.rooms.id
+                    WHERE university.personals.id =""" +  str(personnal_id) + """ AND
+                    starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
+        print(query)
+
+        #utiliser model?
+        conn = self.get_connection()
+        rows = connect_pg.get_query(conn, query)
+
+        returnStatement = []
+        for row in rows:
             returnStatement.append(self.get_student_statement(row))
         connect_pg.disconnect(conn)
         return returnStatement
