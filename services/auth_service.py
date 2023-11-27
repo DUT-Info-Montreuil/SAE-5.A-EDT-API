@@ -6,6 +6,7 @@ import bcrypt
 class auth_service(Service):
 
     def login(self, data):
+        #add a try catch
         username = data.get('username', '')
         password = data.get('password', '')
         
