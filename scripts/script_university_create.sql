@@ -109,7 +109,7 @@ CREATE TABLE university.subgroups(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_subgroups PRIMARY KEY CONSTRAINT ck_university_subgroup_id CHECK(id > 0), 
     -- ATTRIBUTE
-	name varchar(5) NOT NULL CHECK (name ~ '^\d+$' OR name = 'app'), -- app,1,2...
+	name varchar(16) NOT NULL ,-- CHECK (name ~ '^[A-Z]\d+$' OR name = 'app'), -- app,1,2...
 
 	-- FOREIGN KEY (groups)
     group_id INT NOT NULL
@@ -124,6 +124,7 @@ CREATE TABLE university.personals(
 	last_name varchar(32) NOT NULL,
 	first_name varchar(32) NOT NULL,
 	mail email NOT NULL ,
+    personal_code varchar(16) UNIQUE NOT NULL,
 
     -- FOREIGN KEY (users)
     user_username varchar(64) UNIQUE NOT NULL,
@@ -150,7 +151,7 @@ CREATE TABLE university.courses(
     -- ATTRIBUTE
 	description TEXT NOT NULL,
 	startTime timestamp NOT NULL,
-	duree time NOT NULL,
+	endtime timestamp NOT NULL,
 	course_type courses_types NOT NULL,
 
     -- FOREIGN KEY (personals)
