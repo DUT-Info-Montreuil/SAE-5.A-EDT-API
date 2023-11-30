@@ -6,6 +6,7 @@ import bcrypt
 class auth_service(Service):
 
     def login(self, data):
+        #add a try catch
         username = data.get('username', '')
         password = data.get('password', '')
         
@@ -14,7 +15,7 @@ class auth_service(Service):
         
         query = """SELECT username, password 
                     FROM university.users 
-                    WHERE username = '%(username)s'""" % {'username': username}
+                    WHERE username = '%(username)s'""" 
 
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
