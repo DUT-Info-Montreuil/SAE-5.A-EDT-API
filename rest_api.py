@@ -132,4 +132,5 @@ if __name__ == "__main__":
     params = config('config.ini', 'server')
     # Launch Flask server
     app.run(debug=params['debug'], host=params['host'], port=params['port'])
+    create_university_db()
     
