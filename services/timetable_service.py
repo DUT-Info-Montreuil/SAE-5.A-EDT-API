@@ -17,7 +17,7 @@ class timetable_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.description, course_type, personals.last_name, personals.first_name, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), duree, rooms.code 
+        query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code 
                     FROM university.courses 
                     INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
                     INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
@@ -38,7 +38,7 @@ class timetable_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.description, course_type, personals.last_name, personals.first_name, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), duree, rooms.code 
+        query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code
                     FROM university.courses 
                     INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
                     INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
@@ -59,7 +59,7 @@ class timetable_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.description, course_type, personals.last_name, personals.first_name, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), duree, rooms.code
+        query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code
                 FROM university.courses
 
                 INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
@@ -87,7 +87,7 @@ class timetable_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT DISTINCT courses.description, course_type, personals.last_name, personals.first_name, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), duree, rooms.code
+        query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code
                 FROM university.courses
 
                 INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
@@ -116,12 +116,11 @@ class timetable_service(Service):
 
     def get_student_statement(self, row):
         return {
-            'description': row[0],    # juste une description
-            'course_type': row[1],   # Type de cours, Contrôle, Tp, Td, Cours normal/amphi
-            'personal_last_name': row[2],
-            'personal_first_name': row[3],
-            'teaching_title': row[4],      # r1-01 développement web, sae, c'est les ressources
-            'starttime': row[5],         # Le nom de famille de l'étudiant
-            'duree':  str(row[6]),        # Le prénom de l'étudiant
-            'room_name':  row[7]
+            'description': row[0],  
+            'course_type': row[1],  
+            'personal_code': row[2],
+            'teaching_title': row[3],      
+            'starttime': row[4],      
+            'endttime':  row[5],       
+            'room_name':  row[6]
         }
