@@ -1,6 +1,8 @@
 from flask import jsonify
 from flask import request
 from flask import Blueprint
+from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import jwt_required
 
 from services.timetable_service import timetable_service
 
@@ -54,6 +56,11 @@ def get_timetable_by_student():
         return returnStatement
     else:
         return jsonify({'edt' : returnStatement})
+    
+@timetable_app.route('/timetable/get/bytoken', methods=['POST'])
+@jwt_required()
+def get_timetable_by_token():
+    return jsonify(get_jwt_identity())
     
 #via promo
 

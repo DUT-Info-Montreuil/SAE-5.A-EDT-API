@@ -23,41 +23,39 @@
 
 -- delete from university.users;
 
-
-
-INSERT INTO university.personals (last_name, first_name, mail, phone_number, user_username)
+INSERT INTO university.personals (personal_code, last_name, first_name, mail, phone_number, user_username)
 VALUES
-    ('Bonnot', 'Philippe', 'p.bonnot@iut.univ-paris8.fr', '07.67.59.80.46', 'pbonnot'), -- username : pbonnot
-    ('Lamolle', 'Myriam', 'm.lamolle@iut.univ-paris8.fr', '06.68.99.99.67', 'mlamolle'), -- username : mlamolle
-    ('Boulanger', 'Max', 'm.boulanger@iut.univ-paris8.fr', '07.10.50.50.58', 'mboulanger'), -- username : mboulanger
-    ('Dafaoui', 'El Mouloudi', 'e.dafaoui@iut.univ-paris8.fr', '07.44.29.15.71', 'edafaoui'), -- username : edafaoui
-    ('Flauraud', 'Khamphou', 'k.flauraud@iut.univ-paris8.fr', '06.94.48.00.99', 'kflauraud'), -- username : kflauraud
-    ('Hassoun', 'Abdallah', 'a.hassoun@iut.univ-paris8.fr', '06.50.09.15.03', 'ahassoun'), -- username : ahassoun
-    ('Filoche', 'Eddy', 'e.filoche@iut.univ-paris8.fr', '07.68.83.61.75', 'efiloche'), -- username : efiloche
-    ('Kamal', 'Rachida', 'r.kamal@iut.univ-paris8.fr', '07.92.15.70.86', 'rkamal'), -- username : rkamal
-    ('Bayoud', 'Khadija', 'k.bayoud@iut.univ-paris8.fr', '07.73.26.40.17', 'kbayoud'), -- username : kbayoud
-    ('Baboulall', 'Marielle', 'm.baboulall@iut.univ-paris8.fr', '06.16.61.84.81', 'mbaboulall'), -- username : mbaboulall    
-    ('Kaiser', 'Marc', 'm.kaiser@iut.univ-paris8.fr', '07.58.46.23.15', 'mkaiser'), -- username : mkaiser
-    ('Ricordeau', 'Anne', 'a.ricordeau@iut.univ-paris8.fr', '06.41.28.19.19', 'aricordeau'), -- username : aricordeau
-    ('Georges', 'Rémi', 'r.georges@iut.univ-paris8.fr', '06.03.90.17.73', 'rgeorges'), -- username : rgeorges
-    ('Emonides', 'Mireille', 'm.emonides@iut.univ-paris8.fr', '06.26.10.43.02', 'memonides'), -- username : memonides        
-    ('Rety', 'Jean-Hugues', 'j.rety@iut.univ-paris8.fr', '07.86.87.03.82', 'jrety'), -- username : jrety
-    ('Homps', 'Marc', 'm.homps@iut.univ-paris8.fr', '06.85.48.41.23', 'mhomps'), -- username : mhomps
-    ('Simonot', 'Marianne', 'm.simonot@iut.univ-paris8.fr', '07.71.50.67.21', 'msimonot'), -- username : msimonot
-    ('Delmas', 'Guylain', 'g.delmas@iut.univ-paris8.fr', '06.01.32.65.82', 'gdelmas'), -- username : gdelmas
-    ('Nauwynck', 'Nédra', 'n.nauwynck@iut.univ-paris8.fr', '06.72.53.57.70', 'nnauwynck'), -- username : nnauwynck
-    ('Clément-Comparot', 'Véronique', 'v.clement-comparot@iut.univ-paris8.fr', '07.45.74.93.97', 'vclementcomparot'), -- username : vclementcomparot
-    ('Le Duc', 'Chan', 'c.leduc@iut.univ-paris8.fr', '07.98.45.05.76', 'cleduc'), -- username : cleduc
-    ('Bossard', 'Aurélien', 'a.bossard@iut.univ-paris8.fr', '07.19.29.79.65', 'abossard'), -- username : abossard
-    ('Cataldi', 'Mario', 'm.cataldi@iut.univ-paris8.fr', '07.79.24.19.54', 'mcataldi'), -- username : mcataldi
-    ('Golven', 'Amélie', 'a.golven@iut.univ-paris8.fr', '06.48.32.63.21', 'agolven'), -- username : agolven
-    ('Ballay-Dally', 'Charlotte', 'c.ballay_dally@iut.univ-paris8.fr', '06.79.06.77.84', 'cballaydally'), -- username : cballaydally
-    ('Groff', 'Geoffrey', 'g.groff@iut.univ-paris8.fr', '07.40.01.70.39', 'ggroff'), -- username : ggroff
-    ('Chebbi', 'Imen', 'i.chebbi@iut.univ-paris8.fr', '07.33.33.28.19', 'ichebbi'), -- username : ichebbi
-    ('Tobbelem', 'Jocelin', 'j.tobbelem@iut.univ-paris8.fr', '06.97.24.53.70', 'jtobbelem'), -- username : jtobbelem
-    ('Mockel', 'Mehdi', 'm.mockel@iut.univ-paris8.fr', '06.45.07.64.29', 'mmockel'), -- username : mmockel
-    ('Mourel', 'Frédéric', 'f.mourel@iut.univ-paris8.fr', '06.69.18.17.81', 'fmourel'), -- username : fmourel
-    ('Nyzam', 'Valentin', 'v.nyzam@iut.univ-paris8.fr', '06.88.49.45.84', 'vnyzam') -- username : vnyzam
+    ('PB' ,'Bonnot', 'Philippe', 'p.bonnot@iut.univ-paris8.fr', '07.67.59.80.46', 'pbonnot'), -- username : pbonnot
+    ('MyL' ,'Lamolle', 'Myriam', 'm.lamolle@iut.univ-paris8.fr', '06.68.99.99.67', 'mlamolle'), -- username : mlamolle
+    ('PIB' ,'Boulanger', 'Max', 'm.boulanger@iut.univ-paris8.fr', '07.10.50.50.58', 'mboulanger'), -- username : mboulanger
+    ('EMD' ,'Dafaoui', 'El Mouloudi', 'e.dafaoui@iut.univ-paris8.fr', '07.44.29.15.71', 'edafaoui'), -- username : edafaoui
+    ('KF' ,'Flauraud', 'Khamphou', 'k.flauraud@iut.univ-paris8.fr', '06.94.48.00.99', 'kflauraud'), -- username : kflauraud
+    ('HA' ,'Hassoun', 'Abdallah', 'a.hassoun@iut.univ-paris8.fr', '06.50.09.15.03', 'ahassoun'), -- username : ahassoun
+    ('FE' ,'Filoche', 'Eddy', 'e.filoche@iut.univ-paris8.fr', '07.68.83.61.75', 'efiloche'), -- username : efiloche
+    ('RK' ,'Kamal', 'Rachida', 'r.kamal@iut.univ-paris8.fr', '07.92.15.70.86', 'rkamal'), -- username : rkamal
+    ('BK' ,'Bayoud', 'Khadija', 'k.bayoud@iut.univ-paris8.fr', '07.73.26.40.17', 'kbayoud'), -- username : kbayoud
+    ('MarB' ,'Baboulall', 'Marielle', 'm.baboulall@iut.univ-paris8.fr', '06.16.61.84.81', 'mbaboulall'), -- username : mbaboulall    
+    ('MK' ,'Kaiser', 'Marc', 'm.kaiser@iut.univ-paris8.fr', '07.58.46.23.15', 'mkaiser'), -- username : mkaiser
+    ('AR' ,'Ricordeau', 'Anne', 'a.ricordeau@iut.univ-paris8.fr', '06.41.28.19.19', 'aricordeau'), -- username : aricordeau
+    ('RG' ,'Georges', 'Rémi', 'r.georges@iut.univ-paris8.fr', '06.03.90.17.73', 'rgeorges'), -- username : rgeorges
+    ('EoM' ,'Emonides', 'Mireille', 'm.emonides@iut.univ-paris8.fr', '06.26.10.43.02', 'memonides'), -- username : memonides        
+    ('JHR' ,'Rety', 'Jean-Hugues', 'j.rety@iut.univ-paris8.fr', '07.86.87.03.82', 'jrety'), -- username : jrety
+    ('MH' ,'Homps', 'Marc', 'm.homps@iut.univ-paris8.fr', '06.85.48.41.23', 'mhomps'), -- username : mhomps
+    ('MS' ,'Simonot', 'Marianne', 'm.simonot@iut.univ-paris8.fr', '07.71.50.67.21', 'msimonot'), -- username : msimonot
+    ('GD' ,'Delmas', 'Guylain', 'g.delmas@iut.univ-paris8.fr', '06.01.32.65.82', 'gdelmas'), -- username : gdelmas
+    ('ArN' ,'Nauwynck', 'Nédra', 'n.nauwynck@iut.univ-paris8.fr', '06.72.53.57.70', 'nnauwynck'), -- username : nnauwynck
+    ('VéC' ,'Clément-Comparot', 'Véronique', 'v.clement-comparot@iut.univ-paris8.fr', '07.45.74.93.97', 'vclementcomparot'), -- username : vclementcomparot
+    ('LDuC' ,'Le Duc', 'Chan', 'c.leduc@iut.univ-paris8.fr', '07.98.45.05.76', 'cleduc'), -- username : cleduc
+    ('ABo' ,'Bossard', 'Aurélien', 'a.bossard@iut.univ-paris8.fr', '07.19.29.79.65', 'abossard'), -- username : abossard
+    ('MaC' ,'Cataldi', 'Mario', 'm.cataldi@iut.univ-paris8.fr', '07.79.24.19.54', 'mcataldi'), -- username : mcataldi
+    ('AGo' ,'Golven', 'Amélie', 'a.golven@iut.univ-paris8.fr', '06.48.32.63.21', 'agolven'), -- username : agolven
+    ('CBD' ,'Ballay-Dally', 'Charlotte', 'c.ballay_dally@iut.univ-paris8.fr', '06.79.06.77.84', 'cballaydally'), -- username : cballaydally
+    ('GG' ,'Groff', 'Geoffrey', 'g.groff@iut.univ-paris8.fr', '07.40.01.70.39', 'ggroff'), -- username : ggroff
+    ('CHi' ,'Chebbi', 'Imen', 'i.chebbi@iut.univ-paris8.fr', '07.33.33.28.19', 'ichebbi'), -- username : ichebbi
+    ('ToJ' ,'Tobbelem', 'Jocelin', 'j.tobbelem@iut.univ-paris8.fr', '06.97.24.53.70', 'jtobbelem'), -- username : jtobbelem
+    ('MoMe' ,'Mockel', 'Mehdi', 'm.mockel@iut.univ-paris8.fr', '06.45.07.64.29', 'mmockel'), -- username : mmockel
+    ('MFr' ,'Mourel', 'Frédéric', 'f.mourel@iut.univ-paris8.fr', '06.69.18.17.81', 'fmourel'), -- username : fmourel
+    ('NyV' ,'Nyzam', 'Valentin', 'v.nyzam@iut.univ-paris8.fr', '06.88.49.45.84', 'vnyzam') -- username : vnyzam
 ;
 
 -- university.roles(@id, name, description, personal_id)
@@ -111,6 +109,7 @@ VALUES
     ('INFOCOM', 'Information et Communication', 'BUT',(SELECT id FROM university.personals WHERE mail = 'm.baboulall@iut.univ-paris8.fr')),
     ('GACO', 'Gestion des Administrations et Commerce', 'BUT',(SELECT id FROM university.personals WHERE mail = 'm.kaiser@iut.univ-paris8.fr'))
 ;
+
 -- university.groups(@id, promotion, type, #department_id)
 -- Insert group A for each promotion for Info department
 INSERT INTO university.groups (promotion, type, department_id)
@@ -218,13 +217,13 @@ VALUES
 
 -- university.subgroups(@id, name, #group_id)
 -- For subgroup 1 for each group
-INSERT INTO university.subgroups (name, group_id) SELECT '1', id FROM university.groups;
+INSERT INTO university.subgroups (name, group_id) SELECT type || '1', id FROM university.groups;
 -- For subgroup 2 for each group
-INSERT INTO university.subgroups (name, group_id) SELECT '2', id FROM university.groups;
+INSERT INTO university.subgroups (name, group_id) SELECT type || '2', id FROM university.groups;
 -- For subgroup 3 for each group
-INSERT INTO university.subgroups (name, group_id) SELECT '3', id FROM university.groups;
+INSERT INTO university.subgroups (name, group_id) SELECT type || '3', id FROM university.groups;
 -- For subgroup app for each group
-INSERT INTO university.subgroups (name, group_id) SELECT 'App', id FROM university.groups;
+INSERT INTO university.subgroups (name, group_id) SELECT type || 'app', id FROM university.groups;
 
 -- university.rooms(@id, code, capacity, has_computer, has_projector)
 INSERT INTO university.rooms (code, capacity, has_computer, has_projector) VALUES
