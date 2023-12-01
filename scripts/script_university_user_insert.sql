@@ -47,7 +47,7 @@ VALUES
 INSERT INTO university.users (username, password)
 VALUES
 	('mtoure', '$2b$12$.Y7L5exEbMNjccyVzNaHwuf0pNnCLrK.qW0L2Zq82hsOmxv8EDCae'), -- pwd : mtoure
-	('hcohen', '$2b$12$kzdJRxBr0kXw83khwHSHYe70CC9no6BlmSc1INfjFOkEC0AYDyx86'), -- pwd : hcohen
+	('hugo', '$2b$12$suR4RUnowOZPYUkJxAsb5OuaNO.xw2VDberXSoHuez1ZT9/xeH9cC'), -- pwd : hugohugohugo
 	('aclaude', '$2b$12$eZ0w80bRmMjUSgzh7xCa4eHZ7e0kizq92GXAJjJRi5yQg2lklM11e'), -- pwd : aclaude
 	('achetouani', '$2b$12$cNDSxnJWhSz8vyMjvxdP0elEgKRSe4NqfEnqlhz0xMdK2QhQV4gWW'), -- pwd : achetouani
 	('bseydi', '$2b$12$PSXvoXYceXCa2jvUPcpfyuQ11sXAXk/NJVfAZc82hiB61ain9qxeG') -- pwd : bseydi
