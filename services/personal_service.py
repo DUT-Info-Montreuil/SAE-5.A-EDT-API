@@ -110,5 +110,6 @@ class personal_service(Service):
             'last_name': row[1],       # Le nom de famille du personnel
             'first_name': row[2],      # Le prénom du personnel
             'mail': row[3],            # L'adresse e-mail du personnel
-            'phone_number': row[4]     # Le numéro de téléphone du personnel
+            'personal_code': row[4],     # Le numéro de téléphone du personnel
+            'phone_number': row[5]
         }
