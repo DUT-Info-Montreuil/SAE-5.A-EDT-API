@@ -12,7 +12,7 @@ RUN pipenv install --deploy --system
 
 EXPOSE 5050
 
-CMD ["python", "rest_api.py", "--host=0.0.0.0"]
+CMD ["python","-u", "rest_api.py", "--host=0.0.0.0"]
 
 
 

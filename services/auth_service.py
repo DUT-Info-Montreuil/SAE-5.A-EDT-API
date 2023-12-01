@@ -9,14 +9,13 @@ class auth_service(Service):
         #add a try catch
         username = data.get('username', '')
         password = data.get('password', '')
-        
+        print(self.hash_password(password))
         if username == '' or password == '':
             return 'Username or password not filled'
         
         query = """SELECT username, password 
                     FROM university.users 
-                    WHERE username = '%(username)s'""" 
-
+                    WHERE username = '"""  + str(username) + """'""" 
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
 
