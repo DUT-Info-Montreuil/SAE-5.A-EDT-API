@@ -46,11 +46,12 @@ VALUES
 -- university.users(@username, password)
 INSERT INTO university.users (username, password)
 VALUES
-	('mtoure', '$2b$12$.Y7L5exEbMNjccyVzNaHwuf0pNnCLrK.qW0L2Zq82hsOmxv8EDCae'), -- pwd : mtoure
 	('hugo', '$2b$12$suR4RUnowOZPYUkJxAsb5OuaNO.xw2VDberXSoHuez1ZT9/xeH9cC'), -- pwd : hugohugohugo
-	('aclaude', '$2b$12$eZ0w80bRmMjUSgzh7xCa4eHZ7e0kizq92GXAJjJRi5yQg2lklM11e'), -- pwd : aclaude
-	('achetouani', '$2b$12$cNDSxnJWhSz8vyMjvxdP0elEgKRSe4NqfEnqlhz0xMdK2QhQV4gWW'), -- pwd : achetouani
-	('bseydi', '$2b$12$PSXvoXYceXCa2jvUPcpfyuQ11sXAXk/NJVfAZc82hiB61ain9qxeG') -- pwd : bseydi
+	('mtoure', '$2b$12$n9o/jbKgDAJrpC1ejpfWcug6dRTh.wpEmXdv2o4nWJHtiQVYhFZAa'), -- pwd : Mehedi_Toure
+	('hcohen', '$2b$12$7v3cwt6UnMwKbKwPWucXAeeGULIPpDL0qtzUbK2Sk7LRAvidh.uhi'), -- pwd : Hugo_COHENh1
+	('aclaude', '$2b$12$4uT0.g7slJG8HR810FhP6uOpsS7iBdW5lBbW2M.JU076Dp4w1dqxq'), -- pwd : Aldric_CLAUD
+	('achetouani', '$2b$12$foIsmgkwIiRDCpzl9FDcS.ox7crQ320ShFB1P79Iygny1PmdIlQ0q'), -- pwd : Adil_CHETOUA
+	('bseydi', '$2b$12$3tWrEuOGAtwERwLjmZeUl.Q4LYjE.yl/m6f.77Bs1VwYX2rCXuP22') -- pwd : Boulaye_SEYD
 ;
 
 -- FAKE for departement INFO
