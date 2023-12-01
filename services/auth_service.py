@@ -9,7 +9,6 @@ class auth_service(Service):
         #add a try catch
         username = data.get('username', '')
         password = data.get('password', '')
-        print(self.hash_password(password))
         if username == '' or password == '':
             return 'Username or password not filled'
         
