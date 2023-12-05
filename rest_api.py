@@ -91,7 +91,6 @@ def create_university_db():
     script_file_path = 'scripts/script_university_user_insert.sql'
     result1 = connect_pg.execute_sql_script(script_file_path)
     
-    
     script_file_path = 'scripts/script_university_school_insert.sql'
     result2 = connect_pg.execute_sql_script(script_file_path)
     

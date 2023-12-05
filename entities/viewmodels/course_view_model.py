@@ -1,4 +1,4 @@
-class CourseModel:
+class CourseViewModel:
     def __init__(self, id, description, startTime, duree, course_type, personal_id, rooms_id, teaching_id, personal_last_name, personal_first_name, teaching_title, room_code):
         self.id = id
         self.description = description
@@ -43,7 +43,7 @@ class CourseModel:
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
-        course_instance = CourseModel(
+        course_instance = CourseViewModel(
             data.get('id', data_if_not_found['id']),
             data.get('description', data_if_not_found['description']),
             data.get('startTime', data_if_not_found['startTime']),

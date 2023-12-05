@@ -1,4 +1,4 @@
-class SpecializationModel:
+class SpecializationViewModel:
     def __init__(self, id, code, name, department_id, department_name, department_description, department_degree_type):
         self.id = id
         self.code = code
@@ -29,7 +29,7 @@ class SpecializationModel:
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
-        specialization_instance = SpecializationModel(
+        specialization_instance = SpecializationViewModel(
             data.get('id', data_if_not_found['id']),
             data.get('code', data_if_not_found['code']),
             data.get('name', data_if_not_found['name']),
