@@ -1,3 +1,4 @@
+# Blueprint import
 from controllers.department_controller import department_app
 from controllers.group_controller import group_app
 from controllers.subgroup_controller import subgroup_app
