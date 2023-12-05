@@ -1,6 +1,4 @@
-from flask import jsonify
-from flask import request
-from flask import Blueprint
+
 
 from services.specialization_service import specialization_service
 

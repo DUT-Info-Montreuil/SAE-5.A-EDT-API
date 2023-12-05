@@ -1,6 +1,4 @@
-from flask import jsonify
-from flask import request
-from flask import Blueprint
+
 
 from services.course_service import course_service
 
