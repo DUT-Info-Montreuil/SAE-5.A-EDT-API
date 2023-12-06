@@ -1,5 +1,4 @@
-
-
+from flask import jsonify, request, Blueprint
 from services.absent_service import absent_service
 
 absent_app = Blueprint('absent_app', __name__)
