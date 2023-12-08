@@ -149,7 +149,7 @@ CREATE TABLE university.courses(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_courses PRIMARY KEY CONSTRAINT ck_university_course_id CHECK(id > 0), 
     -- ATTRIBUTE
-	description TEXT NOT NULL,
+	description TEXT,
 	startTime timestamp NOT NULL,
 	endtime timestamp NOT NULL,
 	course_type courses_types NOT NULL,

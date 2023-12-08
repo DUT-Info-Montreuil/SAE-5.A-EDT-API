@@ -91,12 +91,20 @@ def create_university_db():
     script_file_path = 'scripts/script_university_user_insert.sql'
     result1 = connect_pg.execute_sql_script(script_file_path)
     
+    
     script_file_path = 'scripts/script_university_school_insert.sql'
     result2 = connect_pg.execute_sql_script(script_file_path)
     
     script_file_path = 'scripts/script_university_student_insert.sql'
     result3 = connect_pg.execute_sql_script(script_file_path)
-    return jsonify( {"univesity_create" : result, "user_insert" : result1, "school_insert" : result2, "student_insert" : result3})
+    
+    script_file_path = 'scripts/script_university_courses_insert.sql'
+    result4 = connect_pg.execute_sql_script(script_file_path)
+
+    script_file_path = 'scripts/script_university_participate_insert.sql'
+    result5 = connect_pg.execute_sql_script(script_file_path)
+    
+    return jsonify( {"univesity_create" : result, "user_insert" : result1, "school_insert" : result2, "student_insert" : result3, "courses_insert" : result4, "participate_insert" : result5})
 
 @app.route('/create_table_university_db', methods=['GET'])
 def create_table_university_db():
@@ -134,4 +142,5 @@ if __name__ == "__main__":
     params = config('config.ini', 'server')
     # Launch Flask server
     app.run(debug=params['debug'], host=params['host'], port=params['port'])
+    create_university_db()
     

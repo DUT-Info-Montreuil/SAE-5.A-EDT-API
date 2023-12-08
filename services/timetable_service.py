@@ -38,7 +38,8 @@ class timetable_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code
+        query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code 
+
                     FROM university.courses 
                     INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
                     INNER JOIN university.personals ON university.courses.personal_id = university.personals.id

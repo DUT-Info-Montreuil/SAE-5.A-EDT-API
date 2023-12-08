@@ -23,8 +23,6 @@
 
 -- delete from university.users;
 
-
-
 INSERT INTO university.personals (personal_code, last_name, first_name, mail, phone_number, user_username)
 VALUES
     ('PB' ,'Bonnot', 'Philippe', 'p.bonnot@iut.univ-paris8.fr', '07.67.59.80.46', 'pbonnot'), -- username : pbonnot
@@ -111,6 +109,7 @@ VALUES
     ('INFOCOM', 'Information et Communication', 'BUT',(SELECT id FROM university.personals WHERE mail = 'm.baboulall@iut.univ-paris8.fr')),
     ('GACO', 'Gestion des Administrations et Commerce', 'BUT',(SELECT id FROM university.personals WHERE mail = 'm.kaiser@iut.univ-paris8.fr'))
 ;
+
 -- university.groups(@id, promotion, type, #department_id)
 -- Insert group A for each promotion for Info department
 INSERT INTO university.groups (promotion, type, department_id)
