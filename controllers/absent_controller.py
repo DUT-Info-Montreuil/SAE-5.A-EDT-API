@@ -62,3 +62,10 @@ def update_absent(id):
         return {"message": f"Absent record with ID {updated_absent_id} updated successfully!"}, 200
     else:
         return {"message": f"Absent record with ID {id} not found!"}, 404
+
+
+@absent_app.route('/absents/dashboard/<string:student_number>/<int:page>', methods=['GET'])
+def get_dashboard_absents(student_number, page):
+    _service = absent_service()
+    returnStatement = _service.get_dashboard_absents(student_number, page)
+    return jsonify(returnStatement)

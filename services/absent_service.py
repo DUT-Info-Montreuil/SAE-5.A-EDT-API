@@ -1,9 +1,8 @@
 from services.main_service import Service
-
 import connect_pg
 
 class absent_service(Service):
-    
+
     # Absents API
     # university.absents(@id, justified, student_number, #course_id)
     def get_absents(self):
@@ -100,7 +99,55 @@ class absent_service(Service):
         # connect_pg.disconnect(conn)
 
         return updated_absent_id
+    
+    
+    def get_dashboard_absents(self, student_number, page):
+        """   """
+        query = "SELECT * FROM university.absents WHERE student_number = '%(student_number)s'" % {'student_number': student_number}
+        conn = self.get_connection()
+        rows = connect_pg.get_query(conn, query)
 
+
+        if len(rows) > 0 :     
+            returnStatement = []
+            for row in rows:
+                student_number = row[2]
+                courses_id = row[3]
+
+                query_student = "SELECT last_name, first_name FROM university.students WHERE student_number = '%(student_number)s'" % {'student_number': student_number}
+                rows_student = connect_pg.get_query(conn, query_student)  
+
+                return_rows_student = {
+                    'first_name': rows_student[0][0],
+                    'last_name': rows_student[0][1]
+                }
+
+                query_courses = "SELECT starttime, endtime, course_type, teaching_id FROM university.courses WHERE id = %(id)s" % {'id': courses_id}
+                rows_courses = connect_pg.get_query(conn, query_courses)   
+
+                return_rows_courses = {
+                    'starttime': rows_courses[0][0],
+                    'endtime': rows_courses[0][1],
+                    'course_type': rows_courses[0][2],
+                    'teaching_id': rows_courses[0][3],
+                    'duration_minutes': (rows_courses[0][1] - rows_courses[0][0]).total_seconds() /60
+                }
+
+
+                teaching_id = rows_courses[0][3]
+
+                query_teaching = "SELECT title FROM university.teachings WHERE id = %(id)s" % {'id': teaching_id}
+                rows_teaching = connect_pg.get_query(conn, query_teaching)   
+
+                return_rows_teaching = {
+                    'title': rows_teaching[0][0]
+                }
+                return_rows_absent = self.get_absent_statement(row)
+                row_statement = {**return_rows_absent, **return_rows_student, **return_rows_courses, **return_rows_teaching}
+                returnStatement.append(row_statement)
+
+        return returnStatement
+    
     
     def get_absent_statement(self, row):
         """ Formats absent data in JSON """
