@@ -5,10 +5,10 @@ import connect_pg
 class personal_service(Service):
     
     # Personals API
-    # university.personals(@id, last_name, first_name, mail, phone_number)
+    # personals(@id, last_name, first_name, mail, phone_number)
     def get_personals(self):
         """ Get all personals in JSON format """
-        query = "SELECT * FROM university.personals"
+        query = "SELECT * FROM personals"
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
@@ -19,7 +19,7 @@ class personal_service(Service):
     
     def get_personal_by_id(self, id):
         """ Get a personal by ID in JSON format """
-        query = "SELECT * FROM university.personals WHERE id = %(id)s" % {'id': id}
+        query = "SELECT * FROM personals WHERE id = %(id)s" % {'id': id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
@@ -33,7 +33,7 @@ class personal_service(Service):
         # data = request.json
         mail = data.get('mail', '')
     
-        query = "SELECT * FROM university.personals WHERE mail = '%(mail)s'" % {'mail': mail}
+        query = "SELECT * FROM personals WHERE mail = '%(mail)s'" % {'mail': mail}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn,query)
         # connect_pg.disconnect(conn)
@@ -53,7 +53,7 @@ class personal_service(Service):
         mail = data.get('mail', '')
         phone_number = data.get('phone_number', '')
     
-        query = "INSERT INTO university.personals (last_name, first_name, mail, phone_number) VALUES '(%(last_name)s', '%(first_name)s', '%(mail)s', '%(phone_number)s') RETURNING id" %  {'last_name': last_name, 'first_name': first_name, 'mail': mail, 'phone_number': phone_number}
+        query = "INSERT INTO personals (last_name, first_name, mail, phone_number) VALUES '(%(last_name)s', '%(first_name)s', '%(mail)s', '%(phone_number)s') RETURNING id" %  {'last_name': last_name, 'first_name': first_name, 'mail': mail, 'phone_number': phone_number}
         conn = self.get_connection()
         new_personal_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -62,7 +62,7 @@ class personal_service(Service):
     
     def delete_personal_by_id(self, id):
         """ Delete a personal by ID in JSON format """
-        query = "DELETE FROM university.personals WHERE id = %(id)s RETURNING id" %  {'id': id}
+        query = "DELETE FROM personals WHERE id = %(id)s RETURNING id" %  {'id': id}
         conn = self.get_connection()
         row = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -82,7 +82,7 @@ class personal_service(Service):
         mail = data.get('mail', existing_personal['mail'])
         phone_number = data.get('phone_number', existing_personal['phone_number'])
 
-        query = """UPDATE university.personals
+        query = """UPDATE personals
                 SET last_name = '%(last_name)s',
                     first_name = '%(first_name)s',
                     mail = '%(mail)s',

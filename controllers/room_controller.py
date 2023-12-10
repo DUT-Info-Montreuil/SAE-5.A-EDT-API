@@ -6,7 +6,7 @@ from services.room_service import room_service
 room_app = Blueprint('room_app', __name__)
 
 # Rooms API
-# university.roles(@id, name, description, personal_id)
+# roles(@id, name, description, personal_id)
 @room_app.route('/rooms/get', methods=['GET'])
 def get_rooms():
     """ Get all rooms in JSON format """

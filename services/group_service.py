@@ -5,10 +5,10 @@ import connect_pg
 class group_service(Service):
     
     # Groups API
-    # university.groups(@id, promotion, type, #department_id)
+    # groups(@id, promotion, type, #department_id)
     def get_groups(self):
         """ Get all groups in JSON format """
-        query = "SELECT * FROM university.groups"
+        query = "SELECT * FROM groups"
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
@@ -19,7 +19,7 @@ class group_service(Service):
     
     def get_group_by_id(self, id):
         """ Get a group by ID in JSON format """
-        query = "SELECT * FROM university.groups WHERE id = %(id)s" % {'id': id}
+        query = "SELECT * FROM groups WHERE id = %(id)s" % {'id': id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
@@ -36,7 +36,7 @@ class group_service(Service):
         group_type = data.get('type', '')
         department_id = data.get('department_id', '')
     
-        query = "SELECT * FROM university.groups WHERE promotion = %(promotion)s AND type = '%(type)s' AND department_id = %(department_id)s" %  {'promotion': promotion, 'type': group_type, 'department_id': department_id}
+        query = "SELECT * FROM groups WHERE promotion = %(promotion)s AND type = '%(type)s' AND department_id = %(department_id)s" %  {'promotion': promotion, 'type': group_type, 'department_id': department_id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         # connect_pg.disconnect(conn)
@@ -55,7 +55,7 @@ class group_service(Service):
         group_type = data.get('type', '')
         department_id = data.get('department_id', '')
     
-        query = "INSERT INTO university.groups (promotion, type, department_id) VALUES (%(promotion)s, '%(type)s', %(department_id)s) RETURNING id" % {'promotion': promotion, 'type': group_type, 'department_id': department_id}
+        query = "INSERT INTO groups (promotion, type, department_id) VALUES (%(promotion)s, '%(type)s', %(department_id)s) RETURNING id" % {'promotion': promotion, 'type': group_type, 'department_id': department_id}
         conn = self.get_connection()
         new_group_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -64,7 +64,7 @@ class group_service(Service):
     
     def delete_group_by_id(self, id):
         """ Delete a group by ID in JSON format """
-        query = "DELETE FROM university.groups WHERE id = %(id)s RETURNING id" %  {'id': id}
+        query = "DELETE FROM groups WHERE id = %(id)s RETURNING id" %  {'id': id}
         conn = self.get_connection()
         row = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -83,7 +83,7 @@ class group_service(Service):
         type = data.get('type', existing_group['type'])
         department_id = data.get('department_id', existing_group['department_id'])
 
-        query = """UPDATE university.groups
+        query = """UPDATE groups
                 SET promotion = %(promotion)s,
                     type = '%(type)s',
                     department_id = %(department_id)s

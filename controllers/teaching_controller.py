@@ -6,7 +6,7 @@ from services.teaching_service import teaching_service
 teaching_app = Blueprint('teaching_app', __name__)
 
 # Teachings API
-# university.teachings(@id, title, hour_number, semestre, sequence, description, teaching_type, #specialization_id)
+# teachings(@id, title, hour_number, semestre, sequence, description, teaching_type, #specialization_id)
 @teaching_app.route('/teachings/get', methods=['GET'])
 def get_teachings():
     """ Get all teachings in JSON format """

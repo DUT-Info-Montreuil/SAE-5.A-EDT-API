@@ -5,10 +5,10 @@ import connect_pg
 class reminder_service(Service):
     
     # Participates API
-    # university.reminders(@id, name, description, #course_id)
+    # reminders(@id, name, description, #course_id)
     def get_reminders(self):
         """ Get all reminders in JSON format """
-        query = "SELECT * FROM university.reminders"
+        query = "SELECT * FROM reminders"
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
@@ -19,7 +19,7 @@ class reminder_service(Service):
     
     def get_reminder_by_id(self, id):
         """ Get a reminder by ID in JSON format """
-        query = "SELECT * FROM university.reminders WHERE id = %(id)s" % {'id': id}
+        query = "SELECT * FROM reminders WHERE id = %(id)s" % {'id': id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
@@ -35,7 +35,7 @@ class reminder_service(Service):
         description = data.get('description', '')
         course_id = data.get('course_id', '')
         
-        query = "SELECT * FROM university.reminders WHERE name = '%(name)s' AND description = '%(description)s' AND course_id = %(course_id)s" %  {'name': name, 'description': description, 'course_id': course_id}
+        query = "SELECT * FROM reminders WHERE name = '%(name)s' AND description = '%(description)s' AND course_id = %(course_id)s" %  {'name': name, 'description': description, 'course_id': course_id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         # connect_pg.disconnect(conn)
@@ -54,7 +54,7 @@ class reminder_service(Service):
         description = data.get('description', '')
         course_id = data.get('course_id', '')
         
-        query = "INSERT INTO university.reminders (name, description, course_id) VALUES ('%(name)s', '%(description)s', %(course_id)s) RETURNING id" % {'name': name, 'description': description, 'course_id': course_id}
+        query = "INSERT INTO reminders (name, description, course_id) VALUES ('%(name)s', '%(description)s', %(course_id)s) RETURNING id" % {'name': name, 'description': description, 'course_id': course_id}
         conn = self.get_connection()
         new_reminder_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -63,7 +63,7 @@ class reminder_service(Service):
     
     def delete_reminder_by_id(self, id):
         """ Delete a reminder by ID in JSON format """
-        query = "DELETE FROM university.reminders WHERE id = %(id)s RETURNING id" %  {'id': id}
+        query = "DELETE FROM reminders WHERE id = %(id)s RETURNING id" %  {'id': id}
         conn = self.get_connection()
         row = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -82,7 +82,7 @@ class reminder_service(Service):
         description = data.get('description', existing_reminder['description'])
         course_id = data.get('course_id', existing_reminder['course_id'])
 
-        query = """UPDATE university.reminders
+        query = """UPDATE reminders
                 SET name = '%(name)s',
                     description = '%(description)s',
                     course_id = %(course_id)s

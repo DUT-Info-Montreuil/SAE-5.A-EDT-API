@@ -5,10 +5,10 @@ import connect_pg
 class course_service(Service):
     
     # Courses API
-    # university.courses(@id, description, starttime, duree, course_type, #personal_id, #rooms_id, #teaching_id)
+    # courses(@id, description, starttime, duree, course_type, #personal_id, #rooms_id, #teaching_id)
     def get_courses(self):
         """ Get all courses in JSON format """
-        query = "SELECT * FROM university.courses"
+        query = "SELECT * FROM courses"
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
@@ -19,7 +19,7 @@ class course_service(Service):
     
     def get_course_by_id(self, id):
         """ Get a course by ID in JSON format """
-        query = "SELECT * FROM university.courses WHERE id = %(id)s" % {'id': id}
+        query = "SELECT * FROM courses WHERE id = %(id)s" % {'id': id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
@@ -37,7 +37,7 @@ class course_service(Service):
         personal_id = data.get('personal_id', '')
         rooms_id = data.get('rooms_id', '')
     
-        query = "SELECT * FROM university.courses WHERE starttime = '%(starttime)s' AND teaching_id = %(teaching_id)s AND personal_id = %(personal_id)s AND rooms_id = %(rooms_id)s" %  {'starttime': starttime, 'personal_id': personal_id,'teaching_id': teaching_id, 'rooms_id': rooms_id}
+        query = "SELECT * FROM courses WHERE starttime = '%(starttime)s' AND teaching_id = %(teaching_id)s AND personal_id = %(personal_id)s AND rooms_id = %(rooms_id)s" %  {'starttime': starttime, 'personal_id': personal_id,'teaching_id': teaching_id, 'rooms_id': rooms_id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         # connect_pg.disconnect(conn)
@@ -60,7 +60,7 @@ class course_service(Service):
         rooms_id = data.get('rooms_id', '')
         teaching_id = data.get('teaching_id', '')
     
-        query = "INSERT INTO university.courses (description, starttime, duree, course_type, personal_id, rooms_id, teaching_id) VALUES ('%(description)s', '%(starttime)s', '%(duree)s', '%(course_type)s', %(personal_id)s, %(rooms_id)s, %(teaching_id)s) RETURNING id" % {'description': description, 'starttime': starttime, 'duree': duree, 'course_type': course_type, 'personal_id': personal_id, 'rooms_id': rooms_id, 'teaching_id': teaching_id}
+        query = "INSERT INTO courses (description, starttime, duree, course_type, personal_id, rooms_id, teaching_id) VALUES ('%(description)s', '%(starttime)s', '%(duree)s', '%(course_type)s', %(personal_id)s, %(rooms_id)s, %(teaching_id)s) RETURNING id" % {'description': description, 'starttime': starttime, 'duree': duree, 'course_type': course_type, 'personal_id': personal_id, 'rooms_id': rooms_id, 'teaching_id': teaching_id}
         conn = self.get_connection()
         new_course_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -69,7 +69,7 @@ class course_service(Service):
     
     def delete_course_by_id(self, id):
         """ Delete a course by ID in JSON format """
-        query = "DELETE FROM university.courses WHERE id = %(id)s RETURNING id" %  {'id': id}
+        query = "DELETE FROM courses WHERE id = %(id)s RETURNING id" %  {'id': id}
         conn = self.get_connection()
         row = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -92,7 +92,7 @@ class course_service(Service):
         rooms_id = data.get('rooms_id', existing_course['rooms_id'])
         teaching_id = data.get('teaching_id', existing_course['teaching_id'])
 
-        query = """UPDATE university.courses
+        query = """UPDATE courses
                 SET description = '%(description)s',
                 starttime = '%(starttime)s',
                 duree = %(duree)s,

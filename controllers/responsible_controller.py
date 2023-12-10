@@ -6,7 +6,7 @@ from services.responsible_service import responsible_service
 responsible_app = Blueprint('responsible_app', __name__)
 
 # Responsibles API
-# university.responsibles(@id, #personal_id, #teaching_id)
+# responsibles(@id, #personal_id, #teaching_id)
 @responsible_app.route('/responsibles/get', methods=['GET'])
 def get_responsibles():
     """ Get all responsibles in JSON format """

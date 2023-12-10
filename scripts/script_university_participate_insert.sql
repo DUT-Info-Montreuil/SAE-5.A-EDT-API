@@ -1,6 +1,6 @@
 
 -- Insert records with subgroup_id as 0
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     1 AS subgroup_id
@@ -9,7 +9,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 1
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     2 AS subgroup_id
@@ -18,7 +18,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 2
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     3 AS subgroup_id
@@ -27,7 +27,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 3
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     4 AS subgroup_id
@@ -36,7 +36,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 4
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     5 AS subgroup_id
@@ -45,7 +45,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 5
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     6 AS subgroup_id
@@ -54,7 +54,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 6
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     7 AS subgroup_id
@@ -63,7 +63,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 7
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     8 AS subgroup_id
@@ -72,7 +72,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 8
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     9 AS subgroup_id
@@ -81,7 +81,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 9
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     10 AS subgroup_id
@@ -90,7 +90,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 10
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     11 AS subgroup_id
@@ -99,7 +99,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 11
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     12 AS subgroup_id
@@ -108,7 +108,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 12
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     13 AS subgroup_id
@@ -117,7 +117,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 13
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     14 AS subgroup_id
@@ -126,7 +126,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 14
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     15 AS subgroup_id
@@ -135,7 +135,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 15
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     16 AS subgroup_id
@@ -144,7 +144,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 16
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     17 AS subgroup_id
@@ -153,7 +153,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 17
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     18 AS subgroup_id
@@ -162,7 +162,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 18
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     19 AS subgroup_id
@@ -171,7 +171,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 19
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     20 AS subgroup_id
@@ -180,7 +180,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 20
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     21 AS subgroup_id
@@ -189,7 +189,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 21
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     22 AS subgroup_id
@@ -198,7 +198,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 22
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     23 AS subgroup_id
@@ -207,7 +207,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 23
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     24 AS subgroup_id
@@ -216,7 +216,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 24
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     25 AS subgroup_id
@@ -225,7 +225,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 25
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     26 AS subgroup_id
@@ -234,7 +234,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 26
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     27 AS subgroup_id
@@ -243,7 +243,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 27
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     28 AS subgroup_id
@@ -252,7 +252,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 28
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     29 AS subgroup_id
@@ -261,7 +261,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 29
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     30 AS subgroup_id
@@ -270,7 +270,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 30
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     31 AS subgroup_id
@@ -279,7 +279,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 31
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     32 AS subgroup_id
@@ -288,7 +288,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 32
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     33 AS subgroup_id
@@ -297,7 +297,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 33
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     34 AS subgroup_id
@@ -306,7 +306,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 34
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     35 AS subgroup_id
@@ -315,7 +315,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 35
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     36 AS subgroup_id
@@ -324,7 +324,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 36
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     37 AS subgroup_id
@@ -333,7 +333,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 37
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     38 AS subgroup_id
@@ -342,7 +342,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 38
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     39 AS subgroup_id
@@ -351,7 +351,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 39
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     40 AS subgroup_id
@@ -360,7 +360,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 40
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     41 AS subgroup_id
@@ -369,7 +369,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 41
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     42 AS subgroup_id
@@ -378,7 +378,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 42
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     43 AS subgroup_id
@@ -387,7 +387,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 43
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     44 AS subgroup_id
@@ -396,7 +396,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 44
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     45 AS subgroup_id
@@ -405,7 +405,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 45
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     46 AS subgroup_id
@@ -414,7 +414,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 46
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     47 AS subgroup_id
@@ -423,7 +423,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 47
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     48 AS subgroup_id
@@ -432,7 +432,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 48
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     49 AS subgroup_id
@@ -441,7 +441,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 49
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     50 AS subgroup_id
@@ -450,7 +450,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 50
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     51 AS subgroup_id
@@ -459,7 +459,7 @@ FROM
 ;
 
 -- Insert records with subgroup_id as 51
-INSERT INTO university.participates (course_id, subgroup_id)
+INSERT INTO participates (course_id, subgroup_id)
 SELECT
     n AS course_id,
     52 AS subgroup_id

@@ -6,7 +6,7 @@ from services.role_service import role_service
 role_app = Blueprint('role_app', __name__)
 
 # Roles API
-# university.roles(@id, name, description, personal_id)
+# roles(@id, name, description, personal_id)
 @role_app.route('/roles/get', methods=['GET'])
 def get_roles():
     """ Get all roles in JSON format """

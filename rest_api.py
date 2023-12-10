@@ -5,20 +5,26 @@ from flask import Flask, jsonify
 from flask_restful import Api
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
-
 from datetime import timedelta
 from config import config
+from flask import Flask, request, jsonify
+from flask_sqlalchemy import SQLAlchemy
 
-import connect_pg
+from sqlAlchemyController import initialize_app, get_table_objects, initialize_database,drop_database ,create_database ,insert_university_user ,insert_university_school ,insert_university_student ,insert_university_courses ,insert_university_participate
+
 from controllers import *
 
 # Register the main controller
 app = Flask(__name__)
 
-# Config JWT
+# === region : JWT ===
 app.config["JWT_SECRET_KEY"] = "hcohen_aclaude_achetouani_bseydi_mtoure"
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(minutes=15) 
 jwt = JWTManager(app)
+# === endregion : JWT ===
+
+# === region : SQLAlchemy ===
+db = initialize_app(app)
 
 # Register the department controller
 app.register_blueprint(department_app)
@@ -65,6 +71,7 @@ app.register_blueprint(participate_app)
 # Register the autentification controller
 app.register_blueprint(auth_app)
 
+# Register the timetable controller
 app.register_blueprint(timetable_app)
 
 cors = CORS(app, resources={r"*": {"origins": "*"}})
@@ -77,64 +84,101 @@ def after_request(response):
     response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
     return response
 
-# CREATE ALL DB 
-# !! Warning this methode drop all before !! 
-# university()
 @app.route('/create_university_db', methods=['GET'])
 def create_university_db():
-    """ CREATE ALL DB this methode will DROP all BEFORE create """
-    # script_file_path = 'scripts/script_university.sql'
-    # result = connect_pg.execute_sql_script(script_file_path)
-    script_file_path = 'scripts/script_university_create.sql'
-    result = connect_pg.execute_sql_script(script_file_path)
-    
-    script_file_path = 'scripts/script_university_user_insert.sql'
-    result1 = connect_pg.execute_sql_script(script_file_path)
-    
-    script_file_path = 'scripts/script_university_school_insert.sql'
-    result2 = connect_pg.execute_sql_script(script_file_path)
-    
-    script_file_path = 'scripts/script_university_student_insert.sql'
-    result3 = connect_pg.execute_sql_script(script_file_path)
-    
-    script_file_path = 'scripts/script_university_courses_insert.sql'
-    result4 = connect_pg.execute_sql_script(script_file_path)
-
-    script_file_path = 'scripts/script_university_participate_insert.sql'
-    result5 = connect_pg.execute_sql_script(script_file_path)
-    
-    return jsonify( {"univesity_create" : result, "user_insert" : result1, "school_insert" : result2, "student_insert" : result3, "courses_insert" : result4, "participate_insert" : result5})
+    """!! Warning this methode drop all before !!  CREATE ALL DB this methode will DROP all BEFORE create """
+    result_bool, resultString  = initialize_database()
+    print(f"Execute : {result_bool}")
+    return jsonify(resultString)
 
 @app.route('/create_table_university_db', methods=['GET'])
 def create_table_university_db():
     """ DROP AND CREATE ALL TABLE IN DB """
-    script_file_path = 'scripts/script_university_create.sql'
-    result = connect_pg.execute_sql_script(script_file_path)
-    return result
-
-@app.route('/empty_table_university_db', methods=['GET'])
-def empty_table_university_db():
-    """ EMPTY ALL TABLE IN THE DB """
-    script_file_path = 'scripts/script_university_delete.sql'
-    result = connect_pg.execute_sql_script(script_file_path)
-    return result
+    result_bool, resultString  = create_database()
+    print(f"Execute : {result_bool}")
+    return jsonify(resultString)
 
 @app.route('/insert_table_university_db', methods=['GET'])
 def insert_table_university_db():
-    """ INSERT ALL TABLE IN THE DB """
-    script_file_path = 'scripts/script_university_school_insert.sql'
-    result1 = connect_pg.execute_sql_script(script_file_path)
+    """ INSERT IN ALL TABLE IN THE DB """
     
-    script_file_path = 'scripts/script_university_student_insert.sql'
-    result2 = connect_pg.execute_sql_script(script_file_path)
-    return jsonify( {"school_insert" : result1, "student_insert" : result2})
+    university_user_result_bool, university_user_result_string  = insert_university_user()
+    university_school_result_bool, university_school_result_string  = insert_university_school()
+    university_student_result_bool, university_student_result_string  = insert_university_student()
+    university_courses_result_bool, university_courses_result_string  = insert_university_courses()
+    university_participate_result_bool, university_participate_result_string  = insert_university_participate()
+    result_bool = university_user_result_bool and university_school_result_bool and university_student_result_bool and university_courses_result_bool and university_participate_result_bool
+    result = {"university_user" : university_user_result_string ,
+        "university_school" : university_school_result_string ,
+        "university_student" : university_student_result_string ,
+        "university_courses" : university_courses_result_string ,
+        "university_participate" : university_participate_result_string }
+
+    print(f"Execute : {result_bool}")
+    return jsonify(result)
 
 @app.route('/drop_table_university_db', methods=['GET'])
 def drop_table_university_db():
     """ DROP ALL TABLE IN THE DB """
-    script_file_path = 'scripts/script_university_drop.sql'
-    result = connect_pg.execute_sql_script(script_file_path)
-    return result
+    result_bool, resultString  = drop_database()
+    print(f"Execute : {result_bool}")
+    return jsonify(resultString)
+
+
+table_users, table_students, table_departments, table_groups, table_subgroups, table_personals, table_roles, table_courses, table_rooms, table_reminders, table_specializations, table_teachings, table_absents, table_participates, table_responsibles = get_table_objects(app)
+
+class User(db.Model):
+    __table__ = table_users
+
+class Student(db.Model):
+    __table__ = table_students
+
+class Department(db.Model):
+    __table__ = table_departments
+
+class Group(db.Model):
+    __table__ = table_groups
+
+class Subgroup(db.Model):
+    __table__ = table_subgroups
+
+class Personal(db.Model):
+    __table__ = table_personals
+
+class Role(db.Model):
+    __table__ = table_roles
+
+class Course(db.Model):
+    __table__ = table_courses
+
+class Room(db.Model):
+    __table__ = table_rooms
+
+class Reminder(db.Model):
+    __table__ = table_reminders
+
+class Specialization(db.Model):
+    __table__ = table_specializations
+
+class Teaching(db.Model):
+    __table__ = table_teachings
+
+class Absent(db.Model):
+    __table__ = table_absents
+
+class Participate(db.Model):
+    __table__ = table_participates
+
+class Responsible(db.Model):
+    __table__ = table_responsibles
+
+# Route to get all users
+@app.route('/test', methods=['GET'])
+def get_all_users():
+    users = Student.query.all()
+    users_list = [{'last_name': user.last_name, 'first_name': user.first_name} for user in users]
+
+    return jsonify({'users': users_list})
 
 if __name__ == "__main__":
     # read server parameters
@@ -142,4 +186,3 @@ if __name__ == "__main__":
     # Launch Flask server
     app.run(debug=params['debug'], host=params['host'], port=params['port'])
     create_university_db()
-    

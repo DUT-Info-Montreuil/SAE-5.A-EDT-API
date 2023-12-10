@@ -5,11 +5,11 @@ import connect_pg
 class student_service(Service):
     
     # Students API
-    # university.students(@id, last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
+    # students(@id, last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
     def get_students(self):
         """ Get all students in JSON format """
         
-        query = "SELECT * FROM university.students"
+        query = "SELECT * FROM students"
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
@@ -21,7 +21,7 @@ class student_service(Service):
     def get_student_by_student_number(self, student_number):
         """ Get a student by student_number in JSON format """
 
-        query = "SELECT * FROM university.students WHERE student_number = '%(student_number)s'" % {'student_number': student_number}
+        query = "SELECT * FROM students WHERE student_number = '%(student_number)s'" % {'student_number': student_number}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
@@ -41,7 +41,7 @@ class student_service(Service):
         group_id = data.get('group_id', '')
         subgroup_id = data.get('subgroup_id', '')
     
-        query = "SELECT * FROM university.students WHERE last_name = '%(last_name)s' AND first_name = '%(first_name)s' AND mail = '%(mail)s' AND phone_number = '%(phone_number)s' AND department_id = %(department_id)s AND group_id = %(group_id)s AND subgroup_id = %(subgroup_id)s" % {'last_name': last_name, 'first_name': first_name, 'mail': mail, 'phone_number': phone_number, 'department_id': department_id, 'group_id': group_id, 'subgroup_id': subgroup_id}
+        query = "SELECT * FROM students WHERE last_name = '%(last_name)s' AND first_name = '%(first_name)s' AND mail = '%(mail)s' AND phone_number = '%(phone_number)s' AND department_id = %(department_id)s AND group_id = %(group_id)s AND subgroup_id = %(subgroup_id)s" % {'last_name': last_name, 'first_name': first_name, 'mail': mail, 'phone_number': phone_number, 'department_id': department_id, 'group_id': group_id, 'subgroup_id': subgroup_id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         # connect_pg.disconnect(conn)
@@ -65,7 +65,7 @@ class student_service(Service):
         group_id = data.get('group_id', '')
         subgroup_id = data.get('subgroup_id', '')
     
-        query = "INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, department_id, group_id, subgroup_id) VALUES ('%(student_number)s', '%(last_name)s', '%(first_name)s', '%(mail)s', '%(phone_number)s', %(department_id)s, %(group_id)s, %(subgroup_id)s) RETURNING id" % {'student_number': student_number, 'last_name': last_name, 'first_name': first_name, 'mail': mail, 'phone_number': phone_number, 'department_id': department_id, 'group_id': group_id, 'subgroup_id': subgroup_id}
+        query = "INSERT INTO students (student_number, last_name, first_name, mail, phone_number, department_id, group_id, subgroup_id) VALUES ('%(student_number)s', '%(last_name)s', '%(first_name)s', '%(mail)s', '%(phone_number)s', %(department_id)s, %(group_id)s, %(subgroup_id)s) RETURNING id" % {'student_number': student_number, 'last_name': last_name, 'first_name': first_name, 'mail': mail, 'phone_number': phone_number, 'department_id': department_id, 'group_id': group_id, 'subgroup_id': subgroup_id}
         conn = self.get_connection()
         new_student_number = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -75,7 +75,7 @@ class student_service(Service):
     def delete_student_by_id(self, student_number):
         """ Delete a student by ID in JSON format """
         
-        query = "DELETE FROM university.students WHERE student_number = '%(student_number)s' RETURNING student_number" %  {'student_number': student_number}
+        query = "DELETE FROM students WHERE student_number = '%(student_number)s' RETURNING student_number" %  {'student_number': student_number}
         conn = self.get_connection()
         row = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -98,7 +98,7 @@ class student_service(Service):
         group_id = data.get('group_id', existing_student['group_id'])
         subgroup_id = data.get('subgroup_id', existing_student['subgroup_id'])
 
-        query = """UPDATE university.students
+        query = """UPDATE students
                 SET last_name = '%(last_name)s',
                     first_name = '%(first_name)s',
                     mail = '%(mail)s',

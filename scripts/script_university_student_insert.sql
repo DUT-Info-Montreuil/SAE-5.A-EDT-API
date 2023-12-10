@@ -2,11 +2,11 @@
 -- \i script_university_school_insert.sql; --add database
 
 /* Script contain insert for each table
-    -- university.students(@student_number, last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
+    -- students(@student_number, last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
 */
 
--- university.students(@student_number, last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
-INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, user_username, department_id, group_id, subgroup_id)
+-- students(@student_number, last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
+INSERT INTO students (student_number, last_name, first_name, mail, phone_number, user_username, department_id, group_id, subgroup_id)
 VALUES
     ('85800425', 'Mehedi', 'Toure', 'mtoure@iut.univ-paris8.fr', '07.12.34.56.78', 'mtoure', 1, 38, 38), -- username : mtoure 
     ('32800138', 'Hugo', 'COHEN', 'hcohen@iut.univ-paris8.fr', '06.12.21.12.21', 'hcohen', 1, 38, 38), -- username : hcohen 
@@ -15,9 +15,9 @@ VALUES
     ('24992466', 'Boulaye', 'SEYDI', 'bseydi@iut.univ-paris8.fr', '07.01.10.01.10', 'bseydi', 1, 38,38) -- username : bbseydi 
 ;
 
--- university.students(@student_number, last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
+-- students(@student_number, last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
 -- FAKE for departement INFO
-INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, user_username, department_id, group_id, subgroup_id)
+INSERT INTO students (student_number, last_name, first_name, mail, phone_number, user_username, department_id, group_id, subgroup_id)
 VALUES
     ('65857267', 'Yujiro', 'Hanma', 'yhanma@iut.univ-paris8.fr', '07.76.01.23.29', 'yhanma', 1, 15, 15), -- username : yhanma 
     ('26211358', 'Baki', 'Hanma', 'bhanma@iut.univ-paris8.fr', '07.24.20.80.26', 'bhanma', 1, 15, 15), -- username : bhanma 
@@ -381,9 +381,9 @@ VALUES
     ('66670102', 'Emily', 'Ward', 'eward@iut.univ-paris8.fr', '07.29.88.61.58', 'eward', 1, 3,91) -- username : eeward 
 ;
 
--- university.students(@student_number,last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
+-- students(@student_number,last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
 -- FAKE for departement QLIO
-INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, user_username, department_id, group_id, subgroup_id)
+INSERT INTO students (student_number, last_name, first_name, mail, phone_number, user_username, department_id, group_id, subgroup_id)
 VALUES
     ('05018235', 'Naruto', 'Uzumaki', 'nuzumaki@iut.univ-paris8.fr', '07.20.63.10.81', 'nuzumaki', 2, 16, 16), -- username : nuzumaki 
     ('99087589', 'Sasuke', 'Uchiha', 'suchiha@iut.univ-paris8.fr', '07.48.97.52.44', 'suchiha', 2, 16, 16), -- username : suchiha 
@@ -747,9 +747,9 @@ VALUES
     ('02564651', 'Samantha', 'Campbell', 'scampbell@iut.univ-paris8.fr', '07.83.15.74.05', 'scampbell', 2, 5,93) -- username : sscampbell 
 ;
 
--- university.students(@student_number,last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
+-- students(@student_number,last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
 -- FAKE for departement INFOCOM
-INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, user_username, department_id, group_id, subgroup_id)
+INSERT INTO students (student_number, last_name, first_name, mail, phone_number, user_username, department_id, group_id, subgroup_id)
 VALUES
     ('68469024', 'Itadori', 'Yuji', 'iyuji@iut.univ-paris8.fr', '06.88.88.88.88', 'iyuji', 3, 19, 19), -- username : iyuji 
     ('70555486', 'Satoru', 'Gojo', 'sgojo@iut.univ-paris8.fr', '06.66.66.66.66', 'sgojo', 3, 19, 19), -- username : sgojo 
@@ -1114,8 +1114,8 @@ VALUES
 ;
 
 -- FAKE for departement GACO
--- university.students(@student_number,last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
-INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, user_username, department_id, group_id, subgroup_id)
+-- students(@student_number,last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
+INSERT INTO students (student_number, last_name, first_name, mail, phone_number, user_username, department_id, group_id, subgroup_id)
 VALUES
     ('82110480', 'Ichigo', 'Kurosaki', 'ikurosaki@iut.univ-paris8.fr', '07.31.18.90.10', 'ikurosaki', 4, 24, 24), -- username : ikurosaki 
     ('12954159', 'Rukia', 'Kuchiki', 'rkuchiki@iut.univ-paris8.fr', '07.16.11.67.69', 'rkuchiki', 4, 24, 24), -- username : rkuchiki 

@@ -6,10 +6,10 @@ import connect_pg
 class subgroup_service(Service):
     
     # Subgroups API
-    # university.subgroups(@id, name, #group_id)
+    # subgroups(@id, name, #group_id)
     def get_subgroups(self):
         """ Get all subgroups in JSON format """
-        query = "SELECT * FROM university.subgroups"
+        query = "SELECT * FROM subgroups"
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
@@ -20,7 +20,7 @@ class subgroup_service(Service):
     
     def get_subgroup_by_id(self, id):
         """ Get a subgroup by ID in JSON format """
-        query = "SELECT * FROM university.subgroups WHERE id = %(id)s" % {'id': id}
+        query = "SELECT * FROM subgroups WHERE id = %(id)s" % {'id': id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
@@ -35,7 +35,7 @@ class subgroup_service(Service):
         name = data.get('name', '')
         group_id = data.get('group_id', '')
     
-        query = "SELECT * FROM university.subgroups WHERE name = '%(name)s' AND group_id = %(group_id)s" % {'name': name, 'group_id': group_id}
+        query = "SELECT * FROM subgroups WHERE name = '%(name)s' AND group_id = %(group_id)s" % {'name': name, 'group_id': group_id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         # connect_pg.disconnect(conn)
@@ -53,7 +53,7 @@ class subgroup_service(Service):
         name = data.get('name', '')
         group_id = data.get('group_id', '')
     
-        query = "INSERT INTO university.subgroups (name, group_id) VALUES ('%(name)s', %(group_id)s) RETURNING id" % {'name': name, 'group_id': group_id}
+        query = "INSERT INTO subgroups (name, group_id) VALUES ('%(name)s', %(group_id)s) RETURNING id" % {'name': name, 'group_id': group_id}
         conn = self.get_connection()
         new_subgroup_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -62,7 +62,7 @@ class subgroup_service(Service):
     
     def delete_subgroup_by_id(self, id):
         """ Delete a subgroup by ID in JSON format """
-        query = "DELETE FROM university.subgroups WHERE id = %(id)s RETURNING id" %  {'id': id}
+        query = "DELETE FROM subgroups WHERE id = %(id)s RETURNING id" %  {'id': id}
         conn = self.get_connection()
         row = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -80,7 +80,7 @@ class subgroup_service(Service):
         name = data.get('name', existing_subgroup['name'])
         group_id = data.get('group_id', existing_subgroup['group_id'])
 
-        query = """UPDATE university.subgroups
+        query = """UPDATE subgroups
                     SET name = '%(name)s',
                         group_id = %(group_id)s
                     WHERE id = %(id)s

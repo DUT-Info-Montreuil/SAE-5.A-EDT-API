@@ -4,7 +4,7 @@ from services.absent_service import absent_service
 absent_app = Blueprint('absent_app', __name__)
 
 # Absents API
-# university.absents(@id, description, starttime, duree, absent_type, #personal_id, #rooms_id, #teaching_id)
+# absents(@id, description, starttime, duree, absent_type, #personal_id, #rooms_id, #teaching_id)
 @absent_app.route('/absents/get', methods=['GET'])
 def get_absents():
     """ Get all absents in JSON format """

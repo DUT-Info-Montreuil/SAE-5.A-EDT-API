@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 class Courses(db.Model):
-    __tablename__ = 'university.courses'
+    __tablename__ = 'courses'
     id = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.Text)
     startTime = db.Column(db.TIMESTAMP, nullable=False)

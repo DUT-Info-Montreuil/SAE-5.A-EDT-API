@@ -7,7 +7,7 @@ reminder_app = Blueprint('reminder_app', __name__)
 
 
 # Reminders API
-# university.reminders(@id, #course_id, #subgroup_id)
+# reminders(@id, #course_id, #subgroup_id)
 @reminder_app.route('/reminders/get', methods=['GET'])
 def get_reminders():
     """ Get all reminders in JSON format """

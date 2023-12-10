@@ -7,7 +7,7 @@ specialization_app = Blueprint('specialization_app', __name__)
 
 
 # Specializations API
-# university.specializations(@id, code, name, #department_id)
+# specializations(@id, code, name, #department_id)
 @specialization_app.route('/specializations/get', methods=['GET'])
 def get_specializations():
     """ Get all specializations in JSON format """

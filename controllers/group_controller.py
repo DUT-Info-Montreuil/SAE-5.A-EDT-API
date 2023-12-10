@@ -6,7 +6,7 @@ from services.group_service import group_service
 group_app = Blueprint('group_app', __name__)
 
 # Groups API
-# university.groups(@id, promotion, type, #department_id)
+# groups(@id, promotion, type, #department_id)
 @group_app.route('/groups/get', methods=['GET'])
 def get_groups():
     """ Get all groups in JSON format """

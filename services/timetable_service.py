@@ -18,11 +18,11 @@ class timetable_service(Service):
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
         query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code 
-                    FROM university.courses 
-                    INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
-                    INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
-                    INNER JOIN university.rooms ON university.courses.rooms_id = university.rooms.id
-                    WHERE university.rooms.id =""" +  str(room_id) + """ AND
+                    FROM courses 
+                    INNER JOIN teachings ON courses.teaching_id = teachings.id
+                    INNER JOIN personals ON courses.personal_id = personals.id
+                    INNER JOIN rooms ON courses.rooms_id = rooms.id
+                    WHERE rooms.id =""" +  str(room_id) + """ AND
                     starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
         return self.execute_query_and_get_statement(query)
 
@@ -39,11 +39,11 @@ class timetable_service(Service):
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
         query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code 
-                    FROM university.courses 
-                    INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
-                    INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
-                    INNER JOIN university.rooms ON university.courses.rooms_id = university.rooms.id
-                    WHERE university.personals.id =""" +  str(personnal_id) + """ AND
+                    FROM courses 
+                    INNER JOIN teachings ON courses.teaching_id = teachings.id
+                    INNER JOIN personals ON courses.personal_id = personals.id
+                    INNER JOIN rooms ON courses.rooms_id = rooms.id
+                    WHERE personals.id =""" +  str(personnal_id) + """ AND
                     starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
         return self.execute_query_and_get_statement(query)
     
@@ -60,18 +60,18 @@ class timetable_service(Service):
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
         query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code
-                FROM university.courses
+                FROM courses
 
-                INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
-                INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
-                INNER JOIN university.rooms ON university.courses.rooms_id = university.rooms.id
+                INNER JOIN personals ON courses.personal_id = personals.id
+                INNER JOIN teachings ON courses.teaching_id = teachings.id
+                INNER JOIN rooms ON courses.rooms_id = rooms.id
 
-                INNER JOIN university.participates ON university.courses.id = university.participates.course_id
-                INNER JOIN university.subgroups ON university.participates.subgroup_id = university.subgroups.id
-                INNER JOIN university.groups ON university.subgroups.id = university.groups.id
+                INNER JOIN participates ON courses.id = participates.course_id
+                INNER JOIN subgroups ON participates.subgroup_id = subgroups.id
+                INNER JOIN groups ON subgroups.id = groups.id
 
-                WHERE university.groups.promotion =""" +  str(promotion_id) + """ AND
-                university.groups.department_id =""" + str(department_id) + """ AND
+                WHERE groups.promotion =""" +  str(promotion_id) + """ AND
+                groups.department_id =""" + str(department_id) + """ AND
                 starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
 
         return self.execute_query_and_get_statement(query)
@@ -88,16 +88,16 @@ class timetable_service(Service):
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
         query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code
-                FROM university.courses
+                FROM courses
 
-                INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
-                INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
-                INNER JOIN university.rooms ON university.courses.rooms_id = university.rooms.id
+                INNER JOIN personals ON courses.personal_id = personals.id
+                INNER JOIN teachings ON courses.teaching_id = teachings.id
+                INNER JOIN rooms ON courses.rooms_id = rooms.id
 
-                INNER JOIN university.participates ON university.courses.id = university.participates.course_id
-                INNER JOIN university.students ON university.participates.subgroup_id = university.students.subgroup_id
+                INNER JOIN participates ON courses.id = participates.course_id
+                INNER JOIN students ON participates.subgroup_id = students.subgroup_id
 
-                WHERE university.students.student_number = '""" +  str(student_id) + """' AND
+                WHERE students.student_number = '""" +  str(student_id) + """' AND
                 starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
         print(query)
         return self.execute_query_and_get_statement(query)

@@ -6,7 +6,7 @@ from services.personal_service import personal_service
 personal_app = Blueprint('personal_app', __name__)
 
 # Personals API
-# university.personals(@id, last_name, first_name, mail, phone_number)
+# personals(@id, last_name, first_name, mail, phone_number)
 @personal_app.route('/personals/get', methods=['GET'])
 def get_personals():
     """ Get all personals in JSON format """

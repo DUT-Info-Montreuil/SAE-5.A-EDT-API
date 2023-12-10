@@ -1,26 +1,21 @@
 -- \echo [INFO] Start of script for SAE 1.0
 
 /* Script contain create for each table
-    -- university.departments(@id, name, description, department_type)
-    -- university.groups(@id, promotion, type, #department_id)
-    -- university.subgroups(@id, name, #group_id)
-    -- university.personals(@id, last_name, first_name, mail, phone_number)
-    -- university.specializations(@id, code, name, #department_id)
-    -- university.rooms(@id, code, capacity, has_computer, has_projector)
-    -- university.teachings(@id, title, hour_number, semestre, sequence, description, teaching_type, #specialization_id)
-    -- university.roles(@id, name, description, #personal_id)
-    -- university.courses(@id, description, starttime, duree, course_type, #personal_id, #rooms_id, #teaching_id)
-    -- university.students(@student_number, last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
-    -- university.responsibles(@id, #personal_id, #resource_id)
-    -- university.reminders(@id, name, description, #course_id)
-    -- university.absents(@id, justified, #student_number, #course_id)
-    -- university.participates(@id, #course_id, #subgroup_id)
+    -- departments(@id, name, description, department_type)
+    -- groups(@id, promotion, type, #department_id)
+    -- subgroups(@id, name, #group_id)
+    -- personals(@id, last_name, first_name, mail, phone_number)
+    -- specializations(@id, code, name, #department_id)
+    -- rooms(@id, code, capacity, has_computer, has_projector)
+    -- teachings(@id, title, hour_number, semestre, sequence, description, teaching_type, #specialization_id)
+    -- roles(@id, name, description, #personal_id)
+    -- courses(@id, description, starttime, duree, course_type, #personal_id, #rooms_id, #teaching_id)
+    -- students(@student_number, last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
+    -- responsibles(@id, #personal_id, #resource_id)
+    -- reminders(@id, name, description, #course_id)
+    -- absents(@id, justified, #student_number, #course_id)
+    -- participates(@id, #course_id, #subgroup_id)
 */
-DROP SCHEMA IF EXISTS university cascade ;
-
--- \echo [INFO] Create schema university
-CREATE SCHEMA university;
-
 -- \echo [INFO] Create the numphone domain with regex
 DROP DOMAIN IF EXISTS numstudent ;
 CREATE DOMAIN numstudent as varchar(8) check (value ~* E'\\d{8}');
@@ -43,8 +38,8 @@ CREATE DOMAIN teachings_types as varchar(32) check (value ~* '^(SAE|RT|RCC|Portf
 -- \echo [INFO] Create ALL table
 
 -- User
--- \echo [INFO] Create the university.uses table
-CREATE TABLE university.users(
+-- \echo [INFO] Create the uses table
+CREATE TABLE users(
     -- PRIMARY KEY
     username varchar(64) UNIQUE NOT NULL,
     CONSTRAINT pk_university_users PRIMARY KEY (username),
@@ -53,8 +48,8 @@ CREATE TABLE university.users(
 ) ;
 
 -- Student
--- \echo [INFO] Create the university.students table
-CREATE TABLE university.students(
+-- \echo [INFO] Create the students table
+CREATE TABLE students(
 	-- PRIMARY KEY
     student_number numstudent UNIQUE NOT NULL,  -- domain numstudent,
     CONSTRAINT pk_university_students PRIMARY KEY (student_number),  -- primary key constraint
@@ -77,8 +72,8 @@ CREATE TABLE university.students(
 ) ;
 
 -- Department
--- \echo [INFO] Create the university.departments table
-CREATE TABLE university.departments(
+-- \echo [INFO] Create the departments table
+CREATE TABLE departments(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_departments PRIMARY KEY CONSTRAINT ck_university_department_id CHECK(id > 0), 
     -- ATTRIBUTE
@@ -91,8 +86,8 @@ CREATE TABLE university.departments(
 ) ;
 
 -- Group
--- \echo [INFO] Create the university.groups table
-CREATE TABLE university.groups(
+-- \echo [INFO] Create the groups table
+CREATE TABLE groups(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_groups PRIMARY KEY CONSTRAINT ck_university_group_id CHECK(id > 0), 
     -- ATTRIBUTE
@@ -104,8 +99,8 @@ CREATE TABLE university.groups(
 ) ;
 
 -- SubGroup
--- \echo [INFO] Create the university.subgroups table
-CREATE TABLE university.subgroups(
+-- \echo [INFO] Create the subgroups table
+CREATE TABLE subgroups(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_subgroups PRIMARY KEY CONSTRAINT ck_university_subgroup_id CHECK(id > 0), 
     -- ATTRIBUTE
@@ -116,8 +111,8 @@ CREATE TABLE university.subgroups(
 ) ;
 
 -- Personal
--- \echo [INFO] Create the university.personals table
-CREATE TABLE university.personals(
+-- \echo [INFO] Create the personals table
+CREATE TABLE personals(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_personals PRIMARY KEY CONSTRAINT ck_university_personal_id CHECK(id > 0), 
     -- ATTRIBUTE
@@ -131,8 +126,8 @@ CREATE TABLE university.personals(
 	phone_number numphone UNIQUE NOT NULL	-- domaine numphone
 ) ;
 
--- \echo [INFO] Create the university.roles table
-CREATE TABLE university.roles(
+-- \echo [INFO] Create the roles table
+CREATE TABLE roles(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_roles PRIMARY KEY CONSTRAINT ck_university_roles_id CHECK(id > 0), 
     -- ATTRIBUTE
@@ -144,8 +139,8 @@ CREATE TABLE university.roles(
 ) ;
 
 -- Course
--- \echo [INFO] Create the university.courses table
-CREATE TABLE university.courses(
+-- \echo [INFO] Create the courses table
+CREATE TABLE courses(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_courses PRIMARY KEY CONSTRAINT ck_university_course_id CHECK(id > 0), 
     -- ATTRIBUTE
@@ -163,8 +158,8 @@ CREATE TABLE university.courses(
 ) ;
 
 -- rooms
--- \echo [INFO] Create the university.rooms table
-CREATE TABLE university.rooms(
+-- \echo [INFO] Create the rooms table
+CREATE TABLE rooms(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_rooms PRIMARY KEY CONSTRAINT ck_university_rooms_id CHECK(id > 0), 
     -- ATTRIBUTE
@@ -175,8 +170,8 @@ CREATE TABLE university.rooms(
 ) ;
 
 -- reminders
--- \echo [INFO] Create the university.reminders table
-CREATE TABLE university.reminders(
+-- \echo [INFO] Create the reminders table
+CREATE TABLE reminders(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_reminders PRIMARY KEY CONSTRAINT ck_university_reminders_id CHECK(id > 0), 
     -- ATTRIBUTE
@@ -188,7 +183,7 @@ CREATE TABLE university.reminders(
 ) ;
 
 -- specializations
-CREATE TABLE university.specializations (
+CREATE TABLE specializations (
     id SERIAL constraint pk_university_specializations PRIMARY KEY CONSTRAINT ck_university_specialization_id CHECK(id > 0), 
     code VARCHAR(255) NOT NULL UNIQUE,
     name VARCHAR(255) NOT NULL DEFAULT 'Semestre de préparation au parcours',
@@ -197,7 +192,7 @@ CREATE TABLE university.specializations (
 );
 
 -- teachings
-CREATE TABLE university.teachings (
+CREATE TABLE teachings (
     id SERIAL constraint pk_university_teachings PRIMARY KEY CONSTRAINT ck_university_teaching_id CHECK(id > 0), 
     title VARCHAR(255),
     hour_number INTEGER,
@@ -219,8 +214,8 @@ CREATE TABLE university.teachings (
 -- Link table N to N
 -- \echo [INFO] Create ALL link table N to N
 
--- \echo [INFO] Create the university.absents table
-CREATE TABLE university.absents(
+-- \echo [INFO] Create the absents table
+CREATE TABLE absents(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_absents PRIMARY KEY CONSTRAINT ck_university_absents_id CHECK(id > 0), 
     -- ATTRIBUTE
@@ -229,43 +224,43 @@ CREATE TABLE university.absents(
     -- FOREIGN KEY (students)
     student_number numstudent NOT NULL,
     constraint fk_university_absents_students foreign key (student_number) 
-    references university.students (student_number) on delete restrict on update cascade,
+    references students (student_number) on delete restrict on update cascade,
     
     -- FOREIGN KEY (courses)
     course_id INT NOT NULL,
     constraint fk_university_absents_courses foreign key (course_id) 
-    references university.courses (id) on delete restrict on update cascade
+    references courses (id) on delete restrict on update cascade
 ) ;
 
--- \echo [INFO] Create the university.participates table
-CREATE TABLE university.participates(
+-- \echo [INFO] Create the participates table
+CREATE TABLE participates(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_participates PRIMARY KEY CONSTRAINT ck_university_participates_id CHECK(id > 0), 
     -- FOREIGN KEY (courses)
     course_id INT NOT NULL,
     constraint fk_university_participates_courses foreign key (course_id) 
-    references university.courses (id) on delete restrict on update cascade,
+    references courses (id) on delete restrict on update cascade,
     
     -- FOREIGN KEY (groups)
     subgroup_id INT NOT NULL,
     constraint fk_university_participates_subgroups foreign key (subgroup_id) 
-    references university.subgroups (id) on delete restrict on update cascade
+    references subgroups (id) on delete restrict on update cascade
 ) ;
 
--- \echo [INFO] Create the university.responsibles table
-CREATE TABLE university.responsibles(
+-- \echo [INFO] Create the responsibles table
+CREATE TABLE responsibles(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_responsibles PRIMARY KEY CONSTRAINT ck_university_responsibles_id CHECK(id > 0), 
     
     -- FOREIGN KEY (personals)
     personal_id INT NOT NULL,
     constraint fk_university_responsibles_personals foreign key (personal_id) 
-    references university.personals (id) on delete restrict on update cascade,
+    references personals (id) on delete restrict on update cascade,
     
     -- FOREIGN KEY (teachings)
     teaching_id INT NOT NULL,
     constraint fk_university_responsibles_teachings foreign key (teaching_id)
-    references university.teachings (id) on delete restrict on update cascade
+    references teachings (id) on delete restrict on update cascade
 ) ;
 
 
@@ -274,95 +269,95 @@ CREATE TABLE university.responsibles(
 */
 -- For the table 'reminders'
 -- \echo [INFO] Alter table reminders
-ALTER TABLE university.reminders
+ALTER TABLE reminders
 ADD CONSTRAINT fk_university_reminders_courses
-FOREIGN KEY (course_id) REFERENCES university.courses(id)
+FOREIGN KEY (course_id) REFERENCES courses(id)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- For the table 'courses'
 -- \echo [INFO] Alter table courses
-ALTER TABLE university.courses
+ALTER TABLE courses
 ADD CONSTRAINT fk_university_courses_personals
-FOREIGN KEY (personal_id) REFERENCES university.personals(id)
+FOREIGN KEY (personal_id) REFERENCES personals(id)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
-ALTER TABLE university.courses
+ALTER TABLE courses
 ADD CONSTRAINT fk_university_courses_rooms
-FOREIGN KEY (rooms_id) REFERENCES university.rooms(id)
+FOREIGN KEY (rooms_id) REFERENCES rooms(id)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
-ALTER TABLE university.courses
+ALTER TABLE courses
 ADD CONSTRAINT fk_university_courses_teachings
-FOREIGN KEY (teaching_id) REFERENCES university.teachings(id)
+FOREIGN KEY (teaching_id) REFERENCES teachings(id)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- For the table 'subgroups'
 -- \echo [INFO] Alter table subgroups
-ALTER TABLE university.subgroups
+ALTER TABLE subgroups
 ADD CONSTRAINT fk_university_subgroups_groups
-FOREIGN KEY (group_id) REFERENCES university.groups(id)
+FOREIGN KEY (group_id) REFERENCES groups(id)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- For the table 'groups'
 -- \echo [INFO] Alter table groups
-ALTER TABLE university.groups
+ALTER TABLE groups
 ADD CONSTRAINT fk_university_groups_departments
-FOREIGN KEY (department_id) REFERENCES university.departments(id)
+FOREIGN KEY (department_id) REFERENCES departments(id)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- For the table 'departments'
 -- \echo [INFO] Alter table departments
-ALTER TABLE university.departments
+ALTER TABLE departments
 ADD CONSTRAINT fk_university_departments_personals
-FOREIGN KEY (personal_id) REFERENCES university.personals(id)
+FOREIGN KEY (personal_id) REFERENCES personals(id)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- For the table 'students'
 -- \echo [INFO] Alter table students
-ALTER TABLE university.students
+ALTER TABLE students
 ADD CONSTRAINT fk_university_students_departments
-FOREIGN KEY (department_id) REFERENCES university.departments(id)
+FOREIGN KEY (department_id) REFERENCES departments(id)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
-ALTER TABLE university.students
+ALTER TABLE students
 ADD CONSTRAINT fk_university_students_groups
-FOREIGN KEY (group_id) REFERENCES university.groups(id)
+FOREIGN KEY (group_id) REFERENCES groups(id)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
-ALTER TABLE university.students
+ALTER TABLE students
 ADD CONSTRAINT fk_university_students_subgroups
-FOREIGN KEY (subgroup_id) REFERENCES university.subgroups(id)
+FOREIGN KEY (subgroup_id) REFERENCES subgroups(id)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
-ALTER TABLE university.students
+ALTER TABLE students
 ADD CONSTRAINT fk_university_students_users
-FOREIGN KEY (user_username) REFERENCES university.users(username)
+FOREIGN KEY (user_username) REFERENCES users(username)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
-ALTER TABLE university.personals
+ALTER TABLE personals
 ADD CONSTRAINT fk_university_personals_users
-FOREIGN KEY (user_username) REFERENCES university.users(username)
+FOREIGN KEY (user_username) REFERENCES users(username)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- For the table 'roles'
 -- \echo [INFO] Alter table roles
-ALTER TABLE university.roles
+ALTER TABLE roles
 ADD CONSTRAINT fk_university_roles_personals
-FOREIGN KEY (personal_id) REFERENCES university.personals(id)
+FOREIGN KEY (personal_id) REFERENCES personals(id)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- For the table 'specializations'
 -- \echo [INFO] Alter table specializations
-ALTER TABLE university.specializations
+ALTER TABLE specializations
 ADD CONSTRAINT fk_university_specializations_departments
-FOREIGN KEY (department_id) REFERENCES university.departments(id)
+FOREIGN KEY (department_id) REFERENCES departments(id)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- For the table 'specializations'
 -- \echo [INFO] Alter table specializations
-ALTER TABLE university.teachings
+ALTER TABLE teachings
 ADD CONSTRAINT fk_university_teachings_specializations
-FOREIGN KEY (specialization_id) REFERENCES university.specializations(id)
+FOREIGN KEY (specialization_id) REFERENCES specializations(id)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
 ---- TRIGGER ----
@@ -377,7 +372,7 @@ CREATE OR REPLACE FUNCTION make_type_uppercase()
     $$ LANGUAGE plpgsql;
     -- Create the trigger
     CREATE TRIGGER uppercase_type_trigger
-    BEFORE INSERT ON university.groups
+    BEFORE INSERT ON groups
     FOR EACH ROW
 EXECUTE FUNCTION make_type_uppercase();
 
@@ -392,7 +387,7 @@ CREATE OR REPLACE FUNCTION make_type_lowercase()
 
 -- Create the trigger
 CREATE TRIGGER lowercase_name_trigger
-    BEFORE INSERT ON university.subgroups
+    BEFORE INSERT ON subgroups
     FOR EACH ROW
 EXECUTE FUNCTION make_type_lowercase();
 
@@ -404,9 +399,9 @@ BEGIN
     IF NEW.department_id IS NOT NULL AND NEW.group_id IS NOT NULL AND NEW.subgroup_id IS NOT NULL THEN
         IF NOT EXISTS (
             SELECT 1
-            FROM university.subgroups AS subgroups
-            JOIN university.groups AS groups ON subgroups.group_id = groups.id
-            JOIN university.departments AS departments ON groups.department_id = departments.id
+            FROM subgroups AS subgroups
+            JOIN groups AS groups ON subgroups.group_id = groups.id
+            JOIN departments AS departments ON groups.department_id = departments.id
             WHERE subgroups.id = NEW.subgroup_id
             AND groups.id = NEW.group_id
             AND departments.id = NEW.department_id
@@ -421,7 +416,7 @@ $$ LANGUAGE plpgsql;
 
 -- Créer le trigger
 CREATE TRIGGER check_student_keys_trigger
-    BEFORE INSERT OR UPDATE ON university.students
+    BEFORE INSERT OR UPDATE ON students
     FOR EACH ROW
 EXECUTE FUNCTION check_student_foreign_keys();
 
@@ -438,7 +433,7 @@ EXECUTE FUNCTION check_student_foreign_keys();
 --     domain := split_part(new_email, '@', 2);
 
 --     -- Check the student email
---     WHILE (SELECT 1 FROM university.students WHERE mail = new_email) LOOP
+--     WHILE (SELECT 1 FROM students WHERE mail = new_email) LOOP
 --         -- If duplicate found, modify the username
 --         new_email := base_username || counter || '@' || domain;
 --         RAISE NOTICE 'Email already exists. Modifying to: %', new_email;
@@ -454,6 +449,6 @@ EXECUTE FUNCTION check_student_foreign_keys();
 
 -- -- Create the trigger
 -- CREATE TRIGGER check_student_email_trigger
---     BEFORE INSERT OR UPDATE ON university.students
+--     BEFORE INSERT OR UPDATE ON students
 --     FOR EACH ROW
 -- EXECUTE FUNCTION check_student_email_unique();

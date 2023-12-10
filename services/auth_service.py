@@ -13,7 +13,7 @@ class auth_service(Service):
             return 'Username or password not filled'
         
         query = """SELECT username, password 
-                    FROM university.users 
+                    FROM users 
                     WHERE username = '"""  + str(username) + """'""" 
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
