@@ -65,8 +65,8 @@ def update_reminder(id):
         return {"message": f"Reminder record with ID {id} not found!"}, 404
 
 
-# @reminder_app.route('/reminders/dashboard/<string:student_number>', methods=['GET'])
-# def get_dashboard_reminder(student_number):
-#     _service = reminder_service()
-#     returnStatement = _service.get_dashboard_reminder(student_number)
-#     return jsonify(returnStatement)
+@reminder_app.route('/reminders/dashboard/<string:student_number>/<int:page>', methods=['GET'])
+def get_dashboard_reminder(student_number, page):
+    _service = reminder_service()
+    returnStatement = _service.get_dashboard_reminder(student_number, page)
+    return jsonify(returnStatement)

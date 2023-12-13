@@ -33,9 +33,11 @@ class reminder_service(Service):
         # data = request.json
         name = data.get('name', '')
         description = data.get('description', '')
+        reminder_timestamp = data.get('reminder_timestamp', '')
+        students_number = data.get('students_number', '')
         course_id = data.get('course_id', '')
         
-        query = "SELECT * FROM university.reminders WHERE name = '%(name)s' AND description = '%(description)s' AND course_id = %(course_id)s" %  {'name': name, 'description': description, 'course_id': course_id}
+        query = "SELECT * FROM university.reminders WHERE name = '%(name)s' AND description = '%(description)s' AND reminder_timestamp = '%(reminder_timestamp)s' AND students_number = '%(students_number)s' AND course_id = %(course_id)s" % {'name': name, 'description': description, 'reminder_timestamp': reminder_timestamp, 'students_number': students_number, 'course_id': course_id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         # connect_pg.disconnect(conn)
@@ -52,9 +54,11 @@ class reminder_service(Service):
     
         name = data.get('name', '')
         description = data.get('description', '')
+        reminder_timestamp = data.get('reminder_timestamp', '')
+        students_number = data.get('students_number', '')
         course_id = data.get('course_id', '')
         
-        query = "INSERT INTO university.reminders (name, description, course_id) VALUES ('%(name)s', '%(description)s', %(course_id)s) RETURNING id" % {'name': name, 'description': description, 'course_id': course_id}
+        query = "INSERT INTO university.reminders (name, description, reminder_timestamp, students_number, course_id) VALUES ('%(name)s', '%(description)s', '%(reminder_timestamp)s', '%(students_number)s',%(course_id)s) RETURNING id" % {'name': name, 'description': description, 'reminder_timestamp': reminder_timestamp, 'students_number': students_number, 'course_id': course_id}
         conn = self.get_connection()
         new_reminder_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -80,17 +84,23 @@ class reminder_service(Service):
 
         name = data.get('name', existing_reminder['name'])
         description = data.get('description', existing_reminder['description'])
+        reminder_timestamp = data.get('reminder_timestamp', existing_reminder['reminder_timestamp'])
+        students_number = data.get('students_number', existing_reminder['students_number'])
         course_id = data.get('course_id', existing_reminder['course_id'])
 
         query = """UPDATE university.reminders
                 SET name = '%(name)s',
                     description = '%(description)s',
+                    reminder_timestamp = '%(reminder_timestamp)s',
+                    students_number = '%(students_number)s',
                     course_id = %(course_id)s
                 WHERE id = %(id)s
                 RETURNING id """ % {
                     'id': id,
                     'name': name,
                     'description': description,
+                    'reminder_timestamp': reminder_timestamp,
+                    'students_number': students_number,
                     'course_id': course_id
                 }
 
@@ -100,11 +110,34 @@ class reminder_service(Service):
 
         return updated_reminder_id
 
+    def get_dashboard_reminder(self, student_number, page):
+        query = "SELECT * FROM university.reminders WHERE student_number = '%(student_number)s'" % {'student_number': student_number}
+        conn = self.get_connection()
+        rows = connect_pg.get_query(conn, query)
+
+        rowsList = []
+        for row in rows:
+            rowsList.append(self.get_reminder_statement(row))
+
+        # Tri de la liste par reminder_timestamp dans l'ordre décroissant
+        sorted_list = sorted(rowsList, key=lambda x: x['reminder_timestamp'], reverse=True)
+
+        # Calculer l'offset pour la pagination
+        offset = (page - 1) * 5
+
+        # Sélection des 5 éléments pour la page spécifiée
+        returnStatement = sorted_list[offset:offset + 5]
+
+        return returnStatement
+
+
     def get_reminder_statement(self, row):
         """ Formats reminder data in JSON """
         return {
             'id': row[0],   # L'ID du cours
             'name': row[1],     # Nom du rappel
             'description': row[2],     # Description du rappel
-            'course_id': row[3]     # L'ID du cours
+            'reminder_timestamp': row[3], # Heure du rappel
+            'students_number': row[4],
+            'course_id': row[5]     # L'ID du cours
         }

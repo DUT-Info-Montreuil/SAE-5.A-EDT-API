@@ -182,6 +182,11 @@ CREATE TABLE university.reminders(
     -- ATTRIBUTE
 	name varchar(32) NOT NULL,
 	description TEXT,
+    reminder_timestamp timestamp NOT NULL,
+
+    student_number numstudent NOT NULL,
+    constraint fk_university_absents_students foreign key (student_number) 
+    references university.students (student_number) on delete restrict on update cascade,
 
 	-- FOREIGN KEY (courses)
     course_id INT NOT NULL

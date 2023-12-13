@@ -102,18 +102,18 @@ class absent_service(Service):
     
     
     def get_dashboard_absents(self, student_number, page):
-        """   """
+
         query = "SELECT * FROM university.absents WHERE student_number = '%(student_number)s'" % {'student_number': student_number}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
 
-
         if len(rows) > 0 :     
-            returnStatement = []
+            rowsList = []
             for row in rows:
                 student_number = row[2]
                 courses_id = row[3]
 
+                #Info de l'étudiant
                 query_student = "SELECT last_name, first_name FROM university.students WHERE student_number = '%(student_number)s'" % {'student_number': student_number}
                 rows_student = connect_pg.get_query(conn, query_student)  
 
@@ -122,6 +122,7 @@ class absent_service(Service):
                     'last_name': rows_student[0][1]
                 }
 
+                #Info du cours
                 query_courses = "SELECT starttime, endtime, course_type, teaching_id FROM university.courses WHERE id = %(id)s" % {'id': courses_id}
                 rows_courses = connect_pg.get_query(conn, query_courses)   
 
@@ -133,9 +134,9 @@ class absent_service(Service):
                     'duration_minutes': (rows_courses[0][1] - rows_courses[0][0]).total_seconds() /60
                 }
 
-
                 teaching_id = rows_courses[0][3]
 
+                #Info de la matière
                 query_teaching = "SELECT title FROM university.teachings WHERE id = %(id)s" % {'id': teaching_id}
                 rows_teaching = connect_pg.get_query(conn, query_teaching)   
 
@@ -144,11 +145,20 @@ class absent_service(Service):
                 }
                 return_rows_absent = self.get_absent_statement(row)
                 row_statement = {**return_rows_absent, **return_rows_student, **return_rows_courses, **return_rows_teaching}
-                returnStatement.append(row_statement)
+                rowsList.append(row_statement)       
+
+        # Tri de la liste par 'starttime' dans l'ordre décroissant
+        sorted_list = sorted(rowsList, key=lambda x: x['starttime'], reverse=True)
+
+        # Calculer l'offset pour la pagination
+        offset = (page - 1) * 5
+
+        # Sélection des 5 éléments pour la page spécifiée
+        returnStatement = sorted_list[offset:offset + 5]
 
         return returnStatement
-    
-    
+
+
     def get_absent_statement(self, row):
         """ Formats absent data in JSON """
         return {
