@@ -6,6 +6,14 @@ from services.personal_service import personal_service
 
 personal_app = Blueprint('personal_app', __name__)
 
+# @TO-CHANGE !!!!!!!!!!!!!!!!!!!!!!!!
+@personal_app.route('/personals/hours-by-teachers/get/<int:id>', methods=['GET'])
+def identify_course(id):
+    """Get number of hours of a teacher in JSON format"""
+    _service = personal_service()
+    returnStatement = _service.identify_course(id)
+    return jsonify(returnStatement)
+
 # Personals API
 # university.personals(@id, last_name, first_name, mail, phone_number)
 @personal_app.route('/personals/get', methods=['GET'])

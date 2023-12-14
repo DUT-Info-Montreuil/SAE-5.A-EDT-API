@@ -26,12 +26,63 @@ def get_course_by_id(id):
     returnStatement = _service.get_course_by_id(id)
     return jsonify(returnStatement)
 
-@course_app.route('/courses/hours-by-teachers/get/<int:id>', methods=['GET'])
-def identify_course(id):
-    """Get number of hours of a teacher in JSON format"""
+# ----------------------------------------------------------
+# Recuperer timetable
+# ----------------------------------------------------------
+
+@course_app.route('/courses/timetable/by-room', methods=['POST'])
+#@jwt_required()
+def get_timetable_by_room():
+    """ Get timetable by group"""
+    data = request.json
     _service = course_service()
-    returnStatement = _service.identify_course(id)
-    return jsonify(returnStatement)
+    returnStatement = _service.get_timetable_by_room(data)
+    if returnStatement == 'Invalid argument':
+        return returnStatement
+    else:
+        return jsonify({'edt' : returnStatement})
+    
+@course_app.route('/courses/timetable/by-teacher', methods=['POST'])
+#@jwt_required()   
+def get_timetable_by_teacher():
+    """ Get timetable by teacher_id"""
+    data = request.json
+    _service = course_service()
+    returnStatement = _service.get_timetable_by_teacher(data)
+    if returnStatement == 'Invalid argument':
+        return returnStatement
+    else:
+        return jsonify({'edt' : returnStatement})
+    
+@course_app.route('/courses/timetable/by-department-and-promotion', methods=['POST'])
+#@jwt_required()   
+def get_timetable_by_department():
+    """ Get timetable by teacher_id"""
+    data = request.json
+    _service = course_service()
+    returnStatement = _service.get_timetable_by_department(data)
+    if returnStatement == 'Invalid argument':
+        return returnStatement
+    else:
+        return jsonify({'edt' : returnStatement})
+    
+@course_app.route('/courses/timetable/by-student', methods=['POST'])
+#@jwt_required()   
+def get_timetable_by_student():
+    """ Get timetable by teacher_id"""
+    data = request.json
+    _service = course_service()
+    returnStatement = _service.get_timetable_by_student(data)
+    if returnStatement == 'Invalid argument':
+        return returnStatement
+    else:
+        return jsonify({'edt' : returnStatement})
+    
+# Identifier si user = prof ou student
+# @timetable_app.route('/timetable/get/bytoken', methods=['POST'])
+# @jwt_required()
+# def get_timetable_by_token():
+#     return jsonify(get_jwt_identity())
 
 # ----------------------------------------------------------
 # Add / Delete / Update

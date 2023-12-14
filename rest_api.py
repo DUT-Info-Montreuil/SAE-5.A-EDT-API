@@ -65,8 +65,6 @@ app.register_blueprint(participate_app)
 # Register the autentification controller
 app.register_blueprint(auth_app)
 
-app.register_blueprint(timetable_app)
-
 app.register_blueprint(user_app)
 
 cors = CORS(app, resources={r"*": {"origins": "*"}})
