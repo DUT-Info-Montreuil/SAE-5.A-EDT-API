@@ -40,6 +40,35 @@ class student_service(Service):
         query = "SELECT * FROM university.students WHERE department_id = '" + department_id + "' AND group_id = '" + group_id + "'"
         return self.execute_query_and_get_statement(query)
     
+    def get_student_by_prom(self, data):
+        department_id = data.get('department_id', '')
+        promotion = data.get('promotion', '')
+
+        if promotion == '' or department_id == '':
+            return "Null arguments" 
+
+        query = """select * from university.students 
+                INNER JOIN university.groups ON university.students.group_id = university.groups.id WHERE 
+                university.students.department_id = '""" + department_id + """'
+                AND university.groups.promotion = '""" + promotion + """'"""
+        
+        return self.execute_query_and_get_statement(query)
+    
+    # TO-DO recuperer un apprenti/ un parcours A / ...
+    # def get_student_by_group_type(self, data):
+    #     department_id = data.get('department_id', '')
+    #     promotion = data.get('promotion', '')
+
+    #     if promotion == '' or department_id == '':
+    #         return "Null arguments" 
+
+    #     query = """select * from university.students 
+    #             INNER JOIN university.groups ON university.students.group_id = university.groups.id WHERE 
+    #             university.students.department_id = '""" + department_id + """'
+    #             AND university.groups.promotion = '""" + promotion + """'"""
+        
+    #     return self.execute_query_and_get_statement(query)
+    
     def get_student_by_subgroup(self,data):
         department_id = data.get('department_id', '')
         group_id = data.get('group_id', '')
@@ -50,6 +79,8 @@ class student_service(Service):
 
         query = "SELECT * FROM university.students WHERE department_id = '" + department_id + "' AND group_id = '" + group_id + "' AND subgroup_id = '" + subgroup_id  + "'"
         return self.execute_query_and_get_statement(query)
+    
+    
     
     # ----------------------------------------------------------
     # Add / Delete / Update

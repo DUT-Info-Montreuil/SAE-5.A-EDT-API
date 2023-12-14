@@ -41,6 +41,14 @@ def get_student_by_group():
     returnStatement = _service.get_student_by_group(data)
     return jsonify(returnStatement)
 
+@student_app.route('/students/promotion-and-department', methods=['POST'])
+def get_student_by_prom():
+    """ Get a student by department in JSON format """
+    data = request.json
+    _service = student_service()
+    returnStatement = _service.get_student_by_prom(data)
+    return jsonify(returnStatement)
+
 @student_app.route('/students/subgroups', methods=['POST'])
 def get_student_by_subgroup():
     """ Get a student by department in JSON format """
