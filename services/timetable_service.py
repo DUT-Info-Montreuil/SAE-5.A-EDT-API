@@ -102,8 +102,6 @@ class timetable_service(Service):
         print(query)
         return self.execute_query_and_get_statement(query)
 
-
-
     def execute_query_and_get_statement(self, query):
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)

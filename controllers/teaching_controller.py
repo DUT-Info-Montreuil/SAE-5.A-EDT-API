@@ -51,6 +51,7 @@ def delete_teaching_by_id(id):
     else:
         return jsonify({"message": "Teaching not found!"}), 404
 
+# Faire une requete patch
 @teaching_app.route('/teachings/update/<int:id>', methods=['POST'])
 def update_teaching(id):
     """ Update a teaching record by ID using data in JSON format """
