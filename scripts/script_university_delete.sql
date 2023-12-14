@@ -1,44 +1,44 @@
--- Delete all records from absents
-DELETE FROM absents;
--- Delete all records from participates
-DELETE FROM participates;
--- Delete all records from responsibles
-DELETE FROM responsibles;
--- Delete all records from reminders
-DELETE FROM reminders;
--- Delete all records from courses
-DELETE FROM courses;
--- Delete all records from rooms
-DELETE FROM rooms;
--- Delete all records from 
-DELETE FROM teachings;
--- Delete all records from students
-DELETE FROM students;
--- Delete all records from subgroups
-DELETE FROM subgroups;
--- Delete all records from groups
-DELETE FROM groups;
--- Delete all records from roles
-DELETE FROM roles;
--- Delete all records from specializations
-DELETE FROM specializations;
--- Delete all records from departments
-DELETE FROM departments;
--- Delete all records from personals
-DELETE FROM personals;
+-- Delete all records from university.absents
+DELETE FROM university.absents;
+-- Delete all records from university.participates
+DELETE FROM university.participates;
+-- Delete all records from university.responsibles
+DELETE FROM university.responsibles;
+-- Delete all records from university.reminders
+DELETE FROM university.reminders;
+-- Delete all records from university.courses
+DELETE FROM university.courses;
+-- Delete all records from university.rooms
+DELETE FROM university.rooms;
+-- Delete all records from university.
+DELETE FROM university.teachings;
+-- Delete all records from university.students
+DELETE FROM university.students;
+-- Delete all records from university.subgroups
+DELETE FROM university.subgroups;
+-- Delete all records from university.groups
+DELETE FROM university.groups;
+-- Delete all records from university.roles
+DELETE FROM university.roles;
+-- Delete all records from university.specializations
+DELETE FROM university.specializations;
+-- Delete all records from university.departments
+DELETE FROM university.departments;
+-- Delete all records from university.personals
+DELETE FROM university.personals;
 
--- ALTER SEQUENCE students_id_seq RESTART WITH 1;
-ALTER SEQUENCE departments_id_seq RESTART WITH 1;
-ALTER SEQUENCE groups_id_seq RESTART WITH 1;
-ALTER SEQUENCE subgroups_id_seq RESTART WITH 1;
-ALTER SEQUENCE personals_id_seq RESTART WITH 1;
-ALTER SEQUENCE roles_id_seq RESTART WITH 1;
-ALTER SEQUENCE courses_id_seq RESTART WITH 1;
-ALTER SEQUENCE rooms_id_seq RESTART WITH 1;
-ALTER SEQUENCE teachings_id_seq RESTART WITH 1;
-ALTER SEQUENCE specializations_id_seq RESTART WITH 1;
-ALTER SEQUENCE reminders_id_seq RESTART WITH 1;
-ALTER SEQUENCE absents_id_seq RESTART WITH 1;
-ALTER SEQUENCE participates_id_seq RESTART WITH 1;
-ALTER SEQUENCE responsibles_id_seq RESTART WITH 1;
+-- ALTER SEQUENCE university_students_id_seq RESTART WITH 1;
+ALTER SEQUENCE university_departments_id_seq RESTART WITH 1;
+ALTER SEQUENCE university_groups_id_seq RESTART WITH 1;
+ALTER SEQUENCE university_subgroups_id_seq RESTART WITH 1;
+ALTER SEQUENCE university_personals_id_seq RESTART WITH 1;
+ALTER SEQUENCE university_roles_id_seq RESTART WITH 1;
+ALTER SEQUENCE university_courses_id_seq RESTART WITH 1;
+ALTER SEQUENCE university_rooms_id_seq RESTART WITH 1;
+ALTER SEQUENCE university_teachings_id_seq RESTART WITH 1;
+ALTER SEQUENCE university_specializations_id_seq RESTART WITH 1;
+ALTER SEQUENCE university_reminders_id_seq RESTART WITH 1;
+ALTER SEQUENCE university_absents_id_seq RESTART WITH 1;
+ALTER SEQUENCE university_participates_id_seq RESTART WITH 1;
+ALTER SEQUENCE university_responsibles_id_seq RESTART WITH 1;
 

@@ -23,7 +23,7 @@
 
 -- delete from users;
 
-INSERT INTO personals (personal_code, last_name, first_name, mail, phone_number, user_username)
+INSERT INTO university.personals (personal_code, last_name, first_name, mail, phone_number, user_username)
 VALUES
     ('PB' ,'Bonnot', 'Philippe', 'p.bonnot@iut.univ-paris8.fr', '07.67.59.80.46', 'pbonnot'), -- username : pbonnot
     ('MyL' ,'Lamolle', 'Myriam', 'm.lamolle@iut.univ-paris8.fr', '06.68.99.99.67', 'mlamolle'), -- username : mlamolle
@@ -59,7 +59,7 @@ VALUES
 ;
 
 -- roles(@id, name, description, personal_id)
-INSERT INTO roles (name, description, personal_id)
+INSERT INTO university.roles (name, description, personal_id)
 VALUES 
     ('Directrice', 'Description of the role', (SELECT id FROM personals WHERE mail = 'm.lamolle@iut.univ-paris8.fr')),
     ('Cheffe de département INFO', '', (SELECT id FROM personals WHERE mail = 'a.ricordeau@iut.univ-paris8.fr')),
@@ -112,28 +112,28 @@ VALUES
 
 -- groups(@id, promotion, type, #department_id)
 -- Insert group A for each promotion for Info department
-INSERT INTO groups (promotion, type, department_id)
+INSERT INTO university.groups (promotion, type, department_id)
 VALUES
     (1, 'A', 1),
     (2, 'A', 1),
     (3, 'A', 1)
 ;
 -- Insert group A for each promotion for QLIO department
-INSERT INTO groups (promotion, type, department_id)
+INSERT INTO university.groups (promotion, type, department_id)
 VALUES
     (1, 'A', 2),
     (2, 'A', 2),
     (3, 'A', 2)
 ;
 -- Insert group A for each promotion for INFOCOM department
-INSERT INTO groups (promotion, type, department_id)
+INSERT INTO university.groups (promotion, type, department_id)
 VALUES
     (1, 'A', 3),
     (2, 'A', 3),
     (3, 'A', 3)
 ;
 -- Insert group A for each promotion for GACO department
-INSERT INTO groups (promotion, type, department_id)
+INSERT INTO university.groups (promotion, type, department_id)
 VALUES
     (2, 'A', 4),
     (1, 'A', 4),
@@ -141,28 +141,28 @@ VALUES
 ;
 
 -- Insert group B for each promotion for Info department
-INSERT INTO groups (promotion, type, department_id)
+INSERT INTO university.groups (promotion, type, department_id)
 VALUES
     (1, 'B', 1),
     (2, 'B', 1),
     (3, 'B', 1)
 ;
 -- Insert group B for each promotion for QLIO department
-INSERT INTO groups (promotion, type, department_id)
+INSERT INTO university.groups (promotion, type, department_id)
 VALUES
     (1, 'B', 2),
     (2, 'B', 2),
     (3, 'B', 2)
 ;
 -- Insert group B for each promotion for INFOCOM department
-INSERT INTO groups (promotion, type, department_id)
+INSERT INTO university.groups (promotion, type, department_id)
 VALUES
     (1, 'B', 3),
     (2, 'B', 3),
     (3, 'B', 3)
 ;
 -- Insert group B for each promotion for GACO department
-INSERT INTO groups (promotion, type, department_id)
+INSERT INTO university.groups (promotion, type, department_id)
 VALUES
     (2, 'B', 4),
     (1, 'B', 4),
@@ -170,28 +170,28 @@ VALUES
 ;
 
 -- Insert group C for each promotion for Info department
-INSERT INTO groups (promotion, type, department_id)
+INSERT INTO university.groups (promotion, type, department_id)
 VALUES
     (1, 'C', 1),
     (2, 'C', 1),
     (3, 'C', 1)
 ;
 -- Insert group C for each promotion for QLIO department
-INSERT INTO groups (promotion, type, department_id)
+INSERT INTO university.groups (promotion, type, department_id)
 VALUES
     (1, 'C', 2),
     (2, 'C', 2),
     (3, 'C', 2)
 ;
 -- Insert group C for each promotion for INFOCOM department
-INSERT INTO groups (promotion, type, department_id)
+INSERT INTO university.groups (promotion, type, department_id)
 VALUES
     (1, 'C', 3),
     (2, 'C', 3),
     (3, 'C', 3)
 ;
 -- Insert group C for each promotion for GACO department
-INSERT INTO groups (promotion, type, department_id)
+INSERT INTO university.groups (promotion, type, department_id)
 VALUES
     (2, 'C', 4),
     (1, 'C', 4),
@@ -199,7 +199,7 @@ VALUES
 ;
 
 -- Insert for promotion 2 and 3, groups App for each department
-INSERT INTO groups (promotion, type, department_id)
+INSERT INTO university.groups (promotion, type, department_id)
 VALUES
     -- (1, 'App', 1), -- 1st year Info in apprenticeship
     (2, 'APP', 1),
@@ -217,16 +217,16 @@ VALUES
 
 -- subgroups(@id, name, #group_id)
 -- For subgroup 1 for each group
-INSERT INTO subgroups (name, group_id) SELECT type || '1', id FROM groups;
+INSERT INTO university.subgroups (name, group_id) SELECT type || '1', id FROM groups;
 -- For subgroup 2 for each group
-INSERT INTO subgroups (name, group_id) SELECT type || '2', id FROM groups;
+INSERT INTO university.subgroups (name, group_id) SELECT type || '2', id FROM groups;
 -- For subgroup 3 for each group
-INSERT INTO subgroups (name, group_id) SELECT type || '3', id FROM groups;
+INSERT INTO university.subgroups (name, group_id) SELECT type || '3', id FROM groups;
 -- For subgroup app for each group
-INSERT INTO subgroups (name, group_id) SELECT type || 'app', id FROM groups;
+INSERT INTO university.subgroups (name, group_id) SELECT type || 'app', id FROM groups;
 
 -- rooms(@id, code, capacity, has_computer, has_projector)
-INSERT INTO rooms (code, capacity, has_computer, has_projector) VALUES
+INSERT INTO university.rooms (code, capacity, has_computer, has_projector) VALUES
     ('A0-03 (Libre)', 0, 't', 'f'),
     ('A0-04 (musique)', 0, 't', 'f'),
     ('A0-05 (L)', 0, 'f', 'f'),
@@ -309,7 +309,7 @@ INSERT INTO rooms (code, capacity, has_computer, has_projector) VALUES
 
 -- specializations(@id, code, name, #department_id)
 -- Parcours - INFO
-INSERT INTO specializations (code, name, department_id) 
+INSERT INTO university.specializations (code, name, department_id) 
 VALUES
     ('INFO', 'Semestre de préparation au parcours',(SELECT id FROM departments WHERE name = 'INFO')),
     ('INFO_TC', 'TRONC COMMUN',(SELECT id FROM departments WHERE name = 'INFO')),
@@ -318,7 +318,7 @@ VALUES
 ;
 
 -- Parcours - QLIO
-INSERT INTO specializations (code, name, department_id) 
+INSERT INTO university.specializations (code, name, department_id) 
 VALUES
     ('QLIO', 'Semestre de préparation au parcours',(SELECT id FROM departments WHERE name = 'QLIO')),
     ('QLIO_TC', 'TRONC COMMUN',(SELECT id FROM departments WHERE name = 'QLIO')),
@@ -327,7 +327,7 @@ VALUES
 ;
 
 -- Parcours - INFOCOM
-INSERT INTO specializations (code, name, department_id) 
+INSERT INTO university.specializations (code, name, department_id) 
 VALUES
     ('INFOCOM', 'Semestre de préparation au parcours',(SELECT id FROM departments WHERE name = 'INFOCOM')),
     ('INFOCOM_TC', 'TRONC COMMUN',(SELECT id FROM departments WHERE name = 'INFOCOM')),
@@ -335,7 +335,7 @@ VALUES
 ;
 
 -- Parcours - GACO
-INSERT INTO specializations (code, name, department_id) 
+INSERT INTO university.specializations (code, name, department_id) 
 VALUES
     ('GACO', 'Semestre de préparation au parcours',(SELECT id FROM departments WHERE name = 'GACO')),
     ('GACO_TC', 'TRONC COMMUN',(SELECT id FROM departments WHERE name = 'GACO')),
@@ -346,7 +346,7 @@ VALUES
 
 -- teachings(@id, title, hour_number, semestre, sequence, teaching_type #specialization_id)
 -- BUT INFO
-INSERT INTO teachings (title, hour_number, semestre, sequence, teaching_type , specialization_id)
+INSERT INTO university.teachings (title, hour_number, semestre, sequence, teaching_type , specialization_id)
 VALUES
     --Semestre 1 INFO
     --Ressources cœur de compétences (RCC)
@@ -450,7 +450,7 @@ VALUES
 ;
 
 -- BUT QLIO
-INSERT INTO teachings (title, hour_number, semestre, sequence, teaching_type , specialization_id)
+INSERT INTO university.teachings (title, hour_number, semestre, sequence, teaching_type , specialization_id)
 VALUES
     -- SEMESTRE 1
     -- SAE
@@ -553,7 +553,7 @@ VALUES
 ;
 
 -- BUT GACO
-INSERT INTO teachings (title, hour_number, semestre, sequence, teaching_type , specialization_id) 
+INSERT INTO university.teachings (title, hour_number, semestre, sequence, teaching_type , specialization_id) 
 VALUES
     -- SEMESTRE 1
     ('Gestion de projet', 0, 1, '08', 'RCC', (SELECT id FROM specializations WHERE code = 'GACO')),
@@ -578,7 +578,7 @@ VALUES
 ;
 
 -- BUT INFOCOM
-INSERT INTO teachings (title, hour_number, semestre, sequence, teaching_type , specialization_id) 
+INSERT INTO university.teachings (title, hour_number, semestre, sequence, teaching_type , specialization_id) 
 VALUES
     -- SEMESTRE 1
     ('MEDIAS, USAGES ET MARCHES', 0, 1, '01', 'RCC', (SELECT id FROM specializations WHERE code = 'INFOCOM')),

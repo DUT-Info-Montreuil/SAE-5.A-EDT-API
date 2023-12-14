@@ -7,7 +7,7 @@
 
 -- Account for personnal
 -- users(@username, password)
-INSERT INTO users (username, password)
+INSERT INTO university.users (username, password)
 VALUES
     ('pbonnot', '$2b$12$NyUZ8nMD7n9cbV.yBUbNVOom1TDWUUviZgXku63jMqPMMNzDebBRe'), -- pwd : pbonnot
     ('mlamolle', '$2b$12$VxKF33M6CjhwWw8WW50JFey/d0NgM4SFVRFfuBDr9n8lRzdZ6j33W'), -- pwd : kOSz3QNq1F),
@@ -44,7 +44,7 @@ VALUES
 
 -- Dev account in INFO departement
 -- users(@username, password)
-INSERT INTO users (username, password)
+INSERT INTO university.users (username, password)
 VALUES
 	('hugo', '$2b$12$suR4RUnowOZPYUkJxAsb5OuaNO.xw2VDberXSoHuez1ZT9/xeH9cC'), -- pwd : hugohugohugo
 	('mtoure', '$2b$12$n9o/jbKgDAJrpC1ejpfWcug6dRTh.wpEmXdv2o4nWJHtiQVYhFZAa'), -- pwd : Mehedi_Toure
@@ -56,7 +56,7 @@ VALUES
 
 -- FAKE for departement INFO
 -- users(@username, password)
-INSERT INTO users (username, password)
+INSERT INTO university.users (username, password)
 VALUES
 	('yhanma', '$2b$12$/Hu/tJQwfN5UYeTQTcQlYOHJsiFiTP4QSXlEtcJegSljsz1x2deje'), -- pwd : @~f=,6}n/%]v
 	('bhanma', '$2b$12$0d8XHQR3kPq1Jm/hW2s05u5.PrLFriCynsXozbhW5sze9aMRzuQnW'), -- pwd : Z1:t}uv?"<Mh
@@ -421,7 +421,7 @@ VALUES
 ;
 -- FAKE for departement QLIO
 -- users(@username, password)
-INSERT INTO users (username, password)
+INSERT INTO university.users (username, password)
 VALUES
 	('nuzumaki', '$2b$12$9PmKASZM1hE8u/I/ChNmK.3NdF45gOpwISfceLrJMLsavYpm0Dzpq'), -- pwd : 1@'N/$}[K=24
 	('suchiha', '$2b$12$ZY8HGxKBoDjwOIztBig7munPoGm2JhY9eMMNuefYzmlK/jP6TxxlO'), -- pwd : w]+jXH'TrG,4
@@ -787,7 +787,7 @@ VALUES
 
 -- FAKE for departement INFOCOM
 -- users(@username, password)
-INSERT INTO users (username, password)
+INSERT INTO university.users (username, password)
 VALUES
 	('iyuji', '$2b$12$h6B09cEG.kERdxmfRB1TieNBCpD9eUJZY9Z0./sPpHpfXwlKewyta'), -- pwd : Al`ERTd<Vy9v
 	('sgojo', '$2b$12$N3I47V5GoDN89Ubl5aeAUO7Rk8tyWcbycRFdOksTrRir7uRytYu0i'), -- pwd : :E<7)_W11[5P
@@ -1153,7 +1153,7 @@ VALUES
 
 -- FAKE for departement GACO
 -- users(@username, password)
-INSERT INTO users (username, password)
+INSERT INTO university.users (username, password)
 VALUES
 	('ikurosaki', '$2b$12$6XWo52wcpDbz5n66/k9fVeUPvcHRlY5BtvDln33bJkBInudHkaNJa'), -- pwd : *1(`{^=`}_/%
 	('rkuchiki', '$2b$12$pdCdleMtnGE/DVBpV8z0aOdP09RgVN7KFI2L5LRbPnantfx2e/0xa'), -- pwd : z:|V(on1|pLS
