@@ -1,8 +1,8 @@
 #!/usr/bin/python
 import psycopg2
-from config import config
+from configuration.config import config
  
-def connect(filename='config.ini', section='postgresql'):
+def connect(filename=r'configuration\config.ini', section='postgresql'):
     """ Connect to the PostgreSQL database server """
     conn = None
     try:

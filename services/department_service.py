@@ -1,6 +1,6 @@
 from services.main_service import Service
 
-import connect_pg
+from configuration import connect_pg
 
 class department_service(Service):
     # Departments API
