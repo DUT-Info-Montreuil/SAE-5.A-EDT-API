@@ -26,359 +26,359 @@ VALUES
     ('71530085', 'Craig', 'Russell', 'crussell@iut.univ-paris8.fr', '06.59.53.18.00', 'crussell', 1, 15, 15), -- username : crussell 
     ('89352328', 'Laura', 'Gregory', 'lgregory@iut.univ-paris8.fr', '06.54.56.02.04', 'lgregory', 1, 15, 15), -- username : lgregory 
     ('73388259', 'Vincent', 'Fisher', 'vfisher@iut.univ-paris8.fr', '06.20.01.39.30', 'vfisher', 1, 15, 15), -- username : vfisher 
-    ('55571619', 'Adrian', 'Vasquez', 'avasquez1@iut.univ-paris8.fr', '06.75.46.29.93', 'avasquez1', 1, 15, 15), -- username : avasquez1 
-    ('93243283', 'Lauren', 'Miller', 'lmiller@iut.univ-paris8.fr', '06.70.85.39.54', 'lmiller', 1, 15, 15), -- username : lmiller 
-    ('15382554', 'Jamie', 'Jackson', 'jjackson3@iut.univ-paris8.fr', '07.39.17.17.12', 'jjackson3', 1, 15, 15), -- username : jjackson3 
-    ('74935450', 'Alexandra', 'Hamilton', 'ahamilton@iut.univ-paris8.fr', '06.85.31.21.60', 'ahamilton', 1, 15, 59), -- username : ahamilton 
-    ('16106025', 'Kristen', 'Robinson', 'krobinson1@iut.univ-paris8.fr', '07.18.42.16.10', 'krobinson1', 1, 15, 59), -- username : krobinson1 
-    ('99270479', 'Grant', 'Smith', 'gsmith@iut.univ-paris8.fr', '07.79.87.78.43', 'gsmith', 1, 15, 59), -- username : gsmith 
-    ('96677459', 'Bobby', 'Nelson', 'bnelson@iut.univ-paris8.fr', '07.09.12.11.85', 'bnelson', 1, 15, 59), -- username : bnelson 
-    ('57045266', 'Laura', 'Olson', 'lolson@iut.univ-paris8.fr', '06.92.70.92.97', 'lolson', 1, 15, 59), -- username : lolson 
-    ('05879612', 'Sherry', 'Smith', 'ssmith1@iut.univ-paris8.fr', '06.27.80.21.57', 'ssmith1', 1, 15, 59), -- username : ssmith1 
-    ('92734986', 'David', 'Warner', 'dwarner@iut.univ-paris8.fr', '07.98.31.81.18', 'dwarner', 1, 15, 59), -- username : dwarner 
-    ('84459738', 'Kenneth', 'Stewart', 'kstewart@iut.univ-paris8.fr', '06.07.27.70.17', 'kstewart', 1, 15, 59), -- username : kstewart 
-    ('56827659', 'Jeremy', 'Brown', 'jbrown2@iut.univ-paris8.fr', '06.98.66.49.23', 'jbrown2', 1, 15, 59), -- username : jbrown2 
-    ('42052066', 'Jennifer', 'Mitchell', 'jmitchell@iut.univ-paris8.fr', '07.53.40.75.40', 'jmitchell', 1, 15, 59), -- username : jmitchell 
-    ('08341526', 'Matthew', 'Bradley', 'mbradley@iut.univ-paris8.fr', '06.68.36.75.31', 'mbradley', 1, 15, 103), -- username : mbradley 
-    ('11241892', 'Kevin', 'Ward', 'kward@iut.univ-paris8.fr', '06.28.91.74.20', 'kward', 1, 15, 103), -- username : kward 
-    ('65772919', 'Jason', 'Zamora', 'jzamora@iut.univ-paris8.fr', '07.74.72.14.06', 'jzamora', 1, 15, 103), -- username : jzamora 
-    ('16487090', 'Martin', 'Humphrey', 'mhumphrey@iut.univ-paris8.fr', '07.24.67.74.65', 'mhumphrey', 1, 15, 103), -- username : mhumphrey 
-    ('47277510', 'Mark', 'Johnson', 'mjohnson2@iut.univ-paris8.fr', '07.22.88.94.55', 'mjohnson2', 1, 15, 103), -- username : mjohnson2 
-    ('34787446', 'Travis', 'Hopkins', 'thopkins@iut.univ-paris8.fr', '07.06.47.39.54', 'thopkins', 1, 15, 103), -- username : thopkins 
-    ('90625942', 'Brandon', 'Cobb', 'bcobb@iut.univ-paris8.fr', '06.50.59.61.52', 'bcobb', 1, 15, 103), -- username : bcobb 
-    ('82676250', 'Zachary', 'Simmons', 'zsimmons@iut.univ-paris8.fr', '06.00.57.70.06', 'zsimmons', 1, 15, 103), -- username : zsimmons 
-    ('99932870', 'Samantha', 'White', 'swhite1@iut.univ-paris8.fr', '07.69.23.17.25', 'swhite1', 1, 15, 103), -- username : swhite1 
-    ('17814527', 'Lauren', 'Beard', 'lbeard@iut.univ-paris8.fr', '07.70.07.87.83', 'lbeard', 1, 15, 103), -- username : lbeard 
-    ('61291902', 'Timothy', 'Bauer', 'tbauer@iut.univ-paris8.fr', '06.42.06.78.03', 'tbauer', 1, 13, 13), -- username : tbauer 
-    ('87898875', 'John', 'Stevens', 'jstevens@iut.univ-paris8.fr', '07.99.04.64.44', 'jstevens', 1, 13, 13), -- username : jstevens 
-    ('74570494', 'Matthew', 'Garcia', 'mgarcia1@iut.univ-paris8.fr', '06.70.26.44.84', 'mgarcia1', 1, 13, 13), -- username : mgarcia1 
-    ('11983616', 'Debbie', 'Griffith', 'dgriffith1@iut.univ-paris8.fr', '07.77.81.61.16', 'dgriffith1', 1, 13, 13), -- username : dgriffith1 
-    ('85839074', 'Patricia', 'Miller', 'pmiller1@iut.univ-paris8.fr', '07.71.38.48.33', 'pmiller1', 1, 13, 13), -- username : pmiller1 
-    ('02558325', 'Connor', 'Scott', 'cscott@iut.univ-paris8.fr', '06.53.76.78.28', 'cscott', 1, 13, 13), -- username : cscott 
-    ('12457808', 'Angela', 'White', 'awhite1@iut.univ-paris8.fr', '07.61.13.16.08', 'awhite1', 1, 13, 13), -- username : awhite1 
-    ('47156601', 'Shannon', 'Ball', 'sball@iut.univ-paris8.fr', '07.62.47.09.83', 'sball', 1, 13, 13), -- username : sball 
-    ('79123117', 'Michael', 'Jennings', 'mjennings@iut.univ-paris8.fr', '06.06.86.76.71', 'mjennings', 1, 13, 13), -- username : mjennings 
-    ('00111812', 'Alexander', 'Roth', 'aroth@iut.univ-paris8.fr', '06.74.01.28.30', 'aroth', 1, 13, 13), -- username : aroth 
-    ('30092089', 'Ryan', 'Rivera', 'rrivera@iut.univ-paris8.fr', '07.31.62.15.92', 'rrivera', 1, 13, 57), -- username : rrivera 
-    ('29991330', 'Ernest', 'Richard', 'erichard@iut.univ-paris8.fr', '06.74.59.19.69', 'erichard', 1, 13, 57), -- username : erichard 
-    ('91425260', 'Mary', 'Gutierrez', 'mgutierrez1@iut.univ-paris8.fr', '06.40.61.42.22', 'mgutierrez1', 1, 13, 57), -- username : mgutierrez1 
-    ('78527635', 'Daniel', 'Stein', 'dstein@iut.univ-paris8.fr', '07.96.54.81.26', 'dstein', 1, 13, 57), -- username : dstein 
-    ('41616270', 'Marvin', 'Patel', 'mpatel@iut.univ-paris8.fr', '07.32.79.08.65', 'mpatel', 1, 13, 57), -- username : mpatel 
-    ('38271798', 'Christopher', 'Gray', 'cgray@iut.univ-paris8.fr', '06.58.41.18.76', 'cgray', 1, 13, 57), -- username : cgray 
-    ('96423171', 'Lisa', 'Williams', 'lwilliams1@iut.univ-paris8.fr', '06.27.69.05.91', 'lwilliams1', 1, 13, 57), -- username : lwilliams1 
-    ('63187888', 'Sonia', 'Hall', 'shall@iut.univ-paris8.fr', '06.09.18.08.56', 'shall', 1, 13, 57), -- username : shall 
-    ('94359465', 'Mary', 'Watson', 'mwatson1@iut.univ-paris8.fr', '06.33.58.86.98', 'mwatson1', 1, 13, 57), -- username : mwatson1 
-    ('29310058', 'Derrick', 'Gonzalez', 'dgonzalez@iut.univ-paris8.fr', '06.28.12.40.53', 'dgonzalez', 1, 13, 57), -- username : dgonzalez 
-    ('54031514', 'Alicia', 'Robinson', 'arobinson@iut.univ-paris8.fr', '06.07.11.42.31', 'arobinson', 1, 13, 101), -- username : arobinson 
-    ('02652655', 'Debbie', 'Kane', 'dkane@iut.univ-paris8.fr', '06.10.87.13.50', 'dkane', 1, 13, 101), -- username : dkane 
-    ('34767318', 'Andrew', 'Klein', 'aklein1@iut.univ-paris8.fr', '07.44.71.53.82', 'aklein1', 1, 13, 101), -- username : aklein1 
-    ('73424439', 'Patrick', 'Obrien', 'pobrien@iut.univ-paris8.fr', '07.19.10.00.21', 'pobrien', 1, 13, 101), -- username : pobrien 
-    ('21527621', 'Cynthia', 'Foley', 'cfoley@iut.univ-paris8.fr', '07.17.60.87.85', 'cfoley', 1, 13, 101), -- username : cfoley 
-    ('74714761', 'Juan', 'Garcia', 'jgarcia1@iut.univ-paris8.fr', '07.56.73.31.77', 'jgarcia1', 1, 13, 101), -- username : jgarcia1 
-    ('92059001', 'Sabrina', 'Brown', 'sbrown@iut.univ-paris8.fr', '07.01.87.05.24', 'sbrown', 1, 13, 101), -- username : sbrown 
-    ('68674097', 'Marcus', 'Skinner', 'mskinner@iut.univ-paris8.fr', '07.56.96.95.00', 'mskinner', 1, 13, 101), -- username : mskinner 
-    ('19913242', 'Michael', 'Fowler', 'mfowler@iut.univ-paris8.fr', '07.49.92.62.19', 'mfowler', 1, 13, 101), -- username : mfowler 
-    ('38601147', 'Dwayne', 'Morrison', 'dmorrison@iut.univ-paris8.fr', '07.76.90.33.65', 'dmorrison', 1, 13, 101), -- username : dmorrison 
-    ('09500750', 'Nicole', 'White', 'nwhite@iut.univ-paris8.fr', '06.77.86.99.06', 'nwhite', 1, 14, 14), -- username : nwhite 
-    ('00642225', 'Kristin', 'Johnson', 'kjohnson1@iut.univ-paris8.fr', '07.07.62.56.15', 'kjohnson1', 1, 14, 14), -- username : kjohnson1 
-    ('56066929', 'Donald', 'Santos', 'dsantos@iut.univ-paris8.fr', '06.46.29.97.13', 'dsantos', 1, 14, 14), -- username : dsantos 
-    ('23546788', 'Donna', 'Foster', 'dfoster@iut.univ-paris8.fr', '07.71.41.54.06', 'dfoster', 1, 14, 14), -- username : dfoster 
-    ('22048201', 'James', 'Smith', 'jsmith4@iut.univ-paris8.fr', '07.77.92.14.18', 'jsmith4', 1, 14, 14), -- username : jsmith4 
-    ('40438249', 'James', 'Santiago', 'jsantiago@iut.univ-paris8.fr', '07.54.61.55.30', 'jsantiago', 1, 14, 14), -- username : jsantiago 
-    ('37107617', 'Gary', 'Martin', 'gmartin@iut.univ-paris8.fr', '06.79.71.94.17', 'gmartin', 1, 14, 14), -- username : gmartin 
-    ('52859475', 'Kari', 'Williams', 'kwilliams@iut.univ-paris8.fr', '07.48.68.17.77', 'kwilliams', 1, 14, 14), -- username : kwilliams 
-    ('69993633', 'Michael', 'Henry', 'mhenry@iut.univ-paris8.fr', '06.65.90.84.20', 'mhenry', 1, 14, 14), -- username : mhenry 
-    ('70190947', 'Shawn', 'Velez', 'svelez1@iut.univ-paris8.fr', '06.71.16.12.20', 'svelez1', 1, 14, 14), -- username : svelez1 
-    ('33834534', 'Lori', 'Jennings', 'ljennings@iut.univ-paris8.fr', '07.37.27.73.40', 'ljennings', 1, 14, 58), -- username : ljennings 
-    ('38495728', 'Michael', 'Davis', 'mdavis2@iut.univ-paris8.fr', '07.69.12.55.37', 'mdavis2', 1, 14, 58), -- username : mdavis2 
-    ('08854418', 'Ryan', 'Reeves', 'rreeves@iut.univ-paris8.fr', '07.30.64.71.18', 'rreeves', 1, 14, 58), -- username : rreeves 
-    ('74349205', 'Jenna', 'Jackson', 'jjackson2@iut.univ-paris8.fr', '07.65.10.03.09', 'jjackson2', 1, 14, 58), -- username : jjackson2
-    ('14349828', 'Sherry', 'Kemp', 'skemp@iut.univ-paris8.fr', '06.06.38.67.24', 'skemp', 1, 14, 58), -- username : skemp 
-    ('13584401', 'James', 'Peters', 'jpeters@iut.univ-paris8.fr', '06.16.30.18.43', 'jpeters', 1, 14, 58), -- username : jpeters 
-    ('86321711', 'Kristy', 'Hunt', 'khunt@iut.univ-paris8.fr', '07.59.87.89.80', 'khunt', 1, 14, 58), -- username : khunt 
-    ('02492664', 'Mark', 'Dudley', 'mdudley@iut.univ-paris8.fr', '06.98.31.75.95', 'mdudley', 1, 14, 58), -- username : mdudley 
-    ('81833335', 'Andrew', 'Vasquez', 'avasquez@iut.univ-paris8.fr', '06.17.12.46.78', 'avasquez', 1, 14, 58), -- username : avasquez 
-    ('90527699', 'Kelly', 'Doyle', 'kdoyle@iut.univ-paris8.fr', '06.43.04.39.67', 'kdoyle', 1, 14, 58), -- username : kdoyle 
-    ('86912725', 'Roy', 'Clarke', 'rclarke@iut.univ-paris8.fr', '06.18.81.48.97', 'rclarke', 1, 14, 102), -- username : rclarke 
-    ('54596217', 'Heidi', 'Moore', 'hmoore1@iut.univ-paris8.fr', '07.46.34.48.14', 'hmoore1', 1, 14, 102), -- username : hmoore1 
-    ('42729938', 'Kayla', 'Cox', 'kcox@iut.univ-paris8.fr', '07.13.96.35.27', 'kcox', 1, 14, 102), -- username : kcox 
-    ('38329565', 'Anne', 'Willis', 'awillis1@iut.univ-paris8.fr', '07.14.72.24.78', 'awillis1', 1, 14, 102), -- username : awillis1 
-    ('00568988', 'Joyce', 'Skinner', 'jskinner@iut.univ-paris8.fr', '06.87.76.33.60', 'jskinner', 1, 14, 102), -- username : jskinner 
-    ('20218411', 'Andrea', 'James', 'ajames@iut.univ-paris8.fr', '06.12.61.09.81', 'ajames', 1, 14, 102), -- username : ajames 
-    ('45184670', 'Jamie', 'Maddox', 'jmaddox@iut.univ-paris8.fr', '06.94.71.10.41', 'jmaddox', 1, 14, 102), -- username : jmaddox 
-    ('87850228', 'Jerry', 'Cooley', 'jcooley@iut.univ-paris8.fr', '07.19.57.29.72', 'jcooley', 1, 14, 102), -- username : jcooley 
-    ('73785487', 'Stacy', 'Gould', 'sgould@iut.univ-paris8.fr', '06.54.37.92.66', 'sgould', 1, 14, 102), -- username : sgould 
-    ('16520846', 'Ralph', 'Peters', 'rpeters@iut.univ-paris8.fr', '07.73.44.41.91', 'rpeters', 1, 14, 102), -- username : rpeters 
-    ('72229698', 'Laura', 'White', 'lwhite1@iut.univ-paris8.fr', '07.59.03.02.68', 'lwhite1', 1, 2, 2), -- username : lwhite1 
-    ('30978751', 'Christopher', 'Gonzalez', 'cgonzalez@iut.univ-paris8.fr', '07.38.72.68.78', 'cgonzalez', 1, 2, 2), -- username : cgonzalez 
-    ('82621157', 'Sarah', 'Jordan', 'sjordan1@iut.univ-paris8.fr', '06.24.38.84.24', 'sjordan1', 1, 2, 2), -- username : sjordan1 
-    ('09485438', 'James', 'Love', 'jlove@iut.univ-paris8.fr', '06.15.20.80.36', 'jlove', 1, 2, 2), -- username : jlove 
-    ('28816470', 'Levi', 'Heath', 'lheath@iut.univ-paris8.fr', '07.21.04.46.53', 'lheath', 1, 2, 2), -- username : lheath 
-    ('82031888', 'Brandy', 'Ramos', 'bramos@iut.univ-paris8.fr', '06.99.68.56.46', 'bramos', 1, 2, 2), -- username : bramos 
-    ('65572328', 'Daniel', 'Brown', 'dbrown1@iut.univ-paris8.fr', '07.12.92.94.71', 'dbrown1', 1, 2, 2), -- username : dbrown1 
-    ('54838849', 'Mark', 'Phillips', 'mphillips@iut.univ-paris8.fr', '06.24.88.10.27', 'mphillips', 1, 2, 2), -- username : mphillips 
-    ('81411527', 'Larry', 'Jackson', 'ljackson@iut.univ-paris8.fr', '07.30.59.03.13', 'ljackson', 1, 2, 2), -- username : ljackson 
-    ('34084059', 'Donald', 'Smith', 'dsmith2@iut.univ-paris8.fr', '06.37.46.64.08', 'dsmith2', 1, 2, 2), -- username : dsmith2 
-    ('39262602', 'Patricia', 'Klein', 'pklein@iut.univ-paris8.fr', '06.43.62.51.81', 'pklein', 1, 2, 46), -- username : pklein 
-    ('40199913', 'Jonathan', 'Martinez', 'jmartinez@iut.univ-paris8.fr', '07.72.99.88.41', 'jmartinez', 1, 2, 46), -- username : jmartinez 
-    ('21700930', 'Jesse', 'Reynolds', 'jreynolds@iut.univ-paris8.fr', '07.70.37.78.75', 'jreynolds', 1, 2, 46), -- username : jreynolds 
-    ('52613544', 'Caleb', 'Jarvis', 'cjarvis@iut.univ-paris8.fr', '06.01.14.37.59', 'cjarvis', 1, 2, 46), -- username : cjarvis 
-    ('25405560', 'Annette', 'Cook', 'acook@iut.univ-paris8.fr', '07.78.61.33.89', 'acook', 1, 2, 46), -- username : acook 
-    ('01698392', 'Renee', 'Gonzales', 'rgonzales@iut.univ-paris8.fr', '07.87.87.99.96', 'rgonzales', 1, 2, 46), -- username : rgonzales 
-    ('25772667', 'Laura', 'Campbell', 'lcampbell1@iut.univ-paris8.fr', '06.33.13.09.83', 'lcampbell1', 1, 2, 46), -- username : lcampbell1 
-    ('65456495', 'Angela', 'Perry', 'aperry1@iut.univ-paris8.fr', '07.70.39.37.19', 'aperry1', 1, 2, 46), -- username : aperry1 
-    ('62175240', 'John', 'Johnston', 'jjohnston@iut.univ-paris8.fr', '06.70.24.87.85', 'jjohnston', 1, 2, 46), -- username : jjohnston 
-    ('16208979', 'Stephanie', 'Gordon', 'sgordon@iut.univ-paris8.fr', '06.08.90.26.61', 'sgordon', 1, 2, 46), -- username : sgordon 
-    ('17874761', 'Cynthia', 'Sanchez', 'csanchez@iut.univ-paris8.fr', '06.29.39.13.19', 'csanchez', 1, 2, 90), -- username : csanchez 
-    ('44961166', 'Laura', 'Shelton', 'lshelton@iut.univ-paris8.fr', '06.22.20.55.04', 'lshelton', 1, 2, 90), -- username : lshelton 
-    ('98873456', 'Angela', 'Adams', 'aadams2@iut.univ-paris8.fr', '07.40.50.34.95', 'aadams2', 1, 2, 90), -- username : aadams2 
-    ('73208753', 'Raymond', 'Williams', 'rwilliams@iut.univ-paris8.fr', '07.82.11.62.69', 'rwilliams', 1, 2, 90), -- username : rwilliams 
-    ('56108136', 'Linda', 'Mcdonald', 'lmcdonald@iut.univ-paris8.fr', '07.21.54.71.63', 'lmcdonald', 1, 2, 90), -- username : lmcdonald 
-    ('56645338', 'Chelsea', 'Johnston', 'cjohnston@iut.univ-paris8.fr', '07.33.25.77.86', 'cjohnston', 1, 2, 90), -- username : cjohnston 
-    ('17543274', 'Jason', 'Smith', 'jsmith3@iut.univ-paris8.fr', '07.35.85.84.76', 'jsmith3', 1, 2, 90), -- username : jsmith3 
-    ('21116224', 'Brandi', 'Coffey', 'bcoffey@iut.univ-paris8.fr', '07.67.24.60.31', 'bcoffey', 1, 2, 90), -- username : bcoffey 
-    ('31710493', 'Robert', 'Edwards', 'redwards@iut.univ-paris8.fr', '06.60.49.54.48', 'redwards', 1, 2, 90), -- username : redwards 
-    ('51137848', 'Stephanie', 'Sanders', 'ssanders@iut.univ-paris8.fr', '06.34.51.50.91', 'ssanders', 1, 2, 90), -- username : ssanders 
-    ('19499037', 'Jonathan', 'Luna', 'jluna@iut.univ-paris8.fr', '07.12.58.81.51', 'jluna', 1, 3, 3), -- username : jluna 
-    ('77604399', 'Alexander', 'Goodwin', 'agoodwin@iut.univ-paris8.fr', '07.23.78.59.17', 'agoodwin', 1, 3, 3), -- username : agoodwin 
-    ('47884030', 'Douglas', 'Rodriguez', 'drodriguez1@iut.univ-paris8.fr', '06.35.43.89.96', 'drodriguez1', 1, 3, 3), -- username : drodriguez1 
-    ('65934134', 'Joel', 'Stewart', 'jstewart2@iut.univ-paris8.fr', '07.43.81.46.68', 'jstewart2', 1, 3, 3), -- username : jstewart2 
-    ('53205042', 'Todd', 'Bradford', 'tbradford@iut.univ-paris8.fr', '07.24.08.31.87', 'tbradford', 1, 3, 3), -- username : tbradford 
-    ('32717464', 'Stephanie', 'Schroeder', 'sschroeder@iut.univ-paris8.fr', '07.87.29.71.51', 'sschroeder', 1, 3, 3), -- username : sschroeder 
-    ('64988521', 'Lori', 'Wilkerson', 'lwilkerson@iut.univ-paris8.fr', '06.57.21.59.79', 'lwilkerson', 1, 3, 3), -- username : lwilkerson 
-    ('83889933', 'Kathleen', 'Thompson', 'kthompson@iut.univ-paris8.fr', '07.12.76.36.26', 'kthompson', 1, 3, 3), -- username : kthompson 
-    ('97991178', 'Cathy', 'Berry', 'cberry@iut.univ-paris8.fr', '06.02.05.86.32', 'cberry', 1, 3, 3), -- username : cberry 
-    ('39805609', 'Jill', 'Morales', 'jmorales@iut.univ-paris8.fr', '06.10.91.15.31', 'jmorales', 1, 3, 3), -- username : jmorales 
-    ('81511681', 'Steven', 'Hoffman', 'shoffman@iut.univ-paris8.fr', '07.68.29.11.34', 'shoffman', 1, 3, 47), -- username : shoffman 
-    ('37955110', 'Jesse', 'Meadows', 'jmeadows1@iut.univ-paris8.fr', '06.53.02.53.39', 'jmeadows1', 1, 3, 47), -- username : jmeadows1 
-    ('04860278', 'Christopher', 'Joyce', 'cjoyce@iut.univ-paris8.fr', '06.35.62.24.19', 'cjoyce', 1, 3, 47), -- username : cjoyce 
-    ('52355521', 'Melissa', 'Winters', 'mwinters@iut.univ-paris8.fr', '06.50.82.02.53', 'mwinters', 1, 3, 47), -- username : mwinters 
-    ('81757963', 'Olivia', 'Jackson', 'ojackson@iut.univ-paris8.fr', '06.58.75.02.22', 'ojackson', 1, 3, 47), -- username : ojackson 
-    ('57669106', 'Barry', 'Robinson', 'brobinson@iut.univ-paris8.fr', '06.06.79.04.05', 'brobinson', 1, 3, 47), -- username : brobinson 
-    ('84747211', 'Anthony', 'Turner', 'aturner@iut.univ-paris8.fr', '07.41.46.71.00', 'aturner', 1, 3, 47), -- username : aturner 
-    ('47989975', 'Jessica', 'Anderson', 'janderson@iut.univ-paris8.fr', '07.24.78.56.69', 'janderson', 1, 3, 47), -- username : janderson 
-    ('15672397', 'Katie', 'Garcia', 'kgarcia2@iut.univ-paris8.fr', '06.54.94.94.51', 'kgarcia2', 1, 3, 47), -- username : kgarcia2 
-    ('03779068', 'Daniel', 'Elliott', 'delliott@iut.univ-paris8.fr', '06.67.51.99.47', 'delliott', 1, 3, 47), -- username : delliott 
-    ('20237532', 'Frederick', 'Hunter', 'fhunter@iut.univ-paris8.fr', '07.53.65.75.28', 'fhunter', 1, 3, 91), -- username : fhunter 
-    ('43302558', 'Brandon', 'Gonzalez', 'bgonzalez1@iut.univ-paris8.fr', '06.96.67.33.99', 'bgonzalez1', 1, 3, 91), -- username : bgonzalez1 
-    ('34868036', 'Christina', 'Cameron', 'ccameron@iut.univ-paris8.fr', '06.95.41.15.66', 'ccameron', 1, 3, 91), -- username : ccameron 
-    ('57646436', 'Felicia', 'Lopez', 'flopez@iut.univ-paris8.fr', '07.53.74.44.20', 'flopez', 1, 3, 91), -- username : flopez 
-    ('23859280', 'Wendy', 'Ponce', 'wponce@iut.univ-paris8.fr', '06.40.66.89.32', 'wponce', 1, 3, 91), -- username : wponce 
-    ('43967778', 'Joshua', 'Ramirez', 'jramirez@iut.univ-paris8.fr', '07.10.12.66.89', 'jramirez', 1, 3, 91), -- username : jramirez 
-    ('47700084', 'Michael', 'Burton', 'mburton@iut.univ-paris8.fr', '06.32.31.33.20', 'mburton', 1, 3, 91), -- username : mburton 
-    ('99600919', 'Anthony', 'Nolan', 'anolan@iut.univ-paris8.fr', '07.99.43.63.54', 'anolan', 1, 3, 91), -- username : anolan 
-    ('31019697', 'Mark', 'Conner', 'mconner@iut.univ-paris8.fr', '06.27.50.02.67', 'mconner', 1, 3, 91), -- username : mconner 
-    ('12734102', 'James', 'Howard', 'jhoward1@iut.univ-paris8.fr', '07.76.76.32.58', 'jhoward1', 1, 3, 91), -- username : jhoward1 
-    ('51634363', 'Christina', 'Nguyen', 'cnguyen@iut.univ-paris8.fr', '06.01.92.36.00', 'cnguyen', 1, 1, 1), -- username : cnguyen 
-    ('89453839', 'Nichole', 'Kaiser', 'nkaiser@iut.univ-paris8.fr', '07.87.08.49.26', 'nkaiser', 1, 1, 1), -- username : nkaiser 
-    ('61699350', 'Stacy', 'Craig', 'scraig@iut.univ-paris8.fr', '06.12.23.69.02', 'scraig', 1, 1, 1), -- username : scraig 
-    ('23356490', 'Sarah', 'Osborne', 'sosborne@iut.univ-paris8.fr', '06.79.89.72.48', 'sosborne', 1, 1, 1), -- username : sosborne 
-    ('36180693', 'Joseph', 'Hendrix', 'jhendrix@iut.univ-paris8.fr', '07.88.41.96.48', 'jhendrix', 1, 1, 1), -- username : jhendrix 
-    ('12992605', 'Dale', 'Reed', 'dreed@iut.univ-paris8.fr', '07.61.73.58.98', 'dreed', 1, 1, 1), -- username : dreed 
-    ('69484518', 'Mary', 'Butler', 'mbutler@iut.univ-paris8.fr', '07.86.85.35.27', 'mbutler', 1, 1, 1), -- username : mbutler 
-    ('23720050', 'Edwin', 'Fischer', 'efischer@iut.univ-paris8.fr', '06.21.61.58.79', 'efischer', 1, 1, 1), -- username : efischer 
-    ('63174696', 'Kaylee', 'Castillo', 'kcastillo@iut.univ-paris8.fr', '06.48.96.14.31', 'kcastillo', 1, 1, 1), -- username : kcastillo 
-    ('22189532', 'Courtney', 'Carter', 'ccarter2@iut.univ-paris8.fr', '06.34.28.92.92', 'ccarter2', 1, 1, 1), -- username : ccarter2 
-    ('70368688', 'Krista', 'Kent', 'kkent@iut.univ-paris8.fr', '06.07.68.41.86', 'kkent', 1, 1, 45), -- username : kkent 
-    ('87346382', 'Holly', 'Johnson', 'hjohnson@iut.univ-paris8.fr', '06.70.69.13.56', 'hjohnson', 1, 1, 45), -- username : hjohnson 
-    ('17147542', 'Chad', 'Dixon', 'cdixon@iut.univ-paris8.fr', '06.36.37.86.57', 'cdixon', 1, 1, 45), -- username : cdixon 
-    ('84537858', 'Angela', 'Mccarthy', 'amccarthy@iut.univ-paris8.fr', '06.42.96.03.03', 'amccarthy', 1, 1, 45), -- username : amccarthy 
-    ('53688242', 'William', 'Nguyen', 'wnguyen@iut.univ-paris8.fr', '06.82.09.97.33', 'wnguyen', 1, 1, 45), -- username : wnguyen 
-    ('42300921', 'Michael', 'Chang', 'mchang@iut.univ-paris8.fr', '06.37.84.46.87', 'mchang', 1, 1, 45), -- username : mchang 
-    ('18997480', 'Kristin', 'Parks', 'kparks@iut.univ-paris8.fr', '07.13.73.76.80', 'kparks', 1, 1, 45), -- username : kparks 
-    ('03317942', 'Jennifer', 'Stephens', 'jstephens1@iut.univ-paris8.fr', '07.02.08.10.35', 'jstephens1', 1, 1, 45), -- username : jstephens1 
-    ('60267872', 'Rachel', 'Merritt', 'rmerritt@iut.univ-paris8.fr', '07.39.59.54.05', 'rmerritt', 1, 1, 45), -- username : rmerritt 
-    ('20805439', 'Cory', 'Smith', 'csmith1@iut.univ-paris8.fr', '06.29.28.61.85', 'csmith1', 1, 1, 45), -- username : csmith1 
-    ('22299182', 'Robin', 'Brown', 'rbrown1@iut.univ-paris8.fr', '06.92.75.86.36', 'rbrown1', 1, 1, 89), -- username : rbrown1 
-    ('60353886', 'Cheryl', 'Simpson', 'csimpson@iut.univ-paris8.fr', '06.03.83.68.89', 'csimpson', 1, 1, 89), -- username : csimpson 
-    ('59904869', 'Mark', 'Carson', 'mcarson@iut.univ-paris8.fr', '06.63.10.91.78', 'mcarson', 1, 1, 89), -- username : mcarson 
-    ('59032188', 'Jason', 'Johnson', 'jjohnson1@iut.univ-paris8.fr', '06.79.49.76.65', 'jjohnson1', 1, 1, 89), -- username : jjohnson1 
-    ('98689539', 'Matthew', 'Rodgers', 'mrodgers@iut.univ-paris8.fr', '07.68.95.01.01', 'mrodgers', 1, 1, 89), -- username : mrodgers 
-    ('64701508', 'Sean', 'Rosario', 'srosario@iut.univ-paris8.fr', '07.48.39.20.47', 'srosario', 1, 1, 89), -- username : srosario 
-    ('95817804', 'Mary', 'Miller', 'mmiller1@iut.univ-paris8.fr', '06.92.69.79.18', 'mmiller1', 1, 1, 89), -- username : mmiller1 
-    ('83201783', 'Daniel', 'Herrera', 'dherrera@iut.univ-paris8.fr', '07.06.14.00.66', 'dherrera', 1, 1, 89), -- username : dherrera 
-    ('20069554', 'Brittany', 'Moore', 'bmoore@iut.univ-paris8.fr', '06.27.90.55.38', 'bmoore', 1, 1, 89), -- username : bmoore 
-    ('66643312', 'Allison', 'Walker', 'awalker@iut.univ-paris8.fr', '06.23.73.57.44', 'awalker', 1, 1, 89), -- username : awalker 
-    ('18614271', 'Rodney', 'Hall', 'rhall@iut.univ-paris8.fr', '07.53.82.80.75', 'rhall', 1, 38, 38), -- username : rhall 
-    ('89039625', 'Jason', 'Singleton', 'jsingleton@iut.univ-paris8.fr', '07.53.95.30.72', 'jsingleton', 1, 38, 38), -- username : jsingleton 
-    ('93486604', 'Amanda', 'Rodriguez', 'arodriguez1@iut.univ-paris8.fr', '07.74.26.87.87', 'arodriguez1', 1, 38, 38), -- username : arodriguez1 
-    ('79972285', 'Kimberly', 'Russell', 'krussell1@iut.univ-paris8.fr', '06.09.00.37.00', 'krussell1', 1, 38, 38), -- username : krussell1 
-    ('76989167', 'Kimberly', 'Hill', 'khill@iut.univ-paris8.fr', '06.27.58.24.33', 'khill', 1, 38, 38), -- username : khill 
-    ('32627103', 'Alexander', 'Smith', 'asmith2@iut.univ-paris8.fr', '07.71.08.54.79', 'asmith2', 1, 38, 38), -- username : asmith2 
-    ('95280694', 'Karen', 'Rose', 'krose1@iut.univ-paris8.fr', '06.03.20.81.15', 'krose1', 1, 38, 38), -- username : krose1 
-    ('61220317', 'Christopher', 'Thompson', 'cthompson1@iut.univ-paris8.fr', '06.72.24.87.98', 'cthompson1', 1, 38, 38), -- username : cthompson1 
-    ('22036090', 'Michael', 'Marsh', 'mmarsh@iut.univ-paris8.fr', '06.68.05.77.87', 'mmarsh', 1, 38, 38), -- username : mmarsh 
-    ('16714539', 'Rachel', 'Hicks', 'rhicks@iut.univ-paris8.fr', '07.11.00.33.25', 'rhicks', 1, 38, 38), -- username : rhicks 
-    ('35509567', 'Colleen', 'Brown', 'cbrown@iut.univ-paris8.fr', '06.27.67.08.41', 'cbrown', 1, 38, 82), -- username : cbrown 
-    ('98500675', 'Mitchell', 'Galvan', 'mgalvan@iut.univ-paris8.fr', '06.19.49.88.86', 'mgalvan', 1, 38, 82), -- username : mgalvan 
-    ('96512739', 'Kimberly', 'Schmidt', 'kschmidt@iut.univ-paris8.fr', '06.34.96.08.92', 'kschmidt', 1, 38, 82), -- username : kschmidt 
-    ('44411182', 'Casey', 'Le', 'cle@iut.univ-paris8.fr', '06.40.56.89.08', 'cle', 1, 38, 82), -- username : cle 
-    ('04844346', 'Ryan', 'Phelps', 'rphelps@iut.univ-paris8.fr', '06.13.43.03.43', 'rphelps', 1, 38, 82), -- username : rphelps 
-    ('66775024', 'Heidi', 'Wagner', 'hwagner@iut.univ-paris8.fr', '06.94.94.32.01', 'hwagner', 1, 38, 82), -- username : hwagner 
-    ('86012923', 'Robert', 'Wright', 'rwright1@iut.univ-paris8.fr', '07.12.02.93.70', 'rwright1', 1, 38, 82), -- username : rwright1 
-    ('63887688', 'Emily', 'Hunter', 'ehunter@iut.univ-paris8.fr', '07.30.31.74.38', 'ehunter', 1, 38, 82), -- username : ehunter 
-    ('38524401', 'Ivan', 'Martin', 'imartin@iut.univ-paris8.fr', '07.70.08.86.92', 'imartin', 1, 38, 82), -- username : imartin 
-    ('47913785', 'Jacqueline', 'Chambers', 'jchambers1@iut.univ-paris8.fr', '06.24.95.70.35', 'jchambers1', 1, 38, 82), -- username : jchambers1 
-    ('77616049', 'Monica', 'Lindsey', 'mlindsey@iut.univ-paris8.fr', '06.21.24.38.09', 'mlindsey', 1, 38, 126), -- username : mlindsey 
-    ('75032692', 'Mary', 'Sanchez', 'msanchez1@iut.univ-paris8.fr', '06.62.31.64.18', 'msanchez1', 1, 38, 126), -- username : msanchez1 
-    ('38614228', 'Sarah', 'Novak', 'snovak@iut.univ-paris8.fr', '07.05.25.89.09', 'snovak', 1, 38, 126), -- username : snovak 
-    ('15864611', 'Donna', 'Hernandez', 'dhernandez@iut.univ-paris8.fr', '06.24.87.36.08', 'dhernandez', 1, 38, 126), -- username : dhernandez 
-    ('66540523', 'Jennifer', 'Foster', 'jfoster@iut.univ-paris8.fr', '07.79.66.04.59', 'jfoster', 1, 38, 126), -- username : jfoster 
-    ('32564152', 'Jason', 'Jones', 'jjones1@iut.univ-paris8.fr', '06.97.37.04.77', 'jjones1', 1, 38, 126), -- username : jjones1 
-    ('43984648', 'Erin', 'Cross', 'ecross@iut.univ-paris8.fr', '06.94.03.06.61', 'ecross', 1, 38, 126), -- username : ecross 
-    ('79064072', 'Patricia', 'Velazquez', 'pvelazquez@iut.univ-paris8.fr', '07.44.47.92.17', 'pvelazquez', 1, 38, 126), -- username : pvelazquez 
-    ('41222913', 'Michael', 'Norman', 'mnorman@iut.univ-paris8.fr', '07.96.33.07.99', 'mnorman', 1, 38, 126), -- username : mnorman 
-    ('64000096', 'Frank', 'Salazar', 'fsalazar@iut.univ-paris8.fr', '07.84.59.42.85', 'fsalazar', 1, 38, 126), -- username : fsalazar 
-    ('03619602', 'Karen', 'Gibbs', 'kgibbs@iut.univ-paris8.fr', '06.99.00.50.28', 'kgibbs', 1, 37, 37), -- username : kgibbs 
-    ('93398173', 'Kristi', 'Obrien', 'kobrien@iut.univ-paris8.fr', '06.35.15.54.32', 'kobrien', 1, 37, 37), -- username : kobrien 
-    ('65341757', 'Brenda', 'Silva', 'bsilva@iut.univ-paris8.fr', '07.27.80.18.80', 'bsilva', 1, 37, 37), -- username : bsilva 
-    ('79174458', 'David', 'Rodriguez', 'drodriguez@iut.univ-paris8.fr', '07.38.51.79.54', 'drodriguez', 1, 37, 37), -- username : drodriguez 
-    ('74720700', 'Michelle', 'Lopez', 'mlopez@iut.univ-paris8.fr', '07.96.58.87.27', 'mlopez', 1, 37, 37), -- username : mlopez 
-    ('02267340', 'Katie', 'Wilson', 'kwilson@iut.univ-paris8.fr', '07.02.77.41.74', 'kwilson', 1, 37, 37), -- username : kwilson 
-    ('77924614', 'Bryan', 'Hughes', 'bhughes@iut.univ-paris8.fr', '06.33.08.40.99', 'bhughes', 1, 37, 37), -- username : bhughes 
-    ('50801891', 'Sharon', 'Howard', 'showard@iut.univ-paris8.fr', '06.71.65.18.88', 'showard', 1, 37, 37), -- username : showard 
-    ('80096851', 'John', 'Weaver', 'jweaver@iut.univ-paris8.fr', '07.32.79.90.64', 'jweaver', 1, 37, 37), -- username : jweaver 
-    ('24080165', 'Logan', 'Benton', 'lbenton@iut.univ-paris8.fr', '07.30.97.09.37', 'lbenton', 1, 37, 37), -- username : lbenton 
-    ('43072561', 'Emily', 'Foster', 'efoster@iut.univ-paris8.fr', '07.88.60.55.31', 'efoster', 1, 37, 81), -- username : efoster 
-    ('92343728', 'John', 'Blankenship', 'jblankenship@iut.univ-paris8.fr', '06.59.52.88.70', 'jblankenship', 1, 37, 81), -- username : jblankenship 
-    ('84482690', 'Amanda', 'Mccann', 'amccann@iut.univ-paris8.fr', '06.66.54.70.69', 'amccann', 1, 37, 81), -- username : amccann 
-    ('75078367', 'Michael', 'Smith', 'msmith2@iut.univ-paris8.fr', '06.72.60.68.57', 'msmith2', 1, 37, 81), -- username : msmith2 
-    ('35741163', 'Frank', 'Kelly', 'fkelly@iut.univ-paris8.fr', '07.39.67.48.21', 'fkelly', 1, 37, 81), -- username : fkelly 
-    ('48177534', 'Alexander', 'Blackburn', 'ablackburn@iut.univ-paris8.fr', '06.68.80.01.49', 'ablackburn', 1, 37, 81), -- username : ablackburn 
-    ('67623913', 'Victor', 'Wilkinson', 'vwilkinson@iut.univ-paris8.fr', '07.01.12.36.53', 'vwilkinson', 1, 37, 81), -- username : vwilkinson 
-    ('70713160', 'Kathryn', 'Andrews', 'kandrews@iut.univ-paris8.fr', '07.02.29.51.90', 'kandrews', 1, 37, 81), -- username : kandrews 
-    ('80425660', 'Andrew', 'Rodriguez', 'arodriguez@iut.univ-paris8.fr', '07.57.36.51.03', 'arodriguez', 1, 37, 81), -- username : arodriguez 
-    ('03927856', 'Aaron', 'Garcia', 'agarcia@iut.univ-paris8.fr', '07.09.66.73.90', 'agarcia', 1, 37, 81), -- username : agarcia 
-    ('21043567', 'Rebecca', 'Black', 'rblack@iut.univ-paris8.fr', '06.30.85.67.81', 'rblack', 1, 37, 125), -- username : rblack 
-    ('41512715', 'Ashley', 'Christian', 'achristian2@iut.univ-paris8.fr', '06.93.09.54.46', 'achristian2', 1, 37, 125), -- username : achristian2 
-    ('47539038', 'Tasha', 'Abbott', 'tabbott@iut.univ-paris8.fr', '06.94.29.12.08', 'tabbott', 1, 37, 125), -- username : tabbott 
-    ('46902751', 'Ronald', 'Mccarthy', 'rmccarthy@iut.univ-paris8.fr', '07.51.24.16.48', 'rmccarthy', 1, 37, 125), -- username : rmccarthy 
-    ('27887732', 'Taylor', 'Wood', 'twood@iut.univ-paris8.fr', '07.23.79.88.44', 'twood', 1, 37, 125), -- username : twood 
-    ('04218397', 'Wendy', 'Coleman', 'wcoleman1@iut.univ-paris8.fr', '06.95.32.73.68', 'wcoleman1', 1, 37, 125), -- username : wcoleman1 
-    ('11051654', 'Lisa', 'Ware', 'lware@iut.univ-paris8.fr', '07.02.83.51.21', 'lware', 1, 37, 125), -- username : lware 
-    ('70428664', 'Joseph', 'Wilson', 'jwilson@iut.univ-paris8.fr', '06.79.85.45.37', 'jwilson', 1, 37, 125), -- username : jwilson 
-    ('03570303', 'Tracy', 'Jacobs', 'tjacobs@iut.univ-paris8.fr', '07.32.51.14.05', 'tjacobs', 1, 37, 125), -- username : tjacobs 
-    ('01966536', 'Brian', 'Rodriguez', 'brodriguez@iut.univ-paris8.fr', '07.44.57.39.75', 'brodriguez', 1, 37, 125), -- username : brodriguez 
-    ('46233690', 'Angela', 'Collins', 'acollins@iut.univ-paris8.fr', '07.67.03.51.37', 'acollins', 1, 27, 27), -- username : acollins 
-    ('18389102', 'Nicole', 'Clay', 'nclay@iut.univ-paris8.fr', '06.06.19.10.35', 'nclay', 1, 27, 27), -- username : nclay 
-    ('80425096', 'Timothy', 'Robles', 'trobles@iut.univ-paris8.fr', '07.50.47.19.90', 'trobles', 1, 27, 27), -- username : trobles 
-    ('14220118', 'Brian', 'Wall', 'bwall@iut.univ-paris8.fr', '07.95.96.60.45', 'bwall', 1, 27, 27), -- username : bwall 
-    ('97905864', 'Justin', 'Flores', 'jflores@iut.univ-paris8.fr', '06.92.97.12.89', 'jflores', 1, 27, 27), -- username : jflores 
-    ('92507924', 'Katie', 'Graham', 'kgraham@iut.univ-paris8.fr', '06.41.81.27.37', 'kgraham', 1, 27, 27), -- username : kgraham 
-    ('32229949', 'Destiny', 'Mckenzie', 'dmckenzie@iut.univ-paris8.fr', '07.93.93.40.69', 'dmckenzie', 1, 27, 27), -- username : dmckenzie 
-    ('15163174', 'Eric', 'Burton', 'eburton@iut.univ-paris8.fr', '06.45.20.46.71', 'eburton', 1, 27, 27), -- username : eburton 
-    ('82550213', 'Whitney', 'Freeman', 'wfreeman@iut.univ-paris8.fr', '07.30.06.41.03', 'wfreeman', 1, 27, 27), -- username : wfreeman 
-    ('92248626', 'Christina', 'Blackburn', 'cblackburn@iut.univ-paris8.fr', '06.61.90.84.64', 'cblackburn', 1, 27, 27), -- username : cblackburn 
-    ('17079261', 'Kathy', 'Holt', 'kholt@iut.univ-paris8.fr', '07.41.06.42.67', 'kholt', 1, 27, 71), -- username : kholt 
-    ('76963937', 'Tricia', 'Weber', 'tweber@iut.univ-paris8.fr', '07.39.27.43.67', 'tweber', 1, 27, 71), -- username : tweber 
-    ('50649357', 'Diane', 'Petty', 'dpetty@iut.univ-paris8.fr', '07.37.11.74.53', 'dpetty', 1, 27, 71), -- username : dpetty 
-    ('51774615', 'Denise', 'Simpson', 'dsimpson@iut.univ-paris8.fr', '07.08.56.25.91', 'dsimpson', 1, 27, 71), -- username : dsimpson 
-    ('03501998', 'Brittany', 'Johnson', 'bjohnson1@iut.univ-paris8.fr', '06.03.79.20.26', 'bjohnson1', 1, 27, 71), -- username : bjohnson1 
-    ('93469637', 'Jose', 'Duran', 'jduran@iut.univ-paris8.fr', '06.92.93.30.09', 'jduran', 1, 27, 71), -- username : jduran 
-    ('71008369', 'Angela', 'Adams', 'aadams1@iut.univ-paris8.fr', '06.71.37.88.20', 'aadams1', 1, 27, 71), -- username : aadams1 
-    ('48183487', 'Barbara', 'Knight', 'bknight@iut.univ-paris8.fr', '06.07.60.58.96', 'bknight', 1, 27, 71), -- username : bknight 
-    ('17814036', 'Colleen', 'Reid', 'creid@iut.univ-paris8.fr', '07.41.96.06.82', 'creid', 1, 27, 71), -- username : creid 
-    ('31314008', 'Emily', 'Lamb', 'elamb@iut.univ-paris8.fr', '06.13.11.90.37', 'elamb', 1, 27, 71), -- username : elamb 
-    ('68220415', 'Nancy', 'Lester', 'nlester@iut.univ-paris8.fr', '07.02.22.63.39', 'nlester', 1, 27, 115), -- username : nlester 
-    ('09711018', 'Henry', 'Haney', 'hhaney@iut.univ-paris8.fr', '06.54.24.04.31', 'hhaney', 1, 27, 115), -- username : hhaney 
-    ('86889501', 'Adam', 'Davis', 'adavis2@iut.univ-paris8.fr', '06.21.19.39.77', 'adavis2', 1, 27, 115), -- username : adavis2 
-    ('94443964', 'Joel', 'Taylor', 'jtaylor@iut.univ-paris8.fr', '07.87.67.80.69', 'jtaylor', 1, 27, 115), -- username : jtaylor 
-    ('43966419', 'Marc', 'Porter', 'mporter@iut.univ-paris8.fr', '07.44.39.59.79', 'mporter', 1, 27, 115), -- username : mporter 
-    ('67538204', 'Kevin', 'Fernandez', 'kfernandez@iut.univ-paris8.fr', '06.32.27.14.82', 'kfernandez', 1, 27, 115), -- username : kfernandez 
-    ('10589333', 'Alexandra', 'Nash', 'anash@iut.univ-paris8.fr', '06.19.22.67.50', 'anash', 1, 27, 115), -- username : anash 
-    ('42003373', 'Daniel', 'Clark', 'dclark@iut.univ-paris8.fr', '07.53.97.22.99', 'dclark', 1, 27, 115), -- username : dclark 
-    ('33963975', 'Erica', 'Sanford', 'esanford@iut.univ-paris8.fr', '06.69.52.76.52', 'esanford', 1, 27, 115), -- username : esanford 
-    ('69139375', 'Kyle', 'Jones', 'kjones@iut.univ-paris8.fr', '06.51.46.38.82', 'kjones', 1, 27, 115), -- username : kjones 
-    ('53074140', 'Mitchell', 'Leonard', 'mleonard@iut.univ-paris8.fr', '07.81.56.74.71', 'mleonard', 1, 26, 26), -- username : mleonard 
-    ('59761172', 'Robert', 'Bennett', 'rbennett1@iut.univ-paris8.fr', '06.76.66.27.72', 'rbennett1', 1, 26, 26), -- username : rbennett1 
-    ('83281083', 'Wendy', 'Wolf', 'wwolf@iut.univ-paris8.fr', '06.42.65.29.02', 'wwolf', 1, 26, 26), -- username : wwolf 
-    ('51229774', 'Deanna', 'Hicks', 'dhicks@iut.univ-paris8.fr', '07.14.34.62.69', 'dhicks', 1, 26, 26), -- username : dhicks 
-    ('58914740', 'Tyler', 'Walker', 'twalker@iut.univ-paris8.fr', '07.69.98.31.52', 'twalker', 1, 26, 26), -- username : twalker 
-    ('16329117', 'Belinda', 'Williams', 'bwilliams@iut.univ-paris8.fr', '07.58.87.03.43', 'bwilliams', 1, 26, 26), -- username : bwilliams 
-    ('49751054', 'Mary', 'Scott', 'mscott@iut.univ-paris8.fr', '06.41.85.77.51', 'mscott', 1, 26, 26), -- username : mscott 
-    ('87442063', 'Nicole', 'Cook', 'ncook1@iut.univ-paris8.fr', '06.33.91.77.21', 'ncook1', 1, 26, 26), -- username : ncook1 
-    ('58602060', 'Christine', 'Hall', 'chall@iut.univ-paris8.fr', '06.75.37.58.78', 'chall', 1, 26, 26), -- username : chall 
-    ('22715078', 'Martin', 'Dyer', 'mdyer@iut.univ-paris8.fr', '06.89.73.72.18', 'mdyer', 1, 26, 26), -- username : mdyer 
-    ('26598594', 'Amanda', 'Bailey', 'abailey1@iut.univ-paris8.fr', '06.83.13.12.41', 'abailey1', 1, 26, 70), -- username : abailey1 
-    ('16029498', 'John', 'Perez', 'jperez1@iut.univ-paris8.fr', '07.56.75.32.07', 'jperez1', 1, 26, 70), -- username : jperez1 
-    ('00904808', 'Michael', 'Lynch', 'mlynch@iut.univ-paris8.fr', '07.99.58.43.07', 'mlynch', 1, 26, 70), -- username : mlynch 
-    ('99631929', 'Jeffrey', 'Mcintyre', 'jmcintyre1@iut.univ-paris8.fr', '07.90.77.24.76', 'jmcintyre1', 1, 26, 70), -- username : jmcintyre1 
-    ('35298495', 'Joel', 'Jackson', 'jjackson1@iut.univ-paris8.fr', '07.24.54.05.73', 'jjackson1', 1, 26, 70), -- username : jjackson1 
-    ('82188981', 'James', 'Lee', 'jlee2@iut.univ-paris8.fr', '07.58.43.09.01', 'jlee2', 1, 26, 70), -- username : jlee2 
-    ('23057911', 'Aaron', 'Christian', 'achristian1@iut.univ-paris8.fr', '07.42.95.38.12', 'achristian1', 1, 26, 70), -- username : achristian1 
-    ('95721880', 'Faith', 'Osborne', 'fosborne@iut.univ-paris8.fr', '07.89.68.49.78', 'fosborne', 1, 26, 70), -- username : fosborne 
-    ('02751988', 'Hannah', 'Smith', 'hsmith@iut.univ-paris8.fr', '07.14.30.98.17', 'hsmith', 1, 26, 70), -- username : hsmith 
-    ('18935750', 'Robert', 'Walker', 'rwalker1@iut.univ-paris8.fr', '07.22.97.15.48', 'rwalker1', 1, 26, 70), -- username : rwalker1 
-    ('88791089', 'Jacob', 'Caldwell', 'jcaldwell@iut.univ-paris8.fr', '06.11.21.07.00', 'jcaldwell', 1, 26, 114), -- username : jcaldwell 
-    ('45734361', 'Joshua', 'Bates', 'jbates1@iut.univ-paris8.fr', '06.37.40.57.65', 'jbates1', 1, 26, 114), -- username : jbates1 
-    ('96328289', 'Stephen', 'Blackwell', 'sblackwell@iut.univ-paris8.fr', '06.34.03.37.68', 'sblackwell', 1, 26, 114), -- username : sblackwell 
-    ('33856820', 'Evan', 'Anderson', 'eanderson1@iut.univ-paris8.fr', '07.45.33.94.32', 'eanderson1', 1, 26, 114), -- username : eanderson1 
-    ('90326981', 'Amy', 'Davis', 'adavis1@iut.univ-paris8.fr', '07.36.71.90.13', 'adavis1', 1, 26, 114), -- username : adavis1 
-    ('73742746', 'Erica', 'Burke', 'eburke@iut.univ-paris8.fr', '06.33.94.80.18', 'eburke', 1, 26, 114), -- username : eburke 
-    ('55746705', 'Jake', 'Rogers', 'jrogers@iut.univ-paris8.fr', '07.12.95.76.48', 'jrogers', 1, 26, 114), -- username : jrogers 
-    ('27943682', 'Michael', 'Robbins', 'mrobbins1@iut.univ-paris8.fr', '07.44.21.35.28', 'mrobbins1', 1, 26, 114), -- username : mrobbins1 
-    ('01390286', 'Amanda', 'Flores', 'aflores@iut.univ-paris8.fr', '06.82.79.56.63', 'aflores', 1, 26, 114), -- username : aflores 
-    ('18110511', 'Cody', 'Holmes', 'cholmes@iut.univ-paris8.fr', '07.95.70.78.59', 'cholmes', 1, 26, 114), -- username : cholmes 
-    ('65612421', 'Julia', 'Kelly', 'jkelly1@iut.univ-paris8.fr', '07.91.97.55.60', 'jkelly1', 1, 25, 25), -- username : jkelly1 
-    ('87544371', 'Julie', 'Larson', 'jlarson@iut.univ-paris8.fr', '07.46.20.90.61', 'jlarson', 1, 25, 25), -- username : jlarson 
-    ('07435032', 'Joshua', 'Smith', 'jsmith2@iut.univ-paris8.fr', '07.44.82.38.84', 'jsmith2', 1, 25, 25), -- username : jsmith2 
-    ('17628733', 'Brian', 'Jordan', 'bjordan@iut.univ-paris8.fr', '06.97.21.53.02', 'bjordan', 1, 25, 25), -- username : bjordan 
-    ('76014497', 'Jennifer', 'Pearson', 'jpearson@iut.univ-paris8.fr', '07.40.03.60.12', 'jpearson', 1, 25, 25), -- username : jpearson 
-    ('41353653', 'Susan', 'Miller', 'smiller1@iut.univ-paris8.fr', '07.64.10.88.12', 'smiller1', 1, 25, 25), -- username : smiller1 
-    ('90680337', 'Lauren', 'Donaldson', 'ldonaldson@iut.univ-paris8.fr', '07.10.57.23.86', 'ldonaldson', 1, 25, 25), -- username : ldonaldson 
-    ('32533989', 'Monica', 'Sanchez', 'msanchez@iut.univ-paris8.fr', '07.27.78.26.90', 'msanchez', 1, 25, 25), -- username : msanchez 
-    ('88318906', 'Jill', 'Mcgee', 'jmcgee@iut.univ-paris8.fr', '07.68.83.26.02', 'jmcgee', 1, 25, 25), -- username : jmcgee 
-    ('27333875', 'Brandi', 'Allison', 'ballison@iut.univ-paris8.fr', '06.41.43.75.98', 'ballison', 1, 25, 25), -- username : ballison 
-    ('19086804', 'Derek', 'Parker', 'dparker@iut.univ-paris8.fr', '07.22.49.24.35', 'dparker', 1, 25, 69), -- username : dparker 
-    ('99250365', 'Margaret', 'Fields', 'mfields@iut.univ-paris8.fr', '07.40.75.23.19', 'mfields', 1, 25, 69), -- username : mfields 
-    ('86750218', 'Sabrina', 'Anderson', 'sanderson@iut.univ-paris8.fr', '06.54.68.16.47', 'sanderson', 1, 25, 69), -- username : sanderson 
-    ('33129738', 'Alex', 'Dixon', 'adixon@iut.univ-paris8.fr', '06.85.91.87.27', 'adixon', 1, 25, 69), -- username : adixon 
-    ('65659764', 'Dennis', 'Richard', 'drichard@iut.univ-paris8.fr', '07.33.71.38.26', 'drichard', 1, 25, 69), -- username : drichard 
-    ('53840510', 'Steven', 'Robinson', 'srobinson@iut.univ-paris8.fr', '07.27.91.46.47', 'srobinson', 1, 25, 69), -- username : srobinson 
-    ('82671900', 'Spencer', 'Morales', 'smorales@iut.univ-paris8.fr', '06.11.46.31.36', 'smorales', 1, 25, 69), -- username : smorales 
-    ('27284156', 'Elizabeth', 'Landry', 'elandry@iut.univ-paris8.fr', '06.95.79.29.73', 'elandry', 1, 25, 69), -- username : elandry 
-    ('18245627', 'Michael', 'Castillo', 'mcastillo@iut.univ-paris8.fr', '06.20.78.12.58', 'mcastillo', 1, 25, 69), -- username : mcastillo 
-    ('88155359', 'Erika', 'Snyder', 'esnyder@iut.univ-paris8.fr', '06.36.64.88.80', 'esnyder', 1, 25, 69), -- username : esnyder 
-    ('25145392', 'Jeremy', 'Williamson', 'jwilliamson@iut.univ-paris8.fr', '07.14.00.25.98', 'jwilliamson', 1, 25, 113), -- username : jwilliamson 
-    ('13027716', 'Robyn', 'Johnson', 'rjohnson1@iut.univ-paris8.fr', '06.15.21.74.77', 'rjohnson1', 1, 25, 113), -- username : rjohnson1 
-    ('94102933', 'Christopher', 'Hamilton', 'chamilton@iut.univ-paris8.fr', '07.91.17.42.72', 'chamilton', 1, 25, 113), -- username : chamilton 
-    ('93935668', 'Barry', 'Lopez', 'blopez@iut.univ-paris8.fr', '07.87.32.28.52', 'blopez', 1, 25, 113), -- username : blopez 
-    ('22531085', 'Robert', 'Walker', 'rwalker@iut.univ-paris8.fr', '06.64.59.64.69', 'rwalker', 1, 25, 113), -- username : rwalker 
-    ('22158281', 'Barbara', 'Davis', 'bdavis1@iut.univ-paris8.fr', '06.86.82.76.19', 'bdavis1', 1, 25, 113), -- username : bdavis1 
-    ('96334632', 'Wesley', 'Jacobson', 'wjacobson@iut.univ-paris8.fr', '06.66.40.96.00', 'wjacobson', 1, 25, 113), -- username : wjacobson 
-    ('10293812', 'James', 'Powell', 'jpowell2@iut.univ-paris8.fr', '07.46.20.64.85', 'jpowell2', 1, 25, 113), -- username : jpowell2 
-    ('71363465', 'Cindy', 'Horn', 'chorn@iut.univ-paris8.fr', '07.30.48.96.06', 'chorn', 1, 25, 113), -- username : chorn 
-    ('45195055', 'James', 'Gray', 'jgray@iut.univ-paris8.fr', '07.59.38.60.73', 'jgray', 1, 25, 113), -- username : jgray 
-    ('48424760', 'Anthony', 'Swanson', 'aswanson@iut.univ-paris8.fr', '07.17.25.49.34', 'aswanson', 1, 3, 3), -- username : aswanson 
-    ('52280873', 'Wayne', 'Gaines', 'wgaines@iut.univ-paris8.fr', '06.84.04.42.43', 'wgaines', 1, 3, 3), -- username : wgaines 
-    ('36276641', 'Frederick', 'Wood', 'fwood@iut.univ-paris8.fr', '06.08.74.73.47', 'fwood', 1, 3, 3), -- username : fwood 
-    ('38614564', 'Ann', 'Mccormick', 'amccormick@iut.univ-paris8.fr', '07.82.40.35.17', 'amccormick', 1, 3, 3), -- username : amccormick 
-    ('23990390', 'Ashley', 'Cortez', 'acortez@iut.univ-paris8.fr', '07.50.42.54.82', 'acortez', 1, 3, 3), -- username : acortez 
-    ('27457779', 'Lisa', 'Ellis', 'lellis@iut.univ-paris8.fr', '06.31.80.35.39', 'lellis', 1, 3, 3), -- username : lellis 
-    ('12796538', 'Traci', 'Johnston', 'tjohnston@iut.univ-paris8.fr', '06.31.26.72.96', 'tjohnston', 1, 3, 3), -- username : tjohnston 
-    ('67801338', 'Ricardo', 'Rojas', 'rrojas@iut.univ-paris8.fr', '06.51.41.15.85', 'rrojas', 1, 3, 3), -- username : rrojas 
-    ('66446498', 'Kimberly', 'Flores', 'kflores@iut.univ-paris8.fr', '07.62.01.73.65', 'kflores', 1, 3, 3), -- username : kflores 
-    ('27438638', 'Gregory', 'Goodwin', 'ggoodwin@iut.univ-paris8.fr', '07.56.62.94.06', 'ggoodwin', 1, 3, 3), -- username : ggoodwin 
-    ('64337415', 'Carlos', 'Conrad', 'cconrad@iut.univ-paris8.fr', '06.81.64.27.21', 'cconrad', 1, 3, 47), -- username : cconrad 
-    ('22293308', 'Joseph', 'Powell', 'jpowell1@iut.univ-paris8.fr', '07.26.89.16.77', 'jpowell1', 1, 3, 47), -- username : jpowell1 
-    ('10813885', 'Brandi', 'Wells', 'bwells@iut.univ-paris8.fr', '07.05.03.05.92', 'bwells', 1, 3, 47), -- username : bwells 
-    ('89956259', 'Robyn', 'Smith', 'rsmith3@iut.univ-paris8.fr', '07.02.38.19.70', 'rsmith3', 1, 3, 47), -- username : rsmith3 
-    ('29094743', 'Valerie', 'Shelton', 'vshelton@iut.univ-paris8.fr', '07.58.05.75.90', 'vshelton', 1, 3, 47), -- username : vshelton 
-    ('14270777', 'Jessica', 'Bates', 'jbates@iut.univ-paris8.fr', '07.25.01.33.40', 'jbates', 1, 3, 47), -- username : jbates 
-    ('77616053', 'Manuel', 'Watson', 'mwatson@iut.univ-paris8.fr', '07.90.85.54.50', 'mwatson', 1, 3, 47), -- username : mwatson 
-    ('04394464', 'Guy', 'Castaneda', 'gcastaneda@iut.univ-paris8.fr', '07.92.33.27.28', 'gcastaneda', 1, 3, 47), -- username : gcastaneda 
-    ('30720424', 'Melissa', 'Richardson', 'mrichardson1@iut.univ-paris8.fr', '07.16.13.60.70', 'mrichardson1', 1, 3, 47), -- username : mrichardson1 
-    ('75982316', 'Paula', 'Huynh', 'phuynh@iut.univ-paris8.fr', '07.61.62.31.69', 'phuynh', 1, 3, 47), -- username : phuynh 
-    ('55323829', 'Kathleen', 'Mcdaniel', 'kmcdaniel@iut.univ-paris8.fr', '06.45.60.40.38', 'kmcdaniel', 1, 3, 91), -- username : kmcdaniel 
-    ('61120570', 'Angelica', 'Nicholson', 'anicholson@iut.univ-paris8.fr', '07.95.54.52.05', 'anicholson', 1, 3, 91), -- username : anicholson 
-    ('74044493', 'John', 'Chapman', 'jchapman@iut.univ-paris8.fr', '07.05.02.64.51', 'jchapman', 1, 3, 91), -- username : jchapman 
-    ('90489360', 'Felicia', 'James', 'fjames@iut.univ-paris8.fr', '06.55.96.63.89', 'fjames', 1, 3, 91), -- username : fjames 
-    ('04095208', 'John', 'Goodman', 'jgoodman@iut.univ-paris8.fr', '07.80.07.80.47', 'jgoodman', 1, 3, 91), -- username : jgoodman 
-    ('20157670', 'Billy', 'Booth', 'bbooth@iut.univ-paris8.fr', '06.27.51.86.13', 'bbooth', 1, 3, 91), -- username : bbooth 
-    ('29208040', 'Edward', 'Johnson', 'ejohnson@iut.univ-paris8.fr', '07.31.41.25.26', 'ejohnson', 1, 3, 91), -- username : ejohnson 
-    ('96999194', 'Cynthia', 'Miller', 'cmiller1@iut.univ-paris8.fr', '06.82.46.48.57', 'cmiller1', 1, 3, 91), -- username : cmiller1 
-    ('10074649', 'Melanie', 'Gutierrez', 'mgutierrez@iut.univ-paris8.fr', '07.76.04.13.22', 'mgutierrez', 1, 3, 91), -- username : mgutierrez 
-    ('66670102', 'Emily', 'Ward', 'eward@iut.univ-paris8.fr', '07.29.88.61.58', 'eward', 1, 3,91) -- username : eeward 
+    ('55571619', 'Adrian', 'Vasquez', 'avasquez1@iut.univ-paris8.fr', '06.75.46.29.93', 'avasquez1', 1, 15, 15) -- username : avasquez1 
+    -- ('93243283', 'Lauren', 'Miller', 'lmiller@iut.univ-paris8.fr', '06.70.85.39.54', 'lmiller', 1, 15, 15), -- username : lmiller 
+    -- ('15382554', 'Jamie', 'Jackson', 'jjackson3@iut.univ-paris8.fr', '07.39.17.17.12', 'jjackson3', 1, 15, 15), -- username : jjackson3 
+    -- ('74935450', 'Alexandra', 'Hamilton', 'ahamilton@iut.univ-paris8.fr', '06.85.31.21.60', 'ahamilton', 1, 15, 59), -- username : ahamilton 
+    -- ('16106025', 'Kristen', 'Robinson', 'krobinson1@iut.univ-paris8.fr', '07.18.42.16.10', 'krobinson1', 1, 15, 59), -- username : krobinson1 
+    -- ('99270479', 'Grant', 'Smith', 'gsmith@iut.univ-paris8.fr', '07.79.87.78.43', 'gsmith', 1, 15, 59), -- username : gsmith 
+    -- ('96677459', 'Bobby', 'Nelson', 'bnelson@iut.univ-paris8.fr', '07.09.12.11.85', 'bnelson', 1, 15, 59), -- username : bnelson 
+    -- ('57045266', 'Laura', 'Olson', 'lolson@iut.univ-paris8.fr', '06.92.70.92.97', 'lolson', 1, 15, 59), -- username : lolson 
+    -- ('05879612', 'Sherry', 'Smith', 'ssmith1@iut.univ-paris8.fr', '06.27.80.21.57', 'ssmith1', 1, 15, 59), -- username : ssmith1 
+    -- ('92734986', 'David', 'Warner', 'dwarner@iut.univ-paris8.fr', '07.98.31.81.18', 'dwarner', 1, 15, 59), -- username : dwarner 
+    -- ('84459738', 'Kenneth', 'Stewart', 'kstewart@iut.univ-paris8.fr', '06.07.27.70.17', 'kstewart', 1, 15, 59), -- username : kstewart 
+    -- ('56827659', 'Jeremy', 'Brown', 'jbrown2@iut.univ-paris8.fr', '06.98.66.49.23', 'jbrown2', 1, 15, 59), -- username : jbrown2 
+    -- ('42052066', 'Jennifer', 'Mitchell', 'jmitchell@iut.univ-paris8.fr', '07.53.40.75.40', 'jmitchell', 1, 15, 59), -- username : jmitchell 
+    -- ('08341526', 'Matthew', 'Bradley', 'mbradley@iut.univ-paris8.fr', '06.68.36.75.31', 'mbradley', 1, 15, 103), -- username : mbradley 
+    -- ('11241892', 'Kevin', 'Ward', 'kward@iut.univ-paris8.fr', '06.28.91.74.20', 'kward', 1, 15, 103), -- username : kward 
+    -- ('65772919', 'Jason', 'Zamora', 'jzamora@iut.univ-paris8.fr', '07.74.72.14.06', 'jzamora', 1, 15, 103), -- username : jzamora 
+    -- ('16487090', 'Martin', 'Humphrey', 'mhumphrey@iut.univ-paris8.fr', '07.24.67.74.65', 'mhumphrey', 1, 15, 103), -- username : mhumphrey 
+    -- ('47277510', 'Mark', 'Johnson', 'mjohnson2@iut.univ-paris8.fr', '07.22.88.94.55', 'mjohnson2', 1, 15, 103), -- username : mjohnson2 
+    -- ('34787446', 'Travis', 'Hopkins', 'thopkins@iut.univ-paris8.fr', '07.06.47.39.54', 'thopkins', 1, 15, 103), -- username : thopkins 
+    -- ('90625942', 'Brandon', 'Cobb', 'bcobb@iut.univ-paris8.fr', '06.50.59.61.52', 'bcobb', 1, 15, 103), -- username : bcobb 
+    -- ('82676250', 'Zachary', 'Simmons', 'zsimmons@iut.univ-paris8.fr', '06.00.57.70.06', 'zsimmons', 1, 15, 103), -- username : zsimmons 
+    -- ('99932870', 'Samantha', 'White', 'swhite1@iut.univ-paris8.fr', '07.69.23.17.25', 'swhite1', 1, 15, 103), -- username : swhite1 
+    -- ('17814527', 'Lauren', 'Beard', 'lbeard@iut.univ-paris8.fr', '07.70.07.87.83', 'lbeard', 1, 15, 103), -- username : lbeard 
+    -- ('61291902', 'Timothy', 'Bauer', 'tbauer@iut.univ-paris8.fr', '06.42.06.78.03', 'tbauer', 1, 13, 13), -- username : tbauer 
+    -- ('87898875', 'John', 'Stevens', 'jstevens@iut.univ-paris8.fr', '07.99.04.64.44', 'jstevens', 1, 13, 13), -- username : jstevens 
+    -- ('74570494', 'Matthew', 'Garcia', 'mgarcia1@iut.univ-paris8.fr', '06.70.26.44.84', 'mgarcia1', 1, 13, 13), -- username : mgarcia1 
+    -- ('11983616', 'Debbie', 'Griffith', 'dgriffith1@iut.univ-paris8.fr', '07.77.81.61.16', 'dgriffith1', 1, 13, 13), -- username : dgriffith1 
+    -- ('85839074', 'Patricia', 'Miller', 'pmiller1@iut.univ-paris8.fr', '07.71.38.48.33', 'pmiller1', 1, 13, 13), -- username : pmiller1 
+    -- ('02558325', 'Connor', 'Scott', 'cscott@iut.univ-paris8.fr', '06.53.76.78.28', 'cscott', 1, 13, 13), -- username : cscott 
+    -- ('12457808', 'Angela', 'White', 'awhite1@iut.univ-paris8.fr', '07.61.13.16.08', 'awhite1', 1, 13, 13), -- username : awhite1 
+    -- ('47156601', 'Shannon', 'Ball', 'sball@iut.univ-paris8.fr', '07.62.47.09.83', 'sball', 1, 13, 13), -- username : sball 
+    -- ('79123117', 'Michael', 'Jennings', 'mjennings@iut.univ-paris8.fr', '06.06.86.76.71', 'mjennings', 1, 13, 13), -- username : mjennings 
+    -- ('00111812', 'Alexander', 'Roth', 'aroth@iut.univ-paris8.fr', '06.74.01.28.30', 'aroth', 1, 13, 13), -- username : aroth 
+    -- ('30092089', 'Ryan', 'Rivera', 'rrivera@iut.univ-paris8.fr', '07.31.62.15.92', 'rrivera', 1, 13, 57), -- username : rrivera 
+    -- ('29991330', 'Ernest', 'Richard', 'erichard@iut.univ-paris8.fr', '06.74.59.19.69', 'erichard', 1, 13, 57), -- username : erichard 
+    -- ('91425260', 'Mary', 'Gutierrez', 'mgutierrez1@iut.univ-paris8.fr', '06.40.61.42.22', 'mgutierrez1', 1, 13, 57), -- username : mgutierrez1 
+    -- ('78527635', 'Daniel', 'Stein', 'dstein@iut.univ-paris8.fr', '07.96.54.81.26', 'dstein', 1, 13, 57), -- username : dstein 
+    -- ('41616270', 'Marvin', 'Patel', 'mpatel@iut.univ-paris8.fr', '07.32.79.08.65', 'mpatel', 1, 13, 57), -- username : mpatel 
+    -- ('38271798', 'Christopher', 'Gray', 'cgray@iut.univ-paris8.fr', '06.58.41.18.76', 'cgray', 1, 13, 57), -- username : cgray 
+    -- ('96423171', 'Lisa', 'Williams', 'lwilliams1@iut.univ-paris8.fr', '06.27.69.05.91', 'lwilliams1', 1, 13, 57), -- username : lwilliams1 
+    -- ('63187888', 'Sonia', 'Hall', 'shall@iut.univ-paris8.fr', '06.09.18.08.56', 'shall', 1, 13, 57), -- username : shall 
+    -- ('94359465', 'Mary', 'Watson', 'mwatson1@iut.univ-paris8.fr', '06.33.58.86.98', 'mwatson1', 1, 13, 57), -- username : mwatson1 
+    -- ('29310058', 'Derrick', 'Gonzalez', 'dgonzalez@iut.univ-paris8.fr', '06.28.12.40.53', 'dgonzalez', 1, 13, 57), -- username : dgonzalez 
+    -- ('54031514', 'Alicia', 'Robinson', 'arobinson@iut.univ-paris8.fr', '06.07.11.42.31', 'arobinson', 1, 13, 101), -- username : arobinson 
+    -- ('02652655', 'Debbie', 'Kane', 'dkane@iut.univ-paris8.fr', '06.10.87.13.50', 'dkane', 1, 13, 101), -- username : dkane 
+    -- ('34767318', 'Andrew', 'Klein', 'aklein1@iut.univ-paris8.fr', '07.44.71.53.82', 'aklein1', 1, 13, 101), -- username : aklein1 
+    -- ('73424439', 'Patrick', 'Obrien', 'pobrien@iut.univ-paris8.fr', '07.19.10.00.21', 'pobrien', 1, 13, 101), -- username : pobrien 
+    -- ('21527621', 'Cynthia', 'Foley', 'cfoley@iut.univ-paris8.fr', '07.17.60.87.85', 'cfoley', 1, 13, 101), -- username : cfoley 
+    -- ('74714761', 'Juan', 'Garcia', 'jgarcia1@iut.univ-paris8.fr', '07.56.73.31.77', 'jgarcia1', 1, 13, 101), -- username : jgarcia1 
+    -- ('92059001', 'Sabrina', 'Brown', 'sbrown@iut.univ-paris8.fr', '07.01.87.05.24', 'sbrown', 1, 13, 101), -- username : sbrown 
+    -- ('68674097', 'Marcus', 'Skinner', 'mskinner@iut.univ-paris8.fr', '07.56.96.95.00', 'mskinner', 1, 13, 101), -- username : mskinner 
+    -- ('19913242', 'Michael', 'Fowler', 'mfowler@iut.univ-paris8.fr', '07.49.92.62.19', 'mfowler', 1, 13, 101), -- username : mfowler 
+    -- ('38601147', 'Dwayne', 'Morrison', 'dmorrison@iut.univ-paris8.fr', '07.76.90.33.65', 'dmorrison', 1, 13, 101), -- username : dmorrison 
+    -- ('09500750', 'Nicole', 'White', 'nwhite@iut.univ-paris8.fr', '06.77.86.99.06', 'nwhite', 1, 14, 14), -- username : nwhite 
+    -- ('00642225', 'Kristin', 'Johnson', 'kjohnson1@iut.univ-paris8.fr', '07.07.62.56.15', 'kjohnson1', 1, 14, 14), -- username : kjohnson1 
+    -- ('56066929', 'Donald', 'Santos', 'dsantos@iut.univ-paris8.fr', '06.46.29.97.13', 'dsantos', 1, 14, 14), -- username : dsantos 
+    -- ('23546788', 'Donna', 'Foster', 'dfoster@iut.univ-paris8.fr', '07.71.41.54.06', 'dfoster', 1, 14, 14), -- username : dfoster 
+    -- ('22048201', 'James', 'Smith', 'jsmith4@iut.univ-paris8.fr', '07.77.92.14.18', 'jsmith4', 1, 14, 14), -- username : jsmith4 
+    -- ('40438249', 'James', 'Santiago', 'jsantiago@iut.univ-paris8.fr', '07.54.61.55.30', 'jsantiago', 1, 14, 14), -- username : jsantiago 
+    -- ('37107617', 'Gary', 'Martin', 'gmartin@iut.univ-paris8.fr', '06.79.71.94.17', 'gmartin', 1, 14, 14), -- username : gmartin 
+    -- ('52859475', 'Kari', 'Williams', 'kwilliams@iut.univ-paris8.fr', '07.48.68.17.77', 'kwilliams', 1, 14, 14), -- username : kwilliams 
+    -- ('69993633', 'Michael', 'Henry', 'mhenry@iut.univ-paris8.fr', '06.65.90.84.20', 'mhenry', 1, 14, 14), -- username : mhenry 
+    -- ('70190947', 'Shawn', 'Velez', 'svelez1@iut.univ-paris8.fr', '06.71.16.12.20', 'svelez1', 1, 14, 14), -- username : svelez1 
+    -- ('33834534', 'Lori', 'Jennings', 'ljennings@iut.univ-paris8.fr', '07.37.27.73.40', 'ljennings', 1, 14, 58), -- username : ljennings 
+    -- ('38495728', 'Michael', 'Davis', 'mdavis2@iut.univ-paris8.fr', '07.69.12.55.37', 'mdavis2', 1, 14, 58), -- username : mdavis2 
+    -- ('08854418', 'Ryan', 'Reeves', 'rreeves@iut.univ-paris8.fr', '07.30.64.71.18', 'rreeves', 1, 14, 58), -- username : rreeves 
+    -- ('74349205', 'Jenna', 'Jackson', 'jjackson2@iut.univ-paris8.fr', '07.65.10.03.09', 'jjackson2', 1, 14, 58), -- username : jjackson2
+    -- ('14349828', 'Sherry', 'Kemp', 'skemp@iut.univ-paris8.fr', '06.06.38.67.24', 'skemp', 1, 14, 58), -- username : skemp 
+    -- ('13584401', 'James', 'Peters', 'jpeters@iut.univ-paris8.fr', '06.16.30.18.43', 'jpeters', 1, 14, 58), -- username : jpeters 
+    -- ('86321711', 'Kristy', 'Hunt', 'khunt@iut.univ-paris8.fr', '07.59.87.89.80', 'khunt', 1, 14, 58), -- username : khunt 
+    -- ('02492664', 'Mark', 'Dudley', 'mdudley@iut.univ-paris8.fr', '06.98.31.75.95', 'mdudley', 1, 14, 58), -- username : mdudley 
+    -- ('81833335', 'Andrew', 'Vasquez', 'avasquez@iut.univ-paris8.fr', '06.17.12.46.78', 'avasquez', 1, 14, 58), -- username : avasquez 
+    -- ('90527699', 'Kelly', 'Doyle', 'kdoyle@iut.univ-paris8.fr', '06.43.04.39.67', 'kdoyle', 1, 14, 58), -- username : kdoyle 
+    -- ('86912725', 'Roy', 'Clarke', 'rclarke@iut.univ-paris8.fr', '06.18.81.48.97', 'rclarke', 1, 14, 102), -- username : rclarke 
+    -- ('54596217', 'Heidi', 'Moore', 'hmoore1@iut.univ-paris8.fr', '07.46.34.48.14', 'hmoore1', 1, 14, 102), -- username : hmoore1 
+    -- ('42729938', 'Kayla', 'Cox', 'kcox@iut.univ-paris8.fr', '07.13.96.35.27', 'kcox', 1, 14, 102), -- username : kcox 
+    -- ('38329565', 'Anne', 'Willis', 'awillis1@iut.univ-paris8.fr', '07.14.72.24.78', 'awillis1', 1, 14, 102), -- username : awillis1 
+    -- ('00568988', 'Joyce', 'Skinner', 'jskinner@iut.univ-paris8.fr', '06.87.76.33.60', 'jskinner', 1, 14, 102), -- username : jskinner 
+    -- ('20218411', 'Andrea', 'James', 'ajames@iut.univ-paris8.fr', '06.12.61.09.81', 'ajames', 1, 14, 102), -- username : ajames 
+    -- ('45184670', 'Jamie', 'Maddox', 'jmaddox@iut.univ-paris8.fr', '06.94.71.10.41', 'jmaddox', 1, 14, 102), -- username : jmaddox 
+    -- ('87850228', 'Jerry', 'Cooley', 'jcooley@iut.univ-paris8.fr', '07.19.57.29.72', 'jcooley', 1, 14, 102), -- username : jcooley 
+    -- ('73785487', 'Stacy', 'Gould', 'sgould@iut.univ-paris8.fr', '06.54.37.92.66', 'sgould', 1, 14, 102), -- username : sgould 
+    -- ('16520846', 'Ralph', 'Peters', 'rpeters@iut.univ-paris8.fr', '07.73.44.41.91', 'rpeters', 1, 14, 102), -- username : rpeters 
+    -- ('72229698', 'Laura', 'White', 'lwhite1@iut.univ-paris8.fr', '07.59.03.02.68', 'lwhite1', 1, 2, 2), -- username : lwhite1 
+    -- ('30978751', 'Christopher', 'Gonzalez', 'cgonzalez@iut.univ-paris8.fr', '07.38.72.68.78', 'cgonzalez', 1, 2, 2), -- username : cgonzalez 
+    -- ('82621157', 'Sarah', 'Jordan', 'sjordan1@iut.univ-paris8.fr', '06.24.38.84.24', 'sjordan1', 1, 2, 2), -- username : sjordan1 
+    -- ('09485438', 'James', 'Love', 'jlove@iut.univ-paris8.fr', '06.15.20.80.36', 'jlove', 1, 2, 2), -- username : jlove 
+    -- ('28816470', 'Levi', 'Heath', 'lheath@iut.univ-paris8.fr', '07.21.04.46.53', 'lheath', 1, 2, 2), -- username : lheath 
+    -- ('82031888', 'Brandy', 'Ramos', 'bramos@iut.univ-paris8.fr', '06.99.68.56.46', 'bramos', 1, 2, 2), -- username : bramos 
+    -- ('65572328', 'Daniel', 'Brown', 'dbrown1@iut.univ-paris8.fr', '07.12.92.94.71', 'dbrown1', 1, 2, 2), -- username : dbrown1 
+    -- ('54838849', 'Mark', 'Phillips', 'mphillips@iut.univ-paris8.fr', '06.24.88.10.27', 'mphillips', 1, 2, 2), -- username : mphillips 
+    -- ('81411527', 'Larry', 'Jackson', 'ljackson@iut.univ-paris8.fr', '07.30.59.03.13', 'ljackson', 1, 2, 2), -- username : ljackson 
+    -- ('34084059', 'Donald', 'Smith', 'dsmith2@iut.univ-paris8.fr', '06.37.46.64.08', 'dsmith2', 1, 2, 2), -- username : dsmith2 
+    -- ('39262602', 'Patricia', 'Klein', 'pklein@iut.univ-paris8.fr', '06.43.62.51.81', 'pklein', 1, 2, 46), -- username : pklein 
+    -- ('40199913', 'Jonathan', 'Martinez', 'jmartinez@iut.univ-paris8.fr', '07.72.99.88.41', 'jmartinez', 1, 2, 46), -- username : jmartinez 
+    -- ('21700930', 'Jesse', 'Reynolds', 'jreynolds@iut.univ-paris8.fr', '07.70.37.78.75', 'jreynolds', 1, 2, 46), -- username : jreynolds 
+    -- ('52613544', 'Caleb', 'Jarvis', 'cjarvis@iut.univ-paris8.fr', '06.01.14.37.59', 'cjarvis', 1, 2, 46), -- username : cjarvis 
+    -- ('25405560', 'Annette', 'Cook', 'acook@iut.univ-paris8.fr', '07.78.61.33.89', 'acook', 1, 2, 46), -- username : acook 
+    -- ('01698392', 'Renee', 'Gonzales', 'rgonzales@iut.univ-paris8.fr', '07.87.87.99.96', 'rgonzales', 1, 2, 46), -- username : rgonzales 
+    -- ('25772667', 'Laura', 'Campbell', 'lcampbell1@iut.univ-paris8.fr', '06.33.13.09.83', 'lcampbell1', 1, 2, 46), -- username : lcampbell1 
+    -- ('65456495', 'Angela', 'Perry', 'aperry1@iut.univ-paris8.fr', '07.70.39.37.19', 'aperry1', 1, 2, 46), -- username : aperry1 
+    -- ('62175240', 'John', 'Johnston', 'jjohnston@iut.univ-paris8.fr', '06.70.24.87.85', 'jjohnston', 1, 2, 46), -- username : jjohnston 
+    -- ('16208979', 'Stephanie', 'Gordon', 'sgordon@iut.univ-paris8.fr', '06.08.90.26.61', 'sgordon', 1, 2, 46), -- username : sgordon 
+    -- ('17874761', 'Cynthia', 'Sanchez', 'csanchez@iut.univ-paris8.fr', '06.29.39.13.19', 'csanchez', 1, 2, 90), -- username : csanchez 
+    -- ('44961166', 'Laura', 'Shelton', 'lshelton@iut.univ-paris8.fr', '06.22.20.55.04', 'lshelton', 1, 2, 90), -- username : lshelton 
+    -- ('98873456', 'Angela', 'Adams', 'aadams2@iut.univ-paris8.fr', '07.40.50.34.95', 'aadams2', 1, 2, 90), -- username : aadams2 
+    -- ('73208753', 'Raymond', 'Williams', 'rwilliams@iut.univ-paris8.fr', '07.82.11.62.69', 'rwilliams', 1, 2, 90), -- username : rwilliams 
+    -- ('56108136', 'Linda', 'Mcdonald', 'lmcdonald@iut.univ-paris8.fr', '07.21.54.71.63', 'lmcdonald', 1, 2, 90), -- username : lmcdonald 
+    -- ('56645338', 'Chelsea', 'Johnston', 'cjohnston@iut.univ-paris8.fr', '07.33.25.77.86', 'cjohnston', 1, 2, 90), -- username : cjohnston 
+    -- ('17543274', 'Jason', 'Smith', 'jsmith3@iut.univ-paris8.fr', '07.35.85.84.76', 'jsmith3', 1, 2, 90), -- username : jsmith3 
+    -- ('21116224', 'Brandi', 'Coffey', 'bcoffey@iut.univ-paris8.fr', '07.67.24.60.31', 'bcoffey', 1, 2, 90), -- username : bcoffey 
+    -- ('31710493', 'Robert', 'Edwards', 'redwards@iut.univ-paris8.fr', '06.60.49.54.48', 'redwards', 1, 2, 90), -- username : redwards 
+    -- ('51137848', 'Stephanie', 'Sanders', 'ssanders@iut.univ-paris8.fr', '06.34.51.50.91', 'ssanders', 1, 2, 90), -- username : ssanders 
+    -- ('19499037', 'Jonathan', 'Luna', 'jluna@iut.univ-paris8.fr', '07.12.58.81.51', 'jluna', 1, 3, 3), -- username : jluna 
+    -- ('77604399', 'Alexander', 'Goodwin', 'agoodwin@iut.univ-paris8.fr', '07.23.78.59.17', 'agoodwin', 1, 3, 3), -- username : agoodwin 
+    -- ('47884030', 'Douglas', 'Rodriguez', 'drodriguez1@iut.univ-paris8.fr', '06.35.43.89.96', 'drodriguez1', 1, 3, 3), -- username : drodriguez1 
+    -- ('65934134', 'Joel', 'Stewart', 'jstewart2@iut.univ-paris8.fr', '07.43.81.46.68', 'jstewart2', 1, 3, 3), -- username : jstewart2 
+    -- ('53205042', 'Todd', 'Bradford', 'tbradford@iut.univ-paris8.fr', '07.24.08.31.87', 'tbradford', 1, 3, 3), -- username : tbradford 
+    -- ('32717464', 'Stephanie', 'Schroeder', 'sschroeder@iut.univ-paris8.fr', '07.87.29.71.51', 'sschroeder', 1, 3, 3), -- username : sschroeder 
+    -- ('64988521', 'Lori', 'Wilkerson', 'lwilkerson@iut.univ-paris8.fr', '06.57.21.59.79', 'lwilkerson', 1, 3, 3), -- username : lwilkerson 
+    -- ('83889933', 'Kathleen', 'Thompson', 'kthompson@iut.univ-paris8.fr', '07.12.76.36.26', 'kthompson', 1, 3, 3), -- username : kthompson 
+    -- ('97991178', 'Cathy', 'Berry', 'cberry@iut.univ-paris8.fr', '06.02.05.86.32', 'cberry', 1, 3, 3), -- username : cberry 
+    -- ('39805609', 'Jill', 'Morales', 'jmorales@iut.univ-paris8.fr', '06.10.91.15.31', 'jmorales', 1, 3, 3), -- username : jmorales 
+    -- ('81511681', 'Steven', 'Hoffman', 'shoffman@iut.univ-paris8.fr', '07.68.29.11.34', 'shoffman', 1, 3, 47), -- username : shoffman 
+    -- ('37955110', 'Jesse', 'Meadows', 'jmeadows1@iut.univ-paris8.fr', '06.53.02.53.39', 'jmeadows1', 1, 3, 47), -- username : jmeadows1 
+    -- ('04860278', 'Christopher', 'Joyce', 'cjoyce@iut.univ-paris8.fr', '06.35.62.24.19', 'cjoyce', 1, 3, 47), -- username : cjoyce 
+    -- ('52355521', 'Melissa', 'Winters', 'mwinters@iut.univ-paris8.fr', '06.50.82.02.53', 'mwinters', 1, 3, 47), -- username : mwinters 
+    -- ('81757963', 'Olivia', 'Jackson', 'ojackson@iut.univ-paris8.fr', '06.58.75.02.22', 'ojackson', 1, 3, 47), -- username : ojackson 
+    -- ('57669106', 'Barry', 'Robinson', 'brobinson@iut.univ-paris8.fr', '06.06.79.04.05', 'brobinson', 1, 3, 47), -- username : brobinson 
+    -- ('84747211', 'Anthony', 'Turner', 'aturner@iut.univ-paris8.fr', '07.41.46.71.00', 'aturner', 1, 3, 47), -- username : aturner 
+    -- ('47989975', 'Jessica', 'Anderson', 'janderson@iut.univ-paris8.fr', '07.24.78.56.69', 'janderson', 1, 3, 47), -- username : janderson 
+    -- ('15672397', 'Katie', 'Garcia', 'kgarcia2@iut.univ-paris8.fr', '06.54.94.94.51', 'kgarcia2', 1, 3, 47), -- username : kgarcia2 
+    -- ('03779068', 'Daniel', 'Elliott', 'delliott@iut.univ-paris8.fr', '06.67.51.99.47', 'delliott', 1, 3, 47), -- username : delliott 
+    -- ('20237532', 'Frederick', 'Hunter', 'fhunter@iut.univ-paris8.fr', '07.53.65.75.28', 'fhunter', 1, 3, 91), -- username : fhunter 
+    -- ('43302558', 'Brandon', 'Gonzalez', 'bgonzalez1@iut.univ-paris8.fr', '06.96.67.33.99', 'bgonzalez1', 1, 3, 91), -- username : bgonzalez1 
+    -- ('34868036', 'Christina', 'Cameron', 'ccameron@iut.univ-paris8.fr', '06.95.41.15.66', 'ccameron', 1, 3, 91), -- username : ccameron 
+    -- ('57646436', 'Felicia', 'Lopez', 'flopez@iut.univ-paris8.fr', '07.53.74.44.20', 'flopez', 1, 3, 91), -- username : flopez 
+    -- ('23859280', 'Wendy', 'Ponce', 'wponce@iut.univ-paris8.fr', '06.40.66.89.32', 'wponce', 1, 3, 91), -- username : wponce 
+    -- ('43967778', 'Joshua', 'Ramirez', 'jramirez@iut.univ-paris8.fr', '07.10.12.66.89', 'jramirez', 1, 3, 91), -- username : jramirez 
+    -- ('47700084', 'Michael', 'Burton', 'mburton@iut.univ-paris8.fr', '06.32.31.33.20', 'mburton', 1, 3, 91), -- username : mburton 
+    -- ('99600919', 'Anthony', 'Nolan', 'anolan@iut.univ-paris8.fr', '07.99.43.63.54', 'anolan', 1, 3, 91), -- username : anolan 
+    -- ('31019697', 'Mark', 'Conner', 'mconner@iut.univ-paris8.fr', '06.27.50.02.67', 'mconner', 1, 3, 91), -- username : mconner 
+    -- ('12734102', 'James', 'Howard', 'jhoward1@iut.univ-paris8.fr', '07.76.76.32.58', 'jhoward1', 1, 3, 91), -- username : jhoward1 
+    -- ('51634363', 'Christina', 'Nguyen', 'cnguyen@iut.univ-paris8.fr', '06.01.92.36.00', 'cnguyen', 1, 1, 1), -- username : cnguyen 
+    -- ('89453839', 'Nichole', 'Kaiser', 'nkaiser@iut.univ-paris8.fr', '07.87.08.49.26', 'nkaiser', 1, 1, 1), -- username : nkaiser 
+    -- ('61699350', 'Stacy', 'Craig', 'scraig@iut.univ-paris8.fr', '06.12.23.69.02', 'scraig', 1, 1, 1), -- username : scraig 
+    -- ('23356490', 'Sarah', 'Osborne', 'sosborne@iut.univ-paris8.fr', '06.79.89.72.48', 'sosborne', 1, 1, 1), -- username : sosborne 
+    -- ('36180693', 'Joseph', 'Hendrix', 'jhendrix@iut.univ-paris8.fr', '07.88.41.96.48', 'jhendrix', 1, 1, 1), -- username : jhendrix 
+    -- ('12992605', 'Dale', 'Reed', 'dreed@iut.univ-paris8.fr', '07.61.73.58.98', 'dreed', 1, 1, 1), -- username : dreed 
+    -- ('69484518', 'Mary', 'Butler', 'mbutler@iut.univ-paris8.fr', '07.86.85.35.27', 'mbutler', 1, 1, 1), -- username : mbutler 
+    -- ('23720050', 'Edwin', 'Fischer', 'efischer@iut.univ-paris8.fr', '06.21.61.58.79', 'efischer', 1, 1, 1), -- username : efischer 
+    -- ('63174696', 'Kaylee', 'Castillo', 'kcastillo@iut.univ-paris8.fr', '06.48.96.14.31', 'kcastillo', 1, 1, 1), -- username : kcastillo 
+    -- ('22189532', 'Courtney', 'Carter', 'ccarter2@iut.univ-paris8.fr', '06.34.28.92.92', 'ccarter2', 1, 1, 1), -- username : ccarter2 
+    -- ('70368688', 'Krista', 'Kent', 'kkent@iut.univ-paris8.fr', '06.07.68.41.86', 'kkent', 1, 1, 45), -- username : kkent 
+    -- ('87346382', 'Holly', 'Johnson', 'hjohnson@iut.univ-paris8.fr', '06.70.69.13.56', 'hjohnson', 1, 1, 45), -- username : hjohnson 
+    -- ('17147542', 'Chad', 'Dixon', 'cdixon@iut.univ-paris8.fr', '06.36.37.86.57', 'cdixon', 1, 1, 45), -- username : cdixon 
+    -- ('84537858', 'Angela', 'Mccarthy', 'amccarthy@iut.univ-paris8.fr', '06.42.96.03.03', 'amccarthy', 1, 1, 45), -- username : amccarthy 
+    -- ('53688242', 'William', 'Nguyen', 'wnguyen@iut.univ-paris8.fr', '06.82.09.97.33', 'wnguyen', 1, 1, 45), -- username : wnguyen 
+    -- ('42300921', 'Michael', 'Chang', 'mchang@iut.univ-paris8.fr', '06.37.84.46.87', 'mchang', 1, 1, 45), -- username : mchang 
+    -- ('18997480', 'Kristin', 'Parks', 'kparks@iut.univ-paris8.fr', '07.13.73.76.80', 'kparks', 1, 1, 45), -- username : kparks 
+    -- ('03317942', 'Jennifer', 'Stephens', 'jstephens1@iut.univ-paris8.fr', '07.02.08.10.35', 'jstephens1', 1, 1, 45), -- username : jstephens1 
+    -- ('60267872', 'Rachel', 'Merritt', 'rmerritt@iut.univ-paris8.fr', '07.39.59.54.05', 'rmerritt', 1, 1, 45), -- username : rmerritt 
+    -- ('20805439', 'Cory', 'Smith', 'csmith1@iut.univ-paris8.fr', '06.29.28.61.85', 'csmith1', 1, 1, 45), -- username : csmith1 
+    -- ('22299182', 'Robin', 'Brown', 'rbrown1@iut.univ-paris8.fr', '06.92.75.86.36', 'rbrown1', 1, 1, 89), -- username : rbrown1 
+    -- ('60353886', 'Cheryl', 'Simpson', 'csimpson@iut.univ-paris8.fr', '06.03.83.68.89', 'csimpson', 1, 1, 89), -- username : csimpson 
+    -- ('59904869', 'Mark', 'Carson', 'mcarson@iut.univ-paris8.fr', '06.63.10.91.78', 'mcarson', 1, 1, 89), -- username : mcarson 
+    -- ('59032188', 'Jason', 'Johnson', 'jjohnson1@iut.univ-paris8.fr', '06.79.49.76.65', 'jjohnson1', 1, 1, 89), -- username : jjohnson1 
+    -- ('98689539', 'Matthew', 'Rodgers', 'mrodgers@iut.univ-paris8.fr', '07.68.95.01.01', 'mrodgers', 1, 1, 89), -- username : mrodgers 
+    -- ('64701508', 'Sean', 'Rosario', 'srosario@iut.univ-paris8.fr', '07.48.39.20.47', 'srosario', 1, 1, 89), -- username : srosario 
+    -- ('95817804', 'Mary', 'Miller', 'mmiller1@iut.univ-paris8.fr', '06.92.69.79.18', 'mmiller1', 1, 1, 89), -- username : mmiller1 
+    -- ('83201783', 'Daniel', 'Herrera', 'dherrera@iut.univ-paris8.fr', '07.06.14.00.66', 'dherrera', 1, 1, 89), -- username : dherrera 
+    -- ('20069554', 'Brittany', 'Moore', 'bmoore@iut.univ-paris8.fr', '06.27.90.55.38', 'bmoore', 1, 1, 89), -- username : bmoore 
+    -- ('66643312', 'Allison', 'Walker', 'awalker@iut.univ-paris8.fr', '06.23.73.57.44', 'awalker', 1, 1, 89), -- username : awalker 
+    -- ('18614271', 'Rodney', 'Hall', 'rhall@iut.univ-paris8.fr', '07.53.82.80.75', 'rhall', 1, 38, 38), -- username : rhall 
+    -- ('89039625', 'Jason', 'Singleton', 'jsingleton@iut.univ-paris8.fr', '07.53.95.30.72', 'jsingleton', 1, 38, 38), -- username : jsingleton 
+    -- ('93486604', 'Amanda', 'Rodriguez', 'arodriguez1@iut.univ-paris8.fr', '07.74.26.87.87', 'arodriguez1', 1, 38, 38), -- username : arodriguez1 
+    -- ('79972285', 'Kimberly', 'Russell', 'krussell1@iut.univ-paris8.fr', '06.09.00.37.00', 'krussell1', 1, 38, 38), -- username : krussell1 
+    -- ('76989167', 'Kimberly', 'Hill', 'khill@iut.univ-paris8.fr', '06.27.58.24.33', 'khill', 1, 38, 38), -- username : khill 
+    -- ('32627103', 'Alexander', 'Smith', 'asmith2@iut.univ-paris8.fr', '07.71.08.54.79', 'asmith2', 1, 38, 38), -- username : asmith2 
+    -- ('95280694', 'Karen', 'Rose', 'krose1@iut.univ-paris8.fr', '06.03.20.81.15', 'krose1', 1, 38, 38), -- username : krose1 
+    -- ('61220317', 'Christopher', 'Thompson', 'cthompson1@iut.univ-paris8.fr', '06.72.24.87.98', 'cthompson1', 1, 38, 38), -- username : cthompson1 
+    -- ('22036090', 'Michael', 'Marsh', 'mmarsh@iut.univ-paris8.fr', '06.68.05.77.87', 'mmarsh', 1, 38, 38), -- username : mmarsh 
+    -- ('16714539', 'Rachel', 'Hicks', 'rhicks@iut.univ-paris8.fr', '07.11.00.33.25', 'rhicks', 1, 38, 38), -- username : rhicks 
+    -- ('35509567', 'Colleen', 'Brown', 'cbrown@iut.univ-paris8.fr', '06.27.67.08.41', 'cbrown', 1, 38, 82), -- username : cbrown 
+    -- ('98500675', 'Mitchell', 'Galvan', 'mgalvan@iut.univ-paris8.fr', '06.19.49.88.86', 'mgalvan', 1, 38, 82), -- username : mgalvan 
+    -- ('96512739', 'Kimberly', 'Schmidt', 'kschmidt@iut.univ-paris8.fr', '06.34.96.08.92', 'kschmidt', 1, 38, 82), -- username : kschmidt 
+    -- ('44411182', 'Casey', 'Le', 'cle@iut.univ-paris8.fr', '06.40.56.89.08', 'cle', 1, 38, 82), -- username : cle 
+    -- ('04844346', 'Ryan', 'Phelps', 'rphelps@iut.univ-paris8.fr', '06.13.43.03.43', 'rphelps', 1, 38, 82), -- username : rphelps 
+    -- ('66775024', 'Heidi', 'Wagner', 'hwagner@iut.univ-paris8.fr', '06.94.94.32.01', 'hwagner', 1, 38, 82), -- username : hwagner 
+    -- ('86012923', 'Robert', 'Wright', 'rwright1@iut.univ-paris8.fr', '07.12.02.93.70', 'rwright1', 1, 38, 82), -- username : rwright1 
+    -- ('63887688', 'Emily', 'Hunter', 'ehunter@iut.univ-paris8.fr', '07.30.31.74.38', 'ehunter', 1, 38, 82), -- username : ehunter 
+    -- ('38524401', 'Ivan', 'Martin', 'imartin@iut.univ-paris8.fr', '07.70.08.86.92', 'imartin', 1, 38, 82), -- username : imartin 
+    -- ('47913785', 'Jacqueline', 'Chambers', 'jchambers1@iut.univ-paris8.fr', '06.24.95.70.35', 'jchambers1', 1, 38, 82), -- username : jchambers1 
+    -- ('77616049', 'Monica', 'Lindsey', 'mlindsey@iut.univ-paris8.fr', '06.21.24.38.09', 'mlindsey', 1, 38, 126), -- username : mlindsey 
+    -- ('75032692', 'Mary', 'Sanchez', 'msanchez1@iut.univ-paris8.fr', '06.62.31.64.18', 'msanchez1', 1, 38, 126), -- username : msanchez1 
+    -- ('38614228', 'Sarah', 'Novak', 'snovak@iut.univ-paris8.fr', '07.05.25.89.09', 'snovak', 1, 38, 126), -- username : snovak 
+    -- ('15864611', 'Donna', 'Hernandez', 'dhernandez@iut.univ-paris8.fr', '06.24.87.36.08', 'dhernandez', 1, 38, 126), -- username : dhernandez 
+    -- ('66540523', 'Jennifer', 'Foster', 'jfoster@iut.univ-paris8.fr', '07.79.66.04.59', 'jfoster', 1, 38, 126), -- username : jfoster 
+    -- ('32564152', 'Jason', 'Jones', 'jjones1@iut.univ-paris8.fr', '06.97.37.04.77', 'jjones1', 1, 38, 126), -- username : jjones1 
+    -- ('43984648', 'Erin', 'Cross', 'ecross@iut.univ-paris8.fr', '06.94.03.06.61', 'ecross', 1, 38, 126), -- username : ecross 
+    -- ('79064072', 'Patricia', 'Velazquez', 'pvelazquez@iut.univ-paris8.fr', '07.44.47.92.17', 'pvelazquez', 1, 38, 126), -- username : pvelazquez 
+    -- ('41222913', 'Michael', 'Norman', 'mnorman@iut.univ-paris8.fr', '07.96.33.07.99', 'mnorman', 1, 38, 126), -- username : mnorman 
+    -- ('64000096', 'Frank', 'Salazar', 'fsalazar@iut.univ-paris8.fr', '07.84.59.42.85', 'fsalazar', 1, 38, 126), -- username : fsalazar 
+    -- ('03619602', 'Karen', 'Gibbs', 'kgibbs@iut.univ-paris8.fr', '06.99.00.50.28', 'kgibbs', 1, 37, 37), -- username : kgibbs 
+    -- ('93398173', 'Kristi', 'Obrien', 'kobrien@iut.univ-paris8.fr', '06.35.15.54.32', 'kobrien', 1, 37, 37), -- username : kobrien 
+    -- ('65341757', 'Brenda', 'Silva', 'bsilva@iut.univ-paris8.fr', '07.27.80.18.80', 'bsilva', 1, 37, 37), -- username : bsilva 
+    -- ('79174458', 'David', 'Rodriguez', 'drodriguez@iut.univ-paris8.fr', '07.38.51.79.54', 'drodriguez', 1, 37, 37), -- username : drodriguez 
+    -- ('74720700', 'Michelle', 'Lopez', 'mlopez@iut.univ-paris8.fr', '07.96.58.87.27', 'mlopez', 1, 37, 37), -- username : mlopez 
+    -- ('02267340', 'Katie', 'Wilson', 'kwilson@iut.univ-paris8.fr', '07.02.77.41.74', 'kwilson', 1, 37, 37), -- username : kwilson 
+    -- ('77924614', 'Bryan', 'Hughes', 'bhughes@iut.univ-paris8.fr', '06.33.08.40.99', 'bhughes', 1, 37, 37), -- username : bhughes 
+    -- ('50801891', 'Sharon', 'Howard', 'showard@iut.univ-paris8.fr', '06.71.65.18.88', 'showard', 1, 37, 37), -- username : showard 
+    -- ('80096851', 'John', 'Weaver', 'jweaver@iut.univ-paris8.fr', '07.32.79.90.64', 'jweaver', 1, 37, 37), -- username : jweaver 
+    -- ('24080165', 'Logan', 'Benton', 'lbenton@iut.univ-paris8.fr', '07.30.97.09.37', 'lbenton', 1, 37, 37), -- username : lbenton 
+    -- ('43072561', 'Emily', 'Foster', 'efoster@iut.univ-paris8.fr', '07.88.60.55.31', 'efoster', 1, 37, 81), -- username : efoster 
+    -- ('92343728', 'John', 'Blankenship', 'jblankenship@iut.univ-paris8.fr', '06.59.52.88.70', 'jblankenship', 1, 37, 81), -- username : jblankenship 
+    -- ('84482690', 'Amanda', 'Mccann', 'amccann@iut.univ-paris8.fr', '06.66.54.70.69', 'amccann', 1, 37, 81), -- username : amccann 
+    -- ('75078367', 'Michael', 'Smith', 'msmith2@iut.univ-paris8.fr', '06.72.60.68.57', 'msmith2', 1, 37, 81), -- username : msmith2 
+    -- ('35741163', 'Frank', 'Kelly', 'fkelly@iut.univ-paris8.fr', '07.39.67.48.21', 'fkelly', 1, 37, 81), -- username : fkelly 
+    -- ('48177534', 'Alexander', 'Blackburn', 'ablackburn@iut.univ-paris8.fr', '06.68.80.01.49', 'ablackburn', 1, 37, 81), -- username : ablackburn 
+    -- ('67623913', 'Victor', 'Wilkinson', 'vwilkinson@iut.univ-paris8.fr', '07.01.12.36.53', 'vwilkinson', 1, 37, 81), -- username : vwilkinson 
+    -- ('70713160', 'Kathryn', 'Andrews', 'kandrews@iut.univ-paris8.fr', '07.02.29.51.90', 'kandrews', 1, 37, 81), -- username : kandrews 
+    -- ('80425660', 'Andrew', 'Rodriguez', 'arodriguez@iut.univ-paris8.fr', '07.57.36.51.03', 'arodriguez', 1, 37, 81), -- username : arodriguez 
+    -- ('03927856', 'Aaron', 'Garcia', 'agarcia@iut.univ-paris8.fr', '07.09.66.73.90', 'agarcia', 1, 37, 81), -- username : agarcia 
+    -- ('21043567', 'Rebecca', 'Black', 'rblack@iut.univ-paris8.fr', '06.30.85.67.81', 'rblack', 1, 37, 125), -- username : rblack 
+    -- ('41512715', 'Ashley', 'Christian', 'achristian2@iut.univ-paris8.fr', '06.93.09.54.46', 'achristian2', 1, 37, 125), -- username : achristian2 
+    -- ('47539038', 'Tasha', 'Abbott', 'tabbott@iut.univ-paris8.fr', '06.94.29.12.08', 'tabbott', 1, 37, 125), -- username : tabbott 
+    -- ('46902751', 'Ronald', 'Mccarthy', 'rmccarthy@iut.univ-paris8.fr', '07.51.24.16.48', 'rmccarthy', 1, 37, 125), -- username : rmccarthy 
+    -- ('27887732', 'Taylor', 'Wood', 'twood@iut.univ-paris8.fr', '07.23.79.88.44', 'twood', 1, 37, 125), -- username : twood 
+    -- ('04218397', 'Wendy', 'Coleman', 'wcoleman1@iut.univ-paris8.fr', '06.95.32.73.68', 'wcoleman1', 1, 37, 125), -- username : wcoleman1 
+    -- ('11051654', 'Lisa', 'Ware', 'lware@iut.univ-paris8.fr', '07.02.83.51.21', 'lware', 1, 37, 125), -- username : lware 
+    -- ('70428664', 'Joseph', 'Wilson', 'jwilson@iut.univ-paris8.fr', '06.79.85.45.37', 'jwilson', 1, 37, 125), -- username : jwilson 
+    -- ('03570303', 'Tracy', 'Jacobs', 'tjacobs@iut.univ-paris8.fr', '07.32.51.14.05', 'tjacobs', 1, 37, 125), -- username : tjacobs 
+    -- ('01966536', 'Brian', 'Rodriguez', 'brodriguez@iut.univ-paris8.fr', '07.44.57.39.75', 'brodriguez', 1, 37, 125), -- username : brodriguez 
+    -- ('46233690', 'Angela', 'Collins', 'acollins@iut.univ-paris8.fr', '07.67.03.51.37', 'acollins', 1, 27, 27), -- username : acollins 
+    -- ('18389102', 'Nicole', 'Clay', 'nclay@iut.univ-paris8.fr', '06.06.19.10.35', 'nclay', 1, 27, 27), -- username : nclay 
+    -- ('80425096', 'Timothy', 'Robles', 'trobles@iut.univ-paris8.fr', '07.50.47.19.90', 'trobles', 1, 27, 27), -- username : trobles 
+    -- ('14220118', 'Brian', 'Wall', 'bwall@iut.univ-paris8.fr', '07.95.96.60.45', 'bwall', 1, 27, 27), -- username : bwall 
+    -- ('97905864', 'Justin', 'Flores', 'jflores@iut.univ-paris8.fr', '06.92.97.12.89', 'jflores', 1, 27, 27), -- username : jflores 
+    -- ('92507924', 'Katie', 'Graham', 'kgraham@iut.univ-paris8.fr', '06.41.81.27.37', 'kgraham', 1, 27, 27), -- username : kgraham 
+    -- ('32229949', 'Destiny', 'Mckenzie', 'dmckenzie@iut.univ-paris8.fr', '07.93.93.40.69', 'dmckenzie', 1, 27, 27), -- username : dmckenzie 
+    -- ('15163174', 'Eric', 'Burton', 'eburton@iut.univ-paris8.fr', '06.45.20.46.71', 'eburton', 1, 27, 27), -- username : eburton 
+    -- ('82550213', 'Whitney', 'Freeman', 'wfreeman@iut.univ-paris8.fr', '07.30.06.41.03', 'wfreeman', 1, 27, 27), -- username : wfreeman 
+    -- ('92248626', 'Christina', 'Blackburn', 'cblackburn@iut.univ-paris8.fr', '06.61.90.84.64', 'cblackburn', 1, 27, 27), -- username : cblackburn 
+    -- ('17079261', 'Kathy', 'Holt', 'kholt@iut.univ-paris8.fr', '07.41.06.42.67', 'kholt', 1, 27, 71), -- username : kholt 
+    -- ('76963937', 'Tricia', 'Weber', 'tweber@iut.univ-paris8.fr', '07.39.27.43.67', 'tweber', 1, 27, 71), -- username : tweber 
+    -- ('50649357', 'Diane', 'Petty', 'dpetty@iut.univ-paris8.fr', '07.37.11.74.53', 'dpetty', 1, 27, 71), -- username : dpetty 
+    -- ('51774615', 'Denise', 'Simpson', 'dsimpson@iut.univ-paris8.fr', '07.08.56.25.91', 'dsimpson', 1, 27, 71), -- username : dsimpson 
+    -- ('03501998', 'Brittany', 'Johnson', 'bjohnson1@iut.univ-paris8.fr', '06.03.79.20.26', 'bjohnson1', 1, 27, 71), -- username : bjohnson1 
+    -- ('93469637', 'Jose', 'Duran', 'jduran@iut.univ-paris8.fr', '06.92.93.30.09', 'jduran', 1, 27, 71), -- username : jduran 
+    -- ('71008369', 'Angela', 'Adams', 'aadams1@iut.univ-paris8.fr', '06.71.37.88.20', 'aadams1', 1, 27, 71), -- username : aadams1 
+    -- ('48183487', 'Barbara', 'Knight', 'bknight@iut.univ-paris8.fr', '06.07.60.58.96', 'bknight', 1, 27, 71), -- username : bknight 
+    -- ('17814036', 'Colleen', 'Reid', 'creid@iut.univ-paris8.fr', '07.41.96.06.82', 'creid', 1, 27, 71), -- username : creid 
+    -- ('31314008', 'Emily', 'Lamb', 'elamb@iut.univ-paris8.fr', '06.13.11.90.37', 'elamb', 1, 27, 71), -- username : elamb 
+    -- ('68220415', 'Nancy', 'Lester', 'nlester@iut.univ-paris8.fr', '07.02.22.63.39', 'nlester', 1, 27, 115), -- username : nlester 
+    -- ('09711018', 'Henry', 'Haney', 'hhaney@iut.univ-paris8.fr', '06.54.24.04.31', 'hhaney', 1, 27, 115), -- username : hhaney 
+    -- ('86889501', 'Adam', 'Davis', 'adavis2@iut.univ-paris8.fr', '06.21.19.39.77', 'adavis2', 1, 27, 115), -- username : adavis2 
+    -- ('94443964', 'Joel', 'Taylor', 'jtaylor@iut.univ-paris8.fr', '07.87.67.80.69', 'jtaylor', 1, 27, 115), -- username : jtaylor 
+    -- ('43966419', 'Marc', 'Porter', 'mporter@iut.univ-paris8.fr', '07.44.39.59.79', 'mporter', 1, 27, 115), -- username : mporter 
+    -- ('67538204', 'Kevin', 'Fernandez', 'kfernandez@iut.univ-paris8.fr', '06.32.27.14.82', 'kfernandez', 1, 27, 115), -- username : kfernandez 
+    -- ('10589333', 'Alexandra', 'Nash', 'anash@iut.univ-paris8.fr', '06.19.22.67.50', 'anash', 1, 27, 115), -- username : anash 
+    -- ('42003373', 'Daniel', 'Clark', 'dclark@iut.univ-paris8.fr', '07.53.97.22.99', 'dclark', 1, 27, 115), -- username : dclark 
+    -- ('33963975', 'Erica', 'Sanford', 'esanford@iut.univ-paris8.fr', '06.69.52.76.52', 'esanford', 1, 27, 115), -- username : esanford 
+    -- ('69139375', 'Kyle', 'Jones', 'kjones@iut.univ-paris8.fr', '06.51.46.38.82', 'kjones', 1, 27, 115), -- username : kjones 
+    -- ('53074140', 'Mitchell', 'Leonard', 'mleonard@iut.univ-paris8.fr', '07.81.56.74.71', 'mleonard', 1, 26, 26), -- username : mleonard 
+    -- ('59761172', 'Robert', 'Bennett', 'rbennett1@iut.univ-paris8.fr', '06.76.66.27.72', 'rbennett1', 1, 26, 26), -- username : rbennett1 
+    -- ('83281083', 'Wendy', 'Wolf', 'wwolf@iut.univ-paris8.fr', '06.42.65.29.02', 'wwolf', 1, 26, 26), -- username : wwolf 
+    -- ('51229774', 'Deanna', 'Hicks', 'dhicks@iut.univ-paris8.fr', '07.14.34.62.69', 'dhicks', 1, 26, 26), -- username : dhicks 
+    -- ('58914740', 'Tyler', 'Walker', 'twalker@iut.univ-paris8.fr', '07.69.98.31.52', 'twalker', 1, 26, 26), -- username : twalker 
+    -- ('16329117', 'Belinda', 'Williams', 'bwilliams@iut.univ-paris8.fr', '07.58.87.03.43', 'bwilliams', 1, 26, 26), -- username : bwilliams 
+    -- ('49751054', 'Mary', 'Scott', 'mscott@iut.univ-paris8.fr', '06.41.85.77.51', 'mscott', 1, 26, 26), -- username : mscott 
+    -- ('87442063', 'Nicole', 'Cook', 'ncook1@iut.univ-paris8.fr', '06.33.91.77.21', 'ncook1', 1, 26, 26), -- username : ncook1 
+    -- ('58602060', 'Christine', 'Hall', 'chall@iut.univ-paris8.fr', '06.75.37.58.78', 'chall', 1, 26, 26), -- username : chall 
+    -- ('22715078', 'Martin', 'Dyer', 'mdyer@iut.univ-paris8.fr', '06.89.73.72.18', 'mdyer', 1, 26, 26), -- username : mdyer 
+    -- ('26598594', 'Amanda', 'Bailey', 'abailey1@iut.univ-paris8.fr', '06.83.13.12.41', 'abailey1', 1, 26, 70), -- username : abailey1 
+    -- ('16029498', 'John', 'Perez', 'jperez1@iut.univ-paris8.fr', '07.56.75.32.07', 'jperez1', 1, 26, 70), -- username : jperez1 
+    -- ('00904808', 'Michael', 'Lynch', 'mlynch@iut.univ-paris8.fr', '07.99.58.43.07', 'mlynch', 1, 26, 70), -- username : mlynch 
+    -- ('99631929', 'Jeffrey', 'Mcintyre', 'jmcintyre1@iut.univ-paris8.fr', '07.90.77.24.76', 'jmcintyre1', 1, 26, 70), -- username : jmcintyre1 
+    -- ('35298495', 'Joel', 'Jackson', 'jjackson1@iut.univ-paris8.fr', '07.24.54.05.73', 'jjackson1', 1, 26, 70), -- username : jjackson1 
+    -- ('82188981', 'James', 'Lee', 'jlee2@iut.univ-paris8.fr', '07.58.43.09.01', 'jlee2', 1, 26, 70), -- username : jlee2 
+    -- ('23057911', 'Aaron', 'Christian', 'achristian1@iut.univ-paris8.fr', '07.42.95.38.12', 'achristian1', 1, 26, 70), -- username : achristian1 
+    -- ('95721880', 'Faith', 'Osborne', 'fosborne@iut.univ-paris8.fr', '07.89.68.49.78', 'fosborne', 1, 26, 70), -- username : fosborne 
+    -- ('02751988', 'Hannah', 'Smith', 'hsmith@iut.univ-paris8.fr', '07.14.30.98.17', 'hsmith', 1, 26, 70), -- username : hsmith 
+    -- ('18935750', 'Robert', 'Walker', 'rwalker1@iut.univ-paris8.fr', '07.22.97.15.48', 'rwalker1', 1, 26, 70), -- username : rwalker1 
+    -- ('88791089', 'Jacob', 'Caldwell', 'jcaldwell@iut.univ-paris8.fr', '06.11.21.07.00', 'jcaldwell', 1, 26, 114), -- username : jcaldwell 
+    -- ('45734361', 'Joshua', 'Bates', 'jbates1@iut.univ-paris8.fr', '06.37.40.57.65', 'jbates1', 1, 26, 114), -- username : jbates1 
+    -- ('96328289', 'Stephen', 'Blackwell', 'sblackwell@iut.univ-paris8.fr', '06.34.03.37.68', 'sblackwell', 1, 26, 114), -- username : sblackwell 
+    -- ('33856820', 'Evan', 'Anderson', 'eanderson1@iut.univ-paris8.fr', '07.45.33.94.32', 'eanderson1', 1, 26, 114), -- username : eanderson1 
+    -- ('90326981', 'Amy', 'Davis', 'adavis1@iut.univ-paris8.fr', '07.36.71.90.13', 'adavis1', 1, 26, 114), -- username : adavis1 
+    -- ('73742746', 'Erica', 'Burke', 'eburke@iut.univ-paris8.fr', '06.33.94.80.18', 'eburke', 1, 26, 114), -- username : eburke 
+    -- ('55746705', 'Jake', 'Rogers', 'jrogers@iut.univ-paris8.fr', '07.12.95.76.48', 'jrogers', 1, 26, 114), -- username : jrogers 
+    -- ('27943682', 'Michael', 'Robbins', 'mrobbins1@iut.univ-paris8.fr', '07.44.21.35.28', 'mrobbins1', 1, 26, 114), -- username : mrobbins1 
+    -- ('01390286', 'Amanda', 'Flores', 'aflores@iut.univ-paris8.fr', '06.82.79.56.63', 'aflores', 1, 26, 114), -- username : aflores 
+    -- ('18110511', 'Cody', 'Holmes', 'cholmes@iut.univ-paris8.fr', '07.95.70.78.59', 'cholmes', 1, 26, 114), -- username : cholmes 
+    -- ('65612421', 'Julia', 'Kelly', 'jkelly1@iut.univ-paris8.fr', '07.91.97.55.60', 'jkelly1', 1, 25, 25), -- username : jkelly1 
+    -- ('87544371', 'Julie', 'Larson', 'jlarson@iut.univ-paris8.fr', '07.46.20.90.61', 'jlarson', 1, 25, 25), -- username : jlarson 
+    -- ('07435032', 'Joshua', 'Smith', 'jsmith2@iut.univ-paris8.fr', '07.44.82.38.84', 'jsmith2', 1, 25, 25), -- username : jsmith2 
+    -- ('17628733', 'Brian', 'Jordan', 'bjordan@iut.univ-paris8.fr', '06.97.21.53.02', 'bjordan', 1, 25, 25), -- username : bjordan 
+    -- ('76014497', 'Jennifer', 'Pearson', 'jpearson@iut.univ-paris8.fr', '07.40.03.60.12', 'jpearson', 1, 25, 25), -- username : jpearson 
+    -- ('41353653', 'Susan', 'Miller', 'smiller1@iut.univ-paris8.fr', '07.64.10.88.12', 'smiller1', 1, 25, 25), -- username : smiller1 
+    -- ('90680337', 'Lauren', 'Donaldson', 'ldonaldson@iut.univ-paris8.fr', '07.10.57.23.86', 'ldonaldson', 1, 25, 25), -- username : ldonaldson 
+    -- ('32533989', 'Monica', 'Sanchez', 'msanchez@iut.univ-paris8.fr', '07.27.78.26.90', 'msanchez', 1, 25, 25), -- username : msanchez 
+    -- ('88318906', 'Jill', 'Mcgee', 'jmcgee@iut.univ-paris8.fr', '07.68.83.26.02', 'jmcgee', 1, 25, 25), -- username : jmcgee 
+    -- ('27333875', 'Brandi', 'Allison', 'ballison@iut.univ-paris8.fr', '06.41.43.75.98', 'ballison', 1, 25, 25), -- username : ballison 
+    -- ('19086804', 'Derek', 'Parker', 'dparker@iut.univ-paris8.fr', '07.22.49.24.35', 'dparker', 1, 25, 69), -- username : dparker 
+    -- ('99250365', 'Margaret', 'Fields', 'mfields@iut.univ-paris8.fr', '07.40.75.23.19', 'mfields', 1, 25, 69), -- username : mfields 
+    -- ('86750218', 'Sabrina', 'Anderson', 'sanderson@iut.univ-paris8.fr', '06.54.68.16.47', 'sanderson', 1, 25, 69), -- username : sanderson 
+    -- ('33129738', 'Alex', 'Dixon', 'adixon@iut.univ-paris8.fr', '06.85.91.87.27', 'adixon', 1, 25, 69), -- username : adixon 
+    -- ('65659764', 'Dennis', 'Richard', 'drichard@iut.univ-paris8.fr', '07.33.71.38.26', 'drichard', 1, 25, 69), -- username : drichard 
+    -- ('53840510', 'Steven', 'Robinson', 'srobinson@iut.univ-paris8.fr', '07.27.91.46.47', 'srobinson', 1, 25, 69), -- username : srobinson 
+    -- ('82671900', 'Spencer', 'Morales', 'smorales@iut.univ-paris8.fr', '06.11.46.31.36', 'smorales', 1, 25, 69), -- username : smorales 
+    -- ('27284156', 'Elizabeth', 'Landry', 'elandry@iut.univ-paris8.fr', '06.95.79.29.73', 'elandry', 1, 25, 69), -- username : elandry 
+    -- ('18245627', 'Michael', 'Castillo', 'mcastillo@iut.univ-paris8.fr', '06.20.78.12.58', 'mcastillo', 1, 25, 69), -- username : mcastillo 
+    -- ('88155359', 'Erika', 'Snyder', 'esnyder@iut.univ-paris8.fr', '06.36.64.88.80', 'esnyder', 1, 25, 69), -- username : esnyder 
+    -- ('25145392', 'Jeremy', 'Williamson', 'jwilliamson@iut.univ-paris8.fr', '07.14.00.25.98', 'jwilliamson', 1, 25, 113), -- username : jwilliamson 
+    -- ('13027716', 'Robyn', 'Johnson', 'rjohnson1@iut.univ-paris8.fr', '06.15.21.74.77', 'rjohnson1', 1, 25, 113), -- username : rjohnson1 
+    -- ('94102933', 'Christopher', 'Hamilton', 'chamilton@iut.univ-paris8.fr', '07.91.17.42.72', 'chamilton', 1, 25, 113), -- username : chamilton 
+    -- ('93935668', 'Barry', 'Lopez', 'blopez@iut.univ-paris8.fr', '07.87.32.28.52', 'blopez', 1, 25, 113), -- username : blopez 
+    -- ('22531085', 'Robert', 'Walker', 'rwalker@iut.univ-paris8.fr', '06.64.59.64.69', 'rwalker', 1, 25, 113), -- username : rwalker 
+    -- ('22158281', 'Barbara', 'Davis', 'bdavis1@iut.univ-paris8.fr', '06.86.82.76.19', 'bdavis1', 1, 25, 113), -- username : bdavis1 
+    -- ('96334632', 'Wesley', 'Jacobson', 'wjacobson@iut.univ-paris8.fr', '06.66.40.96.00', 'wjacobson', 1, 25, 113), -- username : wjacobson 
+    -- ('10293812', 'James', 'Powell', 'jpowell2@iut.univ-paris8.fr', '07.46.20.64.85', 'jpowell2', 1, 25, 113), -- username : jpowell2 
+    -- ('71363465', 'Cindy', 'Horn', 'chorn@iut.univ-paris8.fr', '07.30.48.96.06', 'chorn', 1, 25, 113), -- username : chorn 
+    -- ('45195055', 'James', 'Gray', 'jgray@iut.univ-paris8.fr', '07.59.38.60.73', 'jgray', 1, 25, 113), -- username : jgray 
+    -- ('48424760', 'Anthony', 'Swanson', 'aswanson@iut.univ-paris8.fr', '07.17.25.49.34', 'aswanson', 1, 3, 3), -- username : aswanson 
+    -- ('52280873', 'Wayne', 'Gaines', 'wgaines@iut.univ-paris8.fr', '06.84.04.42.43', 'wgaines', 1, 3, 3), -- username : wgaines 
+    -- ('36276641', 'Frederick', 'Wood', 'fwood@iut.univ-paris8.fr', '06.08.74.73.47', 'fwood', 1, 3, 3), -- username : fwood 
+    -- ('38614564', 'Ann', 'Mccormick', 'amccormick@iut.univ-paris8.fr', '07.82.40.35.17', 'amccormick', 1, 3, 3), -- username : amccormick 
+    -- ('23990390', 'Ashley', 'Cortez', 'acortez@iut.univ-paris8.fr', '07.50.42.54.82', 'acortez', 1, 3, 3), -- username : acortez 
+    -- ('27457779', 'Lisa', 'Ellis', 'lellis@iut.univ-paris8.fr', '06.31.80.35.39', 'lellis', 1, 3, 3), -- username : lellis 
+    -- ('12796538', 'Traci', 'Johnston', 'tjohnston@iut.univ-paris8.fr', '06.31.26.72.96', 'tjohnston', 1, 3, 3), -- username : tjohnston 
+    -- ('67801338', 'Ricardo', 'Rojas', 'rrojas@iut.univ-paris8.fr', '06.51.41.15.85', 'rrojas', 1, 3, 3), -- username : rrojas 
+    -- ('66446498', 'Kimberly', 'Flores', 'kflores@iut.univ-paris8.fr', '07.62.01.73.65', 'kflores', 1, 3, 3), -- username : kflores 
+    -- ('27438638', 'Gregory', 'Goodwin', 'ggoodwin@iut.univ-paris8.fr', '07.56.62.94.06', 'ggoodwin', 1, 3, 3), -- username : ggoodwin 
+    -- ('64337415', 'Carlos', 'Conrad', 'cconrad@iut.univ-paris8.fr', '06.81.64.27.21', 'cconrad', 1, 3, 47), -- username : cconrad 
+    -- ('22293308', 'Joseph', 'Powell', 'jpowell1@iut.univ-paris8.fr', '07.26.89.16.77', 'jpowell1', 1, 3, 47), -- username : jpowell1 
+    -- ('10813885', 'Brandi', 'Wells', 'bwells@iut.univ-paris8.fr', '07.05.03.05.92', 'bwells', 1, 3, 47), -- username : bwells 
+    -- ('89956259', 'Robyn', 'Smith', 'rsmith3@iut.univ-paris8.fr', '07.02.38.19.70', 'rsmith3', 1, 3, 47), -- username : rsmith3 
+    -- ('29094743', 'Valerie', 'Shelton', 'vshelton@iut.univ-paris8.fr', '07.58.05.75.90', 'vshelton', 1, 3, 47), -- username : vshelton 
+    -- ('14270777', 'Jessica', 'Bates', 'jbates@iut.univ-paris8.fr', '07.25.01.33.40', 'jbates', 1, 3, 47), -- username : jbates 
+    -- ('77616053', 'Manuel', 'Watson', 'mwatson@iut.univ-paris8.fr', '07.90.85.54.50', 'mwatson', 1, 3, 47), -- username : mwatson 
+    -- ('04394464', 'Guy', 'Castaneda', 'gcastaneda@iut.univ-paris8.fr', '07.92.33.27.28', 'gcastaneda', 1, 3, 47), -- username : gcastaneda 
+    -- ('30720424', 'Melissa', 'Richardson', 'mrichardson1@iut.univ-paris8.fr', '07.16.13.60.70', 'mrichardson1', 1, 3, 47), -- username : mrichardson1 
+    -- ('75982316', 'Paula', 'Huynh', 'phuynh@iut.univ-paris8.fr', '07.61.62.31.69', 'phuynh', 1, 3, 47), -- username : phuynh 
+    -- ('55323829', 'Kathleen', 'Mcdaniel', 'kmcdaniel@iut.univ-paris8.fr', '06.45.60.40.38', 'kmcdaniel', 1, 3, 91), -- username : kmcdaniel 
+    -- ('61120570', 'Angelica', 'Nicholson', 'anicholson@iut.univ-paris8.fr', '07.95.54.52.05', 'anicholson', 1, 3, 91), -- username : anicholson 
+    -- ('74044493', 'John', 'Chapman', 'jchapman@iut.univ-paris8.fr', '07.05.02.64.51', 'jchapman', 1, 3, 91), -- username : jchapman 
+    -- ('90489360', 'Felicia', 'James', 'fjames@iut.univ-paris8.fr', '06.55.96.63.89', 'fjames', 1, 3, 91), -- username : fjames 
+    -- ('04095208', 'John', 'Goodman', 'jgoodman@iut.univ-paris8.fr', '07.80.07.80.47', 'jgoodman', 1, 3, 91), -- username : jgoodman 
+    -- ('20157670', 'Billy', 'Booth', 'bbooth@iut.univ-paris8.fr', '06.27.51.86.13', 'bbooth', 1, 3, 91), -- username : bbooth 
+    -- ('29208040', 'Edward', 'Johnson', 'ejohnson@iut.univ-paris8.fr', '07.31.41.25.26', 'ejohnson', 1, 3, 91), -- username : ejohnson 
+    -- ('96999194', 'Cynthia', 'Miller', 'cmiller1@iut.univ-paris8.fr', '06.82.46.48.57', 'cmiller1', 1, 3, 91), -- username : cmiller1 
+    -- ('10074649', 'Melanie', 'Gutierrez', 'mgutierrez@iut.univ-paris8.fr', '07.76.04.13.22', 'mgutierrez', 1, 3, 91), -- username : mgutierrez 
+    -- ('66670102', 'Emily', 'Ward', 'eward@iut.univ-paris8.fr', '07.29.88.61.58', 'eward', 1, 3,91) -- username : eeward 
 ;
 
 -- university.students(@student_number,last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
@@ -394,357 +394,357 @@ VALUES
     ('70660305', 'Ethan', 'Kaufman', 'ekaufman@iut.univ-paris8.fr', '06.17.61.44.69', 'ekaufman', 2, 16, 16), -- username : ekaufman 
     ('53910465', 'Lindsay', 'Oliver', 'loliver@iut.univ-paris8.fr', '07.66.48.66.67', 'loliver', 2, 16, 16), -- username : loliver 
     ('75029798', 'Mark', 'Garcia', 'mgarcia@iut.univ-paris8.fr', '06.12.90.32.42', 'mgarcia', 2, 16, 16), -- username : mgarcia 
-    ('52838257', 'Taylor', 'Paul', 'tpaul@iut.univ-paris8.fr', '06.66.85.01.11', 'tpaul', 2, 16, 16), -- username : tpaul 
-    ('26314046', 'Felicia', 'Harper', 'fharper@iut.univ-paris8.fr', '07.86.11.69.74', 'fharper', 2, 16, 60), -- username : fharper 
-    ('73868463', 'Jennifer', 'Hamilton', 'jhamilton@iut.univ-paris8.fr', '06.27.08.15.01', 'jhamilton', 2, 16, 60), -- username : jhamilton 
-    ('90572577', 'Stephanie', 'Keith', 'skeith@iut.univ-paris8.fr', '07.19.20.78.61', 'skeith', 2, 16, 60), -- username : skeith 
-    ('39517131', 'David', 'Mcdonald', 'dmcdonald@iut.univ-paris8.fr', '07.21.61.88.13', 'dmcdonald', 2, 16, 60), -- username : dmcdonald 
-    ('54516035', 'Deborah', 'Briggs', 'dbriggs@iut.univ-paris8.fr', '06.30.01.40.86', 'dbriggs', 2, 16, 60), -- username : dbriggs 
-    ('18536362', 'Ryan', 'King', 'rking@iut.univ-paris8.fr', '07.14.07.57.33', 'rking', 2, 16, 60), -- username : rking 
-    ('13773420', 'Ryan', 'Meyer', 'rmeyer@iut.univ-paris8.fr', '07.27.39.42.52', 'rmeyer', 2, 16, 60), -- username : rmeyer 
-    ('16634869', 'Christina', 'Wagner', 'cwagner@iut.univ-paris8.fr', '06.53.27.93.20', 'cwagner', 2, 16, 60), -- username : cwagner 
-    ('28014225', 'Christina', 'Potts', 'cpotts@iut.univ-paris8.fr', '06.95.49.86.30', 'cpotts', 2, 16, 60), -- username : cpotts 
-    ('03304232', 'Lisa', 'Martinez', 'lmartinez2@iut.univ-paris8.fr', '06.06.63.85.59', 'lmartinez2', 2, 16, 60), -- username : lmartinez2 
-    ('64764777', 'Charles', 'Mccarty', 'cmccarty@iut.univ-paris8.fr', '07.38.96.09.75', 'cmccarty', 2, 16, 104), -- username : cmccarty 
-    ('48363685', 'Paul', 'Diaz', 'pdiaz@iut.univ-paris8.fr', '06.42.88.76.98', 'pdiaz', 2, 16, 104), -- username : pdiaz 
-    ('57012724', 'Mitchell', 'Ward', 'mward@iut.univ-paris8.fr', '07.69.48.09.69', 'mward', 2, 16, 104), -- username : mward 
-    ('82427096', 'Michael', 'Beard', 'mbeard@iut.univ-paris8.fr', '07.67.59.12.13', 'mbeard', 2, 16, 104), -- username : mbeard 
-    ('00816327', 'Ryan', 'Wright', 'rwright@iut.univ-paris8.fr', '06.60.49.55.26', 'rwright', 2, 16, 104), -- username : rwright 
-    ('00062954', 'Stacie', 'Wells', 'swells@iut.univ-paris8.fr', '06.11.48.17.80', 'swells', 2, 16, 104), -- username : swells 
-    ('33882750', 'Anthony', 'Freeman', 'afreeman@iut.univ-paris8.fr', '07.30.32.24.87', 'afreeman', 2, 16, 104), -- username : afreeman 
-    ('03585710', 'Sandra', 'Hansen', 'shansen@iut.univ-paris8.fr', '06.44.45.95.28', 'shansen', 2, 16, 104), -- username : shansen 
-    ('75174374', 'Mary', 'Harmon', 'mharmon1@iut.univ-paris8.fr', '06.72.20.88.17', 'mharmon1', 2, 16, 104), -- username : mharmon1 
-    ('52706581', 'Allison', 'Casey', 'acasey@iut.univ-paris8.fr', '06.19.71.76.47', 'acasey', 2, 16, 104), -- username : acasey 
-    ('63323672', 'Jacob', 'Meadows', 'jmeadows@iut.univ-paris8.fr', '07.19.73.60.43', 'jmeadows', 2, 17, 17), -- username : jmeadows 
-    ('16591616', 'Michael', 'Collins', 'mcollins@iut.univ-paris8.fr', '06.04.67.23.61', 'mcollins', 2, 17, 17), -- username : mcollins 
-    ('74101134', 'Sarah', 'Williams', 'swilliams1@iut.univ-paris8.fr', '06.92.21.19.06', 'swilliams1', 2, 17, 17), -- username : swilliams1 
-    ('41375500', 'Robin', 'Perry', 'rperry@iut.univ-paris8.fr', '07.81.24.36.68', 'rperry', 2, 17, 17), -- username : rperry 
-    ('67185765', 'Ann', 'Hanson', 'ahanson@iut.univ-paris8.fr', '07.76.69.29.83', 'ahanson', 2, 17, 17), -- username : ahanson 
-    ('96954921', 'Katherine', 'Cooper', 'kcooper@iut.univ-paris8.fr', '06.96.37.20.45', 'kcooper', 2, 17, 17), -- username : kcooper 
-    ('85886517', 'Lisa', 'Frazier', 'lfrazier@iut.univ-paris8.fr', '06.60.65.93.61', 'lfrazier', 2, 17, 17), -- username : lfrazier 
-    ('56035200', 'Allen', 'Bailey', 'abailey@iut.univ-paris8.fr', '06.12.63.53.55', 'abailey', 2, 17, 17), -- username : abailey 
-    ('60727544', 'John', 'Andrade', 'jandrade@iut.univ-paris8.fr', '07.92.65.63.99', 'jandrade', 2, 17, 17), -- username : jandrade 
-    ('45178327', 'Justin', 'Bryant', 'jbryant@iut.univ-paris8.fr', '06.30.52.00.11', 'jbryant', 2, 17, 17), -- username : jbryant 
-    ('18693259', 'Sharon', 'Brewer', 'sbrewer@iut.univ-paris8.fr', '06.62.67.41.02', 'sbrewer', 2, 17, 61), -- username : sbrewer 
-    ('84512874', 'Michelle', 'Adams', 'madams@iut.univ-paris8.fr', '07.95.28.58.98', 'madams', 2, 17, 61), -- username : madams 
-    ('91466902', 'Joel', 'Shaw', 'jshaw1@iut.univ-paris8.fr', '07.02.00.96.21', 'jshaw1', 2, 17, 61), -- username : jshaw1 
-    ('10279904', 'Corey', 'Moore', 'cmoore2@iut.univ-paris8.fr', '06.01.98.48.63', 'cmoore2', 2, 17, 61), -- username : cmoore2 
-    ('60345342', 'Sarah', 'Thompson', 'sthompson1@iut.univ-paris8.fr', '07.87.44.20.38', 'sthompson1', 2, 17, 61), -- username : sthompson1 
-    ('68984811', 'John', 'Green', 'jgreen1@iut.univ-paris8.fr', '06.45.48.68.35', 'jgreen1', 2, 17, 61), -- username : jgreen1 
-    ('03756504', 'Jack', 'Garcia', 'jgarcia@iut.univ-paris8.fr', '06.82.82.17.00', 'jgarcia', 2, 17, 61), -- username : jgarcia 
-    ('47839431', 'Lawrence', 'Smith', 'lsmith@iut.univ-paris8.fr', '07.11.93.46.80', 'lsmith', 2, 17, 61), -- username : lsmith 
-    ('50495442', 'Meghan', 'Maxwell', 'mmaxwell@iut.univ-paris8.fr', '06.17.46.29.30', 'mmaxwell', 2, 17, 61), -- username : mmaxwell 
-    ('11562077', 'Ryan', 'Brady', 'rbrady@iut.univ-paris8.fr', '06.53.26.61.13', 'rbrady', 2, 17, 61), -- username : rbrady 
-    ('79375860', 'Michael', 'Thomas', 'mthomas@iut.univ-paris8.fr', '07.56.16.27.60', 'mthomas', 2, 17, 105), -- username : mthomas 
-    ('63197921', 'Caroline', 'Durham', 'cdurham@iut.univ-paris8.fr', '06.17.49.55.90', 'cdurham', 2, 17, 105), -- username : cdurham 
-    ('48495539', 'Larry', 'Hunter', 'lhunter@iut.univ-paris8.fr', '07.17.99.04.26', 'lhunter', 2, 17, 105), -- username : lhunter 
-    ('81786019', 'Jonathan', 'Macdonald', 'jmacdonald@iut.univ-paris8.fr', '07.02.44.13.33', 'jmacdonald', 2, 17, 105), -- username : jmacdonald 
-    ('30080633', 'Karen', 'Bennett', 'kbennett@iut.univ-paris8.fr', '07.42.47.42.67', 'kbennett', 2, 17, 105), -- username : kbennett 
-    ('47131000', 'Lauren', 'Carter', 'lcarter@iut.univ-paris8.fr', '06.26.50.48.13', 'lcarter', 2, 17, 105), -- username : lcarter 
-    ('82625966', 'Becky', 'Phillips', 'bphillips@iut.univ-paris8.fr', '06.54.14.44.38', 'bphillips', 2, 17, 105), -- username : bphillips 
-    ('46410707', 'Heather', 'Blair', 'hblair@iut.univ-paris8.fr', '07.72.01.14.07', 'hblair', 2, 17, 105), -- username : hblair 
-    ('40399568', 'Denise', 'Bolton', 'dbolton@iut.univ-paris8.fr', '06.21.72.89.53', 'dbolton', 2, 17, 105), -- username : dbolton 
-    ('90939848', 'Eric', 'Harris', 'eharris@iut.univ-paris8.fr', '06.21.46.93.87', 'eharris', 2, 17, 105), -- username : eharris 
-    ('60281018', 'David', 'Brown', 'dbrown@iut.univ-paris8.fr', '07.43.21.55.27', 'dbrown', 2, 18, 18), -- username : dbrown 
-    ('84009440', 'Melanie', 'Pratt', 'mpratt@iut.univ-paris8.fr', '06.65.84.97.99', 'mpratt', 2, 18, 18), -- username : mpratt 
-    ('54955356', 'Emily', 'Yoder', 'eyoder@iut.univ-paris8.fr', '06.41.53.92.21', 'eyoder', 2, 18, 18), -- username : eyoder 
-    ('83751200', 'Donald', 'Lee', 'dlee1@iut.univ-paris8.fr', '07.36.64.12.88', 'dlee1', 2, 18, 18), -- username : dlee1 
-    ('13370378', 'Kara', 'Russell', 'krussell@iut.univ-paris8.fr', '07.43.81.48.13', 'krussell', 2, 18, 18), -- username : krussell 
-    ('05136515', 'Nicholas', 'Barnes', 'nbarnes@iut.univ-paris8.fr', '07.99.35.24.75', 'nbarnes', 2, 18, 18), -- username : nbarnes 
-    ('92442352', 'Larry', 'Williams', 'lwilliams@iut.univ-paris8.fr', '07.86.96.72.01', 'lwilliams', 2, 18, 18), -- username : lwilliams 
-    ('17879547', 'Clayton', 'Carter', 'ccarter1@iut.univ-paris8.fr', '07.70.41.84.27', 'ccarter1', 2, 18, 18), -- username : ccarter1 
-    ('74531137', 'Randall', 'Ball', 'rball@iut.univ-paris8.fr', '06.79.66.91.74', 'rball', 2, 18, 18), -- username : rball 
-    ('90895160', 'Joy', 'Hudson', 'jhudson@iut.univ-paris8.fr', '07.30.09.04.48', 'jhudson', 2, 18, 18), -- username : jhudson 
-    ('62824166', 'Angela', 'Morales', 'amorales@iut.univ-paris8.fr', '06.70.14.39.06', 'amorales', 2, 18, 62), -- username : amorales 
-    ('44477178', 'Pamela', 'Schmidt', 'pschmidt@iut.univ-paris8.fr', '07.17.89.74.52', 'pschmidt', 2, 18, 62), -- username : pschmidt 
-    ('46812740', 'Adriana', 'Christian', 'achristian@iut.univ-paris8.fr', '06.56.40.72.95', 'achristian', 2, 18, 62), -- username : achristian 
-    ('20633662', 'Anthony', 'Romero', 'aromero1@iut.univ-paris8.fr', '07.48.14.53.09', 'aromero1', 2, 18, 62), -- username : aromero1 
-    ('03247001', 'Bradley', 'Bryant', 'bbryant@iut.univ-paris8.fr', '07.56.23.34.03', 'bbryant', 2, 18, 62), -- username : bbryant 
-    ('58951308', 'Robert', 'Rodriguez', 'rrodriguez@iut.univ-paris8.fr', '06.49.24.06.76', 'rrodriguez', 2, 18, 62), -- username : rrodriguez 
-    ('70687645', 'Brian', 'Baker', 'bbaker@iut.univ-paris8.fr', '06.25.09.44.24', 'bbaker', 2, 18, 62), -- username : bbaker 
-    ('25863549', 'Nicholas', 'Tucker', 'ntucker@iut.univ-paris8.fr', '07.19.34.01.94', 'ntucker', 2, 18, 62), -- username : ntucker 
-    ('49193098', 'Maria', 'Brown', 'mbrown1@iut.univ-paris8.fr', '07.12.54.98.60', 'mbrown1', 2, 18, 62), -- username : mbrown1 
-    ('86102852', 'Monica', 'James', 'mjames@iut.univ-paris8.fr', '06.73.00.33.51', 'mjames', 2, 18, 62), -- username : mjames 
-    ('18449239', 'Kristin', 'Patel', 'kpatel@iut.univ-paris8.fr', '06.14.99.09.04', 'kpatel', 2, 18, 106), -- username : kpatel 
-    ('14588009', 'Harold', 'Moore', 'hmoore@iut.univ-paris8.fr', '06.46.99.15.23', 'hmoore', 2, 18, 106), -- username : hmoore 
-    ('47695880', 'Stephen', 'Simmons', 'ssimmons@iut.univ-paris8.fr', '06.32.13.54.40', 'ssimmons', 2, 18, 106), -- username : ssimmons 
-    ('14758183', 'Jason', 'Gill', 'jgill1@iut.univ-paris8.fr', '06.73.45.12.80', 'jgill1', 2, 18, 106), -- username : jgill1 
-    ('30380203', 'Debbie', 'Moore', 'dmoore1@iut.univ-paris8.fr', '06.22.68.37.15', 'dmoore1', 2, 18, 106), -- username : dmoore1 
-    ('61696550', 'Michael', 'Moran', 'mmoran@iut.univ-paris8.fr', '07.24.59.22.83', 'mmoran', 2, 18, 106), -- username : mmoran 
-    ('27740090', 'Robert', 'Johnson', 'rjohnson@iut.univ-paris8.fr', '07.21.03.30.01', 'rjohnson', 2, 18, 106), -- username : rjohnson 
-    ('62843182', 'Ryan', 'Keith', 'rkeith@iut.univ-paris8.fr', '06.50.03.87.45', 'rkeith', 2, 18, 106), -- username : rkeith 
-    ('68389509', 'Christopher', 'Baker', 'cbaker@iut.univ-paris8.fr', '07.24.69.56.43', 'cbaker', 2, 18, 106), -- username : cbaker 
-    ('37636736', 'Kelly', 'White', 'kwhite@iut.univ-paris8.fr', '06.54.30.24.45', 'kwhite', 2, 18, 106), -- username : kwhite 
-    ('22622122', 'Mark', 'Sanders', 'msanders@iut.univ-paris8.fr', '06.23.11.75.90', 'msanders', 2, 6, 6), -- username : msanders 
-    ('06473610', 'Tyler', 'Vaughn', 'tvaughn@iut.univ-paris8.fr', '06.86.30.85.33', 'tvaughn', 2, 6, 6), -- username : tvaughn 
-    ('80444174', 'Jacqueline', 'Roberts', 'jroberts@iut.univ-paris8.fr', '06.68.76.05.65', 'jroberts', 2, 6, 6), -- username : jroberts 
-    ('61299940', 'Debra', 'Sanders', 'dsanders@iut.univ-paris8.fr', '07.63.99.03.42', 'dsanders', 2, 6, 6), -- username : dsanders 
-    ('76123460', 'Bill', 'Boyle', 'bboyle@iut.univ-paris8.fr', '07.36.73.33.72', 'bboyle', 2, 6, 6), -- username : bboyle 
-    ('64077337', 'Felicia', 'Smith', 'fsmith@iut.univ-paris8.fr', '07.76.35.83.73', 'fsmith', 2, 6, 6), -- username : fsmith 
-    ('31340100', 'Patrick', 'Williams', 'pwilliams@iut.univ-paris8.fr', '07.92.19.27.51', 'pwilliams', 2, 6, 6), -- username : pwilliams 
-    ('29519610', 'Michael', 'Bean', 'mbean@iut.univ-paris8.fr', '07.95.51.77.10', 'mbean', 2, 6, 6), -- username : mbean 
-    ('26050239', 'Kyle', 'Werner', 'kwerner@iut.univ-paris8.fr', '07.98.64.45.65', 'kwerner', 2, 6, 6), -- username : kwerner 
-    ('17426121', 'Justin', 'Gallagher', 'jgallagher@iut.univ-paris8.fr', '07.49.59.38.15', 'jgallagher', 2, 6, 6), -- username : jgallagher 
-    ('08776855', 'Alan', 'Walls', 'awalls@iut.univ-paris8.fr', '06.67.48.91.25', 'awalls', 2, 6, 50), -- username : awalls 
-    ('05102507', 'Michelle', 'Riley', 'mriley@iut.univ-paris8.fr', '07.85.97.48.80', 'mriley', 2, 6, 50), -- username : mriley 
-    ('31705121', 'Laura', 'Martinez', 'lmartinez1@iut.univ-paris8.fr', '06.41.10.27.08', 'lmartinez1', 2, 6, 50), -- username : lmartinez1 
-    ('03173759', 'Angela', 'Foster', 'afoster@iut.univ-paris8.fr', '06.38.35.14.63', 'afoster', 2, 6, 50), -- username : afoster 
-    ('56768702', 'Riley', 'Rogers', 'rrogers1@iut.univ-paris8.fr', '06.64.82.54.40', 'rrogers1', 2, 6, 50), -- username : rrogers1 
-    ('86448435', 'Fernando', 'Vargas', 'fvargas@iut.univ-paris8.fr', '07.63.42.37.71', 'fvargas', 2, 6, 50), -- username : fvargas 
-    ('09352731', 'Christina', 'Benson', 'cbenson@iut.univ-paris8.fr', '06.22.13.78.91', 'cbenson', 2, 6, 50), -- username : cbenson 
-    ('84256900', 'Meghan', 'Dalton', 'mdalton@iut.univ-paris8.fr', '06.02.68.76.05', 'mdalton', 2, 6, 50), -- username : mdalton 
-    ('08429653', 'Johnny', 'Blackwell', 'jblackwell@iut.univ-paris8.fr', '07.65.04.98.88', 'jblackwell', 2, 6, 50), -- username : jblackwell 
-    ('36684016', 'Judy', 'Harrison', 'jharrison@iut.univ-paris8.fr', '06.34.50.29.72', 'jharrison', 2, 6, 50), -- username : jharrison 
-    ('24950887', 'April', 'Smith', 'asmith1@iut.univ-paris8.fr', '06.68.39.58.96', 'asmith1', 2, 6, 94), -- username : asmith1 
-    ('90886841', 'Amy', 'Myers', 'amyers@iut.univ-paris8.fr', '07.54.20.52.29', 'amyers', 2, 6, 94), -- username : amyers 
-    ('01984967', 'Laura', 'Cline', 'lcline@iut.univ-paris8.fr', '06.54.95.31.80', 'lcline', 2, 6, 94), -- username : lcline 
-    ('96509250', 'Stephen', 'Allen', 'sallen@iut.univ-paris8.fr', '07.41.75.82.17', 'sallen', 2, 6, 94), -- username : sallen 
-    ('74743246', 'Kathryn', 'Bauer', 'kbauer1@iut.univ-paris8.fr', '06.21.74.06.11', 'kbauer1', 2, 6, 94), -- username : kbauer1 
-    ('11719296', 'Stephanie', 'Martinez', 'smartinez3@iut.univ-paris8.fr', '06.16.44.30.60', 'smartinez3', 2, 6, 94), -- username : smartinez3 
-    ('87349139', 'Leslie', 'Johnson', 'ljohnson@iut.univ-paris8.fr', '06.77.20.85.08', 'ljohnson', 2, 6, 94), -- username : ljohnson 
-    ('06566164', 'Jesus', 'Vargas', 'jvargas@iut.univ-paris8.fr', '06.51.49.65.56', 'jvargas', 2, 6, 94), -- username : jvargas 
-    ('65078518', 'Michelle', 'Vang', 'mvang@iut.univ-paris8.fr', '06.68.17.60.95', 'mvang', 2, 6, 94), -- username : mvang 
-    ('81063482', 'Austin', 'Hart', 'ahart@iut.univ-paris8.fr', '06.58.84.94.10', 'ahart', 2, 6, 94), -- username : ahart 
-    ('11001837', 'Arthur', 'Reynolds', 'areynolds@iut.univ-paris8.fr', '07.66.14.24.37', 'areynolds', 2, 4, 4), -- username : areynolds 
-    ('17202017', 'Wendy', 'Ruiz', 'wruiz@iut.univ-paris8.fr', '06.52.81.27.78', 'wruiz', 2, 4, 4), -- username : wruiz 
-    ('29751348', 'John', 'Silva', 'jsilva1@iut.univ-paris8.fr', '06.70.41.85.50', 'jsilva1', 2, 4, 4), -- username : jsilva1 
-    ('02890746', 'Megan', 'Allen', 'mallen@iut.univ-paris8.fr', '06.88.20.61.76', 'mallen', 2, 4, 4), -- username : mallen 
-    ('59837851', 'Danielle', 'Fischer', 'dfischer@iut.univ-paris8.fr', '06.06.26.91.63', 'dfischer', 2, 4, 4), -- username : dfischer 
-    ('46082926', 'Oscar', 'Robinson', 'orobinson@iut.univ-paris8.fr', '06.92.01.65.81', 'orobinson', 2, 4, 4), -- username : orobinson 
-    ('54476897', 'Sarah', 'Nunez', 'snunez@iut.univ-paris8.fr', '07.51.03.76.06', 'snunez', 2, 4, 4), -- username : snunez 
-    ('11183713', 'Garrett', 'Burns', 'gburns@iut.univ-paris8.fr', '07.90.99.22.19', 'gburns', 2, 4, 4), -- username : gburns 
-    ('65859550', 'Ricardo', 'Cisneros', 'rcisneros@iut.univ-paris8.fr', '07.63.20.31.36', 'rcisneros', 2, 4, 4), -- username : rcisneros 
-    ('17092003', 'Michael', 'Perry', 'mperry1@iut.univ-paris8.fr', '07.77.95.22.23', 'mperry1', 2, 4, 4), -- username : mperry1 
-    ('27296238', 'James', 'Mcintyre', 'jmcintyre@iut.univ-paris8.fr', '06.18.99.89.08', 'jmcintyre', 2, 4, 48), -- username : jmcintyre 
-    ('19910956', 'Joseph', 'Bowman', 'jbowman1@iut.univ-paris8.fr', '06.60.62.15.23', 'jbowman1', 2, 4, 48), -- username : jbowman1 
-    ('52470413', 'Brooke', 'Petersen', 'bpetersen@iut.univ-paris8.fr', '07.82.51.66.90', 'bpetersen', 2, 4, 48), -- username : bpetersen 
-    ('07253343', 'Richard', 'Smith', 'rsmith2@iut.univ-paris8.fr', '06.13.81.14.67', 'rsmith2', 2, 4, 48), -- username : rsmith2 
-    ('58207710', 'Calvin', 'Valenzuela', 'cvalenzuela@iut.univ-paris8.fr', '07.73.17.41.05', 'cvalenzuela', 2, 4, 48), -- username : cvalenzuela 
-    ('47054929', 'Lisa', 'Orozco', 'lorozco@iut.univ-paris8.fr', '06.55.22.19.51', 'lorozco', 2, 4, 48), -- username : lorozco 
-    ('00349073', 'Tina', 'Ramirez', 'tramirez@iut.univ-paris8.fr', '07.81.60.66.00', 'tramirez', 2, 4, 48), -- username : tramirez 
-    ('44472422', 'Alex', 'Holder', 'aholder@iut.univ-paris8.fr', '06.45.37.10.26', 'aholder', 2, 4, 48), -- username : aholder 
-    ('65358482', 'Nicole', 'Larsen', 'nlarsen@iut.univ-paris8.fr', '06.24.34.80.66', 'nlarsen', 2, 4, 48), -- username : nlarsen 
-    ('46763864', 'Tina', 'Davidson', 'tdavidson@iut.univ-paris8.fr', '06.07.57.83.54', 'tdavidson', 2, 4, 48), -- username : tdavidson 
-    ('75920416', 'Holly', 'Turner', 'hturner@iut.univ-paris8.fr', '06.70.39.12.79', 'hturner', 2, 4, 92), -- username : hturner 
-    ('57860673', 'Melanie', 'Harris', 'mharris@iut.univ-paris8.fr', '07.50.73.04.66', 'mharris', 2, 4, 92), -- username : mharris 
-    ('77375152', 'Sean', 'Hanson', 'shanson@iut.univ-paris8.fr', '06.45.79.47.94', 'shanson', 2, 4, 92), -- username : shanson 
-    ('52541933', 'Amanda', 'Cunningham', 'acunningham@iut.univ-paris8.fr', '07.42.04.41.71', 'acunningham', 2, 4, 92), -- username : acunningham 
-    ('66938022', 'Andrew', 'Williams', 'awilliams1@iut.univ-paris8.fr', '06.98.86.28.45', 'awilliams1', 2, 4, 92), -- username : awilliams1 
-    ('33858096', 'Joseph', 'Duncan', 'jduncan@iut.univ-paris8.fr', '07.16.19.52.64', 'jduncan', 2, 4, 92), -- username : jduncan 
-    ('97814225', 'Debra', 'Small', 'dsmall@iut.univ-paris8.fr', '06.13.64.98.93', 'dsmall', 2, 4, 92), -- username : dsmall 
-    ('90190606', 'Erin', 'Olson', 'eolson@iut.univ-paris8.fr', '06.84.86.31.15', 'eolson', 2, 4, 92), -- username : eolson 
-    ('00842444', 'Craig', 'Lowery', 'clowery@iut.univ-paris8.fr', '06.62.75.54.71', 'clowery', 2, 4, 92), -- username : clowery 
-    ('42088109', 'Mike', 'Carroll', 'mcarroll@iut.univ-paris8.fr', '07.88.94.74.85', 'mcarroll', 2, 4, 92), -- username : mcarroll 
-    ('02237173', 'John', 'Fisher', 'jfisher@iut.univ-paris8.fr', '06.81.65.24.15', 'jfisher', 2, 5, 5), -- username : jfisher 
-    ('33911177', 'Hayden', 'Williams', 'hwilliams1@iut.univ-paris8.fr', '06.78.63.47.07', 'hwilliams1', 2, 5, 5), -- username : hwilliams1 
-    ('80976517', 'Ruth', 'Casey', 'rcasey@iut.univ-paris8.fr', '07.99.76.17.74', 'rcasey', 2, 5, 5), -- username : rcasey 
-    ('83420591', 'Marisa', 'Olson', 'molson@iut.univ-paris8.fr', '06.63.41.16.80', 'molson', 2, 5, 5), -- username : molson 
-    ('44565954', 'Brandon', 'Harris', 'bharris@iut.univ-paris8.fr', '06.38.17.39.25', 'bharris', 2, 5, 5), -- username : bharris 
-    ('58912099', 'Erica', 'Bridges', 'ebridges@iut.univ-paris8.fr', '06.92.29.08.91', 'ebridges', 2, 5, 5), -- username : ebridges 
-    ('78485820', 'Alyssa', 'Hopkins', 'ahopkins@iut.univ-paris8.fr', '07.60.78.96.33', 'ahopkins', 2, 5, 5), -- username : ahopkins 
-    ('74553423', 'Rebecca', 'Osborne', 'rosborne@iut.univ-paris8.fr', '06.47.23.08.20', 'rosborne', 2, 5, 5), -- username : rosborne 
-    ('97740668', 'Michael', 'Hall', 'mhall1@iut.univ-paris8.fr', '06.93.89.53.24', 'mhall1', 2, 5, 5), -- username : mhall1 
-    ('30902030', 'Damon', 'Baker', 'dbaker@iut.univ-paris8.fr', '06.42.62.73.73', 'dbaker', 2, 5, 5), -- username : dbaker 
-    ('60745402', 'Erin', 'Morris', 'emorris@iut.univ-paris8.fr', '07.74.36.36.74', 'emorris', 2, 5, 49), -- username : emorris 
-    ('31034374', 'Benjamin', 'Yoder', 'byoder@iut.univ-paris8.fr', '07.21.55.45.42', 'byoder', 2, 5, 49), -- username : byoder 
-    ('09522927', 'Kenneth', 'Johnson', 'kjohnson@iut.univ-paris8.fr', '07.39.52.03.58', 'kjohnson', 2, 5, 49), -- username : kjohnson 
-    ('07361666', 'Emily', 'Taylor', 'etaylor@iut.univ-paris8.fr', '07.97.24.16.36', 'etaylor', 2, 5, 49), -- username : etaylor 
-    ('79696264', 'Patricia', 'Maldonado', 'pmaldonado@iut.univ-paris8.fr', '06.51.08.11.28', 'pmaldonado', 2, 5, 49), -- username : pmaldonado 
-    ('78088781', 'Keith', 'Rivera', 'krivera1@iut.univ-paris8.fr', '07.91.00.11.18', 'krivera1', 2, 5, 49), -- username : krivera1 
-    ('81316718', 'Daniel', 'Smith', 'dsmith1@iut.univ-paris8.fr', '06.24.99.29.50', 'dsmith1', 2, 5, 49), -- username : dsmith1 
-    ('93960951', 'Julie', 'Guzman', 'jguzman@iut.univ-paris8.fr', '07.29.67.57.22', 'jguzman', 2, 5, 49), -- username : jguzman 
-    ('80611610', 'Harry', 'Giles', 'hgiles@iut.univ-paris8.fr', '06.58.65.62.20', 'hgiles', 2, 5, 49), -- username : hgiles 
-    ('69516784', 'Barbara', 'Weber', 'bweber@iut.univ-paris8.fr', '06.71.02.09.53', 'bweber', 2, 5, 49), -- username : bweber 
-    ('46405249', 'Dylan', 'Anderson', 'danderson@iut.univ-paris8.fr', '06.00.70.31.56', 'danderson', 2, 5, 93), -- username : danderson 
-    ('78029752', 'David', 'Lawrence', 'dlawrence@iut.univ-paris8.fr', '06.49.92.92.59', 'dlawrence', 2, 5, 93), -- username : dlawrence 
-    ('26729660', 'Michelle', 'Payne', 'mpayne@iut.univ-paris8.fr', '06.10.65.11.42', 'mpayne', 2, 5, 93), -- username : mpayne 
-    ('56228551', 'Michael', 'Clark', 'mclark1@iut.univ-paris8.fr', '07.73.23.09.77', 'mclark1', 2, 5, 93), -- username : mclark1 
-    ('46892094', 'Erin', 'Lawrence', 'elawrence@iut.univ-paris8.fr', '06.15.14.71.65', 'elawrence', 2, 5, 93), -- username : elawrence 
-    ('61186019', 'Rebecca', 'Cole', 'rcole@iut.univ-paris8.fr', '07.05.38.27.24', 'rcole', 2, 5, 93), -- username : rcole 
-    ('60970698', 'April', 'Hardy', 'ahardy@iut.univ-paris8.fr', '06.71.86.26.19', 'ahardy', 2, 5, 93), -- username : ahardy 
-    ('05200898', 'James', 'Kelley', 'jkelley@iut.univ-paris8.fr', '07.99.60.09.92', 'jkelley', 2, 5, 93), -- username : jkelley 
-    ('29830217', 'Anthony', 'Gilmore', 'agilmore@iut.univ-paris8.fr', '06.99.72.11.47', 'agilmore', 2, 5, 93), -- username : agilmore 
-    ('27474814', 'Jerome', 'Parker', 'jparker@iut.univ-paris8.fr', '07.67.12.85.50', 'jparker', 2, 5, 93), -- username : jparker 
-    ('90151534', 'Kimberly', 'Mcfarland', 'kmcfarland@iut.univ-paris8.fr', '07.98.29.62.87', 'kmcfarland', 2, 39, 39), -- username : kmcfarland 
-    ('58382168', 'Karen', 'Wood', 'kwood1@iut.univ-paris8.fr', '07.36.10.61.62', 'kwood1', 2, 39, 39), -- username : kwood1 
-    ('36595448', 'Amy', 'Elliott', 'aelliott@iut.univ-paris8.fr', '07.72.61.99.41', 'aelliott', 2, 39, 39), -- username : aelliott 
-    ('40599243', 'Hannah', 'Greene', 'hgreene@iut.univ-paris8.fr', '07.68.34.51.03', 'hgreene', 2, 39, 39), -- username : hgreene 
-    ('61959995', 'Kaitlyn', 'Lam', 'klam@iut.univ-paris8.fr', '07.35.70.63.65', 'klam', 2, 39, 39), -- username : klam 
-    ('55144955', 'Joseph', 'Reed', 'jreed@iut.univ-paris8.fr', '06.24.29.48.19', 'jreed', 2, 39, 39), -- username : jreed 
-    ('04323838', 'Jennifer', 'Pierce', 'jpierce@iut.univ-paris8.fr', '06.18.81.03.67', 'jpierce', 2, 39, 39), -- username : jpierce 
-    ('01580403', 'Tanya', 'Miller', 'tmiller@iut.univ-paris8.fr', '06.13.22.94.52', 'tmiller', 2, 39, 39), -- username : tmiller 
-    ('42452220', 'John', 'Johns', 'jjohns@iut.univ-paris8.fr', '06.27.88.72.44', 'jjohns', 2, 39, 39), -- username : jjohns 
-    ('78404571', 'Rebecca', 'Hill', 'rhill@iut.univ-paris8.fr', '07.64.50.47.47', 'rhill', 2, 39, 39), -- username : rhill 
-    ('08396546', 'Angel', 'Hogan', 'ahogan@iut.univ-paris8.fr', '06.67.80.76.92', 'ahogan', 2, 39, 83), -- username : ahogan 
-    ('55020600', 'Rodney', 'Bennett', 'rbennett@iut.univ-paris8.fr', '07.92.11.11.06', 'rbennett', 2, 39, 83), -- username : rbennett 
-    ('49357535', 'Kayla', 'Dixon', 'kdixon@iut.univ-paris8.fr', '06.69.03.89.11', 'kdixon', 2, 39, 83), -- username : kdixon 
-    ('27439803', 'Mark', 'Rogers', 'mrogers@iut.univ-paris8.fr', '06.90.64.34.31', 'mrogers', 2, 39, 83), -- username : mrogers 
-    ('80108955', 'Susan', 'Mccarthy', 'smccarthy1@iut.univ-paris8.fr', '07.24.77.71.58', 'smccarthy1', 2, 39, 83), -- username : smccarthy1 
-    ('30370648', 'Damon', 'Kim', 'dkim1@iut.univ-paris8.fr', '06.62.64.46.55', 'dkim1', 2, 39, 83), -- username : dkim1 
-    ('15088571', 'James', 'Allen', 'jallen1@iut.univ-paris8.fr', '06.00.62.56.72', 'jallen1', 2, 39, 83), -- username : jallen1 
-    ('55279573', 'Samantha', 'Moreno', 'smoreno@iut.univ-paris8.fr', '07.24.80.38.05', 'smoreno', 2, 39, 83), -- username : smoreno 
-    ('49608781', 'Tonya', 'Patel', 'tpatel@iut.univ-paris8.fr', '07.59.02.47.01', 'tpatel', 2, 39, 83), -- username : tpatel 
-    ('23414889', 'Yvonne', 'Kramer', 'ykramer@iut.univ-paris8.fr', '07.38.79.95.73', 'ykramer', 2, 39, 83), -- username : ykramer 
-    ('52094902', 'Janet', 'Mckinney', 'jmckinney@iut.univ-paris8.fr', '07.28.91.08.47', 'jmckinney', 2, 39, 127), -- username : jmckinney 
-    ('72637128', 'Jonathan', 'Chung', 'jchung@iut.univ-paris8.fr', '07.94.75.61.30', 'jchung', 2, 39, 127), -- username : jchung 
-    ('71153591', 'Robin', 'Davis', 'rdavis@iut.univ-paris8.fr', '06.45.73.45.66', 'rdavis', 2, 39, 127), -- username : rdavis 
-    ('19929669', 'Rachael', 'Phillips', 'rphillips@iut.univ-paris8.fr', '07.25.51.52.26', 'rphillips', 2, 39, 127), -- username : rphillips 
-    ('72024256', 'Tyler', 'Anderson', 'tanderson@iut.univ-paris8.fr', '06.74.67.91.93', 'tanderson', 2, 39, 127), -- username : tanderson 
-    ('71733702', 'Brett', 'Ramsey', 'bramsey@iut.univ-paris8.fr', '06.97.80.96.79', 'bramsey', 2, 39, 127), -- username : bramsey 
-    ('60961330', 'Christy', 'Molina', 'cmolina@iut.univ-paris8.fr', '06.65.67.29.06', 'cmolina', 2, 39, 127), -- username : cmolina 
-    ('97403198', 'Alexis', 'Mccoy', 'amccoy@iut.univ-paris8.fr', '07.89.87.90.03', 'amccoy', 2, 39, 127), -- username : amccoy 
-    ('93947042', 'Debra', 'Chen', 'dchen@iut.univ-paris8.fr', '06.93.80.87.87', 'dchen', 2, 39, 127), -- username : dchen 
-    ('77810093', 'Anthony', 'Ferguson', 'aferguson@iut.univ-paris8.fr', '06.39.62.99.72', 'aferguson', 2, 39, 127), -- username : aferguson 
-    ('53056600', 'Sara', 'Hayes', 'shayes@iut.univ-paris8.fr', '06.92.31.36.96', 'shayes', 2, 40, 40), -- username : shayes 
-    ('86255688', 'Bradley', 'Smith', 'bsmith3@iut.univ-paris8.fr', '06.82.22.69.39', 'bsmith3', 2, 40, 40), -- username : bsmith3 
-    ('77239906', 'Ashley', 'Klein', 'aklein@iut.univ-paris8.fr', '07.54.61.11.44', 'aklein', 2, 40, 40), -- username : aklein 
-    ('58946781', 'Susan', 'Mcdaniel', 'smcdaniel@iut.univ-paris8.fr', '06.92.51.77.33', 'smcdaniel', 2, 40, 40), -- username : smcdaniel 
-    ('69644533', 'Pamela', 'Mcbride', 'pmcbride@iut.univ-paris8.fr', '06.68.02.65.25', 'pmcbride', 2, 40, 40), -- username : pmcbride 
-    ('05633804', 'Sandra', 'Chang', 'schang@iut.univ-paris8.fr', '06.48.03.40.38', 'schang', 2, 40, 40), -- username : schang 
-    ('80004797', 'Jeffrey', 'Rhodes', 'jrhodes@iut.univ-paris8.fr', '07.33.33.78.81', 'jrhodes', 2, 40, 40), -- username : jrhodes 
-    ('09214404', 'Jacob', 'Chandler', 'jchandler@iut.univ-paris8.fr', '06.24.24.54.69', 'jchandler', 2, 40, 40), -- username : jchandler 
-    ('50479939', 'Sabrina', 'Watson', 'swatson@iut.univ-paris8.fr', '07.77.65.87.48', 'swatson', 2, 40, 40), -- username : swatson 
-    ('50093567', 'Michael', 'Tapia', 'mtapia@iut.univ-paris8.fr', '06.35.43.39.49', 'mtapia', 2, 40, 40), -- username : mtapia 
-    ('10947582', 'Chelsea', 'Johnson', 'cjohnson1@iut.univ-paris8.fr', '07.53.75.86.02', 'cjohnson1', 2, 40, 84), -- username : cjohnson1 
-    ('73113468', 'Rebecca', 'Brown', 'rbrown@iut.univ-paris8.fr', '07.37.06.04.86', 'rbrown', 2, 40, 84), -- username : rbrown 
-    ('34976231', 'James', 'Soto', 'jsoto@iut.univ-paris8.fr', '07.33.44.53.04', 'jsoto', 2, 40, 84), -- username : jsoto 
-    ('62094352', 'Jessica', 'Hunt', 'jhunt1@iut.univ-paris8.fr', '06.68.99.71.30', 'jhunt1', 2, 40, 84), -- username : jhunt1 
-    ('78855572', 'Kathryn', 'Brown', 'kbrown1@iut.univ-paris8.fr', '07.18.32.47.70', 'kbrown1', 2, 40, 84), -- username : kbrown1 
-    ('92954470', 'Robert', 'Roberts', 'rroberts@iut.univ-paris8.fr', '06.41.60.36.78', 'rroberts', 2, 40, 84), -- username : rroberts 
-    ('84263441', 'Ashley', 'Cruz', 'acruz@iut.univ-paris8.fr', '07.70.87.36.68', 'acruz', 2, 40, 84), -- username : acruz 
-    ('47953848', 'John', 'Shaw', 'jshaw@iut.univ-paris8.fr', '07.57.86.32.34', 'jshaw', 2, 40, 84), -- username : jshaw 
-    ('17668698', 'Michael', 'Schaefer', 'mschaefer@iut.univ-paris8.fr', '06.64.39.48.87', 'mschaefer', 2, 40, 84), -- username : mschaefer 
-    ('18482532', 'Douglas', 'Peters', 'dpeters@iut.univ-paris8.fr', '07.15.17.51.11', 'dpeters', 2, 40, 84), -- username : dpeters 
-    ('18674656', 'Joseph', 'Boyd', 'jboyd@iut.univ-paris8.fr', '07.28.44.99.43', 'jboyd', 2, 40, 128), -- username : jboyd 
-    ('76651164', 'Melissa', 'Lee', 'mlee@iut.univ-paris8.fr', '07.17.03.12.55', 'mlee', 2, 40, 128), -- username : mlee 
-    ('47723568', 'Elizabeth', 'Hobbs', 'ehobbs@iut.univ-paris8.fr', '06.46.71.01.45', 'ehobbs', 2, 40, 128), -- username : ehobbs 
-    ('23210498', 'John', 'Silva', 'jsilva@iut.univ-paris8.fr', '07.85.37.48.29', 'jsilva', 2, 40, 128), -- username : jsilva 
-    ('20682194', 'Cheyenne', 'Miller', 'cmiller@iut.univ-paris8.fr', '07.97.27.46.15', 'cmiller', 2, 40, 128), -- username : cmiller 
-    ('09715150', 'Bryce', 'Buchanan', 'bbuchanan@iut.univ-paris8.fr', '07.39.86.87.70', 'bbuchanan', 2, 40, 128), -- username : bbuchanan 
-    ('42906715', 'Danielle', 'Villegas', 'dvillegas@iut.univ-paris8.fr', '07.32.79.17.40', 'dvillegas', 2, 40, 128), -- username : dvillegas 
-    ('64692649', 'Ryan', 'Cortez', 'rcortez@iut.univ-paris8.fr', '07.95.08.82.85', 'rcortez', 2, 40, 128), -- username : rcortez 
-    ('53967843', 'Jonathan', 'Dunn', 'jdunn1@iut.univ-paris8.fr', '07.38.74.22.24', 'jdunn1', 2, 40, 128), -- username : jdunn1 
-    ('73753631', 'Kenneth', 'Davis', 'kdavis@iut.univ-paris8.fr', '06.47.67.18.86', 'kdavis', 2, 40, 128), -- username : kdavis 
-    ('57785528', 'Joann', 'Griffith', 'jgriffith1@iut.univ-paris8.fr', '06.51.05.23.87', 'jgriffith1', 2, 28, 28), -- username : jgriffith1 
-    ('02693141', 'Emily', 'Perkins', 'eperkins@iut.univ-paris8.fr', '06.46.03.70.03', 'eperkins', 2, 28, 28), -- username : eperkins 
-    ('63134090', 'Carmen', 'Davenport', 'cdavenport@iut.univ-paris8.fr', '06.63.08.97.09', 'cdavenport', 2, 28, 28), -- username : cdavenport 
-    ('73854923', 'Jessica', 'Fleming', 'jfleming@iut.univ-paris8.fr', '07.99.36.22.51', 'jfleming', 2, 28, 28), -- username : jfleming 
-    ('07620805', 'Molly', 'Watkins', 'mwatkins@iut.univ-paris8.fr', '07.69.56.34.71', 'mwatkins', 2, 28, 28), -- username : mwatkins 
-    ('45394894', 'Brent', 'Lewis', 'blewis1@iut.univ-paris8.fr', '07.34.24.37.78', 'blewis1', 2, 28, 28), -- username : blewis1 
-    ('55914982', 'Stacy', 'Mathews', 'smathews1@iut.univ-paris8.fr', '07.74.96.56.17', 'smathews1', 2, 28, 28), -- username : smathews1 
-    ('18991208', 'Tyler', 'Lee', 'tlee@iut.univ-paris8.fr', '06.19.65.81.55', 'tlee', 2, 28, 28), -- username : tlee 
-    ('08566457', 'Carla', 'Avila', 'cavila@iut.univ-paris8.fr', '06.48.06.09.25', 'cavila', 2, 28, 28), -- username : cavila 
-    ('62057047', 'Dominic', 'Miller', 'dmiller@iut.univ-paris8.fr', '07.83.54.65.29', 'dmiller', 2, 28, 28), -- username : dmiller 
-    ('88055579', 'Tyler', 'Mcgee', 'tmcgee@iut.univ-paris8.fr', '06.96.77.66.78', 'tmcgee', 2, 28, 72), -- username : tmcgee 
-    ('47254067', 'Annette', 'Mckinney', 'amckinney@iut.univ-paris8.fr', '06.16.96.75.73', 'amckinney', 2, 28, 72), -- username : amckinney 
-    ('52589649', 'Dylan', 'Schneider', 'dschneider1@iut.univ-paris8.fr', '07.29.48.18.36', 'dschneider1', 2, 28, 72), -- username : dschneider1 
-    ('70332419', 'Cynthia', 'Phillips', 'cphillips1@iut.univ-paris8.fr', '06.87.48.36.80', 'cphillips1', 2, 28, 72), -- username : cphillips1 
-    ('91513130', 'Shannon', 'Martinez', 'smartinez2@iut.univ-paris8.fr', '07.22.84.87.78', 'smartinez2', 2, 28, 72), -- username : smartinez2 
-    ('83515294', 'Nicholas', 'Johnson', 'njohnson@iut.univ-paris8.fr', '06.45.44.47.34', 'njohnson', 2, 28, 72), -- username : njohnson 
-    ('01633881', 'Matthew', 'Hunter', 'mhunter@iut.univ-paris8.fr', '06.57.81.39.85', 'mhunter', 2, 28, 72), -- username : mhunter 
-    ('40646230', 'James', 'King', 'jking@iut.univ-paris8.fr', '07.43.16.83.35', 'jking', 2, 28, 72), -- username : jking 
-    ('75244422', 'Jose', 'Davis', 'jdavis1@iut.univ-paris8.fr', '06.22.86.64.62', 'jdavis1', 2, 28, 72), -- username : jdavis1 
-    ('01901507', 'Jon', 'Graves', 'jgraves@iut.univ-paris8.fr', '07.22.19.89.87', 'jgraves', 2, 28, 72), -- username : jgraves 
-    ('12880447', 'Johnny', 'Watson', 'jwatson1@iut.univ-paris8.fr', '06.27.00.26.76', 'jwatson1', 2, 28, 116), -- username : jwatson1 
-    ('95015737', 'John', 'Lee', 'jlee1@iut.univ-paris8.fr', '06.89.67.01.47', 'jlee1', 2, 28, 116), -- username : jlee1 
-    ('48393050', 'Monique', 'Medina', 'mmedina@iut.univ-paris8.fr', '07.51.98.05.13', 'mmedina', 2, 28, 116), -- username : mmedina 
-    ('38709963', 'Elizabeth', 'Allen', 'eallen@iut.univ-paris8.fr', '07.64.89.46.19', 'eallen', 2, 28, 116), -- username : eallen 
-    ('59652174', 'Deborah', 'Perry', 'dperry@iut.univ-paris8.fr', '07.39.25.04.31', 'dperry', 2, 28, 116), -- username : dperry 
-    ('09494517', 'Christina', 'Huang', 'chuang@iut.univ-paris8.fr', '06.94.93.24.52', 'chuang', 2, 28, 116), -- username : chuang 
-    ('75420649', 'Matthew', 'Johnson', 'mjohnson1@iut.univ-paris8.fr', '07.17.87.79.37', 'mjohnson1', 2, 28, 116), -- username : mjohnson1 
-    ('43305480', 'Kendra', 'Armstrong', 'karmstrong@iut.univ-paris8.fr', '07.50.02.22.66', 'karmstrong', 2, 28, 116), -- username : karmstrong 
-    ('15364145', 'Lisa', 'Luna', 'lluna@iut.univ-paris8.fr', '07.65.35.03.56', 'lluna', 2, 28, 116), -- username : lluna 
-    ('63699597', 'Patrick', 'Harris', 'pharris@iut.univ-paris8.fr', '07.93.05.72.86', 'pharris', 2, 28, 116), -- username : pharris 
-    ('24325872', 'Brandon', 'Smith', 'bsmith2@iut.univ-paris8.fr', '06.76.61.70.16', 'bsmith2', 2, 29, 29), -- username : bsmith2 
-    ('34022257', 'Joseph', 'Brown', 'jbrown1@iut.univ-paris8.fr', '06.46.08.53.62', 'jbrown1', 2, 29, 29), -- username : jbrown1 
-    ('02291935', 'April', 'Price', 'aprice@iut.univ-paris8.fr', '07.26.40.52.55', 'aprice', 2, 29, 29), -- username : aprice 
-    ('19457896', 'Stacie', 'Lewis', 'slewis@iut.univ-paris8.fr', '06.39.52.07.92', 'slewis', 2, 29, 29), -- username : slewis 
-    ('01433025', 'Leroy', 'Rhodes', 'lrhodes@iut.univ-paris8.fr', '06.43.38.62.42', 'lrhodes', 2, 29, 29), -- username : lrhodes 
-    ('17959076', 'Mark', 'Davis', 'mdavis1@iut.univ-paris8.fr', '07.59.56.44.60', 'mdavis1', 2, 29, 29), -- username : mdavis1 
-    ('81988599', 'Eric', 'Sanchez', 'esanchez@iut.univ-paris8.fr', '06.72.89.23.63', 'esanchez', 2, 29, 29), -- username : esanchez 
-    ('46387246', 'Valerie', 'Jackson', 'vjackson@iut.univ-paris8.fr', '07.96.74.96.46', 'vjackson', 2, 29, 29), -- username : vjackson 
-    ('55370592', 'Gordon', 'Lawrence', 'glawrence@iut.univ-paris8.fr', '06.28.38.41.38', 'glawrence', 2, 29, 29), -- username : glawrence 
-    ('24007418', 'Todd', 'Wilson', 'twilson@iut.univ-paris8.fr', '06.63.49.35.49', 'twilson', 2, 29, 29), -- username : twilson 
-    ('57222156', 'Dustin', 'Lynch', 'dlynch1@iut.univ-paris8.fr', '06.06.66.30.50', 'dlynch1', 2, 29, 73), -- username : dlynch1 
-    ('48054794', 'Jamie', 'Bautista', 'jbautista@iut.univ-paris8.fr', '06.41.80.12.77', 'jbautista', 2, 29, 73), -- username : jbautista 
-    ('90822298', 'Richard', 'Mccormick', 'rmccormick@iut.univ-paris8.fr', '06.09.61.40.83', 'rmccormick', 2, 29, 73), -- username : rmccormick 
-    ('15193199', 'Matthew', 'Cox', 'mcox@iut.univ-paris8.fr', '07.56.50.29.82', 'mcox', 2, 29, 73), -- username : mcox 
-    ('83472059', 'Steven', 'Wilson', 'swilson@iut.univ-paris8.fr', '07.46.45.69.73', 'swilson', 2, 29, 73), -- username : swilson 
-    ('82940313', 'Daniel', 'Hendrix', 'dhendrix@iut.univ-paris8.fr', '07.64.34.27.70', 'dhendrix', 2, 29, 73), -- username : dhendrix 
-    ('95748892', 'Shane', 'Cruz', 'scruz@iut.univ-paris8.fr', '07.68.50.84.79', 'scruz', 2, 29, 73), -- username : scruz 
-    ('98007348', 'Anthony', 'Webster', 'awebster@iut.univ-paris8.fr', '07.79.43.55.74', 'awebster', 2, 29, 73), -- username : awebster 
-    ('90333574', 'Kurt', 'Maxwell', 'kmaxwell1@iut.univ-paris8.fr', '07.73.39.61.40', 'kmaxwell1', 2, 29, 73), -- username : kmaxwell1 
-    ('40516830', 'Jose', 'Perez', 'jperez@iut.univ-paris8.fr', '06.12.60.94.51', 'jperez', 2, 29, 73), -- username : jperez 
-    ('80659617', 'Rebekah', 'Vasquez', 'rvasquez@iut.univ-paris8.fr', '07.26.64.30.55', 'rvasquez', 2, 29, 117), -- username : rvasquez 
-    ('67640398', 'Terrence', 'Fowler', 'tfowler@iut.univ-paris8.fr', '07.71.85.59.97', 'tfowler', 2, 29, 117), -- username : tfowler 
-    ('21118209', 'Suzanne', 'Carroll', 'scarroll@iut.univ-paris8.fr', '07.58.85.72.07', 'scarroll', 2, 29, 117), -- username : scarroll 
-    ('17326106', 'Clinton', 'Carter', 'ccarter@iut.univ-paris8.fr', '07.10.93.59.08', 'ccarter', 2, 29, 117), -- username : ccarter 
-    ('17558966', 'Matthew', 'Jackson', 'mjackson1@iut.univ-paris8.fr', '06.26.04.03.15', 'mjackson1', 2, 29, 117), -- username : mjackson1 
-    ('39461322', 'Melanie', 'Johnson', 'mjohnson@iut.univ-paris8.fr', '06.79.39.31.00', 'mjohnson', 2, 29, 117), -- username : mjohnson 
-    ('59347451', 'Matthew', 'Perkins', 'mperkins@iut.univ-paris8.fr', '07.86.82.25.11', 'mperkins', 2, 29, 117), -- username : mperkins 
-    ('45292518', 'Stacy', 'White', 'swhite@iut.univ-paris8.fr', '06.99.37.91.37', 'swhite', 2, 29, 117), -- username : swhite 
-    ('02168287', 'Nathan', 'Higgins', 'nhiggins@iut.univ-paris8.fr', '06.85.74.85.96', 'nhiggins', 2, 29, 117), -- username : nhiggins 
-    ('08845248', 'John', 'Daniels', 'jdaniels@iut.univ-paris8.fr', '07.82.76.40.05', 'jdaniels', 2, 29, 117), -- username : jdaniels 
-    ('83192209', 'Amy', 'Murphy', 'amurphy@iut.univ-paris8.fr', '06.94.70.56.27', 'amurphy', 2, 28, 28), -- username : amurphy 
-    ('12136434', 'Bradley', 'Jacobs', 'bjacobs@iut.univ-paris8.fr', '07.62.57.51.36', 'bjacobs', 2, 28, 28), -- username : bjacobs 
-    ('24474793', 'Todd', 'Bridges', 'tbridges@iut.univ-paris8.fr', '06.71.73.77.05', 'tbridges', 2, 28, 28), -- username : tbridges 
-    ('02860915', 'Douglas', 'Espinoza', 'despinoza@iut.univ-paris8.fr', '07.44.58.02.15', 'despinoza', 2, 28, 28), -- username : despinoza 
-    ('18507236', 'Joseph', 'Schultz', 'jschultz@iut.univ-paris8.fr', '06.98.82.57.15', 'jschultz', 2, 28, 28), -- username : jschultz 
-    ('43741000', 'Dale', 'Ramos', 'dramos@iut.univ-paris8.fr', '06.68.16.10.78', 'dramos', 2, 28, 28), -- username : dramos 
-    ('54552385', 'Jill', 'Holder', 'jholder@iut.univ-paris8.fr', '07.46.45.07.18', 'jholder', 2, 28, 28), -- username : jholder 
-    ('23736990', 'Crystal', 'Arnold', 'carnold@iut.univ-paris8.fr', '07.91.33.02.76', 'carnold', 2, 28, 28), -- username : carnold 
-    ('76773446', 'Kevin', 'Sanford', 'ksanford@iut.univ-paris8.fr', '06.87.33.74.55', 'ksanford', 2, 28, 28), -- username : ksanford 
-    ('37929930', 'Tina', 'Tapia', 'ttapia@iut.univ-paris8.fr', '07.11.27.25.18', 'ttapia', 2, 28, 28), -- username : ttapia 
-    ('74042822', 'Patricia', 'Miller', 'pmiller@iut.univ-paris8.fr', '07.75.15.95.43', 'pmiller', 2, 28, 72), -- username : pmiller 
-    ('88955166', 'Eric', 'Brown', 'ebrown1@iut.univ-paris8.fr', '06.52.46.60.92', 'ebrown1', 2, 28, 72), -- username : ebrown1 
-    ('46719401', 'James', 'Singh', 'jsingh@iut.univ-paris8.fr', '06.33.57.16.92', 'jsingh', 2, 28, 72), -- username : jsingh 
-    ('81268085', 'Ryan', 'Howard', 'rhoward@iut.univ-paris8.fr', '07.07.62.55.35', 'rhoward', 2, 28, 72), -- username : rhoward 
-    ('57643046', 'Jennifer', 'Long', 'jlong1@iut.univ-paris8.fr', '06.69.82.67.22', 'jlong1', 2, 28, 72), -- username : jlong1 
-    ('63270385', 'Manuel', 'Mcmillan', 'mmcmillan@iut.univ-paris8.fr', '07.33.48.35.52', 'mmcmillan', 2, 28, 72), -- username : mmcmillan 
-    ('38534691', 'Kylie', 'Barron', 'kbarron@iut.univ-paris8.fr', '07.66.31.39.98', 'kbarron', 2, 28, 72), -- username : kbarron 
-    ('19467806', 'Jason', 'Peterson', 'jpeterson@iut.univ-paris8.fr', '07.88.54.05.46', 'jpeterson', 2, 28, 72), -- username : jpeterson 
-    ('95098891', 'Katherine', 'Reyes', 'kreyes1@iut.univ-paris8.fr', '06.44.47.94.71', 'kreyes1', 2, 28, 72), -- username : kreyes1 
-    ('38864544', 'Dylan', 'Campbell', 'dcampbell@iut.univ-paris8.fr', '06.84.20.93.53', 'dcampbell', 2, 28, 72), -- username : dcampbell 
-    ('32570936', 'Walter', 'Morris', 'wmorris@iut.univ-paris8.fr', '06.86.43.62.12', 'wmorris', 2, 28, 116), -- username : wmorris 
-    ('02574457', 'William', 'Mills', 'wmills@iut.univ-paris8.fr', '06.38.19.20.47', 'wmills', 2, 28, 116), -- username : wmills 
-    ('62543772', 'Gregory', 'Case', 'gcase@iut.univ-paris8.fr', '07.90.86.07.97', 'gcase', 2, 28, 116), -- username : gcase 
-    ('71268945', 'Lisa', 'Thomas', 'lthomas@iut.univ-paris8.fr', '06.16.85.77.82', 'lthomas', 2, 28, 116), -- username : lthomas 
-    ('38162490', 'Katherine', 'Middleton', 'kmiddleton@iut.univ-paris8.fr', '06.69.32.44.03', 'kmiddleton', 2, 28, 116), -- username : kmiddleton 
-    ('20105981', 'Kyle', 'Fowler', 'kfowler@iut.univ-paris8.fr', '06.56.85.16.09', 'kfowler', 2, 28, 116), -- username : kfowler 
-    ('64876438', 'Tara', 'Brennan', 'tbrennan@iut.univ-paris8.fr', '06.56.32.01.86', 'tbrennan', 2, 28, 116), -- username : tbrennan 
-    ('05729664', 'Tracy', 'Hernandez', 'thernandez1@iut.univ-paris8.fr', '06.71.47.54.96', 'thernandez1', 2, 28, 116), -- username : thernandez1 
-    ('56608087', 'Elizabeth', 'Clay', 'eclay@iut.univ-paris8.fr', '06.19.95.69.30', 'eclay', 2, 28, 116), -- username : eclay 
-    ('58873695', 'Evan', 'Young', 'eyoung@iut.univ-paris8.fr', '06.65.70.21.84', 'eyoung', 2, 28, 116), -- username : eyoung 
-    ('37568076', 'Mary', 'Ross', 'mross@iut.univ-paris8.fr', '07.08.15.04.24', 'mross', 2, 5, 5), -- username : mross 
-    ('92165465', 'Sheena', 'Roth', 'sroth@iut.univ-paris8.fr', '06.20.95.45.11', 'sroth', 2, 5, 5), -- username : sroth 
-    ('06747260', 'Megan', 'Warren', 'mwarren@iut.univ-paris8.fr', '06.04.57.57.65', 'mwarren', 2, 5, 5), -- username : mwarren 
-    ('56565549', 'Joe', 'Price', 'jprice@iut.univ-paris8.fr', '06.08.03.81.53', 'jprice', 2, 5, 5), -- username : jprice 
-    ('55455808', 'Jeff', 'Pineda', 'jpineda@iut.univ-paris8.fr', '06.00.61.44.37', 'jpineda', 2, 5, 5), -- username : jpineda 
-    ('45240831', 'Kathryn', 'Brandt', 'kbrandt@iut.univ-paris8.fr', '07.07.67.54.27', 'kbrandt', 2, 5, 5), -- username : kbrandt 
-    ('23848114', 'Tracie', 'Robinson', 'trobinson@iut.univ-paris8.fr', '07.82.13.49.38', 'trobinson', 2, 5, 5), -- username : trobinson 
-    ('06915981', 'Wanda', 'Garcia', 'wgarcia@iut.univ-paris8.fr', '07.80.57.45.36', 'wgarcia', 2, 5, 5), -- username : wgarcia 
-    ('24226298', 'Kimberly', 'Stevens', 'kstevens@iut.univ-paris8.fr', '06.07.09.47.81', 'kstevens', 2, 5, 5), -- username : kstevens 
-    ('99674548', 'Stephen', 'Barnett', 'sbarnett1@iut.univ-paris8.fr', '07.07.67.26.89', 'sbarnett1', 2, 5, 5), -- username : sbarnett1 
-    ('32293771', 'Jacob', 'Crawford', 'jcrawford1@iut.univ-paris8.fr', '07.43.31.89.36', 'jcrawford1', 2, 5, 49), -- username : jcrawford1 
-    ('73620092', 'Steven', 'Lee', 'slee@iut.univ-paris8.fr', '06.83.37.70.10', 'slee', 2, 5, 49), -- username : slee 
-    ('20935867', 'Sydney', 'Bailey', 'sbailey@iut.univ-paris8.fr', '06.21.87.83.98', 'sbailey', 2, 5, 49), -- username : sbailey 
-    ('35062779', 'Richard', 'Austin', 'raustin@iut.univ-paris8.fr', '07.41.68.33.68', 'raustin', 2, 5, 49), -- username : raustin 
-    ('07809037', 'Rhonda', 'Campbell', 'rcampbell1@iut.univ-paris8.fr', '07.82.36.39.53', 'rcampbell1', 2, 5, 49), -- username : rcampbell1 
-    ('69206144', 'Kimberly', 'Castro', 'kcastro1@iut.univ-paris8.fr', '06.88.28.73.64', 'kcastro1', 2, 5, 49), -- username : kcastro1 
-    ('63666367', 'Christopher', 'Blair', 'cblair1@iut.univ-paris8.fr', '07.59.54.47.60', 'cblair1', 2, 5, 49), -- username : cblair1 
-    ('80265895', 'Tom', 'Mcdowell', 'tmcdowell@iut.univ-paris8.fr', '06.27.78.83.43', 'tmcdowell', 2, 5, 49), -- username : tmcdowell 
-    ('20941471', 'Nicole', 'Lyons', 'nlyons@iut.univ-paris8.fr', '06.88.98.96.99', 'nlyons', 2, 5, 49), -- username : nlyons 
-    ('05333216', 'Nicole', 'Johnston', 'njohnston@iut.univ-paris8.fr', '06.79.13.36.23', 'njohnston', 2, 5, 49), -- username : njohnston 
-    ('68436409', 'Kathryn', 'Anderson', 'kanderson@iut.univ-paris8.fr', '07.21.12.78.36', 'kanderson', 2, 5, 93), -- username : kanderson 
-    ('99029929', 'Bryan', 'Santos', 'bsantos@iut.univ-paris8.fr', '06.85.29.91.20', 'bsantos', 2, 5, 93), -- username : bsantos 
-    ('75105910', 'Shannon', 'Martinez', 'smartinez1@iut.univ-paris8.fr', '07.32.66.42.39', 'smartinez1', 2, 5, 93), -- username : smartinez1 
-    ('70992055', 'Mary', 'Moreno', 'mmoreno1@iut.univ-paris8.fr', '07.87.78.16.57', 'mmoreno1', 2, 5, 93), -- username : mmoreno1 
-    ('09298619', 'Brian', 'Cole', 'bcole@iut.univ-paris8.fr', '06.33.48.41.42', 'bcole', 2, 5, 93), -- username : bcole 
-    ('77733514', 'Eric', 'Black', 'eblack@iut.univ-paris8.fr', '06.90.50.78.36', 'eblack', 2, 5, 93), -- username : eblack 
-    ('23613242', 'Gina', 'Nguyen', 'gnguyen@iut.univ-paris8.fr', '06.42.03.33.68', 'gnguyen', 2, 5, 93), -- username : gnguyen 
-    ('38735857', 'Marcia', 'Robbins', 'mrobbins@iut.univ-paris8.fr', '06.47.60.91.01', 'mrobbins', 2, 5, 93), -- username : mrobbins 
-    ('65869767', 'Annette', 'Crawford', 'acrawford1@iut.univ-paris8.fr', '07.44.87.28.57', 'acrawford1', 2, 5, 93), -- username : acrawford1 
-    ('02564651', 'Samantha', 'Campbell', 'scampbell@iut.univ-paris8.fr', '07.83.15.74.05', 'scampbell', 2, 5,93) -- username : sscampbell 
+    ('52838257', 'Taylor', 'Paul', 'tpaul@iut.univ-paris8.fr', '06.66.85.01.11', 'tpaul', 2, 16, 16) -- username : tpaul 
+    -- ('26314046', 'Felicia', 'Harper', 'fharper@iut.univ-paris8.fr', '07.86.11.69.74', 'fharper', 2, 16, 60), -- username : fharper 
+    -- ('73868463', 'Jennifer', 'Hamilton', 'jhamilton@iut.univ-paris8.fr', '06.27.08.15.01', 'jhamilton', 2, 16, 60), -- username : jhamilton 
+    -- ('90572577', 'Stephanie', 'Keith', 'skeith@iut.univ-paris8.fr', '07.19.20.78.61', 'skeith', 2, 16, 60), -- username : skeith 
+    -- ('39517131', 'David', 'Mcdonald', 'dmcdonald@iut.univ-paris8.fr', '07.21.61.88.13', 'dmcdonald', 2, 16, 60), -- username : dmcdonald 
+    -- ('54516035', 'Deborah', 'Briggs', 'dbriggs@iut.univ-paris8.fr', '06.30.01.40.86', 'dbriggs', 2, 16, 60), -- username : dbriggs 
+    -- ('18536362', 'Ryan', 'King', 'rking@iut.univ-paris8.fr', '07.14.07.57.33', 'rking', 2, 16, 60), -- username : rking 
+    -- ('13773420', 'Ryan', 'Meyer', 'rmeyer@iut.univ-paris8.fr', '07.27.39.42.52', 'rmeyer', 2, 16, 60), -- username : rmeyer 
+    -- ('16634869', 'Christina', 'Wagner', 'cwagner@iut.univ-paris8.fr', '06.53.27.93.20', 'cwagner', 2, 16, 60), -- username : cwagner 
+    -- ('28014225', 'Christina', 'Potts', 'cpotts@iut.univ-paris8.fr', '06.95.49.86.30', 'cpotts', 2, 16, 60), -- username : cpotts 
+    -- ('03304232', 'Lisa', 'Martinez', 'lmartinez2@iut.univ-paris8.fr', '06.06.63.85.59', 'lmartinez2', 2, 16, 60), -- username : lmartinez2 
+    -- ('64764777', 'Charles', 'Mccarty', 'cmccarty@iut.univ-paris8.fr', '07.38.96.09.75', 'cmccarty', 2, 16, 104), -- username : cmccarty 
+    -- ('48363685', 'Paul', 'Diaz', 'pdiaz@iut.univ-paris8.fr', '06.42.88.76.98', 'pdiaz', 2, 16, 104), -- username : pdiaz 
+    -- ('57012724', 'Mitchell', 'Ward', 'mward@iut.univ-paris8.fr', '07.69.48.09.69', 'mward', 2, 16, 104), -- username : mward 
+    -- ('82427096', 'Michael', 'Beard', 'mbeard@iut.univ-paris8.fr', '07.67.59.12.13', 'mbeard', 2, 16, 104), -- username : mbeard 
+    -- ('00816327', 'Ryan', 'Wright', 'rwright@iut.univ-paris8.fr', '06.60.49.55.26', 'rwright', 2, 16, 104), -- username : rwright 
+    -- ('00062954', 'Stacie', 'Wells', 'swells@iut.univ-paris8.fr', '06.11.48.17.80', 'swells', 2, 16, 104), -- username : swells 
+    -- ('33882750', 'Anthony', 'Freeman', 'afreeman@iut.univ-paris8.fr', '07.30.32.24.87', 'afreeman', 2, 16, 104), -- username : afreeman 
+    -- ('03585710', 'Sandra', 'Hansen', 'shansen@iut.univ-paris8.fr', '06.44.45.95.28', 'shansen', 2, 16, 104), -- username : shansen 
+    -- ('75174374', 'Mary', 'Harmon', 'mharmon1@iut.univ-paris8.fr', '06.72.20.88.17', 'mharmon1', 2, 16, 104), -- username : mharmon1 
+    -- ('52706581', 'Allison', 'Casey', 'acasey@iut.univ-paris8.fr', '06.19.71.76.47', 'acasey', 2, 16, 104), -- username : acasey 
+    -- ('63323672', 'Jacob', 'Meadows', 'jmeadows@iut.univ-paris8.fr', '07.19.73.60.43', 'jmeadows', 2, 17, 17), -- username : jmeadows 
+    -- ('16591616', 'Michael', 'Collins', 'mcollins@iut.univ-paris8.fr', '06.04.67.23.61', 'mcollins', 2, 17, 17), -- username : mcollins 
+    -- ('74101134', 'Sarah', 'Williams', 'swilliams1@iut.univ-paris8.fr', '06.92.21.19.06', 'swilliams1', 2, 17, 17), -- username : swilliams1 
+    -- ('41375500', 'Robin', 'Perry', 'rperry@iut.univ-paris8.fr', '07.81.24.36.68', 'rperry', 2, 17, 17), -- username : rperry 
+    -- ('67185765', 'Ann', 'Hanson', 'ahanson@iut.univ-paris8.fr', '07.76.69.29.83', 'ahanson', 2, 17, 17), -- username : ahanson 
+    -- ('96954921', 'Katherine', 'Cooper', 'kcooper@iut.univ-paris8.fr', '06.96.37.20.45', 'kcooper', 2, 17, 17), -- username : kcooper 
+    -- ('85886517', 'Lisa', 'Frazier', 'lfrazier@iut.univ-paris8.fr', '06.60.65.93.61', 'lfrazier', 2, 17, 17), -- username : lfrazier 
+    -- ('56035200', 'Allen', 'Bailey', 'abailey@iut.univ-paris8.fr', '06.12.63.53.55', 'abailey', 2, 17, 17), -- username : abailey 
+    -- ('60727544', 'John', 'Andrade', 'jandrade@iut.univ-paris8.fr', '07.92.65.63.99', 'jandrade', 2, 17, 17), -- username : jandrade 
+    -- ('45178327', 'Justin', 'Bryant', 'jbryant@iut.univ-paris8.fr', '06.30.52.00.11', 'jbryant', 2, 17, 17), -- username : jbryant 
+    -- ('18693259', 'Sharon', 'Brewer', 'sbrewer@iut.univ-paris8.fr', '06.62.67.41.02', 'sbrewer', 2, 17, 61), -- username : sbrewer 
+    -- ('84512874', 'Michelle', 'Adams', 'madams@iut.univ-paris8.fr', '07.95.28.58.98', 'madams', 2, 17, 61), -- username : madams 
+    -- ('91466902', 'Joel', 'Shaw', 'jshaw1@iut.univ-paris8.fr', '07.02.00.96.21', 'jshaw1', 2, 17, 61), -- username : jshaw1 
+    -- ('10279904', 'Corey', 'Moore', 'cmoore2@iut.univ-paris8.fr', '06.01.98.48.63', 'cmoore2', 2, 17, 61), -- username : cmoore2 
+    -- ('60345342', 'Sarah', 'Thompson', 'sthompson1@iut.univ-paris8.fr', '07.87.44.20.38', 'sthompson1', 2, 17, 61), -- username : sthompson1 
+    -- ('68984811', 'John', 'Green', 'jgreen1@iut.univ-paris8.fr', '06.45.48.68.35', 'jgreen1', 2, 17, 61), -- username : jgreen1 
+    -- ('03756504', 'Jack', 'Garcia', 'jgarcia@iut.univ-paris8.fr', '06.82.82.17.00', 'jgarcia', 2, 17, 61), -- username : jgarcia 
+    -- ('47839431', 'Lawrence', 'Smith', 'lsmith@iut.univ-paris8.fr', '07.11.93.46.80', 'lsmith', 2, 17, 61), -- username : lsmith 
+    -- ('50495442', 'Meghan', 'Maxwell', 'mmaxwell@iut.univ-paris8.fr', '06.17.46.29.30', 'mmaxwell', 2, 17, 61), -- username : mmaxwell 
+    -- ('11562077', 'Ryan', 'Brady', 'rbrady@iut.univ-paris8.fr', '06.53.26.61.13', 'rbrady', 2, 17, 61), -- username : rbrady 
+    -- ('79375860', 'Michael', 'Thomas', 'mthomas@iut.univ-paris8.fr', '07.56.16.27.60', 'mthomas', 2, 17, 105), -- username : mthomas 
+    -- ('63197921', 'Caroline', 'Durham', 'cdurham@iut.univ-paris8.fr', '06.17.49.55.90', 'cdurham', 2, 17, 105), -- username : cdurham 
+    -- ('48495539', 'Larry', 'Hunter', 'lhunter@iut.univ-paris8.fr', '07.17.99.04.26', 'lhunter', 2, 17, 105), -- username : lhunter 
+    -- ('81786019', 'Jonathan', 'Macdonald', 'jmacdonald@iut.univ-paris8.fr', '07.02.44.13.33', 'jmacdonald', 2, 17, 105), -- username : jmacdonald 
+    -- ('30080633', 'Karen', 'Bennett', 'kbennett@iut.univ-paris8.fr', '07.42.47.42.67', 'kbennett', 2, 17, 105), -- username : kbennett 
+    -- ('47131000', 'Lauren', 'Carter', 'lcarter@iut.univ-paris8.fr', '06.26.50.48.13', 'lcarter', 2, 17, 105), -- username : lcarter 
+    -- ('82625966', 'Becky', 'Phillips', 'bphillips@iut.univ-paris8.fr', '06.54.14.44.38', 'bphillips', 2, 17, 105), -- username : bphillips 
+    -- ('46410707', 'Heather', 'Blair', 'hblair@iut.univ-paris8.fr', '07.72.01.14.07', 'hblair', 2, 17, 105), -- username : hblair 
+    -- ('40399568', 'Denise', 'Bolton', 'dbolton@iut.univ-paris8.fr', '06.21.72.89.53', 'dbolton', 2, 17, 105), -- username : dbolton 
+    -- ('90939848', 'Eric', 'Harris', 'eharris@iut.univ-paris8.fr', '06.21.46.93.87', 'eharris', 2, 17, 105), -- username : eharris 
+    -- ('60281018', 'David', 'Brown', 'dbrown@iut.univ-paris8.fr', '07.43.21.55.27', 'dbrown', 2, 18, 18), -- username : dbrown 
+    -- ('84009440', 'Melanie', 'Pratt', 'mpratt@iut.univ-paris8.fr', '06.65.84.97.99', 'mpratt', 2, 18, 18), -- username : mpratt 
+    -- ('54955356', 'Emily', 'Yoder', 'eyoder@iut.univ-paris8.fr', '06.41.53.92.21', 'eyoder', 2, 18, 18), -- username : eyoder 
+    -- ('83751200', 'Donald', 'Lee', 'dlee1@iut.univ-paris8.fr', '07.36.64.12.88', 'dlee1', 2, 18, 18), -- username : dlee1 
+    -- ('13370378', 'Kara', 'Russell', 'krussell@iut.univ-paris8.fr', '07.43.81.48.13', 'krussell', 2, 18, 18), -- username : krussell 
+    -- ('05136515', 'Nicholas', 'Barnes', 'nbarnes@iut.univ-paris8.fr', '07.99.35.24.75', 'nbarnes', 2, 18, 18), -- username : nbarnes 
+    -- ('92442352', 'Larry', 'Williams', 'lwilliams@iut.univ-paris8.fr', '07.86.96.72.01', 'lwilliams', 2, 18, 18), -- username : lwilliams 
+    -- ('17879547', 'Clayton', 'Carter', 'ccarter1@iut.univ-paris8.fr', '07.70.41.84.27', 'ccarter1', 2, 18, 18), -- username : ccarter1 
+    -- ('74531137', 'Randall', 'Ball', 'rball@iut.univ-paris8.fr', '06.79.66.91.74', 'rball', 2, 18, 18), -- username : rball 
+    -- ('90895160', 'Joy', 'Hudson', 'jhudson@iut.univ-paris8.fr', '07.30.09.04.48', 'jhudson', 2, 18, 18), -- username : jhudson 
+    -- ('62824166', 'Angela', 'Morales', 'amorales@iut.univ-paris8.fr', '06.70.14.39.06', 'amorales', 2, 18, 62), -- username : amorales 
+    -- ('44477178', 'Pamela', 'Schmidt', 'pschmidt@iut.univ-paris8.fr', '07.17.89.74.52', 'pschmidt', 2, 18, 62), -- username : pschmidt 
+    -- ('46812740', 'Adriana', 'Christian', 'achristian@iut.univ-paris8.fr', '06.56.40.72.95', 'achristian', 2, 18, 62), -- username : achristian 
+    -- ('20633662', 'Anthony', 'Romero', 'aromero1@iut.univ-paris8.fr', '07.48.14.53.09', 'aromero1', 2, 18, 62), -- username : aromero1 
+    -- ('03247001', 'Bradley', 'Bryant', 'bbryant@iut.univ-paris8.fr', '07.56.23.34.03', 'bbryant', 2, 18, 62), -- username : bbryant 
+    -- ('58951308', 'Robert', 'Rodriguez', 'rrodriguez@iut.univ-paris8.fr', '06.49.24.06.76', 'rrodriguez', 2, 18, 62), -- username : rrodriguez 
+    -- ('70687645', 'Brian', 'Baker', 'bbaker@iut.univ-paris8.fr', '06.25.09.44.24', 'bbaker', 2, 18, 62), -- username : bbaker 
+    -- ('25863549', 'Nicholas', 'Tucker', 'ntucker@iut.univ-paris8.fr', '07.19.34.01.94', 'ntucker', 2, 18, 62), -- username : ntucker 
+    -- ('49193098', 'Maria', 'Brown', 'mbrown1@iut.univ-paris8.fr', '07.12.54.98.60', 'mbrown1', 2, 18, 62), -- username : mbrown1 
+    -- ('86102852', 'Monica', 'James', 'mjames@iut.univ-paris8.fr', '06.73.00.33.51', 'mjames', 2, 18, 62), -- username : mjames 
+    -- ('18449239', 'Kristin', 'Patel', 'kpatel@iut.univ-paris8.fr', '06.14.99.09.04', 'kpatel', 2, 18, 106), -- username : kpatel 
+    -- ('14588009', 'Harold', 'Moore', 'hmoore@iut.univ-paris8.fr', '06.46.99.15.23', 'hmoore', 2, 18, 106), -- username : hmoore 
+    -- ('47695880', 'Stephen', 'Simmons', 'ssimmons@iut.univ-paris8.fr', '06.32.13.54.40', 'ssimmons', 2, 18, 106), -- username : ssimmons 
+    -- ('14758183', 'Jason', 'Gill', 'jgill1@iut.univ-paris8.fr', '06.73.45.12.80', 'jgill1', 2, 18, 106), -- username : jgill1 
+    -- ('30380203', 'Debbie', 'Moore', 'dmoore1@iut.univ-paris8.fr', '06.22.68.37.15', 'dmoore1', 2, 18, 106), -- username : dmoore1 
+    -- ('61696550', 'Michael', 'Moran', 'mmoran@iut.univ-paris8.fr', '07.24.59.22.83', 'mmoran', 2, 18, 106), -- username : mmoran 
+    -- ('27740090', 'Robert', 'Johnson', 'rjohnson@iut.univ-paris8.fr', '07.21.03.30.01', 'rjohnson', 2, 18, 106), -- username : rjohnson 
+    -- ('62843182', 'Ryan', 'Keith', 'rkeith@iut.univ-paris8.fr', '06.50.03.87.45', 'rkeith', 2, 18, 106), -- username : rkeith 
+    -- ('68389509', 'Christopher', 'Baker', 'cbaker@iut.univ-paris8.fr', '07.24.69.56.43', 'cbaker', 2, 18, 106), -- username : cbaker 
+    -- ('37636736', 'Kelly', 'White', 'kwhite@iut.univ-paris8.fr', '06.54.30.24.45', 'kwhite', 2, 18, 106), -- username : kwhite 
+    -- ('22622122', 'Mark', 'Sanders', 'msanders@iut.univ-paris8.fr', '06.23.11.75.90', 'msanders', 2, 6, 6), -- username : msanders 
+    -- ('06473610', 'Tyler', 'Vaughn', 'tvaughn@iut.univ-paris8.fr', '06.86.30.85.33', 'tvaughn', 2, 6, 6), -- username : tvaughn 
+    -- ('80444174', 'Jacqueline', 'Roberts', 'jroberts@iut.univ-paris8.fr', '06.68.76.05.65', 'jroberts', 2, 6, 6), -- username : jroberts 
+    -- ('61299940', 'Debra', 'Sanders', 'dsanders@iut.univ-paris8.fr', '07.63.99.03.42', 'dsanders', 2, 6, 6), -- username : dsanders 
+    -- ('76123460', 'Bill', 'Boyle', 'bboyle@iut.univ-paris8.fr', '07.36.73.33.72', 'bboyle', 2, 6, 6), -- username : bboyle 
+    -- ('64077337', 'Felicia', 'Smith', 'fsmith@iut.univ-paris8.fr', '07.76.35.83.73', 'fsmith', 2, 6, 6), -- username : fsmith 
+    -- ('31340100', 'Patrick', 'Williams', 'pwilliams@iut.univ-paris8.fr', '07.92.19.27.51', 'pwilliams', 2, 6, 6), -- username : pwilliams 
+    -- ('29519610', 'Michael', 'Bean', 'mbean@iut.univ-paris8.fr', '07.95.51.77.10', 'mbean', 2, 6, 6), -- username : mbean 
+    -- ('26050239', 'Kyle', 'Werner', 'kwerner@iut.univ-paris8.fr', '07.98.64.45.65', 'kwerner', 2, 6, 6), -- username : kwerner 
+    -- ('17426121', 'Justin', 'Gallagher', 'jgallagher@iut.univ-paris8.fr', '07.49.59.38.15', 'jgallagher', 2, 6, 6), -- username : jgallagher 
+    -- ('08776855', 'Alan', 'Walls', 'awalls@iut.univ-paris8.fr', '06.67.48.91.25', 'awalls', 2, 6, 50), -- username : awalls 
+    -- ('05102507', 'Michelle', 'Riley', 'mriley@iut.univ-paris8.fr', '07.85.97.48.80', 'mriley', 2, 6, 50), -- username : mriley 
+    -- ('31705121', 'Laura', 'Martinez', 'lmartinez1@iut.univ-paris8.fr', '06.41.10.27.08', 'lmartinez1', 2, 6, 50), -- username : lmartinez1 
+    -- ('03173759', 'Angela', 'Foster', 'afoster@iut.univ-paris8.fr', '06.38.35.14.63', 'afoster', 2, 6, 50), -- username : afoster 
+    -- ('56768702', 'Riley', 'Rogers', 'rrogers1@iut.univ-paris8.fr', '06.64.82.54.40', 'rrogers1', 2, 6, 50), -- username : rrogers1 
+    -- ('86448435', 'Fernando', 'Vargas', 'fvargas@iut.univ-paris8.fr', '07.63.42.37.71', 'fvargas', 2, 6, 50), -- username : fvargas 
+    -- ('09352731', 'Christina', 'Benson', 'cbenson@iut.univ-paris8.fr', '06.22.13.78.91', 'cbenson', 2, 6, 50), -- username : cbenson 
+    -- ('84256900', 'Meghan', 'Dalton', 'mdalton@iut.univ-paris8.fr', '06.02.68.76.05', 'mdalton', 2, 6, 50), -- username : mdalton 
+    -- ('08429653', 'Johnny', 'Blackwell', 'jblackwell@iut.univ-paris8.fr', '07.65.04.98.88', 'jblackwell', 2, 6, 50), -- username : jblackwell 
+    -- ('36684016', 'Judy', 'Harrison', 'jharrison@iut.univ-paris8.fr', '06.34.50.29.72', 'jharrison', 2, 6, 50), -- username : jharrison 
+    -- ('24950887', 'April', 'Smith', 'asmith1@iut.univ-paris8.fr', '06.68.39.58.96', 'asmith1', 2, 6, 94), -- username : asmith1 
+    -- ('90886841', 'Amy', 'Myers', 'amyers@iut.univ-paris8.fr', '07.54.20.52.29', 'amyers', 2, 6, 94), -- username : amyers 
+    -- ('01984967', 'Laura', 'Cline', 'lcline@iut.univ-paris8.fr', '06.54.95.31.80', 'lcline', 2, 6, 94), -- username : lcline 
+    -- ('96509250', 'Stephen', 'Allen', 'sallen@iut.univ-paris8.fr', '07.41.75.82.17', 'sallen', 2, 6, 94), -- username : sallen 
+    -- ('74743246', 'Kathryn', 'Bauer', 'kbauer1@iut.univ-paris8.fr', '06.21.74.06.11', 'kbauer1', 2, 6, 94), -- username : kbauer1 
+    -- ('11719296', 'Stephanie', 'Martinez', 'smartinez3@iut.univ-paris8.fr', '06.16.44.30.60', 'smartinez3', 2, 6, 94), -- username : smartinez3 
+    -- ('87349139', 'Leslie', 'Johnson', 'ljohnson@iut.univ-paris8.fr', '06.77.20.85.08', 'ljohnson', 2, 6, 94), -- username : ljohnson 
+    -- ('06566164', 'Jesus', 'Vargas', 'jvargas@iut.univ-paris8.fr', '06.51.49.65.56', 'jvargas', 2, 6, 94), -- username : jvargas 
+    -- ('65078518', 'Michelle', 'Vang', 'mvang@iut.univ-paris8.fr', '06.68.17.60.95', 'mvang', 2, 6, 94), -- username : mvang 
+    -- ('81063482', 'Austin', 'Hart', 'ahart@iut.univ-paris8.fr', '06.58.84.94.10', 'ahart', 2, 6, 94), -- username : ahart 
+    -- ('11001837', 'Arthur', 'Reynolds', 'areynolds@iut.univ-paris8.fr', '07.66.14.24.37', 'areynolds', 2, 4, 4), -- username : areynolds 
+    -- ('17202017', 'Wendy', 'Ruiz', 'wruiz@iut.univ-paris8.fr', '06.52.81.27.78', 'wruiz', 2, 4, 4), -- username : wruiz 
+    -- ('29751348', 'John', 'Silva', 'jsilva1@iut.univ-paris8.fr', '06.70.41.85.50', 'jsilva1', 2, 4, 4), -- username : jsilva1 
+    -- ('02890746', 'Megan', 'Allen', 'mallen@iut.univ-paris8.fr', '06.88.20.61.76', 'mallen', 2, 4, 4), -- username : mallen 
+    -- ('59837851', 'Danielle', 'Fischer', 'dfischer@iut.univ-paris8.fr', '06.06.26.91.63', 'dfischer', 2, 4, 4), -- username : dfischer 
+    -- ('46082926', 'Oscar', 'Robinson', 'orobinson@iut.univ-paris8.fr', '06.92.01.65.81', 'orobinson', 2, 4, 4), -- username : orobinson 
+    -- ('54476897', 'Sarah', 'Nunez', 'snunez@iut.univ-paris8.fr', '07.51.03.76.06', 'snunez', 2, 4, 4), -- username : snunez 
+    -- ('11183713', 'Garrett', 'Burns', 'gburns@iut.univ-paris8.fr', '07.90.99.22.19', 'gburns', 2, 4, 4), -- username : gburns 
+    -- ('65859550', 'Ricardo', 'Cisneros', 'rcisneros@iut.univ-paris8.fr', '07.63.20.31.36', 'rcisneros', 2, 4, 4), -- username : rcisneros 
+    -- ('17092003', 'Michael', 'Perry', 'mperry1@iut.univ-paris8.fr', '07.77.95.22.23', 'mperry1', 2, 4, 4), -- username : mperry1 
+    -- ('27296238', 'James', 'Mcintyre', 'jmcintyre@iut.univ-paris8.fr', '06.18.99.89.08', 'jmcintyre', 2, 4, 48), -- username : jmcintyre 
+    -- ('19910956', 'Joseph', 'Bowman', 'jbowman1@iut.univ-paris8.fr', '06.60.62.15.23', 'jbowman1', 2, 4, 48), -- username : jbowman1 
+    -- ('52470413', 'Brooke', 'Petersen', 'bpetersen@iut.univ-paris8.fr', '07.82.51.66.90', 'bpetersen', 2, 4, 48), -- username : bpetersen 
+    -- ('07253343', 'Richard', 'Smith', 'rsmith2@iut.univ-paris8.fr', '06.13.81.14.67', 'rsmith2', 2, 4, 48), -- username : rsmith2 
+    -- ('58207710', 'Calvin', 'Valenzuela', 'cvalenzuela@iut.univ-paris8.fr', '07.73.17.41.05', 'cvalenzuela', 2, 4, 48), -- username : cvalenzuela 
+    -- ('47054929', 'Lisa', 'Orozco', 'lorozco@iut.univ-paris8.fr', '06.55.22.19.51', 'lorozco', 2, 4, 48), -- username : lorozco 
+    -- ('00349073', 'Tina', 'Ramirez', 'tramirez@iut.univ-paris8.fr', '07.81.60.66.00', 'tramirez', 2, 4, 48), -- username : tramirez 
+    -- ('44472422', 'Alex', 'Holder', 'aholder@iut.univ-paris8.fr', '06.45.37.10.26', 'aholder', 2, 4, 48), -- username : aholder 
+    -- ('65358482', 'Nicole', 'Larsen', 'nlarsen@iut.univ-paris8.fr', '06.24.34.80.66', 'nlarsen', 2, 4, 48), -- username : nlarsen 
+    -- ('46763864', 'Tina', 'Davidson', 'tdavidson@iut.univ-paris8.fr', '06.07.57.83.54', 'tdavidson', 2, 4, 48), -- username : tdavidson 
+    -- ('75920416', 'Holly', 'Turner', 'hturner@iut.univ-paris8.fr', '06.70.39.12.79', 'hturner', 2, 4, 92), -- username : hturner 
+    -- ('57860673', 'Melanie', 'Harris', 'mharris@iut.univ-paris8.fr', '07.50.73.04.66', 'mharris', 2, 4, 92), -- username : mharris 
+    -- ('77375152', 'Sean', 'Hanson', 'shanson@iut.univ-paris8.fr', '06.45.79.47.94', 'shanson', 2, 4, 92), -- username : shanson 
+    -- ('52541933', 'Amanda', 'Cunningham', 'acunningham@iut.univ-paris8.fr', '07.42.04.41.71', 'acunningham', 2, 4, 92), -- username : acunningham 
+    -- ('66938022', 'Andrew', 'Williams', 'awilliams1@iut.univ-paris8.fr', '06.98.86.28.45', 'awilliams1', 2, 4, 92), -- username : awilliams1 
+    -- ('33858096', 'Joseph', 'Duncan', 'jduncan@iut.univ-paris8.fr', '07.16.19.52.64', 'jduncan', 2, 4, 92), -- username : jduncan 
+    -- ('97814225', 'Debra', 'Small', 'dsmall@iut.univ-paris8.fr', '06.13.64.98.93', 'dsmall', 2, 4, 92), -- username : dsmall 
+    -- ('90190606', 'Erin', 'Olson', 'eolson@iut.univ-paris8.fr', '06.84.86.31.15', 'eolson', 2, 4, 92), -- username : eolson 
+    -- ('00842444', 'Craig', 'Lowery', 'clowery@iut.univ-paris8.fr', '06.62.75.54.71', 'clowery', 2, 4, 92), -- username : clowery 
+    -- ('42088109', 'Mike', 'Carroll', 'mcarroll@iut.univ-paris8.fr', '07.88.94.74.85', 'mcarroll', 2, 4, 92), -- username : mcarroll 
+    -- ('02237173', 'John', 'Fisher', 'jfisher@iut.univ-paris8.fr', '06.81.65.24.15', 'jfisher', 2, 5, 5), -- username : jfisher 
+    -- ('33911177', 'Hayden', 'Williams', 'hwilliams1@iut.univ-paris8.fr', '06.78.63.47.07', 'hwilliams1', 2, 5, 5), -- username : hwilliams1 
+    -- ('80976517', 'Ruth', 'Casey', 'rcasey@iut.univ-paris8.fr', '07.99.76.17.74', 'rcasey', 2, 5, 5), -- username : rcasey 
+    -- ('83420591', 'Marisa', 'Olson', 'molson@iut.univ-paris8.fr', '06.63.41.16.80', 'molson', 2, 5, 5), -- username : molson 
+    -- ('44565954', 'Brandon', 'Harris', 'bharris@iut.univ-paris8.fr', '06.38.17.39.25', 'bharris', 2, 5, 5), -- username : bharris 
+    -- ('58912099', 'Erica', 'Bridges', 'ebridges@iut.univ-paris8.fr', '06.92.29.08.91', 'ebridges', 2, 5, 5), -- username : ebridges 
+    -- ('78485820', 'Alyssa', 'Hopkins', 'ahopkins@iut.univ-paris8.fr', '07.60.78.96.33', 'ahopkins', 2, 5, 5), -- username : ahopkins 
+    -- ('74553423', 'Rebecca', 'Osborne', 'rosborne@iut.univ-paris8.fr', '06.47.23.08.20', 'rosborne', 2, 5, 5), -- username : rosborne 
+    -- ('97740668', 'Michael', 'Hall', 'mhall1@iut.univ-paris8.fr', '06.93.89.53.24', 'mhall1', 2, 5, 5), -- username : mhall1 
+    -- ('30902030', 'Damon', 'Baker', 'dbaker@iut.univ-paris8.fr', '06.42.62.73.73', 'dbaker', 2, 5, 5), -- username : dbaker 
+    -- ('60745402', 'Erin', 'Morris', 'emorris@iut.univ-paris8.fr', '07.74.36.36.74', 'emorris', 2, 5, 49), -- username : emorris 
+    -- ('31034374', 'Benjamin', 'Yoder', 'byoder@iut.univ-paris8.fr', '07.21.55.45.42', 'byoder', 2, 5, 49), -- username : byoder 
+    -- ('09522927', 'Kenneth', 'Johnson', 'kjohnson@iut.univ-paris8.fr', '07.39.52.03.58', 'kjohnson', 2, 5, 49), -- username : kjohnson 
+    -- ('07361666', 'Emily', 'Taylor', 'etaylor@iut.univ-paris8.fr', '07.97.24.16.36', 'etaylor', 2, 5, 49), -- username : etaylor 
+    -- ('79696264', 'Patricia', 'Maldonado', 'pmaldonado@iut.univ-paris8.fr', '06.51.08.11.28', 'pmaldonado', 2, 5, 49), -- username : pmaldonado 
+    -- ('78088781', 'Keith', 'Rivera', 'krivera1@iut.univ-paris8.fr', '07.91.00.11.18', 'krivera1', 2, 5, 49), -- username : krivera1 
+    -- ('81316718', 'Daniel', 'Smith', 'dsmith1@iut.univ-paris8.fr', '06.24.99.29.50', 'dsmith1', 2, 5, 49), -- username : dsmith1 
+    -- ('93960951', 'Julie', 'Guzman', 'jguzman@iut.univ-paris8.fr', '07.29.67.57.22', 'jguzman', 2, 5, 49), -- username : jguzman 
+    -- ('80611610', 'Harry', 'Giles', 'hgiles@iut.univ-paris8.fr', '06.58.65.62.20', 'hgiles', 2, 5, 49), -- username : hgiles 
+    -- ('69516784', 'Barbara', 'Weber', 'bweber@iut.univ-paris8.fr', '06.71.02.09.53', 'bweber', 2, 5, 49), -- username : bweber 
+    -- ('46405249', 'Dylan', 'Anderson', 'danderson@iut.univ-paris8.fr', '06.00.70.31.56', 'danderson', 2, 5, 93), -- username : danderson 
+    -- ('78029752', 'David', 'Lawrence', 'dlawrence@iut.univ-paris8.fr', '06.49.92.92.59', 'dlawrence', 2, 5, 93), -- username : dlawrence 
+    -- ('26729660', 'Michelle', 'Payne', 'mpayne@iut.univ-paris8.fr', '06.10.65.11.42', 'mpayne', 2, 5, 93), -- username : mpayne 
+    -- ('56228551', 'Michael', 'Clark', 'mclark1@iut.univ-paris8.fr', '07.73.23.09.77', 'mclark1', 2, 5, 93), -- username : mclark1 
+    -- ('46892094', 'Erin', 'Lawrence', 'elawrence@iut.univ-paris8.fr', '06.15.14.71.65', 'elawrence', 2, 5, 93), -- username : elawrence 
+    -- ('61186019', 'Rebecca', 'Cole', 'rcole@iut.univ-paris8.fr', '07.05.38.27.24', 'rcole', 2, 5, 93), -- username : rcole 
+    -- ('60970698', 'April', 'Hardy', 'ahardy@iut.univ-paris8.fr', '06.71.86.26.19', 'ahardy', 2, 5, 93), -- username : ahardy 
+    -- ('05200898', 'James', 'Kelley', 'jkelley@iut.univ-paris8.fr', '07.99.60.09.92', 'jkelley', 2, 5, 93), -- username : jkelley 
+    -- ('29830217', 'Anthony', 'Gilmore', 'agilmore@iut.univ-paris8.fr', '06.99.72.11.47', 'agilmore', 2, 5, 93), -- username : agilmore 
+    -- ('27474814', 'Jerome', 'Parker', 'jparker@iut.univ-paris8.fr', '07.67.12.85.50', 'jparker', 2, 5, 93), -- username : jparker 
+    -- ('90151534', 'Kimberly', 'Mcfarland', 'kmcfarland@iut.univ-paris8.fr', '07.98.29.62.87', 'kmcfarland', 2, 39, 39), -- username : kmcfarland 
+    -- ('58382168', 'Karen', 'Wood', 'kwood1@iut.univ-paris8.fr', '07.36.10.61.62', 'kwood1', 2, 39, 39), -- username : kwood1 
+    -- ('36595448', 'Amy', 'Elliott', 'aelliott@iut.univ-paris8.fr', '07.72.61.99.41', 'aelliott', 2, 39, 39), -- username : aelliott 
+    -- ('40599243', 'Hannah', 'Greene', 'hgreene@iut.univ-paris8.fr', '07.68.34.51.03', 'hgreene', 2, 39, 39), -- username : hgreene 
+    -- ('61959995', 'Kaitlyn', 'Lam', 'klam@iut.univ-paris8.fr', '07.35.70.63.65', 'klam', 2, 39, 39), -- username : klam 
+    -- ('55144955', 'Joseph', 'Reed', 'jreed@iut.univ-paris8.fr', '06.24.29.48.19', 'jreed', 2, 39, 39), -- username : jreed 
+    -- ('04323838', 'Jennifer', 'Pierce', 'jpierce@iut.univ-paris8.fr', '06.18.81.03.67', 'jpierce', 2, 39, 39), -- username : jpierce 
+    -- ('01580403', 'Tanya', 'Miller', 'tmiller@iut.univ-paris8.fr', '06.13.22.94.52', 'tmiller', 2, 39, 39), -- username : tmiller 
+    -- ('42452220', 'John', 'Johns', 'jjohns@iut.univ-paris8.fr', '06.27.88.72.44', 'jjohns', 2, 39, 39), -- username : jjohns 
+    -- ('78404571', 'Rebecca', 'Hill', 'rhill@iut.univ-paris8.fr', '07.64.50.47.47', 'rhill', 2, 39, 39), -- username : rhill 
+    -- ('08396546', 'Angel', 'Hogan', 'ahogan@iut.univ-paris8.fr', '06.67.80.76.92', 'ahogan', 2, 39, 83), -- username : ahogan 
+    -- ('55020600', 'Rodney', 'Bennett', 'rbennett@iut.univ-paris8.fr', '07.92.11.11.06', 'rbennett', 2, 39, 83), -- username : rbennett 
+    -- ('49357535', 'Kayla', 'Dixon', 'kdixon@iut.univ-paris8.fr', '06.69.03.89.11', 'kdixon', 2, 39, 83), -- username : kdixon 
+    -- ('27439803', 'Mark', 'Rogers', 'mrogers@iut.univ-paris8.fr', '06.90.64.34.31', 'mrogers', 2, 39, 83), -- username : mrogers 
+    -- ('80108955', 'Susan', 'Mccarthy', 'smccarthy1@iut.univ-paris8.fr', '07.24.77.71.58', 'smccarthy1', 2, 39, 83), -- username : smccarthy1 
+    -- ('30370648', 'Damon', 'Kim', 'dkim1@iut.univ-paris8.fr', '06.62.64.46.55', 'dkim1', 2, 39, 83), -- username : dkim1 
+    -- ('15088571', 'James', 'Allen', 'jallen1@iut.univ-paris8.fr', '06.00.62.56.72', 'jallen1', 2, 39, 83), -- username : jallen1 
+    -- ('55279573', 'Samantha', 'Moreno', 'smoreno@iut.univ-paris8.fr', '07.24.80.38.05', 'smoreno', 2, 39, 83), -- username : smoreno 
+    -- ('49608781', 'Tonya', 'Patel', 'tpatel@iut.univ-paris8.fr', '07.59.02.47.01', 'tpatel', 2, 39, 83), -- username : tpatel 
+    -- ('23414889', 'Yvonne', 'Kramer', 'ykramer@iut.univ-paris8.fr', '07.38.79.95.73', 'ykramer', 2, 39, 83), -- username : ykramer 
+    -- ('52094902', 'Janet', 'Mckinney', 'jmckinney@iut.univ-paris8.fr', '07.28.91.08.47', 'jmckinney', 2, 39, 127), -- username : jmckinney 
+    -- ('72637128', 'Jonathan', 'Chung', 'jchung@iut.univ-paris8.fr', '07.94.75.61.30', 'jchung', 2, 39, 127), -- username : jchung 
+    -- ('71153591', 'Robin', 'Davis', 'rdavis@iut.univ-paris8.fr', '06.45.73.45.66', 'rdavis', 2, 39, 127), -- username : rdavis 
+    -- ('19929669', 'Rachael', 'Phillips', 'rphillips@iut.univ-paris8.fr', '07.25.51.52.26', 'rphillips', 2, 39, 127), -- username : rphillips 
+    -- ('72024256', 'Tyler', 'Anderson', 'tanderson@iut.univ-paris8.fr', '06.74.67.91.93', 'tanderson', 2, 39, 127), -- username : tanderson 
+    -- ('71733702', 'Brett', 'Ramsey', 'bramsey@iut.univ-paris8.fr', '06.97.80.96.79', 'bramsey', 2, 39, 127), -- username : bramsey 
+    -- ('60961330', 'Christy', 'Molina', 'cmolina@iut.univ-paris8.fr', '06.65.67.29.06', 'cmolina', 2, 39, 127), -- username : cmolina 
+    -- ('97403198', 'Alexis', 'Mccoy', 'amccoy@iut.univ-paris8.fr', '07.89.87.90.03', 'amccoy', 2, 39, 127), -- username : amccoy 
+    -- ('93947042', 'Debra', 'Chen', 'dchen@iut.univ-paris8.fr', '06.93.80.87.87', 'dchen', 2, 39, 127), -- username : dchen 
+    -- ('77810093', 'Anthony', 'Ferguson', 'aferguson@iut.univ-paris8.fr', '06.39.62.99.72', 'aferguson', 2, 39, 127), -- username : aferguson 
+    -- ('53056600', 'Sara', 'Hayes', 'shayes@iut.univ-paris8.fr', '06.92.31.36.96', 'shayes', 2, 40, 40), -- username : shayes 
+    -- ('86255688', 'Bradley', 'Smith', 'bsmith3@iut.univ-paris8.fr', '06.82.22.69.39', 'bsmith3', 2, 40, 40), -- username : bsmith3 
+    -- ('77239906', 'Ashley', 'Klein', 'aklein@iut.univ-paris8.fr', '07.54.61.11.44', 'aklein', 2, 40, 40), -- username : aklein 
+    -- ('58946781', 'Susan', 'Mcdaniel', 'smcdaniel@iut.univ-paris8.fr', '06.92.51.77.33', 'smcdaniel', 2, 40, 40), -- username : smcdaniel 
+    -- ('69644533', 'Pamela', 'Mcbride', 'pmcbride@iut.univ-paris8.fr', '06.68.02.65.25', 'pmcbride', 2, 40, 40), -- username : pmcbride 
+    -- ('05633804', 'Sandra', 'Chang', 'schang@iut.univ-paris8.fr', '06.48.03.40.38', 'schang', 2, 40, 40), -- username : schang 
+    -- ('80004797', 'Jeffrey', 'Rhodes', 'jrhodes@iut.univ-paris8.fr', '07.33.33.78.81', 'jrhodes', 2, 40, 40), -- username : jrhodes 
+    -- ('09214404', 'Jacob', 'Chandler', 'jchandler@iut.univ-paris8.fr', '06.24.24.54.69', 'jchandler', 2, 40, 40), -- username : jchandler 
+    -- ('50479939', 'Sabrina', 'Watson', 'swatson@iut.univ-paris8.fr', '07.77.65.87.48', 'swatson', 2, 40, 40), -- username : swatson 
+    -- ('50093567', 'Michael', 'Tapia', 'mtapia@iut.univ-paris8.fr', '06.35.43.39.49', 'mtapia', 2, 40, 40), -- username : mtapia 
+    -- ('10947582', 'Chelsea', 'Johnson', 'cjohnson1@iut.univ-paris8.fr', '07.53.75.86.02', 'cjohnson1', 2, 40, 84), -- username : cjohnson1 
+    -- ('73113468', 'Rebecca', 'Brown', 'rbrown@iut.univ-paris8.fr', '07.37.06.04.86', 'rbrown', 2, 40, 84), -- username : rbrown 
+    -- ('34976231', 'James', 'Soto', 'jsoto@iut.univ-paris8.fr', '07.33.44.53.04', 'jsoto', 2, 40, 84), -- username : jsoto 
+    -- ('62094352', 'Jessica', 'Hunt', 'jhunt1@iut.univ-paris8.fr', '06.68.99.71.30', 'jhunt1', 2, 40, 84), -- username : jhunt1 
+    -- ('78855572', 'Kathryn', 'Brown', 'kbrown1@iut.univ-paris8.fr', '07.18.32.47.70', 'kbrown1', 2, 40, 84), -- username : kbrown1 
+    -- ('92954470', 'Robert', 'Roberts', 'rroberts@iut.univ-paris8.fr', '06.41.60.36.78', 'rroberts', 2, 40, 84), -- username : rroberts 
+    -- ('84263441', 'Ashley', 'Cruz', 'acruz@iut.univ-paris8.fr', '07.70.87.36.68', 'acruz', 2, 40, 84), -- username : acruz 
+    -- ('47953848', 'John', 'Shaw', 'jshaw@iut.univ-paris8.fr', '07.57.86.32.34', 'jshaw', 2, 40, 84), -- username : jshaw 
+    -- ('17668698', 'Michael', 'Schaefer', 'mschaefer@iut.univ-paris8.fr', '06.64.39.48.87', 'mschaefer', 2, 40, 84), -- username : mschaefer 
+    -- ('18482532', 'Douglas', 'Peters', 'dpeters@iut.univ-paris8.fr', '07.15.17.51.11', 'dpeters', 2, 40, 84), -- username : dpeters 
+    -- ('18674656', 'Joseph', 'Boyd', 'jboyd@iut.univ-paris8.fr', '07.28.44.99.43', 'jboyd', 2, 40, 128), -- username : jboyd 
+    -- ('76651164', 'Melissa', 'Lee', 'mlee@iut.univ-paris8.fr', '07.17.03.12.55', 'mlee', 2, 40, 128), -- username : mlee 
+    -- ('47723568', 'Elizabeth', 'Hobbs', 'ehobbs@iut.univ-paris8.fr', '06.46.71.01.45', 'ehobbs', 2, 40, 128), -- username : ehobbs 
+    -- ('23210498', 'John', 'Silva', 'jsilva@iut.univ-paris8.fr', '07.85.37.48.29', 'jsilva', 2, 40, 128), -- username : jsilva 
+    -- ('20682194', 'Cheyenne', 'Miller', 'cmiller@iut.univ-paris8.fr', '07.97.27.46.15', 'cmiller', 2, 40, 128), -- username : cmiller 
+    -- ('09715150', 'Bryce', 'Buchanan', 'bbuchanan@iut.univ-paris8.fr', '07.39.86.87.70', 'bbuchanan', 2, 40, 128), -- username : bbuchanan 
+    -- ('42906715', 'Danielle', 'Villegas', 'dvillegas@iut.univ-paris8.fr', '07.32.79.17.40', 'dvillegas', 2, 40, 128), -- username : dvillegas 
+    -- ('64692649', 'Ryan', 'Cortez', 'rcortez@iut.univ-paris8.fr', '07.95.08.82.85', 'rcortez', 2, 40, 128), -- username : rcortez 
+    -- ('53967843', 'Jonathan', 'Dunn', 'jdunn1@iut.univ-paris8.fr', '07.38.74.22.24', 'jdunn1', 2, 40, 128), -- username : jdunn1 
+    -- ('73753631', 'Kenneth', 'Davis', 'kdavis@iut.univ-paris8.fr', '06.47.67.18.86', 'kdavis', 2, 40, 128), -- username : kdavis 
+    -- ('57785528', 'Joann', 'Griffith', 'jgriffith1@iut.univ-paris8.fr', '06.51.05.23.87', 'jgriffith1', 2, 28, 28), -- username : jgriffith1 
+    -- ('02693141', 'Emily', 'Perkins', 'eperkins@iut.univ-paris8.fr', '06.46.03.70.03', 'eperkins', 2, 28, 28), -- username : eperkins 
+    -- ('63134090', 'Carmen', 'Davenport', 'cdavenport@iut.univ-paris8.fr', '06.63.08.97.09', 'cdavenport', 2, 28, 28), -- username : cdavenport 
+    -- ('73854923', 'Jessica', 'Fleming', 'jfleming@iut.univ-paris8.fr', '07.99.36.22.51', 'jfleming', 2, 28, 28), -- username : jfleming 
+    -- ('07620805', 'Molly', 'Watkins', 'mwatkins@iut.univ-paris8.fr', '07.69.56.34.71', 'mwatkins', 2, 28, 28), -- username : mwatkins 
+    -- ('45394894', 'Brent', 'Lewis', 'blewis1@iut.univ-paris8.fr', '07.34.24.37.78', 'blewis1', 2, 28, 28), -- username : blewis1 
+    -- ('55914982', 'Stacy', 'Mathews', 'smathews1@iut.univ-paris8.fr', '07.74.96.56.17', 'smathews1', 2, 28, 28), -- username : smathews1 
+    -- ('18991208', 'Tyler', 'Lee', 'tlee@iut.univ-paris8.fr', '06.19.65.81.55', 'tlee', 2, 28, 28), -- username : tlee 
+    -- ('08566457', 'Carla', 'Avila', 'cavila@iut.univ-paris8.fr', '06.48.06.09.25', 'cavila', 2, 28, 28), -- username : cavila 
+    -- ('62057047', 'Dominic', 'Miller', 'dmiller@iut.univ-paris8.fr', '07.83.54.65.29', 'dmiller', 2, 28, 28), -- username : dmiller 
+    -- ('88055579', 'Tyler', 'Mcgee', 'tmcgee@iut.univ-paris8.fr', '06.96.77.66.78', 'tmcgee', 2, 28, 72), -- username : tmcgee 
+    -- ('47254067', 'Annette', 'Mckinney', 'amckinney@iut.univ-paris8.fr', '06.16.96.75.73', 'amckinney', 2, 28, 72), -- username : amckinney 
+    -- ('52589649', 'Dylan', 'Schneider', 'dschneider1@iut.univ-paris8.fr', '07.29.48.18.36', 'dschneider1', 2, 28, 72), -- username : dschneider1 
+    -- ('70332419', 'Cynthia', 'Phillips', 'cphillips1@iut.univ-paris8.fr', '06.87.48.36.80', 'cphillips1', 2, 28, 72), -- username : cphillips1 
+    -- ('91513130', 'Shannon', 'Martinez', 'smartinez2@iut.univ-paris8.fr', '07.22.84.87.78', 'smartinez2', 2, 28, 72), -- username : smartinez2 
+    -- ('83515294', 'Nicholas', 'Johnson', 'njohnson@iut.univ-paris8.fr', '06.45.44.47.34', 'njohnson', 2, 28, 72), -- username : njohnson 
+    -- ('01633881', 'Matthew', 'Hunter', 'mhunter@iut.univ-paris8.fr', '06.57.81.39.85', 'mhunter', 2, 28, 72), -- username : mhunter 
+    -- ('40646230', 'James', 'King', 'jking@iut.univ-paris8.fr', '07.43.16.83.35', 'jking', 2, 28, 72), -- username : jking 
+    -- ('75244422', 'Jose', 'Davis', 'jdavis1@iut.univ-paris8.fr', '06.22.86.64.62', 'jdavis1', 2, 28, 72), -- username : jdavis1 
+    -- ('01901507', 'Jon', 'Graves', 'jgraves@iut.univ-paris8.fr', '07.22.19.89.87', 'jgraves', 2, 28, 72), -- username : jgraves 
+    -- ('12880447', 'Johnny', 'Watson', 'jwatson1@iut.univ-paris8.fr', '06.27.00.26.76', 'jwatson1', 2, 28, 116), -- username : jwatson1 
+    -- ('95015737', 'John', 'Lee', 'jlee1@iut.univ-paris8.fr', '06.89.67.01.47', 'jlee1', 2, 28, 116), -- username : jlee1 
+    -- ('48393050', 'Monique', 'Medina', 'mmedina@iut.univ-paris8.fr', '07.51.98.05.13', 'mmedina', 2, 28, 116), -- username : mmedina 
+    -- ('38709963', 'Elizabeth', 'Allen', 'eallen@iut.univ-paris8.fr', '07.64.89.46.19', 'eallen', 2, 28, 116), -- username : eallen 
+    -- ('59652174', 'Deborah', 'Perry', 'dperry@iut.univ-paris8.fr', '07.39.25.04.31', 'dperry', 2, 28, 116), -- username : dperry 
+    -- ('09494517', 'Christina', 'Huang', 'chuang@iut.univ-paris8.fr', '06.94.93.24.52', 'chuang', 2, 28, 116), -- username : chuang 
+    -- ('75420649', 'Matthew', 'Johnson', 'mjohnson1@iut.univ-paris8.fr', '07.17.87.79.37', 'mjohnson1', 2, 28, 116), -- username : mjohnson1 
+    -- ('43305480', 'Kendra', 'Armstrong', 'karmstrong@iut.univ-paris8.fr', '07.50.02.22.66', 'karmstrong', 2, 28, 116), -- username : karmstrong 
+    -- ('15364145', 'Lisa', 'Luna', 'lluna@iut.univ-paris8.fr', '07.65.35.03.56', 'lluna', 2, 28, 116), -- username : lluna 
+    -- ('63699597', 'Patrick', 'Harris', 'pharris@iut.univ-paris8.fr', '07.93.05.72.86', 'pharris', 2, 28, 116), -- username : pharris 
+    -- ('24325872', 'Brandon', 'Smith', 'bsmith2@iut.univ-paris8.fr', '06.76.61.70.16', 'bsmith2', 2, 29, 29), -- username : bsmith2 
+    -- ('34022257', 'Joseph', 'Brown', 'jbrown1@iut.univ-paris8.fr', '06.46.08.53.62', 'jbrown1', 2, 29, 29), -- username : jbrown1 
+    -- ('02291935', 'April', 'Price', 'aprice@iut.univ-paris8.fr', '07.26.40.52.55', 'aprice', 2, 29, 29), -- username : aprice 
+    -- ('19457896', 'Stacie', 'Lewis', 'slewis@iut.univ-paris8.fr', '06.39.52.07.92', 'slewis', 2, 29, 29), -- username : slewis 
+    -- ('01433025', 'Leroy', 'Rhodes', 'lrhodes@iut.univ-paris8.fr', '06.43.38.62.42', 'lrhodes', 2, 29, 29), -- username : lrhodes 
+    -- ('17959076', 'Mark', 'Davis', 'mdavis1@iut.univ-paris8.fr', '07.59.56.44.60', 'mdavis1', 2, 29, 29), -- username : mdavis1 
+    -- ('81988599', 'Eric', 'Sanchez', 'esanchez@iut.univ-paris8.fr', '06.72.89.23.63', 'esanchez', 2, 29, 29), -- username : esanchez 
+    -- ('46387246', 'Valerie', 'Jackson', 'vjackson@iut.univ-paris8.fr', '07.96.74.96.46', 'vjackson', 2, 29, 29), -- username : vjackson 
+    -- ('55370592', 'Gordon', 'Lawrence', 'glawrence@iut.univ-paris8.fr', '06.28.38.41.38', 'glawrence', 2, 29, 29), -- username : glawrence 
+    -- ('24007418', 'Todd', 'Wilson', 'twilson@iut.univ-paris8.fr', '06.63.49.35.49', 'twilson', 2, 29, 29), -- username : twilson 
+    -- ('57222156', 'Dustin', 'Lynch', 'dlynch1@iut.univ-paris8.fr', '06.06.66.30.50', 'dlynch1', 2, 29, 73), -- username : dlynch1 
+    -- ('48054794', 'Jamie', 'Bautista', 'jbautista@iut.univ-paris8.fr', '06.41.80.12.77', 'jbautista', 2, 29, 73), -- username : jbautista 
+    -- ('90822298', 'Richard', 'Mccormick', 'rmccormick@iut.univ-paris8.fr', '06.09.61.40.83', 'rmccormick', 2, 29, 73), -- username : rmccormick 
+    -- ('15193199', 'Matthew', 'Cox', 'mcox@iut.univ-paris8.fr', '07.56.50.29.82', 'mcox', 2, 29, 73), -- username : mcox 
+    -- ('83472059', 'Steven', 'Wilson', 'swilson@iut.univ-paris8.fr', '07.46.45.69.73', 'swilson', 2, 29, 73), -- username : swilson 
+    -- ('82940313', 'Daniel', 'Hendrix', 'dhendrix@iut.univ-paris8.fr', '07.64.34.27.70', 'dhendrix', 2, 29, 73), -- username : dhendrix 
+    -- ('95748892', 'Shane', 'Cruz', 'scruz@iut.univ-paris8.fr', '07.68.50.84.79', 'scruz', 2, 29, 73), -- username : scruz 
+    -- ('98007348', 'Anthony', 'Webster', 'awebster@iut.univ-paris8.fr', '07.79.43.55.74', 'awebster', 2, 29, 73), -- username : awebster 
+    -- ('90333574', 'Kurt', 'Maxwell', 'kmaxwell1@iut.univ-paris8.fr', '07.73.39.61.40', 'kmaxwell1', 2, 29, 73), -- username : kmaxwell1 
+    -- ('40516830', 'Jose', 'Perez', 'jperez@iut.univ-paris8.fr', '06.12.60.94.51', 'jperez', 2, 29, 73), -- username : jperez 
+    -- ('80659617', 'Rebekah', 'Vasquez', 'rvasquez@iut.univ-paris8.fr', '07.26.64.30.55', 'rvasquez', 2, 29, 117), -- username : rvasquez 
+    -- ('67640398', 'Terrence', 'Fowler', 'tfowler@iut.univ-paris8.fr', '07.71.85.59.97', 'tfowler', 2, 29, 117), -- username : tfowler 
+    -- ('21118209', 'Suzanne', 'Carroll', 'scarroll@iut.univ-paris8.fr', '07.58.85.72.07', 'scarroll', 2, 29, 117), -- username : scarroll 
+    -- ('17326106', 'Clinton', 'Carter', 'ccarter@iut.univ-paris8.fr', '07.10.93.59.08', 'ccarter', 2, 29, 117), -- username : ccarter 
+    -- ('17558966', 'Matthew', 'Jackson', 'mjackson1@iut.univ-paris8.fr', '06.26.04.03.15', 'mjackson1', 2, 29, 117), -- username : mjackson1 
+    -- ('39461322', 'Melanie', 'Johnson', 'mjohnson@iut.univ-paris8.fr', '06.79.39.31.00', 'mjohnson', 2, 29, 117), -- username : mjohnson 
+    -- ('59347451', 'Matthew', 'Perkins', 'mperkins@iut.univ-paris8.fr', '07.86.82.25.11', 'mperkins', 2, 29, 117), -- username : mperkins 
+    -- ('45292518', 'Stacy', 'White', 'swhite@iut.univ-paris8.fr', '06.99.37.91.37', 'swhite', 2, 29, 117), -- username : swhite 
+    -- ('02168287', 'Nathan', 'Higgins', 'nhiggins@iut.univ-paris8.fr', '06.85.74.85.96', 'nhiggins', 2, 29, 117), -- username : nhiggins 
+    -- ('08845248', 'John', 'Daniels', 'jdaniels@iut.univ-paris8.fr', '07.82.76.40.05', 'jdaniels', 2, 29, 117), -- username : jdaniels 
+    -- ('83192209', 'Amy', 'Murphy', 'amurphy@iut.univ-paris8.fr', '06.94.70.56.27', 'amurphy', 2, 28, 28), -- username : amurphy 
+    -- ('12136434', 'Bradley', 'Jacobs', 'bjacobs@iut.univ-paris8.fr', '07.62.57.51.36', 'bjacobs', 2, 28, 28), -- username : bjacobs 
+    -- ('24474793', 'Todd', 'Bridges', 'tbridges@iut.univ-paris8.fr', '06.71.73.77.05', 'tbridges', 2, 28, 28), -- username : tbridges 
+    -- ('02860915', 'Douglas', 'Espinoza', 'despinoza@iut.univ-paris8.fr', '07.44.58.02.15', 'despinoza', 2, 28, 28), -- username : despinoza 
+    -- ('18507236', 'Joseph', 'Schultz', 'jschultz@iut.univ-paris8.fr', '06.98.82.57.15', 'jschultz', 2, 28, 28), -- username : jschultz 
+    -- ('43741000', 'Dale', 'Ramos', 'dramos@iut.univ-paris8.fr', '06.68.16.10.78', 'dramos', 2, 28, 28), -- username : dramos 
+    -- ('54552385', 'Jill', 'Holder', 'jholder@iut.univ-paris8.fr', '07.46.45.07.18', 'jholder', 2, 28, 28), -- username : jholder 
+    -- ('23736990', 'Crystal', 'Arnold', 'carnold@iut.univ-paris8.fr', '07.91.33.02.76', 'carnold', 2, 28, 28), -- username : carnold 
+    -- ('76773446', 'Kevin', 'Sanford', 'ksanford@iut.univ-paris8.fr', '06.87.33.74.55', 'ksanford', 2, 28, 28), -- username : ksanford 
+    -- ('37929930', 'Tina', 'Tapia', 'ttapia@iut.univ-paris8.fr', '07.11.27.25.18', 'ttapia', 2, 28, 28), -- username : ttapia 
+    -- ('74042822', 'Patricia', 'Miller', 'pmiller@iut.univ-paris8.fr', '07.75.15.95.43', 'pmiller', 2, 28, 72), -- username : pmiller 
+    -- ('88955166', 'Eric', 'Brown', 'ebrown1@iut.univ-paris8.fr', '06.52.46.60.92', 'ebrown1', 2, 28, 72), -- username : ebrown1 
+    -- ('46719401', 'James', 'Singh', 'jsingh@iut.univ-paris8.fr', '06.33.57.16.92', 'jsingh', 2, 28, 72), -- username : jsingh 
+    -- ('81268085', 'Ryan', 'Howard', 'rhoward@iut.univ-paris8.fr', '07.07.62.55.35', 'rhoward', 2, 28, 72), -- username : rhoward 
+    -- ('57643046', 'Jennifer', 'Long', 'jlong1@iut.univ-paris8.fr', '06.69.82.67.22', 'jlong1', 2, 28, 72), -- username : jlong1 
+    -- ('63270385', 'Manuel', 'Mcmillan', 'mmcmillan@iut.univ-paris8.fr', '07.33.48.35.52', 'mmcmillan', 2, 28, 72), -- username : mmcmillan 
+    -- ('38534691', 'Kylie', 'Barron', 'kbarron@iut.univ-paris8.fr', '07.66.31.39.98', 'kbarron', 2, 28, 72), -- username : kbarron 
+    -- ('19467806', 'Jason', 'Peterson', 'jpeterson@iut.univ-paris8.fr', '07.88.54.05.46', 'jpeterson', 2, 28, 72), -- username : jpeterson 
+    -- ('95098891', 'Katherine', 'Reyes', 'kreyes1@iut.univ-paris8.fr', '06.44.47.94.71', 'kreyes1', 2, 28, 72), -- username : kreyes1 
+    -- ('38864544', 'Dylan', 'Campbell', 'dcampbell@iut.univ-paris8.fr', '06.84.20.93.53', 'dcampbell', 2, 28, 72), -- username : dcampbell 
+    -- ('32570936', 'Walter', 'Morris', 'wmorris@iut.univ-paris8.fr', '06.86.43.62.12', 'wmorris', 2, 28, 116), -- username : wmorris 
+    -- ('02574457', 'William', 'Mills', 'wmills@iut.univ-paris8.fr', '06.38.19.20.47', 'wmills', 2, 28, 116), -- username : wmills 
+    -- ('62543772', 'Gregory', 'Case', 'gcase@iut.univ-paris8.fr', '07.90.86.07.97', 'gcase', 2, 28, 116), -- username : gcase 
+    -- ('71268945', 'Lisa', 'Thomas', 'lthomas@iut.univ-paris8.fr', '06.16.85.77.82', 'lthomas', 2, 28, 116), -- username : lthomas 
+    -- ('38162490', 'Katherine', 'Middleton', 'kmiddleton@iut.univ-paris8.fr', '06.69.32.44.03', 'kmiddleton', 2, 28, 116), -- username : kmiddleton 
+    -- ('20105981', 'Kyle', 'Fowler', 'kfowler@iut.univ-paris8.fr', '06.56.85.16.09', 'kfowler', 2, 28, 116), -- username : kfowler 
+    -- ('64876438', 'Tara', 'Brennan', 'tbrennan@iut.univ-paris8.fr', '06.56.32.01.86', 'tbrennan', 2, 28, 116), -- username : tbrennan 
+    -- ('05729664', 'Tracy', 'Hernandez', 'thernandez1@iut.univ-paris8.fr', '06.71.47.54.96', 'thernandez1', 2, 28, 116), -- username : thernandez1 
+    -- ('56608087', 'Elizabeth', 'Clay', 'eclay@iut.univ-paris8.fr', '06.19.95.69.30', 'eclay', 2, 28, 116), -- username : eclay 
+    -- ('58873695', 'Evan', 'Young', 'eyoung@iut.univ-paris8.fr', '06.65.70.21.84', 'eyoung', 2, 28, 116), -- username : eyoung 
+    -- ('37568076', 'Mary', 'Ross', 'mross@iut.univ-paris8.fr', '07.08.15.04.24', 'mross', 2, 5, 5), -- username : mross 
+    -- ('92165465', 'Sheena', 'Roth', 'sroth@iut.univ-paris8.fr', '06.20.95.45.11', 'sroth', 2, 5, 5), -- username : sroth 
+    -- ('06747260', 'Megan', 'Warren', 'mwarren@iut.univ-paris8.fr', '06.04.57.57.65', 'mwarren', 2, 5, 5), -- username : mwarren 
+    -- ('56565549', 'Joe', 'Price', 'jprice@iut.univ-paris8.fr', '06.08.03.81.53', 'jprice', 2, 5, 5), -- username : jprice 
+    -- ('55455808', 'Jeff', 'Pineda', 'jpineda@iut.univ-paris8.fr', '06.00.61.44.37', 'jpineda', 2, 5, 5), -- username : jpineda 
+    -- ('45240831', 'Kathryn', 'Brandt', 'kbrandt@iut.univ-paris8.fr', '07.07.67.54.27', 'kbrandt', 2, 5, 5), -- username : kbrandt 
+    -- ('23848114', 'Tracie', 'Robinson', 'trobinson@iut.univ-paris8.fr', '07.82.13.49.38', 'trobinson', 2, 5, 5), -- username : trobinson 
+    -- ('06915981', 'Wanda', 'Garcia', 'wgarcia@iut.univ-paris8.fr', '07.80.57.45.36', 'wgarcia', 2, 5, 5), -- username : wgarcia 
+    -- ('24226298', 'Kimberly', 'Stevens', 'kstevens@iut.univ-paris8.fr', '06.07.09.47.81', 'kstevens', 2, 5, 5), -- username : kstevens 
+    -- ('99674548', 'Stephen', 'Barnett', 'sbarnett1@iut.univ-paris8.fr', '07.07.67.26.89', 'sbarnett1', 2, 5, 5), -- username : sbarnett1 
+    -- ('32293771', 'Jacob', 'Crawford', 'jcrawford1@iut.univ-paris8.fr', '07.43.31.89.36', 'jcrawford1', 2, 5, 49), -- username : jcrawford1 
+    -- ('73620092', 'Steven', 'Lee', 'slee@iut.univ-paris8.fr', '06.83.37.70.10', 'slee', 2, 5, 49), -- username : slee 
+    -- ('20935867', 'Sydney', 'Bailey', 'sbailey@iut.univ-paris8.fr', '06.21.87.83.98', 'sbailey', 2, 5, 49), -- username : sbailey 
+    -- ('35062779', 'Richard', 'Austin', 'raustin@iut.univ-paris8.fr', '07.41.68.33.68', 'raustin', 2, 5, 49), -- username : raustin 
+    -- ('07809037', 'Rhonda', 'Campbell', 'rcampbell1@iut.univ-paris8.fr', '07.82.36.39.53', 'rcampbell1', 2, 5, 49), -- username : rcampbell1 
+    -- ('69206144', 'Kimberly', 'Castro', 'kcastro1@iut.univ-paris8.fr', '06.88.28.73.64', 'kcastro1', 2, 5, 49), -- username : kcastro1 
+    -- ('63666367', 'Christopher', 'Blair', 'cblair1@iut.univ-paris8.fr', '07.59.54.47.60', 'cblair1', 2, 5, 49), -- username : cblair1 
+    -- ('80265895', 'Tom', 'Mcdowell', 'tmcdowell@iut.univ-paris8.fr', '06.27.78.83.43', 'tmcdowell', 2, 5, 49), -- username : tmcdowell 
+    -- ('20941471', 'Nicole', 'Lyons', 'nlyons@iut.univ-paris8.fr', '06.88.98.96.99', 'nlyons', 2, 5, 49), -- username : nlyons 
+    -- ('05333216', 'Nicole', 'Johnston', 'njohnston@iut.univ-paris8.fr', '06.79.13.36.23', 'njohnston', 2, 5, 49), -- username : njohnston 
+    -- ('68436409', 'Kathryn', 'Anderson', 'kanderson@iut.univ-paris8.fr', '07.21.12.78.36', 'kanderson', 2, 5, 93), -- username : kanderson 
+    -- ('99029929', 'Bryan', 'Santos', 'bsantos@iut.univ-paris8.fr', '06.85.29.91.20', 'bsantos', 2, 5, 93), -- username : bsantos 
+    -- ('75105910', 'Shannon', 'Martinez', 'smartinez1@iut.univ-paris8.fr', '07.32.66.42.39', 'smartinez1', 2, 5, 93), -- username : smartinez1 
+    -- ('70992055', 'Mary', 'Moreno', 'mmoreno1@iut.univ-paris8.fr', '07.87.78.16.57', 'mmoreno1', 2, 5, 93), -- username : mmoreno1 
+    -- ('09298619', 'Brian', 'Cole', 'bcole@iut.univ-paris8.fr', '06.33.48.41.42', 'bcole', 2, 5, 93), -- username : bcole 
+    -- ('77733514', 'Eric', 'Black', 'eblack@iut.univ-paris8.fr', '06.90.50.78.36', 'eblack', 2, 5, 93), -- username : eblack 
+    -- ('23613242', 'Gina', 'Nguyen', 'gnguyen@iut.univ-paris8.fr', '06.42.03.33.68', 'gnguyen', 2, 5, 93), -- username : gnguyen 
+    -- ('38735857', 'Marcia', 'Robbins', 'mrobbins@iut.univ-paris8.fr', '06.47.60.91.01', 'mrobbins', 2, 5, 93), -- username : mrobbins 
+    -- ('65869767', 'Annette', 'Crawford', 'acrawford1@iut.univ-paris8.fr', '07.44.87.28.57', 'acrawford1', 2, 5, 93), -- username : acrawford1 
+    -- ('02564651', 'Samantha', 'Campbell', 'scampbell@iut.univ-paris8.fr', '07.83.15.74.05', 'scampbell', 2, 5,93) -- username : sscampbell 
 ;
 
 -- university.students(@student_number,last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
@@ -761,356 +761,356 @@ VALUES
     ('35364890', 'Michelle', 'Torres', 'mtorres@iut.univ-paris8.fr', '07.26.07.96.53', 'mtorres', 3, 19, 19), -- username : mtorres 
     ('05380172', 'Hannah', 'Lopez', 'hlopez@iut.univ-paris8.fr', '06.24.60.68.52', 'hlopez', 3, 19, 19), -- username : hlopez 
     ('02025961', 'Anthony', 'Peters', 'apeters1@iut.univ-paris8.fr', '07.12.50.58.91', 'apeters1', 3, 19, 19), -- username : apeters1 
-    ('44886687', 'Walter', 'Patrick', 'wpatrick@iut.univ-paris8.fr', '07.09.35.73.41', 'wpatrick', 3, 19, 63), -- username : wpatrick 
-    ('39208918', 'Marcus', 'Green', 'mgreen1@iut.univ-paris8.fr', '07.62.35.58.52', 'mgreen1', 3, 19, 63), -- username : mgreen1 
-    ('41267751', 'Carolyn', 'Lopez', 'clopez@iut.univ-paris8.fr', '07.84.95.86.29', 'clopez', 3, 19, 63), -- username : clopez 
-    ('43841024', 'Darlene', 'Wood', 'dwood@iut.univ-paris8.fr', '06.17.49.27.15', 'dwood', 3, 19, 63), -- username : dwood 
-    ('96448943', 'Sandra', 'Shelton', 'sshelton@iut.univ-paris8.fr', '06.62.63.48.08', 'sshelton', 3, 19, 63), -- username : sshelton 
-    ('44363671', 'Jorge', 'Richards', 'jrichards@iut.univ-paris8.fr', '06.87.48.73.68', 'jrichards', 3, 19, 63), -- username : jrichards 
-    ('86088518', 'Ann', 'Cox', 'acox@iut.univ-paris8.fr', '07.64.98.24.40', 'acox', 3, 19, 63), -- username : acox 
-    ('11002964', 'Anthony', 'Smith', 'asmith@iut.univ-paris8.fr', '07.66.99.65.46', 'asmith', 3, 19, 63), -- username : asmith 
-    ('46994345', 'Donna', 'Lee', 'dlee@iut.univ-paris8.fr', '06.74.23.50.83', 'dlee', 3, 19, 63), -- username : dlee 
-    ('08892453', 'Caroline', 'Jones', 'cjones1@iut.univ-paris8.fr', '06.62.86.15.36', 'cjones1', 3, 19, 63), -- username : cjones1 
-    ('03800421', 'Matthew', 'Davis', 'mdavis@iut.univ-paris8.fr', '07.93.39.45.03', 'mdavis', 3, 19, 107), -- username : mdavis 
-    ('88648035', 'Amy', 'Arnold', 'aarnold@iut.univ-paris8.fr', '07.17.80.55.05', 'aarnold', 3, 19, 107), -- username : aarnold 
-    ('07368189', 'David', 'Dixon', 'ddixon@iut.univ-paris8.fr', '07.33.62.74.14', 'ddixon', 3, 19, 107), -- username : ddixon 
-    ('00242434', 'Andres', 'Roberts', 'aroberts@iut.univ-paris8.fr', '07.80.11.07.58', 'aroberts', 3, 19, 107), -- username : aroberts 
-    ('85408922', 'Edward', 'Ellis', 'eellis@iut.univ-paris8.fr', '07.53.27.88.68', 'eellis', 3, 19, 107), -- username : eellis 
-    ('12261046', 'Jacob', 'Rose', 'jrose@iut.univ-paris8.fr', '06.39.49.05.85', 'jrose', 3, 19, 107), -- username : jrose 
-    ('97197652', 'Patrick', 'Martinez', 'pmartinez@iut.univ-paris8.fr', '06.04.53.79.17', 'pmartinez', 3, 19, 107), -- username : pmartinez 
-    ('19229921', 'Nichole', 'Lewis', 'nlewis@iut.univ-paris8.fr', '07.22.32.75.63', 'nlewis', 3, 19, 107), -- username : nlewis 
-    ('58934894', 'Stephanie', 'Carlson', 'scarlson2@iut.univ-paris8.fr', '06.55.63.89.79', 'scarlson2', 3, 19, 107), -- username : scarlson2 
-    ('33798546', 'Gary', 'Keller', 'gkeller@iut.univ-paris8.fr', '07.32.18.66.95', 'gkeller', 3, 19, 107), -- username : gkeller 
-    ('93888181', 'Tina', 'Bowers', 'tbowers@iut.univ-paris8.fr', '06.00.41.80.28', 'tbowers', 3, 21, 21), -- username : tbowers 
-    ('89963978', 'Kelli', 'George', 'kgeorge@iut.univ-paris8.fr', '07.41.26.75.25', 'kgeorge', 3, 21, 21), -- username : kgeorge 
-    ('22150393', 'Laura', 'Rosales', 'lrosales@iut.univ-paris8.fr', '06.72.07.81.16', 'lrosales', 3, 21, 21), -- username : lrosales 
-    ('75839542', 'Derrick', 'Chang', 'dchang@iut.univ-paris8.fr', '07.47.04.19.25', 'dchang', 3, 21, 21), -- username : dchang 
-    ('81130001', 'Brent', 'Hernandez', 'bhernandez@iut.univ-paris8.fr', '07.38.51.91.91', 'bhernandez', 3, 21, 21), -- username : bhernandez 
-    ('51834009', 'Kirsten', 'Bender', 'kbender@iut.univ-paris8.fr', '06.69.53.06.54', 'kbender', 3, 21, 21), -- username : kbender 
-    ('88840409', 'Anna', 'Boyd', 'aboyd@iut.univ-paris8.fr', '06.94.01.49.19', 'aboyd', 3, 21, 21), -- username : aboyd 
-    ('78986442', 'Catherine', 'Gutierrez', 'cgutierrez@iut.univ-paris8.fr', '07.19.19.25.74', 'cgutierrez', 3, 21, 21), -- username : cgutierrez 
-    ('19719715', 'Elizabeth', 'Baker', 'ebaker@iut.univ-paris8.fr', '07.81.05.43.64', 'ebaker', 3, 21, 21), -- username : ebaker 
-    ('09584415', 'Vanessa', 'Fitzpatrick', 'vfitzpatrick@iut.univ-paris8.fr', '06.98.00.59.39', 'vfitzpatrick', 3, 21, 21), -- username : vfitzpatrick 
-    ('81405088', 'Tammy', 'Gonzales', 'tgonzales@iut.univ-paris8.fr', '07.59.93.59.80', 'tgonzales', 3, 21, 65), -- username : tgonzales 
-    ('27213203', 'Brandon', 'Smith', 'bsmith1@iut.univ-paris8.fr', '07.37.30.15.39', 'bsmith1', 3, 21, 65), -- username : bsmith1 
-    ('84180170', 'Jennifer', 'Jones', 'jjones@iut.univ-paris8.fr', '06.37.62.79.85', 'jjones', 3, 21, 65), -- username : jjones 
-    ('10404693', 'Kevin', 'Hall', 'khall@iut.univ-paris8.fr', '06.82.71.83.02', 'khall', 3, 21, 65), -- username : khall 
-    ('43037888', 'Andrew', 'Erickson', 'aerickson@iut.univ-paris8.fr', '06.83.64.22.67', 'aerickson', 3, 21, 65), -- username : aerickson 
-    ('33999197', 'Jay', 'Chambers', 'jchambers@iut.univ-paris8.fr', '06.80.08.61.59', 'jchambers', 3, 21, 65), -- username : jchambers 
-    ('49007663', 'Wendy', 'Fischer', 'wfischer@iut.univ-paris8.fr', '06.15.40.15.09', 'wfischer', 3, 21, 65), -- username : wfischer 
-    ('53777556', 'Jennifer', 'Webb', 'jwebb@iut.univ-paris8.fr', '06.94.07.34.36', 'jwebb', 3, 21, 65), -- username : jwebb 
-    ('92516761', 'Stephen', 'Smith', 'ssmith@iut.univ-paris8.fr', '07.23.16.54.88', 'ssmith', 3, 21, 65), -- username : ssmith 
-    ('59588759', 'Jesus', 'Harrington', 'jharrington@iut.univ-paris8.fr', '07.95.44.30.43', 'jharrington', 3, 21, 65), -- username : jharrington 
-    ('26380664', 'Lee', 'Sullivan', 'lsullivan@iut.univ-paris8.fr', '06.77.86.38.90', 'lsullivan', 3, 21, 109), -- username : lsullivan 
-    ('43886059', 'Matthew', 'Weaver', 'mweaver@iut.univ-paris8.fr', '07.15.33.20.83', 'mweaver', 3, 21, 109), -- username : mweaver 
-    ('84854071', 'Michael', 'Haney', 'mhaney@iut.univ-paris8.fr', '07.51.97.20.50', 'mhaney', 3, 21, 109), -- username : mhaney 
-    ('15442041', 'Sarah', 'Martin', 'smartin@iut.univ-paris8.fr', '07.62.49.09.98', 'smartin', 3, 21, 109), -- username : smartin 
-    ('91248241', 'George', 'Dorsey', 'gdorsey@iut.univ-paris8.fr', '06.48.78.97.38', 'gdorsey', 3, 21, 109), -- username : gdorsey 
-    ('24478502', 'Jose', 'Griffith', 'jgriffith@iut.univ-paris8.fr', '06.13.26.97.84', 'jgriffith', 3, 21, 109), -- username : jgriffith 
-    ('77501501', 'Kayla', 'Larson', 'klarson@iut.univ-paris8.fr', '06.95.44.59.80', 'klarson', 3, 21, 109), -- username : klarson 
-    ('22377605', 'Steven', 'Liu', 'sliu@iut.univ-paris8.fr', '06.12.67.54.68', 'sliu', 3, 21, 109), -- username : sliu 
-    ('83308588', 'Carlos', 'Savage', 'csavage@iut.univ-paris8.fr', '06.34.20.33.82', 'csavage', 3, 21, 109), -- username : csavage 
-    ('32354508', 'Joseph', 'Horn', 'jhorn@iut.univ-paris8.fr', '07.07.88.51.07', 'jhorn', 3, 21, 109), -- username : jhorn 
-    ('61908378', 'Robert', 'Harrington', 'rharrington@iut.univ-paris8.fr', '06.33.71.40.39', 'rharrington', 3, 20, 20), -- username : rharrington 
-    ('83710708', 'Levi', 'Browning', 'lbrowning@iut.univ-paris8.fr', '07.88.29.29.64', 'lbrowning', 3, 20, 20), -- username : lbrowning 
-    ('97077165', 'James', 'Stewart', 'jstewart1@iut.univ-paris8.fr', '07.68.74.94.78', 'jstewart1', 3, 20, 20), -- username : jstewart1 
-    ('08238070', 'Kevin', 'Collins', 'kcollins@iut.univ-paris8.fr', '06.20.98.97.03', 'kcollins', 3, 20, 20), -- username : kcollins 
-    ('96882277', 'Victoria', 'Pope', 'vpope@iut.univ-paris8.fr', '07.87.54.19.75', 'vpope', 3, 20, 20), -- username : vpope 
-    ('63206175', 'Nicole', 'Henderson', 'nhenderson@iut.univ-paris8.fr', '06.60.49.65.17', 'nhenderson', 3, 20, 20), -- username : nhenderson 
-    ('74363500', 'Troy', 'Blackwell', 'tblackwell@iut.univ-paris8.fr', '07.37.31.30.10', 'tblackwell', 3, 20, 20), -- username : tblackwell 
-    ('78937791', 'Jonathan', 'Cordova', 'jcordova@iut.univ-paris8.fr', '07.11.34.92.59', 'jcordova', 3, 20, 20), -- username : jcordova 
-    ('85300873', 'Andrea', 'Farmer', 'afarmer@iut.univ-paris8.fr', '07.05.09.16.66', 'afarmer', 3, 20, 20), -- username : afarmer 
-    ('05591751', 'Brian', 'Jones', 'bjones1@iut.univ-paris8.fr', '06.39.47.41.05', 'bjones1', 3, 20, 20), -- username : bjones1 
-    ('93898648', 'Lisa', 'Martinez', 'lmartinez@iut.univ-paris8.fr', '06.30.83.11.17', 'lmartinez', 3, 20, 64), -- username : lmartinez 
-    ('06451956', 'Kathy', 'Steele', 'ksteele@iut.univ-paris8.fr', '06.23.62.74.92', 'ksteele', 3, 20, 64), -- username : ksteele 
-    ('76294129', 'Michael', 'Simmons', 'msimmons@iut.univ-paris8.fr', '06.98.76.28.85', 'msimmons', 3, 20, 64), -- username : msimmons 
-    ('20328749', 'William', 'Marshall', 'wmarshall@iut.univ-paris8.fr', '06.56.78.73.36', 'wmarshall', 3, 20, 64), -- username : wmarshall 
-    ('66325803', 'Nicole', 'Brown', 'nbrown1@iut.univ-paris8.fr', '06.44.07.87.21', 'nbrown1', 3, 20, 64), -- username : nbrown1 
-    ('44405381', 'Paul', 'Blair', 'pblair@iut.univ-paris8.fr', '06.17.58.51.46', 'pblair', 3, 20, 64), -- username : pblair 
-    ('03953986', 'Sara', 'Yu', 'syu1@iut.univ-paris8.fr', '07.67.63.22.99', 'syu1', 3, 20, 64), -- username : syu1 
-    ('14779874', 'Nicole', 'Thompson', 'nthompson@iut.univ-paris8.fr', '07.68.99.18.51', 'nthompson', 3, 20, 64), -- username : nthompson 
-    ('50242408', 'Jennifer', 'Huff', 'jhuff@iut.univ-paris8.fr', '07.01.28.77.01', 'jhuff', 3, 20, 64), -- username : jhuff 
-    ('81761741', 'Rebecca', 'Martinez', 'rmartinez@iut.univ-paris8.fr', '07.47.83.58.61', 'rmartinez', 3, 20, 64), -- username : rmartinez 
-    ('44477069', 'Joseph', 'Phillips', 'jphillips@iut.univ-paris8.fr', '07.69.73.85.06', 'jphillips', 3, 20, 108), -- username : jphillips 
-    ('50392609', 'Lisa', 'Giles', 'lgiles@iut.univ-paris8.fr', '06.04.75.60.45', 'lgiles', 3, 20, 108), -- username : lgiles 
-    ('93779867', 'Samantha', 'Johnson', 'sjohnson@iut.univ-paris8.fr', '07.72.97.62.69', 'sjohnson', 3, 20, 108), -- username : sjohnson 
-    ('63692133', 'Joseph', 'Austin', 'jaustin@iut.univ-paris8.fr', '07.87.18.33.38', 'jaustin', 3, 20, 108), -- username : jaustin 
-    ('33089735', 'Justin', 'Anthony', 'janthony@iut.univ-paris8.fr', '07.86.77.49.39', 'janthony', 3, 20, 108), -- username : janthony 
-    ('62174530', 'Calvin', 'Whitaker', 'cwhitaker@iut.univ-paris8.fr', '07.62.60.87.79', 'cwhitaker', 3, 20, 108), -- username : cwhitaker 
-    ('66278156', 'Scott', 'Ward', 'sward@iut.univ-paris8.fr', '06.53.00.03.14', 'sward', 3, 20, 108), -- username : sward 
-    ('01638329', 'Anne', 'Lawson', 'alawson@iut.univ-paris8.fr', '06.08.60.63.97', 'alawson', 3, 20, 108), -- username : alawson 
-    ('77291764', 'Samuel', 'Jensen', 'sjensen@iut.univ-paris8.fr', '06.36.74.96.13', 'sjensen', 3, 20, 108), -- username : sjensen 
-    ('28095973', 'Michele', 'Taylor', 'mtaylor@iut.univ-paris8.fr', '06.78.70.18.10', 'mtaylor', 3, 20, 108), -- username : mtaylor 
-    ('71171331', 'Katie', 'Hoffman', 'khoffman@iut.univ-paris8.fr', '06.85.18.45.01', 'khoffman', 3, 7, 7), -- username : khoffman 
-    ('92525418', 'Christopher', 'Decker', 'cdecker@iut.univ-paris8.fr', '06.06.71.81.47', 'cdecker', 3, 7, 7), -- username : cdecker 
-    ('69396379', 'John', 'Stephenson', 'jstephenson@iut.univ-paris8.fr', '06.26.14.81.30', 'jstephenson', 3, 7, 7), -- username : jstephenson 
-    ('55229858', 'Aaron', 'Peterson', 'apeterson@iut.univ-paris8.fr', '06.87.25.98.17', 'apeterson', 3, 7, 7), -- username : apeterson 
-    ('61020929', 'Scott', 'Washington', 'swashington@iut.univ-paris8.fr', '06.26.12.43.38', 'swashington', 3, 7, 7), -- username : swashington 
-    ('13927333', 'Alyssa', 'Hansen', 'ahansen@iut.univ-paris8.fr', '07.43.12.82.41', 'ahansen', 3, 7, 7), -- username : ahansen 
-    ('30682289', 'Tina', 'Price', 'tprice@iut.univ-paris8.fr', '07.23.45.07.94', 'tprice', 3, 7, 7), -- username : tprice 
-    ('42012946', 'Craig', 'Jackson', 'cjackson1@iut.univ-paris8.fr', '07.64.16.00.78', 'cjackson1', 3, 7, 7), -- username : cjackson1 
-    ('79649585', 'Joe', 'Rice', 'jrice@iut.univ-paris8.fr', '06.12.81.68.06', 'jrice', 3, 7, 7), -- username : jrice 
-    ('08759451', 'Lisa', 'Hanson', 'lhanson@iut.univ-paris8.fr', '06.00.05.86.59', 'lhanson', 3, 7, 7), -- username : lhanson 
-    ('50058415', 'Tonya', 'Olson', 'tolson1@iut.univ-paris8.fr', '07.74.68.98.26', 'tolson1', 3, 7, 95), -- username : tolson1 
-    ('44522648', 'Michael', 'Hays', 'mhays@iut.univ-paris8.fr', '06.69.01.02.11', 'mhays', 3, 7, 95), -- username : mhays 
-    ('91162399', 'Kristin', 'Mcdonald', 'kmcdonald@iut.univ-paris8.fr', '07.24.27.76.05', 'kmcdonald', 3, 7, 95), -- username : kmcdonald 
-    ('09973518', 'Micheal', 'Wade', 'mwade@iut.univ-paris8.fr', '06.83.33.95.24', 'mwade', 3, 7, 95), -- username : mwade 
-    ('66633986', 'William', 'Sanchez', 'wsanchez1@iut.univ-paris8.fr', '06.72.52.92.82', 'wsanchez1', 3, 7, 95), -- username : wsanchez1 
-    ('18938991', 'Colleen', 'Willis', 'cwillis@iut.univ-paris8.fr', '07.15.37.62.39', 'cwillis', 3, 7, 95), -- username : cwillis 
-    ('48575364', 'Andrew', 'Adams', 'aadams@iut.univ-paris8.fr', '06.26.74.71.34', 'aadams', 3, 7, 95), -- username : aadams 
-    ('05291189', 'Kyle', 'Wood', 'kwood@iut.univ-paris8.fr', '07.23.84.17.98', 'kwood', 3, 7, 95), -- username : kwood 
-    ('99329926', 'Robert', 'Smith', 'rsmith1@iut.univ-paris8.fr', '07.00.29.30.89', 'rsmith1', 3, 7, 95), -- username : rsmith1 
-    ('04090157', 'Timothy', 'Cole', 'tcole@iut.univ-paris8.fr', '07.65.96.19.39', 'tcole', 3, 7, 95), -- username : tcole 
-    ('40890464', 'Dawn', 'Lynch', 'dlynch@iut.univ-paris8.fr', '06.77.44.48.86', 'dlynch', 3, 7, 95), -- username : dlynch 
-    ('74863961', 'Brandon', 'Jones', 'bjones@iut.univ-paris8.fr', '06.10.75.43.69', 'bjones', 3, 7, 95), -- username : bjones 
-    ('74938047', 'Jesse', 'Nelson', 'jnelson@iut.univ-paris8.fr', '07.44.92.62.77', 'jnelson', 3, 7, 95), -- username : jnelson 
-    ('91105479', 'Laura', 'Rich', 'lrich@iut.univ-paris8.fr', '07.21.25.48.85', 'lrich', 3, 7, 95), -- username : lrich 
-    ('51186658', 'Jeffrey', 'Underwood', 'junderwood@iut.univ-paris8.fr', '07.46.42.58.72', 'junderwood', 3, 7, 95), -- username : junderwood 
-    ('56902596', 'Brittany', 'Gonzalez', 'bgonzalez@iut.univ-paris8.fr', '07.91.90.14.45', 'bgonzalez', 3, 7, 95), -- username : bgonzalez 
-    ('12607510', 'Joshua', 'Bennett', 'jbennett@iut.univ-paris8.fr', '07.14.84.40.83', 'jbennett', 3, 7, 95), -- username : jbennett 
-    ('10332673', 'Sonia', 'Hatfield', 'shatfield@iut.univ-paris8.fr', '06.09.16.48.93', 'shatfield', 3, 7, 95), -- username : shatfield 
-    ('37894276', 'Margaret', 'Nunez', 'mnunez@iut.univ-paris8.fr', '06.01.25.69.33', 'mnunez', 3, 7, 95), -- username : mnunez 
-    ('81577467', 'Shawn', 'Johnston', 'sjohnston1@iut.univ-paris8.fr', '07.52.72.82.70', 'sjohnston1', 3, 7, 95), -- username : sjohnston1 
-    ('35923148', 'Kim', 'Noble', 'knoble@iut.univ-paris8.fr', '07.83.89.49.81', 'knoble', 3, 8, 8), -- username : knoble 
-    ('43918504', 'Douglas', 'Thomas', 'dthomas@iut.univ-paris8.fr', '06.91.41.11.57', 'dthomas', 3, 8, 8), -- username : dthomas 
-    ('07061129', 'Tammy', 'Kim', 'tkim@iut.univ-paris8.fr', '07.95.53.76.89', 'tkim', 3, 8, 8), -- username : tkim 
-    ('01207936', 'Rodney', 'Riley', 'rriley@iut.univ-paris8.fr', '07.91.56.33.39', 'rriley', 3, 8, 8), -- username : rriley 
-    ('78860691', 'Nicole', 'Richardson', 'nrichardson@iut.univ-paris8.fr', '07.29.68.39.70', 'nrichardson', 3, 8, 8), -- username : nrichardson 
-    ('56681208', 'Chase', 'Howard', 'choward@iut.univ-paris8.fr', '07.96.73.45.91', 'choward', 3, 8, 8), -- username : choward 
-    ('31978207', 'John', 'Walters', 'jwalters@iut.univ-paris8.fr', '06.31.56.06.54', 'jwalters', 3, 8, 8), -- username : jwalters 
-    ('77093347', 'Aaron', 'Mays', 'amays@iut.univ-paris8.fr', '06.00.26.81.03', 'amays', 3, 8, 8), -- username : amays 
-    ('92547283', 'Traci', 'Ruiz', 'truiz@iut.univ-paris8.fr', '07.83.10.55.05', 'truiz', 3, 8, 8), -- username : truiz 
-    ('68704523', 'Kenneth', 'Golden', 'kgolden@iut.univ-paris8.fr', '07.03.76.31.20', 'kgolden', 3, 8, 8), -- username : kgolden 
-    ('29092665', 'Rachel', 'Smith', 'rsmith@iut.univ-paris8.fr', '07.35.52.10.48', 'rsmith', 3, 8, 52), -- username : rsmith 
-    ('45819690', 'Stanley', 'Mathews', 'smathews@iut.univ-paris8.fr', '07.74.18.16.42', 'smathews', 3, 8, 52), -- username : smathews 
-    ('63768384', 'Cesar', 'Mullen', 'cmullen@iut.univ-paris8.fr', '06.00.17.38.52', 'cmullen', 3, 8, 52), -- username : cmullen 
-    ('80125273', 'Claire', 'Giles', 'cgiles@iut.univ-paris8.fr', '06.46.54.86.52', 'cgiles', 3, 8, 52), -- username : cgiles 
-    ('54086035', 'Sean', 'Armstrong', 'sarmstrong@iut.univ-paris8.fr', '06.79.74.33.79', 'sarmstrong', 3, 8, 52), -- username : sarmstrong 
-    ('65377400', 'Christopher', 'Vazquez', 'cvazquez@iut.univ-paris8.fr', '06.54.18.60.01', 'cvazquez', 3, 8, 52), -- username : cvazquez 
-    ('97092125', 'Alexander', 'Guzman', 'aguzman@iut.univ-paris8.fr', '07.34.49.30.60', 'aguzman', 3, 8, 52), -- username : aguzman 
-    ('07476441', 'Stuart', 'Ramos', 'sramos@iut.univ-paris8.fr', '07.18.84.65.89', 'sramos', 3, 8, 52), -- username : sramos 
-    ('81649581', 'Mary', 'Perez', 'mperez@iut.univ-paris8.fr', '07.01.45.31.44', 'mperez', 3, 8, 52), -- username : mperez 
-    ('51360388', 'Thomas', 'Olson', 'tolson@iut.univ-paris8.fr', '07.56.49.69.85', 'tolson', 3, 8, 52), -- username : tolson 
-    ('14888268', 'Robert', 'Thompson', 'rthompson@iut.univ-paris8.fr', '06.75.50.80.19', 'rthompson', 3, 8, 96), -- username : rthompson 
-    ('22481721', 'Anna', 'Miller', 'amiller@iut.univ-paris8.fr', '06.60.51.52.79', 'amiller', 3, 8, 96), -- username : amiller 
-    ('09299054', 'Jeffery', 'Evans', 'jevans@iut.univ-paris8.fr', '07.41.06.90.72', 'jevans', 3, 8, 96), -- username : jevans 
-    ('79997541', 'Wendy', 'Coleman', 'wcoleman@iut.univ-paris8.fr', '06.04.49.04.29', 'wcoleman', 3, 8, 96), -- username : wcoleman 
-    ('62949265', 'Jodi', 'Campbell', 'jcampbell@iut.univ-paris8.fr', '07.72.14.00.47', 'jcampbell', 3, 8, 96), -- username : jcampbell 
-    ('40171718', 'Traci', 'Krueger', 'tkrueger@iut.univ-paris8.fr', '06.13.46.53.56', 'tkrueger', 3, 8, 96), -- username : tkrueger 
-    ('49819532', 'Jack', 'Dunn', 'jdunn@iut.univ-paris8.fr', '07.85.58.25.78', 'jdunn', 3, 8, 96), -- username : jdunn 
-    ('25896516', 'Deborah', 'Wilson', 'dwilson@iut.univ-paris8.fr', '07.63.67.25.57', 'dwilson', 3, 8, 96), -- username : dwilson 
-    ('99258776', 'Philip', 'Robinson', 'probinson@iut.univ-paris8.fr', '07.25.95.24.50', 'probinson', 3, 8, 96), -- username : probinson 
-    ('21793015', 'Anna', 'Wilson', 'awilson1@iut.univ-paris8.fr', '07.83.12.61.59', 'awilson1', 3, 8, 96), -- username : awilson1 
-    ('48885993', 'Troy', 'Mason', 'tmason@iut.univ-paris8.fr', '07.97.28.22.59', 'tmason', 3, 9, 9), -- username : tmason 
-    ('42410621', 'Ashley', 'Ray', 'aray@iut.univ-paris8.fr', '07.32.82.33.23', 'aray', 3, 9, 9), -- username : aray 
-    ('09418642', 'Kimberly', 'Chapman', 'kchapman@iut.univ-paris8.fr', '07.75.94.12.23', 'kchapman', 3, 9, 9), -- username : kchapman 
-    ('16434563', 'Brett', 'Gray', 'bgray@iut.univ-paris8.fr', '07.39.09.20.38', 'bgray', 3, 9, 9), -- username : bgray 
-    ('41805988', 'Dawn', 'Horn', 'dhorn@iut.univ-paris8.fr', '07.76.91.91.95', 'dhorn', 3, 9, 9), -- username : dhorn 
-    ('31272225', 'Emily', 'Hernandez', 'ehernandez@iut.univ-paris8.fr', '06.53.87.21.91', 'ehernandez', 3, 9, 9), -- username : ehernandez 
-    ('70829776', 'John', 'Stewart', 'jstewart@iut.univ-paris8.fr', '07.45.59.82.00', 'jstewart', 3, 9, 9), -- username : jstewart 
-    ('65261957', 'Michael', 'Heath', 'mheath@iut.univ-paris8.fr', '07.72.00.81.73', 'mheath', 3, 9, 9), -- username : mheath 
-    ('87550824', 'Julia', 'Long', 'jlong@iut.univ-paris8.fr', '07.17.79.62.63', 'jlong', 3, 9, 9), -- username : jlong 
-    ('60881626', 'Wanda', 'Cabrera', 'wcabrera@iut.univ-paris8.fr', '07.67.00.57.26', 'wcabrera', 3, 9, 9), -- username : wcabrera 
-    ('09884147', 'Michelle', 'Gordon', 'mgordon@iut.univ-paris8.fr', '07.68.72.40.68', 'mgordon', 3, 9, 53), -- username : mgordon 
-    ('44097949', 'Mindy', 'Fisher', 'mfisher@iut.univ-paris8.fr', '06.04.75.42.27', 'mfisher', 3, 9, 53), -- username : mfisher 
-    ('52558982', 'Mariah', 'Mckinney', 'mmckinney@iut.univ-paris8.fr', '07.84.50.35.63', 'mmckinney', 3, 9, 53), -- username : mmckinney 
-    ('99558832', 'Ralph', 'Graham', 'rgraham@iut.univ-paris8.fr', '06.12.71.68.56', 'rgraham', 3, 9, 53), -- username : rgraham 
-    ('97279228', 'Paul', 'Steele', 'psteele@iut.univ-paris8.fr', '07.94.88.18.25', 'psteele', 3, 9, 53), -- username : psteele 
-    ('03272737', 'Stephanie', 'Mcgee', 'smcgee@iut.univ-paris8.fr', '06.74.55.42.13', 'smcgee', 3, 9, 53), -- username : smcgee 
-    ('73081737', 'Jill', 'Smith', 'jsmith1@iut.univ-paris8.fr', '06.61.52.61.52', 'jsmith1', 3, 9, 53), -- username : jsmith1 
-    ('15860207', 'Anna', 'Jones', 'ajones@iut.univ-paris8.fr', '06.60.77.61.28', 'ajones', 3, 9, 53), -- username : ajones 
-    ('65901311', 'Tim', 'Turner', 'tturner@iut.univ-paris8.fr', '06.85.95.53.03', 'tturner', 3, 9, 53), -- username : tturner 
-    ('45968468', 'Sheri', 'Mcclain', 'smcclain@iut.univ-paris8.fr', '07.95.27.05.78', 'smcclain', 3, 9, 53), -- username : smcclain 
-    ('96196467', 'Rachel', 'Fry', 'rfry@iut.univ-paris8.fr', '06.38.90.52.72', 'rfry', 3, 9, 97), -- username : rfry 
-    ('00452115', 'Eric', 'Sullivan', 'esullivan@iut.univ-paris8.fr', '07.60.18.94.83', 'esullivan', 3, 9, 97), -- username : esullivan 
-    ('18270342', 'Michele', 'Harmon', 'mharmon@iut.univ-paris8.fr', '06.56.15.53.43', 'mharmon', 3, 9, 97), -- username : mharmon 
-    ('80946090', 'Jennifer', 'Gill', 'jgill@iut.univ-paris8.fr', '06.42.34.71.39', 'jgill', 3, 9, 97), -- username : jgill 
-    ('79539131', 'Vincent', 'Sutton', 'vsutton@iut.univ-paris8.fr', '06.94.87.70.47', 'vsutton', 3, 9, 97), -- username : vsutton 
-    ('29588016', 'Tony', 'Mitchell', 'tmitchell@iut.univ-paris8.fr', '07.14.25.85.49', 'tmitchell', 3, 9, 97), -- username : tmitchell 
-    ('65489309', 'Nicole', 'Mcdaniel', 'nmcdaniel@iut.univ-paris8.fr', '06.59.86.64.00', 'nmcdaniel', 3, 9, 97), -- username : nmcdaniel 
-    ('69306443', 'Nicole', 'Powell', 'npowell@iut.univ-paris8.fr', '07.63.82.13.16', 'npowell', 3, 9, 97), -- username : npowell 
-    ('47054174', 'Virginia', 'Hale', 'vhale@iut.univ-paris8.fr', '07.84.72.10.93', 'vhale', 3, 9, 97), -- username : vhale 
-    ('92249860', 'Kenneth', 'Smith', 'ksmith@iut.univ-paris8.fr', '06.64.08.74.61', 'ksmith', 3, 9, 97), -- username : ksmith 
-    ('63526323', 'Samantha', 'Perez', 'sperez@iut.univ-paris8.fr', '07.07.25.22.58', 'sperez', 3, 41, 41), -- username : sperez 
-    ('48738859', 'Christopher', 'Walsh', 'cwalsh@iut.univ-paris8.fr', '07.11.06.90.40', 'cwalsh', 3, 41, 41), -- username : cwalsh 
-    ('54409309', 'Angela', 'Melendez', 'amelendez@iut.univ-paris8.fr', '07.39.49.77.92', 'amelendez', 3, 41, 41), -- username : amelendez 
-    ('14474347', 'Pam', 'Wong', 'pwong@iut.univ-paris8.fr', '07.66.00.76.22', 'pwong', 3, 41, 41), -- username : pwong 
-    ('87511457', 'Phillip', 'Barker', 'pbarker@iut.univ-paris8.fr', '06.83.32.41.49', 'pbarker', 3, 41, 41), -- username : pbarker 
-    ('09428510', 'Alejandro', 'Edwards', 'aedwards@iut.univ-paris8.fr', '06.19.32.75.27', 'aedwards', 3, 41, 41), -- username : aedwards 
-    ('24260016', 'Evan', 'Johnston', 'ejohnston@iut.univ-paris8.fr', '06.96.65.01.33', 'ejohnston', 3, 41, 41), -- username : ejohnston 
-    ('70429212', 'Jennifer', 'Martin', 'jmartin@iut.univ-paris8.fr', '07.19.48.10.80', 'jmartin', 3, 41, 41), -- username : jmartin 
-    ('80413637', 'Kathleen', 'Lara', 'klara@iut.univ-paris8.fr', '07.29.71.41.15', 'klara', 3, 41, 41), -- username : klara 
-    ('25169355', 'Kerry', 'Nolan', 'knolan1@iut.univ-paris8.fr', '06.45.79.89.47', 'knolan1', 3, 41, 41), -- username : knolan1 
-    ('22271531', 'Denise', 'Evans', 'devans@iut.univ-paris8.fr', '06.30.04.08.11', 'devans', 3, 41, 85), -- username : devans 
-    ('38959728', 'Danielle', 'Jones', 'djones1@iut.univ-paris8.fr', '06.30.50.70.40', 'djones1', 3, 41, 85), -- username : djones1 
-    ('44031381', 'Kathleen', 'Lee', 'klee1@iut.univ-paris8.fr', '07.57.58.31.94', 'klee1', 3, 41, 85), -- username : klee1 
-    ('36502621', 'Christopher', 'Matthews', 'cmatthews@iut.univ-paris8.fr', '06.56.19.25.12', 'cmatthews', 3, 41, 85), -- username : cmatthews 
-    ('66709929', 'Daniel', 'Griffin', 'dgriffin@iut.univ-paris8.fr', '06.57.11.84.47', 'dgriffin', 3, 41, 85), -- username : dgriffin 
-    ('73711545', 'Michael', 'Miller', 'mmiller@iut.univ-paris8.fr', '06.55.51.21.67', 'mmiller', 3, 41, 85), -- username : mmiller 
-    ('09211379', 'Isabel', 'Davenport', 'idavenport@iut.univ-paris8.fr', '06.41.39.85.92', 'idavenport', 3, 41, 85), -- username : idavenport 
-    ('21831631', 'Suzanne', 'Bradley', 'sbradley@iut.univ-paris8.fr', '06.41.04.63.03', 'sbradley', 3, 41, 85), -- username : sbradley 
-    ('88522207', 'Ricardo', 'Galvan', 'rgalvan@iut.univ-paris8.fr', '06.06.58.47.20', 'rgalvan', 3, 41, 85), -- username : rgalvan 
-    ('66022078', 'Matthew', 'Green', 'mgreen@iut.univ-paris8.fr', '06.88.59.01.07', 'mgreen', 3, 41, 85), -- username : mgreen 
-    ('13271760', 'Keith', 'Garcia', 'kgarcia1@iut.univ-paris8.fr', '06.22.33.20.03', 'kgarcia1', 3, 41, 129), -- username : kgarcia1 
-    ('31931016', 'Matthew', 'Berry', 'mberry1@iut.univ-paris8.fr', '07.14.30.36.01', 'mberry1', 3, 41, 129), -- username : mberry1 
-    ('96191561', 'Kenneth', 'Patrick', 'kpatrick@iut.univ-paris8.fr', '06.67.90.79.90', 'kpatrick', 3, 41, 129), -- username : kpatrick 
-    ('63138035', 'Matthew', 'Powell', 'mpowell@iut.univ-paris8.fr', '06.14.13.13.28', 'mpowell', 3, 41, 129), -- username : mpowell 
-    ('05072068', 'Brandon', 'Gilmore', 'bgilmore@iut.univ-paris8.fr', '06.78.58.44.15', 'bgilmore', 3, 41, 129), -- username : bgilmore 
-    ('26574996', 'Joseph', 'Torres', 'jtorres@iut.univ-paris8.fr', '07.40.58.29.44', 'jtorres', 3, 41, 129), -- username : jtorres 
-    ('57583722', 'Sergio', 'Harding', 'sharding@iut.univ-paris8.fr', '07.19.24.84.68', 'sharding', 3, 41, 129), -- username : sharding 
-    ('46393792', 'Chelsea', 'Rivera', 'crivera@iut.univ-paris8.fr', '07.64.33.87.92', 'crivera', 3, 41, 129), -- username : crivera 
-    ('28529513', 'Jamie', 'Eaton', 'jeaton@iut.univ-paris8.fr', '07.80.71.71.26', 'jeaton', 3, 41, 129), -- username : jeaton 
-    ('45101044', 'Daniel', 'Bautista', 'dbautista@iut.univ-paris8.fr', '07.99.51.67.66', 'dbautista', 3, 41, 129), -- username : dbautista 
-    ('97182223', 'Scott', 'Carlson', 'scarlson1@iut.univ-paris8.fr', '06.41.65.59.03', 'scarlson1', 3, 42, 42), -- username : scarlson1 
-    ('12803988', 'Cassandra', 'Carrillo', 'ccarrillo@iut.univ-paris8.fr', '07.55.79.27.21', 'ccarrillo', 3, 42, 42), -- username : ccarrillo 
-    ('72645926', 'Jeffrey', 'Burke', 'jburke@iut.univ-paris8.fr', '06.43.56.01.80', 'jburke', 3, 42, 42), -- username : jburke 
-    ('85327721', 'Kevin', 'Bradley', 'kbradley@iut.univ-paris8.fr', '06.51.66.08.91', 'kbradley', 3, 42, 42), -- username : kbradley 
-    ('39839625', 'Laura', 'Owens', 'lowens@iut.univ-paris8.fr', '07.42.15.46.96', 'lowens', 3, 42, 42), -- username : lowens 
-    ('05046416', 'Joseph', 'Allen', 'jallen@iut.univ-paris8.fr', '06.90.92.94.26', 'jallen', 3, 42, 42), -- username : jallen 
-    ('34975741', 'Mary', 'Johns', 'mjohns@iut.univ-paris8.fr', '07.94.54.24.58', 'mjohns', 3, 42, 42), -- username : mjohns 
-    ('61700128', 'Scott', 'Roberts', 'sroberts@iut.univ-paris8.fr', '07.59.88.11.10', 'sroberts', 3, 42, 42), -- username : sroberts 
-    ('53465820', 'Christopher', 'Cole', 'ccole@iut.univ-paris8.fr', '06.94.94.96.98', 'ccole', 3, 42, 42), -- username : ccole 
-    ('83239826', 'Nicholas', 'Cox', 'ncox@iut.univ-paris8.fr', '07.11.05.39.84', 'ncox', 3, 42, 42), -- username : ncox 
-    ('27682878', 'Lisa', 'Burnett', 'lburnett@iut.univ-paris8.fr', '07.57.32.85.05', 'lburnett', 3, 42, 86), -- username : lburnett 
-    ('94191882', 'Manuel', 'Dunn', 'mdunn@iut.univ-paris8.fr', '07.28.20.49.43', 'mdunn', 3, 42, 86), -- username : mdunn 
-    ('61659801', 'Anthony', 'Riley', 'ariley@iut.univ-paris8.fr', '07.14.38.90.56', 'ariley', 3, 42, 86), -- username : ariley 
-    ('67245791', 'Brenda', 'Bartlett', 'bbartlett@iut.univ-paris8.fr', '07.16.03.32.73', 'bbartlett', 3, 42, 86), -- username : bbartlett 
-    ('61209740', 'Stephanie', 'Velez', 'svelez@iut.univ-paris8.fr', '07.46.75.30.05', 'svelez', 3, 42, 86), -- username : svelez 
-    ('60370156', 'Susan', 'Johnston', 'sjohnston@iut.univ-paris8.fr', '06.66.82.11.34', 'sjohnston', 3, 42, 86), -- username : sjohnston 
-    ('58810260', 'Matthew', 'Brown', 'mbrown@iut.univ-paris8.fr', '06.29.67.11.57', 'mbrown', 3, 42, 86), -- username : mbrown 
-    ('67136347', 'Michael', 'Smith', 'msmith1@iut.univ-paris8.fr', '07.52.10.17.15', 'msmith1', 3, 42, 86), -- username : msmith1 
-    ('97988292', 'Carolyn', 'Ingram', 'cingram@iut.univ-paris8.fr', '06.09.27.67.90', 'cingram', 3, 42, 86), -- username : cingram 
-    ('86046584', 'Madison', 'Rodriguez', 'mrodriguez@iut.univ-paris8.fr', '07.83.47.12.08', 'mrodriguez', 3, 42, 86), -- username : mrodriguez 
-    ('03889614', 'Stephanie', 'Young', 'syoung@iut.univ-paris8.fr', '07.56.18.56.98', 'syoung', 3, 42, 130), -- username : syoung 
-    ('57593565', 'Tammy', 'Matthews', 'tmatthews@iut.univ-paris8.fr', '06.11.42.92.73', 'tmatthews', 3, 42, 130), -- username : tmatthews 
-    ('90162045', 'Shelby', 'Robertson', 'srobertson@iut.univ-paris8.fr', '07.46.56.28.66', 'srobertson', 3, 42, 130), -- username : srobertson 
-    ('61157378', 'Christian', 'Schultz', 'cschultz@iut.univ-paris8.fr', '07.17.54.92.76', 'cschultz', 3, 42, 130), -- username : cschultz 
-    ('48700879', 'Christian', 'Robinson', 'crobinson@iut.univ-paris8.fr', '07.15.36.58.84', 'crobinson', 3, 42, 130), -- username : crobinson 
-    ('22246929', 'Nancy', 'Arnold', 'narnold@iut.univ-paris8.fr', '06.30.10.59.02', 'narnold', 3, 42, 130), -- username : narnold 
-    ('82273541', 'Gary', 'Todd', 'gtodd@iut.univ-paris8.fr', '06.15.11.94.88', 'gtodd', 3, 42, 130), -- username : gtodd 
-    ('11218512', 'Michael', 'Turner', 'mturner@iut.univ-paris8.fr', '06.43.39.96.12', 'mturner', 3, 42, 130), -- username : mturner 
-    ('23427435', 'Jade', 'Hodge', 'jhodge@iut.univ-paris8.fr', '06.99.10.47.24', 'jhodge', 3, 42, 130), -- username : jhodge 
-    ('63812744', 'Jeffrey', 'George', 'jgeorge@iut.univ-paris8.fr', '07.97.12.21.20', 'jgeorge', 3, 42, 130), -- username : jgeorge 
-    ('50096494', 'Drew', 'Collins', 'dcollins@iut.univ-paris8.fr', '06.04.85.73.34', 'dcollins', 3, 32, 32), -- username : dcollins 
-    ('24656168', 'Joseph', 'Mann', 'jmann@iut.univ-paris8.fr', '07.86.95.49.68', 'jmann', 3, 32, 32), -- username : jmann 
-    ('03318362', 'Gabriel', 'Stanley', 'gstanley@iut.univ-paris8.fr', '07.05.63.62.62', 'gstanley', 3, 32, 32), -- username : gstanley 
-    ('72623260', 'Nicholas', 'Fischer', 'nfischer@iut.univ-paris8.fr', '06.08.08.36.61', 'nfischer', 3, 32, 32), -- username : nfischer 
-    ('32604759', 'Thomas', 'Morris', 'tmorris@iut.univ-paris8.fr', '07.11.41.50.44', 'tmorris', 3, 32, 32), -- username : tmorris 
-    ('53075951', 'Kyle', 'Lee', 'klee@iut.univ-paris8.fr', '07.09.99.74.60', 'klee', 3, 32, 32), -- username : klee 
-    ('82217924', 'Whitney', 'Becker', 'wbecker@iut.univ-paris8.fr', '07.49.95.58.58', 'wbecker', 3, 32, 32), -- username : wbecker 
-    ('40041983', 'Dana', 'Singh', 'dsingh@iut.univ-paris8.fr', '07.99.24.92.16', 'dsingh', 3, 32, 32), -- username : dsingh 
-    ('34257159', 'Michael', 'Carr', 'mcarr@iut.univ-paris8.fr', '07.20.28.33.62', 'mcarr', 3, 32, 32), -- username : mcarr 
-    ('48074989', 'James', 'Bowers', 'jbowers@iut.univ-paris8.fr', '07.02.78.38.70', 'jbowers', 3, 32, 32), -- username : jbowers 
-    ('09864878', 'Linda', 'Wallace', 'lwallace@iut.univ-paris8.fr', '06.94.54.83.55', 'lwallace', 3, 32, 76), -- username : lwallace 
-    ('00448365', 'Mary', 'Williams', 'mwilliams1@iut.univ-paris8.fr', '07.00.48.01.96', 'mwilliams1', 3, 32, 76), -- username : mwilliams1 
-    ('00529996', 'Evelyn', 'Coleman', 'ecoleman@iut.univ-paris8.fr', '06.71.87.35.85', 'ecoleman', 3, 32, 76), -- username : ecoleman 
-    ('28927531', 'Jill', 'Brown', 'jbrown@iut.univ-paris8.fr', '07.82.78.79.85', 'jbrown', 3, 32, 76), -- username : jbrown 
-    ('43444697', 'Matthew', 'Smith', 'msmith@iut.univ-paris8.fr', '06.03.21.32.55', 'msmith', 3, 32, 76), -- username : msmith 
-    ('60564055', 'Melissa', 'Gilbert', 'mgilbert@iut.univ-paris8.fr', '06.36.64.18.02', 'mgilbert', 3, 32, 76), -- username : mgilbert 
-    ('44653053', 'Craig', 'Walker', 'cwalker@iut.univ-paris8.fr', '06.12.74.49.48', 'cwalker', 3, 32, 76), -- username : cwalker 
-    ('48112271', 'Brooke', 'Anderson', 'banderson2@iut.univ-paris8.fr', '07.38.64.25.31', 'banderson2', 3, 32, 76), -- username : banderson2 
-    ('57917835', 'Drew', 'Smith', 'dsmith@iut.univ-paris8.fr', '06.30.47.59.78', 'dsmith', 3, 32, 76), -- username : dsmith 
-    ('25658512', 'Brian', 'Wise', 'bwise@iut.univ-paris8.fr', '06.32.44.57.66', 'bwise', 3, 32, 76), -- username : bwise 
-    ('24289612', 'Melissa', 'Jones', 'mjones3@iut.univ-paris8.fr', '06.31.24.22.86', 'mjones3', 3, 32, 120), -- username : mjones3 
-    ('63441701', 'Robert', 'Mendez', 'rmendez@iut.univ-paris8.fr', '07.71.18.12.78', 'rmendez', 3, 32, 120), -- username : rmendez 
-    ('04815293', 'Brian', 'Anderson', 'banderson1@iut.univ-paris8.fr', '06.77.55.50.70', 'banderson1', 3, 32, 120), -- username : banderson1 
-    ('68837672', 'Andrew', 'Harrison', 'aharrison@iut.univ-paris8.fr', '06.51.99.44.59', 'aharrison', 3, 32, 120), -- username : aharrison 
-    ('44228074', 'Roy', 'Daniels', 'rdaniels@iut.univ-paris8.fr', '06.62.79.47.40', 'rdaniels', 3, 32, 120), -- username : rdaniels 
-    ('56547951', 'Donna', 'Mcclain', 'dmcclain@iut.univ-paris8.fr', '06.38.64.61.94', 'dmcclain', 3, 32, 120), -- username : dmcclain 
-    ('34235172', 'Amber', 'Williams', 'awilliams@iut.univ-paris8.fr', '06.92.82.84.61', 'awilliams', 3, 32, 120), -- username : awilliams 
-    ('81792476', 'David', 'Yang', 'dyang@iut.univ-paris8.fr', '07.39.93.51.17', 'dyang', 3, 32, 120), -- username : dyang 
-    ('16695334', 'Richard', 'Harris', 'rharris@iut.univ-paris8.fr', '07.87.46.59.65', 'rharris', 3, 32, 120), -- username : rharris 
-    ('42029038', 'Charlene', 'Peters', 'cpeters@iut.univ-paris8.fr', '07.74.78.14.29', 'cpeters', 3, 32, 120), -- username : cpeters 
-    ('72934906', 'Ronald', 'Lee', 'rlee@iut.univ-paris8.fr', '06.91.42.78.21', 'rlee', 3, 31, 31), -- username : rlee 
-    ('90471047', 'Megan', 'Edwards', 'medwards@iut.univ-paris8.fr', '07.79.58.58.40', 'medwards', 3, 31, 31), -- username : medwards 
-    ('71538399', 'Vincent', 'Williams', 'vwilliams@iut.univ-paris8.fr', '07.20.32.35.68', 'vwilliams', 3, 31, 31), -- username : vwilliams 
-    ('04216737', 'Charlene', 'Sullivan', 'csullivan@iut.univ-paris8.fr', '06.67.05.76.09', 'csullivan', 3, 31, 31), -- username : csullivan 
-    ('31681059', 'David', 'Tyler', 'dtyler@iut.univ-paris8.fr', '07.91.96.89.17', 'dtyler', 3, 31, 31), -- username : dtyler 
-    ('55077420', 'Sharon', 'Gonzalez', 'sgonzalez@iut.univ-paris8.fr', '07.96.02.95.22', 'sgonzalez', 3, 31, 31), -- username : sgonzalez 
-    ('56787478', 'Kathleen', 'Ramos', 'kramos@iut.univ-paris8.fr', '06.56.70.94.24', 'kramos', 3, 31, 31), -- username : kramos 
-    ('24462723', 'Nicole', 'Robinson', 'nrobinson@iut.univ-paris8.fr', '06.32.47.99.07', 'nrobinson', 3, 31, 31), -- username : nrobinson 
-    ('95227604', 'Traci', 'Rose', 'trose@iut.univ-paris8.fr', '07.99.69.13.92', 'trose', 3, 31, 31), -- username : trose 
-    ('70313445', 'Jean', 'Gaines', 'jgaines@iut.univ-paris8.fr', '06.93.39.89.26', 'jgaines', 3, 31, 31), -- username : jgaines 
-    ('93024847', 'Karla', 'Reyes', 'kreyes@iut.univ-paris8.fr', '06.67.23.59.74', 'kreyes', 3, 31, 75), -- username : kreyes 
-    ('55947953', 'Brett', 'Ellis', 'bellis@iut.univ-paris8.fr', '06.03.47.90.28', 'bellis', 3, 31, 75), -- username : bellis 
-    ('46435781', 'Daniel', 'Taylor', 'dtaylor@iut.univ-paris8.fr', '07.16.84.14.85', 'dtaylor', 3, 31, 75), -- username : dtaylor 
-    ('54593169', 'Nicholas', 'Brown', 'nbrown@iut.univ-paris8.fr', '06.64.92.76.91', 'nbrown', 3, 31, 75), -- username : nbrown 
-    ('69641181', 'Kathy', 'Bauer', 'kbauer@iut.univ-paris8.fr', '07.62.24.12.07', 'kbauer', 3, 31, 75), -- username : kbauer 
-    ('31301010', 'Samuel', 'Brady', 'sbrady@iut.univ-paris8.fr', '07.61.41.15.65', 'sbrady', 3, 31, 75), -- username : sbrady 
-    ('63065792', 'Rebecca', 'Guzman', 'rguzman@iut.univ-paris8.fr', '06.35.53.00.45', 'rguzman', 3, 31, 75), -- username : rguzman 
-    ('62904728', 'Christopher', 'Jackson', 'cjackson@iut.univ-paris8.fr', '07.31.01.33.10', 'cjackson', 3, 31, 75), -- username : cjackson 
-    ('13736525', 'David', 'Robertson', 'drobertson@iut.univ-paris8.fr', '06.72.35.47.02', 'drobertson', 3, 31, 75), -- username : drobertson 
-    ('02701805', 'Alicia', 'Chen', 'achen@iut.univ-paris8.fr', '06.06.55.28.06', 'achen', 3, 31, 75), -- username : achen 
-    ('93748757', 'Gregory', 'Miller', 'gmiller@iut.univ-paris8.fr', '07.60.88.14.46', 'gmiller', 3, 31, 119), -- username : gmiller 
-    ('14175404', 'Stephanie', 'Mcintyre', 'smcintyre@iut.univ-paris8.fr', '07.86.73.95.83', 'smcintyre', 3, 31, 119), -- username : smcintyre 
-    ('65514984', 'Meghan', 'Moreno', 'mmoreno@iut.univ-paris8.fr', '07.04.66.16.28', 'mmoreno', 3, 31, 119), -- username : mmoreno 
-    ('43447127', 'Doris', 'Jones', 'djones@iut.univ-paris8.fr', '06.67.67.50.87', 'djones', 3, 31, 119), -- username : djones 
-    ('60889620', 'Michael', 'Gibbs', 'mgibbs@iut.univ-paris8.fr', '07.28.98.38.46', 'mgibbs', 3, 31, 119), -- username : mgibbs 
-    ('24912056', 'Connie', 'Stewart', 'cstewart1@iut.univ-paris8.fr', '06.22.09.37.36', 'cstewart1', 3, 31, 119), -- username : cstewart1 
-    ('38995733', 'Lisa', 'Carey', 'lcarey@iut.univ-paris8.fr', '07.63.76.01.65', 'lcarey', 3, 31, 119), -- username : lcarey 
-    ('11316402', 'Mike', 'Nelson', 'mnelson@iut.univ-paris8.fr', '06.95.18.70.99', 'mnelson', 3, 31, 119), -- username : mnelson 
-    ('21859484', 'Brian', 'Mitchell', 'bmitchell@iut.univ-paris8.fr', '06.05.90.80.86', 'bmitchell', 3, 31, 119), -- username : bmitchell 
-    ('27391560', 'Joshua', 'Merritt', 'jmerritt@iut.univ-paris8.fr', '07.04.34.04.98', 'jmerritt', 3, 31, 119), -- username : jmerritt 
-    ('70679823', 'Brittney', 'Brown', 'bbrown@iut.univ-paris8.fr', '07.54.66.68.27', 'bbrown', 3, 33, 33), -- username : bbrown 
-    ('31282791', 'Jennifer', 'Ward', 'jward@iut.univ-paris8.fr', '06.99.83.92.82', 'jward', 3, 33, 33), -- username : jward 
-    ('21028309', 'Michael', 'Bennett', 'mbennett@iut.univ-paris8.fr', '06.10.51.07.47', 'mbennett', 3, 33, 33), -- username : mbennett 
-    ('32375523', 'Martin', 'King', 'mking@iut.univ-paris8.fr', '07.39.37.58.00', 'mking', 3, 33, 33), -- username : mking 
-    ('68098590', 'Evan', 'Osborne', 'eosborne@iut.univ-paris8.fr', '06.07.52.22.08', 'eosborne', 3, 33, 33), -- username : eosborne 
-    ('64737382', 'Sean', 'Chung', 'schung@iut.univ-paris8.fr', '06.87.83.85.06', 'schung', 3, 33, 33), -- username : schung 
-    ('22229855', 'Brenda', 'Mcclure', 'bmcclure@iut.univ-paris8.fr', '06.69.34.00.41', 'bmcclure', 3, 33, 33), -- username : bmcclure 
-    ('47923286', 'Diana', 'Gilbert', 'dgilbert@iut.univ-paris8.fr', '06.13.07.75.74', 'dgilbert', 3, 33, 33), -- username : dgilbert 
-    ('74256995', 'William', 'Miller', 'wmiller@iut.univ-paris8.fr', '07.16.30.71.59', 'wmiller', 3, 33, 33), -- username : wmiller 
-    ('81386395', 'Shelly', 'Walsh', 'swalsh@iut.univ-paris8.fr', '07.35.45.68.94', 'swalsh', 3, 33, 33), -- username : swalsh 
-    ('24336587', 'Robert', 'Holden', 'rholden@iut.univ-paris8.fr', '07.43.37.17.73', 'rholden', 3, 33, 77), -- username : rholden 
-    ('73457420', 'Dawn', 'Cox', 'dcox@iut.univ-paris8.fr', '07.92.47.87.11', 'dcox', 3, 33, 77), -- username : dcox 
-    ('06978739', 'Matthew', 'Chavez', 'mchavez@iut.univ-paris8.fr', '07.96.61.79.53', 'mchavez', 3, 33, 77), -- username : mchavez 
-    ('69500164', 'Cameron', 'Mckinney', 'cmckinney@iut.univ-paris8.fr', '07.54.70.37.54', 'cmckinney', 3, 33, 77), -- username : cmckinney 
-    ('68796671', 'Richard', 'Tanner', 'rtanner@iut.univ-paris8.fr', '06.22.12.03.97', 'rtanner', 3, 33, 77), -- username : rtanner 
-    ('68615248', 'Belinda', 'Strong', 'bstrong@iut.univ-paris8.fr', '06.98.91.99.92', 'bstrong', 3, 33, 77), -- username : bstrong 
-    ('76587719', 'Tracey', 'Rodriguez', 'trodriguez@iut.univ-paris8.fr', '07.63.32.68.63', 'trodriguez', 3, 33, 77), -- username : trodriguez 
-    ('38461204', 'Sheila', 'Oneill', 'soneill@iut.univ-paris8.fr', '06.08.05.07.89', 'soneill', 3, 33, 77), -- username : soneill 
-    ('72467108', 'David', 'Rosales', 'drosales@iut.univ-paris8.fr', '06.89.31.06.00', 'drosales', 3, 33, 77), -- username : drosales 
-    ('80033328', 'Sharon', 'Solis', 'ssolis@iut.univ-paris8.fr', '06.82.48.82.84', 'ssolis', 3, 33, 77), -- username : ssolis 
-    ('05188739', 'Jamie', 'Smith', 'jsmith@iut.univ-paris8.fr', '07.81.84.54.85', 'jsmith', 3, 33, 121), -- username : jsmith 
-    ('72639053', 'Pamela', 'Stephens', 'pstephens@iut.univ-paris8.fr', '06.53.48.24.49', 'pstephens', 3, 33, 121), -- username : pstephens 
-    ('47267137', 'Cory', 'Johnson', 'cjohnson@iut.univ-paris8.fr', '07.75.80.89.49', 'cjohnson', 3, 33, 121), -- username : cjohnson 
-    ('27694428', 'Debbie', 'Griffith', 'dgriffith@iut.univ-paris8.fr', '07.27.40.63.28', 'dgriffith', 3, 33, 121), -- username : dgriffith 
-    ('79980222', 'Kelly', 'Jackson', 'kjackson@iut.univ-paris8.fr', '07.03.04.25.38', 'kjackson', 3, 33, 121), -- username : kjackson 
-    ('84100021', 'Shelby', 'Castro', 'scastro@iut.univ-paris8.fr', '07.32.98.63.69', 'scastro', 3, 33, 121), -- username : scastro 
-    ('58277882', 'James', 'Manning', 'jmanning1@iut.univ-paris8.fr', '06.64.10.65.42', 'jmanning1', 3, 33, 121), -- username : jmanning1 
-    ('65010221', 'David', 'Kim', 'dkim@iut.univ-paris8.fr', '07.95.15.90.78', 'dkim', 3, 33, 121), -- username : dkim 
-    ('73371683', 'Kevin', 'Murphy', 'kmurphy@iut.univ-paris8.fr', '07.06.62.57.93', 'kmurphy', 3, 33, 121), -- username : kmurphy 
-    ('39387847', 'Tammy', 'Freeman', 'tfreeman@iut.univ-paris8.fr', '06.73.19.64.00', 'tfreeman', 3, 33, 121), -- username : tfreeman 
-    ('29996849', 'Jennifer', 'Manning', 'jmanning@iut.univ-paris8.fr', '07.25.96.76.80', 'jmanning', 3, 8, 8), -- username : jmanning 
-    ('19118587', 'Jared', 'Kelly', 'jkelly@iut.univ-paris8.fr', '06.44.22.69.32', 'jkelly', 3, 8, 8), -- username : jkelly 
-    ('79808851', 'Russell', 'Joseph', 'rjoseph@iut.univ-paris8.fr', '07.32.19.56.68', 'rjoseph', 3, 8, 8), -- username : rjoseph 
-    ('99642991', 'Amber', 'Nelson', 'anelson@iut.univ-paris8.fr', '06.30.67.63.10', 'anelson', 3, 8, 8), -- username : anelson 
-    ('61109811', 'Erica', 'Williams', 'ewilliams@iut.univ-paris8.fr', '07.33.02.27.06', 'ewilliams', 3, 8, 8), -- username : ewilliams 
-    ('23536743', 'Haley', 'Duke', 'hduke@iut.univ-paris8.fr', '07.92.07.18.06', 'hduke', 3, 8, 8), -- username : hduke 
-    ('71420286', 'Margaret', 'Farley', 'mfarley@iut.univ-paris8.fr', '07.01.94.90.56', 'mfarley', 3, 8, 8), -- username : mfarley 
-    ('86252357', 'Philip', 'Hebert', 'phebert1@iut.univ-paris8.fr', '07.65.55.51.19', 'phebert1', 3, 8, 8), -- username : phebert1 
-    ('41222896', 'Joanne', 'Thomas', 'jthomas@iut.univ-paris8.fr', '06.63.82.90.39', 'jthomas', 3, 8, 8), -- username : jthomas 
-    ('67777962', 'Pamela', 'Flynn', 'pflynn@iut.univ-paris8.fr', '07.70.27.39.93', 'pflynn', 3, 8, 8), -- username : pflynn 
-    ('81429502', 'Nicole', 'Jones', 'njones@iut.univ-paris8.fr', '07.26.24.07.51', 'njones', 3, 8, 52), -- username : njones 
-    ('30774932', 'Elizabeth', 'Anderson', 'eanderson@iut.univ-paris8.fr', '07.62.90.65.80', 'eanderson', 3, 8, 52), -- username : eanderson 
-    ('90522460', 'Daniel', 'Curtis', 'dcurtis@iut.univ-paris8.fr', '07.02.08.67.87', 'dcurtis', 3, 8, 52), -- username : dcurtis 
-    ('53104247', 'Lisa', 'Hicks', 'lhicks@iut.univ-paris8.fr', '07.22.45.03.15', 'lhicks', 3, 8, 52), -- username : lhicks 
-    ('84184073', 'Gerald', 'White', 'gwhite@iut.univ-paris8.fr', '06.87.61.57.61', 'gwhite', 3, 8, 52), -- username : gwhite 
-    ('13460070', 'Holly', 'Rivera', 'hrivera@iut.univ-paris8.fr', '06.72.35.76.70', 'hrivera', 3, 8, 52), -- username : hrivera 
-    ('83788155', 'Joseph', 'Best', 'jbest@iut.univ-paris8.fr', '06.30.92.71.82', 'jbest', 3, 8, 52), -- username : jbest 
-    ('39133598', 'Michael', 'Garza', 'mgarza@iut.univ-paris8.fr', '07.67.37.99.66', 'mgarza', 3, 8, 52), -- username : mgarza 
-    ('56809928', 'Jared', 'Bowman', 'jbowman@iut.univ-paris8.fr', '06.42.06.16.18', 'jbowman', 3, 8, 52), -- username : jbowman 
-    ('93089735', 'Kevin', 'Baker', 'kbaker@iut.univ-paris8.fr', '07.76.08.06.68', 'kbaker', 3, 8, 52), -- username : kbaker 
-    ('55818582', 'Robert', 'Miller', 'rmiller1@iut.univ-paris8.fr', '06.67.54.87.47', 'rmiller1', 3, 8, 96), -- username : rmiller1 
-    ('44038549', 'Joshua', 'Stephens', 'jstephens@iut.univ-paris8.fr', '06.99.42.77.57', 'jstephens', 3, 8, 96), -- username : jstephens 
-    ('06709994', 'Claudia', 'Davidson', 'cdavidson@iut.univ-paris8.fr', '07.93.60.15.44', 'cdavidson', 3, 8, 96), -- username : cdavidson 
-    ('79810703', 'Kimberly', 'Rose', 'krose@iut.univ-paris8.fr', '06.25.05.35.01', 'krose', 3, 8, 96), -- username : krose 
-    ('03802564', 'Claire', 'Moore', 'cmoore1@iut.univ-paris8.fr', '06.55.14.37.31', 'cmoore1', 3, 8, 96), -- username : cmoore1 
-    ('38058755', 'Aaron', 'Gonzales', 'agonzales1@iut.univ-paris8.fr', '06.40.01.10.15', 'agonzales1', 3, 8, 96), -- username : agonzales1 
-    ('79548551', 'Jonathan', 'Fischer', 'jfischer1@iut.univ-paris8.fr', '07.54.71.12.30', 'jfischer1', 3, 8, 96), -- username : jfischer1 
-    ('84073931', 'Scott', 'Jordan', 'sjordan@iut.univ-paris8.fr', '07.33.29.68.90', 'sjordan', 3, 8, 96), -- username : sjordan 
-    ('82072017', 'Tiffany', 'Burke', 'tburke@iut.univ-paris8.fr', '06.65.69.17.81', 'tburke', 3, 8, 96), -- username : tburke 
-    ('49427545', 'Lauren', 'Hughes', 'lhughes@iut.univ-paris8.fr', '06.15.47.03.35', 'lhughes', 3, 8,96) -- username : llhughes 
+    ('44886687', 'Walter', 'Patrick', 'wpatrick@iut.univ-paris8.fr', '07.09.35.73.41', 'wpatrick', 3, 19, 63) -- username : wpatrick 
+    -- ('39208918', 'Marcus', 'Green', 'mgreen1@iut.univ-paris8.fr', '07.62.35.58.52', 'mgreen1', 3, 19, 63), -- username : mgreen1 
+    -- ('41267751', 'Carolyn', 'Lopez', 'clopez@iut.univ-paris8.fr', '07.84.95.86.29', 'clopez', 3, 19, 63), -- username : clopez 
+    -- ('43841024', 'Darlene', 'Wood', 'dwood@iut.univ-paris8.fr', '06.17.49.27.15', 'dwood', 3, 19, 63), -- username : dwood 
+    -- ('96448943', 'Sandra', 'Shelton', 'sshelton@iut.univ-paris8.fr', '06.62.63.48.08', 'sshelton', 3, 19, 63), -- username : sshelton 
+    -- ('44363671', 'Jorge', 'Richards', 'jrichards@iut.univ-paris8.fr', '06.87.48.73.68', 'jrichards', 3, 19, 63), -- username : jrichards 
+    -- ('86088518', 'Ann', 'Cox', 'acox@iut.univ-paris8.fr', '07.64.98.24.40', 'acox', 3, 19, 63), -- username : acox 
+    -- ('11002964', 'Anthony', 'Smith', 'asmith@iut.univ-paris8.fr', '07.66.99.65.46', 'asmith', 3, 19, 63), -- username : asmith 
+    -- ('46994345', 'Donna', 'Lee', 'dlee@iut.univ-paris8.fr', '06.74.23.50.83', 'dlee', 3, 19, 63), -- username : dlee 
+    -- ('08892453', 'Caroline', 'Jones', 'cjones1@iut.univ-paris8.fr', '06.62.86.15.36', 'cjones1', 3, 19, 63), -- username : cjones1 
+    -- ('03800421', 'Matthew', 'Davis', 'mdavis@iut.univ-paris8.fr', '07.93.39.45.03', 'mdavis', 3, 19, 107), -- username : mdavis 
+    -- ('88648035', 'Amy', 'Arnold', 'aarnold@iut.univ-paris8.fr', '07.17.80.55.05', 'aarnold', 3, 19, 107), -- username : aarnold 
+    -- ('07368189', 'David', 'Dixon', 'ddixon@iut.univ-paris8.fr', '07.33.62.74.14', 'ddixon', 3, 19, 107), -- username : ddixon 
+    -- ('00242434', 'Andres', 'Roberts', 'aroberts@iut.univ-paris8.fr', '07.80.11.07.58', 'aroberts', 3, 19, 107), -- username : aroberts 
+    -- ('85408922', 'Edward', 'Ellis', 'eellis@iut.univ-paris8.fr', '07.53.27.88.68', 'eellis', 3, 19, 107), -- username : eellis 
+    -- ('12261046', 'Jacob', 'Rose', 'jrose@iut.univ-paris8.fr', '06.39.49.05.85', 'jrose', 3, 19, 107), -- username : jrose 
+    -- ('97197652', 'Patrick', 'Martinez', 'pmartinez@iut.univ-paris8.fr', '06.04.53.79.17', 'pmartinez', 3, 19, 107), -- username : pmartinez 
+    -- ('19229921', 'Nichole', 'Lewis', 'nlewis@iut.univ-paris8.fr', '07.22.32.75.63', 'nlewis', 3, 19, 107), -- username : nlewis 
+    -- ('58934894', 'Stephanie', 'Carlson', 'scarlson2@iut.univ-paris8.fr', '06.55.63.89.79', 'scarlson2', 3, 19, 107), -- username : scarlson2 
+    -- ('33798546', 'Gary', 'Keller', 'gkeller@iut.univ-paris8.fr', '07.32.18.66.95', 'gkeller', 3, 19, 107), -- username : gkeller 
+    -- ('93888181', 'Tina', 'Bowers', 'tbowers@iut.univ-paris8.fr', '06.00.41.80.28', 'tbowers', 3, 21, 21), -- username : tbowers 
+    -- ('89963978', 'Kelli', 'George', 'kgeorge@iut.univ-paris8.fr', '07.41.26.75.25', 'kgeorge', 3, 21, 21), -- username : kgeorge 
+    -- ('22150393', 'Laura', 'Rosales', 'lrosales@iut.univ-paris8.fr', '06.72.07.81.16', 'lrosales', 3, 21, 21), -- username : lrosales 
+    -- ('75839542', 'Derrick', 'Chang', 'dchang@iut.univ-paris8.fr', '07.47.04.19.25', 'dchang', 3, 21, 21), -- username : dchang 
+    -- ('81130001', 'Brent', 'Hernandez', 'bhernandez@iut.univ-paris8.fr', '07.38.51.91.91', 'bhernandez', 3, 21, 21), -- username : bhernandez 
+    -- ('51834009', 'Kirsten', 'Bender', 'kbender@iut.univ-paris8.fr', '06.69.53.06.54', 'kbender', 3, 21, 21), -- username : kbender 
+    -- ('88840409', 'Anna', 'Boyd', 'aboyd@iut.univ-paris8.fr', '06.94.01.49.19', 'aboyd', 3, 21, 21), -- username : aboyd 
+    -- ('78986442', 'Catherine', 'Gutierrez', 'cgutierrez@iut.univ-paris8.fr', '07.19.19.25.74', 'cgutierrez', 3, 21, 21), -- username : cgutierrez 
+    -- ('19719715', 'Elizabeth', 'Baker', 'ebaker@iut.univ-paris8.fr', '07.81.05.43.64', 'ebaker', 3, 21, 21), -- username : ebaker 
+    -- ('09584415', 'Vanessa', 'Fitzpatrick', 'vfitzpatrick@iut.univ-paris8.fr', '06.98.00.59.39', 'vfitzpatrick', 3, 21, 21), -- username : vfitzpatrick 
+    -- ('81405088', 'Tammy', 'Gonzales', 'tgonzales@iut.univ-paris8.fr', '07.59.93.59.80', 'tgonzales', 3, 21, 65), -- username : tgonzales 
+    -- ('27213203', 'Brandon', 'Smith', 'bsmith1@iut.univ-paris8.fr', '07.37.30.15.39', 'bsmith1', 3, 21, 65), -- username : bsmith1 
+    -- ('84180170', 'Jennifer', 'Jones', 'jjones@iut.univ-paris8.fr', '06.37.62.79.85', 'jjones', 3, 21, 65), -- username : jjones 
+    -- ('10404693', 'Kevin', 'Hall', 'khall@iut.univ-paris8.fr', '06.82.71.83.02', 'khall', 3, 21, 65), -- username : khall 
+    -- ('43037888', 'Andrew', 'Erickson', 'aerickson@iut.univ-paris8.fr', '06.83.64.22.67', 'aerickson', 3, 21, 65), -- username : aerickson 
+    -- ('33999197', 'Jay', 'Chambers', 'jchambers@iut.univ-paris8.fr', '06.80.08.61.59', 'jchambers', 3, 21, 65), -- username : jchambers 
+    -- ('49007663', 'Wendy', 'Fischer', 'wfischer@iut.univ-paris8.fr', '06.15.40.15.09', 'wfischer', 3, 21, 65), -- username : wfischer 
+    -- ('53777556', 'Jennifer', 'Webb', 'jwebb@iut.univ-paris8.fr', '06.94.07.34.36', 'jwebb', 3, 21, 65), -- username : jwebb 
+    -- ('92516761', 'Stephen', 'Smith', 'ssmith@iut.univ-paris8.fr', '07.23.16.54.88', 'ssmith', 3, 21, 65), -- username : ssmith 
+    -- ('59588759', 'Jesus', 'Harrington', 'jharrington@iut.univ-paris8.fr', '07.95.44.30.43', 'jharrington', 3, 21, 65), -- username : jharrington 
+    -- ('26380664', 'Lee', 'Sullivan', 'lsullivan@iut.univ-paris8.fr', '06.77.86.38.90', 'lsullivan', 3, 21, 109), -- username : lsullivan 
+    -- ('43886059', 'Matthew', 'Weaver', 'mweaver@iut.univ-paris8.fr', '07.15.33.20.83', 'mweaver', 3, 21, 109), -- username : mweaver 
+    -- ('84854071', 'Michael', 'Haney', 'mhaney@iut.univ-paris8.fr', '07.51.97.20.50', 'mhaney', 3, 21, 109), -- username : mhaney 
+    -- ('15442041', 'Sarah', 'Martin', 'smartin@iut.univ-paris8.fr', '07.62.49.09.98', 'smartin', 3, 21, 109), -- username : smartin 
+    -- ('91248241', 'George', 'Dorsey', 'gdorsey@iut.univ-paris8.fr', '06.48.78.97.38', 'gdorsey', 3, 21, 109), -- username : gdorsey 
+    -- ('24478502', 'Jose', 'Griffith', 'jgriffith@iut.univ-paris8.fr', '06.13.26.97.84', 'jgriffith', 3, 21, 109), -- username : jgriffith 
+    -- ('77501501', 'Kayla', 'Larson', 'klarson@iut.univ-paris8.fr', '06.95.44.59.80', 'klarson', 3, 21, 109), -- username : klarson 
+    -- ('22377605', 'Steven', 'Liu', 'sliu@iut.univ-paris8.fr', '06.12.67.54.68', 'sliu', 3, 21, 109), -- username : sliu 
+    -- ('83308588', 'Carlos', 'Savage', 'csavage@iut.univ-paris8.fr', '06.34.20.33.82', 'csavage', 3, 21, 109), -- username : csavage 
+    -- ('32354508', 'Joseph', 'Horn', 'jhorn@iut.univ-paris8.fr', '07.07.88.51.07', 'jhorn', 3, 21, 109), -- username : jhorn 
+    -- ('61908378', 'Robert', 'Harrington', 'rharrington@iut.univ-paris8.fr', '06.33.71.40.39', 'rharrington', 3, 20, 20), -- username : rharrington 
+    -- ('83710708', 'Levi', 'Browning', 'lbrowning@iut.univ-paris8.fr', '07.88.29.29.64', 'lbrowning', 3, 20, 20), -- username : lbrowning 
+    -- ('97077165', 'James', 'Stewart', 'jstewart1@iut.univ-paris8.fr', '07.68.74.94.78', 'jstewart1', 3, 20, 20), -- username : jstewart1 
+    -- ('08238070', 'Kevin', 'Collins', 'kcollins@iut.univ-paris8.fr', '06.20.98.97.03', 'kcollins', 3, 20, 20), -- username : kcollins 
+    -- ('96882277', 'Victoria', 'Pope', 'vpope@iut.univ-paris8.fr', '07.87.54.19.75', 'vpope', 3, 20, 20), -- username : vpope 
+    -- ('63206175', 'Nicole', 'Henderson', 'nhenderson@iut.univ-paris8.fr', '06.60.49.65.17', 'nhenderson', 3, 20, 20), -- username : nhenderson 
+    -- ('74363500', 'Troy', 'Blackwell', 'tblackwell@iut.univ-paris8.fr', '07.37.31.30.10', 'tblackwell', 3, 20, 20), -- username : tblackwell 
+    -- ('78937791', 'Jonathan', 'Cordova', 'jcordova@iut.univ-paris8.fr', '07.11.34.92.59', 'jcordova', 3, 20, 20), -- username : jcordova 
+    -- ('85300873', 'Andrea', 'Farmer', 'afarmer@iut.univ-paris8.fr', '07.05.09.16.66', 'afarmer', 3, 20, 20), -- username : afarmer 
+    -- ('05591751', 'Brian', 'Jones', 'bjones1@iut.univ-paris8.fr', '06.39.47.41.05', 'bjones1', 3, 20, 20), -- username : bjones1 
+    -- ('93898648', 'Lisa', 'Martinez', 'lmartinez@iut.univ-paris8.fr', '06.30.83.11.17', 'lmartinez', 3, 20, 64), -- username : lmartinez 
+    -- ('06451956', 'Kathy', 'Steele', 'ksteele@iut.univ-paris8.fr', '06.23.62.74.92', 'ksteele', 3, 20, 64), -- username : ksteele 
+    -- ('76294129', 'Michael', 'Simmons', 'msimmons@iut.univ-paris8.fr', '06.98.76.28.85', 'msimmons', 3, 20, 64), -- username : msimmons 
+    -- ('20328749', 'William', 'Marshall', 'wmarshall@iut.univ-paris8.fr', '06.56.78.73.36', 'wmarshall', 3, 20, 64), -- username : wmarshall 
+    -- ('66325803', 'Nicole', 'Brown', 'nbrown1@iut.univ-paris8.fr', '06.44.07.87.21', 'nbrown1', 3, 20, 64), -- username : nbrown1 
+    -- ('44405381', 'Paul', 'Blair', 'pblair@iut.univ-paris8.fr', '06.17.58.51.46', 'pblair', 3, 20, 64), -- username : pblair 
+    -- ('03953986', 'Sara', 'Yu', 'syu1@iut.univ-paris8.fr', '07.67.63.22.99', 'syu1', 3, 20, 64), -- username : syu1 
+    -- ('14779874', 'Nicole', 'Thompson', 'nthompson@iut.univ-paris8.fr', '07.68.99.18.51', 'nthompson', 3, 20, 64), -- username : nthompson 
+    -- ('50242408', 'Jennifer', 'Huff', 'jhuff@iut.univ-paris8.fr', '07.01.28.77.01', 'jhuff', 3, 20, 64), -- username : jhuff 
+    -- ('81761741', 'Rebecca', 'Martinez', 'rmartinez@iut.univ-paris8.fr', '07.47.83.58.61', 'rmartinez', 3, 20, 64), -- username : rmartinez 
+    -- ('44477069', 'Joseph', 'Phillips', 'jphillips@iut.univ-paris8.fr', '07.69.73.85.06', 'jphillips', 3, 20, 108), -- username : jphillips 
+    -- ('50392609', 'Lisa', 'Giles', 'lgiles@iut.univ-paris8.fr', '06.04.75.60.45', 'lgiles', 3, 20, 108), -- username : lgiles 
+    -- ('93779867', 'Samantha', 'Johnson', 'sjohnson@iut.univ-paris8.fr', '07.72.97.62.69', 'sjohnson', 3, 20, 108), -- username : sjohnson 
+    -- ('63692133', 'Joseph', 'Austin', 'jaustin@iut.univ-paris8.fr', '07.87.18.33.38', 'jaustin', 3, 20, 108), -- username : jaustin 
+    -- ('33089735', 'Justin', 'Anthony', 'janthony@iut.univ-paris8.fr', '07.86.77.49.39', 'janthony', 3, 20, 108), -- username : janthony 
+    -- ('62174530', 'Calvin', 'Whitaker', 'cwhitaker@iut.univ-paris8.fr', '07.62.60.87.79', 'cwhitaker', 3, 20, 108), -- username : cwhitaker 
+    -- ('66278156', 'Scott', 'Ward', 'sward@iut.univ-paris8.fr', '06.53.00.03.14', 'sward', 3, 20, 108), -- username : sward 
+    -- ('01638329', 'Anne', 'Lawson', 'alawson@iut.univ-paris8.fr', '06.08.60.63.97', 'alawson', 3, 20, 108), -- username : alawson 
+    -- ('77291764', 'Samuel', 'Jensen', 'sjensen@iut.univ-paris8.fr', '06.36.74.96.13', 'sjensen', 3, 20, 108), -- username : sjensen 
+    -- ('28095973', 'Michele', 'Taylor', 'mtaylor@iut.univ-paris8.fr', '06.78.70.18.10', 'mtaylor', 3, 20, 108), -- username : mtaylor 
+    -- ('71171331', 'Katie', 'Hoffman', 'khoffman@iut.univ-paris8.fr', '06.85.18.45.01', 'khoffman', 3, 7, 7), -- username : khoffman 
+    -- ('92525418', 'Christopher', 'Decker', 'cdecker@iut.univ-paris8.fr', '06.06.71.81.47', 'cdecker', 3, 7, 7), -- username : cdecker 
+    -- ('69396379', 'John', 'Stephenson', 'jstephenson@iut.univ-paris8.fr', '06.26.14.81.30', 'jstephenson', 3, 7, 7), -- username : jstephenson 
+    -- ('55229858', 'Aaron', 'Peterson', 'apeterson@iut.univ-paris8.fr', '06.87.25.98.17', 'apeterson', 3, 7, 7), -- username : apeterson 
+    -- ('61020929', 'Scott', 'Washington', 'swashington@iut.univ-paris8.fr', '06.26.12.43.38', 'swashington', 3, 7, 7), -- username : swashington 
+    -- ('13927333', 'Alyssa', 'Hansen', 'ahansen@iut.univ-paris8.fr', '07.43.12.82.41', 'ahansen', 3, 7, 7), -- username : ahansen 
+    -- ('30682289', 'Tina', 'Price', 'tprice@iut.univ-paris8.fr', '07.23.45.07.94', 'tprice', 3, 7, 7), -- username : tprice 
+    -- ('42012946', 'Craig', 'Jackson', 'cjackson1@iut.univ-paris8.fr', '07.64.16.00.78', 'cjackson1', 3, 7, 7), -- username : cjackson1 
+    -- ('79649585', 'Joe', 'Rice', 'jrice@iut.univ-paris8.fr', '06.12.81.68.06', 'jrice', 3, 7, 7), -- username : jrice 
+    -- ('08759451', 'Lisa', 'Hanson', 'lhanson@iut.univ-paris8.fr', '06.00.05.86.59', 'lhanson', 3, 7, 7), -- username : lhanson 
+    -- ('50058415', 'Tonya', 'Olson', 'tolson1@iut.univ-paris8.fr', '07.74.68.98.26', 'tolson1', 3, 7, 95), -- username : tolson1 
+    -- ('44522648', 'Michael', 'Hays', 'mhays@iut.univ-paris8.fr', '06.69.01.02.11', 'mhays', 3, 7, 95), -- username : mhays 
+    -- ('91162399', 'Kristin', 'Mcdonald', 'kmcdonald@iut.univ-paris8.fr', '07.24.27.76.05', 'kmcdonald', 3, 7, 95), -- username : kmcdonald 
+    -- ('09973518', 'Micheal', 'Wade', 'mwade@iut.univ-paris8.fr', '06.83.33.95.24', 'mwade', 3, 7, 95), -- username : mwade 
+    -- ('66633986', 'William', 'Sanchez', 'wsanchez1@iut.univ-paris8.fr', '06.72.52.92.82', 'wsanchez1', 3, 7, 95), -- username : wsanchez1 
+    -- ('18938991', 'Colleen', 'Willis', 'cwillis@iut.univ-paris8.fr', '07.15.37.62.39', 'cwillis', 3, 7, 95), -- username : cwillis 
+    -- ('48575364', 'Andrew', 'Adams', 'aadams@iut.univ-paris8.fr', '06.26.74.71.34', 'aadams', 3, 7, 95), -- username : aadams 
+    -- ('05291189', 'Kyle', 'Wood', 'kwood@iut.univ-paris8.fr', '07.23.84.17.98', 'kwood', 3, 7, 95), -- username : kwood 
+    -- ('99329926', 'Robert', 'Smith', 'rsmith1@iut.univ-paris8.fr', '07.00.29.30.89', 'rsmith1', 3, 7, 95), -- username : rsmith1 
+    -- ('04090157', 'Timothy', 'Cole', 'tcole@iut.univ-paris8.fr', '07.65.96.19.39', 'tcole', 3, 7, 95), -- username : tcole 
+    -- ('40890464', 'Dawn', 'Lynch', 'dlynch@iut.univ-paris8.fr', '06.77.44.48.86', 'dlynch', 3, 7, 95), -- username : dlynch 
+    -- ('74863961', 'Brandon', 'Jones', 'bjones@iut.univ-paris8.fr', '06.10.75.43.69', 'bjones', 3, 7, 95), -- username : bjones 
+    -- ('74938047', 'Jesse', 'Nelson', 'jnelson@iut.univ-paris8.fr', '07.44.92.62.77', 'jnelson', 3, 7, 95), -- username : jnelson 
+    -- ('91105479', 'Laura', 'Rich', 'lrich@iut.univ-paris8.fr', '07.21.25.48.85', 'lrich', 3, 7, 95), -- username : lrich 
+    -- ('51186658', 'Jeffrey', 'Underwood', 'junderwood@iut.univ-paris8.fr', '07.46.42.58.72', 'junderwood', 3, 7, 95), -- username : junderwood 
+    -- ('56902596', 'Brittany', 'Gonzalez', 'bgonzalez@iut.univ-paris8.fr', '07.91.90.14.45', 'bgonzalez', 3, 7, 95), -- username : bgonzalez 
+    -- ('12607510', 'Joshua', 'Bennett', 'jbennett@iut.univ-paris8.fr', '07.14.84.40.83', 'jbennett', 3, 7, 95), -- username : jbennett 
+    -- ('10332673', 'Sonia', 'Hatfield', 'shatfield@iut.univ-paris8.fr', '06.09.16.48.93', 'shatfield', 3, 7, 95), -- username : shatfield 
+    -- ('37894276', 'Margaret', 'Nunez', 'mnunez@iut.univ-paris8.fr', '06.01.25.69.33', 'mnunez', 3, 7, 95), -- username : mnunez 
+    -- ('81577467', 'Shawn', 'Johnston', 'sjohnston1@iut.univ-paris8.fr', '07.52.72.82.70', 'sjohnston1', 3, 7, 95), -- username : sjohnston1 
+    -- ('35923148', 'Kim', 'Noble', 'knoble@iut.univ-paris8.fr', '07.83.89.49.81', 'knoble', 3, 8, 8), -- username : knoble 
+    -- ('43918504', 'Douglas', 'Thomas', 'dthomas@iut.univ-paris8.fr', '06.91.41.11.57', 'dthomas', 3, 8, 8), -- username : dthomas 
+    -- ('07061129', 'Tammy', 'Kim', 'tkim@iut.univ-paris8.fr', '07.95.53.76.89', 'tkim', 3, 8, 8), -- username : tkim 
+    -- ('01207936', 'Rodney', 'Riley', 'rriley@iut.univ-paris8.fr', '07.91.56.33.39', 'rriley', 3, 8, 8), -- username : rriley 
+    -- ('78860691', 'Nicole', 'Richardson', 'nrichardson@iut.univ-paris8.fr', '07.29.68.39.70', 'nrichardson', 3, 8, 8), -- username : nrichardson 
+    -- ('56681208', 'Chase', 'Howard', 'choward@iut.univ-paris8.fr', '07.96.73.45.91', 'choward', 3, 8, 8), -- username : choward 
+    -- ('31978207', 'John', 'Walters', 'jwalters@iut.univ-paris8.fr', '06.31.56.06.54', 'jwalters', 3, 8, 8), -- username : jwalters 
+    -- ('77093347', 'Aaron', 'Mays', 'amays@iut.univ-paris8.fr', '06.00.26.81.03', 'amays', 3, 8, 8), -- username : amays 
+    -- ('92547283', 'Traci', 'Ruiz', 'truiz@iut.univ-paris8.fr', '07.83.10.55.05', 'truiz', 3, 8, 8), -- username : truiz 
+    -- ('68704523', 'Kenneth', 'Golden', 'kgolden@iut.univ-paris8.fr', '07.03.76.31.20', 'kgolden', 3, 8, 8), -- username : kgolden 
+    -- ('29092665', 'Rachel', 'Smith', 'rsmith@iut.univ-paris8.fr', '07.35.52.10.48', 'rsmith', 3, 8, 52), -- username : rsmith 
+    -- ('45819690', 'Stanley', 'Mathews', 'smathews@iut.univ-paris8.fr', '07.74.18.16.42', 'smathews', 3, 8, 52), -- username : smathews 
+    -- ('63768384', 'Cesar', 'Mullen', 'cmullen@iut.univ-paris8.fr', '06.00.17.38.52', 'cmullen', 3, 8, 52), -- username : cmullen 
+    -- ('80125273', 'Claire', 'Giles', 'cgiles@iut.univ-paris8.fr', '06.46.54.86.52', 'cgiles', 3, 8, 52), -- username : cgiles 
+    -- ('54086035', 'Sean', 'Armstrong', 'sarmstrong@iut.univ-paris8.fr', '06.79.74.33.79', 'sarmstrong', 3, 8, 52), -- username : sarmstrong 
+    -- ('65377400', 'Christopher', 'Vazquez', 'cvazquez@iut.univ-paris8.fr', '06.54.18.60.01', 'cvazquez', 3, 8, 52), -- username : cvazquez 
+    -- ('97092125', 'Alexander', 'Guzman', 'aguzman@iut.univ-paris8.fr', '07.34.49.30.60', 'aguzman', 3, 8, 52), -- username : aguzman 
+    -- ('07476441', 'Stuart', 'Ramos', 'sramos@iut.univ-paris8.fr', '07.18.84.65.89', 'sramos', 3, 8, 52), -- username : sramos 
+    -- ('81649581', 'Mary', 'Perez', 'mperez@iut.univ-paris8.fr', '07.01.45.31.44', 'mperez', 3, 8, 52), -- username : mperez 
+    -- ('51360388', 'Thomas', 'Olson', 'tolson@iut.univ-paris8.fr', '07.56.49.69.85', 'tolson', 3, 8, 52), -- username : tolson 
+    -- ('14888268', 'Robert', 'Thompson', 'rthompson@iut.univ-paris8.fr', '06.75.50.80.19', 'rthompson', 3, 8, 96), -- username : rthompson 
+    -- ('22481721', 'Anna', 'Miller', 'amiller@iut.univ-paris8.fr', '06.60.51.52.79', 'amiller', 3, 8, 96), -- username : amiller 
+    -- ('09299054', 'Jeffery', 'Evans', 'jevans@iut.univ-paris8.fr', '07.41.06.90.72', 'jevans', 3, 8, 96), -- username : jevans 
+    -- ('79997541', 'Wendy', 'Coleman', 'wcoleman@iut.univ-paris8.fr', '06.04.49.04.29', 'wcoleman', 3, 8, 96), -- username : wcoleman 
+    -- ('62949265', 'Jodi', 'Campbell', 'jcampbell@iut.univ-paris8.fr', '07.72.14.00.47', 'jcampbell', 3, 8, 96), -- username : jcampbell 
+    -- ('40171718', 'Traci', 'Krueger', 'tkrueger@iut.univ-paris8.fr', '06.13.46.53.56', 'tkrueger', 3, 8, 96), -- username : tkrueger 
+    -- ('49819532', 'Jack', 'Dunn', 'jdunn@iut.univ-paris8.fr', '07.85.58.25.78', 'jdunn', 3, 8, 96), -- username : jdunn 
+    -- ('25896516', 'Deborah', 'Wilson', 'dwilson@iut.univ-paris8.fr', '07.63.67.25.57', 'dwilson', 3, 8, 96), -- username : dwilson 
+    -- ('99258776', 'Philip', 'Robinson', 'probinson@iut.univ-paris8.fr', '07.25.95.24.50', 'probinson', 3, 8, 96), -- username : probinson 
+    -- ('21793015', 'Anna', 'Wilson', 'awilson1@iut.univ-paris8.fr', '07.83.12.61.59', 'awilson1', 3, 8, 96), -- username : awilson1 
+    -- ('48885993', 'Troy', 'Mason', 'tmason@iut.univ-paris8.fr', '07.97.28.22.59', 'tmason', 3, 9, 9), -- username : tmason 
+    -- ('42410621', 'Ashley', 'Ray', 'aray@iut.univ-paris8.fr', '07.32.82.33.23', 'aray', 3, 9, 9), -- username : aray 
+    -- ('09418642', 'Kimberly', 'Chapman', 'kchapman@iut.univ-paris8.fr', '07.75.94.12.23', 'kchapman', 3, 9, 9), -- username : kchapman 
+    -- ('16434563', 'Brett', 'Gray', 'bgray@iut.univ-paris8.fr', '07.39.09.20.38', 'bgray', 3, 9, 9), -- username : bgray 
+    -- ('41805988', 'Dawn', 'Horn', 'dhorn@iut.univ-paris8.fr', '07.76.91.91.95', 'dhorn', 3, 9, 9), -- username : dhorn 
+    -- ('31272225', 'Emily', 'Hernandez', 'ehernandez@iut.univ-paris8.fr', '06.53.87.21.91', 'ehernandez', 3, 9, 9), -- username : ehernandez 
+    -- ('70829776', 'John', 'Stewart', 'jstewart@iut.univ-paris8.fr', '07.45.59.82.00', 'jstewart', 3, 9, 9), -- username : jstewart 
+    -- ('65261957', 'Michael', 'Heath', 'mheath@iut.univ-paris8.fr', '07.72.00.81.73', 'mheath', 3, 9, 9), -- username : mheath 
+    -- ('87550824', 'Julia', 'Long', 'jlong@iut.univ-paris8.fr', '07.17.79.62.63', 'jlong', 3, 9, 9), -- username : jlong 
+    -- ('60881626', 'Wanda', 'Cabrera', 'wcabrera@iut.univ-paris8.fr', '07.67.00.57.26', 'wcabrera', 3, 9, 9), -- username : wcabrera 
+    -- ('09884147', 'Michelle', 'Gordon', 'mgordon@iut.univ-paris8.fr', '07.68.72.40.68', 'mgordon', 3, 9, 53), -- username : mgordon 
+    -- ('44097949', 'Mindy', 'Fisher', 'mfisher@iut.univ-paris8.fr', '06.04.75.42.27', 'mfisher', 3, 9, 53), -- username : mfisher 
+    -- ('52558982', 'Mariah', 'Mckinney', 'mmckinney@iut.univ-paris8.fr', '07.84.50.35.63', 'mmckinney', 3, 9, 53), -- username : mmckinney 
+    -- ('99558832', 'Ralph', 'Graham', 'rgraham@iut.univ-paris8.fr', '06.12.71.68.56', 'rgraham', 3, 9, 53), -- username : rgraham 
+    -- ('97279228', 'Paul', 'Steele', 'psteele@iut.univ-paris8.fr', '07.94.88.18.25', 'psteele', 3, 9, 53), -- username : psteele 
+    -- ('03272737', 'Stephanie', 'Mcgee', 'smcgee@iut.univ-paris8.fr', '06.74.55.42.13', 'smcgee', 3, 9, 53), -- username : smcgee 
+    -- ('73081737', 'Jill', 'Smith', 'jsmith1@iut.univ-paris8.fr', '06.61.52.61.52', 'jsmith1', 3, 9, 53), -- username : jsmith1 
+    -- ('15860207', 'Anna', 'Jones', 'ajones@iut.univ-paris8.fr', '06.60.77.61.28', 'ajones', 3, 9, 53), -- username : ajones 
+    -- ('65901311', 'Tim', 'Turner', 'tturner@iut.univ-paris8.fr', '06.85.95.53.03', 'tturner', 3, 9, 53), -- username : tturner 
+    -- ('45968468', 'Sheri', 'Mcclain', 'smcclain@iut.univ-paris8.fr', '07.95.27.05.78', 'smcclain', 3, 9, 53), -- username : smcclain 
+    -- ('96196467', 'Rachel', 'Fry', 'rfry@iut.univ-paris8.fr', '06.38.90.52.72', 'rfry', 3, 9, 97), -- username : rfry 
+    -- ('00452115', 'Eric', 'Sullivan', 'esullivan@iut.univ-paris8.fr', '07.60.18.94.83', 'esullivan', 3, 9, 97), -- username : esullivan 
+    -- ('18270342', 'Michele', 'Harmon', 'mharmon@iut.univ-paris8.fr', '06.56.15.53.43', 'mharmon', 3, 9, 97), -- username : mharmon 
+    -- ('80946090', 'Jennifer', 'Gill', 'jgill@iut.univ-paris8.fr', '06.42.34.71.39', 'jgill', 3, 9, 97), -- username : jgill 
+    -- ('79539131', 'Vincent', 'Sutton', 'vsutton@iut.univ-paris8.fr', '06.94.87.70.47', 'vsutton', 3, 9, 97), -- username : vsutton 
+    -- ('29588016', 'Tony', 'Mitchell', 'tmitchell@iut.univ-paris8.fr', '07.14.25.85.49', 'tmitchell', 3, 9, 97), -- username : tmitchell 
+    -- ('65489309', 'Nicole', 'Mcdaniel', 'nmcdaniel@iut.univ-paris8.fr', '06.59.86.64.00', 'nmcdaniel', 3, 9, 97), -- username : nmcdaniel 
+    -- ('69306443', 'Nicole', 'Powell', 'npowell@iut.univ-paris8.fr', '07.63.82.13.16', 'npowell', 3, 9, 97), -- username : npowell 
+    -- ('47054174', 'Virginia', 'Hale', 'vhale@iut.univ-paris8.fr', '07.84.72.10.93', 'vhale', 3, 9, 97), -- username : vhale 
+    -- ('92249860', 'Kenneth', 'Smith', 'ksmith@iut.univ-paris8.fr', '06.64.08.74.61', 'ksmith', 3, 9, 97), -- username : ksmith 
+    -- ('63526323', 'Samantha', 'Perez', 'sperez@iut.univ-paris8.fr', '07.07.25.22.58', 'sperez', 3, 41, 41), -- username : sperez 
+    -- ('48738859', 'Christopher', 'Walsh', 'cwalsh@iut.univ-paris8.fr', '07.11.06.90.40', 'cwalsh', 3, 41, 41), -- username : cwalsh 
+    -- ('54409309', 'Angela', 'Melendez', 'amelendez@iut.univ-paris8.fr', '07.39.49.77.92', 'amelendez', 3, 41, 41), -- username : amelendez 
+    -- ('14474347', 'Pam', 'Wong', 'pwong@iut.univ-paris8.fr', '07.66.00.76.22', 'pwong', 3, 41, 41), -- username : pwong 
+    -- ('87511457', 'Phillip', 'Barker', 'pbarker@iut.univ-paris8.fr', '06.83.32.41.49', 'pbarker', 3, 41, 41), -- username : pbarker 
+    -- ('09428510', 'Alejandro', 'Edwards', 'aedwards@iut.univ-paris8.fr', '06.19.32.75.27', 'aedwards', 3, 41, 41), -- username : aedwards 
+    -- ('24260016', 'Evan', 'Johnston', 'ejohnston@iut.univ-paris8.fr', '06.96.65.01.33', 'ejohnston', 3, 41, 41), -- username : ejohnston 
+    -- ('70429212', 'Jennifer', 'Martin', 'jmartin@iut.univ-paris8.fr', '07.19.48.10.80', 'jmartin', 3, 41, 41), -- username : jmartin 
+    -- ('80413637', 'Kathleen', 'Lara', 'klara@iut.univ-paris8.fr', '07.29.71.41.15', 'klara', 3, 41, 41), -- username : klara 
+    -- ('25169355', 'Kerry', 'Nolan', 'knolan1@iut.univ-paris8.fr', '06.45.79.89.47', 'knolan1', 3, 41, 41), -- username : knolan1 
+    -- ('22271531', 'Denise', 'Evans', 'devans@iut.univ-paris8.fr', '06.30.04.08.11', 'devans', 3, 41, 85), -- username : devans 
+    -- ('38959728', 'Danielle', 'Jones', 'djones1@iut.univ-paris8.fr', '06.30.50.70.40', 'djones1', 3, 41, 85), -- username : djones1 
+    -- ('44031381', 'Kathleen', 'Lee', 'klee1@iut.univ-paris8.fr', '07.57.58.31.94', 'klee1', 3, 41, 85), -- username : klee1 
+    -- ('36502621', 'Christopher', 'Matthews', 'cmatthews@iut.univ-paris8.fr', '06.56.19.25.12', 'cmatthews', 3, 41, 85), -- username : cmatthews 
+    -- ('66709929', 'Daniel', 'Griffin', 'dgriffin@iut.univ-paris8.fr', '06.57.11.84.47', 'dgriffin', 3, 41, 85), -- username : dgriffin 
+    -- ('73711545', 'Michael', 'Miller', 'mmiller@iut.univ-paris8.fr', '06.55.51.21.67', 'mmiller', 3, 41, 85), -- username : mmiller 
+    -- ('09211379', 'Isabel', 'Davenport', 'idavenport@iut.univ-paris8.fr', '06.41.39.85.92', 'idavenport', 3, 41, 85), -- username : idavenport 
+    -- ('21831631', 'Suzanne', 'Bradley', 'sbradley@iut.univ-paris8.fr', '06.41.04.63.03', 'sbradley', 3, 41, 85), -- username : sbradley 
+    -- ('88522207', 'Ricardo', 'Galvan', 'rgalvan@iut.univ-paris8.fr', '06.06.58.47.20', 'rgalvan', 3, 41, 85), -- username : rgalvan 
+    -- ('66022078', 'Matthew', 'Green', 'mgreen@iut.univ-paris8.fr', '06.88.59.01.07', 'mgreen', 3, 41, 85), -- username : mgreen 
+    -- ('13271760', 'Keith', 'Garcia', 'kgarcia1@iut.univ-paris8.fr', '06.22.33.20.03', 'kgarcia1', 3, 41, 129), -- username : kgarcia1 
+    -- ('31931016', 'Matthew', 'Berry', 'mberry1@iut.univ-paris8.fr', '07.14.30.36.01', 'mberry1', 3, 41, 129), -- username : mberry1 
+    -- ('96191561', 'Kenneth', 'Patrick', 'kpatrick@iut.univ-paris8.fr', '06.67.90.79.90', 'kpatrick', 3, 41, 129), -- username : kpatrick 
+    -- ('63138035', 'Matthew', 'Powell', 'mpowell@iut.univ-paris8.fr', '06.14.13.13.28', 'mpowell', 3, 41, 129), -- username : mpowell 
+    -- ('05072068', 'Brandon', 'Gilmore', 'bgilmore@iut.univ-paris8.fr', '06.78.58.44.15', 'bgilmore', 3, 41, 129), -- username : bgilmore 
+    -- ('26574996', 'Joseph', 'Torres', 'jtorres@iut.univ-paris8.fr', '07.40.58.29.44', 'jtorres', 3, 41, 129), -- username : jtorres 
+    -- ('57583722', 'Sergio', 'Harding', 'sharding@iut.univ-paris8.fr', '07.19.24.84.68', 'sharding', 3, 41, 129), -- username : sharding 
+    -- ('46393792', 'Chelsea', 'Rivera', 'crivera@iut.univ-paris8.fr', '07.64.33.87.92', 'crivera', 3, 41, 129), -- username : crivera 
+    -- ('28529513', 'Jamie', 'Eaton', 'jeaton@iut.univ-paris8.fr', '07.80.71.71.26', 'jeaton', 3, 41, 129), -- username : jeaton 
+    -- ('45101044', 'Daniel', 'Bautista', 'dbautista@iut.univ-paris8.fr', '07.99.51.67.66', 'dbautista', 3, 41, 129), -- username : dbautista 
+    -- ('97182223', 'Scott', 'Carlson', 'scarlson1@iut.univ-paris8.fr', '06.41.65.59.03', 'scarlson1', 3, 42, 42), -- username : scarlson1 
+    -- ('12803988', 'Cassandra', 'Carrillo', 'ccarrillo@iut.univ-paris8.fr', '07.55.79.27.21', 'ccarrillo', 3, 42, 42), -- username : ccarrillo 
+    -- ('72645926', 'Jeffrey', 'Burke', 'jburke@iut.univ-paris8.fr', '06.43.56.01.80', 'jburke', 3, 42, 42), -- username : jburke 
+    -- ('85327721', 'Kevin', 'Bradley', 'kbradley@iut.univ-paris8.fr', '06.51.66.08.91', 'kbradley', 3, 42, 42), -- username : kbradley 
+    -- ('39839625', 'Laura', 'Owens', 'lowens@iut.univ-paris8.fr', '07.42.15.46.96', 'lowens', 3, 42, 42), -- username : lowens 
+    -- ('05046416', 'Joseph', 'Allen', 'jallen@iut.univ-paris8.fr', '06.90.92.94.26', 'jallen', 3, 42, 42), -- username : jallen 
+    -- ('34975741', 'Mary', 'Johns', 'mjohns@iut.univ-paris8.fr', '07.94.54.24.58', 'mjohns', 3, 42, 42), -- username : mjohns 
+    -- ('61700128', 'Scott', 'Roberts', 'sroberts@iut.univ-paris8.fr', '07.59.88.11.10', 'sroberts', 3, 42, 42), -- username : sroberts 
+    -- ('53465820', 'Christopher', 'Cole', 'ccole@iut.univ-paris8.fr', '06.94.94.96.98', 'ccole', 3, 42, 42), -- username : ccole 
+    -- ('83239826', 'Nicholas', 'Cox', 'ncox@iut.univ-paris8.fr', '07.11.05.39.84', 'ncox', 3, 42, 42), -- username : ncox 
+    -- ('27682878', 'Lisa', 'Burnett', 'lburnett@iut.univ-paris8.fr', '07.57.32.85.05', 'lburnett', 3, 42, 86), -- username : lburnett 
+    -- ('94191882', 'Manuel', 'Dunn', 'mdunn@iut.univ-paris8.fr', '07.28.20.49.43', 'mdunn', 3, 42, 86), -- username : mdunn 
+    -- ('61659801', 'Anthony', 'Riley', 'ariley@iut.univ-paris8.fr', '07.14.38.90.56', 'ariley', 3, 42, 86), -- username : ariley 
+    -- ('67245791', 'Brenda', 'Bartlett', 'bbartlett@iut.univ-paris8.fr', '07.16.03.32.73', 'bbartlett', 3, 42, 86), -- username : bbartlett 
+    -- ('61209740', 'Stephanie', 'Velez', 'svelez@iut.univ-paris8.fr', '07.46.75.30.05', 'svelez', 3, 42, 86), -- username : svelez 
+    -- ('60370156', 'Susan', 'Johnston', 'sjohnston@iut.univ-paris8.fr', '06.66.82.11.34', 'sjohnston', 3, 42, 86), -- username : sjohnston 
+    -- ('58810260', 'Matthew', 'Brown', 'mbrown@iut.univ-paris8.fr', '06.29.67.11.57', 'mbrown', 3, 42, 86), -- username : mbrown 
+    -- ('67136347', 'Michael', 'Smith', 'msmith1@iut.univ-paris8.fr', '07.52.10.17.15', 'msmith1', 3, 42, 86), -- username : msmith1 
+    -- ('97988292', 'Carolyn', 'Ingram', 'cingram@iut.univ-paris8.fr', '06.09.27.67.90', 'cingram', 3, 42, 86), -- username : cingram 
+    -- ('86046584', 'Madison', 'Rodriguez', 'mrodriguez@iut.univ-paris8.fr', '07.83.47.12.08', 'mrodriguez', 3, 42, 86), -- username : mrodriguez 
+    -- ('03889614', 'Stephanie', 'Young', 'syoung@iut.univ-paris8.fr', '07.56.18.56.98', 'syoung', 3, 42, 130), -- username : syoung 
+    -- ('57593565', 'Tammy', 'Matthews', 'tmatthews@iut.univ-paris8.fr', '06.11.42.92.73', 'tmatthews', 3, 42, 130), -- username : tmatthews 
+    -- ('90162045', 'Shelby', 'Robertson', 'srobertson@iut.univ-paris8.fr', '07.46.56.28.66', 'srobertson', 3, 42, 130), -- username : srobertson 
+    -- ('61157378', 'Christian', 'Schultz', 'cschultz@iut.univ-paris8.fr', '07.17.54.92.76', 'cschultz', 3, 42, 130), -- username : cschultz 
+    -- ('48700879', 'Christian', 'Robinson', 'crobinson@iut.univ-paris8.fr', '07.15.36.58.84', 'crobinson', 3, 42, 130), -- username : crobinson 
+    -- ('22246929', 'Nancy', 'Arnold', 'narnold@iut.univ-paris8.fr', '06.30.10.59.02', 'narnold', 3, 42, 130), -- username : narnold 
+    -- ('82273541', 'Gary', 'Todd', 'gtodd@iut.univ-paris8.fr', '06.15.11.94.88', 'gtodd', 3, 42, 130), -- username : gtodd 
+    -- ('11218512', 'Michael', 'Turner', 'mturner@iut.univ-paris8.fr', '06.43.39.96.12', 'mturner', 3, 42, 130), -- username : mturner 
+    -- ('23427435', 'Jade', 'Hodge', 'jhodge@iut.univ-paris8.fr', '06.99.10.47.24', 'jhodge', 3, 42, 130), -- username : jhodge 
+    -- ('63812744', 'Jeffrey', 'George', 'jgeorge@iut.univ-paris8.fr', '07.97.12.21.20', 'jgeorge', 3, 42, 130), -- username : jgeorge 
+    -- ('50096494', 'Drew', 'Collins', 'dcollins@iut.univ-paris8.fr', '06.04.85.73.34', 'dcollins', 3, 32, 32), -- username : dcollins 
+    -- ('24656168', 'Joseph', 'Mann', 'jmann@iut.univ-paris8.fr', '07.86.95.49.68', 'jmann', 3, 32, 32), -- username : jmann 
+    -- ('03318362', 'Gabriel', 'Stanley', 'gstanley@iut.univ-paris8.fr', '07.05.63.62.62', 'gstanley', 3, 32, 32), -- username : gstanley 
+    -- ('72623260', 'Nicholas', 'Fischer', 'nfischer@iut.univ-paris8.fr', '06.08.08.36.61', 'nfischer', 3, 32, 32), -- username : nfischer 
+    -- ('32604759', 'Thomas', 'Morris', 'tmorris@iut.univ-paris8.fr', '07.11.41.50.44', 'tmorris', 3, 32, 32), -- username : tmorris 
+    -- ('53075951', 'Kyle', 'Lee', 'klee@iut.univ-paris8.fr', '07.09.99.74.60', 'klee', 3, 32, 32), -- username : klee 
+    -- ('82217924', 'Whitney', 'Becker', 'wbecker@iut.univ-paris8.fr', '07.49.95.58.58', 'wbecker', 3, 32, 32), -- username : wbecker 
+    -- ('40041983', 'Dana', 'Singh', 'dsingh@iut.univ-paris8.fr', '07.99.24.92.16', 'dsingh', 3, 32, 32), -- username : dsingh 
+    -- ('34257159', 'Michael', 'Carr', 'mcarr@iut.univ-paris8.fr', '07.20.28.33.62', 'mcarr', 3, 32, 32), -- username : mcarr 
+    -- ('48074989', 'James', 'Bowers', 'jbowers@iut.univ-paris8.fr', '07.02.78.38.70', 'jbowers', 3, 32, 32), -- username : jbowers 
+    -- ('09864878', 'Linda', 'Wallace', 'lwallace@iut.univ-paris8.fr', '06.94.54.83.55', 'lwallace', 3, 32, 76), -- username : lwallace 
+    -- ('00448365', 'Mary', 'Williams', 'mwilliams1@iut.univ-paris8.fr', '07.00.48.01.96', 'mwilliams1', 3, 32, 76), -- username : mwilliams1 
+    -- ('00529996', 'Evelyn', 'Coleman', 'ecoleman@iut.univ-paris8.fr', '06.71.87.35.85', 'ecoleman', 3, 32, 76), -- username : ecoleman 
+    -- ('28927531', 'Jill', 'Brown', 'jbrown@iut.univ-paris8.fr', '07.82.78.79.85', 'jbrown', 3, 32, 76), -- username : jbrown 
+    -- ('43444697', 'Matthew', 'Smith', 'msmith@iut.univ-paris8.fr', '06.03.21.32.55', 'msmith', 3, 32, 76), -- username : msmith 
+    -- ('60564055', 'Melissa', 'Gilbert', 'mgilbert@iut.univ-paris8.fr', '06.36.64.18.02', 'mgilbert', 3, 32, 76), -- username : mgilbert 
+    -- ('44653053', 'Craig', 'Walker', 'cwalker@iut.univ-paris8.fr', '06.12.74.49.48', 'cwalker', 3, 32, 76), -- username : cwalker 
+    -- ('48112271', 'Brooke', 'Anderson', 'banderson2@iut.univ-paris8.fr', '07.38.64.25.31', 'banderson2', 3, 32, 76), -- username : banderson2 
+    -- ('57917835', 'Drew', 'Smith', 'dsmith@iut.univ-paris8.fr', '06.30.47.59.78', 'dsmith', 3, 32, 76), -- username : dsmith 
+    -- ('25658512', 'Brian', 'Wise', 'bwise@iut.univ-paris8.fr', '06.32.44.57.66', 'bwise', 3, 32, 76), -- username : bwise 
+    -- ('24289612', 'Melissa', 'Jones', 'mjones3@iut.univ-paris8.fr', '06.31.24.22.86', 'mjones3', 3, 32, 120), -- username : mjones3 
+    -- ('63441701', 'Robert', 'Mendez', 'rmendez@iut.univ-paris8.fr', '07.71.18.12.78', 'rmendez', 3, 32, 120), -- username : rmendez 
+    -- ('04815293', 'Brian', 'Anderson', 'banderson1@iut.univ-paris8.fr', '06.77.55.50.70', 'banderson1', 3, 32, 120), -- username : banderson1 
+    -- ('68837672', 'Andrew', 'Harrison', 'aharrison@iut.univ-paris8.fr', '06.51.99.44.59', 'aharrison', 3, 32, 120), -- username : aharrison 
+    -- ('44228074', 'Roy', 'Daniels', 'rdaniels@iut.univ-paris8.fr', '06.62.79.47.40', 'rdaniels', 3, 32, 120), -- username : rdaniels 
+    -- ('56547951', 'Donna', 'Mcclain', 'dmcclain@iut.univ-paris8.fr', '06.38.64.61.94', 'dmcclain', 3, 32, 120), -- username : dmcclain 
+    -- ('34235172', 'Amber', 'Williams', 'awilliams@iut.univ-paris8.fr', '06.92.82.84.61', 'awilliams', 3, 32, 120), -- username : awilliams 
+    -- ('81792476', 'David', 'Yang', 'dyang@iut.univ-paris8.fr', '07.39.93.51.17', 'dyang', 3, 32, 120), -- username : dyang 
+    -- ('16695334', 'Richard', 'Harris', 'rharris@iut.univ-paris8.fr', '07.87.46.59.65', 'rharris', 3, 32, 120), -- username : rharris 
+    -- ('42029038', 'Charlene', 'Peters', 'cpeters@iut.univ-paris8.fr', '07.74.78.14.29', 'cpeters', 3, 32, 120), -- username : cpeters 
+    -- ('72934906', 'Ronald', 'Lee', 'rlee@iut.univ-paris8.fr', '06.91.42.78.21', 'rlee', 3, 31, 31), -- username : rlee 
+    -- ('90471047', 'Megan', 'Edwards', 'medwards@iut.univ-paris8.fr', '07.79.58.58.40', 'medwards', 3, 31, 31), -- username : medwards 
+    -- ('71538399', 'Vincent', 'Williams', 'vwilliams@iut.univ-paris8.fr', '07.20.32.35.68', 'vwilliams', 3, 31, 31), -- username : vwilliams 
+    -- ('04216737', 'Charlene', 'Sullivan', 'csullivan@iut.univ-paris8.fr', '06.67.05.76.09', 'csullivan', 3, 31, 31), -- username : csullivan 
+    -- ('31681059', 'David', 'Tyler', 'dtyler@iut.univ-paris8.fr', '07.91.96.89.17', 'dtyler', 3, 31, 31), -- username : dtyler 
+    -- ('55077420', 'Sharon', 'Gonzalez', 'sgonzalez@iut.univ-paris8.fr', '07.96.02.95.22', 'sgonzalez', 3, 31, 31), -- username : sgonzalez 
+    -- ('56787478', 'Kathleen', 'Ramos', 'kramos@iut.univ-paris8.fr', '06.56.70.94.24', 'kramos', 3, 31, 31), -- username : kramos 
+    -- ('24462723', 'Nicole', 'Robinson', 'nrobinson@iut.univ-paris8.fr', '06.32.47.99.07', 'nrobinson', 3, 31, 31), -- username : nrobinson 
+    -- ('95227604', 'Traci', 'Rose', 'trose@iut.univ-paris8.fr', '07.99.69.13.92', 'trose', 3, 31, 31), -- username : trose 
+    -- ('70313445', 'Jean', 'Gaines', 'jgaines@iut.univ-paris8.fr', '06.93.39.89.26', 'jgaines', 3, 31, 31), -- username : jgaines 
+    -- ('93024847', 'Karla', 'Reyes', 'kreyes@iut.univ-paris8.fr', '06.67.23.59.74', 'kreyes', 3, 31, 75), -- username : kreyes 
+    -- ('55947953', 'Brett', 'Ellis', 'bellis@iut.univ-paris8.fr', '06.03.47.90.28', 'bellis', 3, 31, 75), -- username : bellis 
+    -- ('46435781', 'Daniel', 'Taylor', 'dtaylor@iut.univ-paris8.fr', '07.16.84.14.85', 'dtaylor', 3, 31, 75), -- username : dtaylor 
+    -- ('54593169', 'Nicholas', 'Brown', 'nbrown@iut.univ-paris8.fr', '06.64.92.76.91', 'nbrown', 3, 31, 75), -- username : nbrown 
+    -- ('69641181', 'Kathy', 'Bauer', 'kbauer@iut.univ-paris8.fr', '07.62.24.12.07', 'kbauer', 3, 31, 75), -- username : kbauer 
+    -- ('31301010', 'Samuel', 'Brady', 'sbrady@iut.univ-paris8.fr', '07.61.41.15.65', 'sbrady', 3, 31, 75), -- username : sbrady 
+    -- ('63065792', 'Rebecca', 'Guzman', 'rguzman@iut.univ-paris8.fr', '06.35.53.00.45', 'rguzman', 3, 31, 75), -- username : rguzman 
+    -- ('62904728', 'Christopher', 'Jackson', 'cjackson@iut.univ-paris8.fr', '07.31.01.33.10', 'cjackson', 3, 31, 75), -- username : cjackson 
+    -- ('13736525', 'David', 'Robertson', 'drobertson@iut.univ-paris8.fr', '06.72.35.47.02', 'drobertson', 3, 31, 75), -- username : drobertson 
+    -- ('02701805', 'Alicia', 'Chen', 'achen@iut.univ-paris8.fr', '06.06.55.28.06', 'achen', 3, 31, 75), -- username : achen 
+    -- ('93748757', 'Gregory', 'Miller', 'gmiller@iut.univ-paris8.fr', '07.60.88.14.46', 'gmiller', 3, 31, 119), -- username : gmiller 
+    -- ('14175404', 'Stephanie', 'Mcintyre', 'smcintyre@iut.univ-paris8.fr', '07.86.73.95.83', 'smcintyre', 3, 31, 119), -- username : smcintyre 
+    -- ('65514984', 'Meghan', 'Moreno', 'mmoreno@iut.univ-paris8.fr', '07.04.66.16.28', 'mmoreno', 3, 31, 119), -- username : mmoreno 
+    -- ('43447127', 'Doris', 'Jones', 'djones@iut.univ-paris8.fr', '06.67.67.50.87', 'djones', 3, 31, 119), -- username : djones 
+    -- ('60889620', 'Michael', 'Gibbs', 'mgibbs@iut.univ-paris8.fr', '07.28.98.38.46', 'mgibbs', 3, 31, 119), -- username : mgibbs 
+    -- ('24912056', 'Connie', 'Stewart', 'cstewart1@iut.univ-paris8.fr', '06.22.09.37.36', 'cstewart1', 3, 31, 119), -- username : cstewart1 
+    -- ('38995733', 'Lisa', 'Carey', 'lcarey@iut.univ-paris8.fr', '07.63.76.01.65', 'lcarey', 3, 31, 119), -- username : lcarey 
+    -- ('11316402', 'Mike', 'Nelson', 'mnelson@iut.univ-paris8.fr', '06.95.18.70.99', 'mnelson', 3, 31, 119), -- username : mnelson 
+    -- ('21859484', 'Brian', 'Mitchell', 'bmitchell@iut.univ-paris8.fr', '06.05.90.80.86', 'bmitchell', 3, 31, 119), -- username : bmitchell 
+    -- ('27391560', 'Joshua', 'Merritt', 'jmerritt@iut.univ-paris8.fr', '07.04.34.04.98', 'jmerritt', 3, 31, 119), -- username : jmerritt 
+    -- ('70679823', 'Brittney', 'Brown', 'bbrown@iut.univ-paris8.fr', '07.54.66.68.27', 'bbrown', 3, 33, 33), -- username : bbrown 
+    -- ('31282791', 'Jennifer', 'Ward', 'jward@iut.univ-paris8.fr', '06.99.83.92.82', 'jward', 3, 33, 33), -- username : jward 
+    -- ('21028309', 'Michael', 'Bennett', 'mbennett@iut.univ-paris8.fr', '06.10.51.07.47', 'mbennett', 3, 33, 33), -- username : mbennett 
+    -- ('32375523', 'Martin', 'King', 'mking@iut.univ-paris8.fr', '07.39.37.58.00', 'mking', 3, 33, 33), -- username : mking 
+    -- ('68098590', 'Evan', 'Osborne', 'eosborne@iut.univ-paris8.fr', '06.07.52.22.08', 'eosborne', 3, 33, 33), -- username : eosborne 
+    -- ('64737382', 'Sean', 'Chung', 'schung@iut.univ-paris8.fr', '06.87.83.85.06', 'schung', 3, 33, 33), -- username : schung 
+    -- ('22229855', 'Brenda', 'Mcclure', 'bmcclure@iut.univ-paris8.fr', '06.69.34.00.41', 'bmcclure', 3, 33, 33), -- username : bmcclure 
+    -- ('47923286', 'Diana', 'Gilbert', 'dgilbert@iut.univ-paris8.fr', '06.13.07.75.74', 'dgilbert', 3, 33, 33), -- username : dgilbert 
+    -- ('74256995', 'William', 'Miller', 'wmiller@iut.univ-paris8.fr', '07.16.30.71.59', 'wmiller', 3, 33, 33), -- username : wmiller 
+    -- ('81386395', 'Shelly', 'Walsh', 'swalsh@iut.univ-paris8.fr', '07.35.45.68.94', 'swalsh', 3, 33, 33), -- username : swalsh 
+    -- ('24336587', 'Robert', 'Holden', 'rholden@iut.univ-paris8.fr', '07.43.37.17.73', 'rholden', 3, 33, 77), -- username : rholden 
+    -- ('73457420', 'Dawn', 'Cox', 'dcox@iut.univ-paris8.fr', '07.92.47.87.11', 'dcox', 3, 33, 77), -- username : dcox 
+    -- ('06978739', 'Matthew', 'Chavez', 'mchavez@iut.univ-paris8.fr', '07.96.61.79.53', 'mchavez', 3, 33, 77), -- username : mchavez 
+    -- ('69500164', 'Cameron', 'Mckinney', 'cmckinney@iut.univ-paris8.fr', '07.54.70.37.54', 'cmckinney', 3, 33, 77), -- username : cmckinney 
+    -- ('68796671', 'Richard', 'Tanner', 'rtanner@iut.univ-paris8.fr', '06.22.12.03.97', 'rtanner', 3, 33, 77), -- username : rtanner 
+    -- ('68615248', 'Belinda', 'Strong', 'bstrong@iut.univ-paris8.fr', '06.98.91.99.92', 'bstrong', 3, 33, 77), -- username : bstrong 
+    -- ('76587719', 'Tracey', 'Rodriguez', 'trodriguez@iut.univ-paris8.fr', '07.63.32.68.63', 'trodriguez', 3, 33, 77), -- username : trodriguez 
+    -- ('38461204', 'Sheila', 'Oneill', 'soneill@iut.univ-paris8.fr', '06.08.05.07.89', 'soneill', 3, 33, 77), -- username : soneill 
+    -- ('72467108', 'David', 'Rosales', 'drosales@iut.univ-paris8.fr', '06.89.31.06.00', 'drosales', 3, 33, 77), -- username : drosales 
+    -- ('80033328', 'Sharon', 'Solis', 'ssolis@iut.univ-paris8.fr', '06.82.48.82.84', 'ssolis', 3, 33, 77), -- username : ssolis 
+    -- ('05188739', 'Jamie', 'Smith', 'jsmith@iut.univ-paris8.fr', '07.81.84.54.85', 'jsmith', 3, 33, 121), -- username : jsmith 
+    -- ('72639053', 'Pamela', 'Stephens', 'pstephens@iut.univ-paris8.fr', '06.53.48.24.49', 'pstephens', 3, 33, 121), -- username : pstephens 
+    -- ('47267137', 'Cory', 'Johnson', 'cjohnson@iut.univ-paris8.fr', '07.75.80.89.49', 'cjohnson', 3, 33, 121), -- username : cjohnson 
+    -- ('27694428', 'Debbie', 'Griffith', 'dgriffith@iut.univ-paris8.fr', '07.27.40.63.28', 'dgriffith', 3, 33, 121), -- username : dgriffith 
+    -- ('79980222', 'Kelly', 'Jackson', 'kjackson@iut.univ-paris8.fr', '07.03.04.25.38', 'kjackson', 3, 33, 121), -- username : kjackson 
+    -- ('84100021', 'Shelby', 'Castro', 'scastro@iut.univ-paris8.fr', '07.32.98.63.69', 'scastro', 3, 33, 121), -- username : scastro 
+    -- ('58277882', 'James', 'Manning', 'jmanning1@iut.univ-paris8.fr', '06.64.10.65.42', 'jmanning1', 3, 33, 121), -- username : jmanning1 
+    -- ('65010221', 'David', 'Kim', 'dkim@iut.univ-paris8.fr', '07.95.15.90.78', 'dkim', 3, 33, 121), -- username : dkim 
+    -- ('73371683', 'Kevin', 'Murphy', 'kmurphy@iut.univ-paris8.fr', '07.06.62.57.93', 'kmurphy', 3, 33, 121), -- username : kmurphy 
+    -- ('39387847', 'Tammy', 'Freeman', 'tfreeman@iut.univ-paris8.fr', '06.73.19.64.00', 'tfreeman', 3, 33, 121), -- username : tfreeman 
+    -- ('29996849', 'Jennifer', 'Manning', 'jmanning@iut.univ-paris8.fr', '07.25.96.76.80', 'jmanning', 3, 8, 8), -- username : jmanning 
+    -- ('19118587', 'Jared', 'Kelly', 'jkelly@iut.univ-paris8.fr', '06.44.22.69.32', 'jkelly', 3, 8, 8), -- username : jkelly 
+    -- ('79808851', 'Russell', 'Joseph', 'rjoseph@iut.univ-paris8.fr', '07.32.19.56.68', 'rjoseph', 3, 8, 8), -- username : rjoseph 
+    -- ('99642991', 'Amber', 'Nelson', 'anelson@iut.univ-paris8.fr', '06.30.67.63.10', 'anelson', 3, 8, 8), -- username : anelson 
+    -- ('61109811', 'Erica', 'Williams', 'ewilliams@iut.univ-paris8.fr', '07.33.02.27.06', 'ewilliams', 3, 8, 8), -- username : ewilliams 
+    -- ('23536743', 'Haley', 'Duke', 'hduke@iut.univ-paris8.fr', '07.92.07.18.06', 'hduke', 3, 8, 8), -- username : hduke 
+    -- ('71420286', 'Margaret', 'Farley', 'mfarley@iut.univ-paris8.fr', '07.01.94.90.56', 'mfarley', 3, 8, 8), -- username : mfarley 
+    -- ('86252357', 'Philip', 'Hebert', 'phebert1@iut.univ-paris8.fr', '07.65.55.51.19', 'phebert1', 3, 8, 8), -- username : phebert1 
+    -- ('41222896', 'Joanne', 'Thomas', 'jthomas@iut.univ-paris8.fr', '06.63.82.90.39', 'jthomas', 3, 8, 8), -- username : jthomas 
+    -- ('67777962', 'Pamela', 'Flynn', 'pflynn@iut.univ-paris8.fr', '07.70.27.39.93', 'pflynn', 3, 8, 8), -- username : pflynn 
+    -- ('81429502', 'Nicole', 'Jones', 'njones@iut.univ-paris8.fr', '07.26.24.07.51', 'njones', 3, 8, 52), -- username : njones 
+    -- ('30774932', 'Elizabeth', 'Anderson', 'eanderson@iut.univ-paris8.fr', '07.62.90.65.80', 'eanderson', 3, 8, 52), -- username : eanderson 
+    -- ('90522460', 'Daniel', 'Curtis', 'dcurtis@iut.univ-paris8.fr', '07.02.08.67.87', 'dcurtis', 3, 8, 52), -- username : dcurtis 
+    -- ('53104247', 'Lisa', 'Hicks', 'lhicks@iut.univ-paris8.fr', '07.22.45.03.15', 'lhicks', 3, 8, 52), -- username : lhicks 
+    -- ('84184073', 'Gerald', 'White', 'gwhite@iut.univ-paris8.fr', '06.87.61.57.61', 'gwhite', 3, 8, 52), -- username : gwhite 
+    -- ('13460070', 'Holly', 'Rivera', 'hrivera@iut.univ-paris8.fr', '06.72.35.76.70', 'hrivera', 3, 8, 52), -- username : hrivera 
+    -- ('83788155', 'Joseph', 'Best', 'jbest@iut.univ-paris8.fr', '06.30.92.71.82', 'jbest', 3, 8, 52), -- username : jbest 
+    -- ('39133598', 'Michael', 'Garza', 'mgarza@iut.univ-paris8.fr', '07.67.37.99.66', 'mgarza', 3, 8, 52), -- username : mgarza 
+    -- ('56809928', 'Jared', 'Bowman', 'jbowman@iut.univ-paris8.fr', '06.42.06.16.18', 'jbowman', 3, 8, 52), -- username : jbowman 
+    -- ('93089735', 'Kevin', 'Baker', 'kbaker@iut.univ-paris8.fr', '07.76.08.06.68', 'kbaker', 3, 8, 52), -- username : kbaker 
+    -- ('55818582', 'Robert', 'Miller', 'rmiller1@iut.univ-paris8.fr', '06.67.54.87.47', 'rmiller1', 3, 8, 96), -- username : rmiller1 
+    -- ('44038549', 'Joshua', 'Stephens', 'jstephens@iut.univ-paris8.fr', '06.99.42.77.57', 'jstephens', 3, 8, 96), -- username : jstephens 
+    -- ('06709994', 'Claudia', 'Davidson', 'cdavidson@iut.univ-paris8.fr', '07.93.60.15.44', 'cdavidson', 3, 8, 96), -- username : cdavidson 
+    -- ('79810703', 'Kimberly', 'Rose', 'krose@iut.univ-paris8.fr', '06.25.05.35.01', 'krose', 3, 8, 96), -- username : krose 
+    -- ('03802564', 'Claire', 'Moore', 'cmoore1@iut.univ-paris8.fr', '06.55.14.37.31', 'cmoore1', 3, 8, 96), -- username : cmoore1 
+    -- ('38058755', 'Aaron', 'Gonzales', 'agonzales1@iut.univ-paris8.fr', '06.40.01.10.15', 'agonzales1', 3, 8, 96), -- username : agonzales1 
+    -- ('79548551', 'Jonathan', 'Fischer', 'jfischer1@iut.univ-paris8.fr', '07.54.71.12.30', 'jfischer1', 3, 8, 96), -- username : jfischer1 
+    -- ('84073931', 'Scott', 'Jordan', 'sjordan@iut.univ-paris8.fr', '07.33.29.68.90', 'sjordan', 3, 8, 96), -- username : sjordan 
+    -- ('82072017', 'Tiffany', 'Burke', 'tburke@iut.univ-paris8.fr', '06.65.69.17.81', 'tburke', 3, 8, 96), -- username : tburke 
+    -- ('49427545', 'Lauren', 'Hughes', 'lhughes@iut.univ-paris8.fr', '06.15.47.03.35', 'lhughes', 3, 8,96) -- username : llhughes 
 ;
 
 -- FAKE for departement GACO
@@ -1127,354 +1127,354 @@ VALUES
     ('13489903', 'Kevin', 'Nolan', 'knolan@iut.univ-paris8.fr', '07.23.22.82.06', 'knolan', 4, 24, 24), -- username : knolan 
     ('09317093', 'Tyler', 'Boyer', 'tboyer@iut.univ-paris8.fr', '07.59.27.18.68', 'tboyer', 4, 24, 24), -- username : tboyer 
     ('38850039', 'Taylor', 'Santos', 'tsantos@iut.univ-paris8.fr', '06.78.32.49.09', 'tsantos', 4, 24, 24), -- username : tsantos 
-    ('79910389', 'Mercedes', 'Franklin', 'mfranklin@iut.univ-paris8.fr', '06.60.92.93.57', 'mfranklin', 4, 24, 68), -- username : mfranklin 
-    ('77178576', 'Aaron', 'Mullins', 'amullins@iut.univ-paris8.fr', '06.71.37.91.65', 'amullins', 4, 24, 68), -- username : amullins 
-    ('67236215', 'Daniel', 'Nelson', 'dnelson@iut.univ-paris8.fr', '06.43.44.03.14', 'dnelson', 4, 24, 68), -- username : dnelson 
-    ('25075962', 'Sheila', 'Gomez', 'sgomez@iut.univ-paris8.fr', '06.71.34.91.55', 'sgomez', 4, 24, 68), -- username : sgomez 
-    ('65951003', 'Christopher', 'Adams', 'cadams@iut.univ-paris8.fr', '07.42.35.55.32', 'cadams', 4, 24, 68), -- username : cadams 
-    ('05846520', 'Sherri', 'Fischer', 'sfischer@iut.univ-paris8.fr', '06.28.10.96.15', 'sfischer', 4, 24, 68), -- username : sfischer 
-    ('51308951', 'Isaiah', 'Molina', 'imolina@iut.univ-paris8.fr', '07.19.79.71.13', 'imolina', 4, 24, 68), -- username : imolina 
-    ('75990313', 'Kara', 'Oliver', 'koliver@iut.univ-paris8.fr', '06.74.81.59.16', 'koliver', 4, 24, 68), -- username : koliver 
-    ('10541038', 'Michael', 'Jackson', 'mjackson@iut.univ-paris8.fr', '07.69.45.71.99', 'mjackson', 4, 24, 68), -- username : mjackson 
-    ('51982555', 'Michele', 'Clark', 'mclark@iut.univ-paris8.fr', '06.97.91.06.74', 'mclark', 4, 24, 68), -- username : mclark 
-    ('42085607', 'Gabrielle', 'Ramirez', 'gramirez@iut.univ-paris8.fr', '07.24.46.95.69', 'gramirez', 4, 24, 112), -- username : gramirez 
-    ('46708797', 'Kimberly', 'Sullivan', 'ksullivan@iut.univ-paris8.fr', '07.80.27.04.54', 'ksullivan', 4, 24, 112), -- username : ksullivan 
-    ('45315225', 'Steven', 'Murphy', 'smurphy@iut.univ-paris8.fr', '06.79.75.70.30', 'smurphy', 4, 24, 112), -- username : smurphy 
-    ('01905990', 'Tyler', 'Kirby', 'tkirby@iut.univ-paris8.fr', '07.86.82.60.64', 'tkirby', 4, 24, 112), -- username : tkirby 
-    ('74763899', 'April', 'Barron', 'abarron@iut.univ-paris8.fr', '07.39.47.03.05', 'abarron', 4, 24, 112), -- username : abarron 
-    ('31696139', 'Joyce', 'Dickerson', 'jdickerson@iut.univ-paris8.fr', '07.37.80.19.85', 'jdickerson', 4, 24, 112), -- username : jdickerson 
-    ('77465051', 'Nancy', 'Jacobs', 'njacobs@iut.univ-paris8.fr', '07.94.31.23.61', 'njacobs', 4, 24, 112), -- username : njacobs 
-    ('63171557', 'Cody', 'Hogan', 'chogan@iut.univ-paris8.fr', '06.63.48.54.25', 'chogan', 4, 24, 112), -- username : chogan 
-    ('68970935', 'Chad', 'Weeks', 'cweeks@iut.univ-paris8.fr', '06.72.77.43.25', 'cweeks', 4, 24, 112), -- username : cweeks 
-    ('63026387', 'David', 'Harvey', 'dharvey@iut.univ-paris8.fr', '07.12.76.35.09', 'dharvey', 4, 24, 112), -- username : dharvey 
-    ('51756062', 'Larry', 'Harris', 'lharris@iut.univ-paris8.fr', '06.55.95.41.48', 'lharris', 4, 23, 23), -- username : lharris 
-    ('05572909', 'Kristy', 'Mosley', 'kmosley@iut.univ-paris8.fr', '07.37.98.76.25', 'kmosley', 4, 23, 23), -- username : kmosley 
-    ('09908723', 'Corey', 'Soto', 'csoto@iut.univ-paris8.fr', '07.19.48.48.93', 'csoto', 4, 23, 23), -- username : csoto 
-    ('64732645', 'Rebecca', 'Lopez', 'rlopez@iut.univ-paris8.fr', '06.16.13.83.59', 'rlopez', 4, 23, 23), -- username : rlopez 
-    ('93438523', 'Allison', 'Logan', 'alogan@iut.univ-paris8.fr', '06.89.97.94.74', 'alogan', 4, 23, 23), -- username : alogan 
-    ('08910192', 'Katelyn', 'Gentry', 'kgentry@iut.univ-paris8.fr', '06.71.39.57.78', 'kgentry', 4, 23, 23), -- username : kgentry 
-    ('74758387', 'Julie', 'Hurst', 'jhurst@iut.univ-paris8.fr', '07.37.47.36.15', 'jhurst', 4, 23, 23), -- username : jhurst 
-    ('72601403', 'Aaron', 'Gutierrez', 'agutierrez@iut.univ-paris8.fr', '06.05.75.49.06', 'agutierrez', 4, 23, 23), -- username : agutierrez 
-    ('76229139', 'Courtney', 'Tucker', 'ctucker@iut.univ-paris8.fr', '06.75.61.72.81', 'ctucker', 4, 23, 23), -- username : ctucker 
-    ('82626380', 'Robert', 'Gates', 'rgates@iut.univ-paris8.fr', '07.02.46.00.68', 'rgates', 4, 23, 23), -- username : rgates 
-    ('49218448', 'Heather', 'Nielsen', 'hnielsen@iut.univ-paris8.fr', '07.70.06.29.13', 'hnielsen', 4, 23, 67), -- username : hnielsen 
-    ('17370097', 'Andrew', 'Long', 'along@iut.univ-paris8.fr', '07.64.57.61.76', 'along', 4, 23, 67), -- username : along 
-    ('66391588', 'Maria', 'Evans', 'mevans1@iut.univ-paris8.fr', '06.90.73.31.18', 'mevans1', 4, 23, 67), -- username : mevans1 
-    ('74730474', 'Billy', 'Steele', 'bsteele@iut.univ-paris8.fr', '06.30.89.93.60', 'bsteele', 4, 23, 67), -- username : bsteele 
-    ('32946066', 'Linda', 'Schneider', 'lschneider@iut.univ-paris8.fr', '07.76.95.02.97', 'lschneider', 4, 23, 67), -- username : lschneider 
-    ('08975144', 'Tonya', 'Long', 'tlong@iut.univ-paris8.fr', '07.95.97.41.07', 'tlong', 4, 23, 67), -- username : tlong 
-    ('40713822', 'Amanda', 'Gonzalez', 'agonzalez@iut.univ-paris8.fr', '06.80.82.09.61', 'agonzalez', 4, 23, 67), -- username : agonzalez 
-    ('06576587', 'Robert', 'Ryan', 'rryan@iut.univ-paris8.fr', '06.49.58.40.91', 'rryan', 4, 23, 67), -- username : rryan 
-    ('58906188', 'Tammy', 'Perez', 'tperez@iut.univ-paris8.fr', '07.15.18.57.51', 'tperez', 4, 23, 67), -- username : tperez 
-    ('00146381', 'Lucas', 'Oconnor', 'loconnor@iut.univ-paris8.fr', '07.68.66.41.61', 'loconnor', 4, 23, 67), -- username : loconnor 
-    ('22614467', 'James', 'Daugherty', 'jdaugherty@iut.univ-paris8.fr', '07.01.24.94.05', 'jdaugherty', 4, 23, 111), -- username : jdaugherty 
-    ('44544991', 'Elizabeth', 'Ortiz', 'eortiz@iut.univ-paris8.fr', '06.58.64.99.33', 'eortiz', 4, 23, 111), -- username : eortiz 
-    ('83070504', 'Meagan', 'Hall', 'mhall@iut.univ-paris8.fr', '07.70.94.75.88', 'mhall', 4, 23, 111), -- username : mhall 
-    ('70674274', 'Gary', 'Sellers', 'gsellers@iut.univ-paris8.fr', '06.97.68.35.00', 'gsellers', 4, 23, 111), -- username : gsellers 
-    ('99150820', 'William', 'Guzman', 'wguzman@iut.univ-paris8.fr', '07.98.33.35.56', 'wguzman', 4, 23, 111), -- username : wguzman 
-    ('81801763', 'Jacqueline', 'Berger', 'jberger@iut.univ-paris8.fr', '06.36.69.08.18', 'jberger', 4, 23, 111), -- username : jberger 
-    ('66734501', 'Michael', 'Berry', 'mberry@iut.univ-paris8.fr', '06.52.10.96.19', 'mberry', 4, 23, 111), -- username : mberry 
-    ('58232264', 'Sydney', 'Serrano', 'sserrano@iut.univ-paris8.fr', '07.47.07.74.33', 'sserrano', 4, 23, 111), -- username : sserrano 
-    ('33941786', 'Kurt', 'Santana', 'ksantana@iut.univ-paris8.fr', '07.31.69.88.12', 'ksantana', 4, 23, 111), -- username : ksantana 
-    ('86244140', 'Brandi', 'Miller', 'bmiller@iut.univ-paris8.fr', '06.31.63.93.71', 'bmiller', 4, 23, 111), -- username : bmiller 
-    ('99274260', 'Erika', 'Martinez', 'emartinez@iut.univ-paris8.fr', '07.64.29.95.19', 'emartinez', 4, 22, 22), -- username : emartinez 
-    ('79450184', 'Julia', 'Powell', 'jpowell@iut.univ-paris8.fr', '07.04.38.70.86', 'jpowell', 4, 22, 22), -- username : jpowell 
-    ('00301077', 'Harry', 'Anderson', 'handerson@iut.univ-paris8.fr', '07.50.84.25.58', 'handerson', 4, 22, 22), -- username : handerson 
-    ('52561885', 'Jeffrey', 'Curtis', 'jcurtis@iut.univ-paris8.fr', '06.50.29.41.85', 'jcurtis', 4, 22, 22), -- username : jcurtis 
-    ('62827511', 'Darrell', 'Adkins', 'dadkins@iut.univ-paris8.fr', '07.13.14.06.85', 'dadkins', 4, 22, 22), -- username : dadkins 
-    ('92804994', 'Ashley', 'Martin', 'amartin@iut.univ-paris8.fr', '07.74.97.74.09', 'amartin', 4, 22, 22), -- username : amartin 
-    ('99495555', 'David', 'Rowland', 'drowland@iut.univ-paris8.fr', '06.10.67.45.91', 'drowland', 4, 22, 22), -- username : drowland 
-    ('94502480', 'Matthew', 'Martinez', 'mmartinez@iut.univ-paris8.fr', '07.94.19.84.82', 'mmartinez', 4, 22, 22), -- username : mmartinez 
-    ('37322684', 'Miranda', 'Buck', 'mbuck@iut.univ-paris8.fr', '07.46.53.06.73', 'mbuck', 4, 22, 22), -- username : mbuck 
-    ('66505084', 'Shane', 'Mclean', 'smclean@iut.univ-paris8.fr', '07.02.27.52.02', 'smclean', 4, 22, 22), -- username : smclean 
-    ('24054107', 'Kevin', 'Robinson', 'krobinson@iut.univ-paris8.fr', '07.09.84.81.53', 'krobinson', 4, 22, 66), -- username : krobinson 
-    ('62591118', 'Cody', 'Gilbert', 'cgilbert@iut.univ-paris8.fr', '06.17.01.89.61', 'cgilbert', 4, 22, 66), -- username : cgilbert 
-    ('62292528', 'Jason', 'Hunt', 'jhunt@iut.univ-paris8.fr', '06.92.19.22.30', 'jhunt', 4, 22, 66), -- username : jhunt 
-    ('06819213', 'Mallory', 'Martin', 'mmartin@iut.univ-paris8.fr', '06.25.80.32.11', 'mmartin', 4, 22, 66), -- username : mmartin 
-    ('70217781', 'Linda', 'Sanders', 'lsanders@iut.univ-paris8.fr', '06.83.47.04.38', 'lsanders', 4, 22, 66), -- username : lsanders 
-    ('46333453', 'Kayla', 'Maxwell', 'kmaxwell@iut.univ-paris8.fr', '06.18.73.57.18', 'kmaxwell', 4, 22, 66), -- username : kmaxwell 
-    ('56504424', 'Katie', 'Castro', 'kcastro@iut.univ-paris8.fr', '06.76.97.95.52', 'kcastro', 4, 22, 66), -- username : kcastro 
-    ('65628007', 'Anne', 'Shaw', 'ashaw@iut.univ-paris8.fr', '07.06.27.03.36', 'ashaw', 4, 22, 66), -- username : ashaw 
-    ('76558188', 'Joshua', 'Howard', 'jhoward@iut.univ-paris8.fr', '07.43.54.13.92', 'jhoward', 4, 22, 66), -- username : jhoward 
-    ('32678142', 'Jennifer', 'Carter', 'jcarter@iut.univ-paris8.fr', '07.93.98.69.53', 'jcarter', 4, 22, 66), -- username : jcarter 
-    ('34083481', 'Colleen', 'Hill', 'chill@iut.univ-paris8.fr', '07.80.13.12.13', 'chill', 4, 22, 110), -- username : chill 
-    ('74586650', 'Rita', 'Shaw', 'rshaw@iut.univ-paris8.fr', '06.13.79.52.22', 'rshaw', 4, 22, 110), -- username : rshaw 
-    ('60338698', 'Alexandria', 'Perry', 'aperry@iut.univ-paris8.fr', '07.76.21.12.26', 'aperry', 4, 22, 110), -- username : aperry 
-    ('78478568', 'Theresa', 'Howell', 'thowell@iut.univ-paris8.fr', '07.96.56.39.13', 'thowell', 4, 22, 110), -- username : thowell 
-    ('83597605', 'Jose', 'Ferguson', 'jferguson@iut.univ-paris8.fr', '07.77.40.18.58', 'jferguson', 4, 22, 110), -- username : jferguson 
-    ('72044007', 'Jose', 'Mccarty', 'jmccarty@iut.univ-paris8.fr', '07.75.23.17.67', 'jmccarty', 4, 22, 110), -- username : jmccarty 
-    ('46779815', 'Jay', 'Crawford', 'jcrawford@iut.univ-paris8.fr', '06.30.94.45.02', 'jcrawford', 4, 22, 110), -- username : jcrawford 
-    ('74666231', 'Christine', 'Calderon', 'ccalderon@iut.univ-paris8.fr', '06.96.03.96.62', 'ccalderon', 4, 22, 110), -- username : ccalderon 
-    ('67394098', 'Caitlin', 'Hale', 'chale@iut.univ-paris8.fr', '07.87.84.83.40', 'chale', 4, 22, 110), -- username : chale 
-    ('64155309', 'Ebony', 'Medina', 'emedina@iut.univ-paris8.fr', '07.21.97.80.77', 'emedina', 4, 22, 110), -- username : emedina 
-    ('61630240', 'Alexis', 'Clark', 'aclark@iut.univ-paris8.fr', '06.62.05.71.12', 'aclark', 4, 10, 10), -- username : aclark 
-    ('34007839', 'Joshua', 'Sanchez', 'jsanchez@iut.univ-paris8.fr', '06.15.93.09.51', 'jsanchez', 4, 10, 10), -- username : jsanchez 
-    ('78109726', 'Teresa', 'Duran', 'tduran@iut.univ-paris8.fr', '07.63.26.23.88', 'tduran', 4, 10, 10), -- username : tduran 
-    ('98460560', 'Julie', 'Romero', 'jromero@iut.univ-paris8.fr', '06.14.83.41.64', 'jromero', 4, 10, 10), -- username : jromero 
-    ('42078373', 'Kimberly', 'Clay', 'kclay@iut.univ-paris8.fr', '07.40.45.83.44', 'kclay', 4, 10, 10), -- username : kclay 
-    ('63433885', 'Stephen', 'Rose', 'srose@iut.univ-paris8.fr', '06.45.69.34.39', 'srose', 4, 10, 10), -- username : srose 
-    ('95747778', 'Martin', 'Holloway', 'mholloway@iut.univ-paris8.fr', '06.54.42.76.28', 'mholloway', 4, 10, 10), -- username : mholloway 
-    ('77824101', 'Sherry', 'Orozco', 'sorozco@iut.univ-paris8.fr', '06.85.54.71.87', 'sorozco', 4, 10, 10), -- username : sorozco 
-    ('18196678', 'Debra', 'Quinn', 'dquinn@iut.univ-paris8.fr', '07.58.52.79.43', 'dquinn', 4, 10, 10), -- username : dquinn 
-    ('57396202', 'Tonya', 'Smith', 'tsmith@iut.univ-paris8.fr', '07.07.00.59.69', 'tsmith', 4, 10, 10), -- username : tsmith 
-    ('89861397', 'Karen', 'Gibson', 'kgibson@iut.univ-paris8.fr', '07.56.41.26.72', 'kgibson', 4, 10, 54), -- username : kgibson 
-    ('90842667', 'Harry', 'Hartman', 'hhartman@iut.univ-paris8.fr', '07.04.67.88.08', 'hhartman', 4, 10, 54), -- username : hhartman 
-    ('47852814', 'Jon', 'Rivera', 'jrivera@iut.univ-paris8.fr', '07.59.43.01.52', 'jrivera', 4, 10, 54), -- username : jrivera 
-    ('45615312', 'Elizabeth', 'Russo', 'erusso@iut.univ-paris8.fr', '06.89.62.22.35', 'erusso', 4, 10, 54), -- username : erusso 
-    ('91563259', 'Brett', 'Davis', 'bdavis@iut.univ-paris8.fr', '06.88.36.49.63', 'bdavis', 4, 10, 54), -- username : bdavis 
-    ('72476553', 'Heidi', 'Gilbert', 'hgilbert@iut.univ-paris8.fr', '07.88.97.17.58', 'hgilbert', 4, 10, 54), -- username : hgilbert 
-    ('58588064', 'Samantha', 'Miller', 'smiller@iut.univ-paris8.fr', '07.35.69.39.35', 'smiller', 4, 10, 54), -- username : smiller 
-    ('87086495', 'Amanda', 'Wright', 'awright@iut.univ-paris8.fr', '06.34.88.30.93', 'awright', 4, 10, 54), -- username : awright 
-    ('60242361', 'Donna', 'Schneider', 'dschneider@iut.univ-paris8.fr', '07.94.03.50.22', 'dschneider', 4, 10, 54), -- username : dschneider 
-    ('70012656', 'Cheyenne', 'Taylor', 'ctaylor@iut.univ-paris8.fr', '06.88.94.17.00', 'ctaylor', 4, 10, 54), -- username : ctaylor 
-    ('46925471', 'Douglas', 'Thompson', 'dthompson@iut.univ-paris8.fr', '06.60.62.48.62', 'dthompson', 4, 10, 98), -- username : dthompson 
-    ('38386539', 'Joseph', 'Lee', 'jlee@iut.univ-paris8.fr', '06.03.32.53.45', 'jlee', 4, 10, 98), -- username : jlee 
-    ('11155934', 'Gregory', 'Boyd', 'gboyd@iut.univ-paris8.fr', '07.26.83.77.49', 'gboyd', 4, 10, 98), -- username : gboyd 
-    ('98573227', 'William', 'Hart', 'whart@iut.univ-paris8.fr', '06.67.51.58.88', 'whart', 4, 10, 98), -- username : whart 
-    ('52785734', 'Angela', 'Anderson', 'aanderson@iut.univ-paris8.fr', '06.08.08.38.97', 'aanderson', 4, 10, 98), -- username : aanderson 
-    ('52674720', 'Peter', 'Smith', 'psmith@iut.univ-paris8.fr', '07.76.83.85.08', 'psmith', 4, 10, 98), -- username : psmith 
-    ('15365270', 'Ricky', 'Park', 'rpark@iut.univ-paris8.fr', '07.33.17.76.18', 'rpark', 4, 10, 98), -- username : rpark 
-    ('57742597', 'Ashley', 'Taylor', 'ataylor@iut.univ-paris8.fr', '06.71.46.80.66', 'ataylor', 4, 10, 98), -- username : ataylor 
-    ('26811095', 'Stephanie', 'Hobbs', 'shobbs@iut.univ-paris8.fr', '06.00.79.13.57', 'shobbs', 4, 10, 98), -- username : shobbs 
-    ('44513448', 'Ian', 'Mcdowell', 'imcdowell@iut.univ-paris8.fr', '07.84.02.56.07', 'imcdowell', 4, 10, 98), -- username : imcdowell 
-    ('77095331', 'Traci', 'Deleon', 'tdeleon@iut.univ-paris8.fr', '06.34.10.83.11', 'tdeleon', 4, 12, 12), -- username : tdeleon 
-    ('51101061', 'Lee', 'Moore', 'lmoore@iut.univ-paris8.fr', '06.43.26.20.91', 'lmoore', 4, 12, 12), -- username : lmoore 
-    ('19218230', 'Kevin', 'Walker', 'kwalker@iut.univ-paris8.fr', '07.65.67.42.85', 'kwalker', 4, 12, 12), -- username : kwalker 
-    ('19766166', 'Elizabeth', 'Brown', 'ebrown@iut.univ-paris8.fr', '06.23.34.20.36', 'ebrown', 4, 12, 12), -- username : ebrown 
-    ('70662618', 'Travis', 'Alexander', 'talexander@iut.univ-paris8.fr', '06.48.80.35.79', 'talexander', 4, 12, 12), -- username : talexander 
-    ('93444019', 'Matthew', 'Evans', 'mevans@iut.univ-paris8.fr', '06.94.39.14.98', 'mevans', 4, 12, 12), -- username : mevans 
-    ('45358125', 'Anthony', 'Adkins', 'aadkins@iut.univ-paris8.fr', '06.44.72.60.86', 'aadkins', 4, 12, 12), -- username : aadkins 
-    ('85746309', 'Jose', 'Jackson', 'jjackson@iut.univ-paris8.fr', '07.73.41.47.73', 'jjackson', 4, 12, 12), -- username : jjackson 
-    ('73371925', 'Joshua', 'Bowen', 'jbowen@iut.univ-paris8.fr', '07.44.44.78.59', 'jbowen', 4, 12, 12), -- username : jbowen 
-    ('33180226', 'Matthew', 'Gonzalez', 'mgonzalez@iut.univ-paris8.fr', '07.63.58.15.36', 'mgonzalez', 4, 12, 12), -- username : mgonzalez 
-    ('93606802', 'Michael', 'Becker', 'mbecker@iut.univ-paris8.fr', '07.30.39.15.37', 'mbecker', 4, 12, 56), -- username : mbecker 
-    ('36458659', 'Pamela', 'Oconnor', 'poconnor@iut.univ-paris8.fr', '07.31.03.92.56', 'poconnor', 4, 12, 56), -- username : poconnor 
-    ('87384552', 'Gabriel', 'Davis', 'gdavis@iut.univ-paris8.fr', '06.60.49.50.14', 'gdavis', 4, 12, 56), -- username : gdavis 
-    ('91894117', 'Tim', 'Mercado', 'tmercado@iut.univ-paris8.fr', '06.83.32.46.23', 'tmercado', 4, 12, 56), -- username : tmercado 
-    ('77272336', 'Krista', 'Lopez', 'klopez@iut.univ-paris8.fr', '07.63.30.94.87', 'klopez', 4, 12, 56), -- username : klopez 
-    ('21554678', 'Austin', 'Rojas', 'arojas@iut.univ-paris8.fr', '07.07.38.99.53', 'arojas', 4, 12, 56), -- username : arojas 
-    ('68747064', 'Alexandra', 'Morris', 'amorris@iut.univ-paris8.fr', '06.27.79.22.96', 'amorris', 4, 12, 56), -- username : amorris 
-    ('44418173', 'Renee', 'Watson', 'rwatson@iut.univ-paris8.fr', '07.06.13.14.02', 'rwatson', 4, 12, 56), -- username : rwatson 
-    ('17741003', 'Katelyn', 'Kaufman', 'kkaufman@iut.univ-paris8.fr', '06.25.30.50.15', 'kkaufman', 4, 12, 56), -- username : kkaufman 
-    ('05346005', 'Cory', 'Phillips', 'cphillips@iut.univ-paris8.fr', '07.09.27.41.90', 'cphillips', 4, 12, 56), -- username : cphillips 
-    ('45393057', 'James', 'Moore', 'jmoore@iut.univ-paris8.fr', '07.84.84.74.86', 'jmoore', 4, 12, 100), -- username : jmoore 
-    ('30605679', 'Joseph', 'James', 'jjames@iut.univ-paris8.fr', '07.72.38.18.92', 'jjames', 4, 12, 100), -- username : jjames 
-    ('00748490', 'Timothy', 'Webster', 'twebster@iut.univ-paris8.fr', '06.25.46.32.01', 'twebster', 4, 12, 100), -- username : twebster 
-    ('11226668', 'Zachary', 'Lee', 'zlee@iut.univ-paris8.fr', '07.14.25.47.94', 'zlee', 4, 12, 100), -- username : zlee 
-    ('41339836', 'Cynthia', 'Stewart', 'cstewart@iut.univ-paris8.fr', '07.36.41.13.50', 'cstewart', 4, 12, 100), -- username : cstewart 
-    ('77807697', 'Benjamin', 'Smith', 'bsmith@iut.univ-paris8.fr', '06.39.13.25.45', 'bsmith', 4, 12, 100), -- username : bsmith 
-    ('59231874', 'Eric', 'Martin', 'emartin@iut.univ-paris8.fr', '06.25.56.01.66', 'emartin', 4, 12, 100), -- username : emartin 
-    ('48426574', 'Leslie', 'Allen', 'lallen@iut.univ-paris8.fr', '06.90.05.28.67', 'lallen', 4, 12, 100), -- username : lallen 
-    ('33418012', 'Elizabeth', 'Jones', 'ejones@iut.univ-paris8.fr', '06.82.37.68.78', 'ejones', 4, 12, 100), -- username : ejones 
-    ('15692994', 'Savannah', 'Ramirez', 'sramirez@iut.univ-paris8.fr', '06.45.07.45.84', 'sramirez', 4, 12, 100), -- username : sramirez 
-    ('46573714', 'Mary', 'Erickson', 'merickson@iut.univ-paris8.fr', '07.06.97.06.84', 'merickson', 4, 11, 11), -- username : merickson 
-    ('30981736', 'Bruce', 'Lewis', 'blewis@iut.univ-paris8.fr', '06.55.46.54.11', 'blewis', 4, 11, 11), -- username : blewis 
-    ('75295703', 'William', 'Eaton', 'weaton@iut.univ-paris8.fr', '06.09.74.34.90', 'weaton', 4, 11, 11), -- username : weaton 
-    ('50520383', 'Elizabeth', 'Burns', 'eburns@iut.univ-paris8.fr', '07.72.19.77.87', 'eburns', 4, 11, 11), -- username : eburns 
-    ('02517538', 'Kelly', 'Mills', 'kmills@iut.univ-paris8.fr', '06.64.09.57.75', 'kmills', 4, 11, 11), -- username : kmills 
-    ('29957833', 'Sarah', 'Harris', 'sharris@iut.univ-paris8.fr', '07.18.52.13.69', 'sharris', 4, 11, 11), -- username : sharris 
-    ('20994643', 'Denise', 'Johnson', 'djohnson@iut.univ-paris8.fr', '06.54.29.13.91', 'djohnson', 4, 11, 11), -- username : djohnson 
-    ('56142152', 'Adam', 'Ward', 'award@iut.univ-paris8.fr', '07.83.02.12.56', 'award', 4, 11, 11), -- username : award 
-    ('67000044', 'Michelle', 'Jones', 'mjones2@iut.univ-paris8.fr', '07.50.90.83.90', 'mjones2', 4, 11, 11), -- username : mjones2 
-    ('48822514', 'Natasha', 'Cook', 'ncook@iut.univ-paris8.fr', '06.73.17.07.01', 'ncook', 4, 11, 11), -- username : ncook 
-    ('93906112', 'Roger', 'Fowler', 'rfowler@iut.univ-paris8.fr', '06.26.25.32.72', 'rfowler', 4, 36, 124), -- username : rfowler 
-    ('22443815', 'David', 'Marquez', 'dmarquez@iut.univ-paris8.fr', '07.43.56.51.56', 'dmarquez', 4, 36, 124), -- username : dmarquez 
-    ('88814584', 'Tiffany', 'Villa', 'tvilla@iut.univ-paris8.fr', '06.13.10.15.26', 'tvilla', 4, 36, 124), -- username : tvilla 
-    ('29279674', 'Samantha', 'Mccarthy', 'smccarthy@iut.univ-paris8.fr', '06.36.39.74.20', 'smccarthy', 4, 36, 124), -- username : smccarthy 
-    ('55142836', 'Tyler', 'Spence', 'tspence@iut.univ-paris8.fr', '06.26.65.41.40', 'tspence', 4, 36, 124), -- username : tspence 
-    ('50571986', 'Christopher', 'Hartman', 'chartman@iut.univ-paris8.fr', '06.25.43.30.71', 'chartman', 4, 36, 124), -- username : chartman 
-    ('14621799', 'Melanie', 'Jones', 'mjones1@iut.univ-paris8.fr', '06.83.23.58.04', 'mjones1', 4, 36, 124), -- username : mjones1 
-    ('91172041', 'Samantha', 'Williams', 'swilliams@iut.univ-paris8.fr', '07.52.80.53.67', 'swilliams', 4, 36, 124), -- username : swilliams 
-    ('85869064', 'Brian', 'Johnson', 'bjohnson@iut.univ-paris8.fr', '06.16.34.35.43', 'bjohnson', 4, 36, 124), -- username : bjohnson 
-    ('91540939', 'David', 'Lawson', 'dlawson@iut.univ-paris8.fr', '06.51.25.47.18', 'dlawson', 4, 36, 124), -- username : dlawson 
-    ('76295443', 'Maria', 'Jones', 'mjones@iut.univ-paris8.fr', '07.51.03.23.10', 'mjones', 4, 11, 99), -- username : mjones 
-    ('87741085', 'Amy', 'Peters', 'apeters@iut.univ-paris8.fr', '07.85.11.61.75', 'apeters', 4, 11, 99), -- username : apeters 
-    ('59095734', 'Misty', 'Richardson', 'mrichardson@iut.univ-paris8.fr', '06.70.53.58.12', 'mrichardson', 4, 11, 99), -- username : mrichardson 
-    ('21113883', 'Bernard', 'Hamilton', 'bhamilton@iut.univ-paris8.fr', '06.28.19.32.93', 'bhamilton', 4, 11, 99), -- username : bhamilton 
-    ('03304988', 'Julie', 'Kidd', 'jkidd@iut.univ-paris8.fr', '07.93.09.19.24', 'jkidd', 4, 11, 99), -- username : jkidd 
-    ('63233991', 'Dylan', 'Garcia', 'dgarcia@iut.univ-paris8.fr', '07.95.20.31.57', 'dgarcia', 4, 11, 99), -- username : dgarcia 
-    ('45284345', 'Lauren', 'Lee', 'llee@iut.univ-paris8.fr', '06.15.72.13.43', 'llee', 4, 11, 99), -- username : llee 
-    ('89164250', 'Robin', 'Walters', 'rwalters@iut.univ-paris8.fr', '07.54.53.53.54', 'rwalters', 4, 11, 99), -- username : rwalters 
-    ('32857376', 'George', 'Collins', 'gcollins@iut.univ-paris8.fr', '07.16.10.57.16', 'gcollins', 4, 11, 99), -- username : gcollins 
-    ('04830527', 'Anne', 'Diaz', 'adiaz@iut.univ-paris8.fr', '06.85.94.05.83', 'adiaz', 4, 11, 99), -- username : adiaz 
-    ('15409326', 'Jerry', 'Rosales', 'jrosales@iut.univ-paris8.fr', '06.26.12.14.91', 'jrosales', 4, 43, 43), -- username : jrosales 
-    ('78851718', 'Brian', 'Howell', 'bhowell@iut.univ-paris8.fr', '07.85.70.63.25', 'bhowell', 4, 43, 43), -- username : bhowell 
-    ('83932637', 'Brenda', 'Anderson', 'banderson@iut.univ-paris8.fr', '06.34.37.27.66', 'banderson', 4, 43, 43), -- username : banderson 
-    ('52757147', 'Jillian', 'Wolfe', 'jwolfe@iut.univ-paris8.fr', '06.38.76.18.17', 'jwolfe', 4, 43, 43), -- username : jwolfe 
-    ('18288023', 'Edward', 'Nelson', 'enelson@iut.univ-paris8.fr', '07.05.23.58.92', 'enelson', 4, 43, 43), -- username : enelson 
-    ('21688744', 'Yvonne', 'Powers', 'ypowers@iut.univ-paris8.fr', '07.42.59.15.65', 'ypowers', 4, 43, 43), -- username : ypowers 
-    ('24986894', 'Anna', 'Hayes', 'ahayes@iut.univ-paris8.fr', '07.11.83.88.68', 'ahayes', 4, 43, 43), -- username : ahayes 
-    ('01724059', 'Jody', 'Tucker', 'jtucker@iut.univ-paris8.fr', '07.81.78.17.76', 'jtucker', 4, 43, 43), -- username : jtucker 
-    ('93302713', 'Jeffrey', 'Walker', 'jwalker@iut.univ-paris8.fr', '07.85.77.04.42', 'jwalker', 4, 43, 43), -- username : jwalker 
-    ('25798085', 'Amanda', 'Crawford', 'acrawford@iut.univ-paris8.fr', '07.11.98.38.30', 'acrawford', 4, 43, 43), -- username : acrawford 
-    ('02568745', 'Julie', 'Davis', 'jdavis@iut.univ-paris8.fr', '07.06.23.96.08', 'jdavis', 4, 43, 87), -- username : jdavis 
-    ('86657262', 'Wendy', 'Phillips', 'wphillips@iut.univ-paris8.fr', '07.35.12.20.24', 'wphillips', 4, 43, 87), -- username : wphillips 
-    ('97727988', 'Craig', 'Moore', 'cmoore@iut.univ-paris8.fr', '06.13.59.97.09', 'cmoore', 4, 43, 87), -- username : cmoore 
-    ('86683545', 'Stephanie', 'Thompson', 'sthompson@iut.univ-paris8.fr', '07.20.67.46.94', 'sthompson', 4, 43, 87), -- username : sthompson 
-    ('32719739', 'Christina', 'Sloan', 'csloan@iut.univ-paris8.fr', '07.68.78.45.66', 'csloan', 4, 43, 87), -- username : csloan 
-    ('04983304', 'Shane', 'Burns', 'sburns@iut.univ-paris8.fr', '07.57.35.53.58', 'sburns', 4, 43, 87), -- username : sburns 
-    ('12038577', 'John', 'Cruz', 'jcruz@iut.univ-paris8.fr', '07.01.77.64.07', 'jcruz', 4, 43, 87), -- username : jcruz 
-    ('45469766', 'Christina', 'Thompson', 'cthompson@iut.univ-paris8.fr', '07.00.46.18.34', 'cthompson', 4, 43, 87), -- username : cthompson 
-    ('76314164', 'Jennifer', 'Jensen', 'jjensen@iut.univ-paris8.fr', '07.72.69.02.46', 'jjensen', 4, 43, 87), -- username : jjensen 
-    ('02002383', 'Christopher', 'Smith', 'csmith@iut.univ-paris8.fr', '07.72.97.11.22', 'csmith', 4, 43, 87), -- username : csmith 
-    ('93540661', 'Cheyenne', 'Williams', 'cwilliams@iut.univ-paris8.fr', '07.22.95.16.57', 'cwilliams', 4, 43, 131), -- username : cwilliams 
-    ('57390122', 'James', 'Johnson', 'jjohnson@iut.univ-paris8.fr', '06.10.84.65.78', 'jjohnson', 4, 43, 131), -- username : jjohnson 
-    ('58211449', 'Robert', 'Kennedy', 'rkennedy@iut.univ-paris8.fr', '07.52.04.24.02', 'rkennedy', 4, 43, 131), -- username : rkennedy 
-    ('63524413', 'Ryan', 'Miller', 'rmiller@iut.univ-paris8.fr', '06.12.41.11.16', 'rmiller', 4, 43, 131), -- username : rmiller 
-    ('09291057', 'David', 'Fisher', 'dfisher@iut.univ-paris8.fr', '07.64.36.16.96', 'dfisher', 4, 43, 131), -- username : dfisher 
-    ('26578922', 'Sarah', 'Barnett', 'sbarnett@iut.univ-paris8.fr', '07.75.18.12.87', 'sbarnett', 4, 43, 131), -- username : sbarnett 
-    ('19901492', 'Deborah', 'Willis', 'dwillis@iut.univ-paris8.fr', '07.12.61.31.22', 'dwillis', 4, 43, 131), -- username : dwillis 
-    ('07777292', 'Tracey', 'Willis', 'twillis@iut.univ-paris8.fr', '06.12.95.78.89', 'twillis', 4, 43, 131), -- username : twillis 
-    ('92949059', 'Cassie', 'Tanner', 'ctanner@iut.univ-paris8.fr', '07.53.42.33.93', 'ctanner', 4, 43, 131), -- username : ctanner 
-    ('61331748', 'Patrick', 'Hebert', 'phebert@iut.univ-paris8.fr', '06.46.53.71.83', 'phebert', 4, 43, 131), -- username : phebert 
-    ('38529314', 'Scott', 'Vega', 'svega@iut.univ-paris8.fr', '06.14.94.13.45', 'svega', 4, 44, 44), -- username : svega 
-    ('38886783', 'Kathryn', 'Price', 'kprice@iut.univ-paris8.fr', '06.56.41.14.39', 'kprice', 4, 44, 44), -- username : kprice 
-    ('83190026', 'Ralph', 'Duran', 'rduran@iut.univ-paris8.fr', '07.31.53.98.82', 'rduran', 4, 44, 44), -- username : rduran 
-    ('62135663', 'Crystal', 'Hebert', 'chebert@iut.univ-paris8.fr', '07.22.59.26.60', 'chebert', 4, 44, 44), -- username : chebert 
-    ('84785152', 'Melissa', 'Glover', 'mglover@iut.univ-paris8.fr', '07.23.24.49.76', 'mglover', 4, 44, 44), -- username : mglover 
-    ('59993344', 'Joshua', 'Velazquez', 'jvelazquez@iut.univ-paris8.fr', '07.95.89.74.72', 'jvelazquez', 4, 44, 44), -- username : jvelazquez 
-    ('46320130', 'April', 'White', 'awhite@iut.univ-paris8.fr', '07.05.80.01.60', 'awhite', 4, 44, 44), -- username : awhite 
-    ('58725380', 'George', 'Thomas', 'gthomas@iut.univ-paris8.fr', '07.46.79.03.12', 'gthomas', 4, 44, 44), -- username : gthomas 
-    ('60175427', 'Sydney', 'Garcia', 'sgarcia@iut.univ-paris8.fr', '06.59.31.01.72', 'sgarcia', 4, 44, 44), -- username : sgarcia 
-    ('58048804', 'Joel', 'Baker', 'jbaker@iut.univ-paris8.fr', '07.64.68.72.90', 'jbaker', 4, 44, 44), -- username : jbaker 
-    ('12302510', 'Cheryl', 'Olson', 'colson@iut.univ-paris8.fr', '06.96.33.55.24', 'colson', 4, 44, 88), -- username : colson 
-    ('97811547', 'Mary', 'Shelton', 'mshelton@iut.univ-paris8.fr', '06.33.96.05.37', 'mshelton', 4, 44, 88), -- username : mshelton 
-    ('05535643', 'Hannah', 'Williams', 'hwilliams@iut.univ-paris8.fr', '06.17.36.47.45', 'hwilliams', 4, 44, 88), -- username : hwilliams 
-    ('25993662', 'Karen', 'Shaw', 'kshaw@iut.univ-paris8.fr', '07.30.15.81.02', 'kshaw', 4, 44, 88), -- username : kshaw 
-    ('49557721', 'Kathryn', 'Jacobs', 'kjacobs@iut.univ-paris8.fr', '07.02.59.92.11', 'kjacobs', 4, 44, 88), -- username : kjacobs 
-    ('81721576', 'Alexander', 'Jarvis', 'ajarvis@iut.univ-paris8.fr', '07.95.44.46.60', 'ajarvis', 4, 44, 88), -- username : ajarvis 
-    ('11602644', 'Shane', 'Walker', 'swalker@iut.univ-paris8.fr', '06.38.05.18.37', 'swalker', 4, 44, 88), -- username : swalker 
-    ('67472131', 'Andrea', 'Gordon', 'agordon@iut.univ-paris8.fr', '07.89.04.48.83', 'agordon', 4, 44, 88), -- username : agordon 
-    ('74668828', 'Jennifer', 'Miller', 'jmiller@iut.univ-paris8.fr', '07.27.02.61.81', 'jmiller', 4, 44, 88), -- username : jmiller 
-    ('13773128', 'Sandra', 'Paul', 'spaul@iut.univ-paris8.fr', '07.44.45.43.11', 'spaul', 4, 44, 88), -- username : spaul 
-    ('06987383', 'Eric', 'Park', 'epark@iut.univ-paris8.fr', '07.09.78.59.81', 'epark', 4, 44, 132), -- username : epark 
-    ('89035492', 'David', 'Randolph', 'drandolph@iut.univ-paris8.fr', '07.53.55.33.65', 'drandolph', 4, 44, 132), -- username : drandolph 
-    ('50962677', 'Darlene', 'Hutchinson', 'dhutchinson@iut.univ-paris8.fr', '06.90.45.07.62', 'dhutchinson', 4, 44, 132), -- username : dhutchinson 
-    ('24287795', 'Thomas', 'Johnson', 'tjohnson@iut.univ-paris8.fr', '06.57.43.93.13', 'tjohnson', 4, 44, 132), -- username : tjohnson 
-    ('07637062', 'Kimberly', 'Rivera', 'krivera@iut.univ-paris8.fr', '06.69.78.28.46', 'krivera', 4, 44, 132), -- username : krivera 
-    ('27365101', 'Angela', 'Moore', 'amoore@iut.univ-paris8.fr', '07.27.09.89.09', 'amoore', 4, 44, 132), -- username : amoore 
-    ('12751715', 'Amy', 'Romero', 'aromero@iut.univ-paris8.fr', '07.03.82.19.59', 'aromero', 4, 44, 132), -- username : aromero 
-    ('24272163', 'Stacy', 'Carlson', 'scarlson@iut.univ-paris8.fr', '06.70.18.36.24', 'scarlson', 4, 44, 132), -- username : scarlson 
-    ('64268964', 'Frederick', 'Hoffman', 'fhoffman@iut.univ-paris8.fr', '06.16.98.40.27', 'fhoffman', 4, 44, 132), -- username : fhoffman 
-    ('83384822', 'George', 'Ayers', 'gayers@iut.univ-paris8.fr', '06.32.06.80.62', 'gayers', 4, 44, 132), -- username : gayers 
-    ('31055189', 'Jennifer', 'Sexton', 'jsexton@iut.univ-paris8.fr', '07.42.94.25.85', 'jsexton', 4, 36, 36), -- username : jsexton 
-    ('20689578', 'Lori', 'Campbell', 'lcampbell@iut.univ-paris8.fr', '06.07.44.04.32', 'lcampbell', 4, 36, 36), -- username : lcampbell 
-    ('99590976', 'Whitney', 'Weiss', 'wweiss@iut.univ-paris8.fr', '07.16.26.70.52', 'wweiss', 4, 36, 36), -- username : wweiss 
-    ('14102962', 'Lawrence', 'Boyle', 'lboyle@iut.univ-paris8.fr', '07.13.99.14.29', 'lboyle', 4, 36, 36), -- username : lboyle 
-    ('78267612', 'Christopher', 'Jenkins', 'cjenkins@iut.univ-paris8.fr', '06.33.91.20.10', 'cjenkins', 4, 36, 36), -- username : cjenkins 
-    ('13359424', 'Lisa', 'Flores', 'lflores@iut.univ-paris8.fr', '06.88.68.30.11', 'lflores', 4, 36, 36), -- username : lflores 
-    ('33344254', 'Todd', 'Hernandez', 'thernandez@iut.univ-paris8.fr', '07.21.81.56.49', 'thernandez', 4, 36, 36), -- username : thernandez 
-    ('54641352', 'Jacob', 'Adams', 'jadams@iut.univ-paris8.fr', '06.38.29.68.76', 'jadams', 4, 36, 36), -- username : jadams 
-    ('85497128', 'Taylor', 'Bishop', 'tbishop@iut.univ-paris8.fr', '07.37.61.03.66', 'tbishop', 4, 36, 36), -- username : tbishop 
-    ('67188402', 'Michael', 'Hawkins', 'mhawkins@iut.univ-paris8.fr', '06.64.51.17.51', 'mhawkins', 4, 36, 36), -- username : mhawkins 
-    ('28035410', 'Jeffrey', 'Watson', 'jwatson@iut.univ-paris8.fr', '06.93.13.51.04', 'jwatson', 4, 36, 80), -- username : jwatson 
-    ('72215630', 'Kathleen', 'Martin', 'kmartin@iut.univ-paris8.fr', '06.32.00.37.38', 'kmartin', 4, 36, 80), -- username : kmartin 
-    ('39305054', 'Jeffery', 'Brooks', 'jbrooks@iut.univ-paris8.fr', '07.18.77.07.38', 'jbrooks', 4, 36, 80), -- username : jbrooks 
-    ('13741976', 'Lisa', 'White', 'lwhite@iut.univ-paris8.fr', '07.52.10.77.18', 'lwhite', 4, 36, 80), -- username : lwhite 
-    ('29022960', 'Tamara', 'Cross', 'tcross@iut.univ-paris8.fr', '06.90.00.08.92', 'tcross', 4, 36, 80), -- username : tcross 
-    ('32941425', 'Jasmine', 'Ford', 'jford@iut.univ-paris8.fr', '06.88.88.67.49', 'jford', 4, 36, 80), -- username : jford 
-    ('84708103', 'Debbie', 'Jacobs', 'djacobs@iut.univ-paris8.fr', '06.27.40.14.48', 'djacobs', 4, 36, 80), -- username : djacobs 
-    ('61720832', 'Stephanie', 'Moran', 'smoran@iut.univ-paris8.fr', '06.79.15.12.39', 'smoran', 4, 36, 80), -- username : smoran 
-    ('53253819', 'Isaiah', 'Bowman', 'ibowman@iut.univ-paris8.fr', '06.50.50.17.59', 'ibowman', 4, 36, 80), -- username : ibowman 
-    ('71664116', 'Sheila', 'Stark', 'sstark@iut.univ-paris8.fr', '07.55.11.61.27', 'sstark', 4, 36, 80), -- username : sstark 
-    ('05476284', 'Alan', 'Thompson', 'athompson@iut.univ-paris8.fr', '06.10.98.23.33', 'athompson', 4, 36, 124), -- username : athompson 
-    ('70725989', 'Rhonda', 'Bell', 'rbell@iut.univ-paris8.fr', '06.38.43.74.50', 'rbell', 4, 36, 124), -- username : rbell 
-    ('29069411', 'Randy', 'Castillo', 'rcastillo@iut.univ-paris8.fr', '07.90.99.55.56', 'rcastillo', 4, 36, 124), -- username : rcastillo 
-    ('31088294', 'Jo', 'Harris', 'jharris@iut.univ-paris8.fr', '06.26.27.73.80', 'jharris', 4, 36, 124), -- username : jharris 
-    ('94670208', 'Kimberly', 'Nelson', 'knelson@iut.univ-paris8.fr', '07.01.11.07.21', 'knelson', 4, 36, 124), -- username : knelson 
-    ('03241904', 'Patricia', 'Farmer', 'pfarmer@iut.univ-paris8.fr', '06.31.57.33.44', 'pfarmer', 4, 36, 124), -- username : pfarmer 
-    ('30523853', 'Lisa', 'Hanna', 'lhanna@iut.univ-paris8.fr', '07.44.55.97.34', 'lhanna', 4, 36, 124), -- username : lhanna 
-    ('42586035', 'Breanna', 'Haas', 'bhaas@iut.univ-paris8.fr', '06.87.22.73.60', 'bhaas', 4, 36, 124), -- username : bhaas 
-    ('22347338', 'Jessica', 'Williams', 'jwilliams@iut.univ-paris8.fr', '07.19.33.47.24', 'jwilliams', 4, 36, 124), -- username : jwilliams 
-    ('79555373', 'Ernest', 'Carey', 'ecarey@iut.univ-paris8.fr', '07.82.41.80.37', 'ecarey', 4, 36, 124), -- username : ecarey 
-    ('61331760', 'Kristen', 'Hernandez', 'khernandez@iut.univ-paris8.fr', '06.44.20.95.20', 'khernandez', 4, 34, 34), -- username : khernandez 
-    ('14110500', 'Megan', 'Williams', 'mwilliams@iut.univ-paris8.fr', '07.90.55.98.68', 'mwilliams', 4, 34, 34), -- username : mwilliams 
-    ('14790194', 'Janet', 'Wheeler', 'jwheeler@iut.univ-paris8.fr', '06.75.26.75.80', 'jwheeler', 4, 34, 34), -- username : jwheeler 
-    ('66204500', 'Willie', 'Gross', 'wgross@iut.univ-paris8.fr', '07.59.82.43.05', 'wgross', 4, 34, 34), -- username : wgross 
-    ('99205403', 'Amanda', 'Jacobs', 'ajacobs@iut.univ-paris8.fr', '06.34.84.51.01', 'ajacobs', 4, 34, 34), -- username : ajacobs 
-    ('11415997', 'Crystal', 'Harris', 'charris@iut.univ-paris8.fr', '06.70.17.04.77', 'charris', 4, 34, 34), -- username : charris 
-    ('58779488', 'Kristine', 'Brown', 'kbrown@iut.univ-paris8.fr', '06.78.86.41.59', 'kbrown', 4, 34, 34), -- username : kbrown 
-    ('38188862', 'Andrew', 'Wagner', 'awagner@iut.univ-paris8.fr', '07.47.72.87.04', 'awagner', 4, 34, 34), -- username : awagner 
-    ('76910893', 'Paige', 'Carter', 'pcarter@iut.univ-paris8.fr', '07.65.72.42.23', 'pcarter', 4, 34, 34), -- username : pcarter 
-    ('18697585', 'Elizabeth', 'Kerr', 'ekerr@iut.univ-paris8.fr', '06.59.52.48.15', 'ekerr', 4, 34, 34), -- username : ekerr 
-    ('97418340', 'Shannon', 'Parrish', 'sparrish@iut.univ-paris8.fr', '07.19.02.74.57', 'sparrish', 4, 34, 78), -- username : sparrish 
-    ('49171004', 'Terri', 'Brown', 'tbrown@iut.univ-paris8.fr', '07.76.90.52.65', 'tbrown', 4, 34, 78), -- username : tbrown 
-    ('96628888', 'Taylor', 'Flores', 'tflores@iut.univ-paris8.fr', '06.45.97.09.79', 'tflores', 4, 34, 78), -- username : tflores 
-    ('16631212', 'Nicholas', 'Conley', 'nconley@iut.univ-paris8.fr', '06.83.59.56.99', 'nconley', 4, 34, 78), -- username : nconley 
-    ('21938917', 'Emily', 'Blankenship', 'eblankenship@iut.univ-paris8.fr', '06.38.58.38.12', 'eblankenship', 4, 34, 78), -- username : eblankenship 
-    ('90901518', 'April', 'Wilson', 'awilson@iut.univ-paris8.fr', '06.29.08.95.17', 'awilson', 4, 34, 78), -- username : awilson 
-    ('68962278', 'Olivia', 'Lawson', 'olawson@iut.univ-paris8.fr', '07.56.72.83.95', 'olawson', 4, 34, 78), -- username : olawson 
-    ('93139775', 'Lori', 'Huynh', 'lhuynh@iut.univ-paris8.fr', '06.82.59.86.11', 'lhuynh', 4, 34, 78), -- username : lhuynh 
-    ('61417727', 'Marie', 'Holden', 'mholden@iut.univ-paris8.fr', '07.84.93.51.10', 'mholden', 4, 34, 78), -- username : mholden 
-    ('09500646', 'Tabitha', 'Morales', 'tmorales@iut.univ-paris8.fr', '07.69.42.20.53', 'tmorales', 4, 34, 78), -- username : tmorales 
-    ('71635339', 'Jennifer', 'Cooper', 'jcooper@iut.univ-paris8.fr', '07.98.37.59.39', 'jcooper', 4, 34, 122), -- username : jcooper 
-    ('26819264', 'Kevin', 'Sanders', 'ksanders@iut.univ-paris8.fr', '07.75.16.47.93', 'ksanders', 4, 34, 122), -- username : ksanders 
-    ('24984521', 'Christine', 'Blair', 'cblair@iut.univ-paris8.fr', '07.97.71.21.37', 'cblair', 4, 34, 122), -- username : cblair 
-    ('62765253', 'Vanessa', 'Villa', 'vvilla@iut.univ-paris8.fr', '06.18.62.75.88', 'vvilla', 4, 34, 122), -- username : vvilla 
-    ('57629130', 'Tyler', 'Morgan', 'tmorgan@iut.univ-paris8.fr', '06.89.54.02.90', 'tmorgan', 4, 34, 122), -- username : tmorgan 
-    ('69411834', 'Karen', 'Tate', 'ktate@iut.univ-paris8.fr', '07.51.98.05.43', 'ktate', 4, 34, 122), -- username : ktate 
-    ('27015085', 'Ashley', 'Gonzales', 'agonzales@iut.univ-paris8.fr', '07.85.92.59.81', 'agonzales', 4, 34, 122), -- username : agonzales 
-    ('93140895', 'Christina', 'Gordon', 'cgordon@iut.univ-paris8.fr', '06.35.94.70.87', 'cgordon', 4, 34, 122), -- username : cgordon 
-    ('29917651', 'Ryan', 'Sanchez', 'rsanchez@iut.univ-paris8.fr', '06.34.55.44.24', 'rsanchez', 4, 34, 122), -- username : rsanchez 
-    ('31349843', 'David', 'Moore', 'dmoore@iut.univ-paris8.fr', '06.71.97.12.52', 'dmoore', 4, 34, 122), -- username : dmoore 
-    ('95195948', 'Randy', 'Campbell', 'rcampbell@iut.univ-paris8.fr', '07.28.74.71.04', 'rcampbell', 4, 35, 35), -- username : rcampbell 
-    ('50702605', 'Russell', 'Rogers', 'rrogers@iut.univ-paris8.fr', '07.47.87.32.04', 'rrogers', 4, 35, 35), -- username : rrogers 
-    ('63241690', 'William', 'Meyer', 'wmeyer@iut.univ-paris8.fr', '07.46.10.65.57', 'wmeyer', 4, 35, 35), -- username : wmeyer 
-    ('89224536', 'David', 'King', 'dking@iut.univ-paris8.fr', '07.93.05.56.11', 'dking', 4, 35, 35), -- username : dking 
-    ('90656539', 'Tyler', 'Austin', 'taustin@iut.univ-paris8.fr', '07.65.60.48.49', 'taustin', 4, 35, 35), -- username : taustin 
-    ('08774062', 'Matthew', 'Giles', 'mgiles@iut.univ-paris8.fr', '07.63.62.24.22', 'mgiles', 4, 35, 35), -- username : mgiles 
-    ('42513214', 'Anna', 'Tran', 'atran@iut.univ-paris8.fr', '06.37.39.36.40', 'atran', 4, 35, 35), -- username : atran 
-    ('56200950', 'Herbert', 'Gonzalez', 'hgonzalez@iut.univ-paris8.fr', '07.43.55.63.32', 'hgonzalez', 4, 35, 35), -- username : hgonzalez 
-    ('89696180', 'Tina', 'Perry', 'tperry1@iut.univ-paris8.fr', '07.81.77.52.76', 'tperry1', 4, 35, 35), -- username : tperry1 
-    ('62092363', 'Nicole', 'Cain', 'ncain@iut.univ-paris8.fr', '07.25.23.05.24', 'ncain', 4, 35, 35), -- username : ncain 
-    ('84324621', 'Melinda', 'Lewis', 'mlewis@iut.univ-paris8.fr', '07.41.83.18.99', 'mlewis', 4, 35, 79), -- username : mlewis 
-    ('87221462', 'Robert', 'Santana', 'rsantana@iut.univ-paris8.fr', '07.43.30.12.09', 'rsantana', 4, 35, 79), -- username : rsantana 
-    ('29171001', 'Nicholas', 'Mack', 'nmack@iut.univ-paris8.fr', '07.57.30.28.74', 'nmack', 4, 35, 79), -- username : nmack 
-    ('54862612', 'Rachel', 'Bishop', 'rbishop@iut.univ-paris8.fr', '07.06.13.78.88', 'rbishop', 4, 35, 79), -- username : rbishop 
-    ('12451754', 'Jill', 'Casey', 'jcasey@iut.univ-paris8.fr', '07.08.59.76.22', 'jcasey', 4, 35, 79), -- username : jcasey 
-    ('94822493', 'Samantha', 'Kelly', 'skelly@iut.univ-paris8.fr', '07.66.80.00.19', 'skelly', 4, 35, 79), -- username : skelly 
-    ('23024341', 'Melissa', 'Reed', 'mreed@iut.univ-paris8.fr', '07.98.53.10.76', 'mreed', 4, 35, 79), -- username : mreed 
-    ('31184072', 'Tamara', 'James', 'tjames@iut.univ-paris8.fr', '06.26.45.04.28', 'tjames', 4, 35, 79), -- username : tjames 
-    ('36381702', 'Jason', 'Green', 'jgreen@iut.univ-paris8.fr', '06.85.34.96.03', 'jgreen', 4, 35, 79), -- username : jgreen 
-    ('15706934', 'Sarah', 'Fox', 'sfox@iut.univ-paris8.fr', '06.56.47.61.78', 'sfox', 4, 35, 79), -- username : sfox 
-    ('91698965', 'Brian', 'Sandoval', 'bsandoval@iut.univ-paris8.fr', '07.71.67.49.23', 'bsandoval', 4, 35, 123), -- username : bsandoval 
-    ('91506368', 'Anthony', 'Wells', 'awells@iut.univ-paris8.fr', '07.39.25.43.18', 'awells', 4, 35, 123), -- username : awells 
-    ('69816247', 'Mark', 'Bishop', 'mbishop@iut.univ-paris8.fr', '06.32.78.37.76', 'mbishop', 4, 35, 123), -- username : mbishop 
-    ('83882181', 'Wanda', 'Sanchez', 'wsanchez@iut.univ-paris8.fr', '06.34.44.62.63', 'wsanchez', 4, 35, 123), -- username : wsanchez 
-    ('82557910', 'Karen', 'Bell', 'kbell@iut.univ-paris8.fr', '06.49.09.40.97', 'kbell', 4, 35, 123), -- username : kbell 
-    ('04243540', 'Seth', 'Yu', 'syu@iut.univ-paris8.fr', '06.01.79.53.96', 'syu', 4, 35, 123), -- username : syu 
-    ('70398693', 'Angela', 'Huang', 'ahuang@iut.univ-paris8.fr', '07.84.72.57.20', 'ahuang', 4, 35, 123), -- username : ahuang 
-    ('93055275', 'Vanessa', 'Simpson', 'vsimpson@iut.univ-paris8.fr', '07.53.45.31.94', 'vsimpson', 4, 35, 123), -- username : vsimpson 
-    ('89068271', 'Fernando', 'Pena', 'fpena@iut.univ-paris8.fr', '07.85.30.16.79', 'fpena', 4, 35, 123), -- username : fpena 
-    ('64397875', 'Christina', 'Jones', 'cjones@iut.univ-paris8.fr', '06.95.86.82.80', 'cjones', 4, 35, 123), -- username : cjones 
-    ('32238536', 'Margaret', 'Marks', 'mmarks@iut.univ-paris8.fr', '07.07.30.78.09', 'mmarks', 4, 12, 12), -- username : mmarks 
-    ('57318908', 'Tammy', 'Hester', 'thester@iut.univ-paris8.fr', '06.48.09.08.01', 'thester', 4, 12, 12), -- username : thester 
-    ('04918993', 'Benjamin', 'Patterson', 'bpatterson@iut.univ-paris8.fr', '07.69.10.22.89', 'bpatterson', 4, 12, 12), -- username : bpatterson 
-    ('54397979', 'Brittney', 'Finley', 'bfinley@iut.univ-paris8.fr', '06.93.04.39.57', 'bfinley', 4, 12, 12), -- username : bfinley 
-    ('54977363', 'Valerie', 'Cruz', 'vcruz@iut.univ-paris8.fr', '07.92.12.75.95', 'vcruz', 4, 12, 12), -- username : vcruz 
-    ('43401445', 'Katie', 'Campbell', 'kcampbell@iut.univ-paris8.fr', '06.77.92.19.10', 'kcampbell', 4, 12, 12), -- username : kcampbell 
-    ('50213284', 'Matthew', 'Perry', 'mperry@iut.univ-paris8.fr', '07.93.62.20.66', 'mperry', 4, 12, 12), -- username : mperry 
-    ('10417153', 'Ray', 'Nichols', 'rnichols@iut.univ-paris8.fr', '07.87.44.74.40', 'rnichols', 4, 12, 12), -- username : rnichols 
-    ('84969122', 'Kimberly', 'Garcia', 'kgarcia@iut.univ-paris8.fr', '07.93.59.55.14', 'kgarcia', 4, 12, 12), -- username : kgarcia 
-    ('68032725', 'Stephanie', 'Clark', 'sclark@iut.univ-paris8.fr', '07.79.52.33.65', 'sclark', 4, 12, 12), -- username : sclark 
-    ('68618211', 'Alexandra', 'Allen', 'aallen@iut.univ-paris8.fr', '06.32.80.99.66', 'aallen', 4, 23, 67), -- username : aallen 
-    ('83877019', 'Tracy', 'Perry', 'tperry@iut.univ-paris8.fr', '06.65.44.70.73', 'tperry', 4, 23, 67), -- username : tperry 
-    ('08783200', 'Linda', 'Wright', 'lwright@iut.univ-paris8.fr', '06.81.39.55.18', 'lwright', 4, 23, 67), -- username : lwright 
-    ('22958887', 'Anthony', 'Davis', 'adavis@iut.univ-paris8.fr', '07.52.60.91.52', 'adavis', 4, 23, 67), -- username : adavis 
-    ('90710844', 'Jennifer', 'Fischer', 'jfischer@iut.univ-paris8.fr', '06.51.92.73.75', 'jfischer', 4, 23, 67), -- username : jfischer 
-    ('79649503', 'Andrea', 'Calderon', 'acalderon@iut.univ-paris8.fr', '06.67.49.87.28', 'acalderon', 4, 23, 67), -- username : acalderon 
-    ('71550034', 'Richard', 'Lawson', 'rlawson@iut.univ-paris8.fr', '06.50.15.81.39', 'rlawson', 4, 23, 67), -- username : rlawson 
-    ('16713138', 'David', 'Zuniga', 'dzuniga@iut.univ-paris8.fr', '07.53.58.09.82', 'dzuniga', 4, 23, 67), -- username : dzuniga 
-    ('82777835', 'Andrew', 'Willis', 'awillis@iut.univ-paris8.fr', '07.51.72.52.28', 'awillis', 4, 23, 67), -- username : awillis 
-    ('30396031', 'Vicki', 'Pugh', 'vpugh@iut.univ-paris8.fr', '06.49.06.61.60', 'vpugh', 4, 23, 67), -- username : vpugh 
-    ('99527325', 'Michelle', 'Mathis', 'mmathis@iut.univ-paris8.fr', '07.20.73.50.22', 'mmathis', 4, 43, 131), -- username : mmathis 
-    ('25932010', 'Paige', 'Miranda', 'pmiranda@iut.univ-paris8.fr', '07.84.96.01.04', 'pmiranda', 4, 43, 131), -- username : pmiranda 
-    ('71756420', 'Melissa', 'Cooper', 'mcooper@iut.univ-paris8.fr', '06.45.89.00.93', 'mcooper', 4, 43, 131), -- username : mcooper 
-    ('75438409', 'Angela', 'Mercado', 'amercado@iut.univ-paris8.fr', '06.18.54.43.47', 'amercado', 4, 43, 131), -- username : amercado 
-    ('84210640', 'Christopher', 'Stokes', 'cstokes@iut.univ-paris8.fr', '07.77.15.66.11', 'cstokes', 4, 43, 131), -- username : cstokes 
-    ('16207268', 'Michael', 'Mccann', 'mmccann@iut.univ-paris8.fr', '07.03.50.79.78', 'mmccann', 4, 43, 131), -- username : mmccann 
-    ('74312119', 'Samantha', 'Martinez', 'smartinez@iut.univ-paris8.fr', '07.83.66.44.41', 'smartinez', 4, 43, 131), -- username : smartinez 
-    ('07767752', 'Ethan', 'Rodriguez', 'erodriguez@iut.univ-paris8.fr', '07.10.43.04.94', 'erodriguez', 4, 43, 131), -- username : erodriguez 
-    ('49193399', 'Paul', 'Johnson', 'pjohnson@iut.univ-paris8.fr', '06.27.11.38.55', 'pjohnson', 4, 43, 131), -- username : pjohnson 
-    ('93534416', 'Joseph', 'Gutierrez', 'jgutierrez@iut.univ-paris8.fr', '07.67.96.78.91', 'jgutierrez', 4, 43,131) -- username : jjgutierrez 
+    ('79910389', 'Mercedes', 'Franklin', 'mfranklin@iut.univ-paris8.fr', '06.60.92.93.57', 'mfranklin', 4, 24, 68) -- username : mfranklin 
+    -- ('77178576', 'Aaron', 'Mullins', 'amullins@iut.univ-paris8.fr', '06.71.37.91.65', 'amullins', 4, 24, 68), -- username : amullins 
+    -- ('67236215', 'Daniel', 'Nelson', 'dnelson@iut.univ-paris8.fr', '06.43.44.03.14', 'dnelson', 4, 24, 68), -- username : dnelson 
+    -- ('25075962', 'Sheila', 'Gomez', 'sgomez@iut.univ-paris8.fr', '06.71.34.91.55', 'sgomez', 4, 24, 68), -- username : sgomez 
+    -- ('65951003', 'Christopher', 'Adams', 'cadams@iut.univ-paris8.fr', '07.42.35.55.32', 'cadams', 4, 24, 68), -- username : cadams 
+    -- ('05846520', 'Sherri', 'Fischer', 'sfischer@iut.univ-paris8.fr', '06.28.10.96.15', 'sfischer', 4, 24, 68), -- username : sfischer 
+    -- ('51308951', 'Isaiah', 'Molina', 'imolina@iut.univ-paris8.fr', '07.19.79.71.13', 'imolina', 4, 24, 68), -- username : imolina 
+    -- ('75990313', 'Kara', 'Oliver', 'koliver@iut.univ-paris8.fr', '06.74.81.59.16', 'koliver', 4, 24, 68), -- username : koliver 
+    -- ('10541038', 'Michael', 'Jackson', 'mjackson@iut.univ-paris8.fr', '07.69.45.71.99', 'mjackson', 4, 24, 68), -- username : mjackson 
+    -- ('51982555', 'Michele', 'Clark', 'mclark@iut.univ-paris8.fr', '06.97.91.06.74', 'mclark', 4, 24, 68), -- username : mclark 
+    -- ('42085607', 'Gabrielle', 'Ramirez', 'gramirez@iut.univ-paris8.fr', '07.24.46.95.69', 'gramirez', 4, 24, 112), -- username : gramirez 
+    -- ('46708797', 'Kimberly', 'Sullivan', 'ksullivan@iut.univ-paris8.fr', '07.80.27.04.54', 'ksullivan', 4, 24, 112), -- username : ksullivan 
+    -- ('45315225', 'Steven', 'Murphy', 'smurphy@iut.univ-paris8.fr', '06.79.75.70.30', 'smurphy', 4, 24, 112), -- username : smurphy 
+    -- ('01905990', 'Tyler', 'Kirby', 'tkirby@iut.univ-paris8.fr', '07.86.82.60.64', 'tkirby', 4, 24, 112), -- username : tkirby 
+    -- ('74763899', 'April', 'Barron', 'abarron@iut.univ-paris8.fr', '07.39.47.03.05', 'abarron', 4, 24, 112), -- username : abarron 
+    -- ('31696139', 'Joyce', 'Dickerson', 'jdickerson@iut.univ-paris8.fr', '07.37.80.19.85', 'jdickerson', 4, 24, 112), -- username : jdickerson 
+    -- ('77465051', 'Nancy', 'Jacobs', 'njacobs@iut.univ-paris8.fr', '07.94.31.23.61', 'njacobs', 4, 24, 112), -- username : njacobs 
+    -- ('63171557', 'Cody', 'Hogan', 'chogan@iut.univ-paris8.fr', '06.63.48.54.25', 'chogan', 4, 24, 112), -- username : chogan 
+    -- ('68970935', 'Chad', 'Weeks', 'cweeks@iut.univ-paris8.fr', '06.72.77.43.25', 'cweeks', 4, 24, 112), -- username : cweeks 
+    -- ('63026387', 'David', 'Harvey', 'dharvey@iut.univ-paris8.fr', '07.12.76.35.09', 'dharvey', 4, 24, 112), -- username : dharvey 
+    -- ('51756062', 'Larry', 'Harris', 'lharris@iut.univ-paris8.fr', '06.55.95.41.48', 'lharris', 4, 23, 23), -- username : lharris 
+    -- ('05572909', 'Kristy', 'Mosley', 'kmosley@iut.univ-paris8.fr', '07.37.98.76.25', 'kmosley', 4, 23, 23), -- username : kmosley 
+    -- ('09908723', 'Corey', 'Soto', 'csoto@iut.univ-paris8.fr', '07.19.48.48.93', 'csoto', 4, 23, 23), -- username : csoto 
+    -- ('64732645', 'Rebecca', 'Lopez', 'rlopez@iut.univ-paris8.fr', '06.16.13.83.59', 'rlopez', 4, 23, 23), -- username : rlopez 
+    -- ('93438523', 'Allison', 'Logan', 'alogan@iut.univ-paris8.fr', '06.89.97.94.74', 'alogan', 4, 23, 23), -- username : alogan 
+    -- ('08910192', 'Katelyn', 'Gentry', 'kgentry@iut.univ-paris8.fr', '06.71.39.57.78', 'kgentry', 4, 23, 23), -- username : kgentry 
+    -- ('74758387', 'Julie', 'Hurst', 'jhurst@iut.univ-paris8.fr', '07.37.47.36.15', 'jhurst', 4, 23, 23), -- username : jhurst 
+    -- ('72601403', 'Aaron', 'Gutierrez', 'agutierrez@iut.univ-paris8.fr', '06.05.75.49.06', 'agutierrez', 4, 23, 23), -- username : agutierrez 
+    -- ('76229139', 'Courtney', 'Tucker', 'ctucker@iut.univ-paris8.fr', '06.75.61.72.81', 'ctucker', 4, 23, 23), -- username : ctucker 
+    -- ('82626380', 'Robert', 'Gates', 'rgates@iut.univ-paris8.fr', '07.02.46.00.68', 'rgates', 4, 23, 23), -- username : rgates 
+    -- ('49218448', 'Heather', 'Nielsen', 'hnielsen@iut.univ-paris8.fr', '07.70.06.29.13', 'hnielsen', 4, 23, 67), -- username : hnielsen 
+    -- ('17370097', 'Andrew', 'Long', 'along@iut.univ-paris8.fr', '07.64.57.61.76', 'along', 4, 23, 67), -- username : along 
+    -- ('66391588', 'Maria', 'Evans', 'mevans1@iut.univ-paris8.fr', '06.90.73.31.18', 'mevans1', 4, 23, 67), -- username : mevans1 
+    -- ('74730474', 'Billy', 'Steele', 'bsteele@iut.univ-paris8.fr', '06.30.89.93.60', 'bsteele', 4, 23, 67), -- username : bsteele 
+    -- ('32946066', 'Linda', 'Schneider', 'lschneider@iut.univ-paris8.fr', '07.76.95.02.97', 'lschneider', 4, 23, 67), -- username : lschneider 
+    -- ('08975144', 'Tonya', 'Long', 'tlong@iut.univ-paris8.fr', '07.95.97.41.07', 'tlong', 4, 23, 67), -- username : tlong 
+    -- ('40713822', 'Amanda', 'Gonzalez', 'agonzalez@iut.univ-paris8.fr', '06.80.82.09.61', 'agonzalez', 4, 23, 67), -- username : agonzalez 
+    -- ('06576587', 'Robert', 'Ryan', 'rryan@iut.univ-paris8.fr', '06.49.58.40.91', 'rryan', 4, 23, 67), -- username : rryan 
+    -- ('58906188', 'Tammy', 'Perez', 'tperez@iut.univ-paris8.fr', '07.15.18.57.51', 'tperez', 4, 23, 67), -- username : tperez 
+    -- ('00146381', 'Lucas', 'Oconnor', 'loconnor@iut.univ-paris8.fr', '07.68.66.41.61', 'loconnor', 4, 23, 67), -- username : loconnor 
+    -- ('22614467', 'James', 'Daugherty', 'jdaugherty@iut.univ-paris8.fr', '07.01.24.94.05', 'jdaugherty', 4, 23, 111), -- username : jdaugherty 
+    -- ('44544991', 'Elizabeth', 'Ortiz', 'eortiz@iut.univ-paris8.fr', '06.58.64.99.33', 'eortiz', 4, 23, 111), -- username : eortiz 
+    -- ('83070504', 'Meagan', 'Hall', 'mhall@iut.univ-paris8.fr', '07.70.94.75.88', 'mhall', 4, 23, 111), -- username : mhall 
+    -- ('70674274', 'Gary', 'Sellers', 'gsellers@iut.univ-paris8.fr', '06.97.68.35.00', 'gsellers', 4, 23, 111), -- username : gsellers 
+    -- ('99150820', 'William', 'Guzman', 'wguzman@iut.univ-paris8.fr', '07.98.33.35.56', 'wguzman', 4, 23, 111), -- username : wguzman 
+    -- ('81801763', 'Jacqueline', 'Berger', 'jberger@iut.univ-paris8.fr', '06.36.69.08.18', 'jberger', 4, 23, 111), -- username : jberger 
+    -- ('66734501', 'Michael', 'Berry', 'mberry@iut.univ-paris8.fr', '06.52.10.96.19', 'mberry', 4, 23, 111), -- username : mberry 
+    -- ('58232264', 'Sydney', 'Serrano', 'sserrano@iut.univ-paris8.fr', '07.47.07.74.33', 'sserrano', 4, 23, 111), -- username : sserrano 
+    -- ('33941786', 'Kurt', 'Santana', 'ksantana@iut.univ-paris8.fr', '07.31.69.88.12', 'ksantana', 4, 23, 111), -- username : ksantana 
+    -- ('86244140', 'Brandi', 'Miller', 'bmiller@iut.univ-paris8.fr', '06.31.63.93.71', 'bmiller', 4, 23, 111), -- username : bmiller 
+    -- ('99274260', 'Erika', 'Martinez', 'emartinez@iut.univ-paris8.fr', '07.64.29.95.19', 'emartinez', 4, 22, 22), -- username : emartinez 
+    -- ('79450184', 'Julia', 'Powell', 'jpowell@iut.univ-paris8.fr', '07.04.38.70.86', 'jpowell', 4, 22, 22), -- username : jpowell 
+    -- ('00301077', 'Harry', 'Anderson', 'handerson@iut.univ-paris8.fr', '07.50.84.25.58', 'handerson', 4, 22, 22), -- username : handerson 
+    -- ('52561885', 'Jeffrey', 'Curtis', 'jcurtis@iut.univ-paris8.fr', '06.50.29.41.85', 'jcurtis', 4, 22, 22), -- username : jcurtis 
+    -- ('62827511', 'Darrell', 'Adkins', 'dadkins@iut.univ-paris8.fr', '07.13.14.06.85', 'dadkins', 4, 22, 22), -- username : dadkins 
+    -- ('92804994', 'Ashley', 'Martin', 'amartin@iut.univ-paris8.fr', '07.74.97.74.09', 'amartin', 4, 22, 22), -- username : amartin 
+    -- ('99495555', 'David', 'Rowland', 'drowland@iut.univ-paris8.fr', '06.10.67.45.91', 'drowland', 4, 22, 22), -- username : drowland 
+    -- ('94502480', 'Matthew', 'Martinez', 'mmartinez@iut.univ-paris8.fr', '07.94.19.84.82', 'mmartinez', 4, 22, 22), -- username : mmartinez 
+    -- ('37322684', 'Miranda', 'Buck', 'mbuck@iut.univ-paris8.fr', '07.46.53.06.73', 'mbuck', 4, 22, 22), -- username : mbuck 
+    -- ('66505084', 'Shane', 'Mclean', 'smclean@iut.univ-paris8.fr', '07.02.27.52.02', 'smclean', 4, 22, 22), -- username : smclean 
+    -- ('24054107', 'Kevin', 'Robinson', 'krobinson@iut.univ-paris8.fr', '07.09.84.81.53', 'krobinson', 4, 22, 66), -- username : krobinson 
+    -- ('62591118', 'Cody', 'Gilbert', 'cgilbert@iut.univ-paris8.fr', '06.17.01.89.61', 'cgilbert', 4, 22, 66), -- username : cgilbert 
+    -- ('62292528', 'Jason', 'Hunt', 'jhunt@iut.univ-paris8.fr', '06.92.19.22.30', 'jhunt', 4, 22, 66), -- username : jhunt 
+    -- ('06819213', 'Mallory', 'Martin', 'mmartin@iut.univ-paris8.fr', '06.25.80.32.11', 'mmartin', 4, 22, 66), -- username : mmartin 
+    -- ('70217781', 'Linda', 'Sanders', 'lsanders@iut.univ-paris8.fr', '06.83.47.04.38', 'lsanders', 4, 22, 66), -- username : lsanders 
+    -- ('46333453', 'Kayla', 'Maxwell', 'kmaxwell@iut.univ-paris8.fr', '06.18.73.57.18', 'kmaxwell', 4, 22, 66), -- username : kmaxwell 
+    -- ('56504424', 'Katie', 'Castro', 'kcastro@iut.univ-paris8.fr', '06.76.97.95.52', 'kcastro', 4, 22, 66), -- username : kcastro 
+    -- ('65628007', 'Anne', 'Shaw', 'ashaw@iut.univ-paris8.fr', '07.06.27.03.36', 'ashaw', 4, 22, 66), -- username : ashaw 
+    -- ('76558188', 'Joshua', 'Howard', 'jhoward@iut.univ-paris8.fr', '07.43.54.13.92', 'jhoward', 4, 22, 66), -- username : jhoward 
+    -- ('32678142', 'Jennifer', 'Carter', 'jcarter@iut.univ-paris8.fr', '07.93.98.69.53', 'jcarter', 4, 22, 66), -- username : jcarter 
+    -- ('34083481', 'Colleen', 'Hill', 'chill@iut.univ-paris8.fr', '07.80.13.12.13', 'chill', 4, 22, 110), -- username : chill 
+    -- ('74586650', 'Rita', 'Shaw', 'rshaw@iut.univ-paris8.fr', '06.13.79.52.22', 'rshaw', 4, 22, 110), -- username : rshaw 
+    -- ('60338698', 'Alexandria', 'Perry', 'aperry@iut.univ-paris8.fr', '07.76.21.12.26', 'aperry', 4, 22, 110), -- username : aperry 
+    -- ('78478568', 'Theresa', 'Howell', 'thowell@iut.univ-paris8.fr', '07.96.56.39.13', 'thowell', 4, 22, 110), -- username : thowell 
+    -- ('83597605', 'Jose', 'Ferguson', 'jferguson@iut.univ-paris8.fr', '07.77.40.18.58', 'jferguson', 4, 22, 110), -- username : jferguson 
+    -- ('72044007', 'Jose', 'Mccarty', 'jmccarty@iut.univ-paris8.fr', '07.75.23.17.67', 'jmccarty', 4, 22, 110), -- username : jmccarty 
+    -- ('46779815', 'Jay', 'Crawford', 'jcrawford@iut.univ-paris8.fr', '06.30.94.45.02', 'jcrawford', 4, 22, 110), -- username : jcrawford 
+    -- ('74666231', 'Christine', 'Calderon', 'ccalderon@iut.univ-paris8.fr', '06.96.03.96.62', 'ccalderon', 4, 22, 110), -- username : ccalderon 
+    -- ('67394098', 'Caitlin', 'Hale', 'chale@iut.univ-paris8.fr', '07.87.84.83.40', 'chale', 4, 22, 110), -- username : chale 
+    -- ('64155309', 'Ebony', 'Medina', 'emedina@iut.univ-paris8.fr', '07.21.97.80.77', 'emedina', 4, 22, 110), -- username : emedina 
+    -- ('61630240', 'Alexis', 'Clark', 'aclark@iut.univ-paris8.fr', '06.62.05.71.12', 'aclark', 4, 10, 10), -- username : aclark 
+    -- ('34007839', 'Joshua', 'Sanchez', 'jsanchez@iut.univ-paris8.fr', '06.15.93.09.51', 'jsanchez', 4, 10, 10), -- username : jsanchez 
+    -- ('78109726', 'Teresa', 'Duran', 'tduran@iut.univ-paris8.fr', '07.63.26.23.88', 'tduran', 4, 10, 10), -- username : tduran 
+    -- ('98460560', 'Julie', 'Romero', 'jromero@iut.univ-paris8.fr', '06.14.83.41.64', 'jromero', 4, 10, 10), -- username : jromero 
+    -- ('42078373', 'Kimberly', 'Clay', 'kclay@iut.univ-paris8.fr', '07.40.45.83.44', 'kclay', 4, 10, 10), -- username : kclay 
+    -- ('63433885', 'Stephen', 'Rose', 'srose@iut.univ-paris8.fr', '06.45.69.34.39', 'srose', 4, 10, 10), -- username : srose 
+    -- ('95747778', 'Martin', 'Holloway', 'mholloway@iut.univ-paris8.fr', '06.54.42.76.28', 'mholloway', 4, 10, 10), -- username : mholloway 
+    -- ('77824101', 'Sherry', 'Orozco', 'sorozco@iut.univ-paris8.fr', '06.85.54.71.87', 'sorozco', 4, 10, 10), -- username : sorozco 
+    -- ('18196678', 'Debra', 'Quinn', 'dquinn@iut.univ-paris8.fr', '07.58.52.79.43', 'dquinn', 4, 10, 10), -- username : dquinn 
+    -- ('57396202', 'Tonya', 'Smith', 'tsmith@iut.univ-paris8.fr', '07.07.00.59.69', 'tsmith', 4, 10, 10), -- username : tsmith 
+    -- ('89861397', 'Karen', 'Gibson', 'kgibson@iut.univ-paris8.fr', '07.56.41.26.72', 'kgibson', 4, 10, 54), -- username : kgibson 
+    -- ('90842667', 'Harry', 'Hartman', 'hhartman@iut.univ-paris8.fr', '07.04.67.88.08', 'hhartman', 4, 10, 54), -- username : hhartman 
+    -- ('47852814', 'Jon', 'Rivera', 'jrivera@iut.univ-paris8.fr', '07.59.43.01.52', 'jrivera', 4, 10, 54), -- username : jrivera 
+    -- ('45615312', 'Elizabeth', 'Russo', 'erusso@iut.univ-paris8.fr', '06.89.62.22.35', 'erusso', 4, 10, 54), -- username : erusso 
+    -- ('91563259', 'Brett', 'Davis', 'bdavis@iut.univ-paris8.fr', '06.88.36.49.63', 'bdavis', 4, 10, 54), -- username : bdavis 
+    -- ('72476553', 'Heidi', 'Gilbert', 'hgilbert@iut.univ-paris8.fr', '07.88.97.17.58', 'hgilbert', 4, 10, 54), -- username : hgilbert 
+    -- ('58588064', 'Samantha', 'Miller', 'smiller@iut.univ-paris8.fr', '07.35.69.39.35', 'smiller', 4, 10, 54), -- username : smiller 
+    -- ('87086495', 'Amanda', 'Wright', 'awright@iut.univ-paris8.fr', '06.34.88.30.93', 'awright', 4, 10, 54), -- username : awright 
+    -- ('60242361', 'Donna', 'Schneider', 'dschneider@iut.univ-paris8.fr', '07.94.03.50.22', 'dschneider', 4, 10, 54), -- username : dschneider 
+    -- ('70012656', 'Cheyenne', 'Taylor', 'ctaylor@iut.univ-paris8.fr', '06.88.94.17.00', 'ctaylor', 4, 10, 54), -- username : ctaylor 
+    -- ('46925471', 'Douglas', 'Thompson', 'dthompson@iut.univ-paris8.fr', '06.60.62.48.62', 'dthompson', 4, 10, 98), -- username : dthompson 
+    -- ('38386539', 'Joseph', 'Lee', 'jlee@iut.univ-paris8.fr', '06.03.32.53.45', 'jlee', 4, 10, 98), -- username : jlee 
+    -- ('11155934', 'Gregory', 'Boyd', 'gboyd@iut.univ-paris8.fr', '07.26.83.77.49', 'gboyd', 4, 10, 98), -- username : gboyd 
+    -- ('98573227', 'William', 'Hart', 'whart@iut.univ-paris8.fr', '06.67.51.58.88', 'whart', 4, 10, 98), -- username : whart 
+    -- ('52785734', 'Angela', 'Anderson', 'aanderson@iut.univ-paris8.fr', '06.08.08.38.97', 'aanderson', 4, 10, 98), -- username : aanderson 
+    -- ('52674720', 'Peter', 'Smith', 'psmith@iut.univ-paris8.fr', '07.76.83.85.08', 'psmith', 4, 10, 98), -- username : psmith 
+    -- ('15365270', 'Ricky', 'Park', 'rpark@iut.univ-paris8.fr', '07.33.17.76.18', 'rpark', 4, 10, 98), -- username : rpark 
+    -- ('57742597', 'Ashley', 'Taylor', 'ataylor@iut.univ-paris8.fr', '06.71.46.80.66', 'ataylor', 4, 10, 98), -- username : ataylor 
+    -- ('26811095', 'Stephanie', 'Hobbs', 'shobbs@iut.univ-paris8.fr', '06.00.79.13.57', 'shobbs', 4, 10, 98), -- username : shobbs 
+    -- ('44513448', 'Ian', 'Mcdowell', 'imcdowell@iut.univ-paris8.fr', '07.84.02.56.07', 'imcdowell', 4, 10, 98), -- username : imcdowell 
+    -- ('77095331', 'Traci', 'Deleon', 'tdeleon@iut.univ-paris8.fr', '06.34.10.83.11', 'tdeleon', 4, 12, 12), -- username : tdeleon 
+    -- ('51101061', 'Lee', 'Moore', 'lmoore@iut.univ-paris8.fr', '06.43.26.20.91', 'lmoore', 4, 12, 12), -- username : lmoore 
+    -- ('19218230', 'Kevin', 'Walker', 'kwalker@iut.univ-paris8.fr', '07.65.67.42.85', 'kwalker', 4, 12, 12), -- username : kwalker 
+    -- ('19766166', 'Elizabeth', 'Brown', 'ebrown@iut.univ-paris8.fr', '06.23.34.20.36', 'ebrown', 4, 12, 12), -- username : ebrown 
+    -- ('70662618', 'Travis', 'Alexander', 'talexander@iut.univ-paris8.fr', '06.48.80.35.79', 'talexander', 4, 12, 12), -- username : talexander 
+    -- ('93444019', 'Matthew', 'Evans', 'mevans@iut.univ-paris8.fr', '06.94.39.14.98', 'mevans', 4, 12, 12), -- username : mevans 
+    -- ('45358125', 'Anthony', 'Adkins', 'aadkins@iut.univ-paris8.fr', '06.44.72.60.86', 'aadkins', 4, 12, 12), -- username : aadkins 
+    -- ('85746309', 'Jose', 'Jackson', 'jjackson@iut.univ-paris8.fr', '07.73.41.47.73', 'jjackson', 4, 12, 12), -- username : jjackson 
+    -- ('73371925', 'Joshua', 'Bowen', 'jbowen@iut.univ-paris8.fr', '07.44.44.78.59', 'jbowen', 4, 12, 12), -- username : jbowen 
+    -- ('33180226', 'Matthew', 'Gonzalez', 'mgonzalez@iut.univ-paris8.fr', '07.63.58.15.36', 'mgonzalez', 4, 12, 12), -- username : mgonzalez 
+    -- ('93606802', 'Michael', 'Becker', 'mbecker@iut.univ-paris8.fr', '07.30.39.15.37', 'mbecker', 4, 12, 56), -- username : mbecker 
+    -- ('36458659', 'Pamela', 'Oconnor', 'poconnor@iut.univ-paris8.fr', '07.31.03.92.56', 'poconnor', 4, 12, 56), -- username : poconnor 
+    -- ('87384552', 'Gabriel', 'Davis', 'gdavis@iut.univ-paris8.fr', '06.60.49.50.14', 'gdavis', 4, 12, 56), -- username : gdavis 
+    -- ('91894117', 'Tim', 'Mercado', 'tmercado@iut.univ-paris8.fr', '06.83.32.46.23', 'tmercado', 4, 12, 56), -- username : tmercado 
+    -- ('77272336', 'Krista', 'Lopez', 'klopez@iut.univ-paris8.fr', '07.63.30.94.87', 'klopez', 4, 12, 56), -- username : klopez 
+    -- ('21554678', 'Austin', 'Rojas', 'arojas@iut.univ-paris8.fr', '07.07.38.99.53', 'arojas', 4, 12, 56), -- username : arojas 
+    -- ('68747064', 'Alexandra', 'Morris', 'amorris@iut.univ-paris8.fr', '06.27.79.22.96', 'amorris', 4, 12, 56), -- username : amorris 
+    -- ('44418173', 'Renee', 'Watson', 'rwatson@iut.univ-paris8.fr', '07.06.13.14.02', 'rwatson', 4, 12, 56), -- username : rwatson 
+    -- ('17741003', 'Katelyn', 'Kaufman', 'kkaufman@iut.univ-paris8.fr', '06.25.30.50.15', 'kkaufman', 4, 12, 56), -- username : kkaufman 
+    -- ('05346005', 'Cory', 'Phillips', 'cphillips@iut.univ-paris8.fr', '07.09.27.41.90', 'cphillips', 4, 12, 56), -- username : cphillips 
+    -- ('45393057', 'James', 'Moore', 'jmoore@iut.univ-paris8.fr', '07.84.84.74.86', 'jmoore', 4, 12, 100), -- username : jmoore 
+    -- ('30605679', 'Joseph', 'James', 'jjames@iut.univ-paris8.fr', '07.72.38.18.92', 'jjames', 4, 12, 100), -- username : jjames 
+    -- ('00748490', 'Timothy', 'Webster', 'twebster@iut.univ-paris8.fr', '06.25.46.32.01', 'twebster', 4, 12, 100), -- username : twebster 
+    -- ('11226668', 'Zachary', 'Lee', 'zlee@iut.univ-paris8.fr', '07.14.25.47.94', 'zlee', 4, 12, 100), -- username : zlee 
+    -- ('41339836', 'Cynthia', 'Stewart', 'cstewart@iut.univ-paris8.fr', '07.36.41.13.50', 'cstewart', 4, 12, 100), -- username : cstewart 
+    -- ('77807697', 'Benjamin', 'Smith', 'bsmith@iut.univ-paris8.fr', '06.39.13.25.45', 'bsmith', 4, 12, 100), -- username : bsmith 
+    -- ('59231874', 'Eric', 'Martin', 'emartin@iut.univ-paris8.fr', '06.25.56.01.66', 'emartin', 4, 12, 100), -- username : emartin 
+    -- ('48426574', 'Leslie', 'Allen', 'lallen@iut.univ-paris8.fr', '06.90.05.28.67', 'lallen', 4, 12, 100), -- username : lallen 
+    -- ('33418012', 'Elizabeth', 'Jones', 'ejones@iut.univ-paris8.fr', '06.82.37.68.78', 'ejones', 4, 12, 100), -- username : ejones 
+    -- ('15692994', 'Savannah', 'Ramirez', 'sramirez@iut.univ-paris8.fr', '06.45.07.45.84', 'sramirez', 4, 12, 100), -- username : sramirez 
+    -- ('46573714', 'Mary', 'Erickson', 'merickson@iut.univ-paris8.fr', '07.06.97.06.84', 'merickson', 4, 11, 11), -- username : merickson 
+    -- ('30981736', 'Bruce', 'Lewis', 'blewis@iut.univ-paris8.fr', '06.55.46.54.11', 'blewis', 4, 11, 11), -- username : blewis 
+    -- ('75295703', 'William', 'Eaton', 'weaton@iut.univ-paris8.fr', '06.09.74.34.90', 'weaton', 4, 11, 11), -- username : weaton 
+    -- ('50520383', 'Elizabeth', 'Burns', 'eburns@iut.univ-paris8.fr', '07.72.19.77.87', 'eburns', 4, 11, 11), -- username : eburns 
+    -- ('02517538', 'Kelly', 'Mills', 'kmills@iut.univ-paris8.fr', '06.64.09.57.75', 'kmills', 4, 11, 11), -- username : kmills 
+    -- ('29957833', 'Sarah', 'Harris', 'sharris@iut.univ-paris8.fr', '07.18.52.13.69', 'sharris', 4, 11, 11), -- username : sharris 
+    -- ('20994643', 'Denise', 'Johnson', 'djohnson@iut.univ-paris8.fr', '06.54.29.13.91', 'djohnson', 4, 11, 11), -- username : djohnson 
+    -- ('56142152', 'Adam', 'Ward', 'award@iut.univ-paris8.fr', '07.83.02.12.56', 'award', 4, 11, 11), -- username : award 
+    -- ('67000044', 'Michelle', 'Jones', 'mjones2@iut.univ-paris8.fr', '07.50.90.83.90', 'mjones2', 4, 11, 11), -- username : mjones2 
+    -- ('48822514', 'Natasha', 'Cook', 'ncook@iut.univ-paris8.fr', '06.73.17.07.01', 'ncook', 4, 11, 11), -- username : ncook 
+    -- ('93906112', 'Roger', 'Fowler', 'rfowler@iut.univ-paris8.fr', '06.26.25.32.72', 'rfowler', 4, 36, 124), -- username : rfowler 
+    -- ('22443815', 'David', 'Marquez', 'dmarquez@iut.univ-paris8.fr', '07.43.56.51.56', 'dmarquez', 4, 36, 124), -- username : dmarquez 
+    -- ('88814584', 'Tiffany', 'Villa', 'tvilla@iut.univ-paris8.fr', '06.13.10.15.26', 'tvilla', 4, 36, 124), -- username : tvilla 
+    -- ('29279674', 'Samantha', 'Mccarthy', 'smccarthy@iut.univ-paris8.fr', '06.36.39.74.20', 'smccarthy', 4, 36, 124), -- username : smccarthy 
+    -- ('55142836', 'Tyler', 'Spence', 'tspence@iut.univ-paris8.fr', '06.26.65.41.40', 'tspence', 4, 36, 124), -- username : tspence 
+    -- ('50571986', 'Christopher', 'Hartman', 'chartman@iut.univ-paris8.fr', '06.25.43.30.71', 'chartman', 4, 36, 124), -- username : chartman 
+    -- ('14621799', 'Melanie', 'Jones', 'mjones1@iut.univ-paris8.fr', '06.83.23.58.04', 'mjones1', 4, 36, 124), -- username : mjones1 
+    -- ('91172041', 'Samantha', 'Williams', 'swilliams@iut.univ-paris8.fr', '07.52.80.53.67', 'swilliams', 4, 36, 124), -- username : swilliams 
+    -- ('85869064', 'Brian', 'Johnson', 'bjohnson@iut.univ-paris8.fr', '06.16.34.35.43', 'bjohnson', 4, 36, 124), -- username : bjohnson 
+    -- ('91540939', 'David', 'Lawson', 'dlawson@iut.univ-paris8.fr', '06.51.25.47.18', 'dlawson', 4, 36, 124), -- username : dlawson 
+    -- ('76295443', 'Maria', 'Jones', 'mjones@iut.univ-paris8.fr', '07.51.03.23.10', 'mjones', 4, 11, 99), -- username : mjones 
+    -- ('87741085', 'Amy', 'Peters', 'apeters@iut.univ-paris8.fr', '07.85.11.61.75', 'apeters', 4, 11, 99), -- username : apeters 
+    -- ('59095734', 'Misty', 'Richardson', 'mrichardson@iut.univ-paris8.fr', '06.70.53.58.12', 'mrichardson', 4, 11, 99), -- username : mrichardson 
+    -- ('21113883', 'Bernard', 'Hamilton', 'bhamilton@iut.univ-paris8.fr', '06.28.19.32.93', 'bhamilton', 4, 11, 99), -- username : bhamilton 
+    -- ('03304988', 'Julie', 'Kidd', 'jkidd@iut.univ-paris8.fr', '07.93.09.19.24', 'jkidd', 4, 11, 99), -- username : jkidd 
+    -- ('63233991', 'Dylan', 'Garcia', 'dgarcia@iut.univ-paris8.fr', '07.95.20.31.57', 'dgarcia', 4, 11, 99), -- username : dgarcia 
+    -- ('45284345', 'Lauren', 'Lee', 'llee@iut.univ-paris8.fr', '06.15.72.13.43', 'llee', 4, 11, 99), -- username : llee 
+    -- ('89164250', 'Robin', 'Walters', 'rwalters@iut.univ-paris8.fr', '07.54.53.53.54', 'rwalters', 4, 11, 99), -- username : rwalters 
+    -- ('32857376', 'George', 'Collins', 'gcollins@iut.univ-paris8.fr', '07.16.10.57.16', 'gcollins', 4, 11, 99), -- username : gcollins 
+    -- ('04830527', 'Anne', 'Diaz', 'adiaz@iut.univ-paris8.fr', '06.85.94.05.83', 'adiaz', 4, 11, 99), -- username : adiaz 
+    -- ('15409326', 'Jerry', 'Rosales', 'jrosales@iut.univ-paris8.fr', '06.26.12.14.91', 'jrosales', 4, 43, 43), -- username : jrosales 
+    -- ('78851718', 'Brian', 'Howell', 'bhowell@iut.univ-paris8.fr', '07.85.70.63.25', 'bhowell', 4, 43, 43), -- username : bhowell 
+    -- ('83932637', 'Brenda', 'Anderson', 'banderson@iut.univ-paris8.fr', '06.34.37.27.66', 'banderson', 4, 43, 43), -- username : banderson 
+    -- ('52757147', 'Jillian', 'Wolfe', 'jwolfe@iut.univ-paris8.fr', '06.38.76.18.17', 'jwolfe', 4, 43, 43), -- username : jwolfe 
+    -- ('18288023', 'Edward', 'Nelson', 'enelson@iut.univ-paris8.fr', '07.05.23.58.92', 'enelson', 4, 43, 43), -- username : enelson 
+    -- ('21688744', 'Yvonne', 'Powers', 'ypowers@iut.univ-paris8.fr', '07.42.59.15.65', 'ypowers', 4, 43, 43), -- username : ypowers 
+    -- ('24986894', 'Anna', 'Hayes', 'ahayes@iut.univ-paris8.fr', '07.11.83.88.68', 'ahayes', 4, 43, 43), -- username : ahayes 
+    -- ('01724059', 'Jody', 'Tucker', 'jtucker@iut.univ-paris8.fr', '07.81.78.17.76', 'jtucker', 4, 43, 43), -- username : jtucker 
+    -- ('93302713', 'Jeffrey', 'Walker', 'jwalker@iut.univ-paris8.fr', '07.85.77.04.42', 'jwalker', 4, 43, 43), -- username : jwalker 
+    -- ('25798085', 'Amanda', 'Crawford', 'acrawford@iut.univ-paris8.fr', '07.11.98.38.30', 'acrawford', 4, 43, 43), -- username : acrawford 
+    -- ('02568745', 'Julie', 'Davis', 'jdavis@iut.univ-paris8.fr', '07.06.23.96.08', 'jdavis', 4, 43, 87), -- username : jdavis 
+    -- ('86657262', 'Wendy', 'Phillips', 'wphillips@iut.univ-paris8.fr', '07.35.12.20.24', 'wphillips', 4, 43, 87), -- username : wphillips 
+    -- ('97727988', 'Craig', 'Moore', 'cmoore@iut.univ-paris8.fr', '06.13.59.97.09', 'cmoore', 4, 43, 87), -- username : cmoore 
+    -- ('86683545', 'Stephanie', 'Thompson', 'sthompson@iut.univ-paris8.fr', '07.20.67.46.94', 'sthompson', 4, 43, 87), -- username : sthompson 
+    -- ('32719739', 'Christina', 'Sloan', 'csloan@iut.univ-paris8.fr', '07.68.78.45.66', 'csloan', 4, 43, 87), -- username : csloan 
+    -- ('04983304', 'Shane', 'Burns', 'sburns@iut.univ-paris8.fr', '07.57.35.53.58', 'sburns', 4, 43, 87), -- username : sburns 
+    -- ('12038577', 'John', 'Cruz', 'jcruz@iut.univ-paris8.fr', '07.01.77.64.07', 'jcruz', 4, 43, 87), -- username : jcruz 
+    -- ('45469766', 'Christina', 'Thompson', 'cthompson@iut.univ-paris8.fr', '07.00.46.18.34', 'cthompson', 4, 43, 87), -- username : cthompson 
+    -- ('76314164', 'Jennifer', 'Jensen', 'jjensen@iut.univ-paris8.fr', '07.72.69.02.46', 'jjensen', 4, 43, 87), -- username : jjensen 
+    -- ('02002383', 'Christopher', 'Smith', 'csmith@iut.univ-paris8.fr', '07.72.97.11.22', 'csmith', 4, 43, 87), -- username : csmith 
+    -- ('93540661', 'Cheyenne', 'Williams', 'cwilliams@iut.univ-paris8.fr', '07.22.95.16.57', 'cwilliams', 4, 43, 131), -- username : cwilliams 
+    -- ('57390122', 'James', 'Johnson', 'jjohnson@iut.univ-paris8.fr', '06.10.84.65.78', 'jjohnson', 4, 43, 131), -- username : jjohnson 
+    -- ('58211449', 'Robert', 'Kennedy', 'rkennedy@iut.univ-paris8.fr', '07.52.04.24.02', 'rkennedy', 4, 43, 131), -- username : rkennedy 
+    -- ('63524413', 'Ryan', 'Miller', 'rmiller@iut.univ-paris8.fr', '06.12.41.11.16', 'rmiller', 4, 43, 131), -- username : rmiller 
+    -- ('09291057', 'David', 'Fisher', 'dfisher@iut.univ-paris8.fr', '07.64.36.16.96', 'dfisher', 4, 43, 131), -- username : dfisher 
+    -- ('26578922', 'Sarah', 'Barnett', 'sbarnett@iut.univ-paris8.fr', '07.75.18.12.87', 'sbarnett', 4, 43, 131), -- username : sbarnett 
+    -- ('19901492', 'Deborah', 'Willis', 'dwillis@iut.univ-paris8.fr', '07.12.61.31.22', 'dwillis', 4, 43, 131), -- username : dwillis 
+    -- ('07777292', 'Tracey', 'Willis', 'twillis@iut.univ-paris8.fr', '06.12.95.78.89', 'twillis', 4, 43, 131), -- username : twillis 
+    -- ('92949059', 'Cassie', 'Tanner', 'ctanner@iut.univ-paris8.fr', '07.53.42.33.93', 'ctanner', 4, 43, 131), -- username : ctanner 
+    -- ('61331748', 'Patrick', 'Hebert', 'phebert@iut.univ-paris8.fr', '06.46.53.71.83', 'phebert', 4, 43, 131), -- username : phebert 
+    -- ('38529314', 'Scott', 'Vega', 'svega@iut.univ-paris8.fr', '06.14.94.13.45', 'svega', 4, 44, 44), -- username : svega 
+    -- ('38886783', 'Kathryn', 'Price', 'kprice@iut.univ-paris8.fr', '06.56.41.14.39', 'kprice', 4, 44, 44), -- username : kprice 
+    -- ('83190026', 'Ralph', 'Duran', 'rduran@iut.univ-paris8.fr', '07.31.53.98.82', 'rduran', 4, 44, 44), -- username : rduran 
+    -- ('62135663', 'Crystal', 'Hebert', 'chebert@iut.univ-paris8.fr', '07.22.59.26.60', 'chebert', 4, 44, 44), -- username : chebert 
+    -- ('84785152', 'Melissa', 'Glover', 'mglover@iut.univ-paris8.fr', '07.23.24.49.76', 'mglover', 4, 44, 44), -- username : mglover 
+    -- ('59993344', 'Joshua', 'Velazquez', 'jvelazquez@iut.univ-paris8.fr', '07.95.89.74.72', 'jvelazquez', 4, 44, 44), -- username : jvelazquez 
+    -- ('46320130', 'April', 'White', 'awhite@iut.univ-paris8.fr', '07.05.80.01.60', 'awhite', 4, 44, 44), -- username : awhite 
+    -- ('58725380', 'George', 'Thomas', 'gthomas@iut.univ-paris8.fr', '07.46.79.03.12', 'gthomas', 4, 44, 44), -- username : gthomas 
+    -- ('60175427', 'Sydney', 'Garcia', 'sgarcia@iut.univ-paris8.fr', '06.59.31.01.72', 'sgarcia', 4, 44, 44), -- username : sgarcia 
+    -- ('58048804', 'Joel', 'Baker', 'jbaker@iut.univ-paris8.fr', '07.64.68.72.90', 'jbaker', 4, 44, 44), -- username : jbaker 
+    -- ('12302510', 'Cheryl', 'Olson', 'colson@iut.univ-paris8.fr', '06.96.33.55.24', 'colson', 4, 44, 88), -- username : colson 
+    -- ('97811547', 'Mary', 'Shelton', 'mshelton@iut.univ-paris8.fr', '06.33.96.05.37', 'mshelton', 4, 44, 88), -- username : mshelton 
+    -- ('05535643', 'Hannah', 'Williams', 'hwilliams@iut.univ-paris8.fr', '06.17.36.47.45', 'hwilliams', 4, 44, 88), -- username : hwilliams 
+    -- ('25993662', 'Karen', 'Shaw', 'kshaw@iut.univ-paris8.fr', '07.30.15.81.02', 'kshaw', 4, 44, 88), -- username : kshaw 
+    -- ('49557721', 'Kathryn', 'Jacobs', 'kjacobs@iut.univ-paris8.fr', '07.02.59.92.11', 'kjacobs', 4, 44, 88), -- username : kjacobs 
+    -- ('81721576', 'Alexander', 'Jarvis', 'ajarvis@iut.univ-paris8.fr', '07.95.44.46.60', 'ajarvis', 4, 44, 88), -- username : ajarvis 
+    -- ('11602644', 'Shane', 'Walker', 'swalker@iut.univ-paris8.fr', '06.38.05.18.37', 'swalker', 4, 44, 88), -- username : swalker 
+    -- ('67472131', 'Andrea', 'Gordon', 'agordon@iut.univ-paris8.fr', '07.89.04.48.83', 'agordon', 4, 44, 88), -- username : agordon 
+    -- ('74668828', 'Jennifer', 'Miller', 'jmiller@iut.univ-paris8.fr', '07.27.02.61.81', 'jmiller', 4, 44, 88), -- username : jmiller 
+    -- ('13773128', 'Sandra', 'Paul', 'spaul@iut.univ-paris8.fr', '07.44.45.43.11', 'spaul', 4, 44, 88), -- username : spaul 
+    -- ('06987383', 'Eric', 'Park', 'epark@iut.univ-paris8.fr', '07.09.78.59.81', 'epark', 4, 44, 132), -- username : epark 
+    -- ('89035492', 'David', 'Randolph', 'drandolph@iut.univ-paris8.fr', '07.53.55.33.65', 'drandolph', 4, 44, 132), -- username : drandolph 
+    -- ('50962677', 'Darlene', 'Hutchinson', 'dhutchinson@iut.univ-paris8.fr', '06.90.45.07.62', 'dhutchinson', 4, 44, 132), -- username : dhutchinson 
+    -- ('24287795', 'Thomas', 'Johnson', 'tjohnson@iut.univ-paris8.fr', '06.57.43.93.13', 'tjohnson', 4, 44, 132), -- username : tjohnson 
+    -- ('07637062', 'Kimberly', 'Rivera', 'krivera@iut.univ-paris8.fr', '06.69.78.28.46', 'krivera', 4, 44, 132), -- username : krivera 
+    -- ('27365101', 'Angela', 'Moore', 'amoore@iut.univ-paris8.fr', '07.27.09.89.09', 'amoore', 4, 44, 132), -- username : amoore 
+    -- ('12751715', 'Amy', 'Romero', 'aromero@iut.univ-paris8.fr', '07.03.82.19.59', 'aromero', 4, 44, 132), -- username : aromero 
+    -- ('24272163', 'Stacy', 'Carlson', 'scarlson@iut.univ-paris8.fr', '06.70.18.36.24', 'scarlson', 4, 44, 132), -- username : scarlson 
+    -- ('64268964', 'Frederick', 'Hoffman', 'fhoffman@iut.univ-paris8.fr', '06.16.98.40.27', 'fhoffman', 4, 44, 132), -- username : fhoffman 
+    -- ('83384822', 'George', 'Ayers', 'gayers@iut.univ-paris8.fr', '06.32.06.80.62', 'gayers', 4, 44, 132), -- username : gayers 
+    -- ('31055189', 'Jennifer', 'Sexton', 'jsexton@iut.univ-paris8.fr', '07.42.94.25.85', 'jsexton', 4, 36, 36), -- username : jsexton 
+    -- ('20689578', 'Lori', 'Campbell', 'lcampbell@iut.univ-paris8.fr', '06.07.44.04.32', 'lcampbell', 4, 36, 36), -- username : lcampbell 
+    -- ('99590976', 'Whitney', 'Weiss', 'wweiss@iut.univ-paris8.fr', '07.16.26.70.52', 'wweiss', 4, 36, 36), -- username : wweiss 
+    -- ('14102962', 'Lawrence', 'Boyle', 'lboyle@iut.univ-paris8.fr', '07.13.99.14.29', 'lboyle', 4, 36, 36), -- username : lboyle 
+    -- ('78267612', 'Christopher', 'Jenkins', 'cjenkins@iut.univ-paris8.fr', '06.33.91.20.10', 'cjenkins', 4, 36, 36), -- username : cjenkins 
+    -- ('13359424', 'Lisa', 'Flores', 'lflores@iut.univ-paris8.fr', '06.88.68.30.11', 'lflores', 4, 36, 36), -- username : lflores 
+    -- ('33344254', 'Todd', 'Hernandez', 'thernandez@iut.univ-paris8.fr', '07.21.81.56.49', 'thernandez', 4, 36, 36), -- username : thernandez 
+    -- ('54641352', 'Jacob', 'Adams', 'jadams@iut.univ-paris8.fr', '06.38.29.68.76', 'jadams', 4, 36, 36), -- username : jadams 
+    -- ('85497128', 'Taylor', 'Bishop', 'tbishop@iut.univ-paris8.fr', '07.37.61.03.66', 'tbishop', 4, 36, 36), -- username : tbishop 
+    -- ('67188402', 'Michael', 'Hawkins', 'mhawkins@iut.univ-paris8.fr', '06.64.51.17.51', 'mhawkins', 4, 36, 36), -- username : mhawkins 
+    -- ('28035410', 'Jeffrey', 'Watson', 'jwatson@iut.univ-paris8.fr', '06.93.13.51.04', 'jwatson', 4, 36, 80), -- username : jwatson 
+    -- ('72215630', 'Kathleen', 'Martin', 'kmartin@iut.univ-paris8.fr', '06.32.00.37.38', 'kmartin', 4, 36, 80), -- username : kmartin 
+    -- ('39305054', 'Jeffery', 'Brooks', 'jbrooks@iut.univ-paris8.fr', '07.18.77.07.38', 'jbrooks', 4, 36, 80), -- username : jbrooks 
+    -- ('13741976', 'Lisa', 'White', 'lwhite@iut.univ-paris8.fr', '07.52.10.77.18', 'lwhite', 4, 36, 80), -- username : lwhite 
+    -- ('29022960', 'Tamara', 'Cross', 'tcross@iut.univ-paris8.fr', '06.90.00.08.92', 'tcross', 4, 36, 80), -- username : tcross 
+    -- ('32941425', 'Jasmine', 'Ford', 'jford@iut.univ-paris8.fr', '06.88.88.67.49', 'jford', 4, 36, 80), -- username : jford 
+    -- ('84708103', 'Debbie', 'Jacobs', 'djacobs@iut.univ-paris8.fr', '06.27.40.14.48', 'djacobs', 4, 36, 80), -- username : djacobs 
+    -- ('61720832', 'Stephanie', 'Moran', 'smoran@iut.univ-paris8.fr', '06.79.15.12.39', 'smoran', 4, 36, 80), -- username : smoran 
+    -- ('53253819', 'Isaiah', 'Bowman', 'ibowman@iut.univ-paris8.fr', '06.50.50.17.59', 'ibowman', 4, 36, 80), -- username : ibowman 
+    -- ('71664116', 'Sheila', 'Stark', 'sstark@iut.univ-paris8.fr', '07.55.11.61.27', 'sstark', 4, 36, 80), -- username : sstark 
+    -- ('05476284', 'Alan', 'Thompson', 'athompson@iut.univ-paris8.fr', '06.10.98.23.33', 'athompson', 4, 36, 124), -- username : athompson 
+    -- ('70725989', 'Rhonda', 'Bell', 'rbell@iut.univ-paris8.fr', '06.38.43.74.50', 'rbell', 4, 36, 124), -- username : rbell 
+    -- ('29069411', 'Randy', 'Castillo', 'rcastillo@iut.univ-paris8.fr', '07.90.99.55.56', 'rcastillo', 4, 36, 124), -- username : rcastillo 
+    -- ('31088294', 'Jo', 'Harris', 'jharris@iut.univ-paris8.fr', '06.26.27.73.80', 'jharris', 4, 36, 124), -- username : jharris 
+    -- ('94670208', 'Kimberly', 'Nelson', 'knelson@iut.univ-paris8.fr', '07.01.11.07.21', 'knelson', 4, 36, 124), -- username : knelson 
+    -- ('03241904', 'Patricia', 'Farmer', 'pfarmer@iut.univ-paris8.fr', '06.31.57.33.44', 'pfarmer', 4, 36, 124), -- username : pfarmer 
+    -- ('30523853', 'Lisa', 'Hanna', 'lhanna@iut.univ-paris8.fr', '07.44.55.97.34', 'lhanna', 4, 36, 124), -- username : lhanna 
+    -- ('42586035', 'Breanna', 'Haas', 'bhaas@iut.univ-paris8.fr', '06.87.22.73.60', 'bhaas', 4, 36, 124), -- username : bhaas 
+    -- ('22347338', 'Jessica', 'Williams', 'jwilliams@iut.univ-paris8.fr', '07.19.33.47.24', 'jwilliams', 4, 36, 124), -- username : jwilliams 
+    -- ('79555373', 'Ernest', 'Carey', 'ecarey@iut.univ-paris8.fr', '07.82.41.80.37', 'ecarey', 4, 36, 124), -- username : ecarey 
+    -- ('61331760', 'Kristen', 'Hernandez', 'khernandez@iut.univ-paris8.fr', '06.44.20.95.20', 'khernandez', 4, 34, 34), -- username : khernandez 
+    -- ('14110500', 'Megan', 'Williams', 'mwilliams@iut.univ-paris8.fr', '07.90.55.98.68', 'mwilliams', 4, 34, 34), -- username : mwilliams 
+    -- ('14790194', 'Janet', 'Wheeler', 'jwheeler@iut.univ-paris8.fr', '06.75.26.75.80', 'jwheeler', 4, 34, 34), -- username : jwheeler 
+    -- ('66204500', 'Willie', 'Gross', 'wgross@iut.univ-paris8.fr', '07.59.82.43.05', 'wgross', 4, 34, 34), -- username : wgross 
+    -- ('99205403', 'Amanda', 'Jacobs', 'ajacobs@iut.univ-paris8.fr', '06.34.84.51.01', 'ajacobs', 4, 34, 34), -- username : ajacobs 
+    -- ('11415997', 'Crystal', 'Harris', 'charris@iut.univ-paris8.fr', '06.70.17.04.77', 'charris', 4, 34, 34), -- username : charris 
+    -- ('58779488', 'Kristine', 'Brown', 'kbrown@iut.univ-paris8.fr', '06.78.86.41.59', 'kbrown', 4, 34, 34), -- username : kbrown 
+    -- ('38188862', 'Andrew', 'Wagner', 'awagner@iut.univ-paris8.fr', '07.47.72.87.04', 'awagner', 4, 34, 34), -- username : awagner 
+    -- ('76910893', 'Paige', 'Carter', 'pcarter@iut.univ-paris8.fr', '07.65.72.42.23', 'pcarter', 4, 34, 34), -- username : pcarter 
+    -- ('18697585', 'Elizabeth', 'Kerr', 'ekerr@iut.univ-paris8.fr', '06.59.52.48.15', 'ekerr', 4, 34, 34), -- username : ekerr 
+    -- ('97418340', 'Shannon', 'Parrish', 'sparrish@iut.univ-paris8.fr', '07.19.02.74.57', 'sparrish', 4, 34, 78), -- username : sparrish 
+    -- ('49171004', 'Terri', 'Brown', 'tbrown@iut.univ-paris8.fr', '07.76.90.52.65', 'tbrown', 4, 34, 78), -- username : tbrown 
+    -- ('96628888', 'Taylor', 'Flores', 'tflores@iut.univ-paris8.fr', '06.45.97.09.79', 'tflores', 4, 34, 78), -- username : tflores 
+    -- ('16631212', 'Nicholas', 'Conley', 'nconley@iut.univ-paris8.fr', '06.83.59.56.99', 'nconley', 4, 34, 78), -- username : nconley 
+    -- ('21938917', 'Emily', 'Blankenship', 'eblankenship@iut.univ-paris8.fr', '06.38.58.38.12', 'eblankenship', 4, 34, 78), -- username : eblankenship 
+    -- ('90901518', 'April', 'Wilson', 'awilson@iut.univ-paris8.fr', '06.29.08.95.17', 'awilson', 4, 34, 78), -- username : awilson 
+    -- ('68962278', 'Olivia', 'Lawson', 'olawson@iut.univ-paris8.fr', '07.56.72.83.95', 'olawson', 4, 34, 78), -- username : olawson 
+    -- ('93139775', 'Lori', 'Huynh', 'lhuynh@iut.univ-paris8.fr', '06.82.59.86.11', 'lhuynh', 4, 34, 78), -- username : lhuynh 
+    -- ('61417727', 'Marie', 'Holden', 'mholden@iut.univ-paris8.fr', '07.84.93.51.10', 'mholden', 4, 34, 78), -- username : mholden 
+    -- ('09500646', 'Tabitha', 'Morales', 'tmorales@iut.univ-paris8.fr', '07.69.42.20.53', 'tmorales', 4, 34, 78), -- username : tmorales 
+    -- ('71635339', 'Jennifer', 'Cooper', 'jcooper@iut.univ-paris8.fr', '07.98.37.59.39', 'jcooper', 4, 34, 122), -- username : jcooper 
+    -- ('26819264', 'Kevin', 'Sanders', 'ksanders@iut.univ-paris8.fr', '07.75.16.47.93', 'ksanders', 4, 34, 122), -- username : ksanders 
+    -- ('24984521', 'Christine', 'Blair', 'cblair@iut.univ-paris8.fr', '07.97.71.21.37', 'cblair', 4, 34, 122), -- username : cblair 
+    -- ('62765253', 'Vanessa', 'Villa', 'vvilla@iut.univ-paris8.fr', '06.18.62.75.88', 'vvilla', 4, 34, 122), -- username : vvilla 
+    -- ('57629130', 'Tyler', 'Morgan', 'tmorgan@iut.univ-paris8.fr', '06.89.54.02.90', 'tmorgan', 4, 34, 122), -- username : tmorgan 
+    -- ('69411834', 'Karen', 'Tate', 'ktate@iut.univ-paris8.fr', '07.51.98.05.43', 'ktate', 4, 34, 122), -- username : ktate 
+    -- ('27015085', 'Ashley', 'Gonzales', 'agonzales@iut.univ-paris8.fr', '07.85.92.59.81', 'agonzales', 4, 34, 122), -- username : agonzales 
+    -- ('93140895', 'Christina', 'Gordon', 'cgordon@iut.univ-paris8.fr', '06.35.94.70.87', 'cgordon', 4, 34, 122), -- username : cgordon 
+    -- ('29917651', 'Ryan', 'Sanchez', 'rsanchez@iut.univ-paris8.fr', '06.34.55.44.24', 'rsanchez', 4, 34, 122), -- username : rsanchez 
+    -- ('31349843', 'David', 'Moore', 'dmoore@iut.univ-paris8.fr', '06.71.97.12.52', 'dmoore', 4, 34, 122), -- username : dmoore 
+    -- ('95195948', 'Randy', 'Campbell', 'rcampbell@iut.univ-paris8.fr', '07.28.74.71.04', 'rcampbell', 4, 35, 35), -- username : rcampbell 
+    -- ('50702605', 'Russell', 'Rogers', 'rrogers@iut.univ-paris8.fr', '07.47.87.32.04', 'rrogers', 4, 35, 35), -- username : rrogers 
+    -- ('63241690', 'William', 'Meyer', 'wmeyer@iut.univ-paris8.fr', '07.46.10.65.57', 'wmeyer', 4, 35, 35), -- username : wmeyer 
+    -- ('89224536', 'David', 'King', 'dking@iut.univ-paris8.fr', '07.93.05.56.11', 'dking', 4, 35, 35), -- username : dking 
+    -- ('90656539', 'Tyler', 'Austin', 'taustin@iut.univ-paris8.fr', '07.65.60.48.49', 'taustin', 4, 35, 35), -- username : taustin 
+    -- ('08774062', 'Matthew', 'Giles', 'mgiles@iut.univ-paris8.fr', '07.63.62.24.22', 'mgiles', 4, 35, 35), -- username : mgiles 
+    -- ('42513214', 'Anna', 'Tran', 'atran@iut.univ-paris8.fr', '06.37.39.36.40', 'atran', 4, 35, 35), -- username : atran 
+    -- ('56200950', 'Herbert', 'Gonzalez', 'hgonzalez@iut.univ-paris8.fr', '07.43.55.63.32', 'hgonzalez', 4, 35, 35), -- username : hgonzalez 
+    -- ('89696180', 'Tina', 'Perry', 'tperry1@iut.univ-paris8.fr', '07.81.77.52.76', 'tperry1', 4, 35, 35), -- username : tperry1 
+    -- ('62092363', 'Nicole', 'Cain', 'ncain@iut.univ-paris8.fr', '07.25.23.05.24', 'ncain', 4, 35, 35), -- username : ncain 
+    -- ('84324621', 'Melinda', 'Lewis', 'mlewis@iut.univ-paris8.fr', '07.41.83.18.99', 'mlewis', 4, 35, 79), -- username : mlewis 
+    -- ('87221462', 'Robert', 'Santana', 'rsantana@iut.univ-paris8.fr', '07.43.30.12.09', 'rsantana', 4, 35, 79), -- username : rsantana 
+    -- ('29171001', 'Nicholas', 'Mack', 'nmack@iut.univ-paris8.fr', '07.57.30.28.74', 'nmack', 4, 35, 79), -- username : nmack 
+    -- ('54862612', 'Rachel', 'Bishop', 'rbishop@iut.univ-paris8.fr', '07.06.13.78.88', 'rbishop', 4, 35, 79), -- username : rbishop 
+    -- ('12451754', 'Jill', 'Casey', 'jcasey@iut.univ-paris8.fr', '07.08.59.76.22', 'jcasey', 4, 35, 79), -- username : jcasey 
+    -- ('94822493', 'Samantha', 'Kelly', 'skelly@iut.univ-paris8.fr', '07.66.80.00.19', 'skelly', 4, 35, 79), -- username : skelly 
+    -- ('23024341', 'Melissa', 'Reed', 'mreed@iut.univ-paris8.fr', '07.98.53.10.76', 'mreed', 4, 35, 79), -- username : mreed 
+    -- ('31184072', 'Tamara', 'James', 'tjames@iut.univ-paris8.fr', '06.26.45.04.28', 'tjames', 4, 35, 79), -- username : tjames 
+    -- ('36381702', 'Jason', 'Green', 'jgreen@iut.univ-paris8.fr', '06.85.34.96.03', 'jgreen', 4, 35, 79), -- username : jgreen 
+    -- ('15706934', 'Sarah', 'Fox', 'sfox@iut.univ-paris8.fr', '06.56.47.61.78', 'sfox', 4, 35, 79), -- username : sfox 
+    -- ('91698965', 'Brian', 'Sandoval', 'bsandoval@iut.univ-paris8.fr', '07.71.67.49.23', 'bsandoval', 4, 35, 123), -- username : bsandoval 
+    -- ('91506368', 'Anthony', 'Wells', 'awells@iut.univ-paris8.fr', '07.39.25.43.18', 'awells', 4, 35, 123), -- username : awells 
+    -- ('69816247', 'Mark', 'Bishop', 'mbishop@iut.univ-paris8.fr', '06.32.78.37.76', 'mbishop', 4, 35, 123), -- username : mbishop 
+    -- ('83882181', 'Wanda', 'Sanchez', 'wsanchez@iut.univ-paris8.fr', '06.34.44.62.63', 'wsanchez', 4, 35, 123), -- username : wsanchez 
+    -- ('82557910', 'Karen', 'Bell', 'kbell@iut.univ-paris8.fr', '06.49.09.40.97', 'kbell', 4, 35, 123), -- username : kbell 
+    -- ('04243540', 'Seth', 'Yu', 'syu@iut.univ-paris8.fr', '06.01.79.53.96', 'syu', 4, 35, 123), -- username : syu 
+    -- ('70398693', 'Angela', 'Huang', 'ahuang@iut.univ-paris8.fr', '07.84.72.57.20', 'ahuang', 4, 35, 123), -- username : ahuang 
+    -- ('93055275', 'Vanessa', 'Simpson', 'vsimpson@iut.univ-paris8.fr', '07.53.45.31.94', 'vsimpson', 4, 35, 123), -- username : vsimpson 
+    -- ('89068271', 'Fernando', 'Pena', 'fpena@iut.univ-paris8.fr', '07.85.30.16.79', 'fpena', 4, 35, 123), -- username : fpena 
+    -- ('64397875', 'Christina', 'Jones', 'cjones@iut.univ-paris8.fr', '06.95.86.82.80', 'cjones', 4, 35, 123), -- username : cjones 
+    -- ('32238536', 'Margaret', 'Marks', 'mmarks@iut.univ-paris8.fr', '07.07.30.78.09', 'mmarks', 4, 12, 12), -- username : mmarks 
+    -- ('57318908', 'Tammy', 'Hester', 'thester@iut.univ-paris8.fr', '06.48.09.08.01', 'thester', 4, 12, 12), -- username : thester 
+    -- ('04918993', 'Benjamin', 'Patterson', 'bpatterson@iut.univ-paris8.fr', '07.69.10.22.89', 'bpatterson', 4, 12, 12), -- username : bpatterson 
+    -- ('54397979', 'Brittney', 'Finley', 'bfinley@iut.univ-paris8.fr', '06.93.04.39.57', 'bfinley', 4, 12, 12), -- username : bfinley 
+    -- ('54977363', 'Valerie', 'Cruz', 'vcruz@iut.univ-paris8.fr', '07.92.12.75.95', 'vcruz', 4, 12, 12), -- username : vcruz 
+    -- ('43401445', 'Katie', 'Campbell', 'kcampbell@iut.univ-paris8.fr', '06.77.92.19.10', 'kcampbell', 4, 12, 12), -- username : kcampbell 
+    -- ('50213284', 'Matthew', 'Perry', 'mperry@iut.univ-paris8.fr', '07.93.62.20.66', 'mperry', 4, 12, 12), -- username : mperry 
+    -- ('10417153', 'Ray', 'Nichols', 'rnichols@iut.univ-paris8.fr', '07.87.44.74.40', 'rnichols', 4, 12, 12), -- username : rnichols 
+    -- ('84969122', 'Kimberly', 'Garcia', 'kgarcia@iut.univ-paris8.fr', '07.93.59.55.14', 'kgarcia', 4, 12, 12), -- username : kgarcia 
+    -- ('68032725', 'Stephanie', 'Clark', 'sclark@iut.univ-paris8.fr', '07.79.52.33.65', 'sclark', 4, 12, 12), -- username : sclark 
+    -- ('68618211', 'Alexandra', 'Allen', 'aallen@iut.univ-paris8.fr', '06.32.80.99.66', 'aallen', 4, 23, 67), -- username : aallen 
+    -- ('83877019', 'Tracy', 'Perry', 'tperry@iut.univ-paris8.fr', '06.65.44.70.73', 'tperry', 4, 23, 67), -- username : tperry 
+    -- ('08783200', 'Linda', 'Wright', 'lwright@iut.univ-paris8.fr', '06.81.39.55.18', 'lwright', 4, 23, 67), -- username : lwright 
+    -- ('22958887', 'Anthony', 'Davis', 'adavis@iut.univ-paris8.fr', '07.52.60.91.52', 'adavis', 4, 23, 67), -- username : adavis 
+    -- ('90710844', 'Jennifer', 'Fischer', 'jfischer@iut.univ-paris8.fr', '06.51.92.73.75', 'jfischer', 4, 23, 67), -- username : jfischer 
+    -- ('79649503', 'Andrea', 'Calderon', 'acalderon@iut.univ-paris8.fr', '06.67.49.87.28', 'acalderon', 4, 23, 67), -- username : acalderon 
+    -- ('71550034', 'Richard', 'Lawson', 'rlawson@iut.univ-paris8.fr', '06.50.15.81.39', 'rlawson', 4, 23, 67), -- username : rlawson 
+    -- ('16713138', 'David', 'Zuniga', 'dzuniga@iut.univ-paris8.fr', '07.53.58.09.82', 'dzuniga', 4, 23, 67), -- username : dzuniga 
+    -- ('82777835', 'Andrew', 'Willis', 'awillis@iut.univ-paris8.fr', '07.51.72.52.28', 'awillis', 4, 23, 67), -- username : awillis 
+    -- ('30396031', 'Vicki', 'Pugh', 'vpugh@iut.univ-paris8.fr', '06.49.06.61.60', 'vpugh', 4, 23, 67), -- username : vpugh 
+    -- ('99527325', 'Michelle', 'Mathis', 'mmathis@iut.univ-paris8.fr', '07.20.73.50.22', 'mmathis', 4, 43, 131), -- username : mmathis 
+    -- ('25932010', 'Paige', 'Miranda', 'pmiranda@iut.univ-paris8.fr', '07.84.96.01.04', 'pmiranda', 4, 43, 131), -- username : pmiranda 
+    -- ('71756420', 'Melissa', 'Cooper', 'mcooper@iut.univ-paris8.fr', '06.45.89.00.93', 'mcooper', 4, 43, 131), -- username : mcooper 
+    -- ('75438409', 'Angela', 'Mercado', 'amercado@iut.univ-paris8.fr', '06.18.54.43.47', 'amercado', 4, 43, 131), -- username : amercado 
+    -- ('84210640', 'Christopher', 'Stokes', 'cstokes@iut.univ-paris8.fr', '07.77.15.66.11', 'cstokes', 4, 43, 131), -- username : cstokes 
+    -- ('16207268', 'Michael', 'Mccann', 'mmccann@iut.univ-paris8.fr', '07.03.50.79.78', 'mmccann', 4, 43, 131), -- username : mmccann 
+    -- ('74312119', 'Samantha', 'Martinez', 'smartinez@iut.univ-paris8.fr', '07.83.66.44.41', 'smartinez', 4, 43, 131), -- username : smartinez 
+    -- ('07767752', 'Ethan', 'Rodriguez', 'erodriguez@iut.univ-paris8.fr', '07.10.43.04.94', 'erodriguez', 4, 43, 131), -- username : erodriguez 
+    -- ('49193399', 'Paul', 'Johnson', 'pjohnson@iut.univ-paris8.fr', '06.27.11.38.55', 'pjohnson', 4, 43, 131), -- username : pjohnson 
+    -- ('93534416', 'Joseph', 'Gutierrez', 'jgutierrez@iut.univ-paris8.fr', '07.67.96.78.91', 'jgutierrez', 4, 43,131) -- username : jjgutierrez 
 ;
