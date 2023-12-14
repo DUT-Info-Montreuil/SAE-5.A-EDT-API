@@ -1,32 +1,10 @@
 from services.main_service import Service
 from datetime import datetime, timedelta
 
-
 import connect_pg
 
 class course_service(Service):
     
-    def get_next_courses2(self, student_number):
-        current_datetime = datetime.now()
-        formatted_starttime = current_datetime.strftime('%Y-%m-%d %H:%M:%S')
-
-        # Calculer la date du jour suivant
-        next_day = current_datetime + timedelta(days=1)
-        formatted_next_day = next_day.strftime('%Y-%m-%d 00:00:00')
-
-        query = "SELECT * FROM university.courses WHERE starttime > %(formatted_starttime)s AND starttime < %(formatted_next_day)s"
-        params = {'formatted_starttime': formatted_starttime, 'formatted_next_day': formatted_next_day}
-
-        conn = self.get_connection()
-        rows_courses = connect_pg.get_query(conn, query, params)
-
-        returnStatement = []
-        for row in rows_courses:
-            returnStatement.append(self.get_course_statement(row))
-
-        # connect_pg.disconnect(conn)
-        return returnStatement
-
     # Courses API
     # university.courses(@id, description, starttime, endtime, course_type, #personal_id, #rooms_id, #teaching_id)
     def get_courses(self):
@@ -140,27 +118,6 @@ class course_service(Service):
         # connect_pg.disconnect(conn)
 
         return updated_course_id
-
-    def get_next_courses(self, student_number):
-            # La date du jour
-            current_datetime = datetime.now()
-            formatted_starttime = current_datetime.strftime('%Y-%m-%d %H:%M:%S')
-
-            # Calculer la date du jour suivant
-            next_day = current_datetime + timedelta(days=1)
-            formatted_next_day = next_day.strftime('%Y-%m-%d 00:00:00')
-
-            query = "SELECT * FROM university.courses WHERE starttime > '%(formatted_starttime)s' AND starttime < '%(formatted_next_day)s'" % {'formatted_starttime': formatted_starttime, 'formatted_next_day': formatted_next_day}
-
-            conn = self.get_connection()
-            rows_courses = connect_pg.get_query(conn, query)
-
-            returnStatement = []
-            for row in rows_courses:
-                returnStatement.append(self.get_course_statement(row))
-            # connect_pg.disconnect(conn)
-
-            return returnStatement
     
     def get_course_statement(self, row):
         """ Formats course data in JSON """

@@ -62,11 +62,3 @@ def update_course(id):
         return {"message": f"Course with ID {updated_course_id} updated successfully!"}, 200
     else :
         return {"message": f"Course with ID {id} not found!"}, 404
-    
-    
-@course_app.route('/courses/dashboard/<string:student_number>', methods=['GET'])
-def get_next_courses(student_number):
-    """ Get a course by ID in JSON format """
-    _service = course_service()
-    returnStatement = _service.get_next_courses(student_number)
-    return jsonify(returnStatement)
