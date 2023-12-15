@@ -10,35 +10,35 @@ rooms['TP'] = ['Amphi 2', 'A1-01', 'B1-13', 'B1-14']
 
 s1 = dict()
 
-s1['Initiation au développement'] = ['j.rety@iut.univ-paris8.fr','m.simonot@iut.univ-paris8.fr','p.bonnot@iut.univ-paris8.fr']
-s1['Développement d’interfaces web'] = ['a.bossard@iut.univ-paris8.fr','m.cataldi@iut.univ-paris8.fr']
-s1['Introduction à l’Architecture des Ordinateurs'] = ['g.delmas@iut.univ-paris8.fr','a.bossard@iut.univ-paris8.fr']
-s1['Introduction aux Systèmes d’exploitation'] = ['g.delmas@iut.univ-paris8.fr','n.nauwynck@iut.univ-paris8.fr']
-s1['Introduction aux bases de données SQL'] = ['m.lamolle@iut.univ-paris8.fr', 'm.cataldi@iut.univ-paris8.fr']
-s1['Mathématiques Discrètes'] = ['m.homps@iut.univ-paris8.fr', 'p.bonnot@iut.univ-paris8.fr']
-s1['Outils Mathématiques Fondamentaux'] = ['m.homps@iut.univ-paris8.fr', 'a.ricordeau@iut.univ-paris8.fr']
+s1['Initiation au developpement'] = ['j.rety@iut.univ-paris8.fr','m.simonot@iut.univ-paris8.fr','p.bonnot@iut.univ-paris8.fr']
+s1['Developpement d interfaces web'] = ['a.bossard@iut.univ-paris8.fr','m.cataldi@iut.univ-paris8.fr']
+s1['Introduction a l Architecture des Ordinateurs'] = ['g.delmas@iut.univ-paris8.fr','a.bossard@iut.univ-paris8.fr']
+s1['Introduction aux Systemes d exploitation'] = ['g.delmas@iut.univ-paris8.fr','n.nauwynck@iut.univ-paris8.fr']
+s1['Introduction aux bases de donnees SQL'] = ['m.lamolle@iut.univ-paris8.fr', 'm.cataldi@iut.univ-paris8.fr']
+s1['Mathematiques Discretes'] = ['m.homps@iut.univ-paris8.fr', 'p.bonnot@iut.univ-paris8.fr']
+s1['Outils Mathematiques Fondamentaux'] = ['m.homps@iut.univ-paris8.fr', 'a.ricordeau@iut.univ-paris8.fr']
 s1['Gestion de projet et des organisations'] = ['v.clement-comparot@iut.univ-paris8.fr']
-s1['Économie durable et numérique'] = ['v.clement-comparot@iut.univ-paris8.fr']
+s1['economie durable et numerique'] = ['v.clement-comparot@iut.univ-paris8.fr']
 s1['Anglais Technique'] = ['c.ballay_dally@iut.univ-paris8.fr']
 s1['Bases de la Communication'] = ['v.clement-comparot@iut.univ-paris8.fr']
 s1['Projet professionnel et personnel'] = ['v.clement-comparot@iut.univ-paris8.fr']
 
 s3 = dict()
-s3['Développement Web'] = ['a.bossard@iut.univ-paris8.fr','m.cataldi@iut.univ-paris8.fr']
-s3['Développement efficace et Qualité'] = ['j.rety@iut.univ-paris8.fr','m.simonot@iut.univ-paris8.fr','p.bonnot@iut.univ-paris8.fr']
-s3['Programmation Système'] = ['g.delmas@iut.univ-paris8.fr','a.bossard@iut.univ-paris8.fr']
-s3['Architecture des Réseaux'] = ['g.delmas@iut.univ-paris8.fr']
+s3['Developpement Web'] = ['a.bossard@iut.univ-paris8.fr','m.cataldi@iut.univ-paris8.fr']
+s3['Developpement efficace et Qualite'] = ['j.rety@iut.univ-paris8.fr','m.simonot@iut.univ-paris8.fr','p.bonnot@iut.univ-paris8.fr']
+s3['Programmation Systeme'] = ['g.delmas@iut.univ-paris8.fr','a.bossard@iut.univ-paris8.fr']
+s3['Architecture des Reseaux'] = ['g.delmas@iut.univ-paris8.fr']
 s3['SQL et Programmation'] = ['m.lamolle@iut.univ-paris8.fr', 'm.cataldi@iut.univ-paris8.fr']
 s3['Analyse'] = ['p.bonnot@iut.univ-paris8.fr', 'a.ricordeau@iut.univ-paris8.fr']
-s3['Probabilités'] = ['p.bonnot@iut.univ-paris8.fr', 'a.ricordeau@iut.univ-paris8.fr']
+s3['Probabilites'] = ['p.bonnot@iut.univ-paris8.fr', 'a.ricordeau@iut.univ-paris8.fr']
 s3['Cryptographie'] = ['m.homps@iut.univ-paris8.fr', 'p.bonnot@iut.univ-paris8.fr']
-s3['Management des Systèmes d’Information'] = ['v.clement-comparot@iut.univ-paris8.fr']
-s3['Droits des contrats et du numérique'] = ['v.clement-comparot@iut.univ-paris8.fr']
+s3['Management des Systemes d Information'] = ['v.clement-comparot@iut.univ-paris8.fr']
+s3['Droits des contrats et du numerique'] = ['v.clement-comparot@iut.univ-paris8.fr']
 s3['Anglais'] = ['c.ballay_dally@iut.univ-paris8.fr']
 s3['Anglais Apprentis'] = ['c.ballay_dally@iut.univ-paris8.fr']
 s3['Communication Professionnelle'] = ['v.clement-comparot@iut.univ-paris8.fr']
 s3['PPP'] = ['v.clement-comparot@iut.univ-paris8.fr']
-s3['Outils Mathématiques Fondamentaux'] = ['m.homps@iut.univ-paris8.fr', 'p.bonnot@iut.univ-paris8.fr', 'a.ricordeau@iut.univ-paris8.fr']
+s3['Outils Mathematiques Fondamentaux'] = ['m.homps@iut.univ-paris8.fr', 'p.bonnot@iut.univ-paris8.fr', 'a.ricordeau@iut.univ-paris8.fr']
 
 
 base_date = datetime(2023, 12, 15)
@@ -65,7 +65,7 @@ def remove_last_occurrence(input_str, char_to_remove):
 
     return result
 
-def generate_timetable(start_date, end_date, s, grps,timetable = []):
+def generate_timetable(start_date, end_date, s, grps, number='1',timetable = []):
     text = ""
     textParticipate = ""
     coursNb = 0
@@ -76,7 +76,7 @@ def generate_timetable(start_date, end_date, s, grps,timetable = []):
         textParticipate += f"\nINSERT INTO university.participates (course_id, subgroup_id)\nVALUES"
         
         text += f"\n-- For the date {(current_time.strftime('%Y-%m-%d'))} (YYYY/MM/DD)"
-        text += f"\nINSERT INTO university.courses (starttime, endtime, course_type, personal_id, rooms_id, teaching_id)\nVALUES"
+        text += f"\nINSERT INTO university.courses (starttime, endtime, course_type, rooms_id, teaching_id,personal_id)\nVALUES"
         
         while current_time <=end_date :
             hour = random.choice([1,2])
@@ -107,7 +107,7 @@ def generate_timetable(start_date, end_date, s, grps,timetable = []):
                     teaching_personnal
                 ])
                 
-                text += f"\n\t('{current_time.strftime('%Y-%m-%d %H:%M:%S')}', '{end.strftime('%Y-%m-%d %H:%M:%S')}', '{course_type}', \n\t\t(SELECT id FROM university.rooms WHERE code = '{room}'),\n\t\t(SELECT id FROM university.teachings WHERE title = '{teaching_key} and semestre = 1'),\n\t\t(SELECT id FROM university.personals WHERE mail = '{teaching_personnal}')),"
+                text += f"\n\t('{current_time.strftime('%Y-%m-%d %H:%M:%S')}', '{end.strftime('%Y-%m-%d %H:%M:%S')}', '{course_type}', \n\t\t(SELECT id FROM university.rooms WHERE code = '{room}'),\n\t\t(SELECT id FROM university.teachings WHERE title = '{teaching_key}' and semestre = {number}),\n\t\t(SELECT id FROM university.personals WHERE mail = '{teaching_personnal}')),"
                 coursNb+=1
                 textParticipate+="\n\t"
                 for grp in grps :
@@ -143,7 +143,7 @@ def generate_timetable(start_date, end_date, s, grps,timetable = []):
                         teaching_personnal
                     ])
                     
-                    text += f"\n\t('{current_time.strftime('%Y-%m-%d %H:%M:%S')}', '{end.strftime('%Y-%m-%d %H:%M:%S')}', '{course_type}', \n\t\t(SELECT id FROM university.rooms WHERE code = '{room}'),\n\t\t(SELECT id FROM university.teachings WHERE title = '{teaching_key} and semestre = 1'),\n\t\t(SELECT id FROM university.personals WHERE mail = '{teaching_personnal}')),"
+                    text += f"\n\t('{current_time.strftime('%Y-%m-%d %H:%M:%S')}', '{end.strftime('%Y-%m-%d %H:%M:%S')}', '{course_type}', \n\t\t(SELECT id FROM university.rooms WHERE code = '{room}'),\n\t\t(SELECT id FROM university.teachings WHERE title = '{teaching_key}' and semestre = {number}),\n\t\t(SELECT id FROM university.personals WHERE mail = '{teaching_personnal}')),"
                     coursNb+=1
                     textParticipate+= f"\n\t({coursNb},{grp[0]}),"
                     textParticipate+= f" -- {course_type} for {grp[1]} "
@@ -159,7 +159,7 @@ def generate_timetable(start_date, end_date, s, grps,timetable = []):
                 textParticipate += f"\nINSERT INTO university.participates (course_id, subgroup_id)\nVALUES"
                 
                 text += f"\n -- For the date {(current_time.strftime('%Y-%m-%d'))} (YYYY/MM/DD)"
-                text += f"\nINSERT INTO university.courses (starttime, endtime, course_type, personal_id, rooms_id, teaching_id)\nVALUES"""
+                text += f"\nINSERT INTO university.courses (starttime, endtime, course_type, rooms_id, teaching_id,personal_id)\nVALUES"""
             else :
                 current_time = (end + timedelta(minutes=5))
             
@@ -172,6 +172,7 @@ def generate_timetable(start_date, end_date, s, grps,timetable = []):
                 # Write content to the file
                 file.write(textParticipate)
             textParticipate = ""
+                
     return timetable 
 
 start_date = datetime(2023, 12, 15, 9, 0, 0)
@@ -186,10 +187,10 @@ with open('script_university_presentation_sample_course.sql', 'a', encoding='utf
     file.write("\n-- S1")
 with open('script_university_presentation_sample_participate.sql', 'a', encoding='utf-8') as file:
     file.write("\n-- S1")
-timetable = generate_timetable(start_date, end_date,s1,[('1','A1'),('2','A2'),('3','B1'),('4','B2')])
+timetable = generate_timetable(start_date, end_date,s1,[('1','A1'),('2','A2'),('3','B1'),('4','B2')],'1')
 with open('script_university_presentation_sample_course.sql', 'a', encoding='utf-8') as file:
     file.write("\n-- S3")
 with open('script_university_presentation_sample_participate.sql', 'a', encoding='utf-8') as file:
     file.write("\n-- S3")
-timetable = generate_timetable(start_date, end_date,s3,[('4','A1'),('5','A2'),('6','app-1'),('7','app-2')], timetable)
+timetable = generate_timetable(start_date, end_date,s3,[('4','A1'),('5','A2'),('6','app-1'),('7','app-2')],'3', timetable)
 print("end")

@@ -108,6 +108,28 @@ def create_university_db():
     
     return jsonify( {"univesity_create" : result, "user_insert" : result1, "school_insert" : result2, "student_insert" : result3, "courses_insert" : result4, "participate_insert" : result5})
 
+@app.route('/create_university_db', methods=['GET'])
+def create_university_db():
+    """ CREATE ALL DB this methode will DROP all BEFORE create """
+    script_file_path = 'scripts/script_university_create.sql'
+    result = connect_pg.execute_sql_script(script_file_path)
+    
+    script_file_path = 'scripts/script_university_presentation_sample.sql.sql'
+    result2 = connect_pg.execute_sql_script(script_file_path)
+    
+    script_file_path = 'scripts/script_university_presentation_sample_course.sql.sql'
+    result3 = connect_pg.execute_sql_script(script_file_path)
+    
+    script_file_path = 'scripts/script_university_presentation_sample_participate.sql.sql'
+    result4 = connect_pg.execute_sql_script(script_file_path)
+    
+    return jsonify({ "univesity_create" : result, 
+                     "univesity_insert_school" : result2,
+                     "univesity_insert_course" : result3,
+                     "univesity_insert_participate" : result4
+                    })
+
+
 @app.route('/create_table_university_db', methods=['GET'])
 def create_table_university_db():
     """ DROP AND CREATE ALL TABLE IN DB """
