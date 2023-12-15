@@ -4,67 +4,46 @@ import connect_pg
 
 class absent_service(Service):
     
-    # Absents API
     # university.absents(@id, justified, student_number, #course_id)
+
+    # ----------------------------------------------------------
+    # Recuperer data
+    # ----------------------------------------------------------
+
     def get_absents(self):
         """ Get all absents in JSON format """
         query = "SELECT * FROM university.absents"
-        conn = self.get_connection()
-        rows = connect_pg.get_query(conn, query)
-        returnStatement = []
-        for row in rows:
-            returnStatement.append(self.get_absent_statement(row))
-        # connect_pg.disconnect(conn)
-        return returnStatement
+        return self.execute_query_and_get_statement(query)
     
     def get_absent_by_id(self, id):
         """ Get a absent by ID in JSON format """
-        query = "SELECT * FROM university.absents WHERE id = %(id)s" % {'id': id}
-        conn = self.get_connection()
-        rows = connect_pg.get_query(conn, query)
-        returnStatement = {}
-        if len(rows) > 0:
-            returnStatement = self.get_absent_statement(rows[0])
-        # connect_pg.disconnect(conn)
-        return returnStatement
+        query = "SELECT * FROM university.absents WHERE id = " + str(id)
+        returnStatement = self.execute_query_and_get_statement(query)
+        if len(returnStatement) == 1:
+            return returnStatement
+        else:
+            return {}
     
-    def identify_absent(self, data):
-        """Identify a absent by justified, student_number and course_id in JSON format"""
-        # data = request.json
-
-        justified = data.get('justified', '')
-        student_number = data.get('student_number', '')
-        course_id = data.get('course_id', '')
-    
-        query = "SELECT * FROM university.absents WHERE justified = '%(justified)s' AND student_number = '%(student_number)s' AND course_id = %(course_id)s" %  {'justified': justified, 'student_number': student_number, 'course_id': course_id}
-        conn = self.get_connection()
-        rows = connect_pg.get_query(conn, query)
-        # connect_pg.disconnect(conn)
-    
-        returnStatement = []
-        for row in rows:
-            returnStatement.append(self.get_absent_statement(row))
-    
-        return returnStatement
+    # ----------------------------------------------------------
+    # Add / Delete / Update
+    # ----------------------------------------------------------
     
     def add_absent(self, data):
         """ Add a absent by data in JSON format """
-        # data = request.json
-    
         justified = data.get('justified', '')
         student_number = data.get('student_number', '')
         course_id = data.get('course_id', '')
     
-        query = "INSERT INTO university.absents (justified, student_number, course_id) VALUES ('%(justified)s', '%(student_number)s', %(course_id)s) RETURNING id" % {'justified': justified, 'student_number': student_number, 'course_id': course_id}
+        query = "INSERT INTO university.absents (justified, student_number, course_id) VALUES ('" + justified + "', '" + student_number + "', " + course_id + ")"
         conn = self.get_connection()
         new_absent_id = connect_pg.execute_commands(conn, (query,))
-        # connect_pg.disconnect(conn)
+        connect_pg.disconnect(conn)
     
         return new_absent_id
     
     def delete_absent_by_id(self, id):
         """ Delete a absent by ID in JSON format """
-        query = "DELETE FROM university.absents WHERE id = %(id)s RETURNING id" %  {'id': id}
+        query = "DELETE FROM university.absents WHERE id = " + str(id)
         conn = self.get_connection()
         row = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -72,36 +51,44 @@ class absent_service(Service):
     
     def update_absent(self, id, data):
         """ Update an absent record by ID using data in JSON format """
-        # data = request.json
+        sub_query = ''
+        justified = data.get('justified', '')
+        student_number = data.get('student_number', '')
+        course_id = data.get('course_id', '')
 
-        # Check if the absent record with the given ID exists
-        existing_absent = self.get_absent_by_id(id)
-        if not existing_absent:
-            return existing_absent
+        if justified != '':
+            sub_query = sub_query + """justified = '""" + str(justified) + """' """
+        if student_number != '':
+            sub_query = sub_query + """student_number = '""" + str(student_number) + """' """
+        if course_id != '':
+            sub_query = sub_query + """justified = """ + str(course_id) + """ """
+        
+        # @TO-DO: add other attributes
+        if sub_query == '':
+            return {"message": "Invalid arguments"}
+        
+        query = """UPDATE university.absents SET """ + sub_query + """ WHERE id = """ + str(id)
+        try:
+            conn = self.get_connection()
+            connect_pg.execute_commands(conn, (query,))
+            connect_pg.disconnect(conn)
+            return {"message": "Course " + str(id) + " updated sucessfully"}
+        except Exception as e:
+            return  {"message": e}
 
-        justified = data.get('justified', existing_absent['justified'])
-        student_number = data.get('student_number', existing_absent['student_number'])
-        course_id = data.get('course_id', existing_absent['course_id'])
-
-        query = """UPDATE university.absents
-                SET justified = '%(justified)s',
-                student_number = '%(student_number)s',
-                course_id = %(course_id)s
-            WHERE id = %(id)s
-            RETURNING id """ % {
-                'id': id,
-                'justified': justified,
-                'student_number': student_number,
-                'course_id': course_id
-            }
-
-        conn = self.get_connection()
-        updated_absent_id = connect_pg.execute_commands(conn, (query,))
-        # connect_pg.disconnect(conn)
-
-        return updated_absent_id
-
+    # ----------------------------------------------------------
+    # Utilitaires
+    # ----------------------------------------------------------
     
+    def execute_query_and_get_statement(self, query):
+        conn = self.get_connection()
+        rows = connect_pg.get_query(conn, query)
+        returnStatement = []
+        for row in rows:
+            returnStatement.append(self.get_absent_statement(row))
+        connect_pg.disconnect(conn)
+        return returnStatement
+
     def get_absent_statement(self, row):
         """ Formats absent data in JSON """
         return {

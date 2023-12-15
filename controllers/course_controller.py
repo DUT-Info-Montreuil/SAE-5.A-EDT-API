@@ -79,6 +79,7 @@ def get_timetable_by_student():
         return jsonify({'edt' : returnStatement})
     
 # Identifier si user = prof ou student
+# @ to-do
 # @timetable_app.route('/timetable/get/bytoken', methods=['POST'])
 # @jwt_required()
 # def get_timetable_by_token():

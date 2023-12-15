@@ -98,6 +98,7 @@ class course_service(Service):
         return self.execute_query_and_get_statement_timetable(query)
     
     # Get by teachers id also ?
+    # To adapt with the new student id
     def get_timetable_by_student(self, data):
         student_id = data.get('student_id', '') 
         week_date_start = data.get('week_date_start', '') #Format : YYYY-MM-DD
@@ -162,9 +163,28 @@ class course_service(Service):
     def update_course(self, id, data):
         sub_query = ''
         description = data.get('description', '')
+        starttime = data.get('starttime', '')
+        endtime = data.get('endtime', '')
+        course_type = data.get('course_type', '')
+        personal_id = data.get('personal_id', '')
+        rooms_id = data.get('rooms_id', '')
+        teaching_id = data.get('teaching_id', '')
+
         if description != '':
             sub_query = sub_query + """description = '""" + str(description) + """' """
-        # @TO-DO: add other attributes
+        if starttime != '':
+            sub_query = sub_query + """starttime = TO_CHAR('""" + str(starttime) + """', 'yyyy-mm-dd"T"HH24:MI') """
+        if endtime != '':
+            sub_query = sub_query + """endtime = TO_CHAR('""" + str(endtime) + """', 'yyyy-mm-dd"T"HH24:MI') """
+        if course_type != '':
+            sub_query = sub_query + """course_type = '""" + str(course_type) + """' """
+        if personal_id != '':
+            sub_query = sub_query + """personal_id = """ + str(personal_id) + """ """
+        if rooms_id != '':
+            sub_query = sub_query + """rooms_id = """ + str(rooms_id) + """ """
+        if teaching_id != '':
+            sub_query = sub_query + """teaching_id = """ + str(teaching_id) + """ """
+       
         if sub_query == '':
             return jsonify({"message": "Invalid arguments"}), 403
         
