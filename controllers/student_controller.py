@@ -57,20 +57,19 @@ def get_student_by_subgroup():
     returnStatement = _service.get_student_by_subgroup(data)
     return jsonify(returnStatement)
 
-#Before creating a student insert a user
 @student_app.route('/students/add', methods=['PUT'])
 def add_student():
     """ Add a student by data in JSON format """
+    try:
+        data = request.json
+        _service = student_service()
+        _service.get_student_by_subgroup(data)
 
-    data = request.json
-    _service = student_service()
-    returnStatement = _service.add_student(data)
-
-    ## Changer ça!
-    if returnStatement:
         return jsonify({"message": "Student successfully added!"}), 200
-    else:
-        return jsonify({"message": "Student not found!"}), 404
+
+    except Exception as e:
+        return jsonify({"message": f"An error occurred: {str(e)}"}), 404
+
 
 @student_app.route('/students/delete/<string:student_number>', methods=['GET'])
 def delete_student_by_id(student_number):
