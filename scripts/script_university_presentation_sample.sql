@@ -15,7 +15,7 @@ VALUES
     ('MH' ,'Homps', 'Marc', 'm.homps@iut.univ-paris8.fr', '06.85.48.41.23', 'mhomps') -- username : mhomps
 ;
 
--- roles(@id, name, description, personal_id)
+-- university.roles(@id, name, description, personal_id)
 INSERT INTO university.roles (name, description, personal_id)
 VALUES 
     ('Directrice', 'Description of the role', (SELECT id FROM personals WHERE mail = 'm.lamolle@iut.univ-paris8.fr')),
@@ -37,7 +37,7 @@ VALUES
     ('Professeur', '', (SELECT id FROM personals WHERE mail = 'm.simonot@iut.univ-paris8.fr')),
 ;
 
--- departments(@id, name, description, department_type)
+-- university.departments(@id, name, description, department_type)
 INSERT into departments (name, description, degree_type,personal_id)
 VALUES
     ('INFO', 'Informatique', 'BUT', (SELECT id FROM personals WHERE mail = 'a.ricordeau@iut.univ-paris8.fr')),  -- id : 1
@@ -46,7 +46,7 @@ VALUES
     ('GACO', 'Gestion des Administrations et Commerce', 'BUT',(SELECT id FROM personals WHERE mail = 'm.kaiser@iut.univ-paris8.fr'))
 ;
 
--- groups(@id, promotion, type, #department_id)
+-- university.groups(@id, promotion, type, #department_id)
 -- ### region group for INFO ###
 INSERT INTO university.groups (promotion, type, department_id)
 VALUES
@@ -56,8 +56,7 @@ VALUES
 
     -- promotion 2
     (2, 'A', 1),  -- id : 3
-    (2, 'B', 1),  -- id : 4
-    (2, 'App', 1) -- id : 5
+    (2, 'App', 1) -- id : 4
 ;
 -- ### endregion group for INFO###
 
@@ -75,15 +74,12 @@ INSERT INTO university.subgroups (name, group_id)
         -- groupe A
     ('A1', 3),  -- id : 5 
     ('A2', 3),  -- id : 6
-        -- groupe B
-    ('B1', 4),  -- id : 7
-    ('B2', 4),  -- id : 8
         -- groupe APP
-    ('app', 5), -- id : 9
-    ('app', 5)  -- id : 10
+    ('app-1', 5), -- id : 7
+    ('app-2', 5)  -- id : 8
 ;
 
--- rooms(@id, code, capacity, has_computer, has_projector)
+-- university.rooms(@id, code, capacity, has_computer, has_projector)
 INSERT INTO university.rooms (code, capacity, has_computer, has_projector) VALUES
     ('A0-03 (Libre)', 0, 't', 'f'),
     ('A0-04 (musique)', 0, 't', 'f'),
@@ -165,7 +161,7 @@ INSERT INTO university.rooms (code, capacity, has_computer, has_projector) VALUE
     ('Sur rdv', 0, 'f', 'f')
 ;
 
--- specializations(@id, code, name, #department_id)
+-- university.specializations(@id, code, name, #department_id)
 -- Parcours - INFO
 INSERT INTO university.specializations (code, name, department_id) 
 VALUES
@@ -175,7 +171,7 @@ VALUES
     ('INFO_C', 'Administration, gestion et exploitation des données',(SELECT id FROM departments WHERE name = 'INFO'))
 ;
 
--- teachings(@id, title, hour_number, semestre, sequence, teaching_type #specialization_id)
+-- university.teachings(@id, title, hour_number, semestre, sequence, teaching_type #specialization_id)
 -- BUT INFO
 INSERT INTO university.teachings (title, hour_number, semestre, sequence, teaching_type , specialization_id)
 VALUES
@@ -279,4 +275,3 @@ VALUES
     ('Développement d’une application web', 0, 4, '01', 'SAE', (SELECT id FROM specializations WHERE code = 'INFO_A')),
     ('Développement avec Base de Données', 0, 4, '01', 'SAE', (SELECT id FROM specializations WHERE code = 'INFO_C'))
 ;
-
