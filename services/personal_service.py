@@ -5,7 +5,7 @@ from configuration import connect_pg
 class personal_service(Service):
     
     # Personals API
-    # personals(@id, last_name, first_name, mail, phone_number)
+    # university.personals(@id, last_name, first_name, mail, phone_number)
     def get_personals(self):
         """ Get all personals in JSON format """
         query = "SELECT * FROM university.personals"

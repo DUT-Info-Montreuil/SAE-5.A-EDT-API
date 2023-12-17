@@ -1,6 +1,7 @@
 
 INSERT INTO university.courses (starttime, endtime, course_type, personal_id, rooms_id, teaching_id)
 VALUES
+
 	('2023-12-09 08:00:00', '2023-12-09 11:00:00', 'Projet', (SELECT id FROM university.personals WHERE mail = 'j.rety@iut.univ-paris8.fr'), 44, 12),
 	('2023-12-09 11:00:00', '2023-12-09 13:00:00', 'cours', (SELECT id FROM university.personals WHERE mail = 'a.bossard@iut.univ-paris8.fr'), 53, 10),
 	('2023-12-09 13:00:00', '2023-12-09 14:00:00', 'cours', (SELECT id FROM university.personals WHERE mail = 'm.cataldi@iut.univ-paris8.fr'), 29, 7),

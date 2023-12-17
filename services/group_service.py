@@ -5,7 +5,7 @@ from configuration import connect_pg
 class group_service(Service):
     
     # Groups API
-    # groups(@id, promotion, type, #department_id)
+    # university.groups(@id, promotion, type, #department_id)
     def get_groups(self):
         """ Get all groups in JSON format """
         query = "SELECT * FROM university.groups"

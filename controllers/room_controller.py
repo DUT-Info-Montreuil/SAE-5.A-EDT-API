@@ -1,12 +1,13 @@
-
-from flask import jsonify, request, Blueprint
+from flask import jsonify
+from flask import request
+from flask import Blueprint
 
 from services.room_service import room_service
 
 room_app = Blueprint('room_app', __name__)
 
 # Rooms API
-# roles(@id, name, description, personal_id)
+# university.roles(@id, name, description, personal_id)
 @room_app.route('/rooms/get', methods=['GET'])
 def get_rooms():
     """ Get all rooms in JSON format """

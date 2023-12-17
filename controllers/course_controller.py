@@ -1,13 +1,13 @@
-from flask import jsonify, request, Blueprint
-
-
+from flask import jsonify
+from flask import request
+from flask import Blueprint
 
 from services.course_service import course_service
 
 course_app = Blueprint('course_app', __name__)
 
 # Courses API
-# courses(@id, description, starttime, duree, course_type, #personal_id, #rooms_id, #teaching_id)
+# university.courses(@id, description, starttime, duree, course_type, #personal_id, #rooms_id, #teaching_id)
 @course_app.route('/courses/get', methods=['GET'])
 def get_courses():
     """ Get all courses in JSON format """

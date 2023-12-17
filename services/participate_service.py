@@ -5,7 +5,7 @@ from configuration import connect_pg
 class participate_service(Service):
     
     # Participates API
-    # participates(@id, justified, student_number, #course_id)
+    # university.participates(@id, justified, student_number, #course_id)
     def get_participates(self):
         """ Get all participates in JSON format """
         query = "SELECT * FROM university.participates"

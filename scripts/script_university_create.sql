@@ -43,7 +43,7 @@ CREATE DOMAIN teachings_types as varchar(32) check (value ~* '^(SAE|RT|RCC|Portf
 -- \echo [INFO] Create ALL table
 
 -- User
--- \echo [INFO] Create the users table
+-- \echo [INFO] Create the university.users table
 CREATE TABLE university.users(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_users PRIMARY KEY CONSTRAINT ck_university_users_id CHECK(id > 0),
@@ -53,7 +53,7 @@ CREATE TABLE university.users(
 ) ;
 
 -- Student
--- \echo [INFO] Create the students table
+-- \echo [INFO] Create the university.students table
 CREATE TABLE university.students(
 	-- PRIMARY KEY
     id SERIAL constraint pk_university_student PRIMARY KEY CONSTRAINT ck_university_student_id CHECK(id > 0),
@@ -75,7 +75,7 @@ CREATE TABLE university.students(
 ) ;
 
 -- Department
--- \echo [INFO] Create the departments table
+-- \echo [INFO] Create the university.departments table
 CREATE TABLE university.departments(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_departments PRIMARY KEY CONSTRAINT ck_university_department_id CHECK(id > 0),
@@ -89,7 +89,7 @@ CREATE TABLE university.departments(
 ) ;
 
 -- Group
--- \echo [INFO] Create the groups table
+-- \echo [INFO] Create the university.groups table
 CREATE TABLE university.groups(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_groups PRIMARY KEY CONSTRAINT ck_university_group_id CHECK(id > 0),
@@ -102,7 +102,7 @@ CREATE TABLE university.groups(
 ) ;
 
 -- SubGroup
--- \echo [INFO] Create the subgroups table
+-- \echo [INFO] Create the university.subgroups table
 CREATE TABLE university.subgroups(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_subgroups PRIMARY KEY CONSTRAINT ck_university_subgroup_id CHECK(id > 0),
@@ -114,7 +114,7 @@ CREATE TABLE university.subgroups(
 ) ;
 
 -- Personal
--- \echo [INFO] Create the personals table
+-- \echo [INFO] Create the university.personals table
 CREATE TABLE university.personals(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_personals PRIMARY KEY CONSTRAINT ck_university_personal_id CHECK(id > 0),
@@ -129,7 +129,7 @@ CREATE TABLE university.personals(
 	phone_number numphone UNIQUE NOT NULL	-- domaine numphone
 ) ;
 
--- \echo [INFO] Create the roles table
+-- \echo [INFO] Create the university.roles table
 CREATE TABLE university.roles(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_roles PRIMARY KEY CONSTRAINT ck_university_roles_id CHECK(id > 0),
@@ -142,7 +142,7 @@ CREATE TABLE university.roles(
 ) ;
 
 -- Course
--- \echo [INFO] Create the courses table
+-- \echo [INFO] Create the university.courses table
 CREATE TABLE university.courses(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_courses PRIMARY KEY CONSTRAINT ck_university_course_id CHECK(id > 0),
@@ -161,7 +161,7 @@ CREATE TABLE university.courses(
 ) ;
 
 -- rooms
--- \echo [INFO] Create the rooms table
+-- \echo [INFO] Create the university.rooms table
 CREATE TABLE university.rooms(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_rooms PRIMARY KEY CONSTRAINT ck_university_rooms_id CHECK(id > 0),
@@ -173,7 +173,7 @@ CREATE TABLE university.rooms(
 ) ;
 
 -- reminders
--- \echo [INFO] Create the reminders table
+-- \echo [INFO] Create the university.reminders table
 CREATE TABLE university.reminders(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_reminders PRIMARY KEY CONSTRAINT ck_university_reminders_id CHECK(id > 0),
@@ -217,7 +217,7 @@ CREATE TABLE university.teachings (
 -- Link table N to N
 -- \echo [INFO] Create ALL link table N to N
 
--- \echo [INFO] Create the absents table
+-- \echo [INFO] Create the university.absents table
 CREATE TABLE university.absents(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_absents PRIMARY KEY CONSTRAINT ck_university_absents_id CHECK(id > 0),
@@ -235,7 +235,7 @@ CREATE TABLE university.absents(
     references university.courses (id) on delete restrict on update cascade
 ) ;
 
--- \echo [INFO] Create the participates table
+-- \echo [INFO] Create the university.participates table
 CREATE TABLE university.participates(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_participates PRIMARY KEY CONSTRAINT ck_university_participates_id CHECK(id > 0),
@@ -250,7 +250,7 @@ CREATE TABLE university.participates(
     references university.subgroups (id) on delete restrict on update cascade
 ) ;
 
--- \echo [INFO] Create the responsibles table
+-- \echo [INFO] Create the university.responsibles table
 CREATE TABLE university.responsibles(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_responsibles PRIMARY KEY CONSTRAINT ck_university_responsibles_id CHECK(id > 0),
@@ -362,36 +362,3 @@ ALTER TABLE university.teachings
 ADD CONSTRAINT fk_university_teachings_specializations
 FOREIGN KEY (specialization_id) REFERENCES university.specializations(id)
 ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- CREATE OR REPLACE FUNCTION check_student_email_unique()
--- RETURNS TRIGGER AS $$
--- DECLARE
---     counter INTEGER := 1;
---     new_email text := NEW.mail;
---     base_username text;
---     domain text;
--- BEGIN
---     -- Split the email into username and domain
---     base_username := split_part(new_email, '@', 1);
---     domain := split_part(new_email, '@', 2);
-
---     -- Check the student email
---     WHILE (SELECT 1 FROM university.students WHERE mail = new_email) LOOP
---         -- If duplicate found, modify the username
---         new_email := base_username || counter || '@' || domain;
---         RAISE NOTICE 'Email already exists. Modifying to: %', new_email;
---         counter := counter + 1;
---     END LOOP;
-
---     -- Set the modified email back to NEW.email
---     NEW.mail := new_email;
-
---     RETURN NEW;
--- END;
--- $$ LANGUAGE plpgsql;
-
--- -- Create the trigger
--- CREATE TRIGGER check_student_email_trigger
---     BEFORE INSERT OR UPDATE ON students
---     FOR EACH ROW
--- EXECUTE FUNCTION check_student_email_unique();

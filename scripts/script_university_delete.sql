@@ -27,18 +27,17 @@ DELETE FROM university.departments;
 -- Delete all records from university.personals
 DELETE FROM university.personals;
 
--- ALTER SEQUENCE university_students_id_seq RESTART WITH 1;
-ALTER SEQUENCE university_departments_id_seq RESTART WITH 1;
-ALTER SEQUENCE university_groups_id_seq RESTART WITH 1;
-ALTER SEQUENCE university_subgroups_id_seq RESTART WITH 1;
-ALTER SEQUENCE university_personals_id_seq RESTART WITH 1;
-ALTER SEQUENCE university_roles_id_seq RESTART WITH 1;
-ALTER SEQUENCE university_courses_id_seq RESTART WITH 1;
-ALTER SEQUENCE university_rooms_id_seq RESTART WITH 1;
-ALTER SEQUENCE university_teachings_id_seq RESTART WITH 1;
-ALTER SEQUENCE university_specializations_id_seq RESTART WITH 1;
-ALTER SEQUENCE university_reminders_id_seq RESTART WITH 1;
-ALTER SEQUENCE university_absents_id_seq RESTART WITH 1;
-ALTER SEQUENCE university_participates_id_seq RESTART WITH 1;
-ALTER SEQUENCE university_responsibles_id_seq RESTART WITH 1;
-
+ALTER SEQUENCE university.students_id_seq RESTART WITH 1;
+ALTER SEQUENCE university.departments_id_seq RESTART WITH 1;
+ALTER SEQUENCE university.groups_id_seq RESTART WITH 1;
+ALTER SEQUENCE university.subgroups_id_seq RESTART WITH 1;
+ALTER SEQUENCE university.personals_id_seq RESTART WITH 1;
+ALTER SEQUENCE university.roles_id_seq RESTART WITH 1;
+ALTER SEQUENCE university.courses_id_seq RESTART WITH 1;
+ALTER SEQUENCE university.rooms_id_seq RESTART WITH 1;
+ALTER SEQUENCE university.teachings_id_seq RESTART WITH 1;
+ALTER SEQUENCE university.specializations_id_seq RESTART WITH 1;
+ALTER SEQUENCE university.reminders_id_seq RESTART WITH 1;
+ALTER SEQUENCE university.absents_id_seq RESTART WITH 1;
+ALTER SEQUENCE university.participates_id_seq RESTART WITH 1;
+ALTER SEQUENCE university.responsibles_id_seq RESTART WITH 1;

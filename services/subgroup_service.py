@@ -6,7 +6,7 @@ from configuration import connect_pg
 class subgroup_service(Service):
     
     # Subgroups API
-    # subgroups(@id, name, #group_id)
+    # university.subgroups(@id, name, #group_id)
     def get_subgroups(self):
         """ Get all subgroups in JSON format """
         query = "SELECT * FROM university.subgroups"

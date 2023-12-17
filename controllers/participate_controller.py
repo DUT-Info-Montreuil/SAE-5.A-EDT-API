@@ -1,12 +1,13 @@
-from flask import jsonify, request, Blueprint
-
+from flask import jsonify
+from flask import request
+from flask import Blueprint
 
 from services.participate_service import participate_service
 
 participate_app = Blueprint('participate_app', __name__)
 
 # Participates API
-# participates(@id, #course_id, #subgroup_id)
+# university.participates(@id, #course_id, #subgroup_id)
 @participate_app.route('/participates/get', methods=['GET'])
 def get_participates():
     """ Get all participates in JSON format """

@@ -5,7 +5,7 @@ from configuration import connect_pg
 class absent_service(Service):
     
     # Absents API
-    # absents(@id, justified, student_number, #course_id)
+    # university.absents(@id, justified, student_number, #course_id)
     def get_absents(self):
         """ Get all absents in JSON format """
         query = "SELECT * FROM university.absents"

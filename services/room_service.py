@@ -5,7 +5,7 @@ from configuration import connect_pg
 class room_service(Service):
     
     # Rooms API
-    # roles(@id, name, description, personal_id)
+    # university.roles(@id, name, description, personal_id)
     def get_rooms(self):
         """ Get all rooms in JSON format """
         query = "SELECT * FROM university.rooms"

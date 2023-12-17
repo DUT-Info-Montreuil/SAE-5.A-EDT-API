@@ -1,10 +1,13 @@
-from flask import jsonify, request, Blueprint
+from flask import jsonify
+from flask import request
+from flask import Blueprint
+
 from services.department_service import department_service
 
 department_app = Blueprint('department_app', __name__)
 
 # Departments API
-# departments(@id, name, description, department_type)
+# university.departments(@id, name, description, department_type)
 @department_app.route('/departments/get', methods=['GET'])
 def get_departments():
     """ Get all department in JSON format """

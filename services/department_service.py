@@ -4,7 +4,7 @@ from configuration import connect_pg
 
 class department_service(Service):
     # Departments API
-    # departments(@id, name, description, department_type)
+    # university.departments(@id, name, description, department_type)
     def get_departments(self):
         """ Get all department in JSON format """
         query = "SELECT * FROM university.departments"

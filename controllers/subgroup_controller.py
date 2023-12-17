@@ -1,12 +1,13 @@
-from flask import jsonify, request, Blueprint
-
+from flask import jsonify
+from flask import request
+from flask import Blueprint
 
 from services.subgroup_service import subgroup_service
 
 subgroup_app = Blueprint('subgroup_app', __name__)
 
 # Subgroups API
-# subgroups(@id, name, #group_id)
+# university.subgroups(@id, name, #group_id)
 @subgroup_app.route('/subgroups/get', methods=['GET'])
 def get_subgroups():
     """ Get all subgroups in JSON format """

@@ -5,7 +5,7 @@ from configuration import connect_pg
 class course_service(Service):
     
     # Courses API
-    # courses(@id, description, starttime, duree, course_type, #personal_id, #rooms_id, #teaching_id)
+    # university.courses(@id, description, starttime, duree, course_type, #personal_id, #rooms_id, #teaching_id)
     def get_courses(self):
         """ Get all courses in JSON format """
         query = "SELECT * FROM university.courses"

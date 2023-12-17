@@ -5,7 +5,7 @@ from configuration import connect_pg
 class responsible_service(Service):
     
     # Participates API
-    # responsibles(@id, #teaching_id, #personal_id)
+    # university.responsibles(@id, #teaching_id, #personal_id)
     def get_responsibles(self):
         """ Get all responsibles in JSON format """
         query = "SELECT * FROM university.responsibles"

@@ -1,12 +1,13 @@
-from flask import jsonify, request, Blueprint
-
+from flask import jsonify
+from flask import request
+from flask import Blueprint
 
 from services.student_service import student_service
 
 student_app = Blueprint('student_app', __name__)
 
 # Students API
-# students(@id, last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
+# university.students(@id, last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
 @student_app.route('/students/get', methods=['GET'])
 def get_students():
     """ Get all students in JSON format """

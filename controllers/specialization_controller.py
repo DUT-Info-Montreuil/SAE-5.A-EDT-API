@@ -1,5 +1,6 @@
-from flask import jsonify, request, Blueprint
-
+from flask import jsonify
+from flask import request
+from flask import Blueprint
 
 from services.specialization_service import specialization_service
 
@@ -7,7 +8,7 @@ specialization_app = Blueprint('specialization_app', __name__)
 
 
 # Specializations API
-# specializations(@id, code, name, #department_id)
+# university.specializations(@id, code, name, #department_id)
 @specialization_app.route('/specializations/get', methods=['GET'])
 def get_specializations():
     """ Get all specializations in JSON format """

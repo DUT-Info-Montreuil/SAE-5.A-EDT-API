@@ -6,7 +6,7 @@ class specialization_service(Service):
     
     
     # Specializations API
-    # specializations(@id, code, name, #department_id)
+    # university.specializations(@id, code, name, #department_id)
     def get_specializations(self):
         """ Get all specializations in JSON format """
         query = "SELECT * FROM university.specializations"

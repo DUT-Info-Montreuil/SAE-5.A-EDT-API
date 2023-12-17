@@ -5,7 +5,7 @@ from configuration import connect_pg
 class reminder_service(Service):
     
     # Participates API
-    # reminders(@id, name, description, #course_id)
+    # university.reminders(@id, name, description, #course_id)
     def get_reminders(self):
         """ Get all reminders in JSON format """
         query = "SELECT * FROM university.reminders"

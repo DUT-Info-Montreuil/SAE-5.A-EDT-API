@@ -1,12 +1,13 @@
-from flask import jsonify, request, Blueprint
-
+from flask import jsonify
+from flask import request
+from flask import Blueprint
 
 from services.group_service import group_service
 
 group_app = Blueprint('group_app', __name__)
 
 # Groups API
-# groups(@id, promotion, type, #department_id)
+# university.groups(@id, promotion, type, #department_id)
 @group_app.route('/groups/get', methods=['GET'])
 def get_groups():
     """ Get all groups in JSON format """

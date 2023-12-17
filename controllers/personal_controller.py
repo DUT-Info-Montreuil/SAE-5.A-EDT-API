@@ -1,12 +1,13 @@
-from flask import jsonify, request, Blueprint
-
+from flask import jsonify
+from flask import request
+from flask import Blueprint
 
 from services.personal_service import personal_service
 
 personal_app = Blueprint('personal_app', __name__)
 
 # Personals API
-# personals(@id, last_name, first_name, mail, phone_number)
+# university.personals(@id, last_name, first_name, mail, phone_number)
 @personal_app.route('/personals/get', methods=['GET'])
 def get_personals():
     """ Get all personals in JSON format """

@@ -5,7 +5,7 @@ from configuration import connect_pg
 class role_service(Service):
     
     # Roles API
-    # roles(@id, name, description, personal_id)
+    # university.roles(@id, name, description, personal_id)
     def get_roles(self):
         """ Get all roles in JSON format """
         query = "SELECT * FROM university.roles"

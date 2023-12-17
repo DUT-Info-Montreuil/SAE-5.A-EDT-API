@@ -5,7 +5,7 @@ from configuration import connect_pg
 class student_service(Service):
     
     # Students API
-    # students(@id, last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
+    # university.students(@id, last_name, first_name, mail, phone_number, #department_id, #group_id, #subgroup_id)
     def get_students(self):
         """ Get all students in JSON format """
         

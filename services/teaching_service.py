@@ -5,7 +5,7 @@ from configuration import connect_pg
 class teaching_service(Service):
     
     # Teachings API
-    # teachings(@id, title, hour_number, semestre, sequence, description, teaching_type, #specialization_id)
+    # university.teachings(@id, title, hour_number, semestre, sequence, description, teaching_type, #specialization_id)
     def get_teachings(self):
         """ Get all teachings in JSON format """
         query = "SELECT * FROM university.teachings"

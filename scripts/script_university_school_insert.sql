@@ -21,7 +21,7 @@
     -- university.participates(@id, #course_id, #subgroup_id)
 */
 
--- delete FROM university.university.users;
+-- delete from university.users;
 
 INSERT INTO university.personals (personal_code, last_name, first_name, mail, phone_number, user_id)
 VALUES
@@ -57,8 +57,8 @@ VALUES
     ('MFr' ,'Mourel', 'Frédéric', 'f.mourel@iut.univ-paris8.fr', '06.69.18.17.81', (SELECT id FROM university.users WHERE username = 'fmourel')), -- username : fmourel
     ('NyV' ,'Nyzam', 'Valentin', 'v.nyzam@iut.univ-paris8.fr', '06.88.49.45.84', (SELECT id FROM university.users WHERE username = 'vnyzam')) -- username : vnyzam
 ;
-(SELECT id FROM university.users WHERE username = '')
--- roles(@id, name, description, personal_id)
+
+-- university.roles(@id, name, description, personal_id)
 INSERT INTO university.roles (name, description, personal_id)
 VALUES 
     ('Directrice', 'Description of the role', (SELECT id FROM university.personals WHERE mail = 'm.lamolle@iut.univ-paris8.fr')),
@@ -101,7 +101,7 @@ VALUES
     ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'r.kamal@iut.univ-paris8.fr'))
 ;
 
--- departments(@id, name, description, department_type)
+-- university.departments(@id, name, description, department_type)
 INSERT into university.departments (name, description, degree_type,personal_id)
 VALUES
     ('INFO', 'Informatique', 'BUT',(SELECT id FROM university.personals WHERE mail = 'a.ricordeau@iut.univ-paris8.fr')),
@@ -110,7 +110,7 @@ VALUES
     ('GACO', 'Gestion des Administrations et Commerce', 'BUT',(SELECT id FROM university.personals WHERE mail = 'm.kaiser@iut.univ-paris8.fr'))
 ;
 
--- groups(@id, promotion, type, #department_id)
+-- university.groups(@id, promotion, type, #department_id)
 -- Insert group A for each promotion for Info department
 INSERT INTO university.groups (promotion, type, department_id)
 VALUES
@@ -215,7 +215,7 @@ VALUES
     (3, 'App', 4)
 ;
 
--- subgroups(@id, name, #group_id)
+-- university.subgroups(@id, name, #group_id)
 -- For subgroup 1 for each group
 INSERT INTO university.subgroups (name, group_id) SELECT type || '1', id FROM university.groups;
 -- For subgroup 2 for each group
@@ -225,7 +225,7 @@ INSERT INTO university.subgroups (name, group_id) SELECT type || '3', id FROM un
 -- For subgroup app for each group
 INSERT INTO university.subgroups (name, group_id) SELECT type || 'app', id FROM university.groups;
 
--- rooms(@id, code, capacity, has_computer, has_projector)
+-- university.rooms(@id, code, capacity, has_computer, has_projector)
 INSERT INTO university.rooms (code, capacity, has_computer, has_projector) VALUES
     ('A0-03 (Libre)', 0, 't', 'f'),
     ('A0-04 (musique)', 0, 't', 'f'),
@@ -307,7 +307,7 @@ INSERT INTO university.rooms (code, capacity, has_computer, has_projector) VALUE
     ('Sur rdv', 0, 'f', 'f')
 ;
 
--- specializations(@id, code, name, #department_id)
+-- university.specializations(@id, code, name, #department_id)
 -- Parcours - INFO
 INSERT INTO university.specializations (code, name, department_id) 
 VALUES
@@ -344,7 +344,7 @@ VALUES
     ('GACO_MCMO', 'Management commercial et marketing omni-canal',(SELECT id FROM university.departments WHERE name = 'GACO'))
 ;
 
--- teachings(@id, title, hour_number, semestre, sequence, teaching_type #specialization_id)
+-- university.teachings(@id, title, hour_number, semestre, sequence, teaching_type #specialization_id)
 -- BUT INFO
 INSERT INTO university.teachings (title, hour_number, semestre, sequence, teaching_type , specialization_id)
 VALUES
