@@ -40,29 +40,36 @@ def identify_course(id):
 @course_app.route('/courses/add', methods=['PUT'])
 def add_course():
     """ Add a course by data in JSON format """
-    data = request.json
-    _service = course_service()
-    returnStatement = _service.add_course(data)
-
-    if returnStatement:
+    try:
+        data = request.json
+        _service = course_service()
+        _service.add_course(data)
         return jsonify({"message": "Course successfully added!"}), 200
-    else:
-        return jsonify({"message": "Course not found!"}), 404
 
-@course_app.route('/courses/delete/<int:id>', methods=['GET'])
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
+
+@course_app.route('/courses/delete/<int:id>', methods=['DELETE'])
 def delete_course_by_id(id):
     """ Delete a course by ID in JSON format """
-    _service = course_service()
-    returnStatement = _service.delete_course_by_id(id)
-    if returnStatement:
-        return jsonify({"message": "Course deleted successfully!"}), 200
-    else:
-        return jsonify({"message": "Course not found!"}), 404
+    try:
+        _service = course_service()
+        _service.delete_course_by_id(id)
+        return jsonify({"message": "Course successfully deleted !"}), 200
+    
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
     
 @course_app.route('/courses/update/<int:id>', methods=['PATCH'])
 def update_course(id):
     """ Update a course by ID using data in JSON format """
-    data = request.json
-    _service = course_service()
-    return _service.update_course(id, data)
+    try:
+        data = request.json
+        _service = course_service()
+        _service.update_course(id, data)
+        return jsonify({"message": "Course successfully updated!"}), 200
+
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
+
 

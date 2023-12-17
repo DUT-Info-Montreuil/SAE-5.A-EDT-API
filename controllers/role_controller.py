@@ -8,6 +8,11 @@ role_app = Blueprint('role_app', __name__)
 
 # Roles API
 # university.roles(@id, name, description, personal_id)
+
+# ----------------------------------------------------------
+# Recuperer data
+# ----------------------------------------------------------
+
 @role_app.route('/roles/get', methods=['GET'])
 def get_roles():
     """ Get all roles in JSON format """
@@ -30,35 +35,41 @@ def identify_role():
     returnStatement = _service.identify_role(data)
     return jsonify(returnStatement)
 
-@role_app.route('/roles/add', methods=['POST'])
+# ----------------------------------------------------------
+# Add / Delete / Update
+# ----------------------------------------------------------
+
+@role_app.route('/roles/add', methods=['PUT'])
 def add_role():
     """ Add a role by data in JSON format """
-    data = request.json
-    _service = role_service()
-    returnStatement = _service.add_role(data)
-    if returnStatement:
-        return jsonify({"message": "Role successfully added!"}), 200
-    else:
-        return jsonify({"message": "Role not found!"}), 404
+    try:
+        data = request.json
+        _service = role_service()
+        _service.add_role(data)
+        return jsonify({"message": "Role successfully added !"}), 200
+    
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
-@role_app.route('/roles/delete/<int:id>', methods=['GET'])
+@role_app.route('/roles/delete/<int:id>', methods=['DELETE'])
 def delete_role_by_id(id):
     """ Delete a role by ID in JSON format """
-    _service = role_service()
-    returnStatement = _service.delete_role_by_id(id)
+    try:
+        _service = role_service()
+        _service.delete_role_by_id(id)
+        return jsonify({"message": "Role successfully deleted !"}), 200
     
-    if returnStatement:
-        return jsonify({"message": "Role deleted successfully!"}), 200
-    else:
-        return jsonify({"message": "Role not found!"}), 404
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
-@role_app.route('/roles/update/<int:id>', methods=['POST'])
+@role_app.route('/roles/update/<int:id>', methods=['PATCH'])
 def update_role(id):
     """ Update a role record by ID using data in JSON format """
-    data = request.json
-    _service = role_service()
-    updated_role_id = _service.update_role(id, data)
-    if updated_role_id:
-        return {"message": f"Role record with ID {updated_role_id} updated successfully!"}, 200
-    else:
-        return {"message": f"Role record with ID {id} not found!"}, 404
+    try:
+        data = request.json
+        _service = role_service()
+        _service.update_role(id, data)
+        return jsonify({"message": "Role successfully updated!"}), 200
+
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404

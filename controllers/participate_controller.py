@@ -8,6 +8,11 @@ participate_app = Blueprint('participate_app', __name__)
 
 # Participates API
 # university.participates(@id, #course_id, #subgroup_id)
+
+# ----------------------------------------------------------
+# Recuperer data
+# ----------------------------------------------------------
+
 @participate_app.route('/participates/get', methods=['GET'])
 def get_participates():
     """ Get all participates in JSON format """
@@ -30,35 +35,42 @@ def identify_participate():
     returnStatement = _service.identify_participate(data)
     return jsonify(returnStatement)
 
-@participate_app.route('/participates/add', methods=['POST'])
+
+# ----------------------------------------------------------
+# Add / Delete / Update
+# ----------------------------------------------------------
+
+@participate_app.route('/participates/add', methods=['PUT'])
 def add_participate():
     """ Add a participate by data in JSON format """
-    data = request.json
-    _service = participate_service()
-    returnStatement = _service.add_participate(data)
+    try:
+        data = request.json
+        _service = participate_service()
+        _service.add_participate(data)
+        return jsonify({"message": "Participate successfully added !"}), 200
+    
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
-    if returnStatement:
-        return jsonify({"message": "Course successfully added!"}), 200
-    else:
-        return jsonify({"message": "Course not found!"}), 404
-
-@participate_app.route('/participates/delete/<int:id>', methods=['GET'])
+@participate_app.route('/participates/delete/<int:id>', methods=['DELETE'])
 def delete_participate_by_id(id):
     """ Delete a participate by ID in JSON format """
-    _service = participate_service()
-    returnStatement = _service.delete_participate_by_id(id)
-    if returnStatement:
-        return jsonify({"message": "Course deleted successfully!"}), 200
-    else:
-        return jsonify({"message": "Course not found!"}), 404
+    try:
+        _service = participate_service()
+        _service.delete_participate_by_id(id)
+        return jsonify({"message": "Participate successfully deleted !"}), 200
+
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
     
-@participate_app.route('/participate/update/<int:id>', methods=['POST'])
+@participate_app.route('/participate/update/<int:id>', methods=['PATCH'])
 def update_participate(id):
     """ Update a participate record by ID using data in JSON format """
-    data = request.json
-    _service = participate_service()
-    updated_participate_id = _service.update_participate(id, data)
-    if updated_participate_id:
-        return {"message": f"Participate record with ID {updated_participate_id} updated successfully!"}, 200
-    else:
-        return {"message": f"Participate record with ID {id} not found!"}, 404
+    try:
+        data = request.json
+        _service = participate_service()
+        _service.update_participate(id, data)
+        return jsonify({"message": "Participate successfully updated!"}), 200
+
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404

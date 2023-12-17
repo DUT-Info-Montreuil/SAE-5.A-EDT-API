@@ -8,6 +8,11 @@ group_app = Blueprint('group_app', __name__)
 
 # Groups API
 # university.groups(@id, promotion, type, #department_id)
+
+# ----------------------------------------------------------
+# Recuperer data
+# ----------------------------------------------------------
+
 @group_app.route('/groups/get', methods=['GET'])
 def get_groups():
     """ Get all groups in JSON format """
@@ -30,35 +35,41 @@ def identify_group():
     returnStatement = _service.identify_group(data)
     return jsonify(returnStatement)
 
-@group_app.route('/groups/add', methods=['POST'])
+# ----------------------------------------------------------
+# Add / Delete / Update
+# ----------------------------------------------------------
+
+@group_app.route('/groups/add', methods=['PUT'])
 def add_group():
     """ Add a group by data in JSON format """
-    data = request.json
-    _service = group_service()
-    returnStatement = _service.add_group(data)
+    try:
+        data = request.json
+        _service = group_service()
+        _service.add_group(data)
+        return jsonify({"message": "Group successfully added !"}), 200
+    
+    except Exception as e:
+        return jsonify({"message": f"An error occurred: {str(e)}"}), 404
 
-    if returnStatement:
-        return jsonify({"message": "Group successfully added!"}), 200
-    else:
-        return jsonify({"message": "Group not found!"}), 404
-
-@group_app.route('/groups/delete/<int:id>', methods=['GET'])
+@group_app.route('/groups/delete/<int:id>', methods=['DELETE'])
 def delete_group_by_id(id):
     """ Delete a group by ID in JSON format """
-    _service = group_service()
-    returnStatement = _service.delete_group_by_id(id)
-    if returnStatement:
-        return jsonify({"message": "Department deleted successfully!"}), 200
-    else:
-        return jsonify({"message": "Department not found!"}), 404
+    try:
+        _service = group_service()
+        _service.delete_group_by_id(id)
+        return jsonify({"message": "Group successfully deleted !"}), 200
     
-@group_app.route('/groups/update/<int:id>', methods=['POST'])
+    except Exception as e:
+        return jsonify({"message": f"An error occurred: {str(e)}"}), 404
+    
+@group_app.route('/groups/update/<int:id>', methods=['PATCH'])
 def update_group(id):
     """ Update a group record by ID using data in JSON format """
-    data = request.json
-    _service = group_service()
-    updated_group_id = _service.update_group(id, data)
-    if updated_group_id:
-        return {"message": f"Group record with ID {updated_group_id} updated successfully!"}, 200
-    else:
-        return {"message": f"Group record with ID {id} not found!"}, 404
+    try:
+        data = request.json
+        _service = group_service()
+        _service.update_group(id, data)
+        return jsonify({"message": "Group successfully updated!"}), 200
+
+    except Exception as e:
+        return jsonify({"message": f"An error occurred: {str(e)}"}), 404

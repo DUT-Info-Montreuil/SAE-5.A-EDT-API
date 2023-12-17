@@ -8,6 +8,11 @@ department_app = Blueprint('department_app', __name__)
 
 # Departments API
 # university.departments(@id, name, description, department_type)
+
+# ----------------------------------------------------------
+# Recuperer data
+# ----------------------------------------------------------
+
 @department_app.route('/departments/get', methods=['GET'])
 def get_departments():
     """ Get all department in JSON format """
@@ -30,36 +35,41 @@ def identify_department():
     returnStatement = _service.identify_department(data)
     return jsonify(returnStatement)
 
-@department_app.route('/departments/add', methods=['POST'])
+# ----------------------------------------------------------
+# Add / Delete / Update
+# ----------------------------------------------------------
+
+@department_app.route('/departments/add', methods=['PUT'])
 def add_department():
     """ Add a department by data in JSON format """
-    data = request.json
-    _service = department_service()
-    returnStatement = _service.add_department(data)
+    try:
+        data = request.json
+        _service = department_service()
+        _service.add_department(data)
+        return jsonify({"message": "Department successfully added !"}), 200
     
-    if returnStatement:
-        return jsonify({"message": "Department successfully added!"}), 200
-    else:
-        return jsonify({"message": "Department not found!"}), 404
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
-@department_app.route('/departments/delete/<int:id>', methods=['GET'])
+@department_app.route('/departments/delete/<int:id>', methods=['DELETE'])
 def delete_department_by_id(id):
-    """ Delete a department by ID in JSON format """
-    _service = department_service()
-    returnStatement = _service.delete_department_by_id(id)
+    """ Delete a department by ID in JSON format """ 
+    try:
+        _service = department_service()
+        _service.delete_department_by_id(id)
+        return jsonify({"message": "Department successfully deleted !"}), 200
     
-    if returnStatement:
-        return jsonify({"message": "Department deleted successfully!"}), 200
-    else:
-        return jsonify({"message": "Department not found!"}), 404
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
     
-@department_app.route('/departments/update/<int:id>', methods=['POST'])
+@department_app.route('/departments/update/<int:id>', methods=['PATCH'])
 def update_department(id):
     """ Update a department record by ID using data in JSON format """
-    data = request.json
-    _service = department_service()
-    updated_department_id = _service.update_department(id, data)
-    if updated_department_id:
-        return {"message": f"Department record with ID {updated_department_id} updated successfully!"}, 200
-    else:
-        return {"message": f"Department record with ID {id} not found!"}, 404
+    try:
+        data = request.json
+        _service = department_service()
+        _service.update_department(id, data)
+        return jsonify({"message": "Department successfully updated!"}), 200
+
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
