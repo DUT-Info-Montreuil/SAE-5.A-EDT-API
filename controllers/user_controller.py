@@ -53,7 +53,7 @@ def add_user():
     """ Get all students in JSON format """
     try:
         data = request.json
-        _service = user_service()
+        _service = userService()
         returnStatement = _service.add_user(data)
         return jsonify(returnStatement)
     except Exception as e:
