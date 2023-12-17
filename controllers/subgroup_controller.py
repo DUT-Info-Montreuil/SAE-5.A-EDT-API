@@ -1,6 +1,4 @@
-from flask import jsonify
-from flask import request
-from flask import Blueprint
+from flask import Blueprint, jsonify, request
 
 from services.subgroup_service import subgroup_service
 

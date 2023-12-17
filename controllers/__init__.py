@@ -19,6 +19,4 @@ from controllers.timetable_controller import timetable_app
 from controllers.user_controller import user_app
 
 # flask import
-from flask import jsonify
-from flask import request
-from flask import Blueprint
+from flask import Blueprint, jsonify, request
