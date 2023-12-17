@@ -53,6 +53,8 @@ app.register_blueprint(user_app) # Register the user controller
 from flask_restful import Api
 from flask_cors import CORS
 
+app.register_blueprint(user_app)
+
 cors = CORS(app, resources={r"*": {"origins": "*"}})
 api = Api(app)
 # === endregion : blueprint_controller ===
@@ -63,7 +65,7 @@ def after_request(response):
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
     response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
     return response
-
+  
 if __name__ == "__main__":
     # read server parameters
     params = config(section='server')

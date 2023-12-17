@@ -33,13 +33,13 @@ class group_service(Service):
         # data = request.json
         
         promotion = data.get('promotion', '')
-        group_type = data.get('type', '')
         department_id = data.get('department_id', '')
     
-        query = "SELECT * FROM university.groups WHERE promotion = %(promotion)s AND type = '%(type)s' AND department_id = %(department_id)s" %  {'promotion': promotion, 'type': group_type, 'department_id': department_id}
+        query = "SELECT * FROM university.groups WHERE promotion = '" + promotion + "' AND department_id = '" + department_id + "'"
+        print(query)
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
-        # connect_pg.disconnect(conn)
+        connect_pg.disconnect(conn)
     
         returnStatement = []
         for row in rows:

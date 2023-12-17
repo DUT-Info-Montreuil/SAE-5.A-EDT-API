@@ -1,6 +1,5 @@
 from flask import Blueprint, jsonify, request
 from services.user_service import UserService
-
 user_app = Blueprint('user_app', __name__)
 userService = UserService()
 
@@ -47,3 +46,11 @@ def delete_user(user_id):
         return jsonify({'message': 'User deleted successfully'})
     else:
         return jsonify({'message': 'User not found'}), 404
+
+#should it be protected?, do we need an endpoint ? 
+@user_app.route('/user/add', methods=['PUT'])
+def add_user():
+    """ Get all students in JSON format """
+    data = request.json
+    returnStatement = userService.add_user(data)
+    return jsonify(returnStatement)

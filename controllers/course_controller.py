@@ -6,8 +6,12 @@ from services.course_service import course_service
 
 course_app = Blueprint('course_app', __name__)
 
-# Courses API
-# university.courses(@id, description, starttime, duree, course_type, #personal_id, #rooms_id, #teaching_id)
+# university.courses(@id, description, starttime, endtime, course_type, #personal_id, #rooms_id, #teaching_id)
+
+# ----------------------------------------------------------
+# Recuperer data
+# ----------------------------------------------------------
+
 @course_app.route('/courses/get', methods=['GET'])
 def get_courses():
     """ Get all courses in JSON format """
@@ -22,15 +26,18 @@ def get_course_by_id(id):
     returnStatement = _service.get_course_by_id(id)
     return jsonify(returnStatement)
 
-@course_app.route('/courses/identify', methods=['POST'])
-def identify_course():
-    """Identify a course by description, starttime, duree, course_type, personal_id, and rooms_id in JSON format"""
-    data = request.json
+@course_app.route('/courses/hours-by-teachers/get/<int:id>', methods=['GET'])
+def identify_course(id):
+    """Get number of hours of a teacher in JSON format"""
     _service = course_service()
-    returnStatement = _service.identify_course(data)
+    returnStatement = _service.identify_course(id)
     return jsonify(returnStatement)
 
-@course_app.route('/courses/add', methods=['POST'])
+# ----------------------------------------------------------
+# Add / Delete / Update
+# ----------------------------------------------------------
+
+@course_app.route('/courses/add', methods=['PUT'])
 def add_course():
     """ Add a course by data in JSON format """
     data = request.json
@@ -52,13 +59,10 @@ def delete_course_by_id(id):
     else:
         return jsonify({"message": "Course not found!"}), 404
     
-@course_app.route('/courses/update/<int:id>', methods=['POST'])
+@course_app.route('/courses/update/<int:id>', methods=['PATCH'])
 def update_course(id):
     """ Update a course by ID using data in JSON format """
     data = request.json
     _service = course_service()
-    updated_course_id= _service.update_course(id, data)
-    if updated_course_id :
-        return {"message": f"Course with ID {updated_course_id} updated successfully!"}, 200
-    else :
-        return {"message": f"Course with ID {id} not found!"}, 404
+    return _service.update_course(id, data)
+
