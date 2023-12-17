@@ -51,6 +51,10 @@ def delete_user(user_id):
 @user_app.route('/user/add', methods=['PUT'])
 def add_user():
     """ Get all students in JSON format """
-    data = request.json
-    returnStatement = userService.add_user(data)
-    return jsonify(returnStatement)
+    try:
+        data = request.json
+        _service = user_service()
+        returnStatement = _service.add_user(data)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404

@@ -8,6 +8,11 @@ subgroup_app = Blueprint('subgroup_app', __name__)
 
 # Subgroups API
 # university.subgroups(@id, name, #group_id)
+
+# ----------------------------------------------------------
+# Recuperer data
+# ----------------------------------------------------------
+
 @subgroup_app.route('/subgroups/get', methods=['GET'])
 def get_subgroups():
     """ Get all subgroups in JSON format """
@@ -30,37 +35,41 @@ def identify_subgroup():
     returnStatement = _service.identify_subgroup(data)
     return jsonify(returnStatement)
 
-@subgroup_app.route('/subgroups/add', methods=['POST'])
+# ----------------------------------------------------------
+# Add / Delete / Update
+# ----------------------------------------------------------
+
+@subgroup_app.route('/subgroups/add', methods=['PUT'])
 def add_subgroup():
     """ Add a subgroup by data in JSON format """
-    data = request.json
-    _service = subgroup_service()
-    returnStatement = _service.add_subgroup(data)
+    try:
+        data = request.json
+        _service = subgroup_service()
+        _service.add_subgroup(data)
+        return jsonify({"message": "Subgroup successfully added !"}), 200
+    
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
-    if returnStatement:
-        return jsonify({"message": "Subgroup successfully added!"}), 200
-    else:
-        return jsonify({"message": "Subgroup not found!"}), 404
-
-@subgroup_app.route('/subgroups/delete/<int:id>', methods=['GET'])
+@subgroup_app.route('/subgroups/delete/<int:id>', methods=['DELETE'])
 def delete_subgroup_by_id(id):
     """ Delete a subgroup by ID in JSON format """
-    data = request.json
-    _service = subgroup_service()
-    returnStatement = _service.delete_subgroup_by_id(id)
+    try:
+        _service = subgroup_service()
+        _service.delete_subgroup_by_id(id)
+        return jsonify({"message": "Subgroup successfully deleted !"}), 200
     
-    if returnStatement:
-        return jsonify({"message": "Subgroup deleted successfully!"}), 200
-    else:
-        return jsonify({"message": "Subgroup not found!"}), 404
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
-@subgroup_app.route('/subgroups/update/<int:id>', methods=['POST'])
+@subgroup_app.route('/subgroups/update/<int:id>', methods=['PATCH'])
 def update_subgroup(id):
     """ Update a subgroup record by ID using data in JSON format """
-    data = request.json
-    _service = subgroup_service()
-    updated_subgroup_id = _service.update_subgroup(id, data)
-    if updated_subgroup_id:
-        return {"message": f"Subgroup record with ID {updated_subgroup_id} updated successfully!"}, 200
-    else:
-        return {"message": f"Subgroup record with ID {id} not found!"}, 404
+    try:
+        data = request.json
+        _service = subgroup_service()
+        _service.update_subgroup(id, data)
+        return jsonify({"message": "Subgroup successfully updated!"}), 200
+
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
