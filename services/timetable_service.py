@@ -18,7 +18,7 @@ class timetable_service(Service):
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
         query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code 
-                    FROM courses 
+                    FROM university.courses 
                     INNER JOIN teachings ON courses.teaching_id = teachings.id
                     INNER JOIN personals ON courses.personal_id = personals.id
                     INNER JOIN rooms ON courses.rooms_id = rooms.id
@@ -39,7 +39,7 @@ class timetable_service(Service):
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
         query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code 
-                    FROM courses 
+                    FROM university.courses 
                     INNER JOIN teachings ON courses.teaching_id = teachings.id
                     INNER JOIN personals ON courses.personal_id = personals.id
                     INNER JOIN rooms ON courses.rooms_id = rooms.id
@@ -60,7 +60,7 @@ class timetable_service(Service):
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
         query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code
-                FROM courses
+                FROM university.courses
 
                 INNER JOIN personals ON courses.personal_id = personals.id
                 INNER JOIN teachings ON courses.teaching_id = teachings.id
@@ -88,7 +88,7 @@ class timetable_service(Service):
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
         query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code
-                FROM courses
+                FROM university.courses
 
                 INNER JOIN personals ON courses.personal_id = personals.id
                 INNER JOIN teachings ON courses.teaching_id = teachings.id

@@ -8,7 +8,7 @@ class role_service(Service):
     # roles(@id, name, description, personal_id)
     def get_roles(self):
         """ Get all roles in JSON format """
-        query = "SELECT * FROM roles"
+        query = "SELECT * FROM university.roles"
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
@@ -19,7 +19,7 @@ class role_service(Service):
     
     def get_role_by_id(self, id):
         """ Get a role by ID in JSON format """
-        query = "SELECT * FROM roles WHERE id = %(id)s" % {'id': id}
+        query = "SELECT * FROM university.roles WHERE id = %(id)s" % {'id': id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
@@ -34,7 +34,7 @@ class role_service(Service):
         name = data.get('name', '')
         personal_id = data.get('personal_id', '')
     
-        query = "SELECT * FROM roles WHERE name = '%(name)s' AND personal_id = %(personal_id)s" %  {'name': name, 'personal_id': personal_id}
+        query = "SELECT * FROM university.roles WHERE name = '%(name)s' AND personal_id = %(personal_id)s" %  {'name': name, 'personal_id': personal_id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn,query)
         # connect_pg.disconnect(conn)
@@ -53,7 +53,7 @@ class role_service(Service):
         description = data.get('description', '')
         personal_id = data.get('personal_id', '')
     
-        query = "INSERT INTO roles (name, description, personal_id) VALUES ('%(name)s', '%(description)s', %(personal_id)s) RETURNING id" %  {'name': name, 'description': description, 'personal_id': personal_id}
+        query = "INSERT INTO university.roles (name, description, personal_id) VALUES ('%(name)s', '%(description)s', %(personal_id)s) RETURNING id" %  {'name': name, 'description': description, 'personal_id': personal_id}
         conn = self.get_connection()
         new_role_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -62,7 +62,7 @@ class role_service(Service):
     
     def delete_role_by_id(self, id):
         """ Delete a role by ID in JSON format """
-        query = "DELETE FROM roles WHERE id = %(id)s RETURNING id" %  {'id': id}
+        query = "DELETE FROM university.roles WHERE id = %(id)s RETURNING id" %  {'id': id}
         conn = self.get_connection()
         row = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -81,7 +81,7 @@ class role_service(Service):
         description = data.get('description', existing_role['description'])
         personal_id = data.get('personal_id', existing_role['personal_id'])
 
-        query = """UPDATE roles
+        query = """UPDATE university.roles
                     SET name = '%(name)s',
                         description = '%(description)s',
                         personal_id = %(personal_id)s

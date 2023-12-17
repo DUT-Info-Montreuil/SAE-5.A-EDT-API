@@ -7,7 +7,7 @@ class department_service(Service):
     # departments(@id, name, description, department_type)
     def get_departments(self):
         """ Get all department in JSON format """
-        query = "SELECT * FROM departments"
+        query = "SELECT * FROM university.departments"
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
@@ -18,7 +18,7 @@ class department_service(Service):
     
     def get_department_by_id(self, id):
         """ Get a department by ID in JSON format """
-        query = "SELECT * FROM departments WHERE id = %(id)s" %  {'id': id}
+        query = "SELECT * FROM university.departments WHERE id = %(id)s" %  {'id': id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
@@ -33,7 +33,7 @@ class department_service(Service):
         name = data.get('name', '')
         degree_type = data.get('degree_type', '')
     
-        query = "SELECT * FROM departments WHERE name = '%(name)s' AND degree_type = '%(degree_type)s'" % {'name': name, 'degree_type': degree_type}
+        query = "SELECT * FROM university.departments WHERE name = '%(name)s' AND degree_type = '%(degree_type)s'" % {'name': name, 'degree_type': degree_type}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         # connect_pg.disconnect(conn)
@@ -53,7 +53,7 @@ class department_service(Service):
         degree_type = data.get('degree_type', '')
         personal_id = data.get('personal_id', '')
     
-        query = "INSERT INTO departments (name, description, degree_type, personal_id) VALUES ('%(name)s', '%(description)s', '%(degree_type)s', %(personal_id)s) RETURNING id" %  {'name': name, 'description': description, 'degree_type': degree_type, 'personal_id': personal_id}
+        query = "INSERT INTO university.departments (name, description, degree_type, personal_id) VALUES ('%(name)s', '%(description)s', '%(degree_type)s', %(personal_id)s) RETURNING id" %  {'name': name, 'description': description, 'degree_type': degree_type, 'personal_id': personal_id}
         conn = self.get_connection()
         new_department_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -61,7 +61,7 @@ class department_service(Service):
     
     def delete_department_by_id(self, id):
         """ Delete a department by ID in JSON format """
-        query = "DELETE FROM departments WHERE id = %(id)s RETURNING id" %  {'id': id}
+        query = "DELETE FROM university.departments WHERE id = %(id)s RETURNING id" %  {'id': id}
         conn = self.get_connection()
         row = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -82,7 +82,7 @@ class department_service(Service):
         degree_type = data.get('degree_type', existing_department['degree_type'])
         personal_id = data.get('personal_id', existing_department['personal_id'])
 
-        query = """UPDATE departments
+        query = """UPDATE university.departments
                     SET name = '%(name)s',
                     description = '%(description)s',
                     degree_type = '%(degree_type)s',

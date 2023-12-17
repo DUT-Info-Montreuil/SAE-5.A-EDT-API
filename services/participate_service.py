@@ -8,7 +8,7 @@ class participate_service(Service):
     # participates(@id, justified, student_number, #course_id)
     def get_participates(self):
         """ Get all participates in JSON format """
-        query = "SELECT * FROM participates"
+        query = "SELECT * FROM university.participates"
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
@@ -19,7 +19,7 @@ class participate_service(Service):
     
     def get_participate_by_id(self, id):
         """ Get a participate by ID in JSON format """
-        query = "SELECT * FROM participates WHERE id = %(id)s" % {'id': id}
+        query = "SELECT * FROM university.participates WHERE id = %(id)s" % {'id': id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
@@ -34,7 +34,7 @@ class participate_service(Service):
         course_id = data.get('course_id', '')
         subgroup_id = data.get('subgroup_id', '')
     
-        query = "SELECT * FROM participates WHERE course_id = %(course_id)s AND subgroup_id = %(subgroup_id)s" %  {'course_id': course_id, 'subgroup_id': subgroup_id}
+        query = "SELECT * FROM university.participates WHERE course_id = %(course_id)s AND subgroup_id = %(subgroup_id)s" %  {'course_id': course_id, 'subgroup_id': subgroup_id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         # connect_pg.disconnect(conn)
@@ -52,7 +52,7 @@ class participate_service(Service):
         course_id = data.get('course_id', '')
         subgroup_id = data.get('subgroup_id', '')
     
-        query = "INSERT INTO participates (course_id, subgroup_id) VALUES (%(course_id)s, %(subgroup_id)s) RETURNING id" % {'course_id': course_id, 'subgroup_id': subgroup_id}
+        query = "INSERT INTO university.participates (course_id, subgroup_id) VALUES (%(course_id)s, %(subgroup_id)s) RETURNING id" % {'course_id': course_id, 'subgroup_id': subgroup_id}
         conn = self.get_connection()
         new_participate_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -61,7 +61,7 @@ class participate_service(Service):
     
     def delete_participate_by_id(self, id):
         """ Delete a participate by ID in JSON format """
-        query = "DELETE FROM participates WHERE id = %(id)s RETURNING id" %  {'id': id}
+        query = "DELETE FROM university.participates WHERE id = %(id)s RETURNING id" %  {'id': id}
         conn = self.get_connection()
         row = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -79,7 +79,7 @@ class participate_service(Service):
         course_id = data.get('course_id', existing_participate['course_id'])
         rooms_id = data.get('rooms_id', existing_participate['rooms_id'])
 
-        query = """UPDATE participates
+        query = """UPDATE university.participates
                 SET course_id = %(course_id)s,
                     rooms_id = %(rooms_id)s
                 WHERE id = %(id)s

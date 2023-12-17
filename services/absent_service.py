@@ -8,7 +8,7 @@ class absent_service(Service):
     # absents(@id, justified, student_number, #course_id)
     def get_absents(self):
         """ Get all absents in JSON format """
-        query = "SELECT * FROM absents"
+        query = "SELECT * FROM university.absents"
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
@@ -19,7 +19,7 @@ class absent_service(Service):
     
     def get_absent_by_id(self, id):
         """ Get a absent by ID in JSON format """
-        query = "SELECT * FROM absents WHERE id = %(id)s" % {'id': id}
+        query = "SELECT * FROM university.absents WHERE id = %(id)s" % {'id': id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
@@ -36,7 +36,7 @@ class absent_service(Service):
         student_number = data.get('student_number', '')
         course_id = data.get('course_id', '')
     
-        query = "SELECT * FROM absents WHERE justified = '%(justified)s' AND student_number = '%(student_number)s' AND course_id = %(course_id)s" %  {'justified': justified, 'student_number': student_number, 'course_id': course_id}
+        query = "SELECT * FROM university.absents WHERE justified = '%(justified)s' AND student_number = '%(student_number)s' AND course_id = %(course_id)s" %  {'justified': justified, 'student_number': student_number, 'course_id': course_id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         # connect_pg.disconnect(conn)
@@ -55,7 +55,7 @@ class absent_service(Service):
         student_number = data.get('student_number', '')
         course_id = data.get('course_id', '')
     
-        query = "INSERT INTO absents (justified, student_number, course_id) VALUES ('%(justified)s', '%(student_number)s', %(course_id)s) RETURNING id" % {'justified': justified, 'student_number': student_number, 'course_id': course_id}
+        query = "INSERT INTO university.absents (justified, student_number, course_id) VALUES ('%(justified)s', '%(student_number)s', %(course_id)s) RETURNING id" % {'justified': justified, 'student_number': student_number, 'course_id': course_id}
         conn = self.get_connection()
         new_absent_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -64,7 +64,7 @@ class absent_service(Service):
     
     def delete_absent_by_id(self, id):
         """ Delete a absent by ID in JSON format """
-        query = "DELETE FROM absents WHERE id = %(id)s RETURNING id" %  {'id': id}
+        query = "DELETE FROM university.absents WHERE id = %(id)s RETURNING id" %  {'id': id}
         conn = self.get_connection()
         row = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -83,7 +83,7 @@ class absent_service(Service):
         student_number = data.get('student_number', existing_absent['student_number'])
         course_id = data.get('course_id', existing_absent['course_id'])
 
-        query = """UPDATE absents
+        query = """UPDATE university.absents
                 SET justified = '%(justified)s',
                 student_number = '%(student_number)s',
                 course_id = %(course_id)s

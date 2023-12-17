@@ -376,7 +376,7 @@ ON DELETE RESTRICT ON UPDATE CASCADE;
 --     domain := split_part(new_email, '@', 2);
 
 --     -- Check the student email
---     WHILE (SELECT 1 FROM students WHERE mail = new_email) LOOP
+--     WHILE (SELECT 1 FROM university.students WHERE mail = new_email) LOOP
 --         -- If duplicate found, modify the username
 --         new_email := base_username || counter || '@' || domain;
 --         RAISE NOTICE 'Email already exists. Modifying to: %', new_email;

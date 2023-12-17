@@ -8,7 +8,7 @@ class responsible_service(Service):
     # responsibles(@id, #teaching_id, #personal_id)
     def get_responsibles(self):
         """ Get all responsibles in JSON format """
-        query = "SELECT * FROM responsibles"
+        query = "SELECT * FROM university.responsibles"
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
@@ -19,7 +19,7 @@ class responsible_service(Service):
     
     def get_responsible_by_id(self, id):
         """ Get a responsible by ID in JSON format """
-        query = "SELECT * FROM responsibles WHERE id = %(id)s" % {'id': id}
+        query = "SELECT * FROM university.responsibles WHERE id = %(id)s" % {'id': id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = {}
@@ -34,7 +34,7 @@ class responsible_service(Service):
         personal_id = data.get('personal_id', '')
         teaching_id = data.get('teaching_id', '')
     
-        query = "SELECT * FROM responsibles WHERE personal_id = %(personal_id)s AND teaching_id = %(teaching_id)s" %  {'personal_id': personal_id, 'teaching_id': teaching_id}
+        query = "SELECT * FROM university.responsibles WHERE personal_id = %(personal_id)s AND teaching_id = %(teaching_id)s" %  {'personal_id': personal_id, 'teaching_id': teaching_id}
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         # connect_pg.disconnect(conn)
@@ -52,7 +52,7 @@ class responsible_service(Service):
         personal_id = data.get('personal_id', '')
         teaching_id = data.get('teaching_id', '')
     
-        query = "INSERT INTO responsibles (personal_id, teaching_id) VALUES (%(personal_id)s, %(teaching_id)s) RETURNING id" % {'personal_id': personal_id, 'teaching_id': teaching_id}
+        query = "INSERT INTO university.responsibles (personal_id, teaching_id) VALUES (%(personal_id)s, %(teaching_id)s) RETURNING id" % {'personal_id': personal_id, 'teaching_id': teaching_id}
         conn = self.get_connection()
         new_responsible_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -61,7 +61,7 @@ class responsible_service(Service):
     
     def delete_responsible_by_id(self, id):
         """ Delete a responsible by ID in JSON format """
-        query = "DELETE FROM responsibles WHERE id = %(id)s RETURNING id" %  {'id': id}
+        query = "DELETE FROM university.responsibles WHERE id = %(id)s RETURNING id" %  {'id': id}
         conn = self.get_connection()
         row = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -79,7 +79,7 @@ class responsible_service(Service):
         personal_id = data.get('personal_id', existing_responsible['personal_id'])
         teaching_id = data.get('teaching_id', existing_responsible['teaching_id'])
 
-        query = """UPDATE responsibles
+        query = """UPDATE university.responsibles
                     SET personal_id = %(personal_id)s,
                         teaching_id = %(teaching_id)s
                     WHERE id = %(id)s
