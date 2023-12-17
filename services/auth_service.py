@@ -1,6 +1,6 @@
 from services.main_service import Service
 
-import connect_pg
+from configuration import connect_pg
 import bcrypt
 
 class auth_service(Service):
