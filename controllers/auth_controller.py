@@ -38,9 +38,6 @@ def protected():
 # deconnexion
 #@auth_app.route('/auth/logout')
 
-
-
-
 ## Service 
 
 #hash password / unshash
