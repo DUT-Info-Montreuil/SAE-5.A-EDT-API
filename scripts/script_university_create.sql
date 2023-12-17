@@ -222,7 +222,7 @@ CREATE TABLE university.absents(
     -- PRIMARY KEY
     id SERIAL constraint pk_university_absents PRIMARY KEY CONSTRAINT ck_university_absents_id CHECK(id > 0),
     -- ATTRIBUTE
-    justified boolean default true,
+    justified boolean default false,
 
     -- FOREIGN KEY (students)
     student_number INT NOT NULL,

@@ -1,62 +1,59 @@
 from flask import Blueprint, jsonify, request
-
 from services.responsible_service import responsible_service
 
 responsible_app = Blueprint('responsible_app', __name__)
+responsibleService = responsible_service()
 
-# Responsibles API
-# university.responsibles(@id, #personal_id, #teaching_id)
 @responsible_app.route('/responsibles/get', methods=['GET'])
 def get_responsibles():
-    """ Get all responsibles in JSON format """
-    _service = responsible_service()
-    returnStatement = _service.get_responsibles()
-    return jsonify(returnStatement)
+    responsibles = responsibleService.get_all_responsibles()
+    return jsonify({'responsibles': responsibles})
 
-@responsible_app.route('/responsibles/get/<int:id>', methods=['GET'])
-def get_responsible_by_id(id):
-    """ Get a responsible by ID in JSON format """
-    _service = responsible_service()
-    returnStatement = _service.get_responsible_by_id(id)
-    return jsonify(returnStatement)
+@responsible_app.route('/responsibles/get/<int:responsible_id>', methods=['GET'])
+def get_responsible_by_id(responsible_id):
+    responsible = responsibleService.get_responsible_by_id(responsible_id)
+
+    if responsible:
+        return jsonify({'responsible': responsible})
+    else:
+        return jsonify({'message': 'Responsible not found'}), 404
 
 @responsible_app.route('/responsibles/identify', methods=['POST'])
-def identify_responsible():
-    """Identify a responsible by course_id and subgroup_id in JSON format"""
-    data = request.json
-    _service = responsible_service()
-    returnStatement = _service.identify_responsible(data)
-    return jsonify(returnStatement)
+def find_responsible():
+    data = request.get_json()
+    responsible = responsibleService.find_responsible(**data)
 
-@responsible_app.route('/responsibles/add', methods=['POST'])
+    if responsible:
+        return jsonify({'responsible': responsible})
+    else:
+        return jsonify({'message': 'Responsible not found'}), 404
+    
+@responsible_app.route('/responsibles/update/<int:responsible_id>', methods=['PATCH'])
+def update_responsible(responsible_id):
+    data = request.get_json()
+    success = responsibleService.update_responsible(responsible_id, data)
+
+    if success:
+        return jsonify({'message': 'Responsible updated successfully'})
+    else:
+        return jsonify({'message': 'Responsible not found'}), 404
+    
+@responsible_app.route('/responsibles/delete/<int:responsible_id>', methods=['DELETE'])
+def delete_responsible(responsible_id):
+    success = responsibleService.delete_responsible(responsible_id)
+
+    if success:
+        return jsonify({'message': 'Responsible deleted successfully'})
+    else:
+        return jsonify({'message': 'Responsible not found'}), 404
+
+@responsible_app.route('/responsibles/add', methods=['PUT'])
 def add_responsible():
-    """ Add a responsible by data in JSON format """
+    
     data = request.json
-    _service = responsible_service()
-    returnStatement = _service.add_responsible(data)
-
-    if returnStatement:
-        return jsonify({"message": "Course successfully added!"}), 200
+    success = responsibleService.add_responsible(data)
+    
+    if success:
+        return jsonify(success)
     else:
-        return jsonify({"message": "Course not found!"}), 404
-
-@responsible_app.route('/responsibles/delete/<int:id>', methods=['GET'])
-def delete_responsible_by_id(id):
-    """ Delete a responsible by ID in JSON format """
-    _service = responsible_service()
-    returnStatement = _service.delete_responsible_by_id(id)
-    if returnStatement:
-        return jsonify({"message": "Course deleted successfully!"}), 200
-    else:
-        return jsonify({"message": "Course not found!"}), 404
-
-@responsible_app.route('/responsibles/update/<int:id>', methods=['POST'])
-def update_responsible(id):
-    """ Update a responsible record by ID using data in JSON format """
-    data = request.json
-    _service = responsible_service()
-    updated_responsible_id = _service.update_responsible(id, data)
-    if updated_responsible_id:
-        return {"message": f"Responsible record with ID {updated_responsible_id} updated successfully!"}, 200
-    else:
-        return {"message": f"Responsible record with ID {id} not found!"}, 404
+        return jsonify({'message': 'Responsible not add'}), 404

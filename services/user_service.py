@@ -2,7 +2,7 @@ from services.sql_alchemy_service import db
 from entities.models.models import User
 from configuration import connect_pg
 
-class UserService:
+class user_service:
     def get_all_users(self):
         users = User.query.all()
         user_list = []
