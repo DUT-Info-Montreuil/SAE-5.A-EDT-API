@@ -19,9 +19,9 @@ class timetable_service(Service):
 
         query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code 
                     FROM university.courses 
-                    INNER JOIN teachings ON courses.teaching_id = teachings.id
-                    INNER JOIN personals ON courses.personal_id = personals.id
-                    INNER JOIN rooms ON courses.rooms_id = rooms.id
+                    INNER JOIN university.teachings ON courses.teaching_id = teachings.id
+                    INNER JOIN university.personals ON courses.personal_id = personals.id
+                    INNER JOIN university.rooms ON courses.rooms_id = rooms.id
                     WHERE rooms.id =""" +  str(room_id) + """ AND
                     starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
         return self.execute_query_and_get_statement(query)
@@ -40,9 +40,9 @@ class timetable_service(Service):
 
         query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code 
                     FROM university.courses 
-                    INNER JOIN teachings ON courses.teaching_id = teachings.id
-                    INNER JOIN personals ON courses.personal_id = personals.id
-                    INNER JOIN rooms ON courses.rooms_id = rooms.id
+                    INNER JOIN university.teachings ON courses.teaching_id = teachings.id
+                    INNER JOIN university.personals ON courses.personal_id = personals.id
+                    INNER JOIN university.rooms ON courses.rooms_id = rooms.id
                     WHERE personals.id =""" +  str(personnal_id) + """ AND
                     starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
         return self.execute_query_and_get_statement(query)
@@ -62,13 +62,13 @@ class timetable_service(Service):
         query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code
                 FROM university.courses
 
-                INNER JOIN personals ON courses.personal_id = personals.id
-                INNER JOIN teachings ON courses.teaching_id = teachings.id
-                INNER JOIN rooms ON courses.rooms_id = rooms.id
+                INNER JOIN university.personals ON courses.personal_id = personals.id
+                INNER JOIN university.teachings ON courses.teaching_id = teachings.id
+                INNER JOIN university.rooms ON courses.rooms_id = rooms.id
 
-                INNER JOIN participates ON courses.id = participates.course_id
-                INNER JOIN subgroups ON participates.subgroup_id = subgroups.id
-                INNER JOIN groups ON subgroups.id = groups.id
+                INNER JOIN university.participates ON courses.id = participates.course_id
+                INNER JOIN university.subgroups ON participates.subgroup_id = subgroups.id
+                INNER JOIN university.groups ON subgroups.id = groups.id
 
                 WHERE groups.promotion =""" +  str(promotion_id) + """ AND
                 groups.department_id =""" + str(department_id) + """ AND
@@ -90,12 +90,12 @@ class timetable_service(Service):
         query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code
                 FROM university.courses
 
-                INNER JOIN personals ON courses.personal_id = personals.id
-                INNER JOIN teachings ON courses.teaching_id = teachings.id
-                INNER JOIN rooms ON courses.rooms_id = rooms.id
+                INNER JOIN university.personals ON courses.personal_id = personals.id
+                INNER JOIN university.teachings ON courses.teaching_id = teachings.id
+                INNER JOIN university.rooms ON courses.rooms_id = rooms.id
 
-                INNER JOIN participates ON courses.id = participates.course_id
-                INNER JOIN students ON participates.subgroup_id = students.subgroup_id
+                INNER JOIN university.participates ON courses.id = participates.course_id
+                INNER JOIN university.students ON participates.subgroup_id = students.subgroup_id
 
                 WHERE students.student_number = '""" +  str(student_id) + """' AND
                 starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
