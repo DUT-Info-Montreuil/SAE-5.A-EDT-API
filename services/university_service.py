@@ -1,4 +1,4 @@
-from services.main_service import Service
+from services.main_basic_service import *
 
 from configuration import connect_pg
 

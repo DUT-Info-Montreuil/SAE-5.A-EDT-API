@@ -1,4 +1,4 @@
-from services.main_service import Service
+from services.main_basic_service import *
 
 from configuration import connect_pg
 
@@ -12,6 +12,76 @@ class student_service(Service):
     # ----------------------------------------------------------
     # Recuperer data
     # ----------------------------------------------------------
+
+    # === region : Student ===
+
+    def get_all_students(self):
+        students = Student.query.all()
+        student_list = []
+
+        for student in students:
+            student_data = student.get_json()
+            student_list.append(student_data)
+
+        return student_list
+    
+    def get_student_by_id(self, student_id):
+        student = Student.query.get(student_id)
+
+        if student:
+            student_data = student.get_json()
+            return student_data
+        else:
+            return None
+    
+    def find_student(self, **kwargs):
+        # Construct filter conditions dynamically
+        conditions = {key: value for key, value in kwargs.items() if value is not None}
+        
+        students = Student.query.filter_by(**conditions)
+
+        student_list = []
+
+        for student in students:
+            student_list.append(student.get_json())
+
+        return student_list
+    
+    def delete_student(self, student_id):
+        student = Student.query.get(student_id)
+
+        if student:
+            db.session.delete(student)
+            db.session.commit()
+            return True
+        else:
+            return False
+    
+    def update_student(self, student_id, new_data):
+        student = Student.query.get(student_id)
+
+        if student:
+            for key, value in new_data.items():
+                setattr(student, key, value)
+
+            db.session.commit()
+            return True
+        else:
+            return False
+    
+    def add_student(self, student_data):
+        new_student = Student(**student_data)
+
+        try:
+            db.session.add(new_student)
+            db.session.commit()
+            return new_student.get_json()
+        except Exception as e:
+            # Handle exceptions (e.g., integrity errors) appropriately
+            db.session.rollback()
+            return None
+    
+    # === endregion : Student ===
 
     def get_students(self):
         """ Get all students in JSON format """
