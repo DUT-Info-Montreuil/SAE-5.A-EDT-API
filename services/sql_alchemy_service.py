@@ -1,5 +1,4 @@
 # sql_alchemy_service.py
-from services.university_service import university_service
 from flask_sqlalchemy import SQLAlchemy
 from configuration.config import config
 
@@ -35,21 +34,6 @@ def getTable(db):
         table_reminders, table_specializations, table_teachings, 
         table_absents, table_participates, table_responsibles
     )
-
-def get_table_objects(app, db): 
-    with app.app_context():
-        db.reflect()
-    try:
-        return getTable(db)
-    except KeyError:
-        print("Tables are not created or not found")
-        _service = university_service()
-        result_bool, resultString  = _service.initialize_database()
-        if(result_bool) :
-            # Reflect the existing tables in the database
-            with app.app_context():
-                db.reflect()
-            return get_table_objects(app)
 
 def reflect(db) : 
     with db.get_app().app_context():
