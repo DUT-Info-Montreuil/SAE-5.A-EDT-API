@@ -53,8 +53,6 @@ app.register_blueprint(user_app) # Register the user controller
 from flask_restful import Api
 from flask_cors import CORS
 
-app.register_blueprint(user_app)
-
 cors = CORS(app, resources={r"*": {"origins": "*"}})
 api = Api(app)
 # === endregion : blueprint_controller ===

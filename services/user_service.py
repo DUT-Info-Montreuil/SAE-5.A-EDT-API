@@ -1,5 +1,6 @@
 from services.sql_alchemy_service import db
 from entities.models.models import User
+from configuration import connect_pg
 
 class UserService:
     def get_all_users(self):

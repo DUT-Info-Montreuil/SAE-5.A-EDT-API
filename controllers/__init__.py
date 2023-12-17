@@ -16,6 +16,8 @@ from controllers.absent_controller import absent_app
 from controllers.participate_controller import participate_app
 from controllers.auth_controller import auth_app
 from controllers.timetable_controller import timetable_app
+from controllers.user_controller import user_app
+
 # flask import
 from flask import jsonify
 from flask import request
