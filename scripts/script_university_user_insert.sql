@@ -2,11 +2,11 @@
 -- \i script_university_school_insert.sql; --add database
 
 /* Script contain insert for each table
--- users(@username, password)
+-- university.users(@username, password)
 */
 
 -- Account for personnal
--- users(@username, password)
+-- university.users(@username, password)
 INSERT INTO university.users (username, password)
 VALUES
     ('pbonnot', '$2b$12$NyUZ8nMD7n9cbV.yBUbNVOom1TDWUUviZgXku63jMqPMMNzDebBRe'), -- pwd : pbonnot
@@ -43,7 +43,7 @@ VALUES
 ;
 
 -- Dev account in INFO departement
--- users(@username, password)
+-- university.users(@username, password)
 INSERT INTO university.users (username, password)
 VALUES
 	('hugo', '$2b$12$suR4RUnowOZPYUkJxAsb5OuaNO.xw2VDberXSoHuez1ZT9/xeH9cC'), -- pwd : hugohugohugo
@@ -55,7 +55,7 @@ VALUES
 ;
 
 -- FAKE for departement INFO
--- users(@username, password)
+-- university.users(@username, password)
 INSERT INTO university.users (username, password)
 VALUES
 	('yhanma', '$2b$12$/Hu/tJQwfN5UYeTQTcQlYOHJsiFiTP4QSXlEtcJegSljsz1x2deje'), -- pwd : @~f=,6}n/%]v
@@ -420,7 +420,7 @@ VALUES
 	('eward', '$2b$12$pVpBuHbM4XL5lxSTvIBQS..imlXp9FVry5s1gRTB9UnCfT4Ldue/u') -- pwd : aR6zp56FE9{S
 ;
 -- FAKE for departement QLIO
--- users(@username, password)
+-- university.users(@username, password)
 INSERT INTO university.users (username, password)
 VALUES
 	('nuzumaki', '$2b$12$9PmKASZM1hE8u/I/ChNmK.3NdF45gOpwISfceLrJMLsavYpm0Dzpq'), -- pwd : 1@'N/$}[K=24
@@ -786,7 +786,7 @@ VALUES
 ;
 
 -- FAKE for departement INFOCOM
--- users(@username, password)
+-- university.users(@username, password)
 INSERT INTO university.users (username, password)
 VALUES
 	('iyuji', '$2b$12$h6B09cEG.kERdxmfRB1TieNBCpD9eUJZY9Z0./sPpHpfXwlKewyta'), -- pwd : Al`ERTd<Vy9v
@@ -1152,7 +1152,7 @@ VALUES
 ;
 
 -- FAKE for departement GACO
--- users(@username, password)
+-- university.users(@username, password)
 INSERT INTO university.users (username, password)
 VALUES
 	('ikurosaki', '$2b$12$6XWo52wcpDbz5n66/k9fVeUPvcHRlY5BtvDln33bJkBInudHkaNJa'), -- pwd : *1(`{^=`}_/%

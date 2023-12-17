@@ -95,7 +95,7 @@ CREATE TABLE university.groups(
     id SERIAL constraint pk_university_groups PRIMARY KEY CONSTRAINT ck_university_group_id CHECK(id > 0),
     -- ATTRIBUTE
 	promotion integer, -- 1st, 2nd or 3rd of school year
-    type varchar(5) NOT NULL CHECK (type ~ '^[A-Z]+$' OR type = 'APP'), -- A,B,C... or APP
+    type varchar(5) NOT NULL, --CHECK (type ~ '^[A-Z]+$' OR type = 'APP'), -- A,B,C... or APP
 
 	-- FOREIGN KEY (departments)
     department_id INT NOT NULL
