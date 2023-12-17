@@ -1,57 +1,57 @@
 from flask import Blueprint, jsonify, request
-from services.student_service import student_service
+from services.subgroup_service import subgroup_service
 
-student_app = Blueprint('student_app', __name__)
-studentService = student_service()
+subgroup_app = Blueprint('subgroup_app', __name__)
+subgroupService = subgroup_service()
 
-@student_app.route('/students/get', methods=['GET'])
-def get_students():
-    students = studentService.get_all_students()
-    return jsonify({'students': students})
+@subgroup_app.route('/subgroups/get', methods=['GET'])
+def get_subgroups():
+    subgroups = subgroupService.get_all_subgroups()
+    return jsonify({'subgroups': subgroups})
 
-@student_app.route('/students/get/<int:student_id>', methods=['GET'])
-def get_student_by_id(student_id):
-    student = studentService.get_student_by_id(student_id)
+@subgroup_app.route('/subgroups/get/<int:subgroup_id>', methods=['GET'])
+def get_subgroup_by_id(subgroup_id):
+    subgroup = subgroupService.get_subgroup_by_id(subgroup_id)
 
-    if student:
-        return jsonify({'student': student})
+    if subgroup:
+        return jsonify({'subgroup': subgroup})
     else:
         return jsonify({'message': 'Subgroup not found'}), 404
 
-@student_app.route('/students/identify', methods=['POST'])
-def find_student():
+@subgroup_app.route('/subgroups/identify', methods=['POST'])
+def find_subgroup():
     data = request.get_json()
-    student = studentService.find_student(**data)
+    subgroup = subgroupService.find_subgroup(**data)
 
-    if student:
-        return jsonify({'student': student})
+    if subgroup:
+        return jsonify({'subgroup': subgroup})
     else:
         return jsonify({'message': 'Subgroup not found'}), 404
     
-@student_app.route('/students/update/<int:student_id>', methods=['PATCH'])
-def update_student(student_id):
+@subgroup_app.route('/subgroups/update/<int:subgroup_id>', methods=['PATCH'])
+def update_subgroup(subgroup_id):
     data = request.get_json()
-    success = studentService.update_student(student_id, data)
+    success = subgroupService.update_subgroup(subgroup_id, data)
 
     if success:
         return jsonify({'message': 'Subgroup updated successfully'})
     else:
         return jsonify({'message': 'Subgroup not found'}), 404
     
-@student_app.route('/students/delete/<int:student_id>', methods=['DELETE'])
-def delete_student(student_id):
-    success = studentService.delete_student(student_id)
+@subgroup_app.route('/subgroups/delete/<int:subgroup_id>', methods=['DELETE'])
+def delete_subgroup(subgroup_id):
+    success = subgroupService.delete_subgroup(subgroup_id)
 
     if success:
         return jsonify({'message': 'Subgroup deleted successfully'})
     else:
         return jsonify({'message': 'Subgroup not found'}), 404
 
-@student_app.route('/students/add', methods=['PUT'])
-def add_student():
+@subgroup_app.route('/subgroups/add', methods=['PUT'])
+def add_subgroup():
     
     data = request.json
-    success = studentService.add_student(data)
+    success = subgroupService.add_subgroup(data)
     
     if success:
         return jsonify(success)
