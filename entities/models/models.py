@@ -21,6 +21,7 @@ class User(db.Model):
             'username': self.username,
             'password': self.password
         }
+        
 class Student(db.Model):
     __tablename__ = 'students'
     __table_args__ = {'schema': 'university'}
@@ -35,17 +36,7 @@ class Student(db.Model):
     group_id = db.Column(db.Integer, nullable=False)
     subgroup_id = db.Column(db.Integer, nullable=False)
 
-    # Relation inverse avec la table User (un étudiant appartient à un utilisateur)
-    user = db.relationship('User', back_populates='students', foreign_keys=[user_id])
-
-    # Relation avec la table Department (un étudiant appartient à un département)
-    department = db.relationship('Department', backref='students', lazy=True)
-
-    # Relation avec la table Group (un étudiant appartient à un groupe)
-    group = db.relationship('Group', backref='students', lazy=True)
-
-    # Relation avec la table Subgroup (un étudiant appartient à un sous-groupe)
-    subgroup = db.relationship('Subgroup', backref='students', lazy=True)
+    absents = db.relationship('Absent', backref='student', lazy=True, primaryjoin='Student.id == foreign(Absent.student_number)')
 
     def get_json(self):
         """ Formats data in JSON """
@@ -71,12 +62,13 @@ class Department(db.Model):
     degree_type = db.Column(db.String(50), nullable=False)
     personal_id = db.Column(db.Integer, nullable=False)
     
-    # Relation avec la table Personal (un département est associé à un personnel)
-    personal = db.relationship('Personal', backref='department', lazy=True)
-
-    # Relation avec la table Specialization (un département a plusieurs spécialisations)
-    specializations = db.relationship('Specialization', backref='department', lazy=True)
+    # Relationships    
+    students = db.relationship('Student', backref='department', lazy=True, primaryjoin='Department.id == foreign(Student.department_id)')
     
+    groups = db.relationship('Group', backref='department', lazy=True, primaryjoin='Department.id == foreign(Group.department_id)')
+    
+    specializations = db.relationship('Specialization', backref='department', lazy=True, primaryjoin='Department.id == foreign(Specialization.department_id)')
+
     def get_json(self):
         """ Formats data in JSON """
         return {
@@ -96,12 +88,11 @@ class Group(db.Model):
     type = db.Column(db.String(5), nullable=False)
     department_id = db.Column(db.Integer, nullable=False)
     
-    # Relation avec la table Department (un groupe appartient à un département)
-    department = db.relationship('Department', backref='groups', lazy=True)
-
-    # Relation avec la table Student (un groupe a plusieurs étudiants)
-    students = db.relationship('Student', backref='group', lazy=True)
+    # Relationships
+    students = db.relationship('Student', backref='group', lazy=True, primaryjoin='Group.id == foreign(Student.group_id)')
     
+    subgroups = db.relationship('Subgroup', backref='group', lazy=True, primaryjoin='Group.id == foreign(Subgroup.group_id)')
+
     def get_json(self):
         """ Formats data in JSON """
         return {
@@ -119,8 +110,10 @@ class Subgroup(db.Model):
     name = db.Column(db.String(16), nullable=False)
     group_id = db.Column(db.Integer, nullable=False)
     
-    # Relation avec la table Group (un sous-groupe appartient à un groupe)
-    group = db.relationship('Group', backref='subgroups', lazy=True)
+    # Relationships
+    students = db.relationship('Student', backref='subgroup', lazy=True, primaryjoin='Subgroup.id == foreign(Student.subgroup_id)')
+    
+    participates = db.relationship('Participate', backref='subgroup', lazy=True, primaryjoin='Subgroup.id == foreign(Participate.subgroup_id)')
     
     def get_json(self):
         """ Formats data in JSON """
@@ -142,20 +135,13 @@ class Personal(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('university.users.id'), unique=True, nullable=False)
     phone_number = db.Column(db.String(14), nullable=False, unique=True)
 
-    # Relation avec la table User (un personnel est associé à un utilisateur)
-    user = db.relationship('User', backref='personals', lazy=True)
 
-    # Relation avec la table Department (un personnel appartient à un département)
-    department_id = db.Column(db.Integer, db.ForeignKey('university.departments.id'), nullable=False)
-    department = db.relationship('Department', backref='personals', lazy=True)
-
-    # Relation avec la table Role (un personnel a un rôle)
-    role_id = db.Column(db.Integer, db.ForeignKey('university.roles.id'), nullable=False)
-    role = db.relationship('Role', backref='personals', lazy=True)
-
-    # Relation avec la table Teaching (un personnel donne des enseignements)
-    teachings = db.relationship('Teaching', backref='personal', lazy=True)
-
+    # Relationships
+    departments = db.relationship('Department', backref='personal', lazy=True, primaryjoin='Personal.id == foreign(Department.personal_id)')
+    roles = db.relationship('Role', backref='personal', lazy=True, primaryjoin='Personal.id == foreign(Role.personal_id)')
+    courses = db.relationship('Course', backref='personal', lazy=True, primaryjoin='Personal.id == foreign(Course.personal_id)')
+    responsibles = db.relationship('Responsible', backref='personal', lazy=True, primaryjoin='Personal.id == foreign(Responsible.personal_id)')
+    
     def get_json(self):
         """ Formats data in JSON """
         return {
@@ -176,9 +162,6 @@ class Role(db.Model):
     name = db.Column(db.String(64), nullable=False)
     description = db.Column(db.String(128))
     personal_id = db.Column(db.Integer, db.ForeignKey('university.personals.id'), nullable=False)
-
-    # Relation avec la table Personal (un rôle est associé à un personnel)
-    personal = db.relationship('Personal', backref='role', lazy=True)
 
     def get_json(self):
         """ Formats data in JSON """
@@ -202,14 +185,10 @@ class Course(db.Model):
     rooms_id = db.Column(db.Integer, db.ForeignKey('university.rooms.id'), nullable=False)
     teaching_id = db.Column(db.Integer, db.ForeignKey('university.teachings.id'), nullable=False)
 
-    # Relation avec la table Personal (un cours est associé à un personnel)
-    personal = db.relationship('Personal', backref='courses', lazy=True)
-
-    # Relation avec la table Room (un cours a lieu dans une salle)
-    room = db.relationship('Room', backref='courses', lazy=True)
-
-    # Relation avec la table Teaching (un cours est associé à un enseignement)
-    teaching = db.relationship('Teaching', backref='courses', lazy=True)
+    # Relationships
+    Reminder = db.relationship('Reminder', backref='course', lazy=True, primaryjoin='Course.id == foreign(Reminder.course_id)')
+    Absent = db.relationship('Absent', backref='course', lazy=True, primaryjoin='Course.id == foreign(Absent.course_id)')
+    Participate = db.relationship('Participate', backref='course', lazy=True, primaryjoin='Course.id == foreign(Participate.course_id)')
 
     def get_json(self):
         """ Formats data in JSON """
@@ -234,9 +213,9 @@ class Room(db.Model):
     has_computer = db.Column(db.Boolean, default=True)
     has_projector = db.Column(db.Boolean, default=True)
 
-    # Relation avec la table Course (une salle peut être associée à plusieurs cours)
-    courses = db.relationship('Course', backref='room', lazy=True)
-
+    # Relationships
+    courses = db.relationship('Course', backref='room', lazy=True, primaryjoin='Room.id == foreign(Course.rooms_id)')
+    
     def get_json(self):
         """ Formats data in JSON """
         return {
@@ -256,9 +235,6 @@ class Reminder(db.Model):
     description = db.Column(db.Text)
     course_id = db.Column(db.Integer, db.ForeignKey('university.courses.id'), nullable=False)
 
-    # Relation avec la table Course (un rappel est associé à un cours)
-    course = db.relationship('Course', backref='reminders', lazy=True)
-
     def get_json(self):
         """ Formats data in JSON """
         return {
@@ -277,9 +253,9 @@ class Specialization(db.Model):
     name = db.Column(db.String(255), nullable=False, default='Semestre de préparation au parcours')
     department_id = db.Column(db.Integer, db.ForeignKey('university.departments.id'), nullable=False)
 
-    # Relation avec la table Department (une spécialisation est associée à un département)
-    department = db.relationship('Department', backref='specializations', lazy=True)
-
+    # Relationships
+    teaching = db.relationship('Teaching', backref='specialization', lazy=True, primaryjoin='Specialization.id == foreign(Teaching.specialization_id)')
+    
     def get_json(self):
         """ Formats data in JSON """
         return {
@@ -302,8 +278,9 @@ class Teaching(db.Model):
     teaching_type = db.Column(db.String(32), default='RCC')
     specialization_id = db.Column(db.Integer, db.ForeignKey('university.specializations.id'), nullable=False)
 
-    # Relation avec la table Specialization (un enseignement est associé à une spécialisation)
-    specialization = db.relationship('Specialization', backref='teachings', lazy=True)
+    # Relationships
+    courses = db.relationship('Course', backref='teaching', lazy=True, primaryjoin='Teaching.id == foreign(Course.teaching_id)')
+    responsible = db.relationship('Responsible', backref='teaching', lazy=True, primaryjoin='Teaching.id == foreign(Responsible.teaching_id)')
 
     def get_json(self):
         """ Formats data in JSON """
@@ -318,7 +295,6 @@ class Teaching(db.Model):
                 'specialization_id' : self.specialization_id
             }
 
-
 class Absent(db.Model):
     __tablename__ = 'absents'
     __table_args__ = {'schema': 'university'}
@@ -327,12 +303,6 @@ class Absent(db.Model):
     justified = db.Column(db.Boolean, default=True)
     student_number = db.Column(db.Integer, db.ForeignKey('university.students.id'), nullable=False)
     course_id = db.Column(db.Integer, db.ForeignKey('university.courses.id'), nullable=False)
-
-    # Relation avec la table Student (une absence est associée à un étudiant)
-    student = db.relationship('Student', backref='absents', lazy=True)
-
-    # Relation avec la table Course (une absence est associée à un cours)
-    course = db.relationship('Course', backref='absents', lazy=True)
 
     def get_json(self):
         """ Formats data in JSON """
@@ -351,12 +321,6 @@ class Participate(db.Model):
     course_id = db.Column(db.Integer, db.ForeignKey('university.courses.id'), nullable=False)
     subgroup_id = db.Column(db.Integer, db.ForeignKey('university.subgroups.id'), nullable=False)
 
-    # Relation avec la table Course (une participation est associée à un cours)
-    course = db.relationship('Course', backref='participates', lazy=True)
-
-    # Relation avec la table Subgroup (une participation est associée à un sous-groupe)
-    subgroup = db.relationship('Subgroup', backref='participates', lazy=True)
-
     def get_json(self):
         """ Formats data in JSON """
         return {
@@ -372,13 +336,6 @@ class Responsible(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     personal_id = db.Column(db.Integer, nullable=False)
     teaching_id = db.Column(db.Integer, nullable=False)
-    
-    # Relation avec la table Personal (un responsable est associé à un personnel)
-    personal = db.relationship('Personal', backref='responsibles', lazy=True)
-
-    # Relation avec la table Teaching (un responsable est associé à un enseignement)
-    teaching = db.relationship('Teaching', backref='responsibles', lazy=True)
-
     
     def get_json(self):
         """ Formats data in JSON """
