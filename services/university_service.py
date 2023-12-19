@@ -23,6 +23,23 @@ class university_service(Service):
                     "university_participate_insert " : university_participate_insert }
         
         return resultBool, resultString
+    
+    def sample_database(self):
+        university_drop_bool, university_drop = connect_pg.execute_sql_script('scripts/script_university_drop.sql')
+        university_create_bool, university_create = connect_pg.execute_sql_script('scripts/script_university_create.sql')
+        university_presentation_sample_bool, university_presentation_sample_insert = connect_pg.execute_sql_script('scripts/script_university_presentation_sample.sql')
+        university_presentation_sample_course_bool, university_presentation_sample_course_insert = connect_pg.execute_sql_script('scripts/script_university_presentation_sample_course.sql')
+        university_presentation_sample_participate_bool, university_presentation_sample_participate_insert = connect_pg.execute_sql_script('scripts/script_university_presentation_sample_participate.sql')
+        
+        resultBool = university_drop_bool == university_create_bool == university_presentation_sample_bool == university_presentation_sample_course_bool == university_presentation_sample_participate_bool
+
+        resultString = { "1.university_drop " : university_drop ,  
+                    "2.university_create" : university_create ,  
+                    "3.university_presentation_sample_insert" : university_presentation_sample_insert ,  
+                    "4.university_presentation_sample_course_insert" : university_presentation_sample_course_insert ,  
+                    "5.university_presentation_sample_participate_insert" : university_presentation_sample_participate_insert }
+        
+        return resultBool, resultString
 
     def drop_database(self):
         bool_result, string_result = connect_pg.execute_sql_script('scripts/script_university_drop.sql')
