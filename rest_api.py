@@ -44,7 +44,6 @@ app.register_blueprint(reminder_app) # Register the reminder controller
 app.register_blueprint(absent_app) # Register the absent controller
 app.register_blueprint(participate_app) # Register the participate controller
 app.register_blueprint(auth_app) # Register the autentification controller
-app.register_blueprint(timetable_app) # Register the timetable controller
 app.register_blueprint(user_app) # Register the user controller
 
 # === endregion : blueprint_controller ===

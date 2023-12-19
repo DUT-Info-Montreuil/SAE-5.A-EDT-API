@@ -6,8 +6,7 @@ from services.absent_service import absent_service
 
 absent_app = Blueprint('absent_app', __name__)
 
-# Absents API
-# university.absents(@id, description, starttime, duree, absent_type, #personal_id, #rooms_id, #teaching_id)
+# university.absents(@id, justified, student_number, #course_id)
 
 # ----------------------------------------------------------
 # Recuperer data
@@ -27,19 +26,12 @@ def get_absent_by_id(id):
     returnStatement = _service.get_absent_by_id(id)
     return jsonify(returnStatement)
 
-@absent_app.route('/absents/identify', methods=['POST'])
-def identify_absent():
-    """Identify a absent by description, starttime, duree, absent_type, personal_id, and rooms_id in JSON format"""
-    data = request.json
-    _service = absent_service()
-    returnStatement = _service.identify_absent(data)
-    return jsonify(returnStatement)
-
-
 # ----------------------------------------------------------
 # Add / Delete / Update
 # ----------------------------------------------------------
 
+# student_number and course_id needs to exists
+# should add a constraint pour ne pas rendre absent des eleves qui ne participent pas à un cours
 @absent_app.route('/absents/add', methods=['PUT'])
 def add_absent():
     """ Add a absent by data in JSON format """
