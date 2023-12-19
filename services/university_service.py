@@ -3,7 +3,7 @@ from services.main_service import Service
 from configuration import connect_pg
 
 class university_service(Service):
-    def initialize_database(db):
+    def initialize_database(self):
         university_drop_bool, university_drop = connect_pg.execute_sql_script('scripts/script_university_drop.sql')
         university_create_bool, university_create = connect_pg.execute_sql_script('scripts/script_university_create.sql')
         university_user_insert_bool, university_user_insert = connect_pg.execute_sql_script('scripts/script_university_user_insert.sql')
@@ -24,30 +24,30 @@ class university_service(Service):
         
         return resultBool, resultString
 
-    def drop_database():
+    def drop_database(self):
         bool_result, string_result = connect_pg.execute_sql_script('scripts/script_university_drop.sql')
         return bool_result, { "university_drop": string_result }
 
-    def create_database():
+    def create_database(self):
         bool_result, string_result = connect_pg.execute_sql_script('scripts/script_university_create.sql')
         return bool_result, { "university_create": string_result }
 
-    def insert_university_user():
+    def insert_university_user(self):
         bool_result, string_result = connect_pg.execute_sql_script('scripts/script_university_user_insert.sql')
         return bool_result, { "university_user_insert": string_result }
 
-    def insert_university_school():
+    def insert_university_school(self):
         bool_result, string_result = connect_pg.execute_sql_script('scripts/script_university_school_insert.sql')
         return bool_result, { "university_school_insert": string_result }
 
-    def insert_university_student():
+    def insert_university_student(self):
         bool_result, string_result = connect_pg.execute_sql_script('scripts/script_university_student_insert.sql')
         return bool_result, { "university_student_insert": string_result }
 
-    def insert_university_courses():
+    def insert_university_courses(self):
         bool_result, string_result = connect_pg.execute_sql_script('scripts/script_university_courses_insert.sql')
         return bool_result, { "university_courses_insert": string_result }
 
-    def insert_university_participate():
+    def insert_university_participate(self):
         bool_result, string_result = connect_pg.execute_sql_script('scripts/script_university_participate_insert.sql')
         return bool_result, { "university_participate_insert": string_result }

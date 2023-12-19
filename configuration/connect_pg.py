@@ -59,7 +59,7 @@ def get_query(conn, query):
         if conn is not None:
             return rows
 
-def execute_sql_script(script_file,filename='config.ini', section='postgresql'):
+def execute_sql_script(script_file, filename='configuration/config.ini', section='postgresql'):
     """Execute an SQL script to the database."""
     
     result = True ,"SQL script executed successfully."
