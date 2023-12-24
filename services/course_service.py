@@ -44,8 +44,12 @@ class course_service(Service):
                     FROM university.courses 
                     INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
                     INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
-                    INNER JOIN university.rooms ON university.courses.rooms_id = university.rooms.id
-                    WHERE university.rooms.id =""" +  str(room_id) + """ AND
+
+                    
+                    INNER JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
+                    INNER JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
+
+                    WHERE university.rooms_courses.rooms_id =""" +  str(room_id) + """ AND
                     starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
         return self.execute_query_and_get_statement_timetable(query)
     
@@ -64,7 +68,10 @@ class course_service(Service):
                     FROM university.courses 
                     INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
                     INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
-                    INNER JOIN university.rooms ON university.courses.rooms_id = university.rooms.id
+                    
+                    INNER JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
+                    INNER JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
+                    
                     WHERE university.personals.id =""" +  str(personal_id) + """ AND
                     starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
         return self.execute_query_and_get_statement_timetable(query)

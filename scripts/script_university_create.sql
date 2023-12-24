@@ -154,8 +154,6 @@ CREATE TABLE university.courses(
 
     -- FOREIGN KEY (personals)
     personal_id INT NOT NULL,
-    -- FOREIGN KEY (rooms)
-    rooms_id INT NOT NULL,
     -- FOREIGN KEY (teachings)
     teaching_id INT NOT NULL
 ) ;
@@ -170,6 +168,20 @@ CREATE TABLE university.rooms(
 	capacity INTEGER NOT NULL,
 	has_computer boolean default true,
 	has_projector boolean default true
+) ;
+
+CREATE TABLE university.rooms_courses (
+    -- PRIMARY KEY
+    id SERIAL constraint pk_university_rooms_courses PRIMARY KEY CONSTRAINT ck_university_rooms_courses_id CHECK(id > 0),
+    -- FOREIGN KEY (courses)
+    course_id INT NOT NULL,
+    constraint fk_university_rooms_courses_courses foreign key (course_id)
+    references university.courses (id) on delete restrict on update cascade,
+
+    -- FOREIGN KEY (groups)
+    rooms_id INT NOT NULL,
+    constraint fk_university_rooms_courses_rooms foreign key (rooms_id)
+    references university.rooms (id) on delete restrict on update cascade
 ) ;
 
 -- reminders
@@ -282,11 +294,6 @@ ON DELETE RESTRICT ON UPDATE CASCADE;
 ALTER TABLE university.courses
 ADD CONSTRAINT fk_university_courses_personals
 FOREIGN KEY (personal_id) REFERENCES university.personals(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
-
-ALTER TABLE university.courses
-ADD CONSTRAINT fk_university_courses_rooms
-FOREIGN KEY (rooms_id) REFERENCES university.rooms(id)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
 ALTER TABLE university.courses
