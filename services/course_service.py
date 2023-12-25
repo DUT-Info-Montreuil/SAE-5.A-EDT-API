@@ -7,7 +7,7 @@ import datetime
 
 class course_service(Service):
     
-    # university.courses(@id, description, starttime, endtime, course_type, #personal_id, #rooms_id, #teaching_id)
+    # university.courses(@id, description, starttime, endtime, course_type, #personal_id, #teaching_id)
     
     # ----------------------------------------------------------
     # Recuperer data
@@ -45,7 +45,6 @@ class course_service(Service):
                     INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
                     INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
 
-                    
                     INNER JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
                     INNER JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
 
@@ -93,7 +92,9 @@ class course_service(Service):
 
                 INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
                 INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
-                INNER JOIN university.rooms ON university.courses.rooms_id = university.rooms.id
+                
+                INNER JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
+                INNER JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
 
                 INNER JOIN university.participates ON university.courses.id = university.participates.course_id
                 INNER JOIN university.subgroups ON university.participates.subgroup_id = university.subgroups.id
@@ -123,7 +124,9 @@ class course_service(Service):
 
                 INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
                 INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
-                INNER JOIN university.rooms ON university.courses.rooms_id = university.rooms.id
+                
+                INNER JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
+                INNER JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
 
                 INNER JOIN university.participates ON university.courses.id = university.participates.course_id
                 INNER JOIN university.students ON university.participates.subgroup_id = university.students.subgroup_id
@@ -143,14 +146,13 @@ class course_service(Service):
         endtime = data.get('endtime', '')
         course_type = data.get('course_type', '')
         personal_id = data.get('personal_id', '')
-        rooms_id = data.get('rooms_id', '')
         teaching_id = data.get('teaching_id', '')
 
-        if description == '' or starttime == '' or endtime == '' or course_type == '' or personal_id == '' or rooms_id == '' or teaching_id == '':
+        if description == '' or starttime == '' or endtime == '' or course_type == '' or personal_id == '' or teaching_id == '':
             return {}
     
-        query = """INSERT INTO university.courses (description, starttime, endtime, course_type, personal_id, rooms_id, teaching_id) 
-                VALUES ('%(description)s', '%(starttime)s', '%(duree)s', '%(course_type)s', %(personal_id)s, %(rooms_id)s, %(teaching_id)s)"""
+        query = """INSERT INTO university.courses (description, starttime, endtime, course_type, personal_id, teaching_id) 
+                VALUES ('%(description)s', '%(starttime)s', '%(duree)s', '%(course_type)s', %(personal_id)s, %(teaching_id)s)"""
     
         conn = self.get_connection()
         new_course_id = connect_pg.execute_commands(conn, (query,))
@@ -175,7 +177,6 @@ class course_service(Service):
         endtime = data.get('endtime', '')
         course_type = data.get('course_type', '')
         personal_id = data.get('personal_id', '')
-        rooms_id = data.get('rooms_id', '')
         teaching_id = data.get('teaching_id', '')
 
         if description != '':
@@ -188,8 +189,6 @@ class course_service(Service):
             sub_query = sub_query + """course_type = '""" + str(course_type) + """' """
         if personal_id != '':
             sub_query = sub_query + """personal_id = """ + str(personal_id) + """ """
-        if rooms_id != '':
-            sub_query = sub_query + """rooms_id = """ + str(rooms_id) + """ """
         if teaching_id != '':
             sub_query = sub_query + """teaching_id = """ + str(teaching_id) + """ """
        
@@ -204,9 +203,6 @@ class course_service(Service):
             return jsonify({"message": "Course " + str(id) + " updated sucessfully"}), 200
         except Exception as e:
             return  jsonify({"message": e}), 400
-        
-
-        return True
 
     # ----------------------------------------------------------
     # Utilitaires
