@@ -8,57 +8,77 @@ responsible_app = Blueprint('responsible_app', __name__)
 
 # Responsibles API
 # university.responsibles(@id, #personal_id, #teaching_id)
+
+# ----------------------------------------------------------
+# Recuperer data
+# ----------------------------------------------------------
+
 @responsible_app.route('/responsibles/get', methods=['GET'])
 def get_responsibles():
     """ Get all responsibles in JSON format """
-    _service = responsible_service()
-    returnStatement = _service.get_responsibles()
-    return jsonify(returnStatement)
+    try:
+        _service = responsible_service()
+        returnStatement = _service.get_responsibles()
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @responsible_app.route('/responsibles/get/<int:id>', methods=['GET'])
 def get_responsible_by_id(id):
     """ Get a responsible by ID in JSON format """
-    _service = responsible_service()
-    returnStatement = _service.get_responsible_by_id(id)
-    return jsonify(returnStatement)
+    try:
+        _service = responsible_service()
+        returnStatement = _service.get_responsible_by_id(id)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @responsible_app.route('/responsibles/identify', methods=['POST'])
 def identify_responsible():
     """Identify a responsible by course_id and subgroup_id in JSON format"""
-    data = request.json
-    _service = responsible_service()
-    returnStatement = _service.identify_responsible(data)
-    return jsonify(returnStatement)
+    try:
+        data = request.json
+        _service = responsible_service()
+        returnStatement = _service.identify_responsible(data)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
-@responsible_app.route('/responsibles/add', methods=['POST'])
+# ----------------------------------------------------------
+# Add / Delete / Update
+# ----------------------------------------------------------
+
+@responsible_app.route('/responsibles/add', methods=['PUT'])
 def add_responsible():
     """ Add a responsible by data in JSON format """
-    data = request.json
-    _service = responsible_service()
-    returnStatement = _service.add_responsible(data)
+    try:
+        data = request.json
+        _service = responsible_service()
+        _service.add_responsible(data)
+        return jsonify({"message": "Responsible successfully added !"}), 200
+    
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
-    if returnStatement:
-        return jsonify({"message": "Course successfully added!"}), 200
-    else:
-        return jsonify({"message": "Course not found!"}), 404
-
-@responsible_app.route('/responsibles/delete/<int:id>', methods=['GET'])
+@responsible_app.route('/responsibles/delete/<int:id>', methods=['DELETE'])
 def delete_responsible_by_id(id):
     """ Delete a responsible by ID in JSON format """
-    _service = responsible_service()
-    returnStatement = _service.delete_responsible_by_id(id)
-    if returnStatement:
-        return jsonify({"message": "Course deleted successfully!"}), 200
-    else:
-        return jsonify({"message": "Course not found!"}), 404
+    try:
+        _service = responsible_service()
+        _service.delete_responsible_by_id(id)
+        return jsonify({"message": "Responsible successfully deleted !"}), 200
+    
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
-@responsible_app.route('/responsibles/update/<int:id>', methods=['POST'])
+@responsible_app.route('/responsibles/update/<int:id>', methods=['PATCH'])
 def update_responsible(id):
     """ Update a responsible record by ID using data in JSON format """
-    data = request.json
-    _service = responsible_service()
-    updated_responsible_id = _service.update_responsible(id, data)
-    if updated_responsible_id:
-        return {"message": f"Responsible record with ID {updated_responsible_id} updated successfully!"}, 200
-    else:
-        return {"message": f"Responsible record with ID {id} not found!"}, 404
+    try:
+        data = request.json
+        _service = responsible_service()
+        _service.update_responsible(id, data)
+        return jsonify({"message": "Responsible successfully updated!"}), 200
+
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404

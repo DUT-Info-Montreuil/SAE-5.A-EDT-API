@@ -1,4 +1,4 @@
-class RoomModel:
+class RoomViewModel:
     def __init__(self, id, code, capacity, has_computer=True, has_projector=True):
         self.id = id
         self.code = code
@@ -23,7 +23,7 @@ class RoomModel:
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
-        room_instance = RoomModel(
+        room_instance = RoomViewModel(
             data.get('id', data_if_not_found['id']),
             data.get('code', data_if_not_found['code']),
             data.get('capacity', data_if_not_found['capacity']),

@@ -1,4 +1,4 @@
-class AbsentModel:
+class AbsentViewModel:
     def __init__(self, id, justified, student_number, course_id, last_name, first_name, startTime, duree, course_type, teaching_id, teaching_title):
         self.id = id
         self.justified = justified
@@ -41,7 +41,7 @@ class AbsentModel:
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
-        absent_instance = AbsentModel(
+        absent_instance = AbsentViewModel(
             data.get('id', data_if_not_found['id']),
             data.get('justified', data_if_not_found['justified']),
             data.get('student_number', data_if_not_found['student_number']),

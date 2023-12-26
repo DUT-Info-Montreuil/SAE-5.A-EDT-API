@@ -1,4 +1,4 @@
-class TeachingModel:
+class TeachingViewModel:
     def __init__(self, id, title, hour_number, semestre, sequence, description, teaching_type, specialization_id, specialization_code, specialization_name, specialization_department_id, specialization_department_degree_type):
         self.id = id
         self.title = title
@@ -39,7 +39,7 @@ class TeachingModel:
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
-        teaching_instance = TeachingModel(
+        teaching_instance = TeachingViewModel(
             data.get('id', data_if_not_found['id']),
             data.get('title', data_if_not_found['title']),
             data.get('hour_number', data_if_not_found['hour_number']),

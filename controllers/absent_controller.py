@@ -15,16 +15,22 @@ absent_app = Blueprint('absent_app', __name__)
 @absent_app.route('/absents/get', methods=['GET'])
 def get_absents():
     """ Get all absents in JSON format """
-    _service = absent_service()
-    returnStatement = _service.get_absents()
-    return jsonify(returnStatement)
+    try:
+        _service = absent_service()
+        returnStatement = _service.get_absents()
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @absent_app.route('/absents/get/<int:id>', methods=['GET'])
 def get_absent_by_id(id):
-    """ Get a absent by ID in JSON format """
-    _service = absent_service()
-    returnStatement = _service.get_absent_by_id(id)
-    return jsonify(returnStatement)
+    """ Get an absent by ID in JSON format """
+    try:
+        _service = absent_service()
+        returnStatement = _service.get_absent_by_id(id)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 # ----------------------------------------------------------
 # Add / Delete / Update
@@ -35,32 +41,34 @@ def get_absent_by_id(id):
 @absent_app.route('/absents/add', methods=['PUT'])
 def add_absent():
     """ Add a absent by data in JSON format """
-    data = request.json
-    _service = absent_service()
-    returnStatement = _service.add_absent(data)
-
-    if returnStatement:
-        return jsonify({"message": "Absent successfully added!"}), 200
-    else:
-        return jsonify({"message": "Absent not found!"}), 404
+    try:
+        data = request.json
+        _service = absent_service()
+        _service.add_absent(data)
+        return jsonify({"message": "Absent successfully added !"}), 200
+    
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 @absent_app.route('/absents/delete/<int:id>', methods=['DELETE'])
 def delete_absent_by_id(id):
     """ Delete a absent by ID in JSON format """
-    _service = absent_service()
-    returnStatement = _service.delete_absent_by_id(id)
-    if returnStatement:
-        return jsonify({"message": "Absent deleted successfully!"}), 200
-    else:
-        return jsonify({"message": "Absent not found!"}), 404
+    try:
+        _service = absent_service()
+        _service.delete_absent_by_id(id)
+        return jsonify({"message": "Absent successfully deleted !"}), 200
+    
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
     
 @absent_app.route('/absent/update/<int:id>', methods=['PATCH'])
 def update_absent(id):
     """ Update an absent record by ID using data in JSON format """
-    data = request.json
-    _service = absent_service()
-    updated_absent_id = _service.update_absent(id, data)
-    if updated_absent_id:
-        return {"message": f"Absent record with ID {updated_absent_id} updated successfully!"}, 200
-    else:
-        return {"message": f"Absent record with ID {id} not found!"}, 404
+    try:
+        data = request.json
+        _service = absent_service()
+        _service.update_absent(id, data)
+        return jsonify({"message": "Absent successfully updated!"}), 200
+
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404

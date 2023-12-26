@@ -1,4 +1,4 @@
-class StudentModel:
+class StudentViewModel:
     def __init__(self, student_number, last_name, first_name, mail, phone_number, department_id, group_id, subgroup_id,subgroup_name, group_type, group_promotion, department_name, department_degree_type):
         self.student_number = student_number
         self.last_name = last_name
@@ -41,7 +41,7 @@ class StudentModel:
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
-        student_instance = StudentModel(
+        student_instance = StudentViewModel(
             data.get('student_number', data_if_not_found['student_number']),
             data.get('last_name', data_if_not_found['last_name']),
             data.get('first_name', data_if_not_found['first_name']),
