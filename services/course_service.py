@@ -238,9 +238,9 @@ class course_service(Service):
             'starttime': row[2],       # L'heure de début du cours
             'endtime': row[3],         # L'heure de la fin du cours
             'course_type': row[4],     # Le type de cours
-            'personal_id': row[5],     # L'ID du personnel associé au cours
-            'rooms_id': row[6],        # L'ID de la salle associée au cours
-            'teaching_id': row[7]      # L'ID de l'enseignement associé au cours
+            #'personal_id': row[5],     # L'ID du personnel associé au cours
+            #'rooms_id': row[6],        # L'ID de la salle associée au cours
+            'teaching_id': row[5]      # L'ID de l'enseignement associé au cours
         }
     
     def get_course_statement_timetable(self, row):

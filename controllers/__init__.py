@@ -16,6 +16,7 @@ from controllers.absent_controller import absent_app
 from controllers.participate_controller import participate_app
 from controllers.auth_controller import auth_app
 from controllers.user_controller import user_app
+from controllers.rooms_courses_controller import rooms_courses_app
 
 # flask import
 from flask import jsonify
