@@ -57,10 +57,11 @@ class teaching_service(Service):
         semestre = data.get('semestre', '')
         sequence = data.get('sequence', '')
         description = data.get('description', '')
+        color = data.get('color', '')
         teaching_type = data.get('teaching_type', '')
         specialization_id = data.get('specialization_id', '')
     
-        query = "INSERT INTO university.teachings (title, hour_number, semestre, sequence, description, teaching_type, specialization_id) VALUES ('%(title)s', %(hour_number)s, %(semestre)s, '%(sequence)s', '%(description)s', '%(teaching_type)s,' %(specialization_id)s) RETURNING id" % {'title': title, 'hour_number': hour_number, 'semestre': semestre, 'sequence': sequence, 'description': description, 'teaching_type': teaching_type, 'specialization_id': specialization_id}
+        query = "INSERT INTO university.teachings (title, hour_number, semestre, sequence, description, color, teaching_type, specialization_id) VALUES ('%(title)s', %(hour_number)s, %(semestre)s, '%(sequence)s', '%(description)s', '%(color)s', '%(teaching_type)s,' %(specialization_id)s)"
         conn = self.get_connection()
         new_teaching_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -128,7 +129,7 @@ class teaching_service(Service):
             'semestre': row[3],             # Le semestre
             'sequence': row[4],             # La séquence
             'description': row[5],          # La description
-            'teaching_type': row[6],        # Le type d'enseignement
-            'specialization_id': row[7],    # L'ID de la spécialisation associée à l'enseignement
-            'teaching_color': row[8]        # La couleur d'un enseignement dans l'emploi du temps
+            'color': row[6],
+            'teaching_type': row[7],        # Le type d'enseignement
+            'specialization_id': row[8]     # L'ID de la spécialisation associée à l'enseignement
         }
