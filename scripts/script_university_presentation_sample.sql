@@ -216,105 +216,106 @@ VALUES
 
 -- university.teachings(@id, title, hour_number, semestre, sequence, teaching_type #specialization_id)
 -- BUT INFO
-INSERT INTO university.teachings (title, hour_number, semestre, sequence, teaching_type , specialization_id)
+INSERT INTO university.teachings (title, hour_number, semester, sequence, teaching_type, specialization_id, teaching_color)
 VALUES
     --Semestre 1 INFO
     --Ressources cœur de competences (RCC)
-    ('Initiation au developpement', 0, 1, '01', 'RCC',  (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Developpement d interfaces web', 0, 1, '02', 'RCC',  (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Introduction a l Architecture des Ordinateurs', 0, 1, '03', 'RCC',  (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Introduction aux Systemes d exploitation', 0, 1, '04', 'RCC',  (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Introduction aux bases de donnees SQL', 0, 1, '05', 'RCC',  (SELECT id FROM university.specializations WHERE code = 'INFO')),
+    ('Initiation au developpement', 0, 1, '01', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#FF0000'),
+    ('Developpement d interfaces web', 0, 1, '02', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#FF0000'),
+    ('Introduction a l Architecture des Ordinateurs', 0, 1, '03', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#FF0000'),
+    ('Introduction aux Systemes d exploitation', 0, 1, '04', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#FF0000'),
+    ('Introduction aux bases de donnees SQL', 0, 1, '05', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#FF0000'),
     --Ressources transversales (RT)
-    ('Mathematiques Discretes', 0, 1, '06', 'RT',  (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Outils Mathematiques Fondamentaux', 0, 1, '07', 'RT',  (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Gestion de projet et des organisations', 0, 1, '08', 'RT',  (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('economie durable et numerique', 0, 1, '09', 'RT',  (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Anglais Technique', 0, 1, '10', 'RT',  (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Bases de la Communication', 0, 1, '11', 'RT',  (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Projet professionnel et personnel', 0, 1, '12', 'RT',  (SELECT id FROM university.specializations WHERE code = 'INFO')),
+    ('Mathematiques Discretes', 0, 1, '06', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Outils Mathematiques Fondamentaux', 0, 1, '07', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Gestion de projet et des organisations', 0, 1, '08', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('economie durable et numerique', 0, 1, '09', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Anglais Technique', 0, 1, '10', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Bases de la Communication', 0, 1, '11', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Projet professionnel et personnel', 0, 1, '12', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+
     -- SAE
-    ('Implementation d un besoin client', 0, 1, '01', 'SAE',  (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Comparaison d approches algorithmiques', 0, 1, '02', 'SAE',  (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Installation d un poste pour le developpement', 0, 1, '03', 'SAE',  (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Creation d une base de donnees', 0, 1, '04', 'SAE',  (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Recueil de besoins / Decouverte de l environnement economique et ecologique', 0, 1, '05&06', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO')),
+    ('Implementation d un besoin client', 0, 1, '01', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#0000FF'),
+    ('Comparaison d approches algorithmiques', 0, 1, '02', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#0000FF'),
+    ('Installation d un poste pour le developpement', 0, 1, '03', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#0000FF'),
+    ('Creation d une base de donnees', 0, 1, '04', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#0000FF'),
+    ('Recueil de besoins / Decouverte de l environnement economique et ecologique', 0, 1, '05&06', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#0000FF'),
 
     --Semestre 2 INFO
     --Ressources cœur de competences (RCC)
-    ('Developpement oriente objets', 0, 2, '01', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Developpement d applications avec IHM', 0, 2, '02', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Qualite de developpement', 0, 2, '03', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Communication et fonctionnement bas niveau', 0, 2, '04', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Introduction aux services reseaux', 0, 2, '05', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Exploitation d une base de donnees', 0, 2, '06', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO')),
+    ('Developpement oriente objets', 0, 2, '01', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#FF0000'),
+    ('Developpement d applications avec IHM', 0, 2, '02', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#FF0000'),
+    ('Qualite de developpement', 0, 2, '03', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#FF0000'),
+    ('Communication et fonctionnement bas niveau', 0, 2, '04', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#FF0000'),
+    ('Introduction aux services reseaux', 0, 2, '05', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#FF0000'),
+    ('Exploitation d une base de donnees', 0, 2, '06', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#FF0000'),
     --Ressources transversales (RT)
-    ('Graphes', 0, 2, '07', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Outils numeriques pour les statistiques descriptives', 0, 2, '08', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Methodes numeriques', 0, 2, '09', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Gestion de projet et des organisations', 0, 2, '10', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Droit des contrats et du numerique', 0, 2, '11', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Anglais d entreprise', 0, 2, '13', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Communication avec le milieu professionnel', 0, 2, '14', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('PPP : Metiers de l informatique', 0, 2, '15', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
+    ('Graphes', 0, 2, '07', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Outils numeriques pour les statistiques descriptives', 0, 2, '08', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Methodes numeriques', 0, 2, '09', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Gestion de projet et des organisations', 0, 2, '10', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Droit des contrats et du numerique', 0, 2, '11', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Anglais d entreprise', 0, 2, '13', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Communication avec le milieu professionnel', 0, 2, '14', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('PPP : Metiers de l informatique', 0, 2, '15', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
     -- SAE
-    ('Developpement d une application', 0, 2, '01', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Exploration algorithmique d un probleme', 0, 2, '02', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Installation de services reseau', 0, 2, '03', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Exploitation d une base de donnees', 0, 2, '04', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Gestion d un projet', 0, 2, '05', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Organisation d un travail d equipe', 0, 2, '06', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO')),
+    ('Developpement d une application', 0, 2, '01', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#0000FF'),
+    ('Exploration algorithmique d un probleme', 0, 2, '02', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#0000FF'),
+    ('Installation de services reseau', 0, 2, '03', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#0000FF'),
+    ('Exploitation d une base de donnees', 0, 2, '04', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#0000FF'),
+    ('Gestion d un projet', 0, 2, '05', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#0000FF'),
+    ('Organisation d un travail d equipe', 0, 2, '06', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#0000FF'),
 
     --Semestre 3 INFO
     --Ressources cœur de competences (RCC)
-    ('Developpement Web', 0, 3, '01', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Developpement efficace et Qualite', 0, 3, '02&04', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Programmation Systeme', 0, 3, '05', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Architecture des Reseaux', 0, 3, '06', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('SQL et Programmation', 0, 3, '07', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO')),
+    ('Developpement Web', 0, 3, '01', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#FF0000'),
+    ('Developpement efficace et Qualite', 0, 3, '02&04', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#FF0000'),
+    ('Programmation Systeme', 0, 3, '05', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#FF0000'),
+    ('Architecture des Reseaux', 0, 3, '06', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#FF0000'),
+    ('SQL et Programmation', 0, 3, '07', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#FF0000'),
     --Ressources transversales (RT)
-    ('Analyse', 0, 3, '03', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Probabilites', 0, 3, '08', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Cryptographie', 0, 3, '09', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Management des Systemes d Information', 0, 3, '10', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Droits des contrats et du numerique', 0, 3, '11', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Anglais', 0, 3, '12', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Anglais Apprentis', 0, 3, '12.app', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Communication Professionnelle', 0, 3, '13', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('PPP', 0, 3, '14', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Outils Mathematiques Fondamentaux', 0, 3, '15', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Anglais pour les projets internationaux', 0, 3, '16', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
-    ('Anglais pour les projets internationaux [Apprentis - initiauxTDB]', 0, 3, '16.app', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO')),
+    ('Analyse', 0, 3, '03', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Probabilites', 0, 3, '08', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Cryptographie', 0, 3, '09', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Management des Systemes d Information', 0, 3, '10', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Droits des contrats et du numerique', 0, 3, '11', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Anglais', 0, 3, '12', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Anglais Apprentis', 0, 3, '12.app', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Communication Professionnelle', 0, 3, '13', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('PPP', 0, 3, '14', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Outils Mathematiques Fondamentaux', 0, 3, '15', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Anglais pour les projets internationaux', 0, 3, '16', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
+    ('Anglais pour les projets internationaux [Apprentis - initiauxTDB]', 0, 3, '16.app', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO'), '#00FF00'),
     -- SAE
 
     --Semestre 4 INFO
     --TRONC COMMUN
     --Ressources cœur de competences (RCC)
-    ('Architecture Logicielle', 0, 4, '01', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO_TC')),
-    ('Qualite Du Developpement', 0, 4, '02', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO_TC')),
-    ('Qualite & Non-Relationnel', 0, 4, '03', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO_TC')),
+    ('Architecture Logicielle', 0, 4, '01', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO_TC'), '#FF0000'),
+    ('Qualite Du Developpement', 0, 4, '02', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO_TC'), '#FF0000'),
+    ('Qualite & Non-Relationnel', 0, 4, '03', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO_TC'), '#FF0000'),
     --Ressources transversales (RT)
-    ('Methodes d Optimisation', 0, 4, '04', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_TC')),
-    ('Anglais', 0, 4, '05', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_TC')),
-    ('Anglais Apprentis', 0, 4, '05.app', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_TC')),
-    ('Comm. Interne', 0, 4, '06', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_TC')),
-    ('PPP', 0, 4, '07', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_TC')),
+    ('Methodes d Optimisation', 0, 4, '04', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_TC'), '#00FF00'),
+    ('Anglais', 0, 4, '05', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_TC'), '#00FF00'),
+    ('Anglais Apprentis', 0, 4, '05.app', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_TC'), '#00FF00'),
+    ('Comm. Interne', 0, 4, '06', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_TC'), '#00FF00'),
+    ('PPP', 0, 4, '07', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_TC'), '#00FF00'),
     --Parcours A
     --Ressources cœur de competences (RCC)
-    ('Complements Web', 0, 4, '10', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO_A')),
-    ('Developpement Mobile', 0, 4, '11', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO_A')),
+    ('Complements Web', 0, 4, '10', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO_A'), '#FF0000'),
+    ('Developpement Mobile', 0, 4, '11', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO_A'), '#FF0000'),
     --Ressources transversales (RT)
-    ('Virtualisation', 0, 4, '08', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_A')),
-    ('Management Avance de SI', 0, 4, '09', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_A')),
-    ('Automates', 0, 4, '12', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_A')),
+    ('Virtualisation', 0, 4, '08', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_A'), '#FF0000'),
+    ('Management Avance de SI', 0, 4, '09', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_A'), '#FF0000'),
+    ('Automates', 0, 4, '12', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_A'), '#FF0000'),
     --Parcours C
     --Ressources cœur de competences (RCC)
-    ('Cryptographie et Securite', 0, 4, '08', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO_C')),
-    ('Reseau Avance', 0, 4, '09', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO_C')),
+    ('Cryptographie et Securite', 0, 4, '08', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO_C'), '#FF0000'),
+    ('Reseau Avance', 0, 4, '09', 'RCC', (SELECT id FROM university.specializations WHERE code = 'INFO_C'), '#FF0000'),
     --Ressources transversales (RT)
-    ('Analyse et Visualisation', 0, 4, '10', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_C')),
-    ('Management Avance de SI', 0, 4, '11', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_C')),
+    ('Analyse et Visualisation', 0, 4, '10', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_C'), '#FF0000'),
+    ('Management Avance de SI', 0, 4, '11', 'RT', (SELECT id FROM university.specializations WHERE code = 'INFO_C'), '#FF0000'),
     -- SAE
-    ('Developpement d une application web', 0, 4, '01', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO_A')),
-    ('Developpement avec Base de Donnees', 0, 4, '01', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO_C'))
+    ('Developpement d une application web', 0, 4, '01', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO_A'), '#FF0000'),
+    ('Developpement avec Base de Donnees', 0, 4, '01', 'SAE', (SELECT id FROM university.specializations WHERE code = 'INFO_C'), '#FF0000')
 ;

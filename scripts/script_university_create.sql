@@ -153,7 +153,7 @@ CREATE TABLE university.courses(
 	course_type courses_types NOT NULL,
 
     -- FOREIGN KEY (personals)
-    personal_id INT NOT NULL,
+    -- personal_id INT NOT NULL,
     -- FOREIGN KEY (teachings)
     teaching_id INT NOT NULL
 ) ;
@@ -223,7 +223,10 @@ CREATE TABLE university.teachings (
     -- -- FOREIGN KEY (departments)
     -- department_id INT NOT NULL,
     -- FOREIGN KEY (departments)
-    specialization_id INT NOT NULL
+    specialization_id INT NOT NULL,
+
+    --Color of teaching in the timetable
+    teaching_color VARCHAR(7)
 );
 
 -- Link table N to N
@@ -291,10 +294,10 @@ ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- For the table 'courses'
 -- \echo [INFO] Alter table university.courses
-ALTER TABLE university.courses
-ADD CONSTRAINT fk_university_courses_personals
-FOREIGN KEY (personal_id) REFERENCES university.personals(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
+-- ALTER TABLE university.courses
+-- ADD CONSTRAINT fk_university_courses_personals
+-- FOREIGN KEY (personal_id) REFERENCES university.personals(id)
+-- ON DELETE RESTRICT ON UPDATE CASCADE;
 
 ALTER TABLE university.courses
 ADD CONSTRAINT fk_university_courses_teachings

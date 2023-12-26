@@ -129,5 +129,6 @@ class teaching_service(Service):
             'sequence': row[4],             # La séquence
             'description': row[5],          # La description
             'teaching_type': row[6],        # Le type d'enseignement
-            'specialization_id': row[7]     # L'ID de la spécialisation associée à l'enseignement
+            'specialization_id': row[7],    # L'ID de la spécialisation associée à l'enseignement
+            'teaching_color': row[8]        # La couleur d'un enseignement dans l'emploi du temps
         }
