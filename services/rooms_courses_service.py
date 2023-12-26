@@ -35,7 +35,7 @@ class rooms_courses_service(Service):
         course_id = data.get('course_id', '')
         rooms_id = data.get('rooms_id', '')
     
-        query = "INSERT INTO university.rooms_courses (code, capacity, has_computer, has_projector) VALUES ('%(course_id)s', '%(rooms_id)s') RETURNING id" % {'course_id': course_id, 'rooms_id': rooms_id}
+        query = "INSERT INTO university.rooms_courses (course_id, rooms_id) VALUES ('%(course_id)s', '%(rooms_id)s') RETURNING id" % {'course_id': course_id, 'rooms_id': rooms_id}
         conn = self.get_connection()
         new_rooms_courses_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)

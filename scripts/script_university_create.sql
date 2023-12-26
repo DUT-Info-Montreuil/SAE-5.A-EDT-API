@@ -184,6 +184,21 @@ CREATE TABLE university.rooms_courses (
     references university.rooms (id) on delete restrict on update cascade
 ) ;
 
+CREATE TABLE university.personals_courses (
+    -- PRIMARY KEY
+    id SERIAL constraint pk_university_personals_courses PRIMARY KEY CONSTRAINT ck_university_personals_courses_id CHECK(id > 0),
+    -- FOREIGN KEY (courses)
+    course_id INT NOT NULL,
+    constraint fk_university_rooms_courses_courses foreign key (course_id)
+    references university.courses (id) on delete restrict on update cascade,
+
+    -- FOREIGN KEY (groups)
+    personal_id INT NOT NULL,
+    constraint fk_university_personal_courses_personal foreign key (personal_id)
+    references university.personals (id) on delete restrict on update cascade
+) ;
+
+
 -- reminders
 -- \echo [INFO] Create the university.reminders table
 CREATE TABLE university.reminders(

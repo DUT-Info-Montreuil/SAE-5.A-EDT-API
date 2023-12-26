@@ -13,7 +13,7 @@ rooms_courses_app = Blueprint('rooms_courses_app', __name__)
 # Recuperer data
 # ----------------------------------------------------------
 
-@rooms_courses_app.route('/roomscourses/get', methods=['GET'])
+@rooms_courses_app.route('/rooms_courses/get', methods=['GET'])
 def get_rooms_courses():
     """ Get all rooms_courses in JSON format """
     try:
@@ -26,19 +26,25 @@ def get_rooms_courses():
 @rooms_courses_app.route('/rooms_courses/get/<int:id>', methods=['GET'])
 def get_rooms_courses_by_id(id):
     """ Get a rooms_courses by ID in JSON format """
-    data = request.json
-    _service = rooms_courses_service()
-    returnStatement = _service.get_rooms_courses_by_id(id)
-    return jsonify(returnStatement)
+    try:
+        data = request.json
+        _service = rooms_courses_service()
+        returnStatement = _service.get_rooms_courses_by_id(id)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 @rooms_courses_app.route('/rooms_courses/identify', methods=['POST'])
 def identify_rooms_courses():
     """Identify a rooms_courses by code in JSON format"""
-    data = request.json
-    _service = rooms_courses_service()
-    returnStatement = _service.identify_rooms(data)
-    return jsonify(returnStatement)
-
+    try:
+        data = request.json
+        _service = rooms_courses_service()
+        returnStatement = _service.identify_rooms(data)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
+    
 # ----------------------------------------------------------
 # Add / Delete / Update
 # ----------------------------------------------------------

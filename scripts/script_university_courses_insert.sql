@@ -64,6 +64,17 @@ VALUES
     (4, 4)
 ;
 
+INSERT INTO university.personals_courses (course_id, personal_id)
+VALUES
+    (2, 1),
+    (2, 2), 
+    (4, 2), 
+	(4, 1),
+    (6, 4)
+;
+
+
+
 -- INSERT INTO university.courses (starttime, endtime, course_type, personal_id, rooms_id, teaching_id)
 -- VALUES
 
