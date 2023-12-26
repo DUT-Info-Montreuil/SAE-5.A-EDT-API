@@ -224,10 +224,7 @@ CREATE TABLE university.teachings (
     -- -- FOREIGN KEY (departments)
     -- department_id INT NOT NULL,
     -- FOREIGN KEY (departments)
-    specialization_id INT NOT NULL,
-
-    --Color of teaching in the timetable
-    color VARCHAR(7)
+    specialization_id INT NOT NULL
 );
 
 -- Link table N to N
