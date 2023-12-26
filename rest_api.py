@@ -12,10 +12,7 @@ app = Flask(__name__)
 # === region : JWT ===
 from flask_jwt_extended import JWTManager
 from datetime import timedelta
-from config import config
-
-import connect_pg
-from controllers import *
+###########################################################
 
 from flask_swagger_ui import get_swaggerui_blueprint
 
@@ -42,7 +39,7 @@ swaggerui_blueprint = get_swaggerui_blueprint(
 )
 
 app.register_blueprint(swaggerui_blueprint)
-
+######################################################################
 # Config JWT
 app.config["JWT_SECRET_KEY"] = "hcohen_aclaude_achetouani_bseydi_mtoure"
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(minutes=15) 
