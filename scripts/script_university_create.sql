@@ -227,7 +227,7 @@ CREATE TABLE university.teachings (
     specialization_id INT NOT NULL,
 
     --Color of teaching in the timetable
-    teaching_color VARCHAR(7)
+    color VARCHAR(7)
 );
 
 -- Link table N to N
