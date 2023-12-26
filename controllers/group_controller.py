@@ -16,24 +16,33 @@ group_app = Blueprint('group_app', __name__)
 @group_app.route('/groups/get', methods=['GET'])
 def get_groups():
     """ Get all groups in JSON format """
-    _service = group_service()
-    returnStatement = _service.get_groups()
-    return jsonify(returnStatement)
+    try:
+        _service = group_service()
+        returnStatement = _service.get_groups()
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @group_app.route('/groups/get/<int:id>', methods=['GET'])
 def get_group_by_id(id):
     """ Get a group by ID in JSON format """
-    _service = group_service()
-    returnStatement = _service.get_group_by_id(id)
-    return jsonify(returnStatement)
+    try:
+        _service = group_service()
+        returnStatement = _service.get_group_by_id(id)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @group_app.route('/groups/identify', methods=['POST'])
 def identify_group():
     """Identify a group by promotion and type in JSON format"""
-    data = request.json
-    _service = group_service()
-    returnStatement = _service.identify_group(data)
-    return jsonify(returnStatement)
+    try:
+        data = request.json
+        _service = group_service()
+        returnStatement = _service.identify_group(data)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 # ----------------------------------------------------------
 # Add / Delete / Update

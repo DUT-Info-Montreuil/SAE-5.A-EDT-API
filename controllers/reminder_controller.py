@@ -17,25 +17,34 @@ reminder_app = Blueprint('reminder_app', __name__)
 @reminder_app.route('/reminders/get', methods=['GET'])
 def get_reminders():
     """ Get all reminders in JSON format """
-    _service = reminder_service()
-    returnStatement = _service.get_reminders()
-    return jsonify(returnStatement)
+    try:
+        _service = reminder_service()
+        returnStatement = _service.get_reminders()
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @reminder_app.route('/reminders/get/<int:id>', methods=['GET'])
 def get_reminder_by_id(id):
     """ Get a reminder by ID in JSON format """
-    _service = reminder_service()
-    returnStatement = _service.get_reminder_by_id(id)
-    return jsonify(returnStatement)
+    try:
+        _service = reminder_service()
+        returnStatement = _service.get_reminder_by_id(id)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @reminder_app.route('/reminders/identify', methods=['POST'])
 def identify_reminder():
     """Identify a reminder by course_id and subgroup_id in JSON format"""
-    data = request.json
-    _service = reminder_service()
-    returnStatement = _service.identify_reminder(data)
-    return jsonify(returnStatement)
-
+    try:
+        data = request.json
+        _service = reminder_service()
+        returnStatement = _service.identify_reminder(data)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
+    
 # ----------------------------------------------------------
 # Add / Delete / Update
 # ----------------------------------------------------------

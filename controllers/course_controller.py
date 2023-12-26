@@ -34,49 +34,49 @@ def get_course_by_id(id):
 #@jwt_required()
 def get_timetable_by_room():
     """ Get timetable by group"""
-    data = request.json
-    _service = course_service()
-    returnStatement = _service.get_timetable_by_room(data)
-    if returnStatement == 'Invalid argument':
-        return returnStatement
-    else:
+    try:
+        data = request.json
+        _service = course_service()
+        returnStatement = _service.get_timetable_by_room(data)
         return jsonify({'edt' : returnStatement})
-    
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
+
 @course_app.route('/courses/timetable/by-teacher', methods=['POST'])
 #@jwt_required()   
 def get_timetable_by_teacher():
     """ Get timetable by teacher_id"""
-    data = request.json
-    _service = course_service()
-    returnStatement = _service.get_timetable_by_teacher(data)
-    if returnStatement == 'Invalid argument':
-        return returnStatement
-    else:
+    try:    
+        data = request.json
+        _service = course_service()
+        returnStatement = _service.get_timetable_by_teacher(data)
         return jsonify({'edt' : returnStatement})
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
     
 @course_app.route('/courses/timetable/by-department-and-promotion', methods=['POST'])
 #@jwt_required()   
 def get_timetable_by_department():
-    """ Get timetable by teacher_id"""
-    data = request.json
-    _service = course_service()
-    returnStatement = _service.get_timetable_by_department(data)
-    if returnStatement == 'Invalid argument':
-        return returnStatement
-    else:
+    """ Get timetable by teacher_id"""  
+    try:
+        data = request.json
+        _service = course_service()
+        returnStatement = _service.get_timetable_by_department(data)
         return jsonify({'edt' : returnStatement})
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
     
 @course_app.route('/courses/timetable/by-student', methods=['POST'])
 #@jwt_required()   
 def get_timetable_by_student():
     """ Get timetable by teacher_id"""
-    data = request.json
-    _service = course_service()
-    returnStatement = _service.get_timetable_by_student(data)
-    if returnStatement == 'Invalid argument':
-        return returnStatement
-    else:
+    try:
+        data = request.json
+        _service = course_service()
+        returnStatement = _service.get_timetable_by_student(data)
         return jsonify({'edt' : returnStatement})
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
     
 # Identifier si user = prof ou student
 # @ to-do

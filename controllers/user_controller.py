@@ -5,48 +5,47 @@ userService = UserService()
 
 @user_app.route('/users', methods=['GET'])
 def get_users():
-    users = userService.get_all_users()
-    return jsonify({'users': users})
+    try:
+        users = userService.get_all_users()
+        return jsonify({'users': users})
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 @user_app.route('/users/<int:user_id>', methods=['GET'])
 def get_user_by_id(user_id):
-    user = userService.get_user_by_id(user_id)
-
-    if user:
+    try:
+        user = userService.get_user_by_id(user_id)
         return jsonify({'user': user})
-    else:
-        return jsonify({'message': 'User not found'}), 404
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 
 @user_app.route('/users/find', methods=['POST'])
 def find_user():
-    data = request.get_json()
-    user = userService.find_user(**data)
-
-    if user:
-        return jsonify({'user': user})
-    else:
-        return jsonify({'message': 'User not found'}), 404
+    try:
+        data = request.get_json()
+        userService.find_user(**data)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
     
 @user_app.route('/users/<int:user_id>', methods=['PUT'])
 def update_user(user_id):
-    data = request.get_json()
-    success = userService.update_user(user_id, data)
-
-    if success:
+    try:
+        data = request.get_json()
+        userService.update_user(user_id, data)
         return jsonify({'message': 'User updated successfully'})
-    else:
-        return jsonify({'message': 'User not found'}), 404
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
     
 @user_app.route('/users/<int:user_id>', methods=['DELETE'])
 def delete_user(user_id):
-    success = userService.delete_user(user_id)
-
-    if success:
+    try:
+        userService.delete_user(user_id)
         return jsonify({'message': 'User deleted successfully'})
-    else:
-        return jsonify({'message': 'User not found'}), 404
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
+   
 #should it be protected?, do we need an endpoint ? 
 @user_app.route('/user/add', methods=['PUT'])
 def add_user():

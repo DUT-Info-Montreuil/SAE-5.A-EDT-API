@@ -16,25 +16,33 @@ room_app = Blueprint('room_app', __name__)
 @room_app.route('/rooms/get', methods=['GET'])
 def get_rooms():
     """ Get all rooms in JSON format """
-    _service = room_service()
-    returnStatement = _service.get_rooms()
-    return jsonify(returnStatement)
+    try:
+        _service = room_service()
+        returnStatement = _service.get_rooms()
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @room_app.route('/rooms/get/<int:id>', methods=['GET'])
 def get_room_by_id(id):
     """ Get a room by ID in JSON format """
-    data = request.json
-    _service = room_service()
-    returnStatement = _service.get_room_by_id(id)
-    return jsonify(returnStatement)
+    try:
+        _service = room_service()
+        returnStatement = _service.get_room_by_id(id)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @room_app.route('/rooms/identify', methods=['POST'])
 def identify_room():
     """Identify a room by code in JSON format"""
-    data = request.json
-    _service = room_service()
-    returnStatement = _service.identify_room(data)
-    return jsonify(returnStatement)
+    try:
+        data = request.json
+        _service = room_service()
+        returnStatement = _service.identify_room(data)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 # ----------------------------------------------------------
 # Add / Delete / Update

@@ -15,16 +15,22 @@ absent_app = Blueprint('absent_app', __name__)
 @absent_app.route('/absents/get', methods=['GET'])
 def get_absents():
     """ Get all absents in JSON format """
-    _service = absent_service()
-    returnStatement = _service.get_absents()
-    return jsonify(returnStatement)
+    try:
+        _service = absent_service()
+        returnStatement = _service.get_absents()
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @absent_app.route('/absents/get/<int:id>', methods=['GET'])
 def get_absent_by_id(id):
-    """ Get a absent by ID in JSON format """
-    _service = absent_service()
-    returnStatement = _service.get_absent_by_id(id)
-    return jsonify(returnStatement)
+    """ Get an absent by ID in JSON format """
+    try:
+        _service = absent_service()
+        returnStatement = _service.get_absent_by_id(id)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 # ----------------------------------------------------------
 # Add / Delete / Update

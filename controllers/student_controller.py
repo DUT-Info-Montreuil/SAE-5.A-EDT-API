@@ -17,49 +17,65 @@ student_app = Blueprint('student_app', __name__)
 @student_app.route('/students/get', methods=['GET'])
 def get_students():
     """ Get all students in JSON format """
-    _service = student_service()
-    returnStatement = _service.get_students()
-    return jsonify(returnStatement)
+    try:
+        _service = student_service()
+        returnStatement = _service.get_students()
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 @student_app.route('/students/id/<string:student_number>', methods=['GET'])
 def get_student_by_student_number(student_number):
     """ Get a student by student_number in JSON format """
-    
-    _service = student_service()
-    returnStatement = _service.get_student_by_student_number(student_number)
-    return jsonify(returnStatement)
+    try:      
+        _service = student_service()
+        returnStatement = _service.get_student_by_student_number(student_number)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 @student_app.route('/students/department/<string:department_id>', methods=['GET'])
 def get_student_by_department(department_id):
-    """ Get a student by department in JSON format """
-    
-    _service = student_service()
-    returnStatement = _service.get_student_by_department(department_id)
-    return jsonify(returnStatement)
+    """ Get a student by department in JSON format """ 
+    try:      
+        _service = student_service()
+        returnStatement = _service.get_student_by_department(department_id)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 @student_app.route('/students/groups', methods=['POST'])
 def get_student_by_group():
     """ Get a student by department in JSON format """
-    data = request.json
-    _service = student_service()
-    returnStatement = _service.get_student_by_group(data)
-    return jsonify(returnStatement)
+    try:      
+        data = request.json
+        _service = student_service()
+        returnStatement = _service.get_student_by_group(data)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 @student_app.route('/students/promotion-and-department', methods=['POST'])
 def get_student_by_prom():
     """ Get a student by department in JSON format """
-    data = request.json
-    _service = student_service()
-    returnStatement = _service.get_student_by_prom(data)
-    return jsonify(returnStatement)
+    try:      
+        data = request.json
+        _service = student_service()
+        returnStatement = _service.get_student_by_prom(data)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 @student_app.route('/students/subgroups', methods=['POST'])
 def get_student_by_subgroup():
     """ Get a student by department in JSON format """
-    data = request.json
-    _service = student_service()
-    returnStatement = _service.get_student_by_subgroup(data)
-    return jsonify(returnStatement)
+    try:      
+        data = request.json
+        _service = student_service()
+        returnStatement = _service.get_student_by_subgroup(data)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 
 # ----------------------------------------------------------

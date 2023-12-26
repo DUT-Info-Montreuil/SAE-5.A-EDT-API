@@ -16,24 +16,34 @@ subgroup_app = Blueprint('subgroup_app', __name__)
 @subgroup_app.route('/subgroups/get', methods=['GET'])
 def get_subgroups():
     """ Get all subgroups in JSON format """
-    _service = subgroup_service()
-    returnStatement = _service.get_subgroups()
-    return jsonify(returnStatement)
+    try:
+        _service = subgroup_service()
+        returnStatement = _service.get_subgroups()
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
+
 
 @subgroup_app.route('/subgroups/get/<int:id>', methods=['GET'])
 def get_subgroup_by_id(id):
     """ Get a subgroup by ID in JSON format """
-    _service = subgroup_service()
-    returnStatement = _service.get_subgroup_by_id(id)
-    return jsonify(returnStatement)
+    try:
+        _service = subgroup_service()
+        returnStatement = _service.get_subgroup_by_id()
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 @subgroup_app.route('/subgroups/identify', methods=['POST'])
 def identify_subgroup():
     """Identify a subgroup by name and group_id in JSON format"""
-    data = request.json
-    _service = subgroup_service()
-    returnStatement = _service.identify_subgroup(data)
-    return jsonify(returnStatement)
+    try:
+        data = request.json
+        _service = subgroup_service()
+        returnStatement = _service.identify_subgroup(data)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 # ----------------------------------------------------------
 # Add / Delete / Update
