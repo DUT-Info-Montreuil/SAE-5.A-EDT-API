@@ -101,7 +101,7 @@ def add_course():
     else:
         return jsonify({"message": "Course not found!"}), 404
 
-@course_app.route('/courses/delete/<int:id>', methods=['GET'])
+@course_app.route('/courses/delete/<int:id>', methods=['DELETE'])
 def delete_course_by_id(id):
     """ Delete a course by ID in JSON format """
     _service = course_service()

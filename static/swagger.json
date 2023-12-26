@@ -1,0 +1,272 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "Flask Service API",
+      "description": "API for managing edt app",
+      "version": "1.0.0"
+    },
+    "paths": {
+      "/courses/get": {
+        "get": {
+          "tags": ["Courses"],
+          "summary": "Get all courses",
+          "description": "Get all courses in JSON format",
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "courses": []
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/courses/get/{id}": {
+        "get": {
+          "tags": ["Courses"],
+          "summary": "Get a course by ID",
+          "description": "Get a course by ID in JSON format",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "course": {}
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Course not found"
+            }
+          }
+        }
+      },
+      "/courses/timetable/by-room": {
+        "post": {
+          "tags": ["Courses"],
+          "summary": "Get timetable by room",
+          "description": "Get timetable by group",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "room_id": 1
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "edt": []
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid argument"
+            }
+          }
+        }
+      },
+      "/courses/timetable/by-teacher": {
+        "post": {
+          "tags": ["Courses"],  
+          "summary": "Get timetable by teacher",
+          "description": "Get timetable by teacher_id",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "teacher_id": 1
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "edt": []
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid argument"
+            }
+          }
+        }
+      },
+      "/courses/timetable/by-department-and-promotion": {
+        "post": {
+          "tags": ["Courses"],
+          "summary": "Get timetable by department",
+          "description": "Get timetable by department and promotion",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "department_id": 1,
+                  "promotion": "2023"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "edt": []
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid argument"
+            }
+          }
+        }
+      },
+      "/courses/timetable/by-student": {
+        "post": {
+          "tags": ["Courses"],
+          "summary": "Get timetable by student",
+          "description": "Get timetable by student_id",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "student_id": 1
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "edt": []
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid argument"
+            }
+          }
+        }
+      },
+      "/courses/add": {
+        "put": {
+          "tags": ["Courses"],
+          "summary": "Add a course",
+          "description": "Add a course by data in JSON format",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "course_name": "Math",
+                  "teacher_id": 1,
+                  "room_id": 101
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Course successfully added!"
+            },
+            "404": {
+              "description": "Course not found"
+            }
+          }
+        }
+      },
+      "/courses/delete/{id}": {
+        "delete": {
+          "tags": ["Courses"],
+          "summary": "Delete a course by ID",
+          "description": "Delete a course by ID in JSON format",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Course deleted successfully!"
+            },
+            "404": {
+              "description": "Course not found"
+            }
+          }
+        }
+      },
+      "/courses/update/{id}": {
+        "patch": {
+          "tags": ["Courses"],
+          "summary": "Update a course by ID",
+          "description": "Update a course by ID using data in JSON format",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "course_name": "Updated Math"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Course updated successfully!"
+            },
+            "404": {
+              "description": "Course not found"
+            }
+          }
+        }
+      }
+    }
+  }
+  
