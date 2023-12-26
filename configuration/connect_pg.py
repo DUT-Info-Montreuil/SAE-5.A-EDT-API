@@ -1,8 +1,8 @@
 #!/usr/bin/python
 import psycopg2
-from config import config
+from configuration.config import config
  
-def connect(filename='config.ini', section='postgresql'):
+def connect(filename='configuration/config.ini', section='postgresql'):
     """ Connect to the PostgreSQL database server """
     conn = None
     try:
@@ -59,10 +59,10 @@ def get_query(conn, query):
         if conn is not None:
             return rows
 
-def execute_sql_script(script_file,filename='config.ini', section='postgresql'):
+def execute_sql_script(script_file, filename='configuration/config.ini', section='postgresql'):
     """Execute an SQL script to the database."""
     
-    result = "SQL script executed successfully."
+    result = True ,"SQL script executed successfully."
     try:
         params = config(filename, section)
         print('Connecting to the PostgreSQL database...')
@@ -78,7 +78,7 @@ def execute_sql_script(script_file,filename='config.ini', section='postgresql'):
 
     except (Exception, psycopg2.DatabaseError) as error:
         print("Error executing SQL script:", error)
-        result = "Error executing SQL script:"
+        result = False ,"Error executing SQL script:"
 
     finally:
         cur.close()

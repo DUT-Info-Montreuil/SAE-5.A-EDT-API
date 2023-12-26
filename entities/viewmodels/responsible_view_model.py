@@ -1,4 +1,4 @@
-class ResponsibleModel:
+class ResponsibleViewModel:
     def __init__(self, id, personal_id, teaching_id, personal_last_name, personal_first_name, teaching_title):
         self.id = id
         self.personal_id = personal_id
@@ -29,7 +29,7 @@ class ResponsibleModel:
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
-        responsible_instance = ResponsibleModel(
+        responsible_instance = ResponsibleViewModel(
             data.get('id', data_if_not_found['id']),
             data.get('personal_id', data_if_not_found['personal_id']),
             data.get('teaching_id', data_if_not_found['teaching_id']),

@@ -1,4 +1,4 @@
-class ReminderModel:
+class ReminderViewModel:
     def __init__(self, id, name, description, course_id, course_startTime, course_duree, course_course_type):
         self.id = id
         self.name = name
@@ -29,7 +29,7 @@ class ReminderModel:
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
-        reminder_instance = ReminderModel(
+        reminder_instance = ReminderViewModel(
             data.get('id', data_if_not_found['id']),
             data.get('name', data_if_not_found['name']),
             data.get('description', data_if_not_found['description']),

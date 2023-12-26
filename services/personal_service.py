@@ -1,9 +1,25 @@
 from services.main_service import Service
 
-import connect_pg
+from configuration import connect_pg
 
 class personal_service(Service):
     
+
+    ## stat
+
+    def total_hours(self, id):
+        """Identify a course by description, starttime, duree, course_type, personal_id, and rooms_id in JSON format"""
+        # data = request.json
+        #Rajouter condition, matière toussa
+        query = "SELECT SUM(endtime-starttime) FROM university.courses WHERE personal_id = " + str(id)
+        print(query)
+        conn = self.get_connection()
+        rows = connect_pg.get_query(conn, query)
+        if rows[0][0] is None:
+            return {}
+        connect_pg.disconnect(conn)
+        return { "temps": rows[0][0].total_seconds()  / 60 }
+
     # Personals API
     # university.personals(@id, last_name, first_name, mail, phone_number)
     def get_personals(self):

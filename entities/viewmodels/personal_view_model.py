@@ -1,4 +1,4 @@
-class PersonalModel:
+class PersonalViewModel:
     def __init__(self, id, last_name, first_name, mail, phone_number):
         self.id = id
         self.last_name = last_name
@@ -23,7 +23,7 @@ class PersonalModel:
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
-        personal_instance = PersonalModel(
+        personal_instance = PersonalViewModel(
             data.get('id', data_if_not_found['id']),
             data.get('last_name', data_if_not_found['last_name']),
             data.get('first_name', data_if_not_found['first_name']),

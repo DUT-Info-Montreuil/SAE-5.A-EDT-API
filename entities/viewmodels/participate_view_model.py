@@ -1,4 +1,4 @@
-class ParticipateModel:
+class ParticipateViewModel:
     def __init__(self, id, course_id, subgroup_id, course_description, course_startTime, course_duree, course_type, subgroup_name, group_type, group_promotion, department_name):
         self.id = id
         self.course_id = course_id
@@ -39,7 +39,7 @@ class ParticipateModel:
         if data_if_not_found is None:
             data_if_not_found = {key: '' for key in data}
 
-        participate_instance = ParticipateModel(
+        participate_instance = ParticipateViewModel(
             data.get('id', data_if_not_found['id']),
             data.get('course_id', data_if_not_found['course_id']),
             data.get('subgroup_id', data_if_not_found['subgroup_id']),
