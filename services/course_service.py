@@ -40,16 +40,20 @@ class course_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code 
+        query = """SELECT courses.description, course_type, ARRAY_AGG(DISTINCT personals.personal_code), teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), ARRAY_AGG(DISTINCT rooms.code)
                     FROM university.courses 
                     INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
-                    INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
 
-                    INNER JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
-                    INNER JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
+                    LEFT JOIN university.personals_courses ON university.personals_courses.course_id = university.courses.id
+                    LEFT JOIN university.personals ON university.personals_courses.personal_id = university.personals.id
+
+                    LEFT JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
+                    LEFT JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
 
                     WHERE university.rooms_courses.rooms_id =""" +  str(room_id) + """ AND
-                    starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
+                    starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'
+                    
+                    GROUP BY courses.description, course_type, teachings.title, courses.starttime, courses.endtime """
         return self.execute_query_and_get_statement_timetable(query)
     
     def get_timetable_by_teacher(self, data):
@@ -63,16 +67,20 @@ class course_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code 
+        query = """SELECT courses.description, course_type, ARRAY_AGG(DISTINCT personals.personal_code), teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), ARRAY_AGG(DISTINCT rooms.code)
                     FROM university.courses 
                     INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
-                    INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
-                    
-                    INNER JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
-                    INNER JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
+
+                    LEFT JOIN university.personals_courses ON university.personals_courses.course_id = university.courses.id
+                    LEFT JOIN university.personals ON university.personals_courses.personal_id = university.personals.id
+
+                    LEFT JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
+                    LEFT JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
                     
                     WHERE university.personals.id =""" +  str(personal_id) + """ AND
-                    starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
+                    starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'
+                    
+                    GROUP BY courses.description, course_type, teachings.title, courses.starttime, courses.endtime"""
         return self.execute_query_and_get_statement_timetable(query)
     
     def get_timetable_by_department(self, data):
@@ -87,14 +95,16 @@ class course_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code
+        query = """SELECT courses.description, course_type, ARRAY_AGG(DISTINCT personals.personal_code), teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), ARRAY_AGG(DISTINCT rooms.code)
                 FROM university.courses
 
-                INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
                 INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
-                
-                INNER JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
-                INNER JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
+
+                LEFT JOIN university.personals_courses ON university.personals_courses.course_id = university.courses.id
+                LEFT JOIN university.personals ON university.personals_courses.personal_id = university.personals.id
+
+                LEFT JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
+                LEFT JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
 
                 INNER JOIN university.participates ON university.courses.id = university.participates.course_id
                 INNER JOIN university.subgroups ON university.participates.subgroup_id = university.subgroups.id
@@ -102,7 +112,9 @@ class course_service(Service):
 
                 WHERE university.groups.promotion =""" +  str(promotion) + """ AND
                 university.groups.department_id =""" + str(department_id) + """ AND
-                starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
+                starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'
+                
+                GROUP BY courses.description, course_type, teachings.title, courses.starttime, courses.endtime"""
 
         return self.execute_query_and_get_statement_timetable(query)
     
@@ -119,20 +131,24 @@ class course_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.description, course_type, personals.personal_code, teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), rooms.code
+        query = """SELECT courses.description, course_type, ARRAY_AGG(DISTINCT personals.personal_code), teachings.title, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), ARRAY_AGG(DISTINCT rooms.code)
                 FROM university.courses
 
-                INNER JOIN university.personals ON university.courses.personal_id = university.personals.id
                 INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
-                
-                INNER JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
-                INNER JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
+
+                LEFT JOIN university.personals_courses ON university.personals_courses.course_id = university.courses.id
+                LEFT JOIN university.personals ON university.personals_courses.personal_id = university.personals.id
+
+                LEFT JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
+                LEFT JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
 
                 INNER JOIN university.participates ON university.courses.id = university.participates.course_id
                 INNER JOIN university.students ON university.participates.subgroup_id = university.students.subgroup_id
 
-                WHERE university.students.student_number = '""" +  str(student_id) + """' AND
-                starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
+                WHERE university.students.id =""" +  str(student_id) + """ AND
+                starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'
+                
+                GROUP BY courses.description, course_type, teachings.title, courses.starttime, courses.endtime """  
         print(query)
         return self.execute_query_and_get_statement(query)
     
@@ -238,8 +254,6 @@ class course_service(Service):
             'starttime': row[2],       # L'heure de début du cours
             'endtime': row[3],         # L'heure de la fin du cours
             'course_type': row[4],     # Le type de cours
-            #'personal_id': row[5],     # L'ID du personnel associé au cours
-            #'rooms_id': row[6],        # L'ID de la salle associée au cours
             'teaching_id': row[5]      # L'ID de l'enseignement associé au cours
         }
     
