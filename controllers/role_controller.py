@@ -16,24 +16,33 @@ role_app = Blueprint('role_app', __name__)
 @role_app.route('/roles/get', methods=['GET'])
 def get_roles():
     """ Get all roles in JSON format """
-    _service = role_service()
-    returnStatement = _service.get_roles()
-    return jsonify(returnStatement)
+    try:
+        _service = role_service()
+        returnStatement = _service.get_roles()
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @role_app.route('/roles/get/<int:id>', methods=['GET'])
 def get_role_by_id(id):
     """ Get a role by ID in JSON format """
-    _service = role_service()
-    returnStatement = _service.get_role_by_id(id)
-    return jsonify(returnStatement)
+    try:
+        _service = role_service()
+        returnStatement = _service.get_role_by_id(id)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @role_app.route('/roles/identify', methods=['POST'])
 def identify_role():
     """Identify a role by name, and personal_id in JSON format"""
-    data = request.json
-    _service = role_service()
-    returnStatement = _service.identify_role(data)
-    return jsonify(returnStatement)
+    try:
+        data = request.json
+        _service = role_service()
+        returnStatement = _service.identify_role(data)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 # ----------------------------------------------------------
 # Add / Delete / Update

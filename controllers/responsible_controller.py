@@ -16,24 +16,33 @@ responsible_app = Blueprint('responsible_app', __name__)
 @responsible_app.route('/responsibles/get', methods=['GET'])
 def get_responsibles():
     """ Get all responsibles in JSON format """
-    _service = responsible_service()
-    returnStatement = _service.get_responsibles()
-    return jsonify(returnStatement)
+    try:
+        _service = responsible_service()
+        returnStatement = _service.get_responsibles()
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @responsible_app.route('/responsibles/get/<int:id>', methods=['GET'])
 def get_responsible_by_id(id):
     """ Get a responsible by ID in JSON format """
-    _service = responsible_service()
-    returnStatement = _service.get_responsible_by_id(id)
-    return jsonify(returnStatement)
+    try:
+        _service = responsible_service()
+        returnStatement = _service.get_responsible_by_id(id)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @responsible_app.route('/responsibles/identify', methods=['POST'])
 def identify_responsible():
     """Identify a responsible by course_id and subgroup_id in JSON format"""
-    data = request.json
-    _service = responsible_service()
-    returnStatement = _service.identify_responsible(data)
-    return jsonify(returnStatement)
+    try:
+        data = request.json
+        _service = responsible_service()
+        returnStatement = _service.identify_responsible(data)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 # ----------------------------------------------------------
 # Add / Delete / Update

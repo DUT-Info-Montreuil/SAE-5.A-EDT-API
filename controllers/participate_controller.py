@@ -16,24 +16,33 @@ participate_app = Blueprint('participate_app', __name__)
 @participate_app.route('/participates/get', methods=['GET'])
 def get_participates():
     """ Get all participates in JSON format """
-    _service = participate_service()
-    returnStatement = _service.get_participates()
-    return jsonify(returnStatement)
+    try:
+        _service = participate_service()
+        returnStatement = _service.get_participates()
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @participate_app.route('/participates/get/<int:id>', methods=['GET'])
 def get_participate_by_id(id):
     """ Get a participate by ID in JSON format """
-    _service = participate_service()
-    returnStatement = _service.get_participate_by_id(id)
-    return jsonify(returnStatement)
+    try:
+        _service = participate_service()
+        returnStatement = _service.get_participate_by_id(id)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @participate_app.route('/participates/identify', methods=['POST'])
 def identify_participate():
     """Identify a participate by course_id and subgroup_id in JSON format"""
-    data = request.json
-    _service = participate_service()
-    returnStatement = _service.identify_participate(data)
-    return jsonify(returnStatement)
+    try:
+        data = request.json
+        _service = participate_service()
+        returnStatement = _service.identify_participate(data)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 
 # ----------------------------------------------------------

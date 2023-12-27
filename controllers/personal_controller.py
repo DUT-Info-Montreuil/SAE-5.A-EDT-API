@@ -24,25 +24,34 @@ def identify_course(id):
 @personal_app.route('/personals/get', methods=['GET'])
 def get_personals():
     """ Get all personals in JSON format """
-    _service = personal_service()
-    returnStatement = _service.get_personals()
-    return jsonify(returnStatement)
+    try:
+        _service = personal_service()
+        returnStatement = _service.get_personals()
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @personal_app.route('/personals/get/<int:id>', methods=['GET'])
 def get_personal_by_id(id):
     """ Get a personal by ID in JSON format """
-    _service = personal_service()
-    returnStatement = _service.get_personal_by_id(id)
-    return jsonify(returnStatement)
+    try:
+        _service = personal_service()
+        returnStatement = _service.get_personal_by_id(id)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @personal_app.route('/personals/identify', methods=['POST'])
 def identify_personal():
     """Identify a personal by mail in JSON format"""
-    data = request.json
-    _service = personal_service()
-    returnStatement = _service.identify_personal(data)
-    return jsonify(returnStatement)
-
+    try:
+        data = request.json
+        _service = personal_service()
+        returnStatement = _service.identify_personal(data)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": str(e)})
+    
 # ----------------------------------------------------------
 # Add / Delete / Update
 # ----------------------------------------------------------

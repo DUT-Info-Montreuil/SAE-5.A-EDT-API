@@ -16,24 +16,34 @@ teaching_app = Blueprint('teaching_app', __name__)
 @teaching_app.route('/teachings/get', methods=['GET'])
 def get_teachings():
     """ Get all teachings in JSON format """
-    _service = teaching_service()
-    returnStatement = _service.get_teachings()
-    return jsonify(returnStatement)
+    try:
+        _service = teaching_service()
+        returnStatement = _service.get_teachings()
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 @teaching_app.route('/teachings/get/<int:id>', methods=['GET'])
 def get_teaching_by_id(id):
     """ Get a teaching by ID in JSON format """
-    _service = teaching_service()
-    returnStatement = _service.get_teaching_by_id(id)
-    return jsonify(returnStatement)
+    try:
+        _service = teaching_service()
+        returnStatement = _service.get_teaching_by_id(id)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
+
 
 @teaching_app.route('/teachings/identify', methods=['POST'])
 def identify_teaching():
     """Identify a teaching by title, hour_number, semestre, sequence, and specialization_id in JSON format"""
-    data = request.json
-    _service = teaching_service()
-    returnStatement = _service.identify_teaching(data)
-    return jsonify(returnStatement)
+    try:
+        data = request.json
+        _service = teaching_service()
+        returnStatement = _service.identify_teaching(data)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 # ----------------------------------------------------------
 # Add / Delete / Update
