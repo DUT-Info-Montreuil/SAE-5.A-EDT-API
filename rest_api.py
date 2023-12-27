@@ -10,7 +10,7 @@ app = Flask(__name__)
 # === endregion : Flask ===
 
 # === region : JWT ===
-from flask_jwt_extended import JWTManager
+from flask_jwt_extended import JWTManager, jwt_required
 from datetime import timedelta
 
 app.config["JWT_SECRET_KEY"] = "hcohen_aclaude_achetouani_bseydi_mtoure"
@@ -27,6 +27,30 @@ init_app(app)
 
 # === region : blueprint_controller ===
 from controllers import *
+
+def apply_jwt_middleware(blueprint):
+    @blueprint.before_request
+    @jwt_required()
+    def before_request():
+        pass
+
+apply_jwt_middleware(department_app)
+apply_jwt_middleware(group_app)
+apply_jwt_middleware(subgroup_app)
+apply_jwt_middleware(personal_app)
+apply_jwt_middleware(specialization_app)
+apply_jwt_middleware(room_app)
+apply_jwt_middleware(teaching_app) 
+apply_jwt_middleware(role_app)
+apply_jwt_middleware(course_app) 
+apply_jwt_middleware(student_app) 
+apply_jwt_middleware(responsible_app) 
+apply_jwt_middleware(reminder_app)
+apply_jwt_middleware(absent_app)
+apply_jwt_middleware(participate_app) 
+apply_jwt_middleware(user_app)
+apply_jwt_middleware(rooms_courses_app) 
+apply_jwt_middleware(personals_courses_app) 
 
 app.register_blueprint(university_app) # Register the university controller
 app.register_blueprint(department_app) # Register the department controller

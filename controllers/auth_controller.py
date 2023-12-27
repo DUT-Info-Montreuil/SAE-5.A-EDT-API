@@ -50,6 +50,7 @@ def protected():
 
 #hash password / unshash
 
+#refresh token
 
 # deconnexion
 
@@ -58,3 +59,4 @@ def protected():
 # Create token
 
 # Delete token
+    #si nouveaux token delete ancien ? ou empecher creation token?
