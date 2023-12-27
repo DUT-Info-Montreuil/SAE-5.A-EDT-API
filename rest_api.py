@@ -45,6 +45,8 @@ app.register_blueprint(absent_app) # Register the absent controller
 app.register_blueprint(participate_app) # Register the participate controller
 app.register_blueprint(auth_app) # Register the autentification controller
 app.register_blueprint(user_app) # Register the user controller
+app.register_blueprint(rooms_courses_app) # Register the rooms_courses controller
+app.register_blueprint(personals_courses_app) # Register the personals_courses controller
 
 # === endregion : blueprint_controller ===
 

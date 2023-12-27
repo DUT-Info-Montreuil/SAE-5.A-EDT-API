@@ -153,9 +153,7 @@ CREATE TABLE university.courses(
 	course_type courses_types NOT NULL,
 
     -- FOREIGN KEY (personals)
-    personal_id INT NOT NULL,
-    -- FOREIGN KEY (rooms)
-    rooms_id INT NOT NULL,
+    -- personal_id INT NOT NULL,
     -- FOREIGN KEY (teachings)
     teaching_id INT NOT NULL
 ) ;
@@ -171,6 +169,35 @@ CREATE TABLE university.rooms(
 	has_computer boolean default true,
 	has_projector boolean default true
 ) ;
+
+CREATE TABLE university.rooms_courses (
+    -- PRIMARY KEY
+    id SERIAL constraint pk_university_rooms_courses PRIMARY KEY CONSTRAINT ck_university_rooms_courses_id CHECK(id > 0),
+    -- FOREIGN KEY (courses)
+    course_id INT NOT NULL,
+    constraint fk_university_rooms_courses_courses foreign key (course_id)
+    references university.courses (id) on delete restrict on update cascade,
+
+    -- FOREIGN KEY (groups)
+    rooms_id INT NOT NULL,
+    constraint fk_university_rooms_courses_rooms foreign key (rooms_id)
+    references university.rooms (id) on delete restrict on update cascade
+) ;
+
+CREATE TABLE university.personals_courses (
+    -- PRIMARY KEY
+    id SERIAL constraint pk_university_personals_courses PRIMARY KEY CONSTRAINT ck_university_personals_courses_id CHECK(id > 0),
+    -- FOREIGN KEY (courses)
+    course_id INT NOT NULL,
+    constraint fk_university_rooms_courses_courses foreign key (course_id)
+    references university.courses (id) on delete restrict on update cascade,
+
+    -- FOREIGN KEY (groups)
+    personal_id INT NOT NULL,
+    constraint fk_university_personal_courses_personal foreign key (personal_id)
+    references university.personals (id) on delete restrict on update cascade
+) ;
+
 
 -- reminders
 -- \echo [INFO] Create the university.reminders table
@@ -202,6 +229,7 @@ CREATE TABLE university.teachings (
     semestre INT NOT NULL, -- exemple : 5 for R5.X
     sequence VARCHAR(8) NOT NULL, -- exemple : "2" for RX.2 or "MP.09" for RX.MP.09
     description TEXT,
+    color VARCHAR(6),
 
     --Situations d’apprentissage et d’évaluation (SAÉ)
     --Ressources transversales (RT)
@@ -279,15 +307,10 @@ ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- For the table 'courses'
 -- \echo [INFO] Alter table university.courses
-ALTER TABLE university.courses
-ADD CONSTRAINT fk_university_courses_personals
-FOREIGN KEY (personal_id) REFERENCES university.personals(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
-
-ALTER TABLE university.courses
-ADD CONSTRAINT fk_university_courses_rooms
-FOREIGN KEY (rooms_id) REFERENCES university.rooms(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
+-- ALTER TABLE university.courses
+-- ADD CONSTRAINT fk_university_courses_personals
+-- FOREIGN KEY (personal_id) REFERENCES university.personals(id)
+-- ON DELETE RESTRICT ON UPDATE CASCADE;
 
 ALTER TABLE university.courses
 ADD CONSTRAINT fk_university_courses_teachings

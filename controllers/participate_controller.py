@@ -3,7 +3,10 @@ from flask import request
 from flask import Blueprint
 
 from services.participate_service import participate_service
-
+############################################
+##### ? INTEGRER CE CONTROLLER A COURS ?  #####
+############################################
+# Quand on créer cours ajouter participants?
 participate_app = Blueprint('participate_app', __name__)
 
 # Participates API
