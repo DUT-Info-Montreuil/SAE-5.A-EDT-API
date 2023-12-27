@@ -31,7 +31,6 @@ def get_course_by_id(id):
 # ----------------------------------------------------------
 
 @course_app.route('/courses/timetable/by-room', methods=['POST'])
-#@jwt_required()
 def get_timetable_by_room():
     """ Get timetable by group"""
     try:
@@ -43,7 +42,6 @@ def get_timetable_by_room():
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 @course_app.route('/courses/timetable/by-teacher', methods=['POST'])
-#@jwt_required()   
 def get_timetable_by_teacher():
     """ Get timetable by teacher_id"""
     try:    
@@ -55,7 +53,6 @@ def get_timetable_by_teacher():
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
     
 @course_app.route('/courses/timetable/by-department-and-promotion', methods=['POST'])
-#@jwt_required()   
 def get_timetable_by_department():
     """ Get timetable by teacher_id"""  
     try:
@@ -67,7 +64,6 @@ def get_timetable_by_department():
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
     
 @course_app.route('/courses/timetable/by-student', methods=['POST'])
-#@jwt_required()   
 def get_timetable_by_student():
     """ Get timetable by teacher_id"""
     try:
@@ -84,6 +80,20 @@ def get_timetable_by_student():
 # @jwt_required()
 # def get_timetable_by_token():
 #     return jsonify(get_jwt_identity())
+
+# ----------------------------------------------------------
+# Copier Cours
+# ----------------------------------------------------------
+    
+@course_app.route('/courses/copy/day', methods=['POST'])
+def copy_courses_by_day():
+    try:
+        data = request.json
+        _service = course_service()
+        returnStatement = _service.copy_courses_by_day(data)
+        return jsonify({'edt' : returnStatement})
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 501
 
 # ----------------------------------------------------------
 # Add / Delete / Update

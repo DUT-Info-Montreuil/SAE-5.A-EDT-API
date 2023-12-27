@@ -115,7 +115,7 @@ class course_service(Service):
                 starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'
                 
                 GROUP BY courses.description, course_type, teachings.title, courses.starttime, courses.endtime"""
-
+        print(query)
         return self.execute_query_and_get_statement_timetable(query)
     
     # Get by teachers id also ?
@@ -152,6 +152,65 @@ class course_service(Service):
         print(query)
         return self.execute_query_and_get_statement(query)
     
+    # ----------------------------------------------------------
+    # Copy courses
+    # ----------------------------------------------------------
+
+    def copy_courses_by_day(self, data):
+        promotion = data.get('promotion', '')
+        department_id = data.get('department_id', '')
+        day_to_copy = data.get('day_to_copy', '')
+        day_to_paste = data.get('day_to_paste', '')
+        
+        if promotion == '' or department_id == '' or day_to_copy == '' or day_to_paste == '':
+            return
+        
+        day_to_copy = datetime.datetime.strptime(day_to_copy,"%Y-%m-%d")
+        nextday_to_copy = day_to_copy + datetime.timedelta(days=1)
+
+        query = """SELECT description, starttime, endtime, course_type, teaching_id, course_id, subgroup_id, name, group_id, promotion, type, department_id
+        FROM university.courses
+        INNER JOIN university.participates ON university.courses.id = university.participates.course_id
+        INNER JOIN university.subgroups ON university.participates.subgroup_id = university.subgroups.id
+        INNER JOIN university.groups ON university.subgroups.id = university.groups.id
+
+        WHERE university.groups.promotion =""" +  str(promotion) + """ AND
+        university.groups.department_id =""" + str(department_id) + """ AND
+        starttime >= '""" + str(day_to_copy) + """' AND starttime <= '""" + str(nextday_to_copy) + """'"""
+
+        conn = self.get_connection()
+        rows = connect_pg.get_query(conn, query)
+        if rows is None:
+            return {}
+        connect_pg.disconnect(conn)
+        print(rows)
+
+        day_to_paste = datetime.datetime.strptime(day_to_paste, '%Y-%m-%d').date()
+        for row in rows:
+            starttime = row[1]
+            endtime = row[2]
+
+            print("changement : " + str( datetime.datetime(year=day_to_paste.year, month=day_to_paste.month, day=day_to_paste.day,
+                        hour=starttime.hour, minute=starttime.minute, second=starttime.second)))
+            print("rows[1] : " + str(row[1]))
+            print("\n")
+
+            rowazfazfa = datetime.datetime(year=day_to_paste.year, month=day_to_paste.month, day=day_to_paste.day,
+                        hour=starttime.hour, minute=starttime.minute, second=starttime.second)
+            endtimeendtime = datetime.datetime(year=day_to_paste.year, month=day_to_paste.month, day=day_to_paste.day,
+                        hour=endtime.hour, minute=endtime.minute, second=endtime.second)
+        # print(rows)
+
+        
+        return "slt"
+        #copier les participants aussi
+
+    # @todo: copy week
+        
+    #demadner a bonnot si +?
+
+
+
     # ----------------------------------------------------------
     # Add / Delete / Update
     # ----------------------------------------------------------
