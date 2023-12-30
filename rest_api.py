@@ -12,13 +12,9 @@ app = Flask(__name__)
 # === region : JWT ===
 from flask_jwt_extended import JWTManager
 from datetime import timedelta
-###########################################################
+#######################   SWAGGER    ####################################
 
 from flask_swagger_ui import get_swaggerui_blueprint
-
-# Register the main controller
-app = Flask(__name__)
-
 SWAGGER_URL = '/swagger'  # URL for exposing Swagger UI (without trailing '/')
 API_URL = '/static/swagger.json'  # Our API url (can of course be a local resource)
 
