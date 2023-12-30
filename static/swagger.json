@@ -1,0 +1,3275 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "University Absents API",
+    "version": "1.0",
+    "description": "API for managing edt app"
+  },
+  "paths": {
+    "/absents/get": {
+      "get": {
+        "summary": "Get all absents",
+        "description": "Get all absents in JSON format",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Absent"]
+      }
+    },
+    "/absents/get/{id}": {
+      "get": {
+        "summary": "Get absent by ID",
+        "description": "Get an absent by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Absent"]
+      }
+    },
+    "/absents/add": {
+      "put": {
+        "summary": "Add a new absent",
+        "description": "Add a new absent by providing data in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AbsentInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Absent added successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Absent"]
+      }
+    },
+    "/absents/delete/{id}": {
+      "delete": {
+        "summary": "Delete absent by ID",
+        "description": "Delete a absent by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Absent deleted successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Absent"]
+      }
+    },
+    "/absent/update/{id}": {
+      "patch": {
+        "summary": "Update absent by ID",
+        "description": "Update an absent record by ID using data in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AbsentInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Absent updated successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Absent"]
+      }
+    },
+    "/courses/get": {
+      "get": {
+        "summary": "Get all courses",
+        "description": "Get all courses in JSON format",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Course"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Course"]
+      }
+    },
+    "/courses/get/{id}": {
+      "get": {
+        "summary": "Get course by ID",
+        "description": "Get a course by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Course"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Course"]
+      }
+    },
+    "/courses/add": {
+      "put": {
+        "summary": "Add a new course",
+        "description": "Add a new course by providing data in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CourseInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Course added successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Course"]
+      }
+    },
+    "/courses/delete/{id}": {
+      "delete": {
+        "summary": "Delete course by ID",
+        "description": "Delete a course by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Course deleted successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Course"]
+      }
+    },
+    "/course/update/{id}": {
+      "patch": {
+        "summary": "Update course by ID",
+        "description": "Update a course record by ID using data in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CourseInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Course updated successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Course"]
+      }
+    }, "/departments/get": {
+      "get": {
+        "summary": "Get all departments",
+        "description": "Get all departments in JSON format",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Department"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Department"]
+      }
+    },
+    "/departments/get/{id}": {
+      "get": {
+        "summary": "Get department by ID",
+        "description": "Get a department by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Department"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Department"]
+      }
+    },
+    "/departments/identify": {
+      "post": {
+        "summary": "Identify department",
+        "description": "Identify a department by name and degree_type in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DepartmentIdentificationInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Department"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Department"]
+      }
+    },
+    "/departments/add": {
+      "put": {
+        "summary": "Add a new department",
+        "description": "Add a new department by providing data in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DepartmentInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Department added successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Department"]
+      }
+    },
+    "/departments/delete/{id}": {
+      "delete": {
+        "summary": "Delete department by ID",
+        "description": "Delete a department by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Department deleted successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Department"]
+      }
+    },
+    "/departments/update/{id}": {
+      "patch": {
+        "summary": "Update department by ID",
+        "description": "Update a department record by ID using data in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DepartmentInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Department updated successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Department"]
+      }
+    },
+    "/groups/get": {
+      "get": {
+        "summary": "Get all groups",
+        "description": "Get all groups in JSON format",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Group"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Group"]
+      }
+    },
+    "/groups/get/{id}": {
+      "get": {
+        "summary": "Get group by ID",
+        "description": "Get a group by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Group"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Group"]
+      }
+    },
+    "/groups/identify": {
+      "post": {
+        "summary": "Identify group",
+        "description": "Identify a group by promotion and type in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GroupIdentificationInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Group"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Group"]
+      }
+    },
+    "/groups/add": {
+      "put": {
+        "summary": "Add a new group",
+        "description": "Add a new group by providing data in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GroupInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Group added successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Group"]
+      }
+    },
+    "/groups/delete/{id}": {
+      "delete": {
+        "summary": "Delete group by ID",
+        "description": "Delete a group by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Group deleted successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Group"]
+      }
+    },
+    "/groups/update/{id}": {
+      "patch": {
+        "summary": "Update group by ID",
+        "description": "Update a group record by ID using data in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GroupInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Group updated successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Group"]
+      }
+    },
+    "/participates/get": {
+      "get": {
+        "summary": "Get all participations",
+        "description": "Get all participations in JSON format",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Participate"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Participate"]
+      }
+    },
+    "/participates/get/{id}": {
+      "get": {
+        "summary": "Get participate by ID",
+        "description": "Get a participate by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Participate"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Participate"]
+      }
+    },
+    "/participates/identify": {
+      "post": {
+        "summary": "Identify participate",
+        "description": "Identify a participate by course_id and subgroup_id in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ParticipateIdentificationInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Participate"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Participate"]
+      }
+    },
+    "/participates/add": {
+      "put": {
+        "summary": "Add a new participate",
+        "description": "Add a new participate by providing data in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ParticipateInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Participate added successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Participate"]
+      }
+    },
+    "/participates/delete/{id}": {
+      "delete": {
+        "summary": "Delete participate by ID",
+        "description": "Delete a participate by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Participate deleted successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Participate"]
+      }
+    },
+    "/participates/update/{id}": {
+      "patch": {
+        "summary": "Update participate by ID",
+        "description": "Update a participate record by ID using data in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ParticipateInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Participate updated successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Participate"]
+      }
+    },
+    "/personals/get": {
+      "get": {
+        "summary": "Get all personals",
+        "description": "Get all personals in JSON format",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Personal"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Personal"]
+      }
+    },
+    "/personals/get/{id}": {
+      "get": {
+        "summary": "Get personal by ID",
+        "description": "Get a personal by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Personal"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Personal"]
+      }
+    },
+    "/personals/identify": {
+      "post": {
+        "summary": "Identify personal",
+        "description": "Identify a personal by mail in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PersonalIdentificationInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Personal"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Personal"]
+      }
+    },
+    "/personals/add": {
+      "put": {
+        "summary": "Add a new personal",
+        "description": "Add a new personal by providing data in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PersonalInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Personal added successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Personal"]
+      }
+    },
+    "/personals/delete/{id}": {
+      "delete": {
+        "summary": "Delete personal by ID",
+        "description": "Delete a personal by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Personal deleted successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Personal"]
+      }
+    },
+    "/personals/update/{id}": {
+      "patch": {
+        "summary": "Update personal by ID",
+        "description": "Update a personal record by ID using data in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PersonalInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Personal updated successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Personal"]
+      }
+    },
+    "/reminders/get": {
+      "get": {
+        "summary": "Get all reminders",
+        "description": "Get all reminders in JSON format",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Reminder"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Reminder"]
+      }
+    },
+    "/reminders/get/{id}": {
+      "get": {
+        "summary": "Get reminder by ID",
+        "description": "Get a reminder by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Reminder"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Reminder"]
+      }
+    },
+    "/reminders/identify": {
+      "post": {
+        "summary": "Identify reminder",
+        "description": "Identify a reminder by course_id and subgroup_id in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ReminderIdentificationInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Reminder"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Reminder"]
+      }
+    },
+    "/reminders/add": {
+      "put": {
+        "summary": "Add a new reminder",
+        "description": "Add a new reminder by providing data in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ReminderInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Reminder added successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Reminder"]
+      }
+    },
+    "/reminders/delete/{id}": {
+      "delete": {
+        "summary": "Delete reminder by ID",
+        "description": "Delete a reminder by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Reminder deleted successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Reminder"]
+      }
+    },
+    "/reminders/update/{id}": {
+      "patch": {
+        "summary": "Update reminder by ID",
+        "description": "Update a reminder record by ID using data in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ReminderInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Reminder updated successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Reminder"]
+      }
+    },
+    "/responsibles/get": {
+      "get": {
+        "summary": "Get all responsibles",
+        "description": "Get all responsibles in JSON format",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Responsible"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Responsible"]
+      }
+    },
+    "/responsibles/get/{id}": {
+      "get": {
+        "summary": "Get responsible by ID",
+        "description": "Get a responsible by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Responsible"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Responsible"]
+      }
+    },
+    "/responsibles/identify": {
+      "post": {
+        "summary": "Identify responsible",
+        "description": "Identify a responsible by course_id and subgroup_id in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ResponsibleIdentificationInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Responsible"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Responsible"]
+      }
+    },
+    "/responsibles/add": {
+      "put": {
+        "summary": "Add a new responsible",
+        "description": "Add a new responsible by providing data in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ResponsibleInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Responsible added successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Responsible"]
+      }
+    },
+    "/responsibles/delete/{id}": {
+      "delete": {
+        "summary": "Delete responsible by ID",
+        "description": "Delete a responsible by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Responsible deleted successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Responsible"]
+      }
+    },
+    "/responsibles/update/{id}": {
+      "patch": {
+        "summary": "Update responsible by ID",
+        "description": "Update a responsible record by ID using data in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ResponsibleInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Responsible updated successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Responsible"]
+      }
+    },
+    "/roles/get": {
+      "get": {
+        "summary": "Get all roles",
+        "description": "Get all roles in JSON format",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Role"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Role"]
+      }
+    },
+    "/roles/get/{id}": {
+      "get": {
+        "summary": "Get role by ID",
+        "description": "Get a role by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Role"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Role"]
+      }
+    },
+    "/roles/identify": {
+      "post": {
+        "summary": "Identify role",
+        "description": "Identify a role by name, and personal_id in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RoleIdentificationInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Role"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Role"]
+      }
+    },
+    "/roles/add": {
+      "put": {
+        "summary": "Add a new role",
+        "description": "Add a new role by providing data in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RoleInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Role added successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Role"]
+      }
+    },
+    "/roles/delete/{id}": {
+      "delete": {
+        "summary": "Delete role by ID",
+        "description": "Delete a role by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Role deleted successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Role"]
+      }
+    },
+    "/roles/update/{id}": {
+      "patch": {
+        "summary": "Update role by ID",
+        "description": "Update a role record by ID using data in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RoleInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Role updated successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Role"]
+      }
+    },
+    "/rooms/get": {
+      "get": {
+        "summary": "Get all rooms",
+        "description": "Get all rooms in JSON format",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Room"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Room"]
+      }
+    },
+    "/rooms/get/{id}": {
+      "get": {
+        "summary": "Get room by ID",
+        "description": "Get a room by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Room"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Room"]
+      }
+    },
+    "/rooms/identify": {
+      "post": {
+        "summary": "Identify room",
+        "description": "Identify a room by code in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RoomIdentificationInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Room"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Room"]
+      }
+    },
+    "/rooms/add": {
+      "put": {
+        "summary": "Add a new room",
+        "description": "Add a new room by providing data in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RoomInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Room added successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Room"]
+      }
+    },
+    "/rooms/delete/{id}": {
+      "delete": {
+        "summary": "Delete room by ID",
+        "description": "Delete a room by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Room deleted successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Room"]
+      }
+    },
+    "/rooms/update/{id}": {
+      "patch": {
+        "summary": "Update room by ID",
+        "description": "Update a room record by ID using data in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RoomInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Room updated successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Room"]
+      }
+    },
+    "/specializations/get": {
+      "get": {
+        "summary": "Get all specializations",
+        "description": "Get all specializations in JSON format",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Specialization"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Specialization"]
+      }
+    },
+    "/specializations/get/{id}": {
+      "get": {
+        "summary": "Get specialization by ID",
+        "description": "Get a specialization by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Specialization"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Specialization"]
+      }
+    },
+    "/specializations/identify": {
+      "post": {
+        "summary": "Identify specialization",
+        "description": "Identify a specialization by code in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SpecializationIdentificationInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Specialization"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Specialization"]
+      }
+    },
+    "/specializations/add": {
+      "put": {
+        "summary": "Add a new specialization",
+        "description": "Add a new specialization by providing data in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SpecializationInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Specialization added successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Specialization"]
+      }
+    },
+    "/specializations/delete/{id}": {
+      "delete": {
+        "summary": "Delete specialization by ID",
+        "description": "Delete a specialization by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Specialization deleted successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Specialization"]
+      }
+    },
+    "/specializations/update/{id}": {
+      "patch": {
+        "summary": "Update specialization by ID",
+        "description": "Update a specialization record by ID using data in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SpecializationInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Specialization updated successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Specialization"]
+      }
+    },
+    "/students/get": {
+      "get": {
+        "summary": "Get all students",
+        "description": "Get all students in JSON format",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Student"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Student"]
+      }
+    },
+    "/students/id/{student_number}": {
+      "get": {
+        "summary": "Get student by student_number",
+        "description": "Get a student by student_number in JSON format",
+        "parameters": [
+          {
+            "name": "student_number",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Student"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Student"]
+      }
+    },
+    "/students/department/{department_id}": {
+      "get": {
+        "summary": "Get student by department",
+        "description": "Get a student by department in JSON format",
+        "parameters": [
+          {
+            "name": "department_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Student"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Student"]
+      }
+    },
+    "/students/groups": {
+      "post": {
+        "summary": "Get student by group",
+        "description": "Get a student by group in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StudentGroupInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Student"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Student"]
+      }
+    },
+    "/students/promotion-and-department": {
+      "post": {
+        "summary": "Get student by promotion and department",
+        "description": "Get a student by promotion and department in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StudentPromotionDepartmentInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Student"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Student"]
+      }
+    },
+    "/students/subgroups": {
+      "post": {
+        "summary": "Get student by subgroup",
+        "description": "Get a student by subgroup in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StudentSubgroupInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Student"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Student"]
+      }
+    },
+    "/students/add": {
+      "put": {
+        "summary": "Add a new student",
+        "description": "Add a new student by providing data in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StudentInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Student added successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Student"]
+      }
+    },
+    "/students/delete/{student_number}": {
+      "delete": {
+        "summary": "Delete student by student_number",
+        "description": "Delete a student by student_number in JSON format",
+        "parameters": [
+          {
+            "name": "student_number",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Student deleted successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Student"]
+      }
+    },
+    "/students/update/{student_number}": {
+      "patch": {
+        "summary": "Update student by student_number",
+        "description": "Update a student record by student_number using data in JSON format",
+        "parameters": [
+          {
+            "name": "student_number",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StudentInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Student updated successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Student"]
+      }
+    },
+    "/subgroups/get": {
+      "get": {
+        "summary": "Get all subgroups",
+        "description": "Get all subgroups in JSON format",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Subgroup"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Subgroup"]
+      }
+    },
+    "/subgroups/get/{id}": {
+      "get": {
+        "summary": "Get subgroup by ID",
+        "description": "Get a subgroup by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Subgroup"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Subgroup"]
+      }
+    },
+    "/subgroups/identify": {
+      "post": {
+        "summary": "Identify subgroup",
+        "description": "Identify a subgroup by name and group_id in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SubgroupIdentificationInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Subgroup"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Subgroup"]
+      }
+    },
+    "/subgroups/add": {
+      "put": {
+        "summary": "Add a new subgroup",
+        "description": "Add a new subgroup by providing data in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SubgroupInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Subgroup added successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Subgroup"]
+      }
+    },
+    "/subgroups/delete/{id}": {
+      "delete": {
+        "summary": "Delete subgroup by ID",
+        "description": "Delete a subgroup by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Subgroup deleted successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Subgroup"]
+      }
+    },
+    "/subgroups/update/{id}": {
+      "patch": {
+        "summary": "Update subgroup by ID",
+        "description": "Update a subgroup record by ID using data in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SubgroupInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Subgroup updated successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Subgroup"]
+      }
+    },
+    "/teachings/get": {
+      "get": {
+        "summary": "Get all teachings",
+        "description": "Get all teachings in JSON format",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Teaching"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Teaching"]
+      }
+    },
+    "/teachings/get/{id}": {
+      "get": {
+        "summary": "Get teaching by ID",
+        "description": "Get a teaching by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Teaching"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Teaching"]
+      }
+    },
+    "/teachings/identify": {
+      "post": {
+        "summary": "Identify teaching",
+        "description": "Identify a teaching by title, hour_number, semester, sequence, and specialization_id in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TeachingIdentificationInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Teaching"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Teaching"]
+      }
+    },
+    "/teachings/add": {
+      "put": {
+        "summary": "Add a new teaching",
+        "description": "Add a new teaching by providing data in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TeachingInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Teaching added successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Teaching"]
+      }
+    },
+    "/teachings/delete/{id}": {
+      "delete": {
+        "summary": "Delete teaching by ID",
+        "description": "Delete a teaching by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Teaching deleted successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Teaching"]
+      }
+    },
+    "/teachings/update/{id}": {
+      "patch": {
+        "summary": "Update teaching by ID",
+        "description": "Update a teaching record by ID using data in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TeachingInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Teaching updated successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Teaching"]
+      }
+    },
+    "/users": {
+      "get": {
+        "summary": "Get all users",
+        "description": "Get all users in JSON format",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "users": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/User"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["User"]
+      }
+    },
+    "/users/{user_id}": {
+      "get": {
+        "summary": "Get user by ID",
+        "description": "Get a user by ID in JSON format",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["User"]
+      }
+    },
+    "/users/find": {
+      "post": {
+        "summary": "Find user",
+        "description": "Find a user by providing search parameters in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserSearchInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["User"]
+      }
+    },
+    "/user/add": {
+      "put": {
+        "summary": "Add a new user",
+        "description": "Add a new user by providing data in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User added successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["User"]
+      }
+    }
+    
+    
+
+
+  },
+  "definitions": {
+    "ErrorModel": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        }
+      }
+    },
+    "AbsentInput": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        }
+      }
+    },
+    "Course": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "CourseInput": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": ["name", "description"]
+    },
+    "Department": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "degree_type": {
+          "type": "string"
+        }
+      }
+    },
+    "DepartmentInput": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "degree_type": {
+          "type": "string"
+        }
+      },
+      "required": ["name", "degree_type"]
+    },
+    "Group": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "promotion": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "GroupInput": {
+      "type": "object",
+      "properties": {
+        "promotion": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": ["promotion", "type"]
+    },
+    "Participate": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "course_id": {
+          "type": "integer"
+        },
+        "subgroup_id": {
+          "type": "integer"
+        }
+      }
+    },
+    "ParticipateInput": {
+      "type": "object",
+      "properties": {
+        "course_id": {
+          "type": "integer"
+        },
+        "subgroup_id": {
+          "type": "integer"
+        }
+      },
+      "required": ["course_id", "subgroup_id"]
+    },
+    "Personal": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "mail": {
+          "type": "string"
+        }
+      }
+    },
+    "PersonalInput": {
+      "type": "object",
+      "properties": {
+        "mail": {
+          "type": "string"
+        }
+      },
+      "required": ["mail"]
+    },
+    "Reminder": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "course_id": {
+          "type": "integer"
+        },
+        "subgroup_id": {
+          "type": "integer"
+        }
+      }
+    },
+    "ReminderInput": {
+      "type": "object",
+      "properties": {
+        "course_id": {
+          "type": "integer"
+        },
+        "subgroup_id": {
+          "type": "integer"
+        }
+      },
+      "required": ["course_id", "subgroup_id"]
+    },
+    "Responsible": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "course_id": {
+          "type": "integer"
+        },
+        "subgroup_id": {
+          "type": "integer"
+        }
+      }
+    },
+    "ResponsibleInput": {
+      "type": "object",
+      "properties": {
+        "course_id": {
+          "type": "integer"
+        },
+        "subgroup_id": {
+          "type": "integer"
+        }
+      },
+      "required": ["course_id", "subgroup_id"]
+    },
+    "Role": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "personal_id": {
+          "type": "integer"
+        }
+      }
+    },
+    "RoleInput": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "personal_id": {
+          "type": "integer"
+        }
+      },
+      "required": ["name", "personal_id"]
+    },
+    "Room": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "code": {
+          "type": "string"
+        }
+      }
+    },
+    "RoomInput": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        }
+      },
+      "required": ["code"]
+    },
+    "Specialization": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "code": {
+          "type": "string"
+        }
+      }
+    },
+    "SpecializationInput": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        }
+      },
+      "required": ["code"]
+    },
+    "Student": {
+      "type": "object",
+      "properties": {
+        "student_number": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "department_id": {
+          "type": "string"
+        },
+        "group": {
+          "type": "string"
+        },
+        "promotion": {
+          "type": "integer"
+        }
+      }
+    },
+    "StudentInput": {
+      "type": "object",
+      "properties": {
+        "student_number": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "department_id": {
+          "type": "string"
+        },
+        "group": {
+          "type": "string"
+        },
+        "promotion": {
+          "type": "integer"
+        }
+      },
+      "required": ["student_number", "name", "department_id", "group", "promotion"]
+    },"Subgroup": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "group_id": {
+          "type": "integer"
+        }
+      }
+    },
+    "SubgroupInput": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "group_id": {
+          "type": "integer"
+        }
+      },
+      "required": ["name", "group_id"]
+    },
+    "/teachings/get": {
+      "get": {
+        "summary": "Get all teachings",
+        "description": "Get all teachings in JSON format",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Teaching"
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Teaching"]
+      }
+    },
+    "/teachings/get/{id}": {
+      "get": {
+        "summary": "Get teaching by ID",
+        "description": "Get a teaching by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Teaching"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Teaching"]
+      }
+    },
+    "/teachings/identify": {
+      "post": {
+        "summary": "Identify teaching",
+        "description": "Identify a teaching by title, hour_number, semester, sequence, and specialization_id in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TeachingIdentificationInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Teaching"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Teaching"]
+      }
+    },
+    "/teachings/add": {
+      "put": {
+        "summary": "Add a new teaching",
+        "description": "Add a new teaching by providing data in JSON format",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TeachingInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Teaching added successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Teaching"]
+      }
+    },
+    "/teachings/delete/{id}": {
+      "delete": {
+        "summary": "Delete teaching by ID",
+        "description": "Delete a teaching by ID in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Teaching deleted successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Teaching"]
+      }
+    },
+    "/teachings/update/{id}": {
+      "patch": {
+        "summary": "Update teaching by ID",
+        "description": "Update a teaching record by ID using data in JSON format",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TeachingInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Teaching updated successfully",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "tags": ["Teaching"]
+      }
+    },
+    "Teaching": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "hour_number": {
+          "type": "integer"
+        },
+        "semester": {
+          "type": "integer"
+        },
+        "sequence": {
+          "type": "integer"
+        },
+        "specialization_id": {
+          "type": "integer"
+        }
+      }
+    },
+    "TeachingInput": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "hour_number": {
+          "type": "integer"
+        },
+        "semester": {
+          "type": "integer"
+        },
+        "sequence": {
+          "type": "integer"
+        },
+        "specialization_id": {
+          "type": "integer"
+        }
+      },
+      "required": ["title", "hour_number", "semester", "sequence", "specialization_id"]
+    },
+    "UserInput": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": ["name"]
+    },
+    "UserUpdateInput": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+
+  }
+}
+

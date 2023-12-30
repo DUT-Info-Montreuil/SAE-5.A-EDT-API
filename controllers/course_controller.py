@@ -102,6 +102,7 @@ def add_course():
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 @course_app.route('/courses/delete/<int:id>', methods=['DELETE'])
+@course_app.route('/courses/delete/<int:id>', methods=['DELETE'])
 def delete_course_by_id(id):
     """ Delete a course by ID in JSON format """
     try:
