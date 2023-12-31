@@ -161,22 +161,18 @@ class course_service(Service):
         starttime = data.get('starttime', '')
         endtime = data.get('endtime', '')
         course_type = data.get('course_type', '')
-        personal_id = data.get('personal_id', '')
         teaching_id = data.get('teaching_id', '')
 
-        if description == '' or starttime == '' or endtime == '' or course_type == '' or personal_id == '' or teaching_id == '':
+        if description == '' or starttime == '' or endtime == '' or course_type == '' or teaching_id == '':
             return {}
     
-        query = """INSERT INTO university.courses (description, starttime, endtime, course_type, personal_id, teaching_id) 
-                VALUES ('%(description)s', '%(starttime)s', '%(duree)s', '%(course_type)s', %(personal_id)s, %(teaching_id)s)"""
-    
+        query = """INSERT INTO university.courses (description, starttime, endtime, course_type, teaching_id) 
+                VALUES ('""" + description + """', '""" + starttime+ """', '""" + endtime + """', '""" + course_type + """', """ + teaching_id + """)"""
         conn = self.get_connection()
         new_course_id = connect_pg.execute_commands(conn, (query,))
         connect_pg.disconnect(conn)
     
         return new_course_id
-        # print(data)
-        # return "slt"
     
     def delete_course_by_id(self, id):
         """ Delete a course by ID in JSON format """
