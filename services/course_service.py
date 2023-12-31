@@ -1,6 +1,9 @@
 from flask import jsonify
 from services.main_service import Service
 
+from services.sql_alchemy_service import db
+from entities.models.models import Course
+
 from configuration import connect_pg
 from datetime import timedelta
 import datetime 
@@ -165,14 +168,50 @@ class course_service(Service):
 
         if description == '' or starttime == '' or endtime == '' or course_type == '' or teaching_id == '':
             return {}
+
+        course = Course(
+            description=description,
+            start_time=starttime,
+            end_time=endtime,
+            course_type=course_type,
+            teaching_id=teaching_id
+        )
+        try:
+            # Démarrez une transaction
+            with db.session.begin_nested():
+                # Effectuez votre première opération d'insertion
+                insertion1 = Course.insert
+                db.session.add(insertion1)
+                db.session.flush()  # Assurez-vous que l'ID généré est disponible
+
+                # Effectuez votre deuxième opération d'insertion
+                insertion2 = VotreModele(...)
+                db.session.add(insertion2)
+                db.session.flush()
+
+                # Effectuez votre troisième opération d'insertion
+                insertion3 = VotreModele(...)
+                db.session.add(insertion3)
+                db.session.flush()
+
+            # Validez la transaction
+            db.session.commit()
+
+            # Si tout s'est bien passé, renvoyez une réponse réussie
+            return {'message': 'Opérations d\'insertion réussies'}
+
+        except Exception as e:
+            # En cas d'erreur, annulez la transaction
+            db.session.rollback()
+            return {'error': str(e)}, 500  # Renvoyez une réponse d'erreur
+
+        # query = """INSERT INTO university.courses (description, starttime, endtime, course_type, teaching_id) 
+        #         VALUES ('""" + description + """', '""" + starttime+ """', '""" + endtime + """', '""" + course_type + """', """ + teaching_id + """)"""
+        # conn = self.get_connection()
+        # new_course_id = connect_pg.execute_commands(conn, (query,))
+        # connect_pg.disconnect(conn)
     
-        query = """INSERT INTO university.courses (description, starttime, endtime, course_type, teaching_id) 
-                VALUES ('""" + description + """', '""" + starttime+ """', '""" + endtime + """', '""" + course_type + """', """ + teaching_id + """)"""
-        conn = self.get_connection()
-        new_course_id = connect_pg.execute_commands(conn, (query,))
-        connect_pg.disconnect(conn)
-    
-        return new_course_id
+        # return new_course_id
     
     def delete_course_by_id(self, id):
         """ Delete a course by ID in JSON format """

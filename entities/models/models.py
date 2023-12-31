@@ -149,9 +149,12 @@ class Course(db.Model):
     start_time = db.Column(db.TIMESTAMP, nullable=False)
     end_time = db.Column(db.TIMESTAMP, nullable=False)
     course_type = db.Column(db.String(32), nullable=False)
-    personal_id = db.Column(db.Integer, nullable=False)
-    rooms_id = db.Column(db.Integer, nullable=False)
-    teaching_id = db.Column(db.Integer, nullable=False)
+    # teaching_id = db.Column(db.Integer, nullable=False)
+    teaching_id = db.Column(db.Integer, db.ForeignKey('teaching.id'), nullable=False)
+    rooms_courses = db.relationship('RoomsCourses', backref='course', lazy=True)
+    personals_courses = db.relationship('PersonalsCourses', backref='course', lazy=True)
+    participates = db.relationship('Participates', backref='course', lazy=True)
+
     
     def get_json(self):
         """ Formats data in JSON """
@@ -161,10 +164,24 @@ class Course(db.Model):
                 'start_time' : self.start_time,
                 'end_time' : self.end_time,
                 'course_type' : self.course_type,
-                'personal_id' : self.personal_id,
-                'rooms_id' : self.rooms_id,
                 'teaching_id' : self.teaching_id
             }
+    
+
+class RoomsCourses(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    course_id = db.Column(db.Integer, db.ForeignKey('course.id'), nullable=False)
+    rooms_id = db.Column(db.Integer, db.ForeignKey('rooms.id'), nullable=False)
+
+class PersonalsCourses(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    course_id = db.Column(db.Integer, db.ForeignKey('course.id'), nullable=False)
+    personal_id = db.Column(db.Integer, db.ForeignKey('personals.id'), nullable=False)
+
+class Participates(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    course_id = db.Column(db.Integer, db.ForeignKey('course.id'), nullable=False)
+    subgroup_id = db.Column(db.Integer, db.ForeignKey('subgroups.id'), nullable=False)
 
 class Room(db.Model):
     __tablename__ = 'rooms'
