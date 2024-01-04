@@ -2,7 +2,7 @@ from flask import jsonify
 from services.main_service import Service
 
 from services.sql_alchemy_service import db
-from entities.models.models import Course
+from entities.models.models import Course,Participates,RoomsCourses,PersonalsCourses
 
 from configuration import connect_pg
 from datetime import timedelta
@@ -167,7 +167,7 @@ class course_service(Service):
         teaching_id = data.get('teaching_id', '')
 
         if description == '' or starttime == '' or endtime == '' or course_type == '' or teaching_id == '':
-            return {}
+            return {'error': 'Des données sont manquants'}, 400
 
         course = Course(
             description=description,
@@ -176,30 +176,35 @@ class course_service(Service):
             course_type=course_type,
             teaching_id=teaching_id
         )
+
+        rooms = data.get('rooms', [])
+        personals = data.get('personals', [])
+        subgroups = data.get('subGroups', [])
+
         try:
             # Démarrez une transaction
             with db.session.begin_nested():
-                # Effectuez votre première opération d'insertion
-                insertion1 = Course.insert
-                db.session.add(insertion1)
-                db.session.flush()  # Assurez-vous que l'ID généré est disponible
+                db.session.add(course)
+                db.session.flush() 
 
-                # Effectuez votre deuxième opération d'insertion
-                insertion2 = VotreModele(...)
-                db.session.add(insertion2)
-                db.session.flush()
+                for room_id in rooms:
+                    rooms_courses = RoomsCourses(course_id=course.id, rooms_id=room_id)
+                    db.session.add(rooms_courses)
 
-                # Effectuez votre troisième opération d'insertion
-                insertion3 = VotreModele(...)
-                db.session.add(insertion3)
-                db.session.flush()
+                for personal_id in personals:
+                    personals_courses = PersonalsCourses(course_id=course.id, personal_id=personal_id)
+                    db.session.add(personals_courses)
 
-            # Validez la transaction
+                for subgroup_id in subgroups:
+                    participates = Participates(course_id=course.id, subgroup_id=subgroup_id)
+                    db.session.add(participates)
+
+            # Commit la transaction
             db.session.commit()
 
             # Si tout s'est bien passé, renvoyez une réponse réussie
-            return {'message': 'Opérations d\'insertion réussies'}
-
+            return {'message': f'Opérations d\'insertion réussies course : {course.id}'}, 200
+        
         except Exception as e:
             # En cas d'erreur, annulez la transaction
             db.session.rollback()
@@ -212,7 +217,7 @@ class course_service(Service):
         # connect_pg.disconnect(conn)
     
         # return new_course_id
-    
+
     def delete_course_by_id(self, id):
         """ Delete a course by ID in JSON format """
         query = "DELETE FROM university.courses WHERE id = %(id)s RETURNING id" %  {'id': id}
