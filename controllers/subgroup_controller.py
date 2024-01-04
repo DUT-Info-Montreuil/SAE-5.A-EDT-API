@@ -29,7 +29,17 @@ def get_subgroup_by_id(id):
     """ Get a subgroup by ID in JSON format """
     try:
         _service = subgroup_service()
-        returnStatement = _service.get_subgroup_by_id()
+        returnStatement = _service.get_subgroup_by_id(id)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
+    
+@subgroup_app.route('/subgroups/by-group/<int:id>', methods=['GET'])
+def get_subgroup_by_group_id(id):
+    """ Get a subgroup by ID in JSON format """
+    try:
+        _service = subgroup_service()
+        returnStatement = _service.get_subgroup_by_group_id(id)
         return jsonify(returnStatement)
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
