@@ -96,12 +96,11 @@ def add_course():
         data = request.json
         _service = course_service()
         _service.add_course(data)
-        return jsonify({"message": "Course successfully added!"}), 200
+        return jsonify(_service.add_course(data)), 200
 
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
-@course_app.route('/courses/delete/<int:id>', methods=['DELETE'])
 @course_app.route('/courses/delete/<int:id>', methods=['DELETE'])
 def delete_course_by_id(id):
     """ Delete a course by ID in JSON format """
