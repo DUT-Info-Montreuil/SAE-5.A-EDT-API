@@ -24,12 +24,12 @@ def get_students():
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
-@student_app.route('/students/id/<string:student_number>', methods=['GET'])
-def get_student_by_student_number(student_number):
-    """ Get a student by student_number in JSON format """
+@student_app.route('/students/id/<int:id>', methods=['GET'])
+def get_student_by_id(id):
+    """ Get a student by id in JSON format """
     try:      
         _service = student_service()
-        returnStatement = _service.get_student_by_student_number(student_number)
+        returnStatement = _service.get_student_by_id(id)
         return jsonify(returnStatement)
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
@@ -96,24 +96,24 @@ def add_student():
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 
-@student_app.route('/students/delete/<string:student_number>', methods=['DELETE'])
-def delete_student_by_id(student_number):
+@student_app.route('/students/delete/<int:id>', methods=['DELETE'])
+def delete_student_by_id(id):
     """ Delete a student by ID in JSON format """ 
     try:
         _service = student_service()
-        _service.delete_student_by_id(student_number)
+        _service.delete_student_by_id(id)
         return jsonify({"message": "Student successfully deleted !"}), 200
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
 
-@student_app.route('/students/update/<string:student_number>', methods=['PATCH'])
-def update_student(student_number):
-    """ Update a student record by student_number using data in JSON format """
+@student_app.route('/students/update/<int:id>', methods=['PATCH'])
+def update_student(id):
+    """ Update a student record by id using data in JSON format """
     try:
         data = request.json
         _service = student_service()
-        _service.update_student(student_number, data)
+        _service.update_student(id, data)
         return jsonify({"message": "Student successfully updated !"}), 200
 
     except Exception as e:

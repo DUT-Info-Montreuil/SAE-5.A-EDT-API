@@ -19,15 +19,15 @@ class student_service(Service):
         query = "SELECT * FROM university.students"
         return self.execute_query_and_get_statement(query)
     
-    def get_student_by_student_number(self, student_number):
-        """ Get a student by student_number in JSON format """
+    def get_student_by_id(self, id):
+        """ Get a student by id in JSON format """
 
-        query = "SELECT * FROM university.students WHERE student_number = '" + student_number + "'"
+        query = "SELECT * FROM university.students WHERE id = '" + id + "'"
         return self.execute_query_and_get_statement(query)
     
-    def get_student_by_department(self, department_id):
+    def get_student_by_department(self, id):
 
-        query = "SELECT * FROM university.students WHERE department_id = '" + department_id + "'"
+        query = "SELECT * FROM university.students WHERE id = '" + id + "'"
         return self.execute_query_and_get_statement(query)
     
     def get_student_by_group(self, data):
@@ -89,41 +89,40 @@ class student_service(Service):
     def add_student(self, data):
         """ Add a student by data in JSON format """
 
-        student_number = data.get('student_number', '') # MODIFIER !!!!!!!!!!!!
         last_name = data.get('last_name', '')
         first_name = data.get('first_name', '')
         mail = data.get('mail', '')
         phone_number = data.get('phone_number', '')
-        username = data.get('username')
+        user_id = data.get('user_id')
         department_id = data.get('department_id', '')
         group_id = data.get('group_id', '')
         subgroup_id = data.get('subgroup_id', '')
 
-        query = "INSERT INTO university.students (student_number, last_name, first_name, mail, phone_number, user_username, department_id, group_id, subgroup_id) VALUES ('" + student_number+ "', '" + last_name+ "', '" + first_name+ "', '" + mail + "', '" + phone_number+ "', '" + username+ "', " + department_id+ ", " + group_id+ ", " + subgroup_id+ ")"
-
+        query = "INSERT INTO university.students (last_name, first_name, mail, phone_number, user_id, department_id, group_id, subgroup_id) VALUES ('%(last_name)s', '%(first_name)s', '%(mail)s', '%(phone_number)s', %(user_id)s, %(department_id)s, %(group_id)s, %(subgroup_id)s ) RETURINING id" % {'last_name': last_name, 'first_name': first_name, 'mail': mail, 'phone_number': phone_number, 'user_id': user_id, 'department_id': department_id, 'group_id': group_id, 'subgroup_id': subgroup_id}                                                                                                                                                               
+ 
         conn = self.get_connection()
-        new_student_number = connect_pg.execute_commands(conn, (query,))
+        new_id = connect_pg.execute_commands(conn, (query,))
         connect_pg.disconnect(conn)
     
-        return new_student_number
-
+        return new_id
     
-    def delete_student_by_id(self, student_number):
+    
+    def delete_student_by_id(self, id):
         """ Delete a student by ID in JSON format """
         
-        query = "DELETE FROM university.students WHERE student_number = '" + str(student_number) + "'" 
+        query = "DELETE FROM university.students WHERE id = '" + str(id) + "'" 
 
         conn = self.get_connection()
         row = connect_pg.execute_commands(conn, (query,))
         connect_pg.disconnect(conn)
         return row
     
-    def update_student(self, student_number, data):
-        """ Update a student record by student_number using data in JSON format """
+    def update_student(self, id, data):
+        """ Update a student record by id using data in JSON format """
         # data = request.json
 
-        # Check if the student record with the given student_number exists
-        existing_student = self.get_student_by_student_number(student_number)
+        # Check if the student record with the given id exists
+        existing_student = self.get_student_by_id(id)
         if not existing_student:
             return existing_student
 
@@ -131,6 +130,7 @@ class student_service(Service):
         first_name = data.get('first_name', existing_student['first_name'])
         mail = data.get('mail', existing_student['mail'])
         phone_number = data.get('phone_number', existing_student['phone_number'])
+        user_id = data.get('user_id', existing_student['user_id'])
         department_id = data.get('department_id', existing_student['department_id'])
         group_id = data.get('group_id', existing_student['group_id'])
         subgroup_id = data.get('subgroup_id', existing_student['subgroup_id'])
@@ -140,26 +140,28 @@ class student_service(Service):
                     first_name = '" + first_name+ "',
                     mail = '" + mail+ "',
                     phone_number = '" + phone_number+ "',
+                    user_id = '" + phone_number+ "',
                     department_id = " + department_id+ ",
                     group_id = " + group_id+ ",
                     subgroup_id = " + subgroup_id+ "
-                WHERE student_number = '" + student_number+ "'
-                RETURNING student_number """ % {
-                    'student_number': student_number,
+                WHERE id = '" + id+ "'
+                RETURNING id """ % {
+                    'id': id,
                     'last_name': last_name,
                     'first_name': first_name,
                     'mail': mail,
                     'phone_number': phone_number,
+                    'user_id': user_id,
                     'department_id': department_id,
                     'group_id': group_id,
                     'subgroup_id': subgroup_id
                 }
 
         conn = self.get_connection()
-        updated_student_number = connect_pg.execute_commands(conn, (query,))
+        updated_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
 
-        return updated_student_number
+        return updated_id
 
     # ----------------------------------------------------------
     # Utilitaires
@@ -178,12 +180,12 @@ class student_service(Service):
 
     def get_student_statement(self, row):
         return {
-            'student_number': row[0],    # Numero étudiant
+            'id': row[0],
             'last_name': row[1],         # Le nom de famille de l'étudiant
             'first_name': row[2],        # Le prénom de l'étudiant
             'mail': row[3],              # L'adresse e-mail de l'étudiant
             'phone_number': row[4],      # Le numéro de téléphone de l'étudiant
-            'user_username': row[5],      # Le numéro de téléphone de l'étudiant
+            'user_id': row[5],      # Le numéro de téléphone de l'étudiant
             'department_id': row[6],     # L'ID du département auquel l'étudiant est affilié
             'group_id': row[7],          # L'ID du groupe auquel l'étudiant appartient
             'subgroup_id': row[8]        # L'ID du sous-groupe auquel l'étudiant est associé

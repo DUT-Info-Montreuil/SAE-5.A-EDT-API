@@ -67,9 +67,11 @@ class personal_service(Service):
         last_name = data.get('last_name', '')
         first_name = data.get('first_name', '')
         mail = data.get('mail', '')
+        user_id = data.get('user_id', '')
         phone_number = data.get('phone_number', '')
+        personal_code = data.get('personal_code', '')
     
-        query = "INSERT INTO university.personals (last_name, first_name, mail, phone_number) VALUES '(%(last_name)s', '%(first_name)s', '%(mail)s', '%(phone_number)s') RETURNING id" %  {'last_name': last_name, 'first_name': first_name, 'mail': mail, 'phone_number': phone_number}
+        query = "INSERT INTO university.personals (last_name, first_name, mail, personal_code, user_id, phone_number) VALUES ('%(last_name)s', '%(first_name)s', '%(mail)s', '%(personal_code)s','%(user_id)s', '%(phone_number)s') RETURNING id" %  {'last_name': last_name, 'first_name': first_name, 'mail': mail, 'personal_code': personal_code, 'user_id': user_id, 'phone_number': phone_number}
         conn = self.get_connection()
         new_personal_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -96,19 +98,25 @@ class personal_service(Service):
         last_name = data.get('last_name', existing_personal['last_name'])
         first_name = data.get('first_name', existing_personal['first_name'])
         mail = data.get('mail', existing_personal['mail'])
+        personal_code = data.get('personal_code', existing_personal['personal_code'])
+        user_id = data.get('user_id', existing_personal['user_id'])
         phone_number = data.get('phone_number', existing_personal['phone_number'])
 
         query = """UPDATE university.personals
                 SET last_name = '%(last_name)s',
                     first_name = '%(first_name)s',
                     mail = '%(mail)s',
-                    phone_number = '%(phone_number)'s
+                    personal_code = '%(personal_code)s',
+                    user_id = '%(user_id)s',
+                    phone_number = '%(phone_number)s'
             WHERE id = %(id)s
             RETURNING id """ % {
                 'id': id,
                 'last_name': last_name,
                 'first_name': first_name,
                 'mail': mail,
+                'personal_code': personal_code,
+                'user_id': user_id,
                 'phone_number': phone_number
             }
 
@@ -126,6 +134,11 @@ class personal_service(Service):
             'last_name': row[1],       # Le nom de famille du personnel
             'first_name': row[2],      # Le prénom du personnel
             'mail': row[3],            # L'adresse e-mail du personnel
-            'personal_code': row[4],     # Le numéro de téléphone du personnel
-            'phone_number': row[5]
+            'personal_code': row[4],
+            'user_id': row[5],  
+            'phone_number': row[6] # Le numéro de téléphone du personnel
         }
+    
+
+
+    

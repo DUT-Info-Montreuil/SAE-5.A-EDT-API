@@ -67,7 +67,7 @@ class UserService:
         if len(username) > 64:
             return 'username to long'
         
-        query = "INSERT INTO university.users (username, password) VALUES ('" + username + "', '" + password + "')"
+        query = "INSERT INTO university.users (username, password) VALUES ('%(username)s', '%(password)s') RETURNING id" % {'username': username, 'password': password}
 
         conn = self.get_connection()
         connect_pg.execute_commands(conn, (query,))
