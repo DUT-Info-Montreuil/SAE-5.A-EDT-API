@@ -168,11 +168,11 @@ class course_service(Service):
 
         if description == '' or starttime == '' or endtime == '' or course_type == '' or teaching_id == '':
             return {'error': 'Des données sont manquants'}, 400
-
+        
         course = Course(
             description=description,
-            start_time=starttime,
-            end_time=endtime,
+            starttime=starttime,
+            endtime=endtime,
             course_type=course_type,
             teaching_id=teaching_id
         )
@@ -188,15 +188,14 @@ class course_service(Service):
                 db.session.flush() 
 
                 for room_id in rooms:
-                    rooms_courses = RoomsCourses(course_id=course.id, rooms_id=room_id)
+                    rooms_courses = RoomsCourses(course_id=course.id, rooms_id=room_id['id'])
                     db.session.add(rooms_courses)
-
                 for personal_id in personals:
-                    personals_courses = PersonalsCourses(course_id=course.id, personal_id=personal_id)
+                    personals_courses = PersonalsCourses(course_id=course.id, personal_id=personal_id['id'])
                     db.session.add(personals_courses)
 
                 for subgroup_id in subgroups:
-                    participates = Participates(course_id=course.id, subgroup_id=subgroup_id)
+                    participates = Participates(course_id=course.id, subgroup_id=subgroup_id['id'])
                     db.session.add(participates)
 
             # Commit la transaction
