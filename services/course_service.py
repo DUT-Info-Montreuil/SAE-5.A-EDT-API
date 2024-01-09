@@ -284,12 +284,12 @@ class course_service(Service):
                     new_personal_course = PersonalsCourses(course_id=id, personal_id=personal['id'])
                     db.session.add(new_personal_course)
 
-            if 'subGroups' in data:
+            if 'subgroups' in data:
                 # Delete existing subgroup-course relationships for this course
                 Participates.query.filter(Participates.course_id == id).delete()
 
                 # Create new subgroup-course relationships
-                for subgroup in data['subGroups']:
+                for subgroup in data['subgroups']:
                     new_subgroup_course = Participates(course_id=id, subgroup_id=subgroup['id'])
                     db.session.add(new_subgroup_course)
 
