@@ -209,7 +209,7 @@ class course_service(Service):
 
         rooms = data.get('rooms', [])
         personals = data.get('personals', [])
-        subgroups = data.get('subGroups', [])
+        subgroups = data.get('subgroups', [])
 
         try:
             with db.session.begin_nested():
