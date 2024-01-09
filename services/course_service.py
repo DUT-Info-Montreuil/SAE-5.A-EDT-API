@@ -143,7 +143,7 @@ class course_service(Service):
                 starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'
                 
                 GROUP BY courses.id, courses.description, course_type, teachings.title, teachings.color, teachings.id, courses.starttime, courses.endtime, university.groups.promotion, departments.name"""
-
+        print(query)
         return self.execute_query_and_get_statement_timetable(query)
     
     # Get by teachers id also ?
