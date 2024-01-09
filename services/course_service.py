@@ -42,11 +42,13 @@ class course_service(Service):
 
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
+        
+        
 
-        query = """SELECT courses.id, courses.description, course_type, ARRAY_AGG(DISTINCT personals.personal_code), teachings.title, teachings.color,
-                    TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), ARRAY_AGG(DISTINCT rooms.code),
-                    subgroups.name AS subgroups_name, university.groups.promotion, departments.name,
-                    ARRAY_AGG(DISTINCT personals.id), ARRAY_AGG(DISTINCT rooms.id), ARRAY_AGG(DISTINCT subgroups.id)
+        query = """SELECT courses.id, courses.description, course_type,  json_agg(DISTINCT jsonb_build_object('code', personals.personal_code, 'id',personals.id)),
+                   json_agg(DISTINCT jsonb_build_object('title', teachings.title, 'color', teachings.color, 'id', teachings.id)),
+                    TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), json_agg(DISTINCT jsonb_build_object('code', rooms.code, 'id', teachings.id)),
+                    json_agg(DISTINCT jsonb_build_object('name', subgroups.name, 'id', subgroups.id)), university.groups.promotion, departments.name
 
                     FROM university.courses 
                     INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
@@ -65,7 +67,7 @@ class course_service(Service):
                     WHERE university.rooms_courses.rooms_id =""" +  str(room_id) + """ AND
                     starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'
                     
-                    GROUP BY courses.id, courses.description, course_type, teachings.title, teachings.color, courses.starttime, courses.endtime, subgroups_name, university.groups.promotion, departments.name"""
+                    GROUP BY courses.id, courses.description, course_type, courses.starttime, courses.endtime, university.groups.promotion, departments.name"""
         return self.execute_query_and_get_statement_timetable(query)
     
     def get_timetable_by_teacher(self, data):
@@ -79,10 +81,10 @@ class course_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.id, courses.description, course_type, ARRAY_AGG(DISTINCT personals.personal_code), teachings.title, teachings.color,
-                    TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), ARRAY_AGG(DISTINCT rooms.code),
-                    subgroups.name AS subgroups_name, university.groups.promotion, departments.name,
-                    ARRAY_AGG(DISTINCT personals.id), ARRAY_AGG(DISTINCT rooms.id), ARRAY_AGG(DISTINCT subgroups.id)
+        query = """SELECT courses.id, courses.description, course_type,  json_agg(DISTINCT jsonb_build_object('code', personals.personal_code, 'id',personals.id)),
+                   json_agg(DISTINCT jsonb_build_object('title', teachings.title, 'color', teachings.color, 'id', teachings.id)),
+                    TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), json_agg(DISTINCT jsonb_build_object('code', rooms.code, 'id', teachings.id)),
+                    json_agg(DISTINCT jsonb_build_object('name', subgroups.name, 'id', subgroups.id)), university.groups.promotion, departments.name
 
                     FROM university.courses 
                     INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
@@ -101,7 +103,7 @@ class course_service(Service):
                     WHERE university.personals.id =""" +  str(personal_id) + """ AND
                     starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'
                     
-                    GROUP BY courses.id, courses.description, course_type, teachings.title, teachings.color, courses.starttime, courses.endtime, subgroups_name, university.groups.promotion, departments.name"""
+                    GROUP BY courses.id, courses.description, course_type, courses.starttime, courses.endtime, university.groups.promotion, departments.name"""
         return self.execute_query_and_get_statement_timetable(query)
     
     def get_timetable_by_department(self, data):
@@ -116,10 +118,10 @@ class course_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.id, courses.description, course_type, ARRAY_AGG(DISTINCT personals.personal_code), teachings.title, teachings.color,
-                TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), ARRAY_AGG(DISTINCT rooms.code),
-                subgroups.name AS subgroups_name, university.groups.promotion, departments.name,
-                ARRAY_AGG(DISTINCT personals.id), ARRAY_AGG(DISTINCT rooms.id), ARRAY_AGG(DISTINCT subgroups.id)
+        query = """SELECT courses.id, courses.description, course_type,  json_agg(DISTINCT jsonb_build_object('code', personals.personal_code, 'id',personals.id)),
+                json_agg(DISTINCT jsonb_build_object('title', teachings.title, 'color', teachings.color, 'id', teachings.id)),
+                TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), json_agg(DISTINCT jsonb_build_object('code', rooms.code, 'id', teachings.id)),
+                json_agg(DISTINCT jsonb_build_object('name', subgroups.name, 'id', subgroups.id)), university.groups.promotion, departments.name
                 
                 FROM university.courses
 
@@ -140,7 +142,7 @@ class course_service(Service):
                 university.groups.department_id =""" + str(department_id) + """ AND
                 starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'
                 
-                GROUP BY courses.id, courses.description, course_type, teachings.title, teachings.color, courses.starttime, courses.endtime, subgroups_name, university.groups.promotion, departments.name"""
+                GROUP BY courses.id, courses.description, course_type, courses.starttime, courses.endtime, university.groups.promotion, departments.name"""
 
         return self.execute_query_and_get_statement_timetable(query)
     
@@ -157,10 +159,10 @@ class course_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.id, courses.description, course_type, ARRAY_AGG(DISTINCT personals.personal_code), teachings.title,
-                teachings.color, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), ARRAY_AGG(DISTINCT rooms.code),
-                subgroups.name AS subgroups_name, university.groups.promotion, departments.name,
-                ARRAY_AGG(DISTINCT personals.id), ARRAY_AGG(DISTINCT rooms.id), ARRAY_AGG(DISTINCT subgroups.id)
+        query = """SELECT courses.id, courses.description, course_type,  json_agg(DISTINCT jsonb_build_object('code', personals.personal_code, 'id',personals.id)),
+                json_agg(DISTINCT jsonb_build_object('title', teachings.title, 'color', teachings.color, 'id', teachings.id)),
+                TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), json_agg(DISTINCT jsonb_build_object('code', rooms.code, 'id', teachings.id)),
+                json_agg(DISTINCT jsonb_build_object('name', subgroups.name, 'id', subgroups.id)), university.groups.promotion, departments.name
                 FROM university.courses
 
                 INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
@@ -180,7 +182,7 @@ class course_service(Service):
                 WHERE university.students.id =""" +  str(student_id) + """ AND
                 starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'
                 
-                GROUP BY courses.id, courses.description, course_type, teachings.title, teachings.color, courses.starttime, courses.endtime, subgroups_name, university.groups.promotion, departments.name"""  
+                GROUP BY courses.id, courses.description, course_type, courses.starttime, courses.endtime, university.groups.promotion, departments.name"""  
         return self.execute_query_and_get_statement(query)
     
     # ----------------------------------------------------------
@@ -345,19 +347,18 @@ class course_service(Service):
     
     def get_course_statement_timetable(self, row):
         return {
-            'course_id': row[0],              
+            'id': row[0],              
             'description': row[1],
             'course_type': row[2],
             'personal_code': row[3],   # Nom abrégé du professeur
             'teaching_title': row[4],  # Nom de la matière    
-            'teachings.color': row[5],
-            'starttime': row[6],        
-            'endtime':  row[7],        
-            'room_name':  row[8],       # Nom de la salle
-            'subgroup_name': row[9],
-            'promotion': row[10],
-            'department': row[11],
-            'personals_id': row[12],
-            'rooms_id': row[13],
-            'subgroups_id': row[14]
+            'starttime': row[5],        
+            'endtime':  row[6],        
+            'room_name':  row[7],       # Nom de la salle
+            'subgroup_name': row[8],
+            'promotion': row[9],
+            'department': row[10]
+            # 'personals_id': row[12],
+            # 'rooms_id': row[13],
+            # 'subgroups_id': row[14]
         }
