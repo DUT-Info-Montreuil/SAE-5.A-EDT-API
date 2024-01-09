@@ -43,9 +43,10 @@ class course_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.description, course_type, ARRAY_AGG(DISTINCT personals.personal_code), teachings.title, teachings.color,
+        query = """SELECT courses.id, courses.description, course_type, ARRAY_AGG(DISTINCT personals.personal_code), teachings.title, teachings.color,
                     TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), ARRAY_AGG(DISTINCT rooms.code),
-                    subgroups.name AS subgroups_name, university.groups.promotion, departments.name
+                    subgroups.name AS subgroups_name, university.groups.promotion, departments.name,
+                    ARRAY_AGG(DISTINCT personals.id), ARRAY_AGG(DISTINCT rooms.id), ARRAY_AGG(DISTINCT subgroups.id)
 
                     FROM university.courses 
                     INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
@@ -64,7 +65,7 @@ class course_service(Service):
                     WHERE university.rooms_courses.rooms_id =""" +  str(room_id) + """ AND
                     starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'
                     
-                    GROUP BY courses.description, course_type, teachings.title, teachings.color, courses.starttime, courses.endtime, subgroups_name, university.groups.promotion, departments.name"""
+                    GROUP BY courses.id, courses.description, course_type, teachings.title, teachings.color, courses.starttime, courses.endtime, subgroups_name, university.groups.promotion, departments.name"""
         return self.execute_query_and_get_statement_timetable(query)
     
     def get_timetable_by_teacher(self, data):
@@ -78,9 +79,10 @@ class course_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.description, course_type, ARRAY_AGG(DISTINCT personals.personal_code), teachings.title, teachings.color,
+        query = """SELECT courses.id, courses.description, course_type, ARRAY_AGG(DISTINCT personals.personal_code), teachings.title, teachings.color,
                     TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), ARRAY_AGG(DISTINCT rooms.code),
-                    subgroups.name AS subgroups_name, university.groups.promotion, departments.name
+                    subgroups.name AS subgroups_name, university.groups.promotion, departments.name,
+                    ARRAY_AGG(DISTINCT personals.id), ARRAY_AGG(DISTINCT rooms.id), ARRAY_AGG(DISTINCT subgroups.id)
 
                     FROM university.courses 
                     INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
@@ -99,7 +101,7 @@ class course_service(Service):
                     WHERE university.personals.id =""" +  str(personal_id) + """ AND
                     starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'
                     
-                    GROUP BY courses.description, course_type, teachings.title, teachings.color, courses.starttime, courses.endtime, subgroups_name, university.groups.promotion, departments.name"""
+                    GROUP BY courses.id, courses.description, course_type, teachings.title, teachings.color, courses.starttime, courses.endtime, subgroups_name, university.groups.promotion, departments.name"""
         return self.execute_query_and_get_statement_timetable(query)
     
     def get_timetable_by_department(self, data):
@@ -114,9 +116,10 @@ class course_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.description, course_type, ARRAY_AGG(DISTINCT personals.personal_code), teachings.title, teachings.color,
+        query = """SELECT courses.id, courses.description, course_type, ARRAY_AGG(DISTINCT personals.personal_code), teachings.title, teachings.color,
                 TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), ARRAY_AGG(DISTINCT rooms.code),
-                subgroups.name AS subgroups_name, university.groups.promotion, departments.name
+                subgroups.name AS subgroups_name, university.groups.promotion, departments.name,
+                ARRAY_AGG(DISTINCT personals.id), ARRAY_AGG(DISTINCT rooms.id), ARRAY_AGG(DISTINCT subgroups.id)
                 
                 FROM university.courses
 
@@ -137,7 +140,7 @@ class course_service(Service):
                 university.groups.department_id =""" + str(department_id) + """ AND
                 starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'
                 
-                GROUP BY courses.description, course_type, teachings.title, teachings.color, courses.starttime, courses.endtime, subgroups_name, university.groups.promotion, departments.name"""
+                GROUP BY courses.id, courses.description, course_type, teachings.title, teachings.color, courses.starttime, courses.endtime, subgroups_name, university.groups.promotion, departments.name"""
 
         return self.execute_query_and_get_statement_timetable(query)
     
@@ -154,9 +157,10 @@ class course_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.description, course_type, ARRAY_AGG(DISTINCT personals.personal_code), teachings.title,
+        query = """SELECT courses.id, courses.description, course_type, ARRAY_AGG(DISTINCT personals.personal_code), teachings.title,
                 teachings.color, TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), ARRAY_AGG(DISTINCT rooms.code),
-                subgroups.name AS subgroups_name, university.groups.promotion, departments.name
+                subgroups.name AS subgroups_name, university.groups.promotion, departments.name,
+                ARRAY_AGG(DISTINCT personals.id), ARRAY_AGG(DISTINCT rooms.id), ARRAY_AGG(DISTINCT subgroups.id)
                 FROM university.courses
 
                 INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
@@ -176,8 +180,7 @@ class course_service(Service):
                 WHERE university.students.id =""" +  str(student_id) + """ AND
                 starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'
                 
-                GROUP BY courses.description, course_type, teachings.title, teachings.color, courses.starttime, courses.endtime, subgroups_name, university.groups.promotion, departments.name"""  
-        print(query)
+                GROUP BY courses.id, courses.description, course_type, teachings.title, teachings.color, courses.starttime, courses.endtime, subgroups_name, university.groups.promotion, departments.name"""  
         return self.execute_query_and_get_statement(query)
     
     # ----------------------------------------------------------
@@ -192,7 +195,7 @@ class course_service(Service):
         teaching_id = data.get('teaching_id', '')
 
         if description == '' or starttime == '' or endtime == '' or course_type == '' or teaching_id == '':
-            return {'error': 'Des données sont manquants'}, 400
+            return {'error': 'Missing data'}, 400
         
         course = Course(
             description=description,
@@ -207,7 +210,6 @@ class course_service(Service):
         subgroups = data.get('subGroups', [])
 
         try:
-            # Démarrez une transaction
             with db.session.begin_nested():
                 db.session.add(course)
                 db.session.flush() 
@@ -223,66 +225,86 @@ class course_service(Service):
                     participates = Participates(course_id=course.id, subgroup_id=subgroup_id['id'])
                     db.session.add(participates)
 
-            # Commit la transaction
             db.session.commit()
-
-            # Si tout s'est bien passé, renvoyez une réponse réussie
-            return {'message': f'Opérations d\'insertion réussies course : {course.id}'}, 200
+            return {'message': f'Course s : {course.id} sucessfully added!'}, 200
         
         except Exception as e:
-            # En cas d'erreur, annulez la transaction
             db.session.rollback()
-            return {'error': str(e)}, 500  # Renvoyez une réponse d'erreur
-
-        # query = """INSERT INTO university.courses (description, starttime, endtime, course_type, teaching_id) 
-        #         VALUES ('""" + description + """', '""" + starttime+ """', '""" + endtime + """', '""" + course_type + """', """ + teaching_id + """)"""
-        # conn = self.get_connection()
-        # new_course_id = connect_pg.execute_commands(conn, (query,))
-        # connect_pg.disconnect(conn)
-    
-        # return new_course_id
+            return {'error': str(e)}, 500 
+        finally:
+            db.session.close()
 
     def delete_course_by_id(self, id):
-        """ Delete a course by ID in JSON format """
-        query = "DELETE FROM university.courses WHERE id = %(id)s RETURNING id" %  {'id': id}
-        conn = self.get_connection()
-        row = connect_pg.execute_commands(conn, (query,))
-        connect_pg.disconnect(conn)
-        return row
+        try:
+
+            db.session.query(RoomsCourses).filter(RoomsCourses.course_id == id).delete()
+            db.session.query(Participates).filter(Participates.course_id == id).delete()
+            db.session.query(PersonalsCourses).filter(PersonalsCourses.course_id == id).delete()
+            db.session.query(Course).filter(Course.id == id).delete()
+            
+            db.session.commit()
+            return {'message': f'Course : {id} sucessfully deleted!'}, 200
+        except Exception as e:
+            db.session.rollback()
+            return {'error': str(e)}, 500 
+        finally:
+            db.session.close()
+
     
     def update_course(self, id, data):
-        sub_query = ''
-        description = data.get('description', '')
-        starttime = data.get('starttime', '')
-        endtime = data.get('endtime', '')
-        course_type = data.get('course_type', '')
-        personal_id = data.get('personal_id', '')
-        teaching_id = data.get('teaching_id', '')
-
-        if description != '':
-            sub_query = sub_query + """description = '""" + str(description) + """' """
-        if starttime != '':
-            sub_query = sub_query + """starttime = TO_CHAR('""" + str(starttime) + """', 'yyyy-mm-dd"T"HH24:MI') """
-        if endtime != '':
-            sub_query = sub_query + """endtime = TO_CHAR('""" + str(endtime) + """', 'yyyy-mm-dd"T"HH24:MI') """
-        if course_type != '':
-            sub_query = sub_query + """course_type = '""" + str(course_type) + """' """
-        if personal_id != '':
-            sub_query = sub_query + """personal_id = """ + str(personal_id) + """ """
-        if teaching_id != '':
-            sub_query = sub_query + """teaching_id = """ + str(teaching_id) + """ """
-       
-        if sub_query == '':
-            return jsonify({"message": "Invalid arguments"}), 403
-        
-        query = """UPDATE university.courses SET """ + sub_query + """ WHERE id = """ + str(id)
         try:
-            conn = self.get_connection()
-            connect_pg.execute_commands(conn, (query,))
-            connect_pg.disconnect(conn)
-            return jsonify({"message": "Course " + str(id) + " updated sucessfully"}), 200
+            course_data = {
+            'description': data.get('description', None),
+            'starttime': data.get('starttime', None),
+            'endtime': data.get('endtime', None),
+            'course_type': data.get('course_type', None),
+            'teaching_id': data.get('teaching_id', None)
+            }
+
+            # Remove None values from the dictionary
+            course_data = {k: v for k, v in course_data.items() if v is not None}
+
+            if 'rooms' in data:
+                # Delete existing room-course relationships for this course
+                RoomsCourses.query.filter(RoomsCourses.course_id == id).delete()
+
+                # Create new room-course relationships
+                for room in data['rooms']:
+                    new_room_course = RoomsCourses(course_id=id, rooms_id=room['id'])
+                    db.session.add(new_room_course)
+
+            if 'personals' in data:
+                # Delete existing personal-course relationships for this course
+                PersonalsCourses.query.filter(PersonalsCourses.course_id == id).delete()
+
+                # Create new personal-course relationships
+                for personal in data['personals']:
+                    new_personal_course = PersonalsCourses(course_id=id, personal_id=personal['id'])
+                    db.session.add(new_personal_course)
+
+            if 'subGroups' in data:
+                # Delete existing subgroup-course relationships for this course
+                Participates.query.filter(Participates.course_id == id).delete()
+
+                # Create new subgroup-course relationships
+                for subgroup in data['subGroups']:
+                    new_subgroup_course = Participates(course_id=id, subgroup_id=subgroup['id'])
+                    db.session.add(new_subgroup_course)
+
+            if course_data:
+                db.session.query(Course).filter(Course.id == id).update(course_data)
+                    
+
+            db.session.commit()
+            return {'message': f'Course : {id} sucessfully updated!'}, 200
+        
         except Exception as e:
-            return  jsonify({"message": e}), 400
+            db.session.rollback()
+            return {'error': str(e)}, 500 
+        finally:
+            db.session.close()
+
+
 
     # ----------------------------------------------------------
     # Utilitaires
@@ -323,15 +345,19 @@ class course_service(Service):
     
     def get_course_statement_timetable(self, row):
         return {
-            'description': row[0],
-            'course_type': row[1],
-            'personal_code': row[2],   # Nom abrégé du professeur
-            'teaching_title': row[3],  # Nom de la matière    
-            'teachings.color': row[4],
-            'starttime': row[5],        
-            'endtime':  row[6],        
-            'room_name':  row[7],       # Nom de la salle
-            'subgroup_name': row[8],
-            'promotion': row[9],
-            'department': row[10],
+            'course_id': row[0],              
+            'description': row[1],
+            'course_type': row[2],
+            'personal_code': row[3],   # Nom abrégé du professeur
+            'teaching_title': row[4],  # Nom de la matière    
+            'teachings.color': row[5],
+            'starttime': row[6],        
+            'endtime':  row[7],        
+            'room_name':  row[8],       # Nom de la salle
+            'subgroup_name': row[9],
+            'promotion': row[10],
+            'department': row[11],
+            'personals_id': row[12],
+            'rooms_id': row[13],
+            'subgroups_id': row[14]
         }
