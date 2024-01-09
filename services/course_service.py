@@ -350,15 +350,12 @@ class course_service(Service):
             'id': row[0],              
             'description': row[1],
             'course_type': row[2],
-            'personal_code': row[3],   # Nom abrégé du professeur
-            'teaching_title': row[4],  # Nom de la matière    
+            'personals': row[3],   # Nom abrégé du professeur
+            'teaching': row[4],  # Nom de la matière    
             'starttime': row[5],        
             'endtime':  row[6],        
-            'room_name':  row[7],       # Nom de la salle
-            'subgroup_name': row[8],
+            'rooms':  row[7],       # Nom de la salle
+            'subgroups': row[8],
             'promotion': row[9],
             'department': row[10]
-            # 'personals_id': row[12],
-            # 'rooms_id': row[13],
-            # 'subgroups_id': row[14]
         }
