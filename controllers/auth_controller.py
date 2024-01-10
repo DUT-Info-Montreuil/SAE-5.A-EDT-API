@@ -5,8 +5,11 @@ from flask import Blueprint
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import create_access_token
+from flask_jwt_extended import set_access_cookies
 
 from services.auth_service import auth_service
+
+from datetime import timedelta
 
 auth_app = Blueprint('auth_app', __name__)
 
@@ -25,6 +28,8 @@ def login():
             return jsonify({"msg": returnStatement})
         else:
             access_token = create_access_token(identity=returnStatement)
+            response = jsonify({'token': access_token})
+            set_access_cookies(response, access_token)
             return jsonify({'token': access_token})
 
     except Exception as e:
@@ -43,9 +48,6 @@ def protected():
         return jsonify({"error": str(e)}), 500
 
 
-# deconnexion
-#@auth_app.route('/auth/logout')
-
 ## Service 
 
 #hash password / unshash
@@ -53,6 +55,20 @@ def protected():
 #refresh token
 
 # deconnexion
+@auth_app.route('/auth/logout', methods=['POST'])
+@jwt_required()
+def logout():
+    try:
+        # Accéder au jeton JWT brut depuis la requête
+        current_user = get_jwt_identity()
+        print(f"logout : {current_user}")
+        
+        # Créer un nouveau jeton avec un temps d'expiration court pour invalider le jeton actuel
+        access_token = create_access_token(identity=None, expires_delta=timedelta(secondes=0))
+        return jsonify({'msg': 'Déconnexion réussie', 'new_token': access_token}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 # Verif token
 
