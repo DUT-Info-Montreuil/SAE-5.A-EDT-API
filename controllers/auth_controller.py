@@ -5,7 +5,7 @@ from flask import Blueprint
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import create_access_token
-from flask_jwt_extended import set_access_cookies
+from flask_jwt_extended import set_access_cookies, unset_jwt_cookies
 
 from services.auth_service import auth_service
 
@@ -65,6 +65,9 @@ def logout():
         
         # Créer un nouveau jeton avec un temps d'expiration court pour invalider le jeton actuel
         access_token = create_access_token(identity=None, expires_delta=timedelta(secondes=0))
+        response = jsonify({'token': access_token})
+        set_access_cookies(response, access_token)
+        unset_jwt_cookies(response)
         return jsonify({'msg': 'Déconnexion réussie', 'new_token': access_token}), 200
 
     except Exception as e:
