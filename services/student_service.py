@@ -22,12 +22,12 @@ class student_service(Service):
     def get_student_by_id(self, id):
         """ Get a student by id in JSON format """
 
-        query = "SELECT * FROM university.students WHERE id = '" + id + "'"
+        query = "SELECT * FROM university.students WHERE id = %(id)s" % {'id': id}
         return self.execute_query_and_get_statement(query)
     
     def get_student_by_department(self, id):
 
-        query = "SELECT * FROM university.students WHERE id = '" + id + "'"
+        query = "SELECT * FROM university.students WHERE department_id = '" + id + "'"
         return self.execute_query_and_get_statement(query)
     
     def get_student_by_group(self, data):
@@ -98,13 +98,48 @@ class student_service(Service):
         group_id = data.get('group_id', '')
         subgroup_id = data.get('subgroup_id', '')
 
-        query = "INSERT INTO university.students (last_name, first_name, mail, phone_number, user_id, department_id, group_id, subgroup_id) VALUES ('%(last_name)s', '%(first_name)s', '%(mail)s', '%(phone_number)s', %(user_id)s, %(department_id)s, %(group_id)s, %(subgroup_id)s ) RETURINING id" % {'last_name': last_name, 'first_name': first_name, 'mail': mail, 'phone_number': phone_number, 'user_id': user_id, 'department_id': department_id, 'group_id': group_id, 'subgroup_id': subgroup_id}                                                                                                                                                               
+        query = "INSERT INTO university.students (last_name, first_name, mail, phone_number, user_id, department_id, group_id, subgroup_id) VALUES ('%(last_name)s', '%(first_name)s', '%(mail)s', '%(phone_number)s', %(user_id)s, %(department_id)s, %(group_id)s, %(subgroup_id)s ) RETURNING id" % {'last_name': last_name, 'first_name': first_name, 'mail': mail, 'phone_number': phone_number, 'user_id': user_id, 'department_id': department_id, 'group_id': group_id, 'subgroup_id': subgroup_id}                                                                                                                                                               
  
         conn = self.get_connection()
         new_id = connect_pg.execute_commands(conn, (query,))
-        connect_pg.disconnect(conn)
+        #connect_pg.disconnect(conn)
     
         return new_id
+
+    # def add_student(self, data):
+    #     """ Add a student by data in JSON format """
+    #     last_name = data.get('last_name', '')
+    #     first_name = data.get('first_name', '')
+    #     mail = data.get('mail', '')
+    #     phone_number = data.get('phone_number', '')
+    #     user_id = data.get('user_id')
+    #     department_id = data.get('department_id', '')
+    #     group_id = data.get('group_id', '')
+    #     subgroup_id = data.get('subgroup_id', '')
+
+    #     query = """
+    #         INSERT INTO university.students (last_name, first_name, mail, phone_number, user_id, department_id, group_id, subgroup_id)
+    #         VALUES (%(last_name)s, %(first_name)s, %(mail)s, %(phone_number)s, %(user_id)s, %(department_id)s, %(group_id)s, %(subgroup_id)s)
+    #         RETURNING id
+    #     """
+
+    #     params = {
+    #         'last_name': last_name,
+    #         'first_name': first_name,
+    #         'mail': mail,
+    #         'phone_number': phone_number,
+    #         'user_id': user_id,
+    #         'department_id': department_id,
+    #         'group_id': group_id,
+    #         'subgroup_id': subgroup_id
+    #     }
+
+    #     conn = self.get_connection()
+    #     new_id = connect_pg.execute_commands(conn, (query, params))
+    #     connect_pg.disconnect(conn)
+
+    #     return new_id
+
     
     
     def delete_student_by_id(self, id):
@@ -136,15 +171,15 @@ class student_service(Service):
         subgroup_id = data.get('subgroup_id', existing_student['subgroup_id'])
 
         query = """UPDATE university.students
-                SET last_name = '" + last_name+ "',
-                    first_name = '" + first_name+ "',
-                    mail = '" + mail+ "',
-                    phone_number = '" + phone_number+ "',
-                    user_id = '" + phone_number+ "',
-                    department_id = " + department_id+ ",
-                    group_id = " + group_id+ ",
-                    subgroup_id = " + subgroup_id+ "
-                WHERE id = '" + id+ "'
+                SET last_name = '%(last_name)s',
+                    first_name = '%(first_name)s',
+                    mail = '%(mail)s',
+                    phone_number = '%(phone_number)s',
+                    user_id = %(user_id)s,
+                    department_id = %(department_id)s,
+                    group_id = %(group_id)s,
+                    subgroup_id = %(subgroup_id)s
+                WHERE id = %(id)s
                 RETURNING id """ % {
                     'id': id,
                     'last_name': last_name,

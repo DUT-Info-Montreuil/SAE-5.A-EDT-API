@@ -89,7 +89,7 @@ def add_student():
     try:
         data = request.json
         _service = student_service()
-        _service.get_student_by_subgroup(data)
+        _service.add_student(data)
         return jsonify({"message": "Student successfully added!"}), 200
 
     except Exception as e:
