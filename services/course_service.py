@@ -344,17 +344,31 @@ class course_service(Service):
             'teaching_id': row[5]      # L'ID de l'enseignement associé au cours
         }
     
+    #@todo: filter at the level of the query ?
+    #@todo: use sqlalchemy on the whole class to avoid using this function
+    def filter_none(self, value):
+        if isinstance(value, dict):
+            new_dict = {k: self.filter_none(v) for k, v in value.items() if v is not None}
+            return new_dict if new_dict else None
+        elif isinstance(value, list):
+            new_list = [self.filter_none(v) for v in value]
+            return new_list if any(new_list) else None
+        else:
+            return value
+     
     def get_course_statement_timetable(self, row):
-        return {
+        course_data = {
             'id': row[0],              
             'description': row[1],
             'course_type': row[2],
-            'personals': row[3],   # Nom abrégé du professeur
-            'teaching': row[4],  # Nom de la matière    
+            'personals': self.filter_none(row[3]), 
+            'teaching': self.filter_none(row[4]),  
             'starttime': row[5],        
             'endtime':  row[6],        
-            'rooms':  row[7],       # Nom de la salle
-            'subgroups': row[8],
-            'promotion': row[9],
-            'department': row[10]
+            'rooms':  self.filter_none(row[7]),       
+            'subgroups': self.filter_none(row[8]),
+            'promotion': row[9]
         }
+        return {k: v for k, v in course_data.items() if v is not None}
+    
+    
