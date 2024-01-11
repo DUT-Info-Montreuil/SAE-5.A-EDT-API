@@ -77,16 +77,16 @@ class participate_service(Service):
             return existing_participate
 
         course_id = data.get('course_id', existing_participate['course_id'])
-        rooms_id = data.get('rooms_id', existing_participate['rooms_id'])
+        subgroup_id = data.get('subgroup_id', existing_participate['subgroup_id'])
 
         query = """UPDATE university.participates
                 SET course_id = %(course_id)s,
-                    rooms_id = %(rooms_id)s
+                    subgroup_id = %(subgroup_id)s
                 WHERE id = %(id)s
                 RETURNING id """ % {
                     'id': id,
                     'course_id': course_id,
-                    'rooms_id': rooms_id
+                    'subgroup_id': subgroup_id
                 }
 
         conn = self.get_connection()
@@ -100,5 +100,5 @@ class participate_service(Service):
         return {
             'id': row[0],              # L'ID du cours
             'course_id': row[1],     # L'ID du subgroup associée au participate
-            'rooms_id': row[2]     # L'ID du subgroup associée au participate
+            'subgroup_id': row[2]     # L'ID du subgroup associée au participate
         }

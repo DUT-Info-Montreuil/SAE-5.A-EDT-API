@@ -9,13 +9,57 @@ from configuration.config import config
 app = Flask(__name__)
 # === endregion : Flask ===
 
+
+#######################   SWAGGER    ####################################
+
+from flask_swagger_ui import get_swaggerui_blueprint
+SWAGGER_URL = '/swagger'  # URL for exposing Swagger UI (without trailing '/')
+API_URL = '/static/swagger.json'  # Our API url (can of course be a local resource)
+
+swaggerui_blueprint = get_swaggerui_blueprint(
+    SWAGGER_URL,  # Swagger UI static files will be mapped to '{SWAGGER_URL}/dist/'
+    API_URL,
+    config={  # Swagger UI config overrides
+        'app_name': "Test application"
+    },
+    # oauth_config={  # OAuth config. See https://github.com/swagger-api/swagger-ui#oauth2-configuration .
+    #    'clientId': "your-client-id",
+    #    'clientSecret': "your-client-secret-if-required",
+    #    'realm': "your-realms",
+    #    'appName': "your-app-name",
+    #    'scopeSeparator': " ",
+    #    'additionalQueryStringParams': {'test': "hello"}
+    # }
+)
+
+app.register_blueprint(swaggerui_blueprint)
+######################################################################
 # === region : JWT ===
-from flask_jwt_extended import JWTManager, jwt_required
-from datetime import timedelta
+from flask_jwt_extended import JWTManager, jwt_required, create_access_token, get_jwt_identity, get_jwt
+from datetime import datetime, timedelta, timezone
+from flask_jwt_extended import set_access_cookies
 
 app.config["JWT_SECRET_KEY"] = "hcohen_aclaude_achetouani_bseydi_mtoure"
-app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(minutes=15) 
-jwt = JWTManager(app)
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(seconds=15) 
+
+jwt = JWTManager(app) 
+
+def refresh_expiring_jwts(response):
+    try:
+        exp_timestamp = get_jwt()["exp"]
+        exp_datetime = datetime.fromtimestamp(exp_timestamp)
+        now = datetime.now(timezone.utc)
+        target_timestamp = datetime.timestamp(now + timedelta(minutes=15))
+        if target_timestamp > exp_timestamp:
+            access_token = create_access_token(identity=get_jwt_identity())
+            print(access_token)
+            set_access_cookies(response, access_token)
+        return response
+    
+    except (RuntimeError, KeyError):
+        return response
+
+
 # === endregion : JWT ===
 
 # === region : SQLAlchemy ===
@@ -34,6 +78,7 @@ def apply_jwt_middleware(blueprint):
     def before_request():
         pass
 
+
 apply_jwt_middleware(department_app)
 apply_jwt_middleware(group_app)
 apply_jwt_middleware(subgroup_app)
@@ -51,6 +96,26 @@ apply_jwt_middleware(participate_app)
 apply_jwt_middleware(user_app)
 apply_jwt_middleware(rooms_courses_app) 
 apply_jwt_middleware(personals_courses_app) 
+
+university_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+department_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+group_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+subgroup_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+personal_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+specialization_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+room_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+teaching_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+role_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+course_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+student_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+responsible_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+reminder_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+absent_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+participate_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+auth_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+user_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+rooms_courses_app.after_request(refresh_expiring_jwts) # Add refresh token after request
+personals_courses_app.after_request(refresh_expiring_jwts) # Add refresh token after request
 
 app.register_blueprint(university_app) # Register the university controller
 app.register_blueprint(department_app) # Register the department controller
@@ -71,7 +136,7 @@ app.register_blueprint(auth_app) # Register the autentification controller
 app.register_blueprint(user_app) # Register the user controller
 app.register_blueprint(rooms_courses_app) # Register the rooms_courses controller
 app.register_blueprint(personals_courses_app) # Register the personals_courses controller
-
+        
 # === endregion : blueprint_controller ===
 
 # === region : API ===

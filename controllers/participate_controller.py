@@ -75,7 +75,7 @@ def delete_participate_by_id(id):
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
     
-@participate_app.route('/participate/update/<int:id>', methods=['PATCH'])
+@participate_app.route('/participates/update/<int:id>', methods=['PATCH'])
 def update_participate(id):
     """ Update a participate record by ID using data in JSON format """
     try:

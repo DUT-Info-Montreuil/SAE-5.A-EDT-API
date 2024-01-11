@@ -61,7 +61,8 @@ class teaching_service(Service):
         teaching_type = data.get('teaching_type', '')
         specialization_id = data.get('specialization_id', '')
     
-        query = "INSERT INTO university.teachings (title, hour_number, semestre, sequence, description, color, teaching_type, specialization_id) VALUES ('%(title)s', %(hour_number)s, %(semestre)s, '%(sequence)s', '%(description)s', '%(color)s', '%(teaching_type)s,' %(specialization_id)s)"
+        query = "INSERT INTO university.teachings (title, hour_number, semestre, sequence, description, color, teaching_type, specialization_id) VALUES ('%(title)s', %(hour_number)s, %(semestre)s, '%(sequence)s', '%(description)s', '%(color)s', '%(teaching_type)s', %(specialization_id)s)" % {'title': title, 'hour_number': hour_number, 'semestre': semestre, 'sequence': sequence, 'description': description, 'color': color, 'teaching_type': teaching_type, 'specialization_id': specialization_id}
+
         conn = self.get_connection()
         new_teaching_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -69,11 +70,12 @@ class teaching_service(Service):
         return new_teaching_id
     
     def delete_teaching_by_id(self, id):
-        """ Delete a teaching by ID in JSON format """
+        """ Delete a teachings by ID in JSON format """
         query = "DELETE FROM university.teachings WHERE id = %(id)s RETURNING id" %  {'id': id}
         conn = self.get_connection()
         row = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
+        print(row)
         return row
     
     def update_teaching(self, id, data):
@@ -90,6 +92,7 @@ class teaching_service(Service):
         semestre = data.get('semestre', existing_teaching['semestre'])
         sequence = data.get('sequence', existing_teaching['sequence'])
         description = data.get('description', existing_teaching['description'])
+        color = data.get('color', existing_teaching['color'])
         teaching_type = data.get('teaching_type', existing_teaching['teaching_type'])
         specialization_id = data.get('specialization_id', existing_teaching['specialization_id'])
 
@@ -99,6 +102,7 @@ class teaching_service(Service):
                     semestre = %(semestre)s,
                     sequence = '%(sequence)s',
                     description = '%(description)s',
+                    color = '%(color)s',
                     teaching_type = '%(teaching_type)s',
                     specialization_id = %(specialization_id)s
                 WHERE id = %(id)s
@@ -109,6 +113,7 @@ class teaching_service(Service):
                     'semestre': semestre,
                     'sequence': sequence,
                     'description': description,
+                    'color': color,
                     'teaching_type': teaching_type,
                     'specialization_id': specialization_id
                 }

@@ -3,7 +3,7 @@ from services.user_service import UserService
 user_app = Blueprint('user_app', __name__)
 userService = UserService()
 
-@user_app.route('/users', methods=['GET'])
+@user_app.route('/users/get', methods=['GET'])
 def get_users():
     try:
         users = userService.get_all_users()
@@ -11,7 +11,7 @@ def get_users():
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
-@user_app.route('/users/<int:user_id>', methods=['GET'])
+@user_app.route('/users/get/<int:user_id>', methods=['GET'])
 def get_user_by_id(user_id):
     try:
         user = userService.get_user_by_id(user_id)
@@ -28,7 +28,7 @@ def find_user():
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
     
-@user_app.route('/users/<int:user_id>', methods=['PUT'])
+@user_app.route('/users/update/<int:user_id>', methods=['PATCH'])
 def update_user(user_id):
     try:
         data = request.get_json()
@@ -37,7 +37,7 @@ def update_user(user_id):
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
     
-@user_app.route('/users/<int:user_id>', methods=['DELETE'])
+@user_app.route('/users/delete/<int:user_id>', methods=['DELETE'])
 def delete_user(user_id):
     try:
         userService.delete_user(user_id)
@@ -52,8 +52,7 @@ def add_user():
     """ Get all students in JSON format """
     try:
         data = request.json
-        _service = userService()
-        returnStatement = _service.add_user(data)
-        return jsonify(returnStatement)
+        userService.add_user(data)     
+        return jsonify({'message': 'User added successfully'})
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404

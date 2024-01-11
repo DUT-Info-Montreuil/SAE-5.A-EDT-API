@@ -105,8 +105,7 @@ def add_course():
     try:
         data = request.json
         _service = course_service()
-        _service.add_course(data)
-        return jsonify({"message": "Course successfully added!"}), 200
+        return jsonify(_service.add_course(data))
 
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
@@ -116,8 +115,7 @@ def delete_course_by_id(id):
     """ Delete a course by ID in JSON format """
     try:
         _service = course_service()
-        _service.delete_course_by_id(id)
-        return jsonify({"message": "Course successfully deleted !"}), 200
+        return jsonify(_service.delete_course_by_id(id))
     
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
@@ -128,8 +126,7 @@ def update_course(id):
     try:
         data = request.json
         _service = course_service()
-        _service.update_course(id, data)
-        return jsonify({"message": "Course successfully updated!"}), 200
+        return jsonify(_service.update_course(id, data)), 200
 
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404

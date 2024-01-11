@@ -79,7 +79,7 @@ def delete_personal_by_id(id):
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
 
-@personal_app.route('/personal/update/<int:id>', methods=['PATCH'])
+@personal_app.route('/personals/update/<int:id>', methods=['PATCH'])
 def update_personal(id):
     """ Update a personal record by ID using data in JSON format """
     try:

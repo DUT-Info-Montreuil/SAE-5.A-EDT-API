@@ -57,7 +57,7 @@ class UserService:
         else:
             return False
 
-    def add_user(self, data):
+    def add_user2(self, data):
         username = data.get('username', '')
         #do the hashing
         password = data.get('password', '')
@@ -67,10 +67,22 @@ class UserService:
         if len(username) > 64:
             return 'username to long'
         
-        query = "INSERT INTO university.users (username, password) VALUES ('" + username + "', '" + password + "')"
+        query = "INSERT INTO university.users (username, password) VALUES ('%(username)s', '%(password)s') RETURNING id" % {'username': username, 'password': password}
 
         conn = self.get_connection()
         connect_pg.execute_commands(conn, (query,))
         connect_pg.disconnect(conn)
 
         return "Successfully inserted"
+    
+
+    def add_user(self, data):
+        try:
+            new_user = User(**data)
+            db.session.add(new_user)
+            db.session.commit()
+            return True
+        except Exception as e:
+            db.session.rollback()
+            print(f"Error adding user: {e}")
+            return False

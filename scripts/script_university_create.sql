@@ -176,12 +176,12 @@ CREATE TABLE university.rooms_courses (
     -- FOREIGN KEY (courses)
     course_id INT NOT NULL,
     constraint fk_university_rooms_courses_courses foreign key (course_id)
-    references university.courses (id) on delete restrict on update cascade,
+    references university.courses (id) on delete cascade on update cascade,
 
     -- FOREIGN KEY (groups)
     rooms_id INT NOT NULL,
     constraint fk_university_rooms_courses_rooms foreign key (rooms_id)
-    references university.rooms (id) on delete restrict on update cascade
+    references university.rooms (id) on delete cascade on update cascade
 ) ;
 
 CREATE TABLE university.personals_courses (
@@ -190,12 +190,12 @@ CREATE TABLE university.personals_courses (
     -- FOREIGN KEY (courses)
     course_id INT NOT NULL,
     constraint fk_university_rooms_courses_courses foreign key (course_id)
-    references university.courses (id) on delete restrict on update cascade,
+    references university.courses (id) on delete cascade on update cascade,
 
     -- FOREIGN KEY (groups)
     personal_id INT NOT NULL,
     constraint fk_university_personal_courses_personal foreign key (personal_id)
-    references university.personals (id) on delete restrict on update cascade
+    references university.personals (id) on delete cascade on update cascade
 ) ;
 
 
@@ -255,12 +255,12 @@ CREATE TABLE university.absents(
     -- FOREIGN KEY (students)
     student_number INT NOT NULL,
     constraint fk_university_absents_students foreign key (student_number)
-    references university.students(id) on delete restrict on update cascade,
+    references university.students(id) on delete cascade on update cascade,
 
     -- FOREIGN KEY (courses)
     course_id INT NOT NULL,
     constraint fk_university_absents_courses foreign key (course_id)
-    references university.courses (id) on delete restrict on update cascade
+    references university.courses (id) on delete cascade on update cascade
 ) ;
 
 -- \echo [INFO] Create the university.participates table
@@ -270,12 +270,12 @@ CREATE TABLE university.participates(
     -- FOREIGN KEY (courses)
     course_id INT NOT NULL,
     constraint fk_university_participates_courses foreign key (course_id)
-    references university.courses (id) on delete restrict on update cascade,
+    references university.courses (id) on delete cascade on update cascade,
 
     -- FOREIGN KEY (groups)
     subgroup_id INT NOT NULL,
     constraint fk_university_participates_subgroups foreign key (subgroup_id)
-    references university.subgroups (id) on delete restrict on update cascade
+    references university.subgroups (id) on delete cascade on update cascade
 ) ;
 
 -- \echo [INFO] Create the university.responsibles table
@@ -286,12 +286,12 @@ CREATE TABLE university.responsibles(
     -- FOREIGN KEY (personals)
     personal_id INT NOT NULL,
     constraint fk_university_responsibles_personals foreign key (personal_id)
-    references university.personals (id) on delete restrict on update cascade,
+    references university.personals (id) on delete cascade on update cascade,
 
     -- FOREIGN KEY (teachings)
     teaching_id INT NOT NULL,
     constraint fk_university_responsibles_teachings foreign key (teaching_id)
-    references university.teachings (id) on delete restrict on update cascade
+    references university.teachings (id) on delete cascade on update cascade
 ) ;
 
 
@@ -303,7 +303,7 @@ CREATE TABLE university.responsibles(
 ALTER TABLE university.reminders
 ADD CONSTRAINT fk_university_reminders_courses
 FOREIGN KEY (course_id) REFERENCES university.courses(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
+ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- For the table 'courses'
 -- \echo [INFO] Alter table university.courses
@@ -315,73 +315,73 @@ ON DELETE RESTRICT ON UPDATE CASCADE;
 ALTER TABLE university.courses
 ADD CONSTRAINT fk_university_courses_teachings
 FOREIGN KEY (teaching_id) REFERENCES university.teachings(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
+ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- For the table 'subgroups'
 -- \echo [INFO] Alter table university.subgroups
 ALTER TABLE university.subgroups
 ADD CONSTRAINT fk_university_subgroups_groups
 FOREIGN KEY (group_id) REFERENCES university.groups(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
+ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- For the table 'groups'
 -- \echo [INFO] Alter table university.groups
 ALTER TABLE university.groups
 ADD CONSTRAINT fk_university_groups_departments
 FOREIGN KEY (department_id) REFERENCES university.departments(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
+ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- For the table 'departments'
 -- \echo [INFO] Alter table university.departments
 ALTER TABLE university.departments
 ADD CONSTRAINT fk_university_departments_personals
 FOREIGN KEY (personal_id) REFERENCES university.personals(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
+ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- For the table 'students'
 -- \echo [INFO] Alter table university.students
 ALTER TABLE university.students
 ADD CONSTRAINT fk_university_students_departments
 FOREIGN KEY (department_id) REFERENCES university.departments(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
+ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE university.students
 ADD CONSTRAINT fk_university_students_groups
 FOREIGN KEY (group_id) REFERENCES university.groups(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
+ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE university.students
 ADD CONSTRAINT fk_university_students_subgroups
 FOREIGN KEY (subgroup_id) REFERENCES university.subgroups(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
+ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE university.students
 ADD CONSTRAINT fk_university_students_users
 FOREIGN KEY (user_id) REFERENCES university.users(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
+ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE university.personals
 ADD CONSTRAINT fk_university_personals_users
 FOREIGN KEY (user_id) REFERENCES university.users(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
+ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- For the table 'roles'
 -- \echo [INFO] Alter table university.roles
 ALTER TABLE university.roles
 ADD CONSTRAINT fk_university_roles_personals
 FOREIGN KEY (personal_id) REFERENCES university.personals(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
+ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- For the table 'specializations'
 -- \echo [INFO] Alter table university.specializations
 ALTER TABLE university.specializations
 ADD CONSTRAINT fk_university_specializations_departments
 FOREIGN KEY (department_id) REFERENCES university.departments(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
+ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- For the table 'specializations'
 -- \echo [INFO] Alter table university.specializations
 ALTER TABLE university.teachings
 ADD CONSTRAINT fk_university_teachings_specializations
 FOREIGN KEY (specialization_id) REFERENCES university.specializations(id)
-ON DELETE RESTRICT ON UPDATE CASCADE;
+ON DELETE CASCADE ON UPDATE CASCADE;

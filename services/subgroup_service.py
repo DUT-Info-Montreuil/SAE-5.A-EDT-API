@@ -28,6 +28,16 @@ class subgroup_service(Service):
             returnStatement = self.get_subgroup_statement(rows[0])
         # connect_pg.disconnect(conn)
         return returnStatement
+
+    def get_subgroup_by_group_id(self, id):
+        query = "SELECT * from university.subgroups WHERE group_id = " + str(id)
+        conn = self.get_connection()
+        rows = connect_pg.get_query(conn, query)
+        returnStatement = []
+        for row in rows:
+            returnStatement.append(self.get_subgroup_statement(row))
+        connect_pg.disconnect(conn)
+        return returnStatement
     
     def identify_subgroup(self, data):
         """Identify a subgroup by name and group_id in JSON format"""
