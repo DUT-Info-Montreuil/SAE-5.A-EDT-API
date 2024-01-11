@@ -40,7 +40,7 @@ from datetime import datetime, timedelta, timezone
 from flask_jwt_extended import set_access_cookies
 
 app.config["JWT_SECRET_KEY"] = "hcohen_aclaude_achetouani_bseydi_mtoure"
-app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(seconds=15) 
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(minutes=15) 
 
 jwt = JWTManager(app) 
 
