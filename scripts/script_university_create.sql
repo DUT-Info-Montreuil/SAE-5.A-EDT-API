@@ -229,7 +229,7 @@ CREATE TABLE university.teachings (
     semestre INT NOT NULL, -- exemple : 5 for R5.X
     sequence VARCHAR(8) NOT NULL, -- exemple : "2" for RX.2 or "MP.09" for RX.MP.09
     description TEXT,
-    color VARCHAR(6),
+    color VARCHAR(7),
 
     --Situations d’apprentissage et d’évaluation (SAÉ)
     --Ressources transversales (RT)
