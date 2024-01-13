@@ -9,7 +9,7 @@ delete FROM university.students;
 INSERT INTO university.students (last_name, first_name, mail, phone_number, user_id, department_id, group_id, subgroup_id)
 VALUES
     ('Mehedi', 'Toure', 'mtoure@iut.univ-paris8.fr', '07.12.34.56.78', (SELECT id FROM university.users WHERE username = 'mtoure'), 1, 38, 38), -- username : mtoure 
-    ('Hugo', 'COHEN', 'hcohen@iut.univ-paris8.fr', '06.12.21.12.21', (SELECT id FROM university.users WHERE username = 'hcohen'), 1, 38, 38), -- username : hcohen 
+    ('Hugo', 'COHEN', 'hcohen@iut.univ-paris8.fr', '06.12.21.12.21', (SELECT id FROM university.users WHERE username = 'hcohen'), 1, 1, 1), -- username : hcohen 
     ('Aldric', 'CLAUDE', 'aclaude@iut.univ-paris8.fr', '07.11.11.11.11', (SELECT id FROM university.users WHERE username = 'aclaude'), 1, 38, 38), -- username : aclaude 
     ('Adil', 'CHETOUANI', 'achetouani@iut.univ-paris8.fr', '07.22.22.22.22', (SELECT id FROM university.users WHERE username = 'achetouani'), 1, 38, 38), -- username : achetouani 
     ('Boulaye', 'SEYDI', 'bseydi@iut.univ-paris8.fr', '07.01.10.01.10', (SELECT id FROM university.users WHERE username = 'bseydi'), 1, 38,38) -- username : bbseydi 
