@@ -148,11 +148,11 @@ class course_service(Service):
     # Get by teachers id also ?
     # To adapt with the new student id
     def get_timetable_by_student(self, data):
-        student_id = data.get('student_id', '') 
+        username = data.get('username', '') 
         week_date_start = data.get('week_date_start', '') #Format : YYYY-MM-DD
         week_date_end = data.get('week_date_end', '')
 
-        if student_id == '' or week_date_start == '' or week_date_end == '':
+        if username == '' or week_date_start == '' or week_date_end == '':
             return "Null arguments"
 
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
@@ -173,12 +173,14 @@ class course_service(Service):
                 LEFT JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
 
                 LEFT JOIN university.participates ON university.courses.id = university.participates.course_id
-                INNER JOIN university.students ON university.participates.subgroup_id = university.students.subgroup_id
+                LEFT JOIN university.students ON university.participates.subgroup_id = university.students.subgroup_id
                 LEFT JOIN university.subgroups ON university.participates.subgroup_id = university.subgroups.id
                 LEFT JOIN university.groups ON university.subgroups.group_id = university.groups.id
                 LEFT JOIN university.departments ON university.groups.department_id = university.departments.id
 
-                WHERE university.students.id =""" +  str(student_id) + """ AND
+                INNER JOIN university.users ON university.students.user_id = university.users.id
+
+                WHERE users.username = '""" +  str(username) + """' AND
                 starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'
                 
                 GROUP BY courses.id, courses.description, course_type, teachings.title, teachings.color, teachings.id, courses.starttime, courses.endtime, university.groups.promotion, departments.name"""  
