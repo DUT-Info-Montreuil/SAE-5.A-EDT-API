@@ -162,6 +162,7 @@ class course_service(Service):
                 jsonb_build_object('title', teachings.title, 'color', teachings.color, 'id', teachings.id),
                 TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), json_agg(DISTINCT jsonb_build_object('code', rooms.code, 'id', rooms.id)),
                 json_agg(DISTINCT jsonb_build_object('name', subgroups.name, 'id', subgroups.id)), university.groups.promotion, departments.name
+                
                 FROM university.courses
 
                 INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
@@ -184,7 +185,7 @@ class course_service(Service):
                 starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'
                 
                 GROUP BY courses.id, courses.description, course_type, teachings.title, teachings.color, teachings.id, courses.starttime, courses.endtime, university.groups.promotion, departments.name"""  
-        return self.execute_query_and_get_statement(query)
+        return self.execute_query_and_get_statement_timetable(query)
     
     # ----------------------------------------------------------
     # Add / Delete / Update
