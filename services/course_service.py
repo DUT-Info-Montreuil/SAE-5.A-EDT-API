@@ -57,29 +57,7 @@ class course_service(Service):
         values = self.execute_subquery_and_get_statement(query)
         if values is None:
             return {}
-
-        query = """SELECT courses.id, courses.description, course_type,  json_agg(DISTINCT jsonb_build_object('personal_code', personals.personal_code, 'id',personals.id)),
-                jsonb_build_object('title', teachings.title, 'color', teachings.color, 'id', teachings.id),
-                TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), json_agg(DISTINCT jsonb_build_object('code', rooms.code, 'id', rooms.id)),
-                json_agg(DISTINCT jsonb_build_object('name', subgroups.name, 'id', subgroups.id, 'department', departments.name, 'promotion', university.groups.promotion, 'group_id', groups.id))
-
-                    FROM university.courses 
-                    INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
-
-                    LEFT JOIN university.personals_courses ON university.personals_courses.course_id = university.courses.id
-                    LEFT JOIN university.personals ON university.personals_courses.personal_id = university.personals.id
-
-                    LEFT JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
-                    LEFT JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
-
-                    LEFT JOIN university.participates ON university.courses.id = university.participates.course_id
-                    LEFT JOIN university.subgroups ON university.participates.subgroup_id = university.subgroups.id
-                    LEFT JOIN university.groups ON university.subgroups.group_id = university.groups.id
-                    LEFT JOIN university.departments ON university.groups.department_id = university.departments.id
-
-                    WHERE university.courses.id  IN (""" +  str(values) + """)
-                    GROUP BY courses.id, courses.description, course_type, teachings.title, teachings.color, teachings.id, courses.starttime, courses.endtime"""
-        return self.execute_query_and_get_statement_timetable(query)
+        return self.timetable_query(values)
     
     def get_timetable_by_teacher(self, data):
         personal_id = data.get('personal_id', '')
@@ -103,29 +81,7 @@ class course_service(Service):
         values = self.execute_subquery_and_get_statement(query)
         if values is None:
             return {}
-
-        query = """SELECT courses.id, courses.description, course_type,  json_agg(DISTINCT jsonb_build_object('personal_code', personals.personal_code, 'id',personals.id)),
-                jsonb_build_object('title', teachings.title, 'color', teachings.color, 'id', teachings.id),
-                TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), json_agg(DISTINCT jsonb_build_object('code', rooms.code, 'id', rooms.id)),
-                json_agg(DISTINCT jsonb_build_object('name', subgroups.name, 'id', subgroups.id, 'department', departments.name, 'promotion', university.groups.promotion, 'group_id', groups.id))
-
-                    FROM university.courses 
-                    INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
-
-                    LEFT JOIN university.personals_courses ON university.personals_courses.course_id = university.courses.id
-                    LEFT JOIN university.personals ON university.personals_courses.personal_id = university.personals.id
-
-                    LEFT JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
-                    LEFT JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
-
-                    LEFT JOIN university.participates ON university.courses.id = university.participates.course_id
-                    LEFT JOIN university.subgroups ON university.participates.subgroup_id = university.subgroups.id
-                    LEFT JOIN university.groups ON university.subgroups.group_id = university.groups.id
-                    LEFT JOIN university.departments ON university.groups.department_id = university.departments.id
-
-                    WHERE university.courses.id  IN (""" +  str(values) + """)
-                    GROUP BY courses.id, courses.description, course_type, teachings.title, teachings.color, teachings.id, courses.starttime, courses.endtime"""
-        return self.execute_query_and_get_statement_timetable(query)
+        return self.timetable_query(values)
     
     def get_timetable_by_department(self, data):
         promotion = data.get('promotion', '')
@@ -153,31 +109,7 @@ class course_service(Service):
         values = self.execute_subquery_and_get_statement(query)
         if values is None:
             return {}
-
-        query = """SELECT courses.id, courses.description, course_type,  json_agg(DISTINCT jsonb_build_object('personal_code', personals.personal_code, 'id',personals.id)),
-                jsonb_build_object('title', teachings.title, 'color', teachings.color, 'id', teachings.id),
-                TO_CHAR(starttime, 'yyyy-mm-dd"T"HH24:MI'), TO_CHAR(endtime, 'yyyy-mm-dd"T"HH24:MI'), json_agg(DISTINCT jsonb_build_object('code', rooms.code, 'id', rooms.id)),
-                json_agg(DISTINCT jsonb_build_object('name', subgroups.name, 'id', subgroups.id, 'department', departments.name, 'promotion', university.groups.promotion, 'group_id', groups.id))
-                
-                FROM university.courses
-
-                INNER JOIN university.teachings ON university.courses.teaching_id = university.teachings.id
-
-				LEFT JOIN university.personals_courses ON university.personals_courses.course_id = university.courses.id
-				LEFT JOIN university.personals ON university.personals_courses.personal_id = university.personals.id
-
-				LEFT JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
-				LEFT JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
-
-				LEFT JOIN university.participates ON university.courses.id = university.participates.course_id
-				LEFT JOIN university.subgroups ON university.participates.subgroup_id = university.subgroups.id
-				LEFT JOIN university.groups ON university.subgroups.group_id = university.groups.id
-				LEFT JOIN university.departments ON university.groups.department_id = university.departments.id
-
-                WHERE university.courses.id  IN (""" +  str(values) + """)
-                GROUP BY courses.id, courses.description, course_type, teachings.title, teachings.color, teachings.id, courses.starttime, courses.endtime"""
-        
-        return self.execute_query_and_get_statement_timetable(query)
+        return self.timetable_query(values)
     
     def get_timetable_by_student(self, data):
         student_id = data.get('student_id', '') 
@@ -200,7 +132,11 @@ class course_service(Service):
                 starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
         
         values = self.execute_subquery_and_get_statement(query)
+        if values is None:
+            return {}
+        return self.timetable_query(values)
 
+    def timetable_query(self, values):
         if values is None:
             return {}
 
