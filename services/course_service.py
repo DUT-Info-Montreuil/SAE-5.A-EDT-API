@@ -308,8 +308,8 @@ class course_service(Service):
                     new_participant = Participates(course_id=new_course.id, subgroup_id=participant.subgroup_id)
                     db.session.add(new_participant)
 
-                db.session.commit()
-                return {'message': f'Course {new_course.id} successfully added!'}, 200
+            db.session.commit()
+            return {'message': f'Courses successfully added!'}, 200
         except Exception as e:
             db.session.rollback()
             return {'error': str(e)}, 500 
@@ -401,8 +401,8 @@ class course_service(Service):
                     new_participant = Participates(course_id=new_course.id, subgroup_id=participant.subgroup_id)
                     db.session.add(new_participant)
 
-                db.session.commit()
-                return {'message': f'Course {new_course.id} successfully added!'}, 200
+            db.session.commit()
+            return {'message': f'Course {new_course.id} successfully added!'}, 200
         except Exception as e:
             db.session.rollback()
             return {'error': str(e)}, 500 
