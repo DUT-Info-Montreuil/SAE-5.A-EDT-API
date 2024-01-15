@@ -94,6 +94,16 @@ def copy_courses_by_day():
         return jsonify({'edt' : returnStatement})
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 501
+    
+@course_app.route('/courses/copy/week', methods=['POST'])
+def copy_courses_by_day():
+    try:
+        data = request.json
+        _service = course_service()
+        returnStatement = _service.copy_courses_by_week(data)
+        return jsonify({'edt' : returnStatement})
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 501
 
 # ----------------------------------------------------------
 # Add / Delete / Update
