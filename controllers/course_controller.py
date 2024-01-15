@@ -63,13 +63,13 @@ def get_timetable_by_department():
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
     
-@course_app.route('/courses/timetable/by-student', methods=['POST'])
+@course_app.route('/courses/timetable/by-username', methods=['POST'])
 def get_timetable_by_student():
     """ Get timetable by teacher_id"""
     try:
         data = request.json
         _service = course_service()
-        returnStatement = _service.get_timetable_by_student(data)
+        returnStatement = _service.student_or_personal(data)
         return jsonify({'edt' : returnStatement})
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
@@ -96,7 +96,7 @@ def copy_courses_by_day():
         return jsonify({"error": f"An error occurred: {str(e)}"}), 501
     
 @course_app.route('/courses/copy/week', methods=['POST'])
-def copy_courses_by_day():
+def copy_courses_by_week():
     try:
         data = request.json
         _service = course_service()
