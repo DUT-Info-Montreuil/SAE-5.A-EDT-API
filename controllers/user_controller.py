@@ -47,12 +47,13 @@ def delete_user(user_id):
 
    
 #should it be protected?, do we need an endpoint ? 
-@user_app.route('/user/add', methods=['PUT'])
+@user_app.route('/users/add', methods=['PUT'])
 def add_user():
     """ Get all students in JSON format """
     try:
         data = request.json
-        userService.add_user(data)     
+        userService.add_user(data) 
         return jsonify({'message': 'User added successfully'})
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 404
+
