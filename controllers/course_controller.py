@@ -96,7 +96,7 @@ def copy_courses_by_day():
         return jsonify({"error": f"An error occurred: {str(e)}"}), 501
     
 @course_app.route('/courses/copy/week', methods=['POST'])
-def copy_courses_by_day():
+def copy_courses_by_week():
     try:
         data = request.json
         _service = course_service()
