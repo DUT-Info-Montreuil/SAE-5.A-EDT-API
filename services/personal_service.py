@@ -2,6 +2,8 @@ from services.main_service import Service
 
 from configuration import connect_pg
 
+from services.user_service import UserService
+
 class personal_service(Service):
     
 
@@ -62,16 +64,22 @@ class personal_service(Service):
     
     def add_personal(self, data):
         """ Add a personal by data in JSON format """
-        # data = request.json
-    
+        _userService = UserService()
+
         last_name = data.get('last_name', '')
         first_name = data.get('first_name', '')
         mail = data.get('mail', '')
-        user_id = data.get('user_id', '')
         phone_number = data.get('phone_number', '')
         personal_code = data.get('personal_code', '')
+
+        userData = {
+            "username": data["first_name"][0].lower() + data["last_name"].lower(),
+            "password": data["password"]
+        }
+
+        new_user_id = _userService.add_user(userData)
     
-        query = "INSERT INTO university.personals (last_name, first_name, mail, personal_code, user_id, phone_number) VALUES ('%(last_name)s', '%(first_name)s', '%(mail)s', '%(personal_code)s','%(user_id)s', '%(phone_number)s') RETURNING id" %  {'last_name': last_name, 'first_name': first_name, 'mail': mail, 'personal_code': personal_code, 'user_id': user_id, 'phone_number': phone_number}
+        query = "INSERT INTO university.personals (last_name, first_name, mail, personal_code, user_id, phone_number) VALUES ('%(last_name)s', '%(first_name)s', '%(mail)s', '%(personal_code)s','%(new_user_id)s', '%(phone_number)s') RETURNING id" %  {'last_name': last_name, 'first_name': first_name, 'mail': mail, 'personal_code': personal_code, 'new_user_id': new_user_id, 'phone_number': phone_number}
         conn = self.get_connection()
         new_personal_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)

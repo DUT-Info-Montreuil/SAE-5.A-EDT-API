@@ -2,6 +2,8 @@ from services.main_service import Service
 
 from configuration import connect_pg
 
+from services.user_service import UserService
+
 class student_service(Service):
     
     # Students API
@@ -88,17 +90,24 @@ class student_service(Service):
 
     def add_student(self, data):
         """ Add a student by data in JSON format """
-
+        _userService = UserService()
+                
         last_name = data.get('last_name', '')
         first_name = data.get('first_name', '')
         mail = data.get('mail', '')
         phone_number = data.get('phone_number', '')
-        user_id = data.get('user_id')
         department_id = data.get('department_id', '')
         group_id = data.get('group_id', '')
         subgroup_id = data.get('subgroup_id', '')
 
-        query = "INSERT INTO university.students (last_name, first_name, mail, phone_number, user_id, department_id, group_id, subgroup_id) VALUES ('%(last_name)s', '%(first_name)s', '%(mail)s', '%(phone_number)s', %(user_id)s, %(department_id)s, %(group_id)s, %(subgroup_id)s ) RETURNING id" % {'last_name': last_name, 'first_name': first_name, 'mail': mail, 'phone_number': phone_number, 'user_id': user_id, 'department_id': department_id, 'group_id': group_id, 'subgroup_id': subgroup_id}                                                                                                                                                               
+        userData = {
+            "username": data["first_name"][0].lower() + data["last_name"].lower(),
+            "password": data["password"]
+        }
+
+        new_user_id = _userService.add_user(userData)
+
+        query = "INSERT INTO university.students (last_name, first_name, mail, phone_number, user_id, department_id, group_id, subgroup_id) VALUES ('%(last_name)s', '%(first_name)s', '%(mail)s', '%(phone_number)s', %(new_user_id)s, %(department_id)s, %(group_id)s, %(subgroup_id)s ) RETURNING id" % {'last_name': last_name, 'first_name': first_name, 'mail': mail, 'phone_number': phone_number, 'new_user_id': new_user_id, 'department_id': department_id, 'group_id': group_id, 'subgroup_id': subgroup_id}                                                                                                                                                               
  
         conn = self.get_connection()
         new_id = connect_pg.execute_commands(conn, (query,))
@@ -106,41 +115,6 @@ class student_service(Service):
     
         return new_id
 
-    # def add_student(self, data):
-    #     """ Add a student by data in JSON format """
-    #     last_name = data.get('last_name', '')
-    #     first_name = data.get('first_name', '')
-    #     mail = data.get('mail', '')
-    #     phone_number = data.get('phone_number', '')
-    #     user_id = data.get('user_id')
-    #     department_id = data.get('department_id', '')
-    #     group_id = data.get('group_id', '')
-    #     subgroup_id = data.get('subgroup_id', '')
-
-    #     query = """
-    #         INSERT INTO university.students (last_name, first_name, mail, phone_number, user_id, department_id, group_id, subgroup_id)
-    #         VALUES (%(last_name)s, %(first_name)s, %(mail)s, %(phone_number)s, %(user_id)s, %(department_id)s, %(group_id)s, %(subgroup_id)s)
-    #         RETURNING id
-    #     """
-
-    #     params = {
-    #         'last_name': last_name,
-    #         'first_name': first_name,
-    #         'mail': mail,
-    #         'phone_number': phone_number,
-    #         'user_id': user_id,
-    #         'department_id': department_id,
-    #         'group_id': group_id,
-    #         'subgroup_id': subgroup_id
-    #     }
-
-    #     conn = self.get_connection()
-    #     new_id = connect_pg.execute_commands(conn, (query, params))
-    #     connect_pg.disconnect(conn)
-
-    #     return new_id
-
-    
     
     def delete_student_by_id(self, id):
         """ Delete a student by ID in JSON format """
@@ -152,7 +126,7 @@ class student_service(Service):
         connect_pg.disconnect(conn)
         return row
     
-    def update_student(self, id, data):
+    def update_student2(self, id, data):
         """ Update a student record by id using data in JSON format """
         # data = request.json
 
@@ -165,7 +139,6 @@ class student_service(Service):
         first_name = data.get('first_name', existing_student['first_name'])
         mail = data.get('mail', existing_student['mail'])
         phone_number = data.get('phone_number', existing_student['phone_number'])
-        user_id = data.get('user_id', existing_student['user_id'])
         department_id = data.get('department_id', existing_student['department_id'])
         group_id = data.get('group_id', existing_student['group_id'])
         subgroup_id = data.get('subgroup_id', existing_student['subgroup_id'])
@@ -175,22 +148,48 @@ class student_service(Service):
                     first_name = '%(first_name)s',
                     mail = '%(mail)s',
                     phone_number = '%(phone_number)s',
-                    user_id = %(user_id)s,
-                    department_id = %(department_id)s,
-                    group_id = %(group_id)s,
-                    subgroup_id = %(subgroup_id)s
-                WHERE id = %(id)s
-                RETURNING id """ % {
-                    'id': id,
-                    'last_name': last_name,
-                    'first_name': first_name,
-                    'mail': mail,
-                    'phone_number': phone_number,
-                    'user_id': user_id,
-                    'department_id': department_id,
-                    'group_id': group_id,
-                    'subgroup_id': subgroup_id
-                }
+                    department_id = '%(department_id)s',
+                    group_id = '%(group_id)s',
+                    subgroup_id = '%(subgroup_id)s'
+            WHERE id = %(id)s
+            RETURNING id """ % {
+                'id': id,
+                'last_name': last_name,
+                'first_name': first_name,
+                'mail': mail,
+                'phone_number': phone_number,
+                'department_id': department_id,
+                'group_id': group_id,
+                'subgroup_id': subgroup_id
+            }
+
+        conn = self.get_connection()
+        updated_id = connect_pg.execute_commands(conn, (query,))
+        #connect_pg.execute_commands(conn, (query,))
+        # connect_pg.disconnect(conn)
+
+        return updated_id
+    
+
+    def update_student(self, id, data):
+        """ Update a student record by id using data in JSON format """
+        # data = request.json
+
+        # Check if the student record with the given id exists
+        existing_student = self.get_student_by_id(id)
+        if not existing_student:
+            return existing_student
+
+        last_name = data.get('last_name', existing_student['last_name'])
+        
+        query = """UPDATE university.students
+                SET last_name = '%(last_name)s'
+                    
+            WHERE id = %(id)s
+            RETURNING id """ % {
+                'id': id,
+                'last_name': last_name
+            }
 
         conn = self.get_connection()
         updated_id = connect_pg.execute_commands(conn, (query,))

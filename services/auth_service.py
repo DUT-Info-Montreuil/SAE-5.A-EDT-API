@@ -7,6 +7,8 @@ class auth_service(Service):
 
     def login(self, data):
         #add a try catch
+        # hash_password = self.hash_password(data.get('password', ''))
+        # print(hash_password)
         username = data.get('username', '')
         password = data.get('password', '')
         if username == '' or password == '':

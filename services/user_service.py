@@ -1,6 +1,7 @@
 from services.sql_alchemy_service import db
 from entities.models.models import User
 from configuration import connect_pg
+from services.auth_service import auth_service
 
 class UserService:
     def get_all_users(self):
@@ -57,32 +58,22 @@ class UserService:
         else:
             return False
 
-    def add_user2(self, data):
-        username = data.get('username', '')
-        #do the hashing
-        password = data.get('password', '')
-
-        if username == '' or password == '':
-            return 'Null arguments'
-        if len(username) > 64:
-            return 'username to long'
-        
-        query = "INSERT INTO university.users (username, password) VALUES ('%(username)s', '%(password)s') RETURNING id" % {'username': username, 'password': password}
-
-        conn = self.get_connection()
-        connect_pg.execute_commands(conn, (query,))
-        connect_pg.disconnect(conn)
-
-        return "Successfully inserted"
-    
-
     def add_user(self, data):
         try:
+            _service = auth_service()
+            password = data['password']
+            hashed_password = _service.hash_password(password)
+            data['password'] = hashed_password
+
             new_user = User(**data)
             db.session.add(new_user)
             db.session.commit()
-            return True
+
+            # Récupérer l'ID du nouvel utilisateur
+            new_user_id = new_user.id
+
+            return new_user_id
         except Exception as e:
             db.session.rollback()
             print(f"Error adding user: {e}")
-            return False
+            return None  # Ou vous pouvez choisir de lever une exception plutôt que de renvoyer None
