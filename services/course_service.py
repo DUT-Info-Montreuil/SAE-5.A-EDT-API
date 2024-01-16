@@ -103,7 +103,6 @@ class course_service(Service):
                 WHERE university.groups.promotion =""" +  str(promotion) + """ AND
                 university.groups.department_id =""" + str(department_id) + """ AND
                 starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
-        
         values = self.execute_subquery_and_get_statement(query)
         if values is None:
             return {}
@@ -245,8 +244,8 @@ class course_service(Service):
         if promotion == '' or department_id == '' or week_to_copy_start_string == '' or week_to_paste_start == '':
             return
 
-        day_to_copy = datetime.datetime.strptime(week_to_copy_start_string,"%Y-%m-%d")
-        nextweek_to_copy = day_to_copy + datetime.timedelta(days=8)
+        week_to_copy_start = datetime.datetime.strptime(week_to_copy_start_string,"%Y-%m-%d")
+        nextweek_to_copy = week_to_copy_start + datetime.timedelta(days=5)
         nextweek_to_copy_string = str(nextweek_to_copy).split()[0]
 
         data.update({'week_date_start': week_to_copy_start_string, 'week_date_end': nextweek_to_copy_string})
@@ -259,10 +258,11 @@ class course_service(Service):
         try:
             for row in rows:
                 # Calculate the new start and end times
-                time = datetime.datetime.strptime(row['starttime'], '%Y-%m-%dT%H:%M')
-                new_starttime = week_to_paste_start.replace(hour=time.hour, minute=time.minute)
-                time = datetime.datetime.strptime(row['endtime'], '%Y-%m-%dT%H:%M')
-                new_endtime = week_to_paste_start.replace(hour=time.hour, minute=time.minute)
+                starttime = datetime.datetime.strptime(row['starttime'], '%Y-%m-%dT%H:%M')
+                endtime = datetime.datetime.strptime(row['endtime'], '%Y-%m-%dT%H:%M')
+                days_difference = (starttime.date() - week_to_copy_start.date()).days
+                new_starttime = datetime.datetime.combine(week_to_paste_start + datetime.timedelta(days=days_difference), starttime.time())
+                new_endtime = datetime.datetime.combine(week_to_paste_start + datetime.timedelta(days=days_difference), endtime.time())
 
                 # Create the new course
                 new_course = Course(
@@ -316,7 +316,7 @@ class course_service(Service):
 
         if description == '' or starttime == '' or endtime == '' or course_type == '' or teaching_id == '':
             return {'error': 'Missing data'}, 400
-        
+
         course = Course(
             description=description,
             starttime=starttime,
@@ -324,11 +324,11 @@ class course_service(Service):
             course_type=course_type,
             teaching_id=teaching_id
         )
-
+       
         rooms = data.get('rooms', [])
         personals = data.get('personals', [])
         subgroups = data.get('subgroups', [])
-
+       
         try:
             with db.session.begin_nested():
                 db.session.add(course)
