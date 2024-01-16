@@ -19,18 +19,33 @@ class student_service(Service):
         """ Get all students in JSON format """
         
         query = "SELECT * FROM university.students"
-        return self.execute_query_and_get_statement(query)
+        conn = self.get_connection()
+        rows = connect_pg.get_query(conn, query)
+        returnStatement = []
+        for row in rows:
+            returnStatement.append(self.get_student_statement(row))
+        # connect_pg.disconnect(conn)
+        return returnStatement
     
+
     def get_student_by_id(self, id):
         """ Get a student by id in JSON format """
 
         query = "SELECT * FROM university.students WHERE id = %(id)s" % {'id': id}
-        return self.execute_query_and_get_statement(query)
+        conn = self.get_connection()
+        rows = connect_pg.get_query(conn, query)
+        returnStatement = {}
+        if len(rows) > 0:
+            returnStatement = self.get_student_statement(rows[0])
+        # connect_pg.disconnect(conn)
+        return returnStatement
     
+
     def get_student_by_department(self, id):
 
         query = "SELECT * FROM university.students WHERE department_id = '" + id + "'"
         return self.execute_query_and_get_statement(query)
+
     
     def get_student_by_group(self, data):
         department_id = data.get('department_id', '')
@@ -41,6 +56,7 @@ class student_service(Service):
 
         query = "SELECT * FROM university.students WHERE department_id = '" + department_id + "' AND group_id = '" + group_id + "'"
         return self.execute_query_and_get_statement(query)
+
     
     def get_student_by_prom(self, data):
         department_id = data.get('department_id', '')
@@ -53,23 +69,8 @@ class student_service(Service):
                 INNER JOIN university.groups ON university.students.group_id = university.groups.id WHERE 
                 university.students.department_id = '""" + department_id + """'
                 AND university.groups.promotion = '""" + promotion + """'"""
-        
-        return self.execute_query_and_get_statement(query)
+        return self.execute_query_and_get_statement(query)   
     
-    # TO-DO recuperer un apprenti/ un parcours A / ...
-    # def get_student_by_group_type(self, data):
-    #     department_id = data.get('department_id', '')
-    #     promotion = data.get('promotion', '')
-
-    #     if promotion == '' or department_id == '':
-    #         return "Null arguments" 
-
-    #     query = """select * from university.students 
-    #             INNER JOIN university.groups ON university.students.group_id = university.groups.id WHERE 
-    #             university.students.department_id = '""" + department_id + """'
-    #             AND university.groups.promotion = '""" + promotion + """'"""
-        
-    #     return self.execute_query_and_get_statement(query)
     
     def get_student_by_subgroup(self,data):
         department_id = data.get('department_id', '')
@@ -118,15 +119,18 @@ class student_service(Service):
     
     def delete_student_by_id(self, id):
         """ Delete a student by ID in JSON format """
-        
-        query = "DELETE FROM university.students WHERE id = '" + str(id) + "'" 
-
+        _userService = UserService()
+        student = self.get_student_by_id(id)
+           
+        query = "DELETE FROM university.students WHERE id = %(id)s RETURNING id" %  {'id': id}  
         conn = self.get_connection()
+
         row = connect_pg.execute_commands(conn, (query,))
-        connect_pg.disconnect(conn)
+        _userService.delete_user(student["user_id"])
         return row
     
-    def update_student2(self, id, data):
+    
+    def update_student(self, id, data):
         """ Update a student record by id using data in JSON format """
         # data = request.json
 
@@ -165,35 +169,7 @@ class student_service(Service):
 
         conn = self.get_connection()
         updated_id = connect_pg.execute_commands(conn, (query,))
-        #connect_pg.execute_commands(conn, (query,))
-        # connect_pg.disconnect(conn)
-
-        return updated_id
-    
-
-    def update_student(self, id, data):
-        """ Update a student record by id using data in JSON format """
-        # data = request.json
-
-        # Check if the student record with the given id exists
-        existing_student = self.get_student_by_id(id)
-        if not existing_student:
-            return existing_student
-
-        last_name = data.get('last_name', existing_student['last_name'])
-        
-        query = """UPDATE university.students
-                SET last_name = '%(last_name)s'
-                    
-            WHERE id = %(id)s
-            RETURNING id """ % {
-                'id': id,
-                'last_name': last_name
-            }
-
-        conn = self.get_connection()
-        updated_id = connect_pg.execute_commands(conn, (query,))
-        # connect_pg.disconnect(conn)
+        #connect_pg.disconnect(conn)
 
         return updated_id
 
@@ -209,7 +185,7 @@ class student_service(Service):
             returnStatement = []
             for row in rows:
                 returnStatement.append(self.get_student_statement(row))
-            connect_pg.disconnect(conn)
+            #connect_pg.disconnect(conn)
             return returnStatement
 
     def get_student_statement(self, row):
