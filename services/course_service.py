@@ -1,4 +1,3 @@
-from flask import jsonify
 from services.main_service import Service
 
 from services.sql_alchemy_service import db
@@ -6,7 +5,6 @@ from sqlalchemy import and_, cast, Date
 from entities.models.models import Course,Participates,RoomsCourses,PersonalsCourses,Subgroup, Group, Personal, Room
 
 from configuration import connect_pg
-from datetime import timedelta
 import datetime 
 
 class course_service(Service):
@@ -44,7 +42,7 @@ class course_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
         
-        query = """SELECT courses.id FROM university.courses
+        query = """SELECT DISTINCT courses.id FROM university.courses
                 
                 LEFT JOIN university.rooms_courses ON university.rooms_courses.course_id = university.courses.id
                 LEFT JOIN university.rooms ON university.rooms_courses.rooms_id = university.rooms.id
@@ -90,7 +88,7 @@ class course_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.id FROM university.courses
+        query = """SELECT DISTINCT courses.id FROM university.courses
                 
                 LEFT JOIN university.personals_courses ON university.personals_courses.course_id = university.courses.id
                 LEFT JOIN university.personals ON university.personals_courses.personal_id = university.personals.id
@@ -137,7 +135,7 @@ class course_service(Service):
         week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
         week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
 
-        query = """SELECT courses.id FROM university.courses
+        query = """SELECT DISTINCT courses.id FROM university.courses
                 
                 LEFT JOIN university.participates ON university.courses.id = university.participates.course_id
                 LEFT JOIN university.subgroups ON university.participates.subgroup_id = university.subgroups.id
@@ -148,7 +146,37 @@ class course_service(Service):
                 university.groups.department_id =""" + str(department_id) + """ AND
                 starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
         
-        values = self.execute_subquery_and_get_statemnt(query)
+        values = self.execute_subquery_and_get_statement(query)
+        if values is None:
+            return {}
+        return self.timetable_query(values)
+    
+    def get_timetable_by_student(self, data):
+        student_id = data.get('student_id', '') 
+        week_date_start = data.get('week_date_start', '') #Format : YYYY-MM-DD
+        week_date_end = data.get('week_date_end', '')
+
+        if student_id == '' or week_date_start == '' or week_date_end == '':
+            return "Null arguments"
+
+        week_date_start = datetime.datetime.strptime(week_date_start,"%Y-%m-%d")
+        week_date_end = datetime.datetime.strptime(week_date_end,"%Y-%m-%d")
+
+        query = """SELECT DISTINCT courses.id FROM university.courses
+                
+                LEFT JOIN university.participates ON university.courses.id = university.participates.course_id
+                LEFT JOIN university.students ON university.participates.subgroup_id = university.students.subgroup_id
+                LEFT JOIN university.subgroups ON university.participates.subgroup_id = university.subgroups.id
+                
+                WHERE students.id = """ +  str(student_id) + """ AND
+                starttime >= '""" + str(week_date_start) + """' AND starttime <= '""" + str(week_date_end) + """'"""
+        
+        values = self.execute_subquery_and_get_statement(query)
+        if values is None:
+            return {}
+        return self.timetable_query(values)
+
+    def timetable_query(self, values):
         if values is None:
             return {}
 
@@ -174,7 +202,6 @@ class course_service(Service):
 
                 WHERE university.courses.id  IN (""" +  str(values) + """)
                 GROUP BY courses.id, courses.description, course_type, teachings.title, teachings.color, teachings.id, courses.starttime, courses.endtime"""
-        
         return self.execute_query_and_get_statement_timetable(query)
     
     # Get by teachers id also ?
@@ -229,61 +256,39 @@ class course_service(Service):
     def copy_courses_by_day(self, data):
         promotion = data.get('promotion', '')
         department_id = data.get('department_id', '')
-        day_to_copy = data.get('day_to_copy', '')
+        day_to_copy_string = data.get('day_to_copy', '')
         day_to_paste = data.get('day_to_paste', '')
 
-        if promotion == '' or department_id == '' or day_to_copy == '' or day_to_paste == '':
+        if promotion == '' or department_id == '' or day_to_copy_string == '' or day_to_paste == '':
             return
 
-        day_to_copy = datetime.datetime.strptime(day_to_copy,"%Y-%m-%d")
+        
+        day_to_copy = datetime.datetime.strptime(day_to_copy_string,"%Y-%m-%d")
         nextday_to_copy = day_to_copy + datetime.timedelta(days=1)
+        nextday_to_copy_string = str(nextday_to_copy).split()[0]
 
-        # Query the courses
-        rows = db.session.query(
-            Course.description,
-            Course.starttime,
-            Course.endtime,
-            Course.course_type,
-            Course.teaching_id,
-            Course.id.label('course_id'),
-            Participates.subgroup_id,
-            Subgroup.name,
-            Group.id.label('group_id'),
-            Group.promotion,
-            Group.type,
-            Group.department_id
-        ).join(
-            Participates, Course.id == Participates.course_id
-        ).join(
-            Subgroup, Participates.subgroup_id == Subgroup.id
-        ).join(
-            Group, Subgroup.group_id == Group.id
-        ).filter(
-            and_(
-                Group.promotion == promotion,
-                Group.department_id == department_id,
-                cast(Course.starttime, Date) >= day_to_copy,
-                cast(Course.starttime, Date) < nextday_to_copy
-            )
-        ).all()
+        data.update({'week_date_start': day_to_copy_string, 'week_date_end': nextday_to_copy_string})
 
-        if not rows:
-            return {}
+        rows = self.get_timetable_by_department(data)
+        if not rows or rows == 'Null arguments':
+            return {'error': 'Null arguments'}
 
         day_to_paste = datetime.datetime.strptime(day_to_paste, '%Y-%m-%d')
         try:
             for row in rows:
                 # Calculate the new start and end times
-                new_starttime = datetime.datetime.combine(day_to_paste, row.starttime.time())
-                new_endtime = datetime.datetime.combine(day_to_paste, row.endtime.time())
+                time = datetime.datetime.strptime(row['starttime'], '%Y-%m-%dT%H:%M')
+                new_starttime = day_to_paste.replace(hour=time.hour, minute=time.minute)
+                time = datetime.datetime.strptime(row['endtime'], '%Y-%m-%dT%H:%M')
+                new_endtime = day_to_paste.replace(hour=time.hour, minute=time.minute)
 
                 # Create the new course
                 new_course = Course(
-                    description=row.description,
+                    description=row['description'],
                     starttime=new_starttime,
                     endtime=new_endtime,
-                    course_type=row.course_type,
-                    teaching_id=row.teaching_id
+                    course_type=row['course_type'],
+                    teaching_id=row['teaching']['id']
                 )
 
                 # Add the new course to the session
@@ -291,19 +296,19 @@ class course_service(Service):
                 db.session.flush()
 
                 # Copy personals
-                personals = db.session.query(Personal).join(PersonalsCourses).filter(PersonalsCourses.course_id == row.course_id).all()
+                personals = db.session.query(Personal).join(PersonalsCourses).filter(PersonalsCourses.course_id == row['id']).all()
                 for personal in personals:
                     new_personals_courses = PersonalsCourses(course_id=new_course.id, personal_id=personal.id)
                     db.session.add(new_personals_courses)
 
                 # Copy rooms
-                rooms = db.session.query(Room).join(RoomsCourses).filter(RoomsCourses.course_id == row.course_id).all()
+                rooms = db.session.query(Room).join(RoomsCourses).filter(RoomsCourses.course_id == row['id']).all()
                 for room in rooms:
                     new_rooms_courses = RoomsCourses(course_id=new_course.id, rooms_id=room.id)
                     db.session.add(new_rooms_courses)
 
                 # Copy participants
-                participants = db.session.query(Participates).filter(Participates.course_id == row.course_id).all()
+                participants = db.session.query(Participates).filter(Participates.course_id == row['id']).all()
                 for participant in participants:
                     new_participant = Participates(course_id=new_course.id, subgroup_id=participant.subgroup_id)
                     db.session.add(new_participant)
@@ -320,63 +325,38 @@ class course_service(Service):
     def copy_courses_by_week(self, data):
         promotion = data.get('promotion', '')
         department_id = data.get('department_id', '')
-        week_to_copy_start = data.get('week_to_copy_start', '')
+        week_to_copy_start_string = data.get('week_to_copy_start', '')
         week_to_paste_start = data.get('week_to_paste_start', '')
 
-        if promotion == '' or department_id == '' or week_to_copy_start == '' or week_to_paste_start == '':
+        if promotion == '' or department_id == '' or week_to_copy_start_string == '' or week_to_paste_start == '':
             return
 
-        week_to_copy_start = datetime.datetime.strptime(week_to_copy_start,"%Y-%m-%d")
-        week_to_copy_end = week_to_copy_start + datetime.timedelta(days=7)
+        day_to_copy = datetime.datetime.strptime(week_to_copy_start_string,"%Y-%m-%d")
+        nextweek_to_copy = day_to_copy + datetime.timedelta(days=8)
+        nextweek_to_copy_string = str(nextweek_to_copy).split()[0]
+
+        data.update({'week_date_start': week_to_copy_start_string, 'week_date_end': nextweek_to_copy_string})
+
+        rows = self.get_timetable_by_department(data)
+        if not rows or rows == 'Null arguments':
+            return {'error': 'Null arguments'}
 
         week_to_paste_start = datetime.datetime.strptime(week_to_paste_start, '%Y-%m-%d')
-
-        # Query the courses
-        rows = db.session.query(
-            Course.description,
-            Course.starttime,
-            Course.endtime,
-            Course.course_type,
-            Course.teaching_id,
-            Course.id.label('course_id'),
-            Participates.subgroup_id,
-            Subgroup.name,
-            Group.id.label('group_id'),
-            Group.promotion,
-            Group.type,
-            Group.department_id
-        ).join(
-            Participates, Course.id == Participates.course_id
-        ).join(
-            Subgroup, Participates.subgroup_id == Subgroup.id
-        ).join(
-            Group, Subgroup.group_id == Group.id
-        ).filter(
-            and_(
-                Group.promotion == promotion,
-                Group.department_id == department_id,
-                cast(Course.starttime, Date) >= week_to_copy_start,
-                cast(Course.starttime, Date) < week_to_copy_end
-            )
-        ).all()
-
-        if not rows:
-            return {}
-
         try:
             for row in rows:
                 # Calculate the new start and end times
-                days_difference = (row.starttime.date() - week_to_copy_start.date()).days
-                new_starttime = datetime.datetime.combine(week_to_paste_start + datetime.timedelta(days=days_difference), row.starttime.time())
-                new_endtime = datetime.datetime.combine(week_to_paste_start + datetime.timedelta(days=days_difference), row.endtime.time())
+                time = datetime.datetime.strptime(row['starttime'], '%Y-%m-%dT%H:%M')
+                new_starttime = week_to_paste_start.replace(hour=time.hour, minute=time.minute)
+                time = datetime.datetime.strptime(row['endtime'], '%Y-%m-%dT%H:%M')
+                new_endtime = week_to_paste_start.replace(hour=time.hour, minute=time.minute)
 
                 # Create the new course
                 new_course = Course(
-                    description=row.description,
+                    description=row['description'],
                     starttime=new_starttime,
                     endtime=new_endtime,
-                    course_type=row.course_type,
-                    teaching_id=row.teaching_id
+                    course_type=row['course_type'],
+                    teaching_id=row['teaching']['id']
                 )
 
                 # Add the new course to the session
@@ -384,25 +364,25 @@ class course_service(Service):
                 db.session.flush()
 
                 # Copy personals
-                personals = db.session.query(Personal).join(PersonalsCourses).filter(PersonalsCourses.course_id == row.course_id).all()
+                personals = db.session.query(Personal).join(PersonalsCourses).filter(PersonalsCourses.course_id == row['id']).all()
                 for personal in personals:
                     new_personals_courses = PersonalsCourses(course_id=new_course.id, personal_id=personal.id)
                     db.session.add(new_personals_courses)
 
                 # Copy rooms
-                rooms = db.session.query(Room).join(RoomsCourses).filter(RoomsCourses.course_id == row.course_id).all()
+                rooms = db.session.query(Room).join(RoomsCourses).filter(RoomsCourses.course_id == row['id']).all()
                 for room in rooms:
                     new_rooms_courses = RoomsCourses(course_id=new_course.id, rooms_id=room.id)
                     db.session.add(new_rooms_courses)
 
                 # Copy participants
-                participants = db.session.query(Participates).filter(Participates.course_id == row.course_id).all()
+                participants = db.session.query(Participates).filter(Participates.course_id == row['id']).all()
                 for participant in participants:
                     new_participant = Participates(course_id=new_course.id, subgroup_id=participant.subgroup_id)
                     db.session.add(new_participant)
 
             db.session.commit()
-            return {'message': f'Course {new_course.id} successfully added!'}, 200
+            return {'message': f'Courses successfully added!'}, 200
         except Exception as e:
             db.session.rollback()
             return {'error': str(e)}, 500 
@@ -418,7 +398,7 @@ class course_service(Service):
         starttime = data.get('starttime', '')
         endtime = data.get('endtime', '')
         course_type = data.get('course_type', '')
-        teaching_id = data.get('teaching_id', '')
+        teaching_id = data.get('teaching', '')['id']
 
         if description == '' or starttime == '' or endtime == '' or course_type == '' or teaching_id == '':
             return {'error': 'Missing data'}, 400
@@ -483,7 +463,7 @@ class course_service(Service):
             'starttime': data.get('starttime', None),
             'endtime': data.get('endtime', None),
             'course_type': data.get('course_type', None),
-            'teaching_id': data.get('teaching_id', None)
+            'teaching_id': data.get('teaching', None)['id']
             }
 
             # Remove None values from the dictionary
@@ -535,7 +515,40 @@ class course_service(Service):
     # Utilitaires
     # ----------------------------------------------------------
 
-    def execute_subquery_and_get_statemnt(self,query):
+    def student_or_personal(self, data): 
+        username = data.get('username', '') 
+
+        if username == '':
+            return {'error': 'Null arguments'}
+
+        query = """SELECT 
+            CASE 
+                WHEN students.id IS NOT NULL THEN 'student'
+                WHEN personals.id IS NOT NULL THEN 'personal'
+                ELSE 'unknown'
+            END as user_type,
+            COALESCE(students.id, personals.id) as id
+        FROM 
+            university.users
+        LEFT JOIN 
+            university.students ON users.id = students.user_id
+        LEFT JOIN 
+            university.personals ON users.id = personals.user_id
+        WHERE 
+            users.username = '""" + username + """';"""
+        
+        conn = self.get_connection()
+        rows = connect_pg.get_query(conn, query)
+        if not rows:
+            return None
+        elif rows[0][0] == 'student':
+            data.update({'student_id': rows[0][1]})
+            return self.get_timetable_by_student(data)
+        elif rows[0][0] == 'personal':
+            data.update({'personal_id': rows[0][1]})
+            return self.get_timetable_by_teacher(data)
+    
+    def execute_subquery_and_get_statement(self,query):
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         if not rows:
