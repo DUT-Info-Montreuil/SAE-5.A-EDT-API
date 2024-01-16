@@ -253,7 +253,7 @@ class course_service(Service):
                     db.session.add(new_participant)
 
             db.session.commit()
-            return {'message': f'Course {new_course.id} successfully added!'}, 200
+            return {'message': f'Courses successfully added!'}, 200
         except Exception as e:
             db.session.rollback()
             return {'error': str(e)}, 500 
