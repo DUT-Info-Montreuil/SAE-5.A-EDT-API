@@ -260,6 +260,7 @@ class Teaching(db.Model):
     sequence = db.Column(db.String(8), nullable=False)
     description = db.Column(db.Text)
     teaching_type = db.Column(db.String(32), default='RCC')
+    color = db.Column(db.String(6))
     specialization_id = db.Column(db.Integer, nullable=False)
     
     def get_json(self):
