@@ -5,8 +5,6 @@ from configuration import connect_pg
 from services.user_service import UserService
 
 class personal_service(Service):
-    
-
     ## stat
 
     def total_hours(self, id):
@@ -88,10 +86,16 @@ class personal_service(Service):
     
     def delete_personal_by_id(self, id):
         """ Delete a personal by ID in JSON format """
+
+        _userService = UserService()
+        personal = self.get_personal_by_id(id)
+        
         query = "DELETE FROM university.personals WHERE id = %(id)s RETURNING id" %  {'id': id}
         conn = self.get_connection()
+
         row = connect_pg.execute_commands(conn, (query,))
-        # connect_pg.disconnect(conn)
+        _userService.delete_user(personal["user_id"])
+
         return row
     
     def update_personal(self, id, data):
@@ -146,7 +150,3 @@ class personal_service(Service):
             'user_id': row[5],  
             'phone_number': row[6] # Le numéro de téléphone du personnel
         }
-    
-
-
-    
