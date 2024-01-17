@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/symfony,flask
 # Edit at https://www.toptal.com/developers/gitignore?templates=symfony,flask
 
+.vscode
+.idea
+
 ### Flask ###
 instance/*
 !instance/.gitignore
@@ -226,3 +229,4 @@ cython_debug/
 /web/js/
 
 # End of https://www.toptal.com/developers/gitignore/api/symfony,flask
+.vscode/launch.json

@@ -1,0 +1,24 @@
+# Blueprint import
+from controllers.university_controller import university_app
+from controllers.department_controller import department_app
+from controllers.group_controller import group_app
+from controllers.subgroup_controller import subgroup_app
+from controllers.personal_controller import personal_app
+from controllers.specialization_controller import specialization_app
+from controllers.room_controller import room_app
+from controllers.teaching_controller import teaching_app
+from controllers.course_controller import course_app
+from controllers.student_controller import student_app
+from controllers.responsible_controller import responsible_app
+from controllers.reminder_controller import reminder_app
+from controllers.absent_controller import absent_app
+from controllers.participate_controller import participate_app
+from controllers.auth_controller import auth_app
+from controllers.user_controller import user_app
+from controllers.rooms_courses_controller import rooms_courses_app
+from controllers.personals_courses_controller import personals_courses_app
+
+# flask import
+from flask import jsonify
+from flask import request
+from flask import Blueprint
