@@ -3,7 +3,6 @@
 ------------------------------------------------------------------------------------------------------------------------
 
 -- Everyone has for password : aA123456789_
--- $2b$12$mKH7DNUVcJod/UnGtv8jgeMO.DcT.2UybW5kVtuOyspW65aS8q3lq
 
 -- admin : pbonnot
 -- teacher_responsible : mlamolle
