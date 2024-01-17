@@ -40,7 +40,7 @@ from datetime import datetime, timedelta, timezone
 from flask_jwt_extended import set_access_cookies
 
 app.config["JWT_SECRET_KEY"] = "hcohen_aclaude_achetouani_bseydi_mtoure"
-app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(minutes=15) 
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(minutes=30) 
 
 jwt = JWTManager(app) 
 
@@ -49,7 +49,7 @@ def refresh_expiring_jwts(response):
         exp_timestamp = get_jwt()["exp"]
         exp_datetime = datetime.fromtimestamp(exp_timestamp)
         now = datetime.now(timezone.utc)
-        target_timestamp = datetime.timestamp(now + timedelta(minutes=15))
+        target_timestamp = datetime.timestamp(now + timedelta(minutes=30))
         if target_timestamp > exp_timestamp:
             access_token = create_access_token(identity=get_jwt_identity())
             # print(access_token)
@@ -86,7 +86,6 @@ apply_jwt_middleware(personal_app)
 apply_jwt_middleware(specialization_app)
 apply_jwt_middleware(room_app)
 apply_jwt_middleware(teaching_app) 
-apply_jwt_middleware(role_app)
 apply_jwt_middleware(course_app) 
 apply_jwt_middleware(student_app) 
 apply_jwt_middleware(responsible_app) 
@@ -105,7 +104,6 @@ personal_app.after_request(refresh_expiring_jwts) # Add refresh token after requ
 specialization_app.after_request(refresh_expiring_jwts) # Add refresh token after request
 room_app.after_request(refresh_expiring_jwts) # Add refresh token after request
 teaching_app.after_request(refresh_expiring_jwts) # Add refresh token after request
-role_app.after_request(refresh_expiring_jwts) # Add refresh token after request
 course_app.after_request(refresh_expiring_jwts) # Add refresh token after request
 student_app.after_request(refresh_expiring_jwts) # Add refresh token after request
 responsible_app.after_request(refresh_expiring_jwts) # Add refresh token after request
@@ -125,7 +123,6 @@ app.register_blueprint(personal_app) # Register the personal controller
 app.register_blueprint(specialization_app) # Register the specialization controller
 app.register_blueprint(room_app) # Register the room controller
 app.register_blueprint(teaching_app) # Register the teaching controller
-app.register_blueprint(role_app) # Register the role controller
 app.register_blueprint(course_app) # Register the course controller
 app.register_blueprint(student_app) # Register the student controller
 app.register_blueprint(responsible_app) # Register the responsible controller

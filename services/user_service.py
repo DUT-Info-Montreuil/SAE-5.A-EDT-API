@@ -60,6 +60,10 @@ class UserService:
 
     def add_user(self, data):
         try:
+            user_id = self.find_user(username=data['username'])
+            if user_id != []:
+                return user_id[0]['id']
+            
             _service = auth_service()
             password = data['password']
             hashed_password = _service.hash_password(password)

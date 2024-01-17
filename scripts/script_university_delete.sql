@@ -18,8 +18,6 @@ DELETE FROM university.students;
 DELETE FROM university.subgroups;
 -- Delete all records from university.groups
 DELETE FROM university.groups;
--- Delete all records from university.roles
-DELETE FROM university.roles;
 -- Delete all records from university.specializations
 DELETE FROM university.specializations;
 -- Delete all records from university.departments
@@ -32,7 +30,6 @@ ALTER SEQUENCE university.departments_id_seq RESTART WITH 1;
 ALTER SEQUENCE university.groups_id_seq RESTART WITH 1;
 ALTER SEQUENCE university.subgroups_id_seq RESTART WITH 1;
 ALTER SEQUENCE university.personals_id_seq RESTART WITH 1;
-ALTER SEQUENCE university.roles_id_seq RESTART WITH 1;
 ALTER SEQUENCE university.courses_id_seq RESTART WITH 1;
 ALTER SEQUENCE university.rooms_id_seq RESTART WITH 1;
 ALTER SEQUENCE university.teachings_id_seq RESTART WITH 1;

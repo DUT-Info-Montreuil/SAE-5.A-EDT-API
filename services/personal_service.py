@@ -1,12 +1,39 @@
 from services.main_service import Service
 
 from configuration import connect_pg
-
+ 
 from services.user_service import UserService
 
 class personal_service(Service):
     ## stat
-
+    def get_roles(self, data):
+        username = data.get('username', '') 
+        
+        if username == '':
+            return {'error': 'Null arguments'}
+        query = """
+        SELECT 
+            CASE 
+                WHEN students.id IS NOT NULL THEN 'STUDENT'
+                WHEN personals.id IS NOT NULL THEN personals.roles
+                ELSE 'unknown'
+            END as user_type
+        FROM 
+            university.users
+        LEFT JOIN 
+            university.students ON users.id = students.user_id
+        LEFT JOIN 
+            university.personals ON users.id = personals.user_id
+        WHERE 
+            users.username = '""" + username + """';"""
+        
+        conn = self.get_connection()
+        
+        rows = connect_pg.get_query(conn, query)
+        if not rows:
+            return None
+        return {"role": rows[0][0]}
+    
     def total_hours(self, id):
         """Identify a course by description, starttime, duree, course_type, personal_id, and rooms_id in JSON format"""
         # data = request.json
@@ -21,13 +48,14 @@ class personal_service(Service):
         return { "temps": rows[0][0].total_seconds()  / 60 }
 
     # Personals API
-    # university.personals(@id, last_name, first_name, mail, phone_number)
+    # university.personals(@id, last_name, first_name)
     def get_personals(self):
         """ Get all personals in JSON format """
-        query = "SELECT * FROM university.personals"
+        query = 'SELECT * FROM university.personals'
         conn = self.get_connection()
         rows = connect_pg.get_query(conn, query)
         returnStatement = []
+
         for row in rows:
             returnStatement.append(self.get_personal_statement(row))
         # connect_pg.disconnect(conn)
@@ -44,30 +72,12 @@ class personal_service(Service):
         # connect_pg.disconnect(conn)
         return returnStatement
     
-    def identify_personal(self, data):
-        """Identify a personal by mail in JSON format"""
-        # data = request.json
-        mail = data.get('mail', '')
-    
-        query = "SELECT * FROM university.personals WHERE mail = '%(mail)s'" % {'mail': mail}
-        conn = self.get_connection()
-        rows = connect_pg.get_query(conn,query)
-        # connect_pg.disconnect(conn)
-    
-        returnStatement = []
-        for row in rows:
-            returnStatement.append(self.get_personal_statement(row))
-    
-        return returnStatement
-    
     def add_personal(self, data):
         """ Add a personal by data in JSON format """
         _userService = UserService()
 
         last_name = data.get('last_name', '')
         first_name = data.get('first_name', '')
-        mail = data.get('mail', '')
-        phone_number = data.get('phone_number', '')
         personal_code = data.get('personal_code', '')
 
         userData = {
@@ -77,7 +87,7 @@ class personal_service(Service):
 
         new_user_id = _userService.add_user(userData)
     
-        query = "INSERT INTO university.personals (last_name, first_name, mail, personal_code, user_id, phone_number) VALUES ('%(last_name)s', '%(first_name)s', '%(mail)s', '%(personal_code)s','%(new_user_id)s', '%(phone_number)s') RETURNING id" %  {'last_name': last_name, 'first_name': first_name, 'mail': mail, 'personal_code': personal_code, 'new_user_id': new_user_id, 'phone_number': phone_number}
+        query = "INSERT INTO university.personals (last_name, first_name, personal_code, user_id) VALUES ('%(last_name)s', '%(first_name)s', '%(personal_code)s','%(new_user_id)s') RETURNING id" %  {'last_name': last_name, 'first_name': first_name, 'personal_code': personal_code, 'new_user_id': new_user_id}
         conn = self.get_connection()
         new_personal_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -101,37 +111,33 @@ class personal_service(Service):
     def update_personal(self, id, data):
         """ Update a personal record by ID using data in JSON format """
         # data = request.json
-
+        
         # Check if the personal record with the given ID exists
         existing_personal = self.get_personal_by_id(id)
         if not existing_personal:
             return existing_personal
-
+        
         last_name = data.get('last_name', existing_personal['last_name'])
         first_name = data.get('first_name', existing_personal['first_name'])
-        mail = data.get('mail', existing_personal['mail'])
         personal_code = data.get('personal_code', existing_personal['personal_code'])
+        roles = data.get('roles', existing_personal['roles'])
         user_id = data.get('user_id', existing_personal['user_id'])
-        phone_number = data.get('phone_number', existing_personal['phone_number'])
 
         query = """UPDATE university.personals
                 SET last_name = '%(last_name)s',
                     first_name = '%(first_name)s',
-                    mail = '%(mail)s',
                     personal_code = '%(personal_code)s',
-                    user_id = '%(user_id)s',
-                    phone_number = '%(phone_number)s'
+                    roles = '%(roles)s',
+                    user_id = '%(user_id)s'
             WHERE id = %(id)s
             RETURNING id """ % {
                 'id': id,
                 'last_name': last_name,
                 'first_name': first_name,
-                'mail': mail,
                 'personal_code': personal_code,
-                'user_id': user_id,
-                'phone_number': phone_number
+                'roles': roles,
+                'user_id': user_id
             }
-
         conn = self.get_connection()
         updated_personal_id = connect_pg.execute_commands(conn, (query,))
         # connect_pg.disconnect(conn)
@@ -145,8 +151,7 @@ class personal_service(Service):
             'id': row[0],              # L'ID du personnel
             'last_name': row[1],       # Le nom de famille du personnel
             'first_name': row[2],      # Le prénom du personnel
-            'mail': row[3],            # L'adresse e-mail du personnel
-            'personal_code': row[4],
-            'user_id': row[5],  
-            'phone_number': row[6] # Le numéro de téléphone du personnel
+            'personal_code': row[3],
+            'roles': row[4],           # Le code personnel du personnel
+            'user_id': row[5]
         }

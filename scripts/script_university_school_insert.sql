@@ -1,231 +1,254 @@
--- \echo [INFO] Start of script Insertion for SAE 1.0
--- SOURCE script_university_delete.sql; -- or \i delete.sql; for some databases
--- \i script_university_school_create.sql; --create database
--- hashed by bcrypt in python
+------------------------------------------------------------------------------------------------------------------------
+-- Personals
+------------------------------------------------------------------------------------------------------------------------
 
-/* Script contain insert for each table
-    -- university.personals(@id, last_name, first_name, mail, phone_number)
-    -- university.roles(@id, name, description, personal_id)
-    -- university.departments(@id, name, description, department_type)
-    -- university.groups(@id, promotion, type, #department_id)
-    -- university.subgroups(@id, name, #group_id)
-    -- university.rooms(@id, code, capacity, has_computer, has_projector)
-    -- university.specializations(@id, code, name, #department_id)
-*/
-
-/* Script miss for table
-    -- university.courses(@id, description, starttime, duree, course_type, #personal_id, #rooms_id, #teaching_id)
-    -- university.responsibles(@id, #personal_id, #resource_id)
-    -- university.reminders(@id, name, description, #course_id)
-    -- university.absents(@id, justified, #student_number, #course_id)
-    -- university.participates(@id, #course_id, #subgroup_id)
-*/
-
--- delete from university.users;
-
-INSERT INTO university.personals (personal_code, last_name, first_name, mail, phone_number, user_id)
+INSERT INTO university.personals (personal_code, last_name, first_name, user_id, roles)
 VALUES
-    ('PB' ,'Bonnot', 'Philippe', 'p.bonnot@iut.univ-paris8.fr', '07.67.59.80.46', (SELECT id FROM university.users WHERE username = 'pbonnot')), -- username : pbonnot
-    ('MyL' ,'Lamolle', 'Myriam', 'm.lamolle@iut.univ-paris8.fr', '06.68.99.99.67', (SELECT id FROM university.users WHERE username = 'mlamolle')), -- username : mlamolle
-    ('PIB' ,'Boulanger', 'Max', 'm.boulanger@iut.univ-paris8.fr', '07.10.50.50.58', (SELECT id FROM university.users WHERE username = 'mboulanger')), -- username : mboulanger
-    ('EMD' ,'Dafaoui', 'El Mouloudi', 'e.dafaoui@iut.univ-paris8.fr', '07.44.29.15.71', (SELECT id FROM university.users WHERE username = 'edafaoui')), -- username : edafaoui
-    ('KF' ,'Flauraud', 'Khamphou', 'k.flauraud@iut.univ-paris8.fr', '06.94.48.00.99', (SELECT id FROM university.users WHERE username = 'kflauraud')), -- username : kflauraud
-    ('HA' ,'Hassoun', 'Abdallah', 'a.hassoun@iut.univ-paris8.fr', '06.50.09.15.03', (SELECT id FROM university.users WHERE username = 'ahassoun')), -- username : ahassoun
-    ('FE' ,'Filoche', 'Eddy', 'e.filoche@iut.univ-paris8.fr', '07.68.83.61.75', (SELECT id FROM university.users WHERE username = 'efiloche')), -- username : efiloche
-    ('RK' ,'Kamal', 'Rachida', 'r.kamal@iut.univ-paris8.fr', '07.92.15.70.86', (SELECT id FROM university.users WHERE username = 'rkamal')), -- username : rkamal
-    ('BK' ,'Bayoud', 'Khadija', 'k.bayoud@iut.univ-paris8.fr', '07.73.26.40.17', (SELECT id FROM university.users WHERE username = 'kbayoud')), -- username : kbayoud
-    ('MarB' ,'Baboulall', 'Marielle', 'm.baboulall@iut.univ-paris8.fr', '06.16.61.84.81', (SELECT id FROM university.users WHERE username = 'mbaboulall')), -- username : mbaboulall    
-    ('MK' ,'Kaiser', 'Marc', 'm.kaiser@iut.univ-paris8.fr', '07.58.46.23.15', (SELECT id FROM university.users WHERE username = 'mkaiser')), -- username : mkaiser
-    ('AR' ,'Ricordeau', 'Anne', 'a.ricordeau@iut.univ-paris8.fr', '06.41.28.19.19', (SELECT id FROM university.users WHERE username = 'aricordeau')), -- username : aricordeau
-    ('RG' ,'Georges', 'Rémi', 'r.georges@iut.univ-paris8.fr', '06.03.90.17.73', (SELECT id FROM university.users WHERE username = 'rgeorges')), -- username : rgeorges
-    ('EoM' ,'Emonides', 'Mireille', 'm.emonides@iut.univ-paris8.fr', '06.26.10.43.02', (SELECT id FROM university.users WHERE username = 'memonides')), -- username : memonides        
-    ('JHR' ,'Rety', 'Jean-Hugues', 'j.rety@iut.univ-paris8.fr', '07.86.87.03.82', (SELECT id FROM university.users WHERE username = 'jrety')), -- username : jrety
-    ('MH' ,'Homps', 'Marc', 'm.homps@iut.univ-paris8.fr', '06.85.48.41.23', (SELECT id FROM university.users WHERE username = 'mhomps')), -- username : mhomps
-    ('MS' ,'Simonot', 'Marianne', 'm.simonot@iut.univ-paris8.fr', '07.71.50.67.21', (SELECT id FROM university.users WHERE username = 'msimonot')), -- username : msimonot
-    ('GD' ,'Delmas', 'Guylain', 'g.delmas@iut.univ-paris8.fr', '06.01.32.65.82', (SELECT id FROM university.users WHERE username = 'gdelmas')), -- username : gdelmas
-    ('ArN' ,'Nauwynck', 'Nédra', 'n.nauwynck@iut.univ-paris8.fr', '06.72.53.57.70', (SELECT id FROM university.users WHERE username = 'nnauwynck')), -- username : nnauwynck
-    ('VéC' ,'Clément-Comparot', 'Véronique', 'v.clement-comparot@iut.univ-paris8.fr', '07.45.74.93.97', (SELECT id FROM university.users WHERE username = 'vclementcomparot')), -- username : vclementcomparot
-    ('LDuC' ,'Le Duc', 'Chan', 'c.leduc@iut.univ-paris8.fr', '07.98.45.05.76', (SELECT id FROM university.users WHERE username = 'cleduc')), -- username : cleduc
-    ('ABo' ,'Bossard', 'Aurélien', 'a.bossard@iut.univ-paris8.fr', '07.19.29.79.65', (SELECT id FROM university.users WHERE username = 'abossard')), -- username : abossard
-    ('MaC' ,'Cataldi', 'Mario', 'm.cataldi@iut.univ-paris8.fr', '07.79.24.19.54', (SELECT id FROM university.users WHERE username = 'mcataldi')), -- username : mcataldi
-    ('AGo' ,'Golven', 'Amélie', 'a.golven@iut.univ-paris8.fr', '06.48.32.63.21', (SELECT id FROM university.users WHERE username = 'agolven')), -- username : agolven
-    ('CBD' ,'Ballay-Dally', 'Charlotte', 'c.ballay_dally@iut.univ-paris8.fr', '06.79.06.77.84', (SELECT id FROM university.users WHERE username = 'cballaydally')), -- username : cballaydally
-    ('GG' ,'Groff', 'Geoffrey', 'g.groff@iut.univ-paris8.fr', '07.40.01.70.39', (SELECT id FROM university.users WHERE username = 'ggroff')), -- username : ggroff
-    ('CHi' ,'Chebbi', 'Imen', 'i.chebbi@iut.univ-paris8.fr', '07.33.33.28.19', (SELECT id FROM university.users WHERE username = 'ichebbi')), -- username : ichebbi
-    ('ToJ' ,'Tobbelem', 'Jocelin', 'j.tobbelem@iut.univ-paris8.fr', '06.97.24.53.70', (SELECT id FROM university.users WHERE username = 'jtobbelem')), -- username : jtobbelem
-    ('MoMe' ,'Mockel', 'Mehdi', 'm.mockel@iut.univ-paris8.fr', '06.45.07.64.29', (SELECT id FROM university.users WHERE username = 'mmockel')), -- username : mmockel
-    ('MFr' ,'Mourel', 'Frédéric', 'f.mourel@iut.univ-paris8.fr', '06.69.18.17.81', (SELECT id FROM university.users WHERE username = 'fmourel')), -- username : fmourel
-    ('NyV' ,'Nyzam', 'Valentin', 'v.nyzam@iut.univ-paris8.fr', '06.88.49.45.84', (SELECT id FROM university.users WHERE username = 'vnyzam')) -- username : vnyzam
+    -- Admin
+    ('PB' ,'Bonnot', 'Philippe', (SELECT id FROM university.users WHERE username = 'pbonnot'), 'ADMIN'),
+
+    -- Teachers Responsible
+    ('MyL' ,'Lamolle', 'Myriam', (SELECT id FROM university.users WHERE username = 'mlamolle'), 'TEACHER_RESPONSIBLE'),
+    ('PIB' ,'Boulanger', 'Max', (SELECT id FROM university.users WHERE username = 'mboulanger'), 'TEACHER_RESPONSIBLE'),
+    ('EMD' ,'Dafaoui', 'El Mouloudi', (SELECT id FROM university.users WHERE username = 'edafaoui'), 'TEACHER_RESPONSIBLE'),
+    ('KF' ,'Flauraud', 'Khamphou', (SELECT id FROM university.users WHERE username = 'kflauraud'), 'TEACHER_RESPONSIBLE'),
+    ('HA' ,'Hassoun', 'Abdallah', (SELECT id FROM university.users WHERE username = 'ahassoun'), 'TEACHER_RESPONSIBLE'),
+    ('FE' ,'Filoche', 'Eddy', (SELECT id FROM university.users WHERE username = 'efiloche'), 'TEACHER_RESPONSIBLE'),
+    ('RK' ,'Kamal', 'Rachida', (SELECT id FROM university.users WHERE username = 'rkamal'), 'TEACHER_RESPONSIBLE'),
+    ('BK' ,'Bayoud', 'Khadija', (SELECT id FROM university.users WHERE username = 'kbayoud'), 'TEACHER_RESPONSIBLE'),
+    ('MarB' ,'Baboulall', 'Marielle', (SELECT id FROM university.users WHERE username = 'mbaboulall'), 'TEACHER_RESPONSIBLE'),
+    ('MK' ,'Kaiser', 'Marc', (SELECT id FROM university.users WHERE username = 'mkaiser'), 'TEACHER_RESPONSIBLE'),
+    ('AR' ,'Ricordeau', 'Anne', (SELECT id FROM university.users WHERE username = 'aricordeau'), 'TEACHER_RESPONSIBLE'),
+    ('RG' ,'Georges', 'Rémi', (SELECT id FROM university.users WHERE username = 'rgeorges'), 'TEACHER_RESPONSIBLE'),
+    ('EoM' ,'Emonides', 'Mireille', (SELECT id FROM university.users WHERE username = 'memonides'), 'TEACHER_RESPONSIBLE'),
+    ('JHR' ,'Rety', 'Jean-Hugues', (SELECT id FROM university.users WHERE username = 'jrety'), 'TEACHER_RESPONSIBLE'),
+    ('MH' ,'Homps', 'Marc', (SELECT id FROM university.users WHERE username = 'mhomps'), 'TEACHER_RESPONSIBLE'),
+    ('MS' ,'Simonot', 'Marianne', (SELECT id FROM university.users WHERE username = 'msimonot'), 'TEACHER_RESPONSIBLE'),
+
+    -- Teachers 
+    ('GD' ,'Delmas', 'Guylain', (SELECT id FROM university.users WHERE username = 'gdelmas'), 'TEACHER'),
+    ('ArN' ,'Nauwynck', 'Nédra', (SELECT id FROM university.users WHERE username = 'nnauwynck'), 'TEACHER'),
+    ('VéC' ,'Clément-Comparot', 'Véronique', (SELECT id FROM university.users WHERE username = 'vclementcomparot'), 'TEACHER'),
+    ('LDuC' ,'Le Duc', 'Chan', (SELECT id FROM university.users WHERE username = 'cleduc'), 'TEACHER'),
+    ('ABo' ,'Bossard', 'Aurélien', (SELECT id FROM university.users WHERE username = 'abossard'), 'TEACHER'),
+    ('MaC' ,'Cataldi', 'Mario', (SELECT id FROM university.users WHERE username = 'mcataldi'), 'TEACHER'),
+    ('AGo' ,'Golven', 'Amélie', (SELECT id FROM university.users WHERE username = 'agolven'), 'TEACHER'),
+    ('CBD' ,'Ballay-Dally', 'Charlotte', (SELECT id FROM university.users WHERE username = 'cballaydally'), 'TEACHER'),
+    ('GG' ,'Groff', 'Geoffrey', (SELECT id FROM university.users WHERE username = 'ggroff'), 'TEACHER'),
+    ('CHi' ,'Chebbi', 'Imen', (SELECT id FROM university.users WHERE username = 'ichebbi'), 'TEACHER'),
+    ('ToJ' ,'Tobbelem', 'Jocelin', (SELECT id FROM university.users WHERE username = 'jtobbelem'), 'TEACHER'),
+    ('MoMe' ,'Mockel', 'Mehdi', (SELECT id FROM university.users WHERE username = 'mmockel'), 'TEACHER'),
+    ('MFr' ,'Mourel', 'Frédéric', (SELECT id FROM university.users WHERE username = 'fmourel'), 'TEACHER'),
+    ('NyV' ,'Nyzam', 'Valentin', (SELECT id FROM university.users WHERE username = 'vnyzam'), 'TEACHER')
 ;
 
--- university.roles(@id, name, description, personal_id)
-INSERT INTO university.roles (name, description, personal_id)
-VALUES 
-    ('Directrice', 'Description of the role', (SELECT id FROM university.personals WHERE mail = 'm.lamolle@iut.univ-paris8.fr')),
-    ('Cheffe de département INFO', '', (SELECT id FROM university.personals WHERE mail = 'a.ricordeau@iut.univ-paris8.fr')),
-    ('Chef de département QLIO', '', (SELECT id FROM university.personals WHERE mail = 'e.dafaoui@iut.univ-paris8.fr')),
-    ('Cheffe de département GACO', '', (SELECT id FROM university.personals WHERE mail = 'm.baboulall@iut.univ-paris8.fr')),
-    ('Chef de département INFOCOM', '', (SELECT id FROM university.personals WHERE mail = 'm.kaiser@iut.univ-paris8.fr')),
-    ('Directeur', '', (SELECT id FROM university.personals WHERE mail = 'm.boulanger@iut.univ-paris8.fr')),
-    ('Responsable d''administration', '', (SELECT id FROM university.personals WHERE mail = 'k.flauraud@iut.univ-paris8.fr')),
-    ('Responsable CCRI', '', (SELECT id FROM university.personals WHERE mail = 'a.hassoun@iut.univ-paris8.fr')),
-    ('Responsable Hygiène et Sécurité', '', (SELECT id FROM university.personals WHERE mail = 'e.filoche@iut.univ-paris8.fr')),
-    ('Chargé de mission', '', (SELECT id FROM university.personals WHERE mail = 'r.kamal@iut.univ-paris8.fr')),
-    ('Secrétaire Informatique', '', (SELECT id FROM university.personals WHERE mail = 'k.bayoud@iut.univ-paris8.fr')),
-    ('Directreur des études', '', (SELECT id FROM university.personals WHERE mail = 'p.bonnot@iut.univ-paris8.fr')),
-    ('Responsable Apprentissage BUT', '', (SELECT id FROM university.personals WHERE mail = 'a.ricordeau@iut.univ-paris8.fr')),
-    ('Responsable stage', '', (SELECT id FROM university.personals WHERE mail = 'r.georges@iut.univ-paris8.fr')),
-    ('Responsable Contrat Apprentissage', '', (SELECT id FROM university.personals WHERE mail = 'm.emonides@iut.univ-paris8.fr')),
+------------------------------------------------------------------------------------------------------------------------
+-- Personals
+------------------------------------------------------------------------------------------------------------------------
 
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'm.homps@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'j.rety@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'm.lamolle@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'a.ricordeau@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'r.georges@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'g.delmas@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'n.nauwynck@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'p.bonnot@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'v.clement-comparot@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'c.leduc@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'a.bossard@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'm.cataldi@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'a.golven@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'c.ballay_dally@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'g.groff@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'i.chebbi@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'j.tobbelem@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'm.mockel@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'f.mourel@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'm.simonot@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'v.nyzam@iut.univ-paris8.fr')),
-    ('Professeur', '', (SELECT id FROM university.personals WHERE mail = 'r.kamal@iut.univ-paris8.fr'))
-;
-
--- university.departments(@id, name, description, department_type)
-INSERT into university.departments (name, description, degree_type,personal_id)
+INSERT into university.departments (id, name, description, degree_type,personal_id)
 VALUES
-    ('INFO', 'Informatique', 'BUT',(SELECT id FROM university.personals WHERE mail = 'a.ricordeau@iut.univ-paris8.fr')),
-    ('QLIO', 'Qualité, Logistique Industrielle et Organisation', 'BUT',(SELECT id FROM university.personals WHERE mail = 'e.dafaoui@iut.univ-paris8.fr')),
-    ('INFOCOM', 'Information et Communication', 'BUT',(SELECT id FROM university.personals WHERE mail = 'm.baboulall@iut.univ-paris8.fr')),
-    ('GACO', 'Gestion des Administrations et Commerce', 'BUT',(SELECT id FROM university.personals WHERE mail = 'm.kaiser@iut.univ-paris8.fr'))
+    (1, 'INFO', 'Informatique', 'BUT', (SELECT id FROM university.personals WHERE personal_code = 'AR')),
+    (2, 'QLIO', 'Qualité, Logistique Industrielle et Organisation', 'BUT', (SELECT id FROM university.personals WHERE personal_code = 'EMD')),
+    (3, 'INFOCOM', 'Information et Communication', 'BUT', (SELECT id FROM university.personals WHERE personal_code = 'MarB')),
+    (4, 'GACO', 'Gestion des Administrations et Commerce', 'BUT', (SELECT id FROM university.personals WHERE personal_code = 'MK'))
 ;
 
--- university.groups(@id, promotion, type, #department_id)
--- Insert group A for each promotion for Info department
+------------------------------------------------------------------------------------------------------------------------
+-- GROUPS
+------------------------------------------------------------------------------------------------------------------------
+
 INSERT INTO university.groups (promotion, type, department_id)
 VALUES
+    -- INFO
     (1, 'A', 1),
     (2, 'A', 1),
-    (3, 'A', 1)
-;
--- Insert group A for each promotion for QLIO department
-INSERT INTO university.groups (promotion, type, department_id)
-VALUES
-    (1, 'A', 2),
-    (2, 'A', 2),
-    (3, 'A', 2)
-;
--- Insert group A for each promotion for INFOCOM department
-INSERT INTO university.groups (promotion, type, department_id)
-VALUES
-    (1, 'A', 3),
-    (2, 'A', 3),
-    (3, 'A', 3)
-;
--- Insert group A for each promotion for GACO department
-INSERT INTO university.groups (promotion, type, department_id)
-VALUES
-    (2, 'A', 4),
-    (1, 'A', 4),
-    (3, 'A', 4)
-;
-
--- Insert group B for each promotion for Info department
-INSERT INTO university.groups (promotion, type, department_id)
-VALUES
+    (3, 'A', 1),
     (1, 'B', 1),
     (2, 'B', 1),
-    (3, 'B', 1)
-;
--- Insert group B for each promotion for QLIO department
-INSERT INTO university.groups (promotion, type, department_id)
-VALUES
-    (1, 'B', 2),
-    (2, 'B', 2),
-    (3, 'B', 2)
-;
--- Insert group B for each promotion for INFOCOM department
-INSERT INTO university.groups (promotion, type, department_id)
-VALUES
-    (1, 'B', 3),
-    (2, 'B', 3),
-    (3, 'B', 3)
-;
--- Insert group B for each promotion for GACO department
-INSERT INTO university.groups (promotion, type, department_id)
-VALUES
-    (2, 'B', 4),
-    (1, 'B', 4),
-    (3, 'B', 4)
-;
-
--- Insert group C for each promotion for Info department
-INSERT INTO university.groups (promotion, type, department_id)
-VALUES
+    (3, 'B', 1),
     (1, 'C', 1),
     (2, 'C', 1),
-    (3, 'C', 1)
-;
--- Insert group C for each promotion for QLIO department
-INSERT INTO university.groups (promotion, type, department_id)
-VALUES
-    (1, 'C', 2),
-    (2, 'C', 2),
-    (3, 'C', 2)
-;
--- Insert group C for each promotion for INFOCOM department
-INSERT INTO university.groups (promotion, type, department_id)
-VALUES
-    (1, 'C', 3),
-    (2, 'C', 3),
-    (3, 'C', 3)
-;
--- Insert group C for each promotion for GACO department
-INSERT INTO university.groups (promotion, type, department_id)
-VALUES
-    (2, 'C', 4),
-    (1, 'C', 4),
-    (3, 'C', 4)
-;
-
--- Insert for promotion 2 and 3, groups App for each department
-INSERT INTO university.groups (promotion, type, department_id)
-VALUES
-    -- (1, 'App', 1), -- 1st year Info in apprenticeship
+    (3, 'C', 1),
     (2, 'APP', 1),
     (3, 'APP', 1),
-    -- (1, 'App', 2), -- 1st year QLIO in apprenticeship
+
+    -- QLIO
+    (1, 'A', 2),
+    (2, 'A', 2),
+    (3, 'A', 2),
+    (1, 'B', 2),
+    (2, 'B', 2),
+    (3, 'B', 2),
+    (1, 'C', 2),
+    (2, 'C', 2),
+    (3, 'C', 2),
     (2, 'APP', 2),
     (3, 'APP', 2),
-    -- (1, 'App', 3), -- 1st year INFOCOM in apprenticeship
+
+    -- INFOCOM
+    (1, 'A', 3),
+    (2, 'A', 3),
+    (3, 'A', 3),
+    (1, 'B', 3),
+    (2, 'B', 3),
+    (3, 'B', 3),
+    (1, 'C', 3),
+    (2, 'C', 3),
+    (3, 'C', 3),
     (3, 'APP', 3),
     (2, 'APP', 3),
-    -- (1, 'App', 4), -- 1st year GACO in apprenticeship
+
+    -- GACO
+    (2, 'A', 4),
+    (1, 'A', 4),
+    (3, 'A', 4),
+    (2, 'B', 4),
+    (1, 'B', 4),
+    (3, 'B', 4),
+    (2, 'C', 4),
+    (1, 'C', 4),
+    (3, 'C', 4),
     (2, 'App', 4),
     (3, 'App', 4)
 ;
 
--- university.subgroups(@id, name, #group_id)
--- For subgroup 1 for each group
-INSERT INTO university.subgroups (name, group_id) SELECT type || '1', id FROM university.groups;
--- For subgroup 2 for each group
-INSERT INTO university.subgroups (name, group_id) SELECT type || '2', id FROM university.groups;
--- For subgroup 3 for each group
-INSERT INTO university.subgroups (name, group_id) SELECT type || '3', id FROM university.groups;
--- For subgroup app for each group
-INSERT INTO university.subgroups (name, group_id) SELECT type || 'app', id FROM university.groups;
 
--- university.rooms(@id, code, capacity, has_computer, has_projector)
+------------------------------------------------------------------------------------------------------------------------
+-- SUB GROUPS
+------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO university.subgroups (name, group_id)
+VALUES
+-- INFO
+    ('A1', 1),
+    ('A2', 1),
+
+    ('A1', 2),
+    ('A2', 2),
+
+    ('A1', 3),
+    ('A2', 3),
+    --
+    ('B1', 4),
+    ('B2', 4),
+
+    ('B1', 5),
+    ('B2', 5),
+
+    ('B1', 6),
+    ('B2', 6),
+    --
+    ('C1', 7),
+    ('C2', 7),
+
+    ('C2', 8),
+    ('C1', 8),
+
+    ('C1', 9),
+    ('C2', 9),
+    --
+    ('APP', 10),
+    ('APP', 11),
+
+-- QLIO
+    ('A1', 12),
+    ('A2', 12),
+
+    ('A1', 13),
+    ('A2', 13),
+
+    ('A1', 14),
+    ('A2', 14),
+    --
+    ('B1', 15),
+    ('B2', 15),
+
+    ('B1', 16),
+    ('B2', 16),
+
+    ('B1', 17),
+    ('B2', 17),
+    --
+    ('C1', 18),
+    ('C2', 18),
+
+    ('C2', 19),
+    ('C1', 19),
+
+    ('C1', 20),
+    ('C2', 20),
+    --
+    ('APP', 21),
+    ('APP', 22),
+
+-- INFOCOM
+    ('A1', 23),
+    ('A2', 23),
+
+    ('A1', 24),
+    ('A2', 24),
+
+    ('A1', 25),
+    ('A2', 25),
+    --
+    ('B1', 26),
+    ('B2', 26),
+
+    ('B1', 27),
+    ('B2', 27),
+
+    ('B1', 28),
+    ('B2', 28),
+    --
+    ('C1', 29),
+    ('C2', 29),
+
+    ('C2', 30),
+    ('C1', 30),
+
+    ('C1', 31),
+    ('C2', 31),
+    --
+    ('APP', 32),
+    ('APP', 33),
+
+-- GACO
+    ('A1', 34),
+    ('A2', 34),
+
+    ('A1', 35),
+    ('A2', 35),
+
+    ('A1', 36),
+    ('A2', 36),
+    --
+    ('B1', 37),
+    ('B2', 37),
+
+    ('B1', 38),
+    ('B2', 38),
+
+    ('B1', 39),
+    ('B2', 39),
+    --
+    ('C1', 40),
+    ('C2', 40),
+
+    ('C2', 41),
+    ('C1', 41),
+
+    ('C1', 42),
+    ('C2', 42),
+    --
+    ('APP', 43),
+    ('APP', 44)
+;
+
+------------------------------------------------------------------------------------------------------------------------
+-- Salles
+------------------------------------------------------------------------------------------------------------------------
+
 INSERT INTO university.rooms (code, capacity, has_computer, has_projector) VALUES
     ('A0-03 (Libre)', 0, 't', 'f'),
     ('A0-04 (musique)', 0, 't', 'f'),
@@ -307,8 +330,9 @@ INSERT INTO university.rooms (code, capacity, has_computer, has_projector) VALUE
     ('Sur rdv', 0, 'f', 'f')
 ;
 
--- university.specializations(@id, code, name, #department_id)
--- Parcours - INFO
+------------------------------------------------------------------------------------------------------------------------
+-- Specializations
+------------------------------------------------------------------------------------------------------------------------
 INSERT INTO university.specializations (code, name, department_id) 
 VALUES
     ('INFO', 'Semestre de préparation au parcours',(SELECT id FROM university.departments WHERE name = 'INFO')),
@@ -343,6 +367,10 @@ VALUES
     ('GACO_MFS', 'Management des fonctions supports',(SELECT id FROM university.departments WHERE name = 'GACO')),
     ('GACO_MCMO', 'Management commercial et marketing omni-canal',(SELECT id FROM university.departments WHERE name = 'GACO'))
 ;
+
+------------------------------------------------------------------------------------------------------------------------
+-- Teachings
+------------------------------------------------------------------------------------------------------------------------
 
 -- university.teachings(@id, title, hour_number, semestre, sequence, teaching_type #specialization_id)
 -- BUT INFO

@@ -1,1480 +1,415 @@
--- \echo [INFO] Start of script Insertion for SAE 1.0
--- \i script_university_school_insert.sql; --add database
-
-/* Script contain insert for each table
-    -- students(@student_number, last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
-*/
 delete FROM university.students;
--- students(@student_number, last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
-INSERT INTO university.students (last_name, first_name, mail, phone_number, user_id, department_id, group_id, subgroup_id)
-VALUES
-    ('Mehedi', 'Toure', 'mtoure@iut.univ-paris8.fr', '07.12.34.56.78', (SELECT id FROM university.users WHERE username = 'mtoure'), 1, 38, 38), -- username : mtoure 
-    ('Hugo', 'COHEN', 'hcohen@iut.univ-paris8.fr', '06.12.21.12.21', (SELECT id FROM university.users WHERE username = 'hcohen'), 1, 1, 1), -- username : hcohen 
-    ('Aldric', 'CLAUDE', 'aclaude@iut.univ-paris8.fr', '07.11.11.11.11', (SELECT id FROM university.users WHERE username = 'aclaude'), 1, 38, 38), -- username : aclaude 
-    ('Adil', 'CHETOUANI', 'achetouani@iut.univ-paris8.fr', '07.22.22.22.22', (SELECT id FROM university.users WHERE username = 'achetouani'), 1, 38, 38), -- username : achetouani 
-    ('Boulaye', 'SEYDI', 'bseydi@iut.univ-paris8.fr', '07.01.10.01.10', (SELECT id FROM university.users WHERE username = 'bseydi'), 1, 38,38) -- username : bbseydi 
-;
 
--- students(@student_number, last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
--- FAKE for departement INFO
-INSERT INTO university.students (last_name, first_name, mail, phone_number, user_id, department_id, group_id, subgroup_id)
+INSERT INTO university.students (last_name, first_name, user_id, department_id, group_id, subgroup_id)
 VALUES
-    ('Yujiro', 'Hanma', 'yhanma@iut.univ-paris8.fr', '07.76.01.23.29', (SELECT id FROM university.users WHERE username = 'yhanma'), 1, 15, 15), -- username : yhanma 
-    ('Baki', 'Hanma', 'bhanma@iut.univ-paris8.fr', '07.24.20.80.26', (SELECT id FROM university.users WHERE username = 'bhanma'), 1, 15, 15), -- username : bhanma 
-    ('Christine', 'Brown', 'cbrown1@iut.univ-paris8.fr', '06.55.09.93.34', (SELECT id FROM university.users WHERE username = 'cbrown1'), 1, 15, 15), -- username : cbrown1 
-    ('Jeffery', 'Gross', 'jgross@iut.univ-paris8.fr', '06.42.67.36.18', (SELECT id FROM university.users WHERE username = 'jgross'), 1, 15, 15), -- username : jgross 
-    ('Craig', 'Russell', 'crussell@iut.univ-paris8.fr', '06.59.53.18.00', (SELECT id FROM university.users WHERE username = 'crussell'), 1, 15, 15), -- username : crussell 
-    ('Laura', 'Gregory', 'lgregory@iut.univ-paris8.fr', '06.54.56.02.04', (SELECT id FROM university.users WHERE username = 'lgregory'), 1, 15, 15), -- username : lgregory 
-    ('Vincent', 'Fisher', 'vfisher@iut.univ-paris8.fr', '06.20.01.39.30', (SELECT id FROM university.users WHERE username = 'vfisher'), 1, 15, 15), -- username : vfisher 
-    ('Adrian', 'Vasquez', 'avasquez1@iut.univ-paris8.fr', '06.75.46.29.93', (SELECT id FROM university.users WHERE username = 'avasquez1'), 1, 15, 15), -- username : avasquez1 
-    ('Lauren', 'Miller', 'lmiller@iut.univ-paris8.fr', '06.70.85.39.54', (SELECT id FROM university.users WHERE username = 'lmiller'), 1, 15, 15), -- username : lmiller 
-    ('Jamie', 'Jackson', 'jjackson3@iut.univ-paris8.fr', '07.39.17.17.12', (SELECT id FROM university.users WHERE username = 'jjackson3'), 1, 15, 15), -- username : jjackson3 
-    ('Alexandra', 'Hamilton', 'ahamilton@iut.univ-paris8.fr', '06.85.31.21.60', (SELECT id FROM university.users WHERE username = 'ahamilton'), 1, 15, 59), -- username : ahamilton 
-    ('Kristen', 'Robinson', 'krobinson1@iut.univ-paris8.fr', '07.18.42.16.10', (SELECT id FROM university.users WHERE username = 'krobinson1'), 1, 15, 59), -- username : krobinson1 
-    ('Grant', 'Smith', 'gsmith@iut.univ-paris8.fr', '07.79.87.78.43', (SELECT id FROM university.users WHERE username = 'gsmith'), 1, 15, 59), -- username : gsmith 
-    ('Bobby', 'Nelson', 'bnelson@iut.univ-paris8.fr', '07.09.12.11.85', (SELECT id FROM university.users WHERE username = 'bnelson'), 1, 15, 59), -- username : bnelson 
-    ('Laura', 'Olson', 'lolson@iut.univ-paris8.fr', '06.92.70.92.97', (SELECT id FROM university.users WHERE username = 'lolson'), 1, 15, 59), -- username : lolson 
-    ('Sherry', 'Smith', 'ssmith1@iut.univ-paris8.fr', '06.27.80.21.57', (SELECT id FROM university.users WHERE username = 'ssmith1'), 1, 15, 59), -- username : ssmith1 
-    ('David', 'Warner', 'dwarner@iut.univ-paris8.fr', '07.98.31.81.18', (SELECT id FROM university.users WHERE username = 'dwarner'), 1, 15, 59), -- username : dwarner 
-    ('Kenneth', 'Stewart', 'kstewart@iut.univ-paris8.fr', '06.07.27.70.17', (SELECT id FROM university.users WHERE username = 'kstewart'), 1, 15, 59), -- username : kstewart 
-    ('Jeremy', 'Brown', 'jbrown2@iut.univ-paris8.fr', '06.98.66.49.23', (SELECT id FROM university.users WHERE username = 'jbrown2'), 1, 15, 59), -- username : jbrown2 
-    ('Jennifer', 'Mitchell', 'jmitchell@iut.univ-paris8.fr', '07.53.40.75.40', (SELECT id FROM university.users WHERE username = 'jmitchell'), 1, 15, 59), -- username : jmitchell 
-    ('Matthew', 'Bradley', 'mbradley@iut.univ-paris8.fr', '06.68.36.75.31', (SELECT id FROM university.users WHERE username = 'mbradley'), 1, 15, 103), -- username : mbradley 
-    ('Kevin', 'Ward', 'kward@iut.univ-paris8.fr', '06.28.91.74.20', (SELECT id FROM university.users WHERE username = 'kward'), 1, 15, 103), -- username : kward 
-    ('Jason', 'Zamora', 'jzamora@iut.univ-paris8.fr', '07.74.72.14.06', (SELECT id FROM university.users WHERE username = 'jzamora'), 1, 15, 103), -- username : jzamora 
-    ('Martin', 'Humphrey', 'mhumphrey@iut.univ-paris8.fr', '07.24.67.74.65', (SELECT id FROM university.users WHERE username = 'mhumphrey'), 1, 15, 103), -- username : mhumphrey 
-    ('Mark', 'Johnson', 'mjohnson2@iut.univ-paris8.fr', '07.22.88.94.55', (SELECT id FROM university.users WHERE username = 'mjohnson2'), 1, 15, 103), -- username : mjohnson2 
-    ('Travis', 'Hopkins', 'thopkins@iut.univ-paris8.fr', '07.06.47.39.54', (SELECT id FROM university.users WHERE username = 'thopkins'), 1, 15, 103), -- username : thopkins 
-    ('Brandon', 'Cobb', 'bcobb@iut.univ-paris8.fr', '06.50.59.61.52', (SELECT id FROM university.users WHERE username = 'bcobb'), 1, 15, 103), -- username : bcobb 
-    ('Zachary', 'Simmons', 'zsimmons@iut.univ-paris8.fr', '06.00.57.70.06', (SELECT id FROM university.users WHERE username = 'zsimmons'), 1, 15, 103), -- username : zsimmons 
-    ('Samantha', 'White', 'swhite1@iut.univ-paris8.fr', '07.69.23.17.25', (SELECT id FROM university.users WHERE username = 'swhite1'), 1, 15, 103), -- username : swhite1 
-    ('Lauren', 'Beard', 'lbeard@iut.univ-paris8.fr', '07.70.07.87.83', (SELECT id FROM university.users WHERE username = 'lbeard'), 1, 15, 103), -- username : lbeard 
-    ('Timothy', 'Bauer', 'tbauer@iut.univ-paris8.fr', '06.42.06.78.03', (SELECT id FROM university.users WHERE username = 'tbauer'), 1, 13, 13), -- username : tbauer 
-    ('John', 'Stevens', 'jstevens@iut.univ-paris8.fr', '07.99.04.64.44', (SELECT id FROM university.users WHERE username = 'jstevens'), 1, 13, 13), -- username : jstevens 
-    ('Matthew', 'Garcia', 'mgarcia1@iut.univ-paris8.fr', '06.70.26.44.84', (SELECT id FROM university.users WHERE username = 'mgarcia1'), 1, 13, 13), -- username : mgarcia1 
-    ('Debbie', 'Griffith', 'dgriffith1@iut.univ-paris8.fr', '07.77.81.61.16', (SELECT id FROM university.users WHERE username = 'dgriffith1'), 1, 13, 13), -- username : dgriffith1 
-    ('Patricia', 'Miller', 'pmiller1@iut.univ-paris8.fr', '07.71.38.48.33', (SELECT id FROM university.users WHERE username = 'pmiller1'), 1, 13, 13), -- username : pmiller1 
-    ('Connor', 'Scott', 'cscott@iut.univ-paris8.fr', '06.53.76.78.28', (SELECT id FROM university.users WHERE username = 'cscott'), 1, 13, 13), -- username : cscott 
-    ('Angela', 'White', 'awhite1@iut.univ-paris8.fr', '07.61.13.16.08', (SELECT id FROM university.users WHERE username = 'awhite1'), 1, 13, 13), -- username : awhite1 
-    ('Shannon', 'Ball', 'sball@iut.univ-paris8.fr', '07.62.47.09.83', (SELECT id FROM university.users WHERE username = 'sball'), 1, 13, 13), -- username : sball 
-    ('Michael', 'Jennings', 'mjennings@iut.univ-paris8.fr', '06.06.86.76.71', (SELECT id FROM university.users WHERE username = 'mjennings'), 1, 13, 13), -- username : mjennings 
-    ('Alexander', 'Roth', 'aroth@iut.univ-paris8.fr', '06.74.01.28.30', (SELECT id FROM university.users WHERE username = 'aroth'), 1, 13, 13), -- username : aroth 
-    ('Ryan', 'Rivera', 'rrivera@iut.univ-paris8.fr', '07.31.62.15.92', (SELECT id FROM university.users WHERE username = 'rrivera'), 1, 13, 57), -- username : rrivera 
-    ('Ernest', 'Richard', 'erichard@iut.univ-paris8.fr', '06.74.59.19.69', (SELECT id FROM university.users WHERE username = 'erichard'), 1, 13, 57), -- username : erichard 
-    ('Mary', 'Gutierrez', 'mgutierrez1@iut.univ-paris8.fr', '06.40.61.42.22', (SELECT id FROM university.users WHERE username = 'mgutierrez1'), 1, 13, 57), -- username : mgutierrez1 
-    ('Daniel', 'Stein', 'dstein@iut.univ-paris8.fr', '07.96.54.81.26', (SELECT id FROM university.users WHERE username = 'dstein'), 1, 13, 57), -- username : dstein 
-    ('Marvin', 'Patel', 'mpatel@iut.univ-paris8.fr', '07.32.79.08.65', (SELECT id FROM university.users WHERE username = 'mpatel'), 1, 13, 57), -- username : mpatel 
-    ('Christopher', 'Gray', 'cgray@iut.univ-paris8.fr', '06.58.41.18.76', (SELECT id FROM university.users WHERE username = 'cgray'), 1, 13, 57), -- username : cgray 
-    ('Lisa', 'Williams', 'lwilliams1@iut.univ-paris8.fr', '06.27.69.05.91', (SELECT id FROM university.users WHERE username = 'lwilliams1'), 1, 13, 57), -- username : lwilliams1 
-    ('Sonia', 'Hall', 'shall@iut.univ-paris8.fr', '06.09.18.08.56', (SELECT id FROM university.users WHERE username = 'shall'), 1, 13, 57), -- username : shall 
-    ('Mary', 'Watson', 'mwatson1@iut.univ-paris8.fr', '06.33.58.86.98', (SELECT id FROM university.users WHERE username = 'mwatson1'), 1, 13, 57), -- username : mwatson1 
-    ('Derrick', 'Gonzalez', 'dgonzalez@iut.univ-paris8.fr', '06.28.12.40.53', (SELECT id FROM university.users WHERE username = 'dgonzalez'), 1, 13, 57), -- username : dgonzalez 
-    ('Alicia', 'Robinson', 'arobinson@iut.univ-paris8.fr', '06.07.11.42.31', (SELECT id FROM university.users WHERE username = 'arobinson'), 1, 13, 101), -- username : arobinson 
-    ('Debbie', 'Kane', 'dkane@iut.univ-paris8.fr', '06.10.87.13.50', (SELECT id FROM university.users WHERE username = 'dkane'), 1, 13, 101), -- username : dkane 
-    ('Andrew', 'Klein', 'aklein1@iut.univ-paris8.fr', '07.44.71.53.82', (SELECT id FROM university.users WHERE username = 'aklein1'), 1, 13, 101), -- username : aklein1 
-    ('Patrick', 'Obrien', 'pobrien@iut.univ-paris8.fr', '07.19.10.00.21', (SELECT id FROM university.users WHERE username = 'pobrien'), 1, 13, 101), -- username : pobrien 
-    ('Cynthia', 'Foley', 'cfoley@iut.univ-paris8.fr', '07.17.60.87.85', (SELECT id FROM university.users WHERE username = 'cfoley'), 1, 13, 101), -- username : cfoley 
-    ('Juan', 'Garcia', 'jgarcia1@iut.univ-paris8.fr', '07.56.73.31.77', (SELECT id FROM university.users WHERE username = 'jgarcia1'), 1, 13, 101), -- username : jgarcia1 
-    ('Sabrina', 'Brown', 'sbrown@iut.univ-paris8.fr', '07.01.87.05.24', (SELECT id FROM university.users WHERE username = 'sbrown'), 1, 13, 101), -- username : sbrown 
-    ('Marcus', 'Skinner', 'mskinner@iut.univ-paris8.fr', '07.56.96.95.00', (SELECT id FROM university.users WHERE username = 'mskinner'), 1, 13, 101), -- username : mskinner 
-    ('Michael', 'Fowler', 'mfowler@iut.univ-paris8.fr', '07.49.92.62.19', (SELECT id FROM university.users WHERE username = 'mfowler'), 1, 13, 101), -- username : mfowler 
-    ('Dwayne', 'Morrison', 'dmorrison@iut.univ-paris8.fr', '07.76.90.33.65', (SELECT id FROM university.users WHERE username = 'dmorrison'), 1, 13, 101), -- username : dmorrison 
-    ('Nicole', 'White', 'nwhite@iut.univ-paris8.fr', '06.77.86.99.06', (SELECT id FROM university.users WHERE username = 'nwhite'), 1, 14, 14), -- username : nwhite 
-    ('Kristin', 'Johnson', 'kjohnson1@iut.univ-paris8.fr', '07.07.62.56.15', (SELECT id FROM university.users WHERE username = 'kjohnson1'), 1, 14, 14), -- username : kjohnson1 
-    ('Donald', 'Santos', 'dsantos@iut.univ-paris8.fr', '06.46.29.97.13', (SELECT id FROM university.users WHERE username = 'dsantos'), 1, 14, 14), -- username : dsantos 
-    ('Donna', 'Foster', 'dfoster@iut.univ-paris8.fr', '07.71.41.54.06', (SELECT id FROM university.users WHERE username = 'dfoster'), 1, 14, 14), -- username : dfoster 
-    ('James', 'Smith', 'jsmith4@iut.univ-paris8.fr', '07.77.92.14.18', (SELECT id FROM university.users WHERE username = 'jsmith4'), 1, 14, 14), -- username : jsmith4 
-    ('James', 'Santiago', 'jsantiago@iut.univ-paris8.fr', '07.54.61.55.30', (SELECT id FROM university.users WHERE username = 'jsantiago'), 1, 14, 14), -- username : jsantiago 
-    ('Gary', 'Martin', 'gmartin@iut.univ-paris8.fr', '06.79.71.94.17', (SELECT id FROM university.users WHERE username = 'gmartin'), 1, 14, 14), -- username : gmartin 
-    ('Kari', 'Williams', 'kwilliams@iut.univ-paris8.fr', '07.48.68.17.77', (SELECT id FROM university.users WHERE username = 'kwilliams'), 1, 14, 14), -- username : kwilliams 
-    ('Michael', 'Henry', 'mhenry@iut.univ-paris8.fr', '06.65.90.84.20', (SELECT id FROM university.users WHERE username = 'mhenry'), 1, 14, 14), -- username : mhenry 
-    ('Shawn', 'Velez', 'svelez1@iut.univ-paris8.fr', '06.71.16.12.20', (SELECT id FROM university.users WHERE username = 'svelez1'), 1, 14, 14), -- username : svelez1 
-    ('Lori', 'Jennings', 'ljennings@iut.univ-paris8.fr', '07.37.27.73.40', (SELECT id FROM university.users WHERE username = 'ljennings'), 1, 14, 58), -- username : ljennings 
-    ('Michael', 'Davis', 'mdavis2@iut.univ-paris8.fr', '07.69.12.55.37', (SELECT id FROM university.users WHERE username = 'mdavis2'), 1, 14, 58), -- username : mdavis2 
-    ('Ryan', 'Reeves', 'rreeves@iut.univ-paris8.fr', '07.30.64.71.18', (SELECT id FROM university.users WHERE username = 'rreeves'), 1, 14, 58), -- username : rreeves 
-    ('Jenna', 'Jackson', 'jjackson2@iut.univ-paris8.fr', '07.65.10.03.09', (SELECT id FROM university.users WHERE username = 'jjackson2'), 1, 14, 58), -- username : jjackson2
-    ('Sherry', 'Kemp', 'skemp@iut.univ-paris8.fr', '06.06.38.67.24', (SELECT id FROM university.users WHERE username = 'skemp'), 1, 14, 58), -- username : skemp 
-    ('James', 'Peters', 'jpeters@iut.univ-paris8.fr', '06.16.30.18.43', (SELECT id FROM university.users WHERE username = 'jpeters'), 1, 14, 58), -- username : jpeters 
-    ('Kristy', 'Hunt', 'khunt@iut.univ-paris8.fr', '07.59.87.89.80', (SELECT id FROM university.users WHERE username = 'khunt'), 1, 14, 58), -- username : khunt 
-    ('Mark', 'Dudley', 'mdudley@iut.univ-paris8.fr', '06.98.31.75.95', (SELECT id FROM university.users WHERE username = 'mdudley'), 1, 14, 58), -- username : mdudley 
-    ('Andrew', 'Vasquez', 'avasquez@iut.univ-paris8.fr', '06.17.12.46.78', (SELECT id FROM university.users WHERE username = 'avasquez'), 1, 14, 58), -- username : avasquez 
-    ('Kelly', 'Doyle', 'kdoyle@iut.univ-paris8.fr', '06.43.04.39.67', (SELECT id FROM university.users WHERE username = 'kdoyle'), 1, 14, 58), -- username : kdoyle 
-    ('Roy', 'Clarke', 'rclarke@iut.univ-paris8.fr', '06.18.81.48.97', (SELECT id FROM university.users WHERE username = 'rclarke'), 1, 14, 102), -- username : rclarke 
-    ('Heidi', 'Moore', 'hmoore1@iut.univ-paris8.fr', '07.46.34.48.14', (SELECT id FROM university.users WHERE username = 'hmoore1'), 1, 14, 102), -- username : hmoore1 
-    ('Kayla', 'Cox', 'kcox@iut.univ-paris8.fr', '07.13.96.35.27', (SELECT id FROM university.users WHERE username = 'kcox'), 1, 14, 102), -- username : kcox 
-    ('Anne', 'Willis', 'awillis1@iut.univ-paris8.fr', '07.14.72.24.78', (SELECT id FROM university.users WHERE username = 'awillis1'), 1, 14, 102), -- username : awillis1 
-    ('Joyce', 'Skinner', 'jskinner@iut.univ-paris8.fr', '06.87.76.33.60', (SELECT id FROM university.users WHERE username = 'jskinner'), 1, 14, 102), -- username : jskinner 
-    ('Andrea', 'James', 'ajames@iut.univ-paris8.fr', '06.12.61.09.81', (SELECT id FROM university.users WHERE username = 'ajames'), 1, 14, 102), -- username : ajames 
-    ('Jamie', 'Maddox', 'jmaddox@iut.univ-paris8.fr', '06.94.71.10.41', (SELECT id FROM university.users WHERE username = 'jmaddox'), 1, 14, 102), -- username : jmaddox 
-    ('Jerry', 'Cooley', 'jcooley@iut.univ-paris8.fr', '07.19.57.29.72', (SELECT id FROM university.users WHERE username = 'jcooley'), 1, 14, 102), -- username : jcooley 
-    ('Stacy', 'Gould', 'sgould@iut.univ-paris8.fr', '06.54.37.92.66', (SELECT id FROM university.users WHERE username = 'sgould'), 1, 14, 102), -- username : sgould 
-    ('Ralph', 'Peters', 'rpeters@iut.univ-paris8.fr', '07.73.44.41.91', (SELECT id FROM university.users WHERE username = 'rpeters'), 1, 14, 102), -- username : rpeters 
-    ('Laura', 'White', 'lwhite1@iut.univ-paris8.fr', '07.59.03.02.68', (SELECT id FROM university.users WHERE username = 'lwhite1'), 1, 2, 2), -- username : lwhite1 
-    ('Christopher', 'Gonzalez', 'cgonzalez@iut.univ-paris8.fr', '07.38.72.68.78', (SELECT id FROM university.users WHERE username = 'cgonzalez'), 1, 2, 2), -- username : cgonzalez 
-    ('Sarah', 'Jordan', 'sjordan1@iut.univ-paris8.fr', '06.24.38.84.24', (SELECT id FROM university.users WHERE username = 'sjordan1'), 1, 2, 2), -- username : sjordan1 
-    ('James', 'Love', 'jlove@iut.univ-paris8.fr', '06.15.20.80.36', (SELECT id FROM university.users WHERE username = 'jlove'), 1, 2, 2), -- username : jlove 
-    ('Levi', 'Heath', 'lheath@iut.univ-paris8.fr', '07.21.04.46.53', (SELECT id FROM university.users WHERE username = 'lheath'), 1, 2, 2), -- username : lheath 
-    ('Brandy', 'Ramos', 'bramos@iut.univ-paris8.fr', '06.99.68.56.46', (SELECT id FROM university.users WHERE username = 'bramos'), 1, 2, 2), -- username : bramos 
-    ('Daniel', 'Brown', 'dbrown1@iut.univ-paris8.fr', '07.12.92.94.71', (SELECT id FROM university.users WHERE username = 'dbrown1'), 1, 2, 2), -- username : dbrown1 
-    ('Mark', 'Phillips', 'mphillips@iut.univ-paris8.fr', '06.24.88.10.27', (SELECT id FROM university.users WHERE username = 'mphillips'), 1, 2, 2), -- username : mphillips 
-    ('Larry', 'Jackson', 'ljackson@iut.univ-paris8.fr', '07.30.59.03.13', (SELECT id FROM university.users WHERE username = 'ljackson'), 1, 2, 2), -- username : ljackson 
-    ('Donald', 'Smith', 'dsmith2@iut.univ-paris8.fr', '06.37.46.64.08', (SELECT id FROM university.users WHERE username = 'dsmith2'), 1, 2, 2), -- username : dsmith2 
-    ('Patricia', 'Klein', 'pklein@iut.univ-paris8.fr', '06.43.62.51.81', (SELECT id FROM university.users WHERE username = 'pklein'), 1, 2, 46), -- username : pklein 
-    ('Jonathan', 'Martinez', 'jmartinez@iut.univ-paris8.fr', '07.72.99.88.41', (SELECT id FROM university.users WHERE username = 'jmartinez'), 1, 2, 46), -- username : jmartinez 
-    ('Jesse', 'Reynolds', 'jreynolds@iut.univ-paris8.fr', '07.70.37.78.75', (SELECT id FROM university.users WHERE username = 'jreynolds'), 1, 2, 46), -- username : jreynolds 
-    ('Caleb', 'Jarvis', 'cjarvis@iut.univ-paris8.fr', '06.01.14.37.59', (SELECT id FROM university.users WHERE username = 'cjarvis'), 1, 2, 46), -- username : cjarvis 
-    ('Annette', 'Cook', 'acook@iut.univ-paris8.fr', '07.78.61.33.89', (SELECT id FROM university.users WHERE username = 'acook'), 1, 2, 46), -- username : acook 
-    ('Renee', 'Gonzales', 'rgonzales@iut.univ-paris8.fr', '07.87.87.99.96', (SELECT id FROM university.users WHERE username = 'rgonzales'), 1, 2, 46), -- username : rgonzales 
-    ('Laura', 'Campbell', 'lcampbell1@iut.univ-paris8.fr', '06.33.13.09.83', (SELECT id FROM university.users WHERE username = 'lcampbell1'), 1, 2, 46), -- username : lcampbell1 
-    ('Angela', 'Perry', 'aperry1@iut.univ-paris8.fr', '07.70.39.37.19', (SELECT id FROM university.users WHERE username = 'aperry1'), 1, 2, 46), -- username : aperry1 
-    ('John', 'Johnston', 'jjohnston@iut.univ-paris8.fr', '06.70.24.87.85', (SELECT id FROM university.users WHERE username = 'jjohnston'), 1, 2, 46), -- username : jjohnston 
-    ('Stephanie', 'Gordon', 'sgordon@iut.univ-paris8.fr', '06.08.90.26.61', (SELECT id FROM university.users WHERE username = 'sgordon'), 1, 2, 46), -- username : sgordon 
-    ('Cynthia', 'Sanchez', 'csanchez@iut.univ-paris8.fr', '06.29.39.13.19', (SELECT id FROM university.users WHERE username = 'csanchez'), 1, 2, 90), -- username : csanchez 
-    ('Laura', 'Shelton', 'lshelton@iut.univ-paris8.fr', '06.22.20.55.04', (SELECT id FROM university.users WHERE username = 'lshelton'), 1, 2, 90), -- username : lshelton 
-    ('Angela', 'Adams', 'aadams2@iut.univ-paris8.fr', '07.40.50.34.95', (SELECT id FROM university.users WHERE username = 'aadams2'), 1, 2, 90), -- username : aadams2 
-    ('Raymond', 'Williams', 'rwilliams@iut.univ-paris8.fr', '07.82.11.62.69', (SELECT id FROM university.users WHERE username = 'rwilliams'), 1, 2, 90), -- username : rwilliams 
-    ('Linda', 'Mcdonald', 'lmcdonald@iut.univ-paris8.fr', '07.21.54.71.63', (SELECT id FROM university.users WHERE username = 'lmcdonald'), 1, 2, 90), -- username : lmcdonald 
-    ('Chelsea', 'Johnston', 'cjohnston@iut.univ-paris8.fr', '07.33.25.77.86', (SELECT id FROM university.users WHERE username = 'cjohnston'), 1, 2, 90), -- username : cjohnston 
-    ('Jason', 'Smith', 'jsmith3@iut.univ-paris8.fr', '07.35.85.84.76', (SELECT id FROM university.users WHERE username = 'jsmith3'), 1, 2, 90), -- username : jsmith3 
-    ('Brandi', 'Coffey', 'bcoffey@iut.univ-paris8.fr', '07.67.24.60.31', (SELECT id FROM university.users WHERE username = 'bcoffey'), 1, 2, 90), -- username : bcoffey 
-    ('Robert', 'Edwards', 'redwards@iut.univ-paris8.fr', '06.60.49.54.48', (SELECT id FROM university.users WHERE username = 'redwards'), 1, 2, 90), -- username : redwards 
-    ('Stephanie', 'Sanders', 'ssanders@iut.univ-paris8.fr', '06.34.51.50.91', (SELECT id FROM university.users WHERE username = 'ssanders'), 1, 2, 90), -- username : ssanders 
-    ('Jonathan', 'Luna', 'jluna@iut.univ-paris8.fr', '07.12.58.81.51', (SELECT id FROM university.users WHERE username = 'jluna'), 1, 3, 3), -- username : jluna 
-    ('Alexander', 'Goodwin', 'agoodwin@iut.univ-paris8.fr', '07.23.78.59.17', (SELECT id FROM university.users WHERE username = 'agoodwin'), 1, 3, 3), -- username : agoodwin 
-    ('Douglas', 'Rodriguez', 'drodriguez1@iut.univ-paris8.fr', '06.35.43.89.96', (SELECT id FROM university.users WHERE username = 'drodriguez1'), 1, 3, 3), -- username : drodriguez1 
-    ('Joel', 'Stewart', 'jstewart2@iut.univ-paris8.fr', '07.43.81.46.68', (SELECT id FROM university.users WHERE username = 'jstewart2'), 1, 3, 3), -- username : jstewart2 
-    ('Todd', 'Bradford', 'tbradford@iut.univ-paris8.fr', '07.24.08.31.87', (SELECT id FROM university.users WHERE username = 'tbradford'), 1, 3, 3), -- username : tbradford 
-    ('Stephanie', 'Schroeder', 'sschroeder@iut.univ-paris8.fr', '07.87.29.71.51', (SELECT id FROM university.users WHERE username = 'sschroeder'), 1, 3, 3), -- username : sschroeder 
-    ('Lori', 'Wilkerson', 'lwilkerson@iut.univ-paris8.fr', '06.57.21.59.79', (SELECT id FROM university.users WHERE username = 'lwilkerson'), 1, 3, 3), -- username : lwilkerson 
-    ('Kathleen', 'Thompson', 'kthompson@iut.univ-paris8.fr', '07.12.76.36.26', (SELECT id FROM university.users WHERE username = 'kthompson'), 1, 3, 3), -- username : kthompson 
-    ('Cathy', 'Berry', 'cberry@iut.univ-paris8.fr', '06.02.05.86.32', (SELECT id FROM university.users WHERE username = 'cberry'), 1, 3, 3), -- username : cberry 
-    ('Jill', 'Morales', 'jmorales@iut.univ-paris8.fr', '06.10.91.15.31', (SELECT id FROM university.users WHERE username = 'jmorales'), 1, 3, 3), -- username : jmorales 
-    ('Steven', 'Hoffman', 'shoffman@iut.univ-paris8.fr', '07.68.29.11.34', (SELECT id FROM university.users WHERE username = 'shoffman'), 1, 3, 47), -- username : shoffman 
-    ('Jesse', 'Meadows', 'jmeadows1@iut.univ-paris8.fr', '06.53.02.53.39', (SELECT id FROM university.users WHERE username = 'jmeadows1'), 1, 3, 47), -- username : jmeadows1 
-    ('Christopher', 'Joyce', 'cjoyce@iut.univ-paris8.fr', '06.35.62.24.19', (SELECT id FROM university.users WHERE username = 'cjoyce'), 1, 3, 47), -- username : cjoyce 
-    ('Melissa', 'Winters', 'mwinters@iut.univ-paris8.fr', '06.50.82.02.53', (SELECT id FROM university.users WHERE username = 'mwinters'), 1, 3, 47), -- username : mwinters 
-    ('Olivia', 'Jackson', 'ojackson@iut.univ-paris8.fr', '06.58.75.02.22', (SELECT id FROM university.users WHERE username = 'ojackson'), 1, 3, 47), -- username : ojackson 
-    ('Barry', 'Robinson', 'brobinson@iut.univ-paris8.fr', '06.06.79.04.05', (SELECT id FROM university.users WHERE username = 'brobinson'), 1, 3, 47), -- username : brobinson 
-    ('Anthony', 'Turner', 'aturner@iut.univ-paris8.fr', '07.41.46.71.00', (SELECT id FROM university.users WHERE username = 'aturner'), 1, 3, 47), -- username : aturner 
-    ('Jessica', 'Anderson', 'janderson@iut.univ-paris8.fr', '07.24.78.56.69', (SELECT id FROM university.users WHERE username = 'janderson'), 1, 3, 47), -- username : janderson 
-    ('Katie', 'Garcia', 'kgarcia2@iut.univ-paris8.fr', '06.54.94.94.51', (SELECT id FROM university.users WHERE username = 'kgarcia2'), 1, 3, 47), -- username : kgarcia2 
-    ('Daniel', 'Elliott', 'delliott@iut.univ-paris8.fr', '06.67.51.99.47', (SELECT id FROM university.users WHERE username = 'delliott'), 1, 3, 47), -- username : delliott 
-    ('Frederick', 'Hunter', 'fhunter@iut.univ-paris8.fr', '07.53.65.75.28', (SELECT id FROM university.users WHERE username = 'fhunter'), 1, 3, 91), -- username : fhunter 
-    ('Brandon', 'Gonzalez', 'bgonzalez1@iut.univ-paris8.fr', '06.96.67.33.99', (SELECT id FROM university.users WHERE username = 'bgonzalez1'), 1, 3, 91), -- username : bgonzalez1 
-    ('Christina', 'Cameron', 'ccameron@iut.univ-paris8.fr', '06.95.41.15.66', (SELECT id FROM university.users WHERE username = 'ccameron'), 1, 3, 91), -- username : ccameron 
-    ('Felicia', 'Lopez', 'flopez@iut.univ-paris8.fr', '07.53.74.44.20', (SELECT id FROM university.users WHERE username = 'flopez'), 1, 3, 91), -- username : flopez 
-    ('Wendy', 'Ponce', 'wponce@iut.univ-paris8.fr', '06.40.66.89.32', (SELECT id FROM university.users WHERE username = 'wponce'), 1, 3, 91), -- username : wponce 
-    ('Joshua', 'Ramirez', 'jramirez@iut.univ-paris8.fr', '07.10.12.66.89', (SELECT id FROM university.users WHERE username = 'jramirez'), 1, 3, 91), -- username : jramirez 
-    ('Michael', 'Burton', 'mburton@iut.univ-paris8.fr', '06.32.31.33.20', (SELECT id FROM university.users WHERE username = 'mburton'), 1, 3, 91), -- username : mburton 
-    ('Anthony', 'Nolan', 'anolan@iut.univ-paris8.fr', '07.99.43.63.54', (SELECT id FROM university.users WHERE username = 'anolan'), 1, 3, 91), -- username : anolan 
-    ('Mark', 'Conner', 'mconner@iut.univ-paris8.fr', '06.27.50.02.67', (SELECT id FROM university.users WHERE username = 'mconner'), 1, 3, 91), -- username : mconner 
-    ('James', 'Howard', 'jhoward1@iut.univ-paris8.fr', '07.76.76.32.58', (SELECT id FROM university.users WHERE username = 'jhoward1'), 1, 3, 91), -- username : jhoward1 
-    ('Christina', 'Nguyen', 'cnguyen@iut.univ-paris8.fr', '06.01.92.36.00', (SELECT id FROM university.users WHERE username = 'cnguyen'), 1, 1, 1), -- username : cnguyen 
-    ('Nichole', 'Kaiser', 'nkaiser@iut.univ-paris8.fr', '07.87.08.49.26', (SELECT id FROM university.users WHERE username = 'nkaiser'), 1, 1, 1), -- username : nkaiser 
-    ('Stacy', 'Craig', 'scraig@iut.univ-paris8.fr', '06.12.23.69.02', (SELECT id FROM university.users WHERE username = 'scraig'), 1, 1, 1), -- username : scraig 
-    ('Sarah', 'Osborne', 'sosborne@iut.univ-paris8.fr', '06.79.89.72.48', (SELECT id FROM university.users WHERE username = 'sosborne'), 1, 1, 1), -- username : sosborne 
-    ('Joseph', 'Hendrix', 'jhendrix@iut.univ-paris8.fr', '07.88.41.96.48', (SELECT id FROM university.users WHERE username = 'jhendrix'), 1, 1, 1), -- username : jhendrix 
-    ('Dale', 'Reed', 'dreed@iut.univ-paris8.fr', '07.61.73.58.98', (SELECT id FROM university.users WHERE username = 'dreed'), 1, 1, 1), -- username : dreed 
-    ('Mary', 'Butler', 'mbutler@iut.univ-paris8.fr', '07.86.85.35.27', (SELECT id FROM university.users WHERE username = 'mbutler'), 1, 1, 1), -- username : mbutler 
-    ('Edwin', 'Fischer', 'efischer@iut.univ-paris8.fr', '06.21.61.58.79', (SELECT id FROM university.users WHERE username = 'efischer'), 1, 1, 1), -- username : efischer 
-    ('Kaylee', 'Castillo', 'kcastillo@iut.univ-paris8.fr', '06.48.96.14.31', (SELECT id FROM university.users WHERE username = 'kcastillo'), 1, 1, 1), -- username : kcastillo 
-    ('Courtney', 'Carter', 'ccarter2@iut.univ-paris8.fr', '06.34.28.92.92', (SELECT id FROM university.users WHERE username = 'ccarter2'), 1, 1, 1), -- username : ccarter2 
-    ('Krista', 'Kent', 'kkent@iut.univ-paris8.fr', '06.07.68.41.86', (SELECT id FROM university.users WHERE username = 'kkent'), 1, 1, 45), -- username : kkent 
-    ('Holly', 'Johnson', 'hjohnson@iut.univ-paris8.fr', '06.70.69.13.56', (SELECT id FROM university.users WHERE username = 'hjohnson'), 1, 1, 45), -- username : hjohnson 
-    ('Chad', 'Dixon', 'cdixon@iut.univ-paris8.fr', '06.36.37.86.57', (SELECT id FROM university.users WHERE username = 'cdixon'), 1, 1, 45), -- username : cdixon 
-    ('Angela', 'Mccarthy', 'amccarthy@iut.univ-paris8.fr', '06.42.96.03.03', (SELECT id FROM university.users WHERE username = 'amccarthy'), 1, 1, 45), -- username : amccarthy 
-    ('William', 'Nguyen', 'wnguyen@iut.univ-paris8.fr', '06.82.09.97.33', (SELECT id FROM university.users WHERE username = 'wnguyen'), 1, 1, 45), -- username : wnguyen 
-    ('Michael', 'Chang', 'mchang@iut.univ-paris8.fr', '06.37.84.46.87', (SELECT id FROM university.users WHERE username = 'mchang'), 1, 1, 45), -- username : mchang 
-    ('Kristin', 'Parks', 'kparks@iut.univ-paris8.fr', '07.13.73.76.80', (SELECT id FROM university.users WHERE username = 'kparks'), 1, 1, 45), -- username : kparks 
-    ('Jennifer', 'Stephens', 'jstephens1@iut.univ-paris8.fr', '07.02.08.10.35', (SELECT id FROM university.users WHERE username = 'jstephens1'), 1, 1, 45), -- username : jstephens1 
-    ('Rachel', 'Merritt', 'rmerritt@iut.univ-paris8.fr', '07.39.59.54.05', (SELECT id FROM university.users WHERE username = 'rmerritt'), 1, 1, 45), -- username : rmerritt 
-    ('Cory', 'Smith', 'csmith1@iut.univ-paris8.fr', '06.29.28.61.85', (SELECT id FROM university.users WHERE username = 'csmith1'), 1, 1, 45), -- username : csmith1 
-    ('Robin', 'Brown', 'rbrown1@iut.univ-paris8.fr', '06.92.75.86.36', (SELECT id FROM university.users WHERE username = 'rbrown1'), 1, 1, 89), -- username : rbrown1 
-    ('Cheryl', 'Simpson', 'csimpson@iut.univ-paris8.fr', '06.03.83.68.89', (SELECT id FROM university.users WHERE username = 'csimpson'), 1, 1, 89), -- username : csimpson 
-    ('Mark', 'Carson', 'mcarson@iut.univ-paris8.fr', '06.63.10.91.78', (SELECT id FROM university.users WHERE username = 'mcarson'), 1, 1, 89), -- username : mcarson 
-    ('Jason', 'Johnson', 'jjohnson1@iut.univ-paris8.fr', '06.79.49.76.65', (SELECT id FROM university.users WHERE username = 'jjohnson1'), 1, 1, 89), -- username : jjohnson1 
-    ('Matthew', 'Rodgers', 'mrodgers@iut.univ-paris8.fr', '07.68.95.01.01', (SELECT id FROM university.users WHERE username = 'mrodgers'), 1, 1, 89), -- username : mrodgers 
-    ('Sean', 'Rosario', 'srosario@iut.univ-paris8.fr', '07.48.39.20.47', (SELECT id FROM university.users WHERE username = 'srosario'), 1, 1, 89), -- username : srosario 
-    ('Mary', 'Miller', 'mmiller1@iut.univ-paris8.fr', '06.92.69.79.18', (SELECT id FROM university.users WHERE username = 'mmiller1'), 1, 1, 89), -- username : mmiller1 
-    ('Daniel', 'Herrera', 'dherrera@iut.univ-paris8.fr', '07.06.14.00.66', (SELECT id FROM university.users WHERE username = 'dherrera'), 1, 1, 89), -- username : dherrera 
-    ('Brittany', 'Moore', 'bmoore@iut.univ-paris8.fr', '06.27.90.55.38', (SELECT id FROM university.users WHERE username = 'bmoore'), 1, 1, 89), -- username : bmoore 
-    ('Allison', 'Walker', 'awalker@iut.univ-paris8.fr', '06.23.73.57.44', (SELECT id FROM university.users WHERE username = 'awalker'), 1, 1, 89), -- username : awalker 
-    ('Rodney', 'Hall', 'rhall@iut.univ-paris8.fr', '07.53.82.80.75', (SELECT id FROM university.users WHERE username = 'rhall'), 1, 38, 38), -- username : rhall 
-    ('Jason', 'Singleton', 'jsingleton@iut.univ-paris8.fr', '07.53.95.30.72', (SELECT id FROM university.users WHERE username = 'jsingleton'), 1, 38, 38), -- username : jsingleton 
-    ('Amanda', 'Rodriguez', 'arodriguez1@iut.univ-paris8.fr', '07.74.26.87.87', (SELECT id FROM university.users WHERE username = 'arodriguez1'), 1, 38, 38), -- username : arodriguez1 
-    ('Kimberly', 'Russell', 'krussell1@iut.univ-paris8.fr', '06.09.00.37.00', (SELECT id FROM university.users WHERE username = 'krussell1'), 1, 38, 38), -- username : krussell1 
-    ('Kimberly', 'Hill', 'khill@iut.univ-paris8.fr', '06.27.58.24.33', (SELECT id FROM university.users WHERE username = 'khill'), 1, 38, 38), -- username : khill 
-    ('Alexander', 'Smith', 'asmith2@iut.univ-paris8.fr', '07.71.08.54.79', (SELECT id FROM university.users WHERE username = 'asmith2'), 1, 38, 38), -- username : asmith2 
-    ('Karen', 'Rose', 'krose1@iut.univ-paris8.fr', '06.03.20.81.15', (SELECT id FROM university.users WHERE username = 'krose1'), 1, 38, 38), -- username : krose1 
-    ('Christopher', 'Thompson', 'cthompson1@iut.univ-paris8.fr', '06.72.24.87.98', (SELECT id FROM university.users WHERE username = 'cthompson1'), 1, 38, 38), -- username : cthompson1 
-    ('Michael', 'Marsh', 'mmarsh@iut.univ-paris8.fr', '06.68.05.77.87', (SELECT id FROM university.users WHERE username = 'mmarsh'), 1, 38, 38), -- username : mmarsh 
-    ('Rachel', 'Hicks', 'rhicks@iut.univ-paris8.fr', '07.11.00.33.25', (SELECT id FROM university.users WHERE username = 'rhicks'), 1, 38, 38), -- username : rhicks 
-    ('Colleen', 'Brown', 'cbrown@iut.univ-paris8.fr', '06.27.67.08.41', (SELECT id FROM university.users WHERE username = 'cbrown'), 1, 38, 82), -- username : cbrown 
-    ('Mitchell', 'Galvan', 'mgalvan@iut.univ-paris8.fr', '06.19.49.88.86', (SELECT id FROM university.users WHERE username = 'mgalvan'), 1, 38, 82), -- username : mgalvan 
-    ('Kimberly', 'Schmidt', 'kschmidt@iut.univ-paris8.fr', '06.34.96.08.92', (SELECT id FROM university.users WHERE username = 'kschmidt'), 1, 38, 82), -- username : kschmidt 
-    ('Casey', 'Le', 'cle@iut.univ-paris8.fr', '06.40.56.89.08', (SELECT id FROM university.users WHERE username = 'cle'), 1, 38, 82), -- username : cle 
-    ('Ryan', 'Phelps', 'rphelps@iut.univ-paris8.fr', '06.13.43.03.43', (SELECT id FROM university.users WHERE username = 'rphelps'), 1, 38, 82), -- username : rphelps 
-    ('Heidi', 'Wagner', 'hwagner@iut.univ-paris8.fr', '06.94.94.32.01', (SELECT id FROM university.users WHERE username = 'hwagner'), 1, 38, 82), -- username : hwagner 
-    ('Robert', 'Wright', 'rwright1@iut.univ-paris8.fr', '07.12.02.93.70', (SELECT id FROM university.users WHERE username = 'rwright1'), 1, 38, 82), -- username : rwright1 
-    ('Emily', 'Hunter', 'ehunter@iut.univ-paris8.fr', '07.30.31.74.38', (SELECT id FROM university.users WHERE username = 'ehunter'), 1, 38, 82), -- username : ehunter 
-    ('Ivan', 'Martin', 'imartin@iut.univ-paris8.fr', '07.70.08.86.92', (SELECT id FROM university.users WHERE username = 'imartin'), 1, 38, 82), -- username : imartin 
-    ('Jacqueline', 'Chambers', 'jchambers1@iut.univ-paris8.fr', '06.24.95.70.35', (SELECT id FROM university.users WHERE username = 'jchambers1'), 1, 38, 82), -- username : jchambers1 
-    ('Monica', 'Lindsey', 'mlindsey@iut.univ-paris8.fr', '06.21.24.38.09', (SELECT id FROM university.users WHERE username = 'mlindsey'), 1, 38, 126), -- username : mlindsey 
-    ('Mary', 'Sanchez', 'msanchez1@iut.univ-paris8.fr', '06.62.31.64.18', (SELECT id FROM university.users WHERE username = 'msanchez1'), 1, 38, 126), -- username : msanchez1 
-    ('Sarah', 'Novak', 'snovak@iut.univ-paris8.fr', '07.05.25.89.09', (SELECT id FROM university.users WHERE username = 'snovak'), 1, 38, 126), -- username : snovak 
-    ('Donna', 'Hernandez', 'dhernandez@iut.univ-paris8.fr', '06.24.87.36.08', (SELECT id FROM university.users WHERE username = 'dhernandez'), 1, 38, 126), -- username : dhernandez 
-    ('Jennifer', 'Foster', 'jfoster@iut.univ-paris8.fr', '07.79.66.04.59', (SELECT id FROM university.users WHERE username = 'jfoster'), 1, 38, 126), -- username : jfoster 
-    ('Jason', 'Jones', 'jjones1@iut.univ-paris8.fr', '06.97.37.04.77', (SELECT id FROM university.users WHERE username = 'jjones1'), 1, 38, 126), -- username : jjones1 
-    ('Erin', 'Cross', 'ecross@iut.univ-paris8.fr', '06.94.03.06.61', (SELECT id FROM university.users WHERE username = 'ecross'), 1, 38, 126), -- username : ecross 
-    ('Patricia', 'Velazquez', 'pvelazquez@iut.univ-paris8.fr', '07.44.47.92.17', (SELECT id FROM university.users WHERE username = 'pvelazquez'), 1, 38, 126), -- username : pvelazquez 
-    ('Michael', 'Norman', 'mnorman@iut.univ-paris8.fr', '07.96.33.07.99', (SELECT id FROM university.users WHERE username = 'mnorman'), 1, 38, 126), -- username : mnorman 
-    ('Frank', 'Salazar', 'fsalazar@iut.univ-paris8.fr', '07.84.59.42.85', (SELECT id FROM university.users WHERE username = 'fsalazar'), 1, 38, 126), -- username : fsalazar 
-    ('Karen', 'Gibbs', 'kgibbs@iut.univ-paris8.fr', '06.99.00.50.28', (SELECT id FROM university.users WHERE username = 'kgibbs'), 1, 37, 37), -- username : kgibbs 
-    ('Kristi', 'Obrien', 'kobrien@iut.univ-paris8.fr', '06.35.15.54.32', (SELECT id FROM university.users WHERE username = 'kobrien'), 1, 37, 37), -- username : kobrien 
-    ('Brenda', 'Silva', 'bsilva@iut.univ-paris8.fr', '07.27.80.18.80', (SELECT id FROM university.users WHERE username = 'bsilva'), 1, 37, 37), -- username : bsilva 
-    ('David', 'Rodriguez', 'drodriguez@iut.univ-paris8.fr', '07.38.51.79.54', (SELECT id FROM university.users WHERE username = 'drodriguez'), 1, 37, 37), -- username : drodriguez 
-    ('Michelle', 'Lopez', 'mlopez@iut.univ-paris8.fr', '07.96.58.87.27', (SELECT id FROM university.users WHERE username = 'mlopez'), 1, 37, 37), -- username : mlopez 
-    ('Katie', 'Wilson', 'kwilson@iut.univ-paris8.fr', '07.02.77.41.74', (SELECT id FROM university.users WHERE username = 'kwilson'), 1, 37, 37), -- username : kwilson 
-    ('Bryan', 'Hughes', 'bhughes@iut.univ-paris8.fr', '06.33.08.40.99', (SELECT id FROM university.users WHERE username = 'bhughes'), 1, 37, 37), -- username : bhughes 
-    ('Sharon', 'Howard', 'showard@iut.univ-paris8.fr', '06.71.65.18.88', (SELECT id FROM university.users WHERE username = 'showard'), 1, 37, 37), -- username : showard 
-    ('John', 'Weaver', 'jweaver@iut.univ-paris8.fr', '07.32.79.90.64', (SELECT id FROM university.users WHERE username = 'jweaver'), 1, 37, 37), -- username : jweaver 
-    ('Logan', 'Benton', 'lbenton@iut.univ-paris8.fr', '07.30.97.09.37', (SELECT id FROM university.users WHERE username = 'lbenton'), 1, 37, 37), -- username : lbenton 
-    ('Emily', 'Foster', 'efoster@iut.univ-paris8.fr', '07.88.60.55.31', (SELECT id FROM university.users WHERE username = 'efoster'), 1, 37, 81), -- username : efoster 
-    ('John', 'Blankenship', 'jblankenship@iut.univ-paris8.fr', '06.59.52.88.70', (SELECT id FROM university.users WHERE username = 'jblankenship'), 1, 37, 81), -- username : jblankenship 
-    ('Amanda', 'Mccann', 'amccann@iut.univ-paris8.fr', '06.66.54.70.69', (SELECT id FROM university.users WHERE username = 'amccann'), 1, 37, 81), -- username : amccann 
-    ('Michael', 'Smith', 'msmith2@iut.univ-paris8.fr', '06.72.60.68.57', (SELECT id FROM university.users WHERE username = 'msmith2'), 1, 37, 81), -- username : msmith2 
-    ('Frank', 'Kelly', 'fkelly@iut.univ-paris8.fr', '07.39.67.48.21', (SELECT id FROM university.users WHERE username = 'fkelly'), 1, 37, 81), -- username : fkelly 
-    ('Alexander', 'Blackburn', 'ablackburn@iut.univ-paris8.fr', '06.68.80.01.49', (SELECT id FROM university.users WHERE username = 'ablackburn'), 1, 37, 81), -- username : ablackburn 
-    ('Victor', 'Wilkinson', 'vwilkinson@iut.univ-paris8.fr', '07.01.12.36.53', (SELECT id FROM university.users WHERE username = 'vwilkinson'), 1, 37, 81), -- username : vwilkinson 
-    ('Kathryn', 'Andrews', 'kandrews@iut.univ-paris8.fr', '07.02.29.51.90', (SELECT id FROM university.users WHERE username = 'kandrews'), 1, 37, 81), -- username : kandrews 
-    ('Andrew', 'Rodriguez', 'arodriguez@iut.univ-paris8.fr', '07.57.36.51.03', (SELECT id FROM university.users WHERE username = 'arodriguez'), 1, 37, 81), -- username : arodriguez 
-    ('Aaron', 'Garcia', 'agarcia@iut.univ-paris8.fr', '07.09.66.73.90', (SELECT id FROM university.users WHERE username = 'agarcia'), 1, 37, 81), -- username : agarcia 
-    ('Rebecca', 'Black', 'rblack@iut.univ-paris8.fr', '06.30.85.67.81', (SELECT id FROM university.users WHERE username = 'rblack'), 1, 37, 125), -- username : rblack 
-    ('Ashley', 'Christian', 'achristian2@iut.univ-paris8.fr', '06.93.09.54.46', (SELECT id FROM university.users WHERE username = 'achristian2'), 1, 37, 125), -- username : achristian2 
-    ('Tasha', 'Abbott', 'tabbott@iut.univ-paris8.fr', '06.94.29.12.08', (SELECT id FROM university.users WHERE username = 'tabbott'), 1, 37, 125), -- username : tabbott 
-    ('Ronald', 'Mccarthy', 'rmccarthy@iut.univ-paris8.fr', '07.51.24.16.48', (SELECT id FROM university.users WHERE username = 'rmccarthy'), 1, 37, 125), -- username : rmccarthy 
-    ('Taylor', 'Wood', 'twood@iut.univ-paris8.fr', '07.23.79.88.44', (SELECT id FROM university.users WHERE username = 'twood'), 1, 37, 125), -- username : twood 
-    ('Wendy', 'Coleman', 'wcoleman1@iut.univ-paris8.fr', '06.95.32.73.68', (SELECT id FROM university.users WHERE username = 'wcoleman1'), 1, 37, 125), -- username : wcoleman1 
-    ('Lisa', 'Ware', 'lware@iut.univ-paris8.fr', '07.02.83.51.21', (SELECT id FROM university.users WHERE username = 'lware'), 1, 37, 125), -- username : lware 
-    ('Joseph', 'Wilson', 'jwilson@iut.univ-paris8.fr', '06.79.85.45.37', (SELECT id FROM university.users WHERE username = 'jwilson'), 1, 37, 125), -- username : jwilson 
-    ('Tracy', 'Jacobs', 'tjacobs@iut.univ-paris8.fr', '07.32.51.14.05', (SELECT id FROM university.users WHERE username = 'tjacobs'), 1, 37, 125), -- username : tjacobs 
-    ('Brian', 'Rodriguez', 'brodriguez@iut.univ-paris8.fr', '07.44.57.39.75', (SELECT id FROM university.users WHERE username = 'brodriguez'), 1, 37, 125), -- username : brodriguez 
-    ('Angela', 'Collins', 'acollins@iut.univ-paris8.fr', '07.67.03.51.37', (SELECT id FROM university.users WHERE username = 'acollins'), 1, 27, 27), -- username : acollins 
-    ('Nicole', 'Clay', 'nclay@iut.univ-paris8.fr', '06.06.19.10.35', (SELECT id FROM university.users WHERE username = 'nclay'), 1, 27, 27), -- username : nclay 
-    ('Timothy', 'Robles', 'trobles@iut.univ-paris8.fr', '07.50.47.19.90', (SELECT id FROM university.users WHERE username = 'trobles'), 1, 27, 27), -- username : trobles 
-    ('Brian', 'Wall', 'bwall@iut.univ-paris8.fr', '07.95.96.60.45', (SELECT id FROM university.users WHERE username = 'bwall'), 1, 27, 27), -- username : bwall 
-    ('Justin', 'Flores', 'jflores@iut.univ-paris8.fr', '06.92.97.12.89', (SELECT id FROM university.users WHERE username = 'jflores'), 1, 27, 27), -- username : jflores 
-    ('Katie', 'Graham', 'kgraham@iut.univ-paris8.fr', '06.41.81.27.37', (SELECT id FROM university.users WHERE username = 'kgraham'), 1, 27, 27), -- username : kgraham 
-    ('Destiny', 'Mckenzie', 'dmckenzie@iut.univ-paris8.fr', '07.93.93.40.69', (SELECT id FROM university.users WHERE username = 'dmckenzie'), 1, 27, 27), -- username : dmckenzie 
-    ('Eric', 'Burton', 'eburton@iut.univ-paris8.fr', '06.45.20.46.71', (SELECT id FROM university.users WHERE username = 'eburton'), 1, 27, 27), -- username : eburton 
-    ('Whitney', 'Freeman', 'wfreeman@iut.univ-paris8.fr', '07.30.06.41.03', (SELECT id FROM university.users WHERE username = 'wfreeman'), 1, 27, 27), -- username : wfreeman 
-    ('Christina', 'Blackburn', 'cblackburn@iut.univ-paris8.fr', '06.61.90.84.64', (SELECT id FROM university.users WHERE username = 'cblackburn'), 1, 27, 27), -- username : cblackburn 
-    ('Kathy', 'Holt', 'kholt@iut.univ-paris8.fr', '07.41.06.42.67', (SELECT id FROM university.users WHERE username = 'kholt'), 1, 27, 71), -- username : kholt 
-    ('Tricia', 'Weber', 'tweber@iut.univ-paris8.fr', '07.39.27.43.67', (SELECT id FROM university.users WHERE username = 'tweber'), 1, 27, 71), -- username : tweber 
-    ('Diane', 'Petty', 'dpetty@iut.univ-paris8.fr', '07.37.11.74.53', (SELECT id FROM university.users WHERE username = 'dpetty'), 1, 27, 71), -- username : dpetty 
-    ('Denise', 'Simpson', 'dsimpson@iut.univ-paris8.fr', '07.08.56.25.91', (SELECT id FROM university.users WHERE username = 'dsimpson'), 1, 27, 71), -- username : dsimpson 
-    ('Brittany', 'Johnson', 'bjohnson1@iut.univ-paris8.fr', '06.03.79.20.26', (SELECT id FROM university.users WHERE username = 'bjohnson1'), 1, 27, 71), -- username : bjohnson1 
-    ('Jose', 'Duran', 'jduran@iut.univ-paris8.fr', '06.92.93.30.09', (SELECT id FROM university.users WHERE username = 'jduran'), 1, 27, 71), -- username : jduran 
-    ('Angela', 'Adams', 'aadams1@iut.univ-paris8.fr', '06.71.37.88.20', (SELECT id FROM university.users WHERE username = 'aadams1'), 1, 27, 71), -- username : aadams1 
-    ('Barbara', 'Knight', 'bknight@iut.univ-paris8.fr', '06.07.60.58.96', (SELECT id FROM university.users WHERE username = 'bknight'), 1, 27, 71), -- username : bknight 
-    ('Colleen', 'Reid', 'creid@iut.univ-paris8.fr', '07.41.96.06.82', (SELECT id FROM university.users WHERE username = 'creid'), 1, 27, 71), -- username : creid 
-    ('Emily', 'Lamb', 'elamb@iut.univ-paris8.fr', '06.13.11.90.37', (SELECT id FROM university.users WHERE username = 'elamb'), 1, 27, 71), -- username : elamb 
-    ('Nancy', 'Lester', 'nlester@iut.univ-paris8.fr', '07.02.22.63.39', (SELECT id FROM university.users WHERE username = 'nlester'), 1, 27, 115), -- username : nlester 
-    ('Henry', 'Haney', 'hhaney@iut.univ-paris8.fr', '06.54.24.04.31', (SELECT id FROM university.users WHERE username = 'hhaney'), 1, 27, 115), -- username : hhaney 
-    ('Adam', 'Davis', 'adavis2@iut.univ-paris8.fr', '06.21.19.39.77', (SELECT id FROM university.users WHERE username = 'adavis2'), 1, 27, 115), -- username : adavis2 
-    ('Joel', 'Taylor', 'jtaylor@iut.univ-paris8.fr', '07.87.67.80.69', (SELECT id FROM university.users WHERE username = 'jtaylor'), 1, 27, 115), -- username : jtaylor 
-    ('Marc', 'Porter', 'mporter@iut.univ-paris8.fr', '07.44.39.59.79', (SELECT id FROM university.users WHERE username = 'mporter'), 1, 27, 115), -- username : mporter 
-    ('Kevin', 'Fernandez', 'kfernandez@iut.univ-paris8.fr', '06.32.27.14.82', (SELECT id FROM university.users WHERE username = 'kfernandez'), 1, 27, 115), -- username : kfernandez 
-    ('Alexandra', 'Nash', 'anash@iut.univ-paris8.fr', '06.19.22.67.50', (SELECT id FROM university.users WHERE username = 'anash'), 1, 27, 115), -- username : anash 
-    ('Daniel', 'Clark', 'dclark@iut.univ-paris8.fr', '07.53.97.22.99', (SELECT id FROM university.users WHERE username = 'dclark'), 1, 27, 115), -- username : dclark 
-    ('Erica', 'Sanford', 'esanford@iut.univ-paris8.fr', '06.69.52.76.52', (SELECT id FROM university.users WHERE username = 'esanford'), 1, 27, 115), -- username : esanford 
-    ('Kyle', 'Jones', 'kjones@iut.univ-paris8.fr', '06.51.46.38.82', (SELECT id FROM university.users WHERE username = 'kjones'), 1, 27, 115), -- username : kjones 
-    ('Mitchell', 'Leonard', 'mleonard@iut.univ-paris8.fr', '07.81.56.74.71', (SELECT id FROM university.users WHERE username = 'mleonard'), 1, 26, 26), -- username : mleonard 
-    ('Robert', 'Bennett', 'rbennett1@iut.univ-paris8.fr', '06.76.66.27.72', (SELECT id FROM university.users WHERE username = 'rbennett1'), 1, 26, 26), -- username : rbennett1 
-    ('Wendy', 'Wolf', 'wwolf@iut.univ-paris8.fr', '06.42.65.29.02', (SELECT id FROM university.users WHERE username = 'wwolf'), 1, 26, 26), -- username : wwolf 
-    ('Deanna', 'Hicks', 'dhicks@iut.univ-paris8.fr', '07.14.34.62.69', (SELECT id FROM university.users WHERE username = 'dhicks'), 1, 26, 26), -- username : dhicks 
-    ('Tyler', 'Walker', 'twalker@iut.univ-paris8.fr', '07.69.98.31.52', (SELECT id FROM university.users WHERE username = 'twalker'), 1, 26, 26), -- username : twalker 
-    ('Belinda', 'Williams', 'bwilliams@iut.univ-paris8.fr', '07.58.87.03.43', (SELECT id FROM university.users WHERE username = 'bwilliams'), 1, 26, 26), -- username : bwilliams 
-    ('Mary', 'Scott', 'mscott@iut.univ-paris8.fr', '06.41.85.77.51', (SELECT id FROM university.users WHERE username = 'mscott'), 1, 26, 26), -- username : mscott 
-    ('Nicole', 'Cook', 'ncook1@iut.univ-paris8.fr', '06.33.91.77.21', (SELECT id FROM university.users WHERE username = 'ncook1'), 1, 26, 26), -- username : ncook1 
-    ('Christine', 'Hall', 'chall@iut.univ-paris8.fr', '06.75.37.58.78', (SELECT id FROM university.users WHERE username = 'chall'), 1, 26, 26), -- username : chall 
-    ('Martin', 'Dyer', 'mdyer@iut.univ-paris8.fr', '06.89.73.72.18', (SELECT id FROM university.users WHERE username = 'mdyer'), 1, 26, 26), -- username : mdyer 
-    ('Amanda', 'Bailey', 'abailey1@iut.univ-paris8.fr', '06.83.13.12.41', (SELECT id FROM university.users WHERE username = 'abailey1'), 1, 26, 70), -- username : abailey1 
-    ('John', 'Perez', 'jperez1@iut.univ-paris8.fr', '07.56.75.32.07', (SELECT id FROM university.users WHERE username = 'jperez1'), 1, 26, 70), -- username : jperez1 
-    ('Michael', 'Lynch', 'mlynch@iut.univ-paris8.fr', '07.99.58.43.07', (SELECT id FROM university.users WHERE username = 'mlynch'), 1, 26, 70), -- username : mlynch 
-    ('Jeffrey', 'Mcintyre', 'jmcintyre1@iut.univ-paris8.fr', '07.90.77.24.76', (SELECT id FROM university.users WHERE username = 'jmcintyre1'), 1, 26, 70), -- username : jmcintyre1 
-    ('Joel', 'Jackson', 'jjackson1@iut.univ-paris8.fr', '07.24.54.05.73', (SELECT id FROM university.users WHERE username = 'jjackson1'), 1, 26, 70), -- username : jjackson1 
-    ('James', 'Lee', 'jlee2@iut.univ-paris8.fr', '07.58.43.09.01', (SELECT id FROM university.users WHERE username = 'jlee2'), 1, 26, 70), -- username : jlee2 
-    ('Aaron', 'Christian', 'achristian1@iut.univ-paris8.fr', '07.42.95.38.12', (SELECT id FROM university.users WHERE username = 'achristian1'), 1, 26, 70), -- username : achristian1 
-    ('Faith', 'Osborne', 'fosborne@iut.univ-paris8.fr', '07.89.68.49.78', (SELECT id FROM university.users WHERE username = 'fosborne'), 1, 26, 70), -- username : fosborne 
-    ('Hannah', 'Smith', 'hsmith@iut.univ-paris8.fr', '07.14.30.98.17', (SELECT id FROM university.users WHERE username = 'hsmith'), 1, 26, 70), -- username : hsmith 
-    ('Robert', 'Walker', 'rwalker1@iut.univ-paris8.fr', '07.22.97.15.48', (SELECT id FROM university.users WHERE username = 'rwalker1'), 1, 26, 70), -- username : rwalker1 
-    ('Jacob', 'Caldwell', 'jcaldwell@iut.univ-paris8.fr', '06.11.21.07.00', (SELECT id FROM university.users WHERE username = 'jcaldwell'), 1, 26, 114), -- username : jcaldwell 
-    ('Joshua', 'Bates', 'jbates1@iut.univ-paris8.fr', '06.37.40.57.65', (SELECT id FROM university.users WHERE username = 'jbates1'), 1, 26, 114), -- username : jbates1 
-    ('Stephen', 'Blackwell', 'sblackwell@iut.univ-paris8.fr', '06.34.03.37.68', (SELECT id FROM university.users WHERE username = 'sblackwell'), 1, 26, 114), -- username : sblackwell 
-    ('Evan', 'Anderson', 'eanderson1@iut.univ-paris8.fr', '07.45.33.94.32', (SELECT id FROM university.users WHERE username = 'eanderson1'), 1, 26, 114), -- username : eanderson1 
-    ('Amy', 'Davis', 'adavis1@iut.univ-paris8.fr', '07.36.71.90.13', (SELECT id FROM university.users WHERE username = 'adavis1'), 1, 26, 114), -- username : adavis1 
-    ('Erica', 'Burke', 'eburke@iut.univ-paris8.fr', '06.33.94.80.18', (SELECT id FROM university.users WHERE username = 'eburke'), 1, 26, 114), -- username : eburke 
-    ('Jake', 'Rogers', 'jrogers@iut.univ-paris8.fr', '07.12.95.76.48', (SELECT id FROM university.users WHERE username = 'jrogers'), 1, 26, 114), -- username : jrogers 
-    ('Michael', 'Robbins', 'mrobbins1@iut.univ-paris8.fr', '07.44.21.35.28', (SELECT id FROM university.users WHERE username = 'mrobbins1'), 1, 26, 114), -- username : mrobbins1 
-    ('Amanda', 'Flores', 'aflores@iut.univ-paris8.fr', '06.82.79.56.63', (SELECT id FROM university.users WHERE username = 'aflores'), 1, 26, 114), -- username : aflores 
-    ('Cody', 'Holmes', 'cholmes@iut.univ-paris8.fr', '07.95.70.78.59', (SELECT id FROM university.users WHERE username = 'cholmes'), 1, 26, 114), -- username : cholmes 
-    ('Julia', 'Kelly', 'jkelly1@iut.univ-paris8.fr', '07.91.97.55.60', (SELECT id FROM university.users WHERE username = 'jkelly1'), 1, 25, 25), -- username : jkelly1 
-    ('Julie', 'Larson', 'jlarson@iut.univ-paris8.fr', '07.46.20.90.61', (SELECT id FROM university.users WHERE username = 'jlarson'), 1, 25, 25), -- username : jlarson 
-    ('Joshua', 'Smith', 'jsmith2@iut.univ-paris8.fr', '07.44.82.38.84', (SELECT id FROM university.users WHERE username = 'jsmith2'), 1, 25, 25), -- username : jsmith2 
-    ('Brian', 'Jordan', 'bjordan@iut.univ-paris8.fr', '06.97.21.53.02', (SELECT id FROM university.users WHERE username = 'bjordan'), 1, 25, 25), -- username : bjordan 
-    ('Jennifer', 'Pearson', 'jpearson@iut.univ-paris8.fr', '07.40.03.60.12', (SELECT id FROM university.users WHERE username = 'jpearson'), 1, 25, 25), -- username : jpearson 
-    ('Susan', 'Miller', 'smiller1@iut.univ-paris8.fr', '07.64.10.88.12', (SELECT id FROM university.users WHERE username = 'smiller1'), 1, 25, 25), -- username : smiller1 
-    ('Lauren', 'Donaldson', 'ldonaldson@iut.univ-paris8.fr', '07.10.57.23.86', (SELECT id FROM university.users WHERE username = 'ldonaldson'), 1, 25, 25), -- username : ldonaldson 
-    ('Monica', 'Sanchez', 'msanchez@iut.univ-paris8.fr', '07.27.78.26.90', (SELECT id FROM university.users WHERE username = 'msanchez'), 1, 25, 25), -- username : msanchez 
-    ('Jill', 'Mcgee', 'jmcgee@iut.univ-paris8.fr', '07.68.83.26.02', (SELECT id FROM university.users WHERE username = 'jmcgee'), 1, 25, 25), -- username : jmcgee 
-    ('Brandi', 'Allison', 'ballison@iut.univ-paris8.fr', '06.41.43.75.98', (SELECT id FROM university.users WHERE username = 'ballison'), 1, 25, 25), -- username : ballison 
-    ('Derek', 'Parker', 'dparker@iut.univ-paris8.fr', '07.22.49.24.35', (SELECT id FROM university.users WHERE username = 'dparker'), 1, 25, 69), -- username : dparker 
-    ('Margaret', 'Fields', 'mfields@iut.univ-paris8.fr', '07.40.75.23.19', (SELECT id FROM university.users WHERE username = 'mfields'), 1, 25, 69), -- username : mfields 
-    ('Sabrina', 'Anderson', 'sanderson@iut.univ-paris8.fr', '06.54.68.16.47', (SELECT id FROM university.users WHERE username = 'sanderson'), 1, 25, 69), -- username : sanderson 
-    ('Alex', 'Dixon', 'adixon@iut.univ-paris8.fr', '06.85.91.87.27', (SELECT id FROM university.users WHERE username = 'adixon'), 1, 25, 69), -- username : adixon 
-    ('Dennis', 'Richard', 'drichard@iut.univ-paris8.fr', '07.33.71.38.26', (SELECT id FROM university.users WHERE username = 'drichard'), 1, 25, 69), -- username : drichard 
-    ('Steven', 'Robinson', 'srobinson@iut.univ-paris8.fr', '07.27.91.46.47', (SELECT id FROM university.users WHERE username = 'srobinson'), 1, 25, 69), -- username : srobinson 
-    ('Spencer', 'Morales', 'smorales@iut.univ-paris8.fr', '06.11.46.31.36', (SELECT id FROM university.users WHERE username = 'smorales'), 1, 25, 69), -- username : smorales 
-    ('Elizabeth', 'Landry', 'elandry@iut.univ-paris8.fr', '06.95.79.29.73', (SELECT id FROM university.users WHERE username = 'elandry'), 1, 25, 69), -- username : elandry 
-    ('Michael', 'Castillo', 'mcastillo@iut.univ-paris8.fr', '06.20.78.12.58', (SELECT id FROM university.users WHERE username = 'mcastillo'), 1, 25, 69), -- username : mcastillo 
-    ('Erika', 'Snyder', 'esnyder@iut.univ-paris8.fr', '06.36.64.88.80', (SELECT id FROM university.users WHERE username = 'esnyder'), 1, 25, 69), -- username : esnyder 
-    ('Jeremy', 'Williamson', 'jwilliamson@iut.univ-paris8.fr', '07.14.00.25.98', (SELECT id FROM university.users WHERE username = 'jwilliamson'), 1, 25, 113), -- username : jwilliamson 
-    ('Robyn', 'Johnson', 'rjohnson1@iut.univ-paris8.fr', '06.15.21.74.77', (SELECT id FROM university.users WHERE username = 'rjohnson1'), 1, 25, 113), -- username : rjohnson1 
-    ('Christopher', 'Hamilton', 'chamilton@iut.univ-paris8.fr', '07.91.17.42.72', (SELECT id FROM university.users WHERE username = 'chamilton'), 1, 25, 113), -- username : chamilton 
-    ('Barry', 'Lopez', 'blopez@iut.univ-paris8.fr', '07.87.32.28.52', (SELECT id FROM university.users WHERE username = 'blopez'), 1, 25, 113), -- username : blopez 
-    ('Robert', 'Walker', 'rwalker@iut.univ-paris8.fr', '06.64.59.64.69', (SELECT id FROM university.users WHERE username = 'rwalker'), 1, 25, 113), -- username : rwalker 
-    ('Barbara', 'Davis', 'bdavis1@iut.univ-paris8.fr', '06.86.82.76.19', (SELECT id FROM university.users WHERE username = 'bdavis1'), 1, 25, 113), -- username : bdavis1 
-    ('Wesley', 'Jacobson', 'wjacobson@iut.univ-paris8.fr', '06.66.40.96.00', (SELECT id FROM university.users WHERE username = 'wjacobson'), 1, 25, 113), -- username : wjacobson 
-    ('James', 'Powell', 'jpowell2@iut.univ-paris8.fr', '07.46.20.64.85', (SELECT id FROM university.users WHERE username = 'jpowell2'), 1, 25, 113), -- username : jpowell2 
-    ('Cindy', 'Horn', 'chorn@iut.univ-paris8.fr', '07.30.48.96.06', (SELECT id FROM university.users WHERE username = 'chorn'), 1, 25, 113), -- username : chorn 
-    ('James', 'Gray', 'jgray@iut.univ-paris8.fr', '07.59.38.60.73', (SELECT id FROM university.users WHERE username = 'jgray'), 1, 25, 113), -- username : jgray 
-    ('Anthony', 'Swanson', 'aswanson@iut.univ-paris8.fr', '07.17.25.49.34', (SELECT id FROM university.users WHERE username = 'aswanson'), 1, 3, 3), -- username : aswanson 
-    ('Wayne', 'Gaines', 'wgaines@iut.univ-paris8.fr', '06.84.04.42.43', (SELECT id FROM university.users WHERE username = 'wgaines'), 1, 3, 3), -- username : wgaines 
-    ('Frederick', 'Wood', 'fwood@iut.univ-paris8.fr', '06.08.74.73.47', (SELECT id FROM university.users WHERE username = 'fwood'), 1, 3, 3), -- username : fwood 
-    ('Ann', 'Mccormick', 'amccormick@iut.univ-paris8.fr', '07.82.40.35.17', (SELECT id FROM university.users WHERE username = 'amccormick'), 1, 3, 3), -- username : amccormick 
-    ('Ashley', 'Cortez', 'acortez@iut.univ-paris8.fr', '07.50.42.54.82', (SELECT id FROM university.users WHERE username = 'acortez'), 1, 3, 3), -- username : acortez 
-    ('Lisa', 'Ellis', 'lellis@iut.univ-paris8.fr', '06.31.80.35.39', (SELECT id FROM university.users WHERE username = 'lellis'), 1, 3, 3), -- username : lellis 
-    ('Traci', 'Johnston', 'tjohnston@iut.univ-paris8.fr', '06.31.26.72.96', (SELECT id FROM university.users WHERE username = 'tjohnston'), 1, 3, 3), -- username : tjohnston 
-    ('Ricardo', 'Rojas', 'rrojas@iut.univ-paris8.fr', '06.51.41.15.85', (SELECT id FROM university.users WHERE username = 'rrojas'), 1, 3, 3), -- username : rrojas 
-    ('Kimberly', 'Flores', 'kflores@iut.univ-paris8.fr', '07.62.01.73.65', (SELECT id FROM university.users WHERE username = 'kflores'), 1, 3, 3), -- username : kflores 
-    ('Gregory', 'Goodwin', 'ggoodwin@iut.univ-paris8.fr', '07.56.62.94.06', (SELECT id FROM university.users WHERE username = 'ggoodwin'), 1, 3, 3), -- username : ggoodwin 
-    ('Carlos', 'Conrad', 'cconrad@iut.univ-paris8.fr', '06.81.64.27.21', (SELECT id FROM university.users WHERE username = 'cconrad'), 1, 3, 47), -- username : cconrad 
-    ('Joseph', 'Powell', 'jpowell1@iut.univ-paris8.fr', '07.26.89.16.77', (SELECT id FROM university.users WHERE username = 'jpowell1'), 1, 3, 47), -- username : jpowell1 
-    ('Brandi', 'Wells', 'bwells@iut.univ-paris8.fr', '07.05.03.05.92', (SELECT id FROM university.users WHERE username = 'bwells'), 1, 3, 47), -- username : bwells 
-    ('Robyn', 'Smith', 'rsmith3@iut.univ-paris8.fr', '07.02.38.19.70', (SELECT id FROM university.users WHERE username = 'rsmith3'), 1, 3, 47), -- username : rsmith3 
-    ('Valerie', 'Shelton', 'vshelton@iut.univ-paris8.fr', '07.58.05.75.90', (SELECT id FROM university.users WHERE username = 'vshelton'), 1, 3, 47), -- username : vshelton 
-    ('Jessica', 'Bates', 'jbates@iut.univ-paris8.fr', '07.25.01.33.40', (SELECT id FROM university.users WHERE username = 'jbates'), 1, 3, 47), -- username : jbates 
-    ('Manuel', 'Watson', 'mwatson@iut.univ-paris8.fr', '07.90.85.54.50', (SELECT id FROM university.users WHERE username = 'mwatson'), 1, 3, 47), -- username : mwatson 
-    ('Guy', 'Castaneda', 'gcastaneda@iut.univ-paris8.fr', '07.92.33.27.28', (SELECT id FROM university.users WHERE username = 'gcastaneda'), 1, 3, 47), -- username : gcastaneda 
-    ('Melissa', 'Richardson', 'mrichardson1@iut.univ-paris8.fr', '07.16.13.60.70', (SELECT id FROM university.users WHERE username = 'mrichardson1'), 1, 3, 47), -- username : mrichardson1 
-    ('Paula', 'Huynh', 'phuynh@iut.univ-paris8.fr', '07.61.62.31.69', (SELECT id FROM university.users WHERE username = 'phuynh'), 1, 3, 47), -- username : phuynh 
-    ('Kathleen', 'Mcdaniel', 'kmcdaniel@iut.univ-paris8.fr', '06.45.60.40.38', (SELECT id FROM university.users WHERE username = 'kmcdaniel'), 1, 3, 91), -- username : kmcdaniel 
-    ('Angelica', 'Nicholson', 'anicholson@iut.univ-paris8.fr', '07.95.54.52.05', (SELECT id FROM university.users WHERE username = 'anicholson'), 1, 3, 91), -- username : anicholson 
-    ('John', 'Chapman', 'jchapman@iut.univ-paris8.fr', '07.05.02.64.51', (SELECT id FROM university.users WHERE username = 'jchapman'), 1, 3, 91), -- username : jchapman 
-    ('Felicia', 'James', 'fjames@iut.univ-paris8.fr', '06.55.96.63.89', (SELECT id FROM university.users WHERE username = 'fjames'), 1, 3, 91), -- username : fjames 
-    ('John', 'Goodman', 'jgoodman@iut.univ-paris8.fr', '07.80.07.80.47', (SELECT id FROM university.users WHERE username = 'jgoodman'), 1, 3, 91), -- username : jgoodman 
-    ('Billy', 'Booth', 'bbooth@iut.univ-paris8.fr', '06.27.51.86.13', (SELECT id FROM university.users WHERE username = 'bbooth'), 1, 3, 91), -- username : bbooth 
-    ('Edward', 'Johnson', 'ejohnson@iut.univ-paris8.fr', '07.31.41.25.26', (SELECT id FROM university.users WHERE username = 'ejohnson'), 1, 3, 91), -- username : ejohnson 
-    ('Cynthia', 'Miller', 'cmiller1@iut.univ-paris8.fr', '06.82.46.48.57', (SELECT id FROM university.users WHERE username = 'cmiller1'), 1, 3, 91), -- username : cmiller1 
-    ('Melanie', 'Gutierrez', 'mgutierrez@iut.univ-paris8.fr', '07.76.04.13.22', (SELECT id FROM university.users WHERE username = 'mgutierrez'), 1, 3, 91), -- username : mgutierrez 
-    ('Emily', 'Ward', 'eward@iut.univ-paris8.fr', '07.29.88.61.58', (SELECT id FROM university.users WHERE username = 'eward'), 1, 3,91) -- username : eeward 
-;
+    ---------------------------------
+    --INFO
+    ---------------------------------
+    
+    --Groupes A
 
--- students(@student_number,last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
--- FAKE for departement QLIO
-INSERT INTO university.students (last_name, first_name, mail, phone_number, user_id, department_id, group_id, subgroup_id)
-VALUES
-    ('Naruto', 'Uzumaki', 'nuzumaki@iut.univ-paris8.fr', '07.20.63.10.81', (SELECT id FROM university.users WHERE username = 'nuzumaki'), 2, 16, 16), -- username : nuzumaki 
-    ('Sasuke', 'Uchiha', 'suchiha@iut.univ-paris8.fr', '07.48.97.52.44', (SELECT id FROM university.users WHERE username = 'suchiha'), 2, 16, 16), -- username : suchiha 
-    ('Jennifer', 'Christensen', 'jchristensen@iut.univ-paris8.fr', '07.52.70.40.56', (SELECT id FROM university.users WHERE username = 'jchristensen'), 2, 16, 16), -- username : jchristensen 
-    ('Michael', 'Dixon', 'mdixon@iut.univ-paris8.fr', '07.96.07.46.21', (SELECT id FROM university.users WHERE username = 'mdixon'), 2, 16, 16), -- username : mdixon 
-    ('Wayne', 'Mills', 'wmills1@iut.univ-paris8.fr', '07.17.26.75.35', (SELECT id FROM university.users WHERE username = 'wmills1'), 2, 16, 16), -- username : wmills1 
-    ('Bryan', 'Walsh', 'bwalsh@iut.univ-paris8.fr', '06.95.61.69.31', (SELECT id FROM university.users WHERE username = 'bwalsh'), 2, 16, 16), -- username : bwalsh 
-    ('Ethan', 'Kaufman', 'ekaufman@iut.univ-paris8.fr', '06.17.61.44.69', (SELECT id FROM university.users WHERE username = 'ekaufman'), 2, 16, 16), -- username : ekaufman 
-    ('Lindsay', 'Oliver', 'loliver@iut.univ-paris8.fr', '07.66.48.66.67', (SELECT id FROM university.users WHERE username = 'loliver'), 2, 16, 16), -- username : loliver 
-    ('Mark', 'Garcia', 'mgarcia@iut.univ-paris8.fr', '06.12.90.32.42', (SELECT id FROM university.users WHERE username = 'mgarcia'), 2, 16, 16), -- username : mgarcia 
-    ('Taylor', 'Paul', 'tpaul@iut.univ-paris8.fr', '06.66.85.01.11', (SELECT id FROM university.users WHERE username = 'tpaul'), 2, 16, 16), -- username : tpaul 
-    ('Felicia', 'Harper', 'fharper@iut.univ-paris8.fr', '07.86.11.69.74', (SELECT id FROM university.users WHERE username = 'fharper'), 2, 16, 60), -- username : fharper 
-    ('Jennifer', 'Hamilton', 'jhamilton@iut.univ-paris8.fr', '06.27.08.15.01', (SELECT id FROM university.users WHERE username = 'jhamilton'), 2, 16, 60), -- username : jhamilton 
-    ('Stephanie', 'Keith', 'skeith@iut.univ-paris8.fr', '07.19.20.78.61', (SELECT id FROM university.users WHERE username = 'skeith'), 2, 16, 60), -- username : skeith 
-    ('David', 'Mcdonald', 'dmcdonald@iut.univ-paris8.fr', '07.21.61.88.13', (SELECT id FROM university.users WHERE username = 'dmcdonald'), 2, 16, 60), -- username : dmcdonald 
-    ('Deborah', 'Briggs', 'dbriggs@iut.univ-paris8.fr', '06.30.01.40.86', (SELECT id FROM university.users WHERE username = 'dbriggs'), 2, 16, 60), -- username : dbriggs 
-    ('Ryan', 'King', 'rking@iut.univ-paris8.fr', '07.14.07.57.33', (SELECT id FROM university.users WHERE username = 'rking'), 2, 16, 60), -- username : rking 
-    ('Ryan', 'Meyer', 'rmeyer@iut.univ-paris8.fr', '07.27.39.42.52', (SELECT id FROM university.users WHERE username = 'rmeyer'), 2, 16, 60), -- username : rmeyer 
-    ('Christina', 'Wagner', 'cwagner@iut.univ-paris8.fr', '06.53.27.93.20', (SELECT id FROM university.users WHERE username = 'cwagner'), 2, 16, 60), -- username : cwagner 
-    ('Christina', 'Potts', 'cpotts@iut.univ-paris8.fr', '06.95.49.86.30', (SELECT id FROM university.users WHERE username = 'cpotts'), 2, 16, 60), -- username : cpotts 
-    ('Lisa', 'Martinez', 'lmartinez2@iut.univ-paris8.fr', '06.06.63.85.59', (SELECT id FROM university.users WHERE username = 'lmartinez2'), 2, 16, 60), -- username : lmartinez2 
-    ('Charles', 'Mccarty', 'cmccarty@iut.univ-paris8.fr', '07.38.96.09.75', (SELECT id FROM university.users WHERE username = 'cmccarty'), 2, 16, 104), -- username : cmccarty 
-    ('Paul', 'Diaz', 'pdiaz@iut.univ-paris8.fr', '06.42.88.76.98', (SELECT id FROM university.users WHERE username = 'pdiaz'), 2, 16, 104), -- username : pdiaz 
-    ('Mitchell', 'Ward', 'mward@iut.univ-paris8.fr', '07.69.48.09.69', (SELECT id FROM university.users WHERE username = 'mward'), 2, 16, 104), -- username : mward 
-    ('Michael', 'Beard', 'mbeard@iut.univ-paris8.fr', '07.67.59.12.13', (SELECT id FROM university.users WHERE username = 'mbeard'), 2, 16, 104), -- username : mbeard 
-    ('Ryan', 'Wright', 'rwright@iut.univ-paris8.fr', '06.60.49.55.26', (SELECT id FROM university.users WHERE username = 'rwright'), 2, 16, 104), -- username : rwright 
-    ('Stacie', 'Wells', 'swells@iut.univ-paris8.fr', '06.11.48.17.80', (SELECT id FROM university.users WHERE username = 'swells'), 2, 16, 104), -- username : swells 
-    ('Anthony', 'Freeman', 'afreeman@iut.univ-paris8.fr', '07.30.32.24.87', (SELECT id FROM university.users WHERE username = 'afreeman'), 2, 16, 104), -- username : afreeman 
-    ('Sandra', 'Hansen', 'shansen@iut.univ-paris8.fr', '06.44.45.95.28', (SELECT id FROM university.users WHERE username = 'shansen'), 2, 16, 104), -- username : shansen 
-    ('Mary', 'Harmon', 'mharmon1@iut.univ-paris8.fr', '06.72.20.88.17', (SELECT id FROM university.users WHERE username = 'mharmon1'), 2, 16, 104), -- username : mharmon1 
-    ('Allison', 'Casey', 'acasey@iut.univ-paris8.fr', '06.19.71.76.47', (SELECT id FROM university.users WHERE username = 'acasey'), 2, 16, 104), -- username : acasey 
-    ('Jacob', 'Meadows', 'jmeadows@iut.univ-paris8.fr', '07.19.73.60.43', (SELECT id FROM university.users WHERE username = 'jmeadows'), 2, 17, 17), -- username : jmeadows 
-    ('Michael', 'Collins', 'mcollins@iut.univ-paris8.fr', '06.04.67.23.61', (SELECT id FROM university.users WHERE username = 'mcollins'), 2, 17, 17), -- username : mcollins 
-    ('Sarah', 'Williams', 'swilliams1@iut.univ-paris8.fr', '06.92.21.19.06', (SELECT id FROM university.users WHERE username = 'swilliams1'), 2, 17, 17), -- username : swilliams1 
-    ('Robin', 'Perry', 'rperry@iut.univ-paris8.fr', '07.81.24.36.68', (SELECT id FROM university.users WHERE username = 'rperry'), 2, 17, 17), -- username : rperry 
-    ('Ann', 'Hanson', 'ahanson@iut.univ-paris8.fr', '07.76.69.29.83', (SELECT id FROM university.users WHERE username = 'ahanson'), 2, 17, 17), -- username : ahanson 
-    ('Katherine', 'Cooper', 'kcooper@iut.univ-paris8.fr', '06.96.37.20.45', (SELECT id FROM university.users WHERE username = 'kcooper'), 2, 17, 17), -- username : kcooper 
-    ('Lisa', 'Frazier', 'lfrazier@iut.univ-paris8.fr', '06.60.65.93.61', (SELECT id FROM university.users WHERE username = 'lfrazier'), 2, 17, 17), -- username : lfrazier 
-    ('Allen', 'Bailey', 'abailey@iut.univ-paris8.fr', '06.12.63.53.55', (SELECT id FROM university.users WHERE username = 'abailey'), 2, 17, 17), -- username : abailey 
-    ('John', 'Andrade', 'jandrade@iut.univ-paris8.fr', '07.92.65.63.99', (SELECT id FROM university.users WHERE username = 'jandrade'), 2, 17, 17), -- username : jandrade 
-    ('Justin', 'Bryant', 'jbryant@iut.univ-paris8.fr', '06.30.52.00.11', (SELECT id FROM university.users WHERE username = 'jbryant'), 2, 17, 17), -- username : jbryant 
-    ('Sharon', 'Brewer', 'sbrewer@iut.univ-paris8.fr', '06.62.67.41.02', (SELECT id FROM university.users WHERE username = 'sbrewer'), 2, 17, 61), -- username : sbrewer 
-    ('Michelle', 'Adams', 'madams@iut.univ-paris8.fr', '07.95.28.58.98', (SELECT id FROM university.users WHERE username = 'madams'), 2, 17, 61), -- username : madams 
-    ('Joel', 'Shaw', 'jshaw1@iut.univ-paris8.fr', '07.02.00.96.21', (SELECT id FROM university.users WHERE username = 'jshaw1'), 2, 17, 61), -- username : jshaw1 
-    ('Corey', 'Moore', 'cmoore2@iut.univ-paris8.fr', '06.01.98.48.63', (SELECT id FROM university.users WHERE username = 'cmoore2'), 2, 17, 61), -- username : cmoore2 
-    ('Sarah', 'Thompson', 'sthompson1@iut.univ-paris8.fr', '07.87.44.20.38', (SELECT id FROM university.users WHERE username = 'sthompson1'), 2, 17, 61), -- username : sthompson1 
-    ('John', 'Green', 'jgreen1@iut.univ-paris8.fr', '06.45.48.68.35', (SELECT id FROM university.users WHERE username = 'jgreen1'), 2, 17, 61), -- username : jgreen1 
-    ('Jack', 'Garcia', 'jgarcia@iut.univ-paris8.fr', '06.82.82.17.00', (SELECT id FROM university.users WHERE username = 'jgarcia'), 2, 17, 61), -- username : jgarcia 
-    ('Lawrence', 'Smith', 'lsmith@iut.univ-paris8.fr', '07.11.93.46.80', (SELECT id FROM university.users WHERE username = 'lsmith'), 2, 17, 61), -- username : lsmith 
-    ('Meghan', 'Maxwell', 'mmaxwell@iut.univ-paris8.fr', '06.17.46.29.30', (SELECT id FROM university.users WHERE username = 'mmaxwell'), 2, 17, 61), -- username : mmaxwell 
-    ('Ryan', 'Brady', 'rbrady@iut.univ-paris8.fr', '06.53.26.61.13', (SELECT id FROM university.users WHERE username = 'rbrady'), 2, 17, 61), -- username : rbrady 
-    ('Michael', 'Thomas', 'mthomas@iut.univ-paris8.fr', '07.56.16.27.60', (SELECT id FROM university.users WHERE username = 'mthomas'), 2, 17, 105), -- username : mthomas 
-    ('Caroline', 'Durham', 'cdurham@iut.univ-paris8.fr', '06.17.49.55.90', (SELECT id FROM university.users WHERE username = 'cdurham'), 2, 17, 105), -- username : cdurham 
-    ('Larry', 'Hunter', 'lhunter@iut.univ-paris8.fr', '07.17.99.04.26', (SELECT id FROM university.users WHERE username = 'lhunter'), 2, 17, 105), -- username : lhunter 
-    ('Jonathan', 'Macdonald', 'jmacdonald@iut.univ-paris8.fr', '07.02.44.13.33', (SELECT id FROM university.users WHERE username = 'jmacdonald'), 2, 17, 105), -- username : jmacdonald 
-    ('Karen', 'Bennett', 'kbennett@iut.univ-paris8.fr', '07.42.47.42.67', (SELECT id FROM university.users WHERE username = 'kbennett'), 2, 17, 105), -- username : kbennett 
-    ('Lauren', 'Carter', 'lcarter@iut.univ-paris8.fr', '06.26.50.48.13', (SELECT id FROM university.users WHERE username = 'lcarter'), 2, 17, 105), -- username : lcarter 
-    ('Becky', 'Phillips', 'bphillips@iut.univ-paris8.fr', '06.54.14.44.38', (SELECT id FROM university.users WHERE username = 'bphillips'), 2, 17, 105), -- username : bphillips 
-    ('Heather', 'Blair', 'hblair@iut.univ-paris8.fr', '07.72.01.14.07', (SELECT id FROM university.users WHERE username = 'hblair'), 2, 17, 105), -- username : hblair 
-    ('Denise', 'Bolton', 'dbolton@iut.univ-paris8.fr', '06.21.72.89.53', (SELECT id FROM university.users WHERE username = 'dbolton'), 2, 17, 105), -- username : dbolton 
-    ('Eric', 'Harris', 'eharris@iut.univ-paris8.fr', '06.21.46.93.87', (SELECT id FROM university.users WHERE username = 'eharris'), 2, 17, 105), -- username : eharris 
-    ('David', 'Brown', 'dbrown@iut.univ-paris8.fr', '07.43.21.55.27', (SELECT id FROM university.users WHERE username = 'dbrown'), 2, 18, 18), -- username : dbrown 
-    ('Melanie', 'Pratt', 'mpratt@iut.univ-paris8.fr', '06.65.84.97.99', (SELECT id FROM university.users WHERE username = 'mpratt'), 2, 18, 18), -- username : mpratt 
-    ('Emily', 'Yoder', 'eyoder@iut.univ-paris8.fr', '06.41.53.92.21', (SELECT id FROM university.users WHERE username = 'eyoder'), 2, 18, 18), -- username : eyoder 
-    ('Donald', 'Lee', 'dlee1@iut.univ-paris8.fr', '07.36.64.12.88', (SELECT id FROM university.users WHERE username = 'dlee1'), 2, 18, 18), -- username : dlee1 
-    ('Kara', 'Russell', 'krussell@iut.univ-paris8.fr', '07.43.81.48.13', (SELECT id FROM university.users WHERE username = 'krussell'), 2, 18, 18), -- username : krussell 
-    ('Nicholas', 'Barnes', 'nbarnes@iut.univ-paris8.fr', '07.99.35.24.75', (SELECT id FROM university.users WHERE username = 'nbarnes'), 2, 18, 18), -- username : nbarnes 
-    ('Larry', 'Williams', 'lwilliams@iut.univ-paris8.fr', '07.86.96.72.01', (SELECT id FROM university.users WHERE username = 'lwilliams'), 2, 18, 18), -- username : lwilliams 
-    ('Clayton', 'Carter', 'ccarter1@iut.univ-paris8.fr', '07.70.41.84.27', (SELECT id FROM university.users WHERE username = 'ccarter1'), 2, 18, 18), -- username : ccarter1 
-    ('Randall', 'Ball', 'rball@iut.univ-paris8.fr', '06.79.66.91.74', (SELECT id FROM university.users WHERE username = 'rball'), 2, 18, 18), -- username : rball 
-    ('Joy', 'Hudson', 'jhudson@iut.univ-paris8.fr', '07.30.09.04.48', (SELECT id FROM university.users WHERE username = 'jhudson'), 2, 18, 18), -- username : jhudson 
-    ('Angela', 'Morales', 'amorales@iut.univ-paris8.fr', '06.70.14.39.06', (SELECT id FROM university.users WHERE username = 'amorales'), 2, 18, 62), -- username : amorales 
-    ('Pamela', 'Schmidt', 'pschmidt@iut.univ-paris8.fr', '07.17.89.74.52', (SELECT id FROM university.users WHERE username = 'pschmidt'), 2, 18, 62), -- username : pschmidt 
-    ('Adriana', 'Christian', 'achristian@iut.univ-paris8.fr', '06.56.40.72.95', (SELECT id FROM university.users WHERE username = 'achristian'), 2, 18, 62), -- username : achristian 
-    ('Anthony', 'Romero', 'aromero1@iut.univ-paris8.fr', '07.48.14.53.09', (SELECT id FROM university.users WHERE username = 'aromero1'), 2, 18, 62), -- username : aromero1 
-    ('Bradley', 'Bryant', 'bbryant@iut.univ-paris8.fr', '07.56.23.34.03', (SELECT id FROM university.users WHERE username = 'bbryant'), 2, 18, 62), -- username : bbryant 
-    ('Robert', 'Rodriguez', 'rrodriguez@iut.univ-paris8.fr', '06.49.24.06.76', (SELECT id FROM university.users WHERE username = 'rrodriguez'), 2, 18, 62), -- username : rrodriguez 
-    ('Brian', 'Baker', 'bbaker@iut.univ-paris8.fr', '06.25.09.44.24', (SELECT id FROM university.users WHERE username = 'bbaker'), 2, 18, 62), -- username : bbaker 
-    ('Nicholas', 'Tucker', 'ntucker@iut.univ-paris8.fr', '07.19.34.01.94', (SELECT id FROM university.users WHERE username = 'ntucker'), 2, 18, 62), -- username : ntucker 
-    ('Maria', 'Brown', 'mbrown1@iut.univ-paris8.fr', '07.12.54.98.60', (SELECT id FROM university.users WHERE username = 'mbrown1'), 2, 18, 62), -- username : mbrown1 
-    ('Monica', 'James', 'mjames@iut.univ-paris8.fr', '06.73.00.33.51', (SELECT id FROM university.users WHERE username = 'mjames'), 2, 18, 62), -- username : mjames 
-    ('Kristin', 'Patel', 'kpatel@iut.univ-paris8.fr', '06.14.99.09.04', (SELECT id FROM university.users WHERE username = 'kpatel'), 2, 18, 106), -- username : kpatel 
-    ('Harold', 'Moore', 'hmoore@iut.univ-paris8.fr', '06.46.99.15.23', (SELECT id FROM university.users WHERE username = 'hmoore'), 2, 18, 106), -- username : hmoore 
-    ('Stephen', 'Simmons', 'ssimmons@iut.univ-paris8.fr', '06.32.13.54.40', (SELECT id FROM university.users WHERE username = 'ssimmons'), 2, 18, 106), -- username : ssimmons 
-    ('Jason', 'Gill', 'jgill1@iut.univ-paris8.fr', '06.73.45.12.80', (SELECT id FROM university.users WHERE username = 'jgill1'), 2, 18, 106), -- username : jgill1 
-    ('Debbie', 'Moore', 'dmoore1@iut.univ-paris8.fr', '06.22.68.37.15', (SELECT id FROM university.users WHERE username = 'dmoore1'), 2, 18, 106), -- username : dmoore1 
-    ('Michael', 'Moran', 'mmoran@iut.univ-paris8.fr', '07.24.59.22.83', (SELECT id FROM university.users WHERE username = 'mmoran'), 2, 18, 106), -- username : mmoran 
-    ('Robert', 'Johnson', 'rjohnson@iut.univ-paris8.fr', '07.21.03.30.01', (SELECT id FROM university.users WHERE username = 'rjohnson'), 2, 18, 106), -- username : rjohnson 
-    ('Ryan', 'Keith', 'rkeith@iut.univ-paris8.fr', '06.50.03.87.45', (SELECT id FROM university.users WHERE username = 'rkeith'), 2, 18, 106), -- username : rkeith 
-    ('Christopher', 'Baker', 'cbaker@iut.univ-paris8.fr', '07.24.69.56.43', (SELECT id FROM university.users WHERE username = 'cbaker'), 2, 18, 106), -- username : cbaker 
-    ('Kelly', 'White', 'kwhite@iut.univ-paris8.fr', '06.54.30.24.45', (SELECT id FROM university.users WHERE username = 'kwhite'), 2, 18, 106), -- username : kwhite 
-    ('Mark', 'Sanders', 'msanders@iut.univ-paris8.fr', '06.23.11.75.90', (SELECT id FROM university.users WHERE username = 'msanders'), 2, 6, 6), -- username : msanders 
-    ('Tyler', 'Vaughn', 'tvaughn@iut.univ-paris8.fr', '06.86.30.85.33', (SELECT id FROM university.users WHERE username = 'tvaughn'), 2, 6, 6), -- username : tvaughn 
-    ('Jacqueline', 'Roberts', 'jroberts@iut.univ-paris8.fr', '06.68.76.05.65', (SELECT id FROM university.users WHERE username = 'jroberts'), 2, 6, 6), -- username : jroberts 
-    ('Debra', 'Sanders', 'dsanders@iut.univ-paris8.fr', '07.63.99.03.42', (SELECT id FROM university.users WHERE username = 'dsanders'), 2, 6, 6), -- username : dsanders 
-    ('Bill', 'Boyle', 'bboyle@iut.univ-paris8.fr', '07.36.73.33.72', (SELECT id FROM university.users WHERE username = 'bboyle'), 2, 6, 6), -- username : bboyle 
-    ('Felicia', 'Smith', 'fsmith@iut.univ-paris8.fr', '07.76.35.83.73', (SELECT id FROM university.users WHERE username = 'fsmith'), 2, 6, 6), -- username : fsmith 
-    ('Patrick', 'Williams', 'pwilliams@iut.univ-paris8.fr', '07.92.19.27.51', (SELECT id FROM university.users WHERE username = 'pwilliams'), 2, 6, 6), -- username : pwilliams 
-    ('Michael', 'Bean', 'mbean@iut.univ-paris8.fr', '07.95.51.77.10', (SELECT id FROM university.users WHERE username = 'mbean'), 2, 6, 6), -- username : mbean 
-    ('Kyle', 'Werner', 'kwerner@iut.univ-paris8.fr', '07.98.64.45.65', (SELECT id FROM university.users WHERE username = 'kwerner'), 2, 6, 6), -- username : kwerner 
-    ('Justin', 'Gallagher', 'jgallagher@iut.univ-paris8.fr', '07.49.59.38.15', (SELECT id FROM university.users WHERE username = 'jgallagher'), 2, 6, 6), -- username : jgallagher 
-    ('Alan', 'Walls', 'awalls@iut.univ-paris8.fr', '06.67.48.91.25', (SELECT id FROM university.users WHERE username = 'awalls'), 2, 6, 50), -- username : awalls 
-    ('Michelle', 'Riley', 'mriley@iut.univ-paris8.fr', '07.85.97.48.80', (SELECT id FROM university.users WHERE username = 'mriley'), 2, 6, 50), -- username : mriley 
-    ('Laura', 'Martinez', 'lmartinez1@iut.univ-paris8.fr', '06.41.10.27.08', (SELECT id FROM university.users WHERE username = 'lmartinez1'), 2, 6, 50), -- username : lmartinez1 
-    ('Angela', 'Foster', 'afoster@iut.univ-paris8.fr', '06.38.35.14.63', (SELECT id FROM university.users WHERE username = 'afoster'), 2, 6, 50), -- username : afoster 
-    ('Riley', 'Rogers', 'rrogers1@iut.univ-paris8.fr', '06.64.82.54.40', (SELECT id FROM university.users WHERE username = 'rrogers1'), 2, 6, 50), -- username : rrogers1 
-    ('Fernando', 'Vargas', 'fvargas@iut.univ-paris8.fr', '07.63.42.37.71', (SELECT id FROM university.users WHERE username = 'fvargas'), 2, 6, 50), -- username : fvargas 
-    ('Christina', 'Benson', 'cbenson@iut.univ-paris8.fr', '06.22.13.78.91', (SELECT id FROM university.users WHERE username = 'cbenson'), 2, 6, 50), -- username : cbenson 
-    ('Meghan', 'Dalton', 'mdalton@iut.univ-paris8.fr', '06.02.68.76.05', (SELECT id FROM university.users WHERE username = 'mdalton'), 2, 6, 50), -- username : mdalton 
-    ('Johnny', 'Blackwell', 'jblackwell@iut.univ-paris8.fr', '07.65.04.98.88', (SELECT id FROM university.users WHERE username = 'jblackwell'), 2, 6, 50), -- username : jblackwell 
-    ('Judy', 'Harrison', 'jharrison@iut.univ-paris8.fr', '06.34.50.29.72', (SELECT id FROM university.users WHERE username = 'jharrison'), 2, 6, 50), -- username : jharrison 
-    ('April', 'Smith', 'asmith1@iut.univ-paris8.fr', '06.68.39.58.96', (SELECT id FROM university.users WHERE username = 'asmith1'), 2, 6, 94), -- username : asmith1 
-    ('Amy', 'Myers', 'amyers@iut.univ-paris8.fr', '07.54.20.52.29', (SELECT id FROM university.users WHERE username = 'amyers'), 2, 6, 94), -- username : amyers 
-    ('Laura', 'Cline', 'lcline@iut.univ-paris8.fr', '06.54.95.31.80', (SELECT id FROM university.users WHERE username = 'lcline'), 2, 6, 94), -- username : lcline 
-    ('Stephen', 'Allen', 'sallen@iut.univ-paris8.fr', '07.41.75.82.17', (SELECT id FROM university.users WHERE username = 'sallen'), 2, 6, 94), -- username : sallen 
-    ('Kathryn', 'Bauer', 'kbauer1@iut.univ-paris8.fr', '06.21.74.06.11', (SELECT id FROM university.users WHERE username = 'kbauer1'), 2, 6, 94), -- username : kbauer1 
-    ('Stephanie', 'Martinez', 'smartinez3@iut.univ-paris8.fr', '06.16.44.30.60', (SELECT id FROM university.users WHERE username = 'smartinez3'), 2, 6, 94), -- username : smartinez3 
-    ('Leslie', 'Johnson', 'ljohnson@iut.univ-paris8.fr', '06.77.20.85.08', (SELECT id FROM university.users WHERE username = 'ljohnson'), 2, 6, 94), -- username : ljohnson 
-    ('Jesus', 'Vargas', 'jvargas@iut.univ-paris8.fr', '06.51.49.65.56', (SELECT id FROM university.users WHERE username = 'jvargas'), 2, 6, 94), -- username : jvargas 
-    ('Michelle', 'Vang', 'mvang@iut.univ-paris8.fr', '06.68.17.60.95', (SELECT id FROM university.users WHERE username = 'mvang'), 2, 6, 94), -- username : mvang 
-    ('Austin', 'Hart', 'ahart@iut.univ-paris8.fr', '06.58.84.94.10', (SELECT id FROM university.users WHERE username = 'ahart'), 2, 6, 94), -- username : ahart 
-    ('Arthur', 'Reynolds', 'areynolds@iut.univ-paris8.fr', '07.66.14.24.37', (SELECT id FROM university.users WHERE username = 'areynolds'), 2, 4, 4), -- username : areynolds 
-    ('Wendy', 'Ruiz', 'wruiz@iut.univ-paris8.fr', '06.52.81.27.78', (SELECT id FROM university.users WHERE username = 'wruiz'), 2, 4, 4), -- username : wruiz 
-    ('John', 'Silva', 'jsilva1@iut.univ-paris8.fr', '06.70.41.85.50', (SELECT id FROM university.users WHERE username = 'jsilva1'), 2, 4, 4), -- username : jsilva1 
-    ('Megan', 'Allen', 'mallen@iut.univ-paris8.fr', '06.88.20.61.76', (SELECT id FROM university.users WHERE username = 'mallen'), 2, 4, 4), -- username : mallen 
-    ('Danielle', 'Fischer', 'dfischer@iut.univ-paris8.fr', '06.06.26.91.63', (SELECT id FROM university.users WHERE username = 'dfischer'), 2, 4, 4), -- username : dfischer 
-    ('Oscar', 'Robinson', 'orobinson@iut.univ-paris8.fr', '06.92.01.65.81', (SELECT id FROM university.users WHERE username = 'orobinson'), 2, 4, 4), -- username : orobinson 
-    ('Sarah', 'Nunez', 'snunez@iut.univ-paris8.fr', '07.51.03.76.06', (SELECT id FROM university.users WHERE username = 'snunez'), 2, 4, 4), -- username : snunez 
-    ('Garrett', 'Burns', 'gburns@iut.univ-paris8.fr', '07.90.99.22.19', (SELECT id FROM university.users WHERE username = 'gburns'), 2, 4, 4), -- username : gburns 
-    ('Ricardo', 'Cisneros', 'rcisneros@iut.univ-paris8.fr', '07.63.20.31.36', (SELECT id FROM university.users WHERE username = 'rcisneros'), 2, 4, 4), -- username : rcisneros 
-    ('Michael', 'Perry', 'mperry1@iut.univ-paris8.fr', '07.77.95.22.23', (SELECT id FROM university.users WHERE username = 'mperry1'), 2, 4, 4), -- username : mperry1 
-    ('James', 'Mcintyre', 'jmcintyre@iut.univ-paris8.fr', '06.18.99.89.08', (SELECT id FROM university.users WHERE username = 'jmcintyre'), 2, 4, 48), -- username : jmcintyre 
-    ('Joseph', 'Bowman', 'jbowman1@iut.univ-paris8.fr', '06.60.62.15.23', (SELECT id FROM university.users WHERE username = 'jbowman1'), 2, 4, 48), -- username : jbowman1 
-    ('Brooke', 'Petersen', 'bpetersen@iut.univ-paris8.fr', '07.82.51.66.90', (SELECT id FROM university.users WHERE username = 'bpetersen'), 2, 4, 48), -- username : bpetersen 
-    ('Richard', 'Smith', 'rsmith2@iut.univ-paris8.fr', '06.13.81.14.67', (SELECT id FROM university.users WHERE username = 'rsmith2'), 2, 4, 48), -- username : rsmith2 
-    ('Calvin', 'Valenzuela', 'cvalenzuela@iut.univ-paris8.fr', '07.73.17.41.05', (SELECT id FROM university.users WHERE username = 'cvalenzuela'), 2, 4, 48), -- username : cvalenzuela 
-    ('Lisa', 'Orozco', 'lorozco@iut.univ-paris8.fr', '06.55.22.19.51', (SELECT id FROM university.users WHERE username = 'lorozco'), 2, 4, 48), -- username : lorozco 
-    ('Tina', 'Ramirez', 'tramirez@iut.univ-paris8.fr', '07.81.60.66.00', (SELECT id FROM university.users WHERE username = 'tramirez'), 2, 4, 48), -- username : tramirez 
-    ('Alex', 'Holder', 'aholder@iut.univ-paris8.fr', '06.45.37.10.26', (SELECT id FROM university.users WHERE username = 'aholder'), 2, 4, 48), -- username : aholder 
-    ('Nicole', 'Larsen', 'nlarsen@iut.univ-paris8.fr', '06.24.34.80.66', (SELECT id FROM university.users WHERE username = 'nlarsen'), 2, 4, 48), -- username : nlarsen 
-    ('Tina', 'Davidson', 'tdavidson@iut.univ-paris8.fr', '06.07.57.83.54', (SELECT id FROM university.users WHERE username = 'tdavidson'), 2, 4, 48), -- username : tdavidson 
-    ('Holly', 'Turner', 'hturner@iut.univ-paris8.fr', '06.70.39.12.79', (SELECT id FROM university.users WHERE username = 'hturner'), 2, 4, 92), -- username : hturner 
-    ('Melanie', 'Harris', 'mharris@iut.univ-paris8.fr', '07.50.73.04.66', (SELECT id FROM university.users WHERE username = 'mharris'), 2, 4, 92), -- username : mharris 
-    ('Sean', 'Hanson', 'shanson@iut.univ-paris8.fr', '06.45.79.47.94', (SELECT id FROM university.users WHERE username = 'shanson'), 2, 4, 92), -- username : shanson 
-    ('Amanda', 'Cunningham', 'acunningham@iut.univ-paris8.fr', '07.42.04.41.71', (SELECT id FROM university.users WHERE username = 'acunningham'), 2, 4, 92), -- username : acunningham 
-    ('Andrew', 'Williams', 'awilliams1@iut.univ-paris8.fr', '06.98.86.28.45', (SELECT id FROM university.users WHERE username = 'awilliams1'), 2, 4, 92), -- username : awilliams1 
-    ('Joseph', 'Duncan', 'jduncan@iut.univ-paris8.fr', '07.16.19.52.64', (SELECT id FROM university.users WHERE username = 'jduncan'), 2, 4, 92), -- username : jduncan 
-    ('Debra', 'Small', 'dsmall@iut.univ-paris8.fr', '06.13.64.98.93', (SELECT id FROM university.users WHERE username = 'dsmall'), 2, 4, 92), -- username : dsmall 
-    ('Erin', 'Olson', 'eolson@iut.univ-paris8.fr', '06.84.86.31.15', (SELECT id FROM university.users WHERE username = 'eolson'), 2, 4, 92), -- username : eolson 
-    ('Craig', 'Lowery', 'clowery@iut.univ-paris8.fr', '06.62.75.54.71', (SELECT id FROM university.users WHERE username = 'clowery'), 2, 4, 92), -- username : clowery 
-    ('Mike', 'Carroll', 'mcarroll@iut.univ-paris8.fr', '07.88.94.74.85', (SELECT id FROM university.users WHERE username = 'mcarroll'), 2, 4, 92), -- username : mcarroll 
-    ('John', 'Fisher', 'jfisher@iut.univ-paris8.fr', '06.81.65.24.15', (SELECT id FROM university.users WHERE username = 'jfisher'), 2, 5, 5), -- username : jfisher 
-    ('Hayden', 'Williams', 'hwilliams1@iut.univ-paris8.fr', '06.78.63.47.07', (SELECT id FROM university.users WHERE username = 'hwilliams1'), 2, 5, 5), -- username : hwilliams1 
-    ('Ruth', 'Casey', 'rcasey@iut.univ-paris8.fr', '07.99.76.17.74', (SELECT id FROM university.users WHERE username = 'rcasey'), 2, 5, 5), -- username : rcasey 
-    ('Marisa', 'Olson', 'molson@iut.univ-paris8.fr', '06.63.41.16.80', (SELECT id FROM university.users WHERE username = 'molson'), 2, 5, 5), -- username : molson 
-    ('Brandon', 'Harris', 'bharris@iut.univ-paris8.fr', '06.38.17.39.25', (SELECT id FROM university.users WHERE username = 'bharris'), 2, 5, 5), -- username : bharris 
-    ('Erica', 'Bridges', 'ebridges@iut.univ-paris8.fr', '06.92.29.08.91', (SELECT id FROM university.users WHERE username = 'ebridges'), 2, 5, 5), -- username : ebridges 
-    ('Alyssa', 'Hopkins', 'ahopkins@iut.univ-paris8.fr', '07.60.78.96.33', (SELECT id FROM university.users WHERE username = 'ahopkins'), 2, 5, 5), -- username : ahopkins 
-    ('Rebecca', 'Osborne', 'rosborne@iut.univ-paris8.fr', '06.47.23.08.20', (SELECT id FROM university.users WHERE username = 'rosborne'), 2, 5, 5), -- username : rosborne 
-    ('Michael', 'Hall', 'mhall1@iut.univ-paris8.fr', '06.93.89.53.24', (SELECT id FROM university.users WHERE username = 'mhall1'), 2, 5, 5), -- username : mhall1 
-    ('Damon', 'Baker', 'dbaker@iut.univ-paris8.fr', '06.42.62.73.73', (SELECT id FROM university.users WHERE username = 'dbaker'), 2, 5, 5), -- username : dbaker 
-    ('Erin', 'Morris', 'emorris@iut.univ-paris8.fr', '07.74.36.36.74', (SELECT id FROM university.users WHERE username = 'emorris'), 2, 5, 49), -- username : emorris 
-    ('Benjamin', 'Yoder', 'byoder@iut.univ-paris8.fr', '07.21.55.45.42', (SELECT id FROM university.users WHERE username = 'byoder'), 2, 5, 49), -- username : byoder 
-    ('Kenneth', 'Johnson', 'kjohnson@iut.univ-paris8.fr', '07.39.52.03.58', (SELECT id FROM university.users WHERE username = 'kjohnson'), 2, 5, 49), -- username : kjohnson 
-    ('Emily', 'Taylor', 'etaylor@iut.univ-paris8.fr', '07.97.24.16.36', (SELECT id FROM university.users WHERE username = 'etaylor'), 2, 5, 49), -- username : etaylor 
-    ('Patricia', 'Maldonado', 'pmaldonado@iut.univ-paris8.fr', '06.51.08.11.28', (SELECT id FROM university.users WHERE username = 'pmaldonado'), 2, 5, 49), -- username : pmaldonado 
-    ('Keith', 'Rivera', 'krivera1@iut.univ-paris8.fr', '07.91.00.11.18', (SELECT id FROM university.users WHERE username = 'krivera1'), 2, 5, 49), -- username : krivera1 
-    ('Daniel', 'Smith', 'dsmith1@iut.univ-paris8.fr', '06.24.99.29.50', (SELECT id FROM university.users WHERE username = 'dsmith1'), 2, 5, 49), -- username : dsmith1 
-    ('Julie', 'Guzman', 'jguzman@iut.univ-paris8.fr', '07.29.67.57.22', (SELECT id FROM university.users WHERE username = 'jguzman'), 2, 5, 49), -- username : jguzman 
-    ('Harry', 'Giles', 'hgiles@iut.univ-paris8.fr', '06.58.65.62.20', (SELECT id FROM university.users WHERE username = 'hgiles'), 2, 5, 49), -- username : hgiles 
-    ('Barbara', 'Weber', 'bweber@iut.univ-paris8.fr', '06.71.02.09.53', (SELECT id FROM university.users WHERE username = 'bweber'), 2, 5, 49), -- username : bweber 
-    ('Dylan', 'Anderson', 'danderson@iut.univ-paris8.fr', '06.00.70.31.56', (SELECT id FROM university.users WHERE username = 'danderson'), 2, 5, 93), -- username : danderson 
-    ('David', 'Lawrence', 'dlawrence@iut.univ-paris8.fr', '06.49.92.92.59', (SELECT id FROM university.users WHERE username = 'dlawrence'), 2, 5, 93), -- username : dlawrence 
-    ('Michelle', 'Payne', 'mpayne@iut.univ-paris8.fr', '06.10.65.11.42', (SELECT id FROM university.users WHERE username = 'mpayne'), 2, 5, 93), -- username : mpayne 
-    ('Michael', 'Clark', 'mclark1@iut.univ-paris8.fr', '07.73.23.09.77', (SELECT id FROM university.users WHERE username = 'mclark1'), 2, 5, 93), -- username : mclark1 
-    ('Erin', 'Lawrence', 'elawrence@iut.univ-paris8.fr', '06.15.14.71.65', (SELECT id FROM university.users WHERE username = 'elawrence'), 2, 5, 93), -- username : elawrence 
-    ('Rebecca', 'Cole', 'rcole@iut.univ-paris8.fr', '07.05.38.27.24', (SELECT id FROM university.users WHERE username = 'rcole'), 2, 5, 93), -- username : rcole 
-    ('April', 'Hardy', 'ahardy@iut.univ-paris8.fr', '06.71.86.26.19', (SELECT id FROM university.users WHERE username = 'ahardy'), 2, 5, 93), -- username : ahardy 
-    ('James', 'Kelley', 'jkelley@iut.univ-paris8.fr', '07.99.60.09.92', (SELECT id FROM university.users WHERE username = 'jkelley'), 2, 5, 93), -- username : jkelley 
-    ('Anthony', 'Gilmore', 'agilmore@iut.univ-paris8.fr', '06.99.72.11.47', (SELECT id FROM university.users WHERE username = 'agilmore'), 2, 5, 93), -- username : agilmore 
-    ('Jerome', 'Parker', 'jparker@iut.univ-paris8.fr', '07.67.12.85.50', (SELECT id FROM university.users WHERE username = 'jparker'), 2, 5, 93), -- username : jparker 
-    ('Kimberly', 'Mcfarland', 'kmcfarland@iut.univ-paris8.fr', '07.98.29.62.87', (SELECT id FROM university.users WHERE username = 'kmcfarland'), 2, 39, 39), -- username : kmcfarland 
-    ('Karen', 'Wood', 'kwood1@iut.univ-paris8.fr', '07.36.10.61.62', (SELECT id FROM university.users WHERE username = 'kwood1'), 2, 39, 39), -- username : kwood1 
-    ('Amy', 'Elliott', 'aelliott@iut.univ-paris8.fr', '07.72.61.99.41', (SELECT id FROM university.users WHERE username = 'aelliott'), 2, 39, 39), -- username : aelliott 
-    ('Hannah', 'Greene', 'hgreene@iut.univ-paris8.fr', '07.68.34.51.03', (SELECT id FROM university.users WHERE username = 'hgreene'), 2, 39, 39), -- username : hgreene 
-    ('Kaitlyn', 'Lam', 'klam@iut.univ-paris8.fr', '07.35.70.63.65', (SELECT id FROM university.users WHERE username = 'klam'), 2, 39, 39), -- username : klam 
-    ('Joseph', 'Reed', 'jreed@iut.univ-paris8.fr', '06.24.29.48.19', (SELECT id FROM university.users WHERE username = 'jreed'), 2, 39, 39), -- username : jreed 
-    ('Jennifer', 'Pierce', 'jpierce@iut.univ-paris8.fr', '06.18.81.03.67', (SELECT id FROM university.users WHERE username = 'jpierce'), 2, 39, 39), -- username : jpierce 
-    ('Tanya', 'Miller', 'tmiller@iut.univ-paris8.fr', '06.13.22.94.52', (SELECT id FROM university.users WHERE username = 'tmiller'), 2, 39, 39), -- username : tmiller 
-    ('John', 'Johns', 'jjohns@iut.univ-paris8.fr', '06.27.88.72.44', (SELECT id FROM university.users WHERE username = 'jjohns'), 2, 39, 39), -- username : jjohns 
-    ('Rebecca', 'Hill', 'rhill@iut.univ-paris8.fr', '07.64.50.47.47', (SELECT id FROM university.users WHERE username = 'rhill'), 2, 39, 39), -- username : rhill 
-    ('Angel', 'Hogan', 'ahogan@iut.univ-paris8.fr', '06.67.80.76.92', (SELECT id FROM university.users WHERE username = 'ahogan'), 2, 39, 83), -- username : ahogan 
-    ('Rodney', 'Bennett', 'rbennett@iut.univ-paris8.fr', '07.92.11.11.06', (SELECT id FROM university.users WHERE username = 'rbennett'), 2, 39, 83), -- username : rbennett 
-    ('Kayla', 'Dixon', 'kdixon@iut.univ-paris8.fr', '06.69.03.89.11', (SELECT id FROM university.users WHERE username = 'kdixon'), 2, 39, 83), -- username : kdixon 
-    ('Mark', 'Rogers', 'mrogers@iut.univ-paris8.fr', '06.90.64.34.31', (SELECT id FROM university.users WHERE username = 'mrogers'), 2, 39, 83), -- username : mrogers 
-    ('Susan', 'Mccarthy', 'smccarthy1@iut.univ-paris8.fr', '07.24.77.71.58', (SELECT id FROM university.users WHERE username = 'smccarthy1'), 2, 39, 83), -- username : smccarthy1 
-    ('Damon', 'Kim', 'dkim1@iut.univ-paris8.fr', '06.62.64.46.55', (SELECT id FROM university.users WHERE username = 'dkim1'), 2, 39, 83), -- username : dkim1 
-    ('James', 'Allen', 'jallen1@iut.univ-paris8.fr', '06.00.62.56.72', (SELECT id FROM university.users WHERE username = 'jallen1'), 2, 39, 83), -- username : jallen1 
-    ('Samantha', 'Moreno', 'smoreno@iut.univ-paris8.fr', '07.24.80.38.05', (SELECT id FROM university.users WHERE username = 'smoreno'), 2, 39, 83), -- username : smoreno 
-    ('Tonya', 'Patel', 'tpatel@iut.univ-paris8.fr', '07.59.02.47.01', (SELECT id FROM university.users WHERE username = 'tpatel'), 2, 39, 83), -- username : tpatel 
-    ('Yvonne', 'Kramer', 'ykramer@iut.univ-paris8.fr', '07.38.79.95.73', (SELECT id FROM university.users WHERE username = 'ykramer'), 2, 39, 83), -- username : ykramer 
-    ('Janet', 'Mckinney', 'jmckinney@iut.univ-paris8.fr', '07.28.91.08.47', (SELECT id FROM university.users WHERE username = 'jmckinney'), 2, 39, 127), -- username : jmckinney 
-    ('Jonathan', 'Chung', 'jchung@iut.univ-paris8.fr', '07.94.75.61.30', (SELECT id FROM university.users WHERE username = 'jchung'), 2, 39, 127), -- username : jchung 
-    ('Robin', 'Davis', 'rdavis@iut.univ-paris8.fr', '06.45.73.45.66', (SELECT id FROM university.users WHERE username = 'rdavis'), 2, 39, 127), -- username : rdavis 
-    ('Rachael', 'Phillips', 'rphillips@iut.univ-paris8.fr', '07.25.51.52.26', (SELECT id FROM university.users WHERE username = 'rphillips'), 2, 39, 127), -- username : rphillips 
-    ('Tyler', 'Anderson', 'tanderson@iut.univ-paris8.fr', '06.74.67.91.93', (SELECT id FROM university.users WHERE username = 'tanderson'), 2, 39, 127), -- username : tanderson 
-    ('Brett', 'Ramsey', 'bramsey@iut.univ-paris8.fr', '06.97.80.96.79', (SELECT id FROM university.users WHERE username = 'bramsey'), 2, 39, 127), -- username : bramsey 
-    ('Christy', 'Molina', 'cmolina@iut.univ-paris8.fr', '06.65.67.29.06', (SELECT id FROM university.users WHERE username = 'cmolina'), 2, 39, 127), -- username : cmolina 
-    ('Alexis', 'Mccoy', 'amccoy@iut.univ-paris8.fr', '07.89.87.90.03', (SELECT id FROM university.users WHERE username = 'amccoy'), 2, 39, 127), -- username : amccoy 
-    ('Debra', 'Chen', 'dchen@iut.univ-paris8.fr', '06.93.80.87.87', (SELECT id FROM university.users WHERE username = 'dchen'), 2, 39, 127), -- username : dchen 
-    ('Anthony', 'Ferguson', 'aferguson@iut.univ-paris8.fr', '06.39.62.99.72', (SELECT id FROM university.users WHERE username = 'aferguson'), 2, 39, 127), -- username : aferguson 
-    ('Sara', 'Hayes', 'shayes@iut.univ-paris8.fr', '06.92.31.36.96', (SELECT id FROM university.users WHERE username = 'shayes'), 2, 40, 40), -- username : shayes 
-    ('Bradley', 'Smith', 'bsmith3@iut.univ-paris8.fr', '06.82.22.69.39', (SELECT id FROM university.users WHERE username = 'bsmith3'), 2, 40, 40), -- username : bsmith3 
-    ('Ashley', 'Klein', 'aklein@iut.univ-paris8.fr', '07.54.61.11.44', (SELECT id FROM university.users WHERE username = 'aklein'), 2, 40, 40), -- username : aklein 
-    ('Susan', 'Mcdaniel', 'smcdaniel@iut.univ-paris8.fr', '06.92.51.77.33', (SELECT id FROM university.users WHERE username = 'smcdaniel'), 2, 40, 40), -- username : smcdaniel 
-    ('Pamela', 'Mcbride', 'pmcbride@iut.univ-paris8.fr', '06.68.02.65.25', (SELECT id FROM university.users WHERE username = 'pmcbride'), 2, 40, 40), -- username : pmcbride 
-    ('Sandra', 'Chang', 'schang@iut.univ-paris8.fr', '06.48.03.40.38', (SELECT id FROM university.users WHERE username = 'schang'), 2, 40, 40), -- username : schang 
-    ('Jeffrey', 'Rhodes', 'jrhodes@iut.univ-paris8.fr', '07.33.33.78.81', (SELECT id FROM university.users WHERE username = 'jrhodes'), 2, 40, 40), -- username : jrhodes 
-    ('Jacob', 'Chandler', 'jchandler@iut.univ-paris8.fr', '06.24.24.54.69', (SELECT id FROM university.users WHERE username = 'jchandler'), 2, 40, 40), -- username : jchandler 
-    ('Sabrina', 'Watson', 'swatson@iut.univ-paris8.fr', '07.77.65.87.48', (SELECT id FROM university.users WHERE username = 'swatson'), 2, 40, 40), -- username : swatson 
-    ('Michael', 'Tapia', 'mtapia@iut.univ-paris8.fr', '06.35.43.39.49', (SELECT id FROM university.users WHERE username = 'mtapia'), 2, 40, 40), -- username : mtapia 
-    ('Chelsea', 'Johnson', 'cjohnson1@iut.univ-paris8.fr', '07.53.75.86.02', (SELECT id FROM university.users WHERE username = 'cjohnson1'), 2, 40, 84), -- username : cjohnson1 
-    ('Rebecca', 'Brown', 'rbrown@iut.univ-paris8.fr', '07.37.06.04.86', (SELECT id FROM university.users WHERE username = 'rbrown'), 2, 40, 84), -- username : rbrown 
-    ('James', 'Soto', 'jsoto@iut.univ-paris8.fr', '07.33.44.53.04', (SELECT id FROM university.users WHERE username = 'jsoto'), 2, 40, 84), -- username : jsoto 
-    ('Jessica', 'Hunt', 'jhunt1@iut.univ-paris8.fr', '06.68.99.71.30', (SELECT id FROM university.users WHERE username = 'jhunt1'), 2, 40, 84), -- username : jhunt1 
-    ('Kathryn', 'Brown', 'kbrown1@iut.univ-paris8.fr', '07.18.32.47.70', (SELECT id FROM university.users WHERE username = 'kbrown1'), 2, 40, 84), -- username : kbrown1 
-    ('Robert', 'Roberts', 'rroberts@iut.univ-paris8.fr', '06.41.60.36.78', (SELECT id FROM university.users WHERE username = 'rroberts'), 2, 40, 84), -- username : rroberts 
-    ('Ashley', 'Cruz', 'acruz@iut.univ-paris8.fr', '07.70.87.36.68', (SELECT id FROM university.users WHERE username = 'acruz'), 2, 40, 84), -- username : acruz 
-    ('John', 'Shaw', 'jshaw@iut.univ-paris8.fr', '07.57.86.32.34', (SELECT id FROM university.users WHERE username = 'jshaw'), 2, 40, 84), -- username : jshaw 
-    ('Michael', 'Schaefer', 'mschaefer@iut.univ-paris8.fr', '06.64.39.48.87', (SELECT id FROM university.users WHERE username = 'mschaefer'), 2, 40, 84), -- username : mschaefer 
-    ('Douglas', 'Peters', 'dpeters@iut.univ-paris8.fr', '07.15.17.51.11', (SELECT id FROM university.users WHERE username = 'dpeters'), 2, 40, 84), -- username : dpeters 
-    ('Joseph', 'Boyd', 'jboyd@iut.univ-paris8.fr', '07.28.44.99.43', (SELECT id FROM university.users WHERE username = 'jboyd'), 2, 40, 128), -- username : jboyd 
-    ('Melissa', 'Lee', 'mlee@iut.univ-paris8.fr', '07.17.03.12.55', (SELECT id FROM university.users WHERE username = 'mlee'), 2, 40, 128), -- username : mlee 
-    ('Elizabeth', 'Hobbs', 'ehobbs@iut.univ-paris8.fr', '06.46.71.01.45', (SELECT id FROM university.users WHERE username = 'ehobbs'), 2, 40, 128), -- username : ehobbs 
-    ('John', 'Silva', 'jsilva@iut.univ-paris8.fr', '07.85.37.48.29', (SELECT id FROM university.users WHERE username = 'jsilva'), 2, 40, 128), -- username : jsilva 
-    ('Cheyenne', 'Miller', 'cmiller@iut.univ-paris8.fr', '07.97.27.46.15', (SELECT id FROM university.users WHERE username = 'cmiller'), 2, 40, 128), -- username : cmiller 
-    ('Bryce', 'Buchanan', 'bbuchanan@iut.univ-paris8.fr', '07.39.86.87.70', (SELECT id FROM university.users WHERE username = 'bbuchanan'), 2, 40, 128), -- username : bbuchanan 
-    ('Danielle', 'Villegas', 'dvillegas@iut.univ-paris8.fr', '07.32.79.17.40', (SELECT id FROM university.users WHERE username = 'dvillegas'), 2, 40, 128), -- username : dvillegas 
-    ('Ryan', 'Cortez', 'rcortez@iut.univ-paris8.fr', '07.95.08.82.85', (SELECT id FROM university.users WHERE username = 'rcortez'), 2, 40, 128), -- username : rcortez 
-    ('Jonathan', 'Dunn', 'jdunn1@iut.univ-paris8.fr', '07.38.74.22.24', (SELECT id FROM university.users WHERE username = 'jdunn1'), 2, 40, 128), -- username : jdunn1 
-    ('Kenneth', 'Davis', 'kdavis@iut.univ-paris8.fr', '06.47.67.18.86', (SELECT id FROM university.users WHERE username = 'kdavis'), 2, 40, 128), -- username : kdavis 
-    ('Joann', 'Griffith', 'jgriffith1@iut.univ-paris8.fr', '06.51.05.23.87', (SELECT id FROM university.users WHERE username = 'jgriffith1'), 2, 28, 28), -- username : jgriffith1 
-    ('Emily', 'Perkins', 'eperkins@iut.univ-paris8.fr', '06.46.03.70.03', (SELECT id FROM university.users WHERE username = 'eperkins'), 2, 28, 28), -- username : eperkins 
-    ('Carmen', 'Davenport', 'cdavenport@iut.univ-paris8.fr', '06.63.08.97.09', (SELECT id FROM university.users WHERE username = 'cdavenport'), 2, 28, 28), -- username : cdavenport 
-    ('Jessica', 'Fleming', 'jfleming@iut.univ-paris8.fr', '07.99.36.22.51', (SELECT id FROM university.users WHERE username = 'jfleming'), 2, 28, 28), -- username : jfleming 
-    ('Molly', 'Watkins', 'mwatkins@iut.univ-paris8.fr', '07.69.56.34.71', (SELECT id FROM university.users WHERE username = 'mwatkins'), 2, 28, 28), -- username : mwatkins 
-    ('Brent', 'Lewis', 'blewis1@iut.univ-paris8.fr', '07.34.24.37.78', (SELECT id FROM university.users WHERE username = 'blewis1'), 2, 28, 28), -- username : blewis1 
-    ('Stacy', 'Mathews', 'smathews1@iut.univ-paris8.fr', '07.74.96.56.17', (SELECT id FROM university.users WHERE username = 'smathews1'), 2, 28, 28), -- username : smathews1 
-    ('Tyler', 'Lee', 'tlee@iut.univ-paris8.fr', '06.19.65.81.55', (SELECT id FROM university.users WHERE username = 'tlee'), 2, 28, 28), -- username : tlee 
-    ('Carla', 'Avila', 'cavila@iut.univ-paris8.fr', '06.48.06.09.25', (SELECT id FROM university.users WHERE username = 'cavila'), 2, 28, 28), -- username : cavila 
-    ('Dominic', 'Miller', 'dmiller@iut.univ-paris8.fr', '07.83.54.65.29', (SELECT id FROM university.users WHERE username = 'dmiller'), 2, 28, 28), -- username : dmiller 
-    ('Tyler', 'Mcgee', 'tmcgee@iut.univ-paris8.fr', '06.96.77.66.78', (SELECT id FROM university.users WHERE username = 'tmcgee'), 2, 28, 72), -- username : tmcgee 
-    ('Annette', 'Mckinney', 'amckinney@iut.univ-paris8.fr', '06.16.96.75.73', (SELECT id FROM university.users WHERE username = 'amckinney'), 2, 28, 72), -- username : amckinney 
-    ('Dylan', 'Schneider', 'dschneider1@iut.univ-paris8.fr', '07.29.48.18.36', (SELECT id FROM university.users WHERE username = 'dschneider1'), 2, 28, 72), -- username : dschneider1 
-    ('Cynthia', 'Phillips', 'cphillips1@iut.univ-paris8.fr', '06.87.48.36.80', (SELECT id FROM university.users WHERE username = 'cphillips1'), 2, 28, 72), -- username : cphillips1 
-    ('Shannon', 'Martinez', 'smartinez2@iut.univ-paris8.fr', '07.22.84.87.78', (SELECT id FROM university.users WHERE username = 'smartinez2'), 2, 28, 72), -- username : smartinez2 
-    ('Nicholas', 'Johnson', 'njohnson@iut.univ-paris8.fr', '06.45.44.47.34', (SELECT id FROM university.users WHERE username = 'njohnson'), 2, 28, 72), -- username : njohnson 
-    ('Matthew', 'Hunter', 'mhunter@iut.univ-paris8.fr', '06.57.81.39.85', (SELECT id FROM university.users WHERE username = 'mhunter'), 2, 28, 72), -- username : mhunter 
-    ('James', 'King', 'jking@iut.univ-paris8.fr', '07.43.16.83.35', (SELECT id FROM university.users WHERE username = 'jking'), 2, 28, 72), -- username : jking 
-    ('Jose', 'Davis', 'jdavis1@iut.univ-paris8.fr', '06.22.86.64.62', (SELECT id FROM university.users WHERE username = 'jdavis1'), 2, 28, 72), -- username : jdavis1 
-    ('Jon', 'Graves', 'jgraves@iut.univ-paris8.fr', '07.22.19.89.87', (SELECT id FROM university.users WHERE username = 'jgraves'), 2, 28, 72), -- username : jgraves 
-    ('Johnny', 'Watson', 'jwatson1@iut.univ-paris8.fr', '06.27.00.26.76', (SELECT id FROM university.users WHERE username = 'jwatson1'), 2, 28, 116), -- username : jwatson1 
-    ('John', 'Lee', 'jlee1@iut.univ-paris8.fr', '06.89.67.01.47', (SELECT id FROM university.users WHERE username = 'jlee1'), 2, 28, 116), -- username : jlee1 
-    ('Monique', 'Medina', 'mmedina@iut.univ-paris8.fr', '07.51.98.05.13', (SELECT id FROM university.users WHERE username = 'mmedina'), 2, 28, 116), -- username : mmedina 
-    ('Elizabeth', 'Allen', 'eallen@iut.univ-paris8.fr', '07.64.89.46.19', (SELECT id FROM university.users WHERE username = 'eallen'), 2, 28, 116), -- username : eallen 
-    ('Deborah', 'Perry', 'dperry@iut.univ-paris8.fr', '07.39.25.04.31', (SELECT id FROM university.users WHERE username = 'dperry'), 2, 28, 116), -- username : dperry 
-    ('Christina', 'Huang', 'chuang@iut.univ-paris8.fr', '06.94.93.24.52', (SELECT id FROM university.users WHERE username = 'chuang'), 2, 28, 116), -- username : chuang 
-    ('Matthew', 'Johnson', 'mjohnson1@iut.univ-paris8.fr', '07.17.87.79.37', (SELECT id FROM university.users WHERE username = 'mjohnson1'), 2, 28, 116), -- username : mjohnson1 
-    ('Kendra', 'Armstrong', 'karmstrong@iut.univ-paris8.fr', '07.50.02.22.66', (SELECT id FROM university.users WHERE username = 'karmstrong'), 2, 28, 116), -- username : karmstrong 
-    ('Lisa', 'Luna', 'lluna@iut.univ-paris8.fr', '07.65.35.03.56', (SELECT id FROM university.users WHERE username = 'lluna'), 2, 28, 116), -- username : lluna 
-    ('Patrick', 'Harris', 'pharris@iut.univ-paris8.fr', '07.93.05.72.86', (SELECT id FROM university.users WHERE username = 'pharris'), 2, 28, 116), -- username : pharris 
-    ('Brandon', 'Smith', 'bsmith2@iut.univ-paris8.fr', '06.76.61.70.16', (SELECT id FROM university.users WHERE username = 'bsmith2'), 2, 29, 29), -- username : bsmith2 
-    ('Joseph', 'Brown', 'jbrown1@iut.univ-paris8.fr', '06.46.08.53.62', (SELECT id FROM university.users WHERE username = 'jbrown1'), 2, 29, 29), -- username : jbrown1 
-    ('April', 'Price', 'aprice@iut.univ-paris8.fr', '07.26.40.52.55', (SELECT id FROM university.users WHERE username = 'aprice'), 2, 29, 29), -- username : aprice 
-    ('Stacie', 'Lewis', 'slewis@iut.univ-paris8.fr', '06.39.52.07.92', (SELECT id FROM university.users WHERE username = 'slewis'), 2, 29, 29), -- username : slewis 
-    ('Leroy', 'Rhodes', 'lrhodes@iut.univ-paris8.fr', '06.43.38.62.42', (SELECT id FROM university.users WHERE username = 'lrhodes'), 2, 29, 29), -- username : lrhodes 
-    ('Mark', 'Davis', 'mdavis1@iut.univ-paris8.fr', '07.59.56.44.60', (SELECT id FROM university.users WHERE username = 'mdavis1'), 2, 29, 29), -- username : mdavis1 
-    ('Eric', 'Sanchez', 'esanchez@iut.univ-paris8.fr', '06.72.89.23.63', (SELECT id FROM university.users WHERE username = 'esanchez'), 2, 29, 29), -- username : esanchez 
-    ('Valerie', 'Jackson', 'vjackson@iut.univ-paris8.fr', '07.96.74.96.46', (SELECT id FROM university.users WHERE username = 'vjackson'), 2, 29, 29), -- username : vjackson 
-    ('Gordon', 'Lawrence', 'glawrence@iut.univ-paris8.fr', '06.28.38.41.38', (SELECT id FROM university.users WHERE username = 'glawrence'), 2, 29, 29), -- username : glawrence 
-    ('Todd', 'Wilson', 'twilson@iut.univ-paris8.fr', '06.63.49.35.49', (SELECT id FROM university.users WHERE username = 'twilson'), 2, 29, 29), -- username : twilson 
-    ('Dustin', 'Lynch', 'dlynch1@iut.univ-paris8.fr', '06.06.66.30.50', (SELECT id FROM university.users WHERE username = 'dlynch1'), 2, 29, 73), -- username : dlynch1 
-    ('Jamie', 'Bautista', 'jbautista@iut.univ-paris8.fr', '06.41.80.12.77', (SELECT id FROM university.users WHERE username = 'jbautista'), 2, 29, 73), -- username : jbautista 
-    ('Richard', 'Mccormick', 'rmccormick@iut.univ-paris8.fr', '06.09.61.40.83', (SELECT id FROM university.users WHERE username = 'rmccormick'), 2, 29, 73), -- username : rmccormick 
-    ('Matthew', 'Cox', 'mcox@iut.univ-paris8.fr', '07.56.50.29.82', (SELECT id FROM university.users WHERE username = 'mcox'), 2, 29, 73), -- username : mcox 
-    ('Steven', 'Wilson', 'swilson@iut.univ-paris8.fr', '07.46.45.69.73', (SELECT id FROM university.users WHERE username = 'swilson'), 2, 29, 73), -- username : swilson 
-    ('Daniel', 'Hendrix', 'dhendrix@iut.univ-paris8.fr', '07.64.34.27.70', (SELECT id FROM university.users WHERE username = 'dhendrix'), 2, 29, 73), -- username : dhendrix 
-    ('Shane', 'Cruz', 'scruz@iut.univ-paris8.fr', '07.68.50.84.79', (SELECT id FROM university.users WHERE username = 'scruz'), 2, 29, 73), -- username : scruz 
-    ('Anthony', 'Webster', 'awebster@iut.univ-paris8.fr', '07.79.43.55.74', (SELECT id FROM university.users WHERE username = 'awebster'), 2, 29, 73), -- username : awebster 
-    ('Kurt', 'Maxwell', 'kmaxwell1@iut.univ-paris8.fr', '07.73.39.61.40', (SELECT id FROM university.users WHERE username = 'kmaxwell1'), 2, 29, 73), -- username : kmaxwell1 
-    ('Jose', 'Perez', 'jperez@iut.univ-paris8.fr', '06.12.60.94.51', (SELECT id FROM university.users WHERE username = 'jperez'), 2, 29, 73), -- username : jperez 
-    ('Rebekah', 'Vasquez', 'rvasquez@iut.univ-paris8.fr', '07.26.64.30.55', (SELECT id FROM university.users WHERE username = 'rvasquez'), 2, 29, 117), -- username : rvasquez 
-    ('Terrence', 'Fowler', 'tfowler@iut.univ-paris8.fr', '07.71.85.59.97', (SELECT id FROM university.users WHERE username = 'tfowler'), 2, 29, 117), -- username : tfowler 
-    ('Suzanne', 'Carroll', 'scarroll@iut.univ-paris8.fr', '07.58.85.72.07', (SELECT id FROM university.users WHERE username = 'scarroll'), 2, 29, 117), -- username : scarroll 
-    ('Clinton', 'Carter', 'ccarter@iut.univ-paris8.fr', '07.10.93.59.08', (SELECT id FROM university.users WHERE username = 'ccarter'), 2, 29, 117), -- username : ccarter 
-    ('Matthew', 'Jackson', 'mjackson1@iut.univ-paris8.fr', '06.26.04.03.15', (SELECT id FROM university.users WHERE username = 'mjackson1'), 2, 29, 117), -- username : mjackson1 
-    ('Melanie', 'Johnson', 'mjohnson@iut.univ-paris8.fr', '06.79.39.31.00', (SELECT id FROM university.users WHERE username = 'mjohnson'), 2, 29, 117), -- username : mjohnson 
-    ('Matthew', 'Perkins', 'mperkins@iut.univ-paris8.fr', '07.86.82.25.11', (SELECT id FROM university.users WHERE username = 'mperkins'), 2, 29, 117), -- username : mperkins 
-    ('Stacy', 'White', 'swhite@iut.univ-paris8.fr', '06.99.37.91.37', (SELECT id FROM university.users WHERE username = 'swhite'), 2, 29, 117), -- username : swhite 
-    ('Nathan', 'Higgins', 'nhiggins@iut.univ-paris8.fr', '06.85.74.85.96', (SELECT id FROM university.users WHERE username = 'nhiggins'), 2, 29, 117), -- username : nhiggins 
-    ('John', 'Daniels', 'jdaniels@iut.univ-paris8.fr', '07.82.76.40.05', (SELECT id FROM university.users WHERE username = 'jdaniels'), 2, 29, 117), -- username : jdaniels 
-    ('Amy', 'Murphy', 'amurphy@iut.univ-paris8.fr', '06.94.70.56.27', (SELECT id FROM university.users WHERE username = 'amurphy'), 2, 28, 28), -- username : amurphy 
-    ('Bradley', 'Jacobs', 'bjacobs@iut.univ-paris8.fr', '07.62.57.51.36', (SELECT id FROM university.users WHERE username = 'bjacobs'), 2, 28, 28), -- username : bjacobs 
-    ('Todd', 'Bridges', 'tbridges@iut.univ-paris8.fr', '06.71.73.77.05', (SELECT id FROM university.users WHERE username = 'tbridges'), 2, 28, 28), -- username : tbridges 
-    ('Douglas', 'Espinoza', 'despinoza@iut.univ-paris8.fr', '07.44.58.02.15', (SELECT id FROM university.users WHERE username = 'despinoza'), 2, 28, 28), -- username : despinoza 
-    ('Joseph', 'Schultz', 'jschultz@iut.univ-paris8.fr', '06.98.82.57.15', (SELECT id FROM university.users WHERE username = 'jschultz'), 2, 28, 28), -- username : jschultz 
-    ('Dale', 'Ramos', 'dramos@iut.univ-paris8.fr', '06.68.16.10.78', (SELECT id FROM university.users WHERE username = 'dramos'), 2, 28, 28), -- username : dramos 
-    ('Jill', 'Holder', 'jholder@iut.univ-paris8.fr', '07.46.45.07.18', (SELECT id FROM university.users WHERE username = 'jholder'), 2, 28, 28), -- username : jholder 
-    ('Crystal', 'Arnold', 'carnold@iut.univ-paris8.fr', '07.91.33.02.76', (SELECT id FROM university.users WHERE username = 'carnold'), 2, 28, 28), -- username : carnold 
-    ('Kevin', 'Sanford', 'ksanford@iut.univ-paris8.fr', '06.87.33.74.55', (SELECT id FROM university.users WHERE username = 'ksanford'), 2, 28, 28), -- username : ksanford 
-    ('Tina', 'Tapia', 'ttapia@iut.univ-paris8.fr', '07.11.27.25.18', (SELECT id FROM university.users WHERE username = 'ttapia'), 2, 28, 28), -- username : ttapia 
-    ('Patricia', 'Miller', 'pmiller@iut.univ-paris8.fr', '07.75.15.95.43', (SELECT id FROM university.users WHERE username = 'pmiller'), 2, 28, 72), -- username : pmiller 
-    ('Eric', 'Brown', 'ebrown1@iut.univ-paris8.fr', '06.52.46.60.92', (SELECT id FROM university.users WHERE username = 'ebrown1'), 2, 28, 72), -- username : ebrown1 
-    ('James', 'Singh', 'jsingh@iut.univ-paris8.fr', '06.33.57.16.92', (SELECT id FROM university.users WHERE username = 'jsingh'), 2, 28, 72), -- username : jsingh 
-    ('Ryan', 'Howard', 'rhoward@iut.univ-paris8.fr', '07.07.62.55.35', (SELECT id FROM university.users WHERE username = 'rhoward'), 2, 28, 72), -- username : rhoward 
-    ('Jennifer', 'Long', 'jlong1@iut.univ-paris8.fr', '06.69.82.67.22', (SELECT id FROM university.users WHERE username = 'jlong1'), 2, 28, 72), -- username : jlong1 
-    ('Manuel', 'Mcmillan', 'mmcmillan@iut.univ-paris8.fr', '07.33.48.35.52', (SELECT id FROM university.users WHERE username = 'mmcmillan'), 2, 28, 72), -- username : mmcmillan 
-    ('Kylie', 'Barron', 'kbarron@iut.univ-paris8.fr', '07.66.31.39.98', (SELECT id FROM university.users WHERE username = 'kbarron'), 2, 28, 72), -- username : kbarron 
-    ('Jason', 'Peterson', 'jpeterson@iut.univ-paris8.fr', '07.88.54.05.46', (SELECT id FROM university.users WHERE username = 'jpeterson'), 2, 28, 72), -- username : jpeterson 
-    ('Katherine', 'Reyes', 'kreyes1@iut.univ-paris8.fr', '06.44.47.94.71', (SELECT id FROM university.users WHERE username = 'kreyes1'), 2, 28, 72), -- username : kreyes1 
-    ('Dylan', 'Campbell', 'dcampbell@iut.univ-paris8.fr', '06.84.20.93.53', (SELECT id FROM university.users WHERE username = 'dcampbell'), 2, 28, 72), -- username : dcampbell 
-    ('Walter', 'Morris', 'wmorris@iut.univ-paris8.fr', '06.86.43.62.12', (SELECT id FROM university.users WHERE username = 'wmorris'), 2, 28, 116), -- username : wmorris 
-    ('William', 'Mills', 'wmills@iut.univ-paris8.fr', '06.38.19.20.47', (SELECT id FROM university.users WHERE username = 'wmills'), 2, 28, 116), -- username : wmills 
-    ('Gregory', 'Case', 'gcase@iut.univ-paris8.fr', '07.90.86.07.97', (SELECT id FROM university.users WHERE username = 'gcase'), 2, 28, 116), -- username : gcase 
-    ('Lisa', 'Thomas', 'lthomas@iut.univ-paris8.fr', '06.16.85.77.82', (SELECT id FROM university.users WHERE username = 'lthomas'), 2, 28, 116), -- username : lthomas 
-    ('Katherine', 'Middleton', 'kmiddleton@iut.univ-paris8.fr', '06.69.32.44.03', (SELECT id FROM university.users WHERE username = 'kmiddleton'), 2, 28, 116), -- username : kmiddleton 
-    ('Kyle', 'Fowler', 'kfowler@iut.univ-paris8.fr', '06.56.85.16.09', (SELECT id FROM university.users WHERE username = 'kfowler'), 2, 28, 116), -- username : kfowler 
-    ('Tara', 'Brennan', 'tbrennan@iut.univ-paris8.fr', '06.56.32.01.86', (SELECT id FROM university.users WHERE username = 'tbrennan'), 2, 28, 116), -- username : tbrennan 
-    ('Tracy', 'Hernandez', 'thernandez1@iut.univ-paris8.fr', '06.71.47.54.96', (SELECT id FROM university.users WHERE username = 'thernandez1'), 2, 28, 116), -- username : thernandez1 
-    ('Elizabeth', 'Clay', 'eclay@iut.univ-paris8.fr', '06.19.95.69.30', (SELECT id FROM university.users WHERE username = 'eclay'), 2, 28, 116), -- username : eclay 
-    ('Evan', 'Young', 'eyoung@iut.univ-paris8.fr', '06.65.70.21.84', (SELECT id FROM university.users WHERE username = 'eyoung'), 2, 28, 116), -- username : eyoung 
-    ('Mary', 'Ross', 'mross@iut.univ-paris8.fr', '07.08.15.04.24', (SELECT id FROM university.users WHERE username = 'mross'), 2, 5, 5), -- username : mross 
-    ('Sheena', 'Roth', 'sroth@iut.univ-paris8.fr', '06.20.95.45.11', (SELECT id FROM university.users WHERE username = 'sroth'), 2, 5, 5), -- username : sroth 
-    ('Megan', 'Warren', 'mwarren@iut.univ-paris8.fr', '06.04.57.57.65', (SELECT id FROM university.users WHERE username = 'mwarren'), 2, 5, 5), -- username : mwarren 
-    ('Joe', 'Price', 'jprice@iut.univ-paris8.fr', '06.08.03.81.53', (SELECT id FROM university.users WHERE username = 'jprice'), 2, 5, 5), -- username : jprice 
-    ('Jeff', 'Pineda', 'jpineda@iut.univ-paris8.fr', '06.00.61.44.37', (SELECT id FROM university.users WHERE username = 'jpineda'), 2, 5, 5), -- username : jpineda 
-    ('Kathryn', 'Brandt', 'kbrandt@iut.univ-paris8.fr', '07.07.67.54.27', (SELECT id FROM university.users WHERE username = 'kbrandt'), 2, 5, 5), -- username : kbrandt 
-    ('Tracie', 'Robinson', 'trobinson@iut.univ-paris8.fr', '07.82.13.49.38', (SELECT id FROM university.users WHERE username = 'trobinson'), 2, 5, 5), -- username : trobinson 
-    ('Wanda', 'Garcia', 'wgarcia@iut.univ-paris8.fr', '07.80.57.45.36', (SELECT id FROM university.users WHERE username = 'wgarcia'), 2, 5, 5), -- username : wgarcia 
-    ('Kimberly', 'Stevens', 'kstevens@iut.univ-paris8.fr', '06.07.09.47.81', (SELECT id FROM university.users WHERE username = 'kstevens'), 2, 5, 5), -- username : kstevens 
-    ('Stephen', 'Barnett', 'sbarnett1@iut.univ-paris8.fr', '07.07.67.26.89', (SELECT id FROM university.users WHERE username = 'sbarnett1'), 2, 5, 5), -- username : sbarnett1 
-    ('Jacob', 'Crawford', 'jcrawford1@iut.univ-paris8.fr', '07.43.31.89.36', (SELECT id FROM university.users WHERE username = 'jcrawford1'), 2, 5, 49), -- username : jcrawford1 
-    ('Steven', 'Lee', 'slee@iut.univ-paris8.fr', '06.83.37.70.10', (SELECT id FROM university.users WHERE username = 'slee'), 2, 5, 49), -- username : slee 
-    ('Sydney', 'Bailey', 'sbailey@iut.univ-paris8.fr', '06.21.87.83.98', (SELECT id FROM university.users WHERE username = 'sbailey'), 2, 5, 49), -- username : sbailey 
-    ('Richard', 'Austin', 'raustin@iut.univ-paris8.fr', '07.41.68.33.68', (SELECT id FROM university.users WHERE username = 'raustin'), 2, 5, 49), -- username : raustin 
-    ('Rhonda', 'Campbell', 'rcampbell1@iut.univ-paris8.fr', '07.82.36.39.53', (SELECT id FROM university.users WHERE username = 'rcampbell1'), 2, 5, 49), -- username : rcampbell1 
-    ('Kimberly', 'Castro', 'kcastro1@iut.univ-paris8.fr', '06.88.28.73.64', (SELECT id FROM university.users WHERE username = 'kcastro1'), 2, 5, 49), -- username : kcastro1 
-    ('Christopher', 'Blair', 'cblair1@iut.univ-paris8.fr', '07.59.54.47.60', (SELECT id FROM university.users WHERE username = 'cblair1'), 2, 5, 49), -- username : cblair1 
-    ('Tom', 'Mcdowell', 'tmcdowell@iut.univ-paris8.fr', '06.27.78.83.43', (SELECT id FROM university.users WHERE username = 'tmcdowell'), 2, 5, 49), -- username : tmcdowell 
-    ('Nicole', 'Lyons', 'nlyons@iut.univ-paris8.fr', '06.88.98.96.99', (SELECT id FROM university.users WHERE username = 'nlyons'), 2, 5, 49), -- username : nlyons 
-    ('Nicole', 'Johnston', 'njohnston@iut.univ-paris8.fr', '06.79.13.36.23', (SELECT id FROM university.users WHERE username = 'njohnston'), 2, 5, 49), -- username : njohnston 
-    ('Kathryn', 'Anderson', 'kanderson@iut.univ-paris8.fr', '07.21.12.78.36', (SELECT id FROM university.users WHERE username = 'kanderson'), 2, 5, 93), -- username : kanderson 
-    ('Bryan', 'Santos', 'bsantos@iut.univ-paris8.fr', '06.85.29.91.20', (SELECT id FROM university.users WHERE username = 'bsantos'), 2, 5, 93), -- username : bsantos 
-    ('Shannon', 'Martinez', 'smartinez1@iut.univ-paris8.fr', '07.32.66.42.39', (SELECT id FROM university.users WHERE username = 'smartinez1'), 2, 5, 93), -- username : smartinez1 
-    ('Mary', 'Moreno', 'mmoreno1@iut.univ-paris8.fr', '07.87.78.16.57', (SELECT id FROM university.users WHERE username = 'mmoreno1'), 2, 5, 93), -- username : mmoreno1 
-    ('Brian', 'Cole', 'bcole@iut.univ-paris8.fr', '06.33.48.41.42', (SELECT id FROM university.users WHERE username = 'bcole'), 2, 5, 93), -- username : bcole 
-    ('Eric', 'Black', 'eblack@iut.univ-paris8.fr', '06.90.50.78.36', (SELECT id FROM university.users WHERE username = 'eblack'), 2, 5, 93), -- username : eblack 
-    ('Gina', 'Nguyen', 'gnguyen@iut.univ-paris8.fr', '06.42.03.33.68', (SELECT id FROM university.users WHERE username = 'gnguyen'), 2, 5, 93), -- username : gnguyen 
-    ('Marcia', 'Robbins', 'mrobbins@iut.univ-paris8.fr', '06.47.60.91.01', (SELECT id FROM university.users WHERE username = 'mrobbins'), 2, 5, 93), -- username : mrobbins 
-    ('Annette', 'Crawford', 'acrawford1@iut.univ-paris8.fr', '07.44.87.28.57', (SELECT id FROM university.users WHERE username = 'acrawford1'), 2, 5, 93), -- username : acrawford1 
-    ('Samantha', 'Campbell', 'scampbell@iut.univ-paris8.fr', '07.83.15.74.05', (SELECT id FROM university.users WHERE username = 'scampbell'), 2, 5,93) -- username : sscampbell 
-;
+    --1ère année
+    --A1
+    ('Lucas', 'Martin', (SELECT id FROM university.users WHERE username = 'hcohen'), 1, 1, 1),
+    ('Emma', 'Bernard', (SELECT id FROM university.users WHERE username = 'bhanma'), 1, 1, 1),
+    ('Léa', 'Dubois', (SELECT id FROM university.users WHERE username = 'cbrown1'), 1, 1, 1), 
+    -- A2
+    ('Gabriel', 'Thomas', (SELECT id FROM university.users WHERE username = 'jgross'), 1, 1, 2),
+    ('Jade', 'Robert', (SELECT id FROM university.users WHERE username = 'crussell'), 1, 1, 2),
+    ('Enzo', 'Richard', (SELECT id FROM university.users WHERE username = 'lgregory'), 1, 1, 2),
+    -- 2ème année
+    -- A1
+    ('Louise', 'Petit', (SELECT id FROM university.users WHERE username = 'vfisher'), 1, 2, 3),
+    ('Louis', 'Durand', (SELECT id FROM university.users WHERE username = 'avasquez1'), 1, 2, 3),
+    ('Anna', 'Leroy', (SELECT id FROM university.users WHERE username = 'lmiller'), 1, 2, 3),
+    --A2
+    ('Hugo', 'Moreau', (SELECT id FROM university.users WHERE username = 'jjackson3'), 1, 2, 4),
+    ('Manon', 'Simon', (SELECT id FROM university.users WHERE username = 'ahamilton'), 1, 2, 4),
+    ('Jules', 'Laurent', (SELECT id FROM university.users WHERE username = 'krobinson1'), 1, 2, 4)
+    ,--3ème année
+    --A1
+    ('Chloé', 'Lefevre', (SELECT id FROM university.users WHERE username = 'gsmith'), 1, 3, 5),
+    ('Nathan', 'Garcia', (SELECT id FROM university.users WHERE username = 'bnelson'), 1, 3, 5),
+    ('Camille', 'Michel', (SELECT id FROM university.users WHERE username = 'lolson'), 1, 3, 5),
+    --A2
+    ('Maël', 'Rodriguez', (SELECT id FROM university.users WHERE username = 'ssmith1'), 1, 3, 6),
+    ('Lina', 'Martinez', (SELECT id FROM university.users WHERE username = 'dwarner'), 1, 3, 6),
+    ('Raphaël', 'Boucher', (SELECT id FROM university.users WHERE username = 'kstewart'), 1, 3, 6),
 
--- students(@student_number,last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
--- FAKE for departement INFOCOM
-INSERT INTO university.students (last_name, first_name, mail, phone_number, user_id, department_id, group_id, subgroup_id)
-VALUES
-    ('Itadori', 'Yuji', 'iyuji@iut.univ-paris8.fr', '06.88.88.88.88', (SELECT id FROM university.users WHERE username = 'iyuji'), 3, 19, 19), -- username : iyuji 
-    ('Satoru', 'Gojo', 'sgojo@iut.univ-paris8.fr', '06.66.66.66.66', (SELECT id FROM university.users WHERE username = 'sgojo'), 3, 19, 19), -- username : sgojo 
-    ('Patricia', 'Woods', 'pwoods@iut.univ-paris8.fr', '07.79.23.15.60', (SELECT id FROM university.users WHERE username = 'pwoods'), 3, 19, 19), -- username : pwoods 
-    ('Benjamin', 'Collins', 'bcollins@iut.univ-paris8.fr', '06.80.82.67.55', (SELECT id FROM university.users WHERE username = 'bcollins'), 3, 19, 19), -- username : bcollins 
-    ('Frances', 'Wolf', 'fwolf@iut.univ-paris8.fr', '06.48.21.91.49', (SELECT id FROM university.users WHERE username = 'fwolf'), 3, 19, 19), -- username : fwolf 
-    ('Eric', 'Smith', 'esmith@iut.univ-paris8.fr', '06.51.38.19.47', (SELECT id FROM university.users WHERE username = 'esmith'), 3, 19, 19), -- username : esmith 
-    ('Jocelyn', 'Curtis', 'jcurtis1@iut.univ-paris8.fr', '06.45.20.40.43', (SELECT id FROM university.users WHERE username = 'jcurtis1'), 3, 19, 19), -- username : jcurtis1 
-    ('Michelle', 'Torres', 'mtorres@iut.univ-paris8.fr', '07.26.07.96.53', (SELECT id FROM university.users WHERE username = 'mtorres'), 3, 19, 19), -- username : mtorres 
-    ('Hannah', 'Lopez', 'hlopez@iut.univ-paris8.fr', '06.24.60.68.52', (SELECT id FROM university.users WHERE username = 'hlopez'), 3, 19, 19), -- username : hlopez 
-    ('Anthony', 'Peters', 'apeters1@iut.univ-paris8.fr', '07.12.50.58.91', (SELECT id FROM university.users WHERE username = 'apeters1'), 3, 19, 19), -- username : apeters1 
-    ('Walter', 'Patrick', 'wpatrick@iut.univ-paris8.fr', '07.09.35.73.41', (SELECT id FROM university.users WHERE username = 'wpatrick'), 3, 19, 63), -- username : wpatrick 
-    ('Marcus', 'Green', 'mgreen1@iut.univ-paris8.fr', '07.62.35.58.52', (SELECT id FROM university.users WHERE username = 'mgreen1'), 3, 19, 63), -- username : mgreen1 
-    ('Carolyn', 'Lopez', 'clopez@iut.univ-paris8.fr', '07.84.95.86.29', (SELECT id FROM university.users WHERE username = 'clopez'), 3, 19, 63), -- username : clopez 
-    ('Darlene', 'Wood', 'dwood@iut.univ-paris8.fr', '06.17.49.27.15', (SELECT id FROM university.users WHERE username = 'dwood'), 3, 19, 63), -- username : dwood 
-    ('Sandra', 'Shelton', 'sshelton@iut.univ-paris8.fr', '06.62.63.48.08', (SELECT id FROM university.users WHERE username = 'sshelton'), 3, 19, 63), -- username : sshelton 
-    ('Jorge', 'Richards', 'jrichards@iut.univ-paris8.fr', '06.87.48.73.68', (SELECT id FROM university.users WHERE username = 'jrichards'), 3, 19, 63), -- username : jrichards 
-    ('Ann', 'Cox', 'acox@iut.univ-paris8.fr', '07.64.98.24.40', (SELECT id FROM university.users WHERE username = 'acox'), 3, 19, 63), -- username : acox 
-    ('Anthony', 'Smith', 'asmith@iut.univ-paris8.fr', '07.66.99.65.46', (SELECT id FROM university.users WHERE username = 'asmith'), 3, 19, 63), -- username : asmith 
-    ('Donna', 'Lee', 'dlee@iut.univ-paris8.fr', '06.74.23.50.83', (SELECT id FROM university.users WHERE username = 'dlee'), 3, 19, 63), -- username : dlee 
-    ('Caroline', 'Jones', 'cjones1@iut.univ-paris8.fr', '06.62.86.15.36', (SELECT id FROM university.users WHERE username = 'cjones1'), 3, 19, 63), -- username : cjones1 
-    ('Matthew', 'Davis', 'mdavis@iut.univ-paris8.fr', '07.93.39.45.03', (SELECT id FROM university.users WHERE username = 'mdavis'), 3, 19, 107), -- username : mdavis 
-    ('Amy', 'Arnold', 'aarnold@iut.univ-paris8.fr', '07.17.80.55.05', (SELECT id FROM university.users WHERE username = 'aarnold'), 3, 19, 107), -- username : aarnold 
-    ('David', 'Dixon', 'ddixon@iut.univ-paris8.fr', '07.33.62.74.14', (SELECT id FROM university.users WHERE username = 'ddixon'), 3, 19, 107), -- username : ddixon 
-    ('Andres', 'Roberts', 'aroberts@iut.univ-paris8.fr', '07.80.11.07.58', (SELECT id FROM university.users WHERE username = 'aroberts'), 3, 19, 107), -- username : aroberts 
-    ('Edward', 'Ellis', 'eellis@iut.univ-paris8.fr', '07.53.27.88.68', (SELECT id FROM university.users WHERE username = 'eellis'), 3, 19, 107), -- username : eellis 
-    ('Jacob', 'Rose', 'jrose@iut.univ-paris8.fr', '06.39.49.05.85', (SELECT id FROM university.users WHERE username = 'jrose'), 3, 19, 107), -- username : jrose 
-    ('Patrick', 'Martinez', 'pmartinez@iut.univ-paris8.fr', '06.04.53.79.17', (SELECT id FROM university.users WHERE username = 'pmartinez'), 3, 19, 107), -- username : pmartinez 
-    ('Nichole', 'Lewis', 'nlewis@iut.univ-paris8.fr', '07.22.32.75.63', (SELECT id FROM university.users WHERE username = 'nlewis'), 3, 19, 107), -- username : nlewis 
-    ('Stephanie', 'Carlson', 'scarlson2@iut.univ-paris8.fr', '06.55.63.89.79', (SELECT id FROM university.users WHERE username = 'scarlson2'), 3, 19, 107), -- username : scarlson2 
-    ('Gary', 'Keller', 'gkeller@iut.univ-paris8.fr', '07.32.18.66.95', (SELECT id FROM university.users WHERE username = 'gkeller'), 3, 19, 107), -- username : gkeller 
-    ('Tina', 'Bowers', 'tbowers@iut.univ-paris8.fr', '06.00.41.80.28', (SELECT id FROM university.users WHERE username = 'tbowers'), 3, 21, 21), -- username : tbowers 
-    ('Kelli', 'George', 'kgeorge@iut.univ-paris8.fr', '07.41.26.75.25', (SELECT id FROM university.users WHERE username = 'kgeorge'), 3, 21, 21), -- username : kgeorge 
-    ('Laura', 'Rosales', 'lrosales@iut.univ-paris8.fr', '06.72.07.81.16', (SELECT id FROM university.users WHERE username = 'lrosales'), 3, 21, 21), -- username : lrosales 
-    ('Derrick', 'Chang', 'dchang@iut.univ-paris8.fr', '07.47.04.19.25', (SELECT id FROM university.users WHERE username = 'dchang'), 3, 21, 21), -- username : dchang 
-    ('Brent', 'Hernandez', 'bhernandez@iut.univ-paris8.fr', '07.38.51.91.91', (SELECT id FROM university.users WHERE username = 'bhernandez'), 3, 21, 21), -- username : bhernandez 
-    ('Kirsten', 'Bender', 'kbender@iut.univ-paris8.fr', '06.69.53.06.54', (SELECT id FROM university.users WHERE username = 'kbender'), 3, 21, 21), -- username : kbender 
-    ('Anna', 'Boyd', 'aboyd@iut.univ-paris8.fr', '06.94.01.49.19', (SELECT id FROM university.users WHERE username = 'aboyd'), 3, 21, 21), -- username : aboyd 
-    ('Catherine', 'Gutierrez', 'cgutierrez@iut.univ-paris8.fr', '07.19.19.25.74', (SELECT id FROM university.users WHERE username = 'cgutierrez'), 3, 21, 21), -- username : cgutierrez 
-    ('Elizabeth', 'Baker', 'ebaker@iut.univ-paris8.fr', '07.81.05.43.64', (SELECT id FROM university.users WHERE username = 'ebaker'), 3, 21, 21), -- username : ebaker 
-    ('Vanessa', 'Fitzpatrick', 'vfitzpatrick@iut.univ-paris8.fr', '06.98.00.59.39', (SELECT id FROM university.users WHERE username = 'vfitzpatrick'), 3, 21, 21), -- username : vfitzpatrick 
-    ('Tammy', 'Gonzales', 'tgonzales@iut.univ-paris8.fr', '07.59.93.59.80', (SELECT id FROM university.users WHERE username = 'tgonzales'), 3, 21, 65), -- username : tgonzales 
-    ('Brandon', 'Smith', 'bsmith1@iut.univ-paris8.fr', '07.37.30.15.39', (SELECT id FROM university.users WHERE username = 'bsmith1'), 3, 21, 65), -- username : bsmith1 
-    ('Jennifer', 'Jones', 'jjones@iut.univ-paris8.fr', '06.37.62.79.85', (SELECT id FROM university.users WHERE username = 'jjones'), 3, 21, 65), -- username : jjones 
-    ('Kevin', 'Hall', 'khall@iut.univ-paris8.fr', '06.82.71.83.02', (SELECT id FROM university.users WHERE username = 'khall'), 3, 21, 65), -- username : khall 
-    ('Andrew', 'Erickson', 'aerickson@iut.univ-paris8.fr', '06.83.64.22.67', (SELECT id FROM university.users WHERE username = 'aerickson'), 3, 21, 65), -- username : aerickson 
-    ('Jay', 'Chambers', 'jchambers@iut.univ-paris8.fr', '06.80.08.61.59', (SELECT id FROM university.users WHERE username = 'jchambers'), 3, 21, 65), -- username : jchambers 
-    ('Wendy', 'Fischer', 'wfischer@iut.univ-paris8.fr', '06.15.40.15.09', (SELECT id FROM university.users WHERE username = 'wfischer'), 3, 21, 65), -- username : wfischer 
-    ('Jennifer', 'Webb', 'jwebb@iut.univ-paris8.fr', '06.94.07.34.36', (SELECT id FROM university.users WHERE username = 'jwebb'), 3, 21, 65), -- username : jwebb 
-    ('Stephen', 'Smith', 'ssmith@iut.univ-paris8.fr', '07.23.16.54.88', (SELECT id FROM university.users WHERE username = 'ssmith'), 3, 21, 65), -- username : ssmith 
-    ('Jesus', 'Harrington', 'jharrington@iut.univ-paris8.fr', '07.95.44.30.43', (SELECT id FROM university.users WHERE username = 'jharrington'), 3, 21, 65), -- username : jharrington 
-    ('Lee', 'Sullivan', 'lsullivan@iut.univ-paris8.fr', '06.77.86.38.90', (SELECT id FROM university.users WHERE username = 'lsullivan'), 3, 21, 109), -- username : lsullivan 
-    ('Matthew', 'Weaver', 'mweaver@iut.univ-paris8.fr', '07.15.33.20.83', (SELECT id FROM university.users WHERE username = 'mweaver'), 3, 21, 109), -- username : mweaver 
-    ('Michael', 'Haney', 'mhaney@iut.univ-paris8.fr', '07.51.97.20.50', (SELECT id FROM university.users WHERE username = 'mhaney'), 3, 21, 109), -- username : mhaney 
-    ('Sarah', 'Martin', 'smartin@iut.univ-paris8.fr', '07.62.49.09.98', (SELECT id FROM university.users WHERE username = 'smartin'), 3, 21, 109), -- username : smartin 
-    ('George', 'Dorsey', 'gdorsey@iut.univ-paris8.fr', '06.48.78.97.38', (SELECT id FROM university.users WHERE username = 'gdorsey'), 3, 21, 109), -- username : gdorsey 
-    ('Jose', 'Griffith', 'jgriffith@iut.univ-paris8.fr', '06.13.26.97.84', (SELECT id FROM university.users WHERE username = 'jgriffith'), 3, 21, 109), -- username : jgriffith 
-    ('Kayla', 'Larson', 'klarson@iut.univ-paris8.fr', '06.95.44.59.80', (SELECT id FROM university.users WHERE username = 'klarson'), 3, 21, 109), -- username : klarson 
-    ('Steven', 'Liu', 'sliu@iut.univ-paris8.fr', '06.12.67.54.68', (SELECT id FROM university.users WHERE username = 'sliu'), 3, 21, 109), -- username : sliu 
-    ('Carlos', 'Savage', 'csavage@iut.univ-paris8.fr', '06.34.20.33.82', (SELECT id FROM university.users WHERE username = 'csavage'), 3, 21, 109), -- username : csavage 
-    ('Joseph', 'Horn', 'jhorn@iut.univ-paris8.fr', '07.07.88.51.07', (SELECT id FROM university.users WHERE username = 'jhorn'), 3, 21, 109), -- username : jhorn 
-    ('Robert', 'Harrington', 'rharrington@iut.univ-paris8.fr', '06.33.71.40.39', (SELECT id FROM university.users WHERE username = 'rharrington'), 3, 20, 20), -- username : rharrington 
-    ('Levi', 'Browning', 'lbrowning@iut.univ-paris8.fr', '07.88.29.29.64', (SELECT id FROM university.users WHERE username = 'lbrowning'), 3, 20, 20), -- username : lbrowning 
-    ('James', 'Stewart', 'jstewart1@iut.univ-paris8.fr', '07.68.74.94.78', (SELECT id FROM university.users WHERE username = 'jstewart1'), 3, 20, 20), -- username : jstewart1 
-    ('Kevin', 'Collins', 'kcollins@iut.univ-paris8.fr', '06.20.98.97.03', (SELECT id FROM university.users WHERE username = 'kcollins'), 3, 20, 20), -- username : kcollins 
-    ('Victoria', 'Pope', 'vpope@iut.univ-paris8.fr', '07.87.54.19.75', (SELECT id FROM university.users WHERE username = 'vpope'), 3, 20, 20), -- username : vpope 
-    ('Nicole', 'Henderson', 'nhenderson@iut.univ-paris8.fr', '06.60.49.65.17', (SELECT id FROM university.users WHERE username = 'nhenderson'), 3, 20, 20), -- username : nhenderson 
-    ('Troy', 'Blackwell', 'tblackwell@iut.univ-paris8.fr', '07.37.31.30.10', (SELECT id FROM university.users WHERE username = 'tblackwell'), 3, 20, 20), -- username : tblackwell 
-    ('Jonathan', 'Cordova', 'jcordova@iut.univ-paris8.fr', '07.11.34.92.59', (SELECT id FROM university.users WHERE username = 'jcordova'), 3, 20, 20), -- username : jcordova 
-    ('Andrea', 'Farmer', 'afarmer@iut.univ-paris8.fr', '07.05.09.16.66', (SELECT id FROM university.users WHERE username = 'afarmer'), 3, 20, 20), -- username : afarmer 
-    ('Brian', 'Jones', 'bjones1@iut.univ-paris8.fr', '06.39.47.41.05', (SELECT id FROM university.users WHERE username = 'bjones1'), 3, 20, 20), -- username : bjones1 
-    ('Lisa', 'Martinez', 'lmartinez@iut.univ-paris8.fr', '06.30.83.11.17', (SELECT id FROM university.users WHERE username = 'lmartinez'), 3, 20, 64), -- username : lmartinez 
-    ('Kathy', 'Steele', 'ksteele@iut.univ-paris8.fr', '06.23.62.74.92', (SELECT id FROM university.users WHERE username = 'ksteele'), 3, 20, 64), -- username : ksteele 
-    ('Michael', 'Simmons', 'msimmons@iut.univ-paris8.fr', '06.98.76.28.85', (SELECT id FROM university.users WHERE username = 'msimmons'), 3, 20, 64), -- username : msimmons 
-    ('William', 'Marshall', 'wmarshall@iut.univ-paris8.fr', '06.56.78.73.36', (SELECT id FROM university.users WHERE username = 'wmarshall'), 3, 20, 64), -- username : wmarshall 
-    ('Nicole', 'Brown', 'nbrown1@iut.univ-paris8.fr', '06.44.07.87.21', (SELECT id FROM university.users WHERE username = 'nbrown1'), 3, 20, 64), -- username : nbrown1 
-    ('Paul', 'Blair', 'pblair@iut.univ-paris8.fr', '06.17.58.51.46', (SELECT id FROM university.users WHERE username = 'pblair'), 3, 20, 64), -- username : pblair 
-    ('Sara', 'Yu', 'syu1@iut.univ-paris8.fr', '07.67.63.22.99', (SELECT id FROM university.users WHERE username = 'syu1'), 3, 20, 64), -- username : syu1 
-    ('Nicole', 'Thompson', 'nthompson@iut.univ-paris8.fr', '07.68.99.18.51', (SELECT id FROM university.users WHERE username = 'nthompson'), 3, 20, 64), -- username : nthompson 
-    ('Jennifer', 'Huff', 'jhuff@iut.univ-paris8.fr', '07.01.28.77.01', (SELECT id FROM university.users WHERE username = 'jhuff'), 3, 20, 64), -- username : jhuff 
-    ('Rebecca', 'Martinez', 'rmartinez@iut.univ-paris8.fr', '07.47.83.58.61', (SELECT id FROM university.users WHERE username = 'rmartinez'), 3, 20, 64), -- username : rmartinez 
-    ('Joseph', 'Phillips', 'jphillips@iut.univ-paris8.fr', '07.69.73.85.06', (SELECT id FROM university.users WHERE username = 'jphillips'), 3, 20, 108), -- username : jphillips 
-    ('Lisa', 'Giles', 'lgiles@iut.univ-paris8.fr', '06.04.75.60.45', (SELECT id FROM university.users WHERE username = 'lgiles'), 3, 20, 108), -- username : lgiles 
-    ('Samantha', 'Johnson', 'sjohnson@iut.univ-paris8.fr', '07.72.97.62.69', (SELECT id FROM university.users WHERE username = 'sjohnson'), 3, 20, 108), -- username : sjohnson 
-    ('Joseph', 'Austin', 'jaustin@iut.univ-paris8.fr', '07.87.18.33.38', (SELECT id FROM university.users WHERE username = 'jaustin'), 3, 20, 108), -- username : jaustin 
-    ('Justin', 'Anthony', 'janthony@iut.univ-paris8.fr', '07.86.77.49.39', (SELECT id FROM university.users WHERE username = 'janthony'), 3, 20, 108), -- username : janthony 
-    ('Calvin', 'Whitaker', 'cwhitaker@iut.univ-paris8.fr', '07.62.60.87.79', (SELECT id FROM university.users WHERE username = 'cwhitaker'), 3, 20, 108), -- username : cwhitaker 
-    ('Scott', 'Ward', 'sward@iut.univ-paris8.fr', '06.53.00.03.14', (SELECT id FROM university.users WHERE username = 'sward'), 3, 20, 108), -- username : sward 
-    ('Anne', 'Lawson', 'alawson@iut.univ-paris8.fr', '06.08.60.63.97', (SELECT id FROM university.users WHERE username = 'alawson'), 3, 20, 108), -- username : alawson 
-    ('Samuel', 'Jensen', 'sjensen@iut.univ-paris8.fr', '06.36.74.96.13', (SELECT id FROM university.users WHERE username = 'sjensen'), 3, 20, 108), -- username : sjensen 
-    ('Michele', 'Taylor', 'mtaylor@iut.univ-paris8.fr', '06.78.70.18.10', (SELECT id FROM university.users WHERE username = 'mtaylor'), 3, 20, 108), -- username : mtaylor 
-    ('Katie', 'Hoffman', 'khoffman@iut.univ-paris8.fr', '06.85.18.45.01', (SELECT id FROM university.users WHERE username = 'khoffman'), 3, 7, 7), -- username : khoffman 
-    ('Christopher', 'Decker', 'cdecker@iut.univ-paris8.fr', '06.06.71.81.47', (SELECT id FROM university.users WHERE username = 'cdecker'), 3, 7, 7), -- username : cdecker 
-    ('John', 'Stephenson', 'jstephenson@iut.univ-paris8.fr', '06.26.14.81.30', (SELECT id FROM university.users WHERE username = 'jstephenson'), 3, 7, 7), -- username : jstephenson 
-    ('Aaron', 'Peterson', 'apeterson@iut.univ-paris8.fr', '06.87.25.98.17', (SELECT id FROM university.users WHERE username = 'apeterson'), 3, 7, 7), -- username : apeterson 
-    ('Scott', 'Washington', 'swashington@iut.univ-paris8.fr', '06.26.12.43.38', (SELECT id FROM university.users WHERE username = 'swashington'), 3, 7, 7), -- username : swashington 
-    ('Alyssa', 'Hansen', 'ahansen@iut.univ-paris8.fr', '07.43.12.82.41', (SELECT id FROM university.users WHERE username = 'ahansen'), 3, 7, 7), -- username : ahansen 
-    ('Tina', 'Price', 'tprice@iut.univ-paris8.fr', '07.23.45.07.94', (SELECT id FROM university.users WHERE username = 'tprice'), 3, 7, 7), -- username : tprice 
-    ('Craig', 'Jackson', 'cjackson1@iut.univ-paris8.fr', '07.64.16.00.78', (SELECT id FROM university.users WHERE username = 'cjackson1'), 3, 7, 7), -- username : cjackson1 
-    ('Joe', 'Rice', 'jrice@iut.univ-paris8.fr', '06.12.81.68.06', (SELECT id FROM university.users WHERE username = 'jrice'), 3, 7, 7), -- username : jrice 
-    ('Lisa', 'Hanson', 'lhanson@iut.univ-paris8.fr', '06.00.05.86.59', (SELECT id FROM university.users WHERE username = 'lhanson'), 3, 7, 7), -- username : lhanson 
-    ('Tonya', 'Olson', 'tolson1@iut.univ-paris8.fr', '07.74.68.98.26', (SELECT id FROM university.users WHERE username = 'tolson1'), 3, 7, 95), -- username : tolson1 
-    ('Michael', 'Hays', 'mhays@iut.univ-paris8.fr', '06.69.01.02.11', (SELECT id FROM university.users WHERE username = 'mhays'), 3, 7, 95), -- username : mhays 
-    ('Kristin', 'Mcdonald', 'kmcdonald@iut.univ-paris8.fr', '07.24.27.76.05', (SELECT id FROM university.users WHERE username = 'kmcdonald'), 3, 7, 95), -- username : kmcdonald 
-    ('Micheal', 'Wade', 'mwade@iut.univ-paris8.fr', '06.83.33.95.24', (SELECT id FROM university.users WHERE username = 'mwade'), 3, 7, 95), -- username : mwade 
-    ('William', 'Sanchez', 'wsanchez1@iut.univ-paris8.fr', '06.72.52.92.82', (SELECT id FROM university.users WHERE username = 'wsanchez1'), 3, 7, 95), -- username : wsanchez1 
-    ('Colleen', 'Willis', 'cwillis@iut.univ-paris8.fr', '07.15.37.62.39', (SELECT id FROM university.users WHERE username = 'cwillis'), 3, 7, 95), -- username : cwillis 
-    ('Andrew', 'Adams', 'aadams@iut.univ-paris8.fr', '06.26.74.71.34', (SELECT id FROM university.users WHERE username = 'aadams'), 3, 7, 95), -- username : aadams 
-    ('Kyle', 'Wood', 'kwood@iut.univ-paris8.fr', '07.23.84.17.98', (SELECT id FROM university.users WHERE username = 'kwood'), 3, 7, 95), -- username : kwood 
-    ('Robert', 'Smith', 'rsmith1@iut.univ-paris8.fr', '07.00.29.30.89', (SELECT id FROM university.users WHERE username = 'rsmith1'), 3, 7, 95), -- username : rsmith1 
-    ('Timothy', 'Cole', 'tcole@iut.univ-paris8.fr', '07.65.96.19.39', (SELECT id FROM university.users WHERE username = 'tcole'), 3, 7, 95), -- username : tcole 
-    ('Dawn', 'Lynch', 'dlynch@iut.univ-paris8.fr', '06.77.44.48.86', (SELECT id FROM university.users WHERE username = 'dlynch'), 3, 7, 95), -- username : dlynch 
-    ('Brandon', 'Jones', 'bjones@iut.univ-paris8.fr', '06.10.75.43.69', (SELECT id FROM university.users WHERE username = 'bjones'), 3, 7, 95), -- username : bjones 
-    ('Jesse', 'Nelson', 'jnelson@iut.univ-paris8.fr', '07.44.92.62.77', (SELECT id FROM university.users WHERE username = 'jnelson'), 3, 7, 95), -- username : jnelson 
-    ('Laura', 'Rich', 'lrich@iut.univ-paris8.fr', '07.21.25.48.85', (SELECT id FROM university.users WHERE username = 'lrich'), 3, 7, 95), -- username : lrich 
-    ('Jeffrey', 'Underwood', 'junderwood@iut.univ-paris8.fr', '07.46.42.58.72', (SELECT id FROM university.users WHERE username = 'junderwood'), 3, 7, 95), -- username : junderwood 
-    ('Brittany', 'Gonzalez', 'bgonzalez@iut.univ-paris8.fr', '07.91.90.14.45', (SELECT id FROM university.users WHERE username = 'bgonzalez'), 3, 7, 95), -- username : bgonzalez 
-    ('Joshua', 'Bennett', 'jbennett@iut.univ-paris8.fr', '07.14.84.40.83', (SELECT id FROM university.users WHERE username = 'jbennett'), 3, 7, 95), -- username : jbennett 
-    ('Sonia', 'Hatfield', 'shatfield@iut.univ-paris8.fr', '06.09.16.48.93', (SELECT id FROM university.users WHERE username = 'shatfield'), 3, 7, 95), -- username : shatfield 
-    ('Margaret', 'Nunez', 'mnunez@iut.univ-paris8.fr', '06.01.25.69.33', (SELECT id FROM university.users WHERE username = 'mnunez'), 3, 7, 95), -- username : mnunez 
-    ('Shawn', 'Johnston', 'sjohnston1@iut.univ-paris8.fr', '07.52.72.82.70', (SELECT id FROM university.users WHERE username = 'sjohnston1'), 3, 7, 95), -- username : sjohnston1 
-    ('Kim', 'Noble', 'knoble@iut.univ-paris8.fr', '07.83.89.49.81', (SELECT id FROM university.users WHERE username = 'knoble'), 3, 8, 8), -- username : knoble 
-    ('Douglas', 'Thomas', 'dthomas@iut.univ-paris8.fr', '06.91.41.11.57', (SELECT id FROM university.users WHERE username = 'dthomas'), 3, 8, 8), -- username : dthomas 
-    ('Tammy', 'Kim', 'tkim@iut.univ-paris8.fr', '07.95.53.76.89', (SELECT id FROM university.users WHERE username = 'tkim'), 3, 8, 8), -- username : tkim 
-    ('Rodney', 'Riley', 'rriley@iut.univ-paris8.fr', '07.91.56.33.39', (SELECT id FROM university.users WHERE username = 'rriley'), 3, 8, 8), -- username : rriley 
-    ('Nicole', 'Richardson', 'nrichardson@iut.univ-paris8.fr', '07.29.68.39.70', (SELECT id FROM university.users WHERE username = 'nrichardson'), 3, 8, 8), -- username : nrichardson 
-    ('Chase', 'Howard', 'choward@iut.univ-paris8.fr', '07.96.73.45.91', (SELECT id FROM university.users WHERE username = 'choward'), 3, 8, 8), -- username : choward 
-    ('John', 'Walters', 'jwalters@iut.univ-paris8.fr', '06.31.56.06.54', (SELECT id FROM university.users WHERE username = 'jwalters'), 3, 8, 8), -- username : jwalters 
-    ('Aaron', 'Mays', 'amays@iut.univ-paris8.fr', '06.00.26.81.03', (SELECT id FROM university.users WHERE username = 'amays'), 3, 8, 8), -- username : amays 
-    ('Traci', 'Ruiz', 'truiz@iut.univ-paris8.fr', '07.83.10.55.05', (SELECT id FROM university.users WHERE username = 'truiz'), 3, 8, 8), -- username : truiz 
-    ('Kenneth', 'Golden', 'kgolden@iut.univ-paris8.fr', '07.03.76.31.20', (SELECT id FROM university.users WHERE username = 'kgolden'), 3, 8, 8), -- username : kgolden 
-    ('Rachel', 'Smith', 'rsmith@iut.univ-paris8.fr', '07.35.52.10.48', (SELECT id FROM university.users WHERE username = 'rsmith'), 3, 8, 52), -- username : rsmith 
-    ('Stanley', 'Mathews', 'smathews@iut.univ-paris8.fr', '07.74.18.16.42', (SELECT id FROM university.users WHERE username = 'smathews'), 3, 8, 52), -- username : smathews 
-    ('Cesar', 'Mullen', 'cmullen@iut.univ-paris8.fr', '06.00.17.38.52', (SELECT id FROM university.users WHERE username = 'cmullen'), 3, 8, 52), -- username : cmullen 
-    ('Claire', 'Giles', 'cgiles@iut.univ-paris8.fr', '06.46.54.86.52', (SELECT id FROM university.users WHERE username = 'cgiles'), 3, 8, 52), -- username : cgiles 
-    ('Sean', 'Armstrong', 'sarmstrong@iut.univ-paris8.fr', '06.79.74.33.79', (SELECT id FROM university.users WHERE username = 'sarmstrong'), 3, 8, 52), -- username : sarmstrong 
-    ('Christopher', 'Vazquez', 'cvazquez@iut.univ-paris8.fr', '06.54.18.60.01', (SELECT id FROM university.users WHERE username = 'cvazquez'), 3, 8, 52), -- username : cvazquez 
-    ('Alexander', 'Guzman', 'aguzman@iut.univ-paris8.fr', '07.34.49.30.60', (SELECT id FROM university.users WHERE username = 'aguzman'), 3, 8, 52), -- username : aguzman 
-    ('Stuart', 'Ramos', 'sramos@iut.univ-paris8.fr', '07.18.84.65.89', (SELECT id FROM university.users WHERE username = 'sramos'), 3, 8, 52), -- username : sramos 
-    ('Mary', 'Perez', 'mperez@iut.univ-paris8.fr', '07.01.45.31.44', (SELECT id FROM university.users WHERE username = 'mperez'), 3, 8, 52), -- username : mperez 
-    ('Thomas', 'Olson', 'tolson@iut.univ-paris8.fr', '07.56.49.69.85', (SELECT id FROM university.users WHERE username = 'tolson'), 3, 8, 52), -- username : tolson 
-    ('Robert', 'Thompson', 'rthompson@iut.univ-paris8.fr', '06.75.50.80.19', (SELECT id FROM university.users WHERE username = 'rthompson'), 3, 8, 96), -- username : rthompson 
-    ('Anna', 'Miller', 'amiller@iut.univ-paris8.fr', '06.60.51.52.79', (SELECT id FROM university.users WHERE username = 'amiller'), 3, 8, 96), -- username : amiller 
-    ('Jeffery', 'Evans', 'jevans@iut.univ-paris8.fr', '07.41.06.90.72', (SELECT id FROM university.users WHERE username = 'jevans'), 3, 8, 96), -- username : jevans 
-    ('Wendy', 'Coleman', 'wcoleman@iut.univ-paris8.fr', '06.04.49.04.29', (SELECT id FROM university.users WHERE username = 'wcoleman'), 3, 8, 96), -- username : wcoleman 
-    ('Jodi', 'Campbell', 'jcampbell@iut.univ-paris8.fr', '07.72.14.00.47', (SELECT id FROM university.users WHERE username = 'jcampbell'), 3, 8, 96), -- username : jcampbell 
-    ('Traci', 'Krueger', 'tkrueger@iut.univ-paris8.fr', '06.13.46.53.56', (SELECT id FROM university.users WHERE username = 'tkrueger'), 3, 8, 96), -- username : tkrueger 
-    ('Jack', 'Dunn', 'jdunn@iut.univ-paris8.fr', '07.85.58.25.78', (SELECT id FROM university.users WHERE username = 'jdunn'), 3, 8, 96), -- username : jdunn 
-    ('Deborah', 'Wilson', 'dwilson@iut.univ-paris8.fr', '07.63.67.25.57', (SELECT id FROM university.users WHERE username = 'dwilson'), 3, 8, 96), -- username : dwilson 
-    ('Philip', 'Robinson', 'probinson@iut.univ-paris8.fr', '07.25.95.24.50', (SELECT id FROM university.users WHERE username = 'probinson'), 3, 8, 96), -- username : probinson 
-    ('Anna', 'Wilson', 'awilson1@iut.univ-paris8.fr', '07.83.12.61.59', (SELECT id FROM university.users WHERE username = 'awilson1'), 3, 8, 96), -- username : awilson1 
-    ('Troy', 'Mason', 'tmason@iut.univ-paris8.fr', '07.97.28.22.59', (SELECT id FROM university.users WHERE username = 'tmason'), 3, 9, 9), -- username : tmason 
-    ('Ashley', 'Ray', 'aray@iut.univ-paris8.fr', '07.32.82.33.23', (SELECT id FROM university.users WHERE username = 'aray'), 3, 9, 9), -- username : aray 
-    ('Kimberly', 'Chapman', 'kchapman@iut.univ-paris8.fr', '07.75.94.12.23', (SELECT id FROM university.users WHERE username = 'kchapman'), 3, 9, 9), -- username : kchapman 
-    ('Brett', 'Gray', 'bgray@iut.univ-paris8.fr', '07.39.09.20.38', (SELECT id FROM university.users WHERE username = 'bgray'), 3, 9, 9), -- username : bgray 
-    ('Dawn', 'Horn', 'dhorn@iut.univ-paris8.fr', '07.76.91.91.95', (SELECT id FROM university.users WHERE username = 'dhorn'), 3, 9, 9), -- username : dhorn 
-    ('Emily', 'Hernandez', 'ehernandez@iut.univ-paris8.fr', '06.53.87.21.91', (SELECT id FROM university.users WHERE username = 'ehernandez'), 3, 9, 9), -- username : ehernandez 
-    ('John', 'Stewart', 'jstewart@iut.univ-paris8.fr', '07.45.59.82.00', (SELECT id FROM university.users WHERE username = 'jstewart'), 3, 9, 9), -- username : jstewart 
-    ('Michael', 'Heath', 'mheath@iut.univ-paris8.fr', '07.72.00.81.73', (SELECT id FROM university.users WHERE username = 'mheath'), 3, 9, 9), -- username : mheath 
-    ('Julia', 'Long', 'jlong@iut.univ-paris8.fr', '07.17.79.62.63', (SELECT id FROM university.users WHERE username = 'jlong'), 3, 9, 9), -- username : jlong 
-    ('Wanda', 'Cabrera', 'wcabrera@iut.univ-paris8.fr', '07.67.00.57.26', (SELECT id FROM university.users WHERE username = 'wcabrera'), 3, 9, 9), -- username : wcabrera 
-    ('Michelle', 'Gordon', 'mgordon@iut.univ-paris8.fr', '07.68.72.40.68', (SELECT id FROM university.users WHERE username = 'mgordon'), 3, 9, 53), -- username : mgordon 
-    ('Mindy', 'Fisher', 'mfisher@iut.univ-paris8.fr', '06.04.75.42.27', (SELECT id FROM university.users WHERE username = 'mfisher'), 3, 9, 53), -- username : mfisher 
-    ('Mariah', 'Mckinney', 'mmckinney@iut.univ-paris8.fr', '07.84.50.35.63', (SELECT id FROM university.users WHERE username = 'mmckinney'), 3, 9, 53), -- username : mmckinney 
-    ('Ralph', 'Graham', 'rgraham@iut.univ-paris8.fr', '06.12.71.68.56', (SELECT id FROM university.users WHERE username = 'rgraham'), 3, 9, 53), -- username : rgraham 
-    ('Paul', 'Steele', 'psteele@iut.univ-paris8.fr', '07.94.88.18.25', (SELECT id FROM university.users WHERE username = 'psteele'), 3, 9, 53), -- username : psteele 
-    ('Stephanie', 'Mcgee', 'smcgee@iut.univ-paris8.fr', '06.74.55.42.13', (SELECT id FROM university.users WHERE username = 'smcgee'), 3, 9, 53), -- username : smcgee 
-    ('Jill', 'Smith', 'jsmith1@iut.univ-paris8.fr', '06.61.52.61.52', (SELECT id FROM university.users WHERE username = 'jsmith1'), 3, 9, 53), -- username : jsmith1 
-    ('Anna', 'Jones', 'ajones@iut.univ-paris8.fr', '06.60.77.61.28', (SELECT id FROM university.users WHERE username = 'ajones'), 3, 9, 53), -- username : ajones 
-    ('Tim', 'Turner', 'tturner@iut.univ-paris8.fr', '06.85.95.53.03', (SELECT id FROM university.users WHERE username = 'tturner'), 3, 9, 53), -- username : tturner 
-    ('Sheri', 'Mcclain', 'smcclain@iut.univ-paris8.fr', '07.95.27.05.78', (SELECT id FROM university.users WHERE username = 'smcclain'), 3, 9, 53), -- username : smcclain 
-    ('Rachel', 'Fry', 'rfry@iut.univ-paris8.fr', '06.38.90.52.72', (SELECT id FROM university.users WHERE username = 'rfry'), 3, 9, 97), -- username : rfry 
-    ('Eric', 'Sullivan', 'esullivan@iut.univ-paris8.fr', '07.60.18.94.83', (SELECT id FROM university.users WHERE username = 'esullivan'), 3, 9, 97), -- username : esullivan 
-    ('Michele', 'Harmon', 'mharmon@iut.univ-paris8.fr', '06.56.15.53.43', (SELECT id FROM university.users WHERE username = 'mharmon'), 3, 9, 97), -- username : mharmon 
-    ('Jennifer', 'Gill', 'jgill@iut.univ-paris8.fr', '06.42.34.71.39', (SELECT id FROM university.users WHERE username = 'jgill'), 3, 9, 97), -- username : jgill 
-    ('Vincent', 'Sutton', 'vsutton@iut.univ-paris8.fr', '06.94.87.70.47', (SELECT id FROM university.users WHERE username = 'vsutton'), 3, 9, 97), -- username : vsutton 
-    ('Tony', 'Mitchell', 'tmitchell@iut.univ-paris8.fr', '07.14.25.85.49', (SELECT id FROM university.users WHERE username = 'tmitchell'), 3, 9, 97), -- username : tmitchell 
-    ('Nicole', 'Mcdaniel', 'nmcdaniel@iut.univ-paris8.fr', '06.59.86.64.00', (SELECT id FROM university.users WHERE username = 'nmcdaniel'), 3, 9, 97), -- username : nmcdaniel 
-    ('Nicole', 'Powell', 'npowell@iut.univ-paris8.fr', '07.63.82.13.16', (SELECT id FROM university.users WHERE username = 'npowell'), 3, 9, 97), -- username : npowell 
-    ('Virginia', 'Hale', 'vhale@iut.univ-paris8.fr', '07.84.72.10.93', (SELECT id FROM university.users WHERE username = 'vhale'), 3, 9, 97), -- username : vhale 
-    ('Kenneth', 'Smith', 'ksmith@iut.univ-paris8.fr', '06.64.08.74.61', (SELECT id FROM university.users WHERE username = 'ksmith'), 3, 9, 97), -- username : ksmith 
-    ('Samantha', 'Perez', 'sperez@iut.univ-paris8.fr', '07.07.25.22.58', (SELECT id FROM university.users WHERE username = 'sperez'), 3, 41, 41), -- username : sperez 
-    ('Christopher', 'Walsh', 'cwalsh@iut.univ-paris8.fr', '07.11.06.90.40', (SELECT id FROM university.users WHERE username = 'cwalsh'), 3, 41, 41), -- username : cwalsh 
-    ('Angela', 'Melendez', 'amelendez@iut.univ-paris8.fr', '07.39.49.77.92', (SELECT id FROM university.users WHERE username = 'amelendez'), 3, 41, 41), -- username : amelendez 
-    ('Pam', 'Wong', 'pwong@iut.univ-paris8.fr', '07.66.00.76.22', (SELECT id FROM university.users WHERE username = 'pwong'), 3, 41, 41), -- username : pwong 
-    ('Phillip', 'Barker', 'pbarker@iut.univ-paris8.fr', '06.83.32.41.49', (SELECT id FROM university.users WHERE username = 'pbarker'), 3, 41, 41), -- username : pbarker 
-    ('Alejandro', 'Edwards', 'aedwards@iut.univ-paris8.fr', '06.19.32.75.27', (SELECT id FROM university.users WHERE username = 'aedwards'), 3, 41, 41), -- username : aedwards 
-    ('Evan', 'Johnston', 'ejohnston@iut.univ-paris8.fr', '06.96.65.01.33', (SELECT id FROM university.users WHERE username = 'ejohnston'), 3, 41, 41), -- username : ejohnston 
-    ('Jennifer', 'Martin', 'jmartin@iut.univ-paris8.fr', '07.19.48.10.80', (SELECT id FROM university.users WHERE username = 'jmartin'), 3, 41, 41), -- username : jmartin 
-    ('Kathleen', 'Lara', 'klara@iut.univ-paris8.fr', '07.29.71.41.15', (SELECT id FROM university.users WHERE username = 'klara'), 3, 41, 41), -- username : klara 
-    ('Kerry', 'Nolan', 'knolan1@iut.univ-paris8.fr', '06.45.79.89.47', (SELECT id FROM university.users WHERE username = 'knolan1'), 3, 41, 41), -- username : knolan1 
-    ('Denise', 'Evans', 'devans@iut.univ-paris8.fr', '06.30.04.08.11', (SELECT id FROM university.users WHERE username = 'devans'), 3, 41, 85), -- username : devans 
-    ('Danielle', 'Jones', 'djones1@iut.univ-paris8.fr', '06.30.50.70.40', (SELECT id FROM university.users WHERE username = 'djones1'), 3, 41, 85), -- username : djones1 
-    ('Kathleen', 'Lee', 'klee1@iut.univ-paris8.fr', '07.57.58.31.94', (SELECT id FROM university.users WHERE username = 'klee1'), 3, 41, 85), -- username : klee1 
-    ('Christopher', 'Matthews', 'cmatthews@iut.univ-paris8.fr', '06.56.19.25.12', (SELECT id FROM university.users WHERE username = 'cmatthews'), 3, 41, 85), -- username : cmatthews 
-    ('Daniel', 'Griffin', 'dgriffin@iut.univ-paris8.fr', '06.57.11.84.47', (SELECT id FROM university.users WHERE username = 'dgriffin'), 3, 41, 85), -- username : dgriffin 
-    ('Michael', 'Miller', 'mmiller@iut.univ-paris8.fr', '06.55.51.21.67', (SELECT id FROM university.users WHERE username = 'mmiller'), 3, 41, 85), -- username : mmiller 
-    ('Isabel', 'Davenport', 'idavenport@iut.univ-paris8.fr', '06.41.39.85.92', (SELECT id FROM university.users WHERE username = 'idavenport'), 3, 41, 85), -- username : idavenport 
-    ('Suzanne', 'Bradley', 'sbradley@iut.univ-paris8.fr', '06.41.04.63.03', (SELECT id FROM university.users WHERE username = 'sbradley'), 3, 41, 85), -- username : sbradley 
-    ('Ricardo', 'Galvan', 'rgalvan@iut.univ-paris8.fr', '06.06.58.47.20', (SELECT id FROM university.users WHERE username = 'rgalvan'), 3, 41, 85), -- username : rgalvan 
-    ('Matthew', 'Green', 'mgreen@iut.univ-paris8.fr', '06.88.59.01.07', (SELECT id FROM university.users WHERE username = 'mgreen'), 3, 41, 85), -- username : mgreen 
-    ('Keith', 'Garcia', 'kgarcia1@iut.univ-paris8.fr', '06.22.33.20.03', (SELECT id FROM university.users WHERE username = 'kgarcia1'), 3, 41, 129), -- username : kgarcia1 
-    ('Matthew', 'Berry', 'mberry1@iut.univ-paris8.fr', '07.14.30.36.01', (SELECT id FROM university.users WHERE username = 'mberry1'), 3, 41, 129), -- username : mberry1 
-    ('Kenneth', 'Patrick', 'kpatrick@iut.univ-paris8.fr', '06.67.90.79.90', (SELECT id FROM university.users WHERE username = 'kpatrick'), 3, 41, 129), -- username : kpatrick 
-    ('Matthew', 'Powell', 'mpowell@iut.univ-paris8.fr', '06.14.13.13.28', (SELECT id FROM university.users WHERE username = 'mpowell'), 3, 41, 129), -- username : mpowell 
-    ('Brandon', 'Gilmore', 'bgilmore@iut.univ-paris8.fr', '06.78.58.44.15', (SELECT id FROM university.users WHERE username = 'bgilmore'), 3, 41, 129), -- username : bgilmore 
-    ('Joseph', 'Torres', 'jtorres@iut.univ-paris8.fr', '07.40.58.29.44', (SELECT id FROM university.users WHERE username = 'jtorres'), 3, 41, 129), -- username : jtorres 
-    ('Sergio', 'Harding', 'sharding@iut.univ-paris8.fr', '07.19.24.84.68', (SELECT id FROM university.users WHERE username = 'sharding'), 3, 41, 129), -- username : sharding 
-    ('Chelsea', 'Rivera', 'crivera@iut.univ-paris8.fr', '07.64.33.87.92', (SELECT id FROM university.users WHERE username = 'crivera'), 3, 41, 129), -- username : crivera 
-    ('Jamie', 'Eaton', 'jeaton@iut.univ-paris8.fr', '07.80.71.71.26', (SELECT id FROM university.users WHERE username = 'jeaton'), 3, 41, 129), -- username : jeaton 
-    ('Daniel', 'Bautista', 'dbautista@iut.univ-paris8.fr', '07.99.51.67.66', (SELECT id FROM university.users WHERE username = 'dbautista'), 3, 41, 129), -- username : dbautista 
-    ('Scott', 'Carlson', 'scarlson1@iut.univ-paris8.fr', '06.41.65.59.03', (SELECT id FROM university.users WHERE username = 'scarlson1'), 3, 42, 42), -- username : scarlson1 
-    ('Cassandra', 'Carrillo', 'ccarrillo@iut.univ-paris8.fr', '07.55.79.27.21', (SELECT id FROM university.users WHERE username = 'ccarrillo'), 3, 42, 42), -- username : ccarrillo 
-    ('Jeffrey', 'Burke', 'jburke@iut.univ-paris8.fr', '06.43.56.01.80', (SELECT id FROM university.users WHERE username = 'jburke'), 3, 42, 42), -- username : jburke 
-    ('Kevin', 'Bradley', 'kbradley@iut.univ-paris8.fr', '06.51.66.08.91', (SELECT id FROM university.users WHERE username = 'kbradley'), 3, 42, 42), -- username : kbradley 
-    ('Laura', 'Owens', 'lowens@iut.univ-paris8.fr', '07.42.15.46.96', (SELECT id FROM university.users WHERE username = 'lowens'), 3, 42, 42), -- username : lowens 
-    ('Joseph', 'Allen', 'jallen@iut.univ-paris8.fr', '06.90.92.94.26', (SELECT id FROM university.users WHERE username = 'jallen'), 3, 42, 42), -- username : jallen 
-    ('Mary', 'Johns', 'mjohns@iut.univ-paris8.fr', '07.94.54.24.58', (SELECT id FROM university.users WHERE username = 'mjohns'), 3, 42, 42), -- username : mjohns 
-    ('Scott', 'Roberts', 'sroberts@iut.univ-paris8.fr', '07.59.88.11.10', (SELECT id FROM university.users WHERE username = 'sroberts'), 3, 42, 42), -- username : sroberts 
-    ('Christopher', 'Cole', 'ccole@iut.univ-paris8.fr', '06.94.94.96.98', (SELECT id FROM university.users WHERE username = 'ccole'), 3, 42, 42), -- username : ccole 
-    ('Nicholas', 'Cox', 'ncox@iut.univ-paris8.fr', '07.11.05.39.84', (SELECT id FROM university.users WHERE username = 'ncox'), 3, 42, 42), -- username : ncox 
-    ('Lisa', 'Burnett', 'lburnett@iut.univ-paris8.fr', '07.57.32.85.05', (SELECT id FROM university.users WHERE username = 'lburnett'), 3, 42, 86), -- username : lburnett 
-    ('Manuel', 'Dunn', 'mdunn@iut.univ-paris8.fr', '07.28.20.49.43', (SELECT id FROM university.users WHERE username = 'mdunn'), 3, 42, 86), -- username : mdunn 
-    ('Anthony', 'Riley', 'ariley@iut.univ-paris8.fr', '07.14.38.90.56', (SELECT id FROM university.users WHERE username = 'ariley'), 3, 42, 86), -- username : ariley 
-    ('Brenda', 'Bartlett', 'bbartlett@iut.univ-paris8.fr', '07.16.03.32.73', (SELECT id FROM university.users WHERE username = 'bbartlett'), 3, 42, 86), -- username : bbartlett 
-    ('Stephanie', 'Velez', 'svelez@iut.univ-paris8.fr', '07.46.75.30.05', (SELECT id FROM university.users WHERE username = 'svelez'), 3, 42, 86), -- username : svelez 
-    ('Susan', 'Johnston', 'sjohnston@iut.univ-paris8.fr', '06.66.82.11.34', (SELECT id FROM university.users WHERE username = 'sjohnston'), 3, 42, 86), -- username : sjohnston 
-    ('Matthew', 'Brown', 'mbrown@iut.univ-paris8.fr', '06.29.67.11.57', (SELECT id FROM university.users WHERE username = 'mbrown'), 3, 42, 86), -- username : mbrown 
-    ('Michael', 'Smith', 'msmith1@iut.univ-paris8.fr', '07.52.10.17.15', (SELECT id FROM university.users WHERE username = 'msmith1'), 3, 42, 86), -- username : msmith1 
-    ('Carolyn', 'Ingram', 'cingram@iut.univ-paris8.fr', '06.09.27.67.90', (SELECT id FROM university.users WHERE username = 'cingram'), 3, 42, 86), -- username : cingram 
-    ('Madison', 'Rodriguez', 'mrodriguez@iut.univ-paris8.fr', '07.83.47.12.08', (SELECT id FROM university.users WHERE username = 'mrodriguez'), 3, 42, 86), -- username : mrodriguez 
-    ('Stephanie', 'Young', 'syoung@iut.univ-paris8.fr', '07.56.18.56.98', (SELECT id FROM university.users WHERE username = 'syoung'), 3, 42, 130), -- username : syoung 
-    ('Tammy', 'Matthews', 'tmatthews@iut.univ-paris8.fr', '06.11.42.92.73', (SELECT id FROM university.users WHERE username = 'tmatthews'), 3, 42, 130), -- username : tmatthews 
-    ('Shelby', 'Robertson', 'srobertson@iut.univ-paris8.fr', '07.46.56.28.66', (SELECT id FROM university.users WHERE username = 'srobertson'), 3, 42, 130), -- username : srobertson 
-    ('Christian', 'Schultz', 'cschultz@iut.univ-paris8.fr', '07.17.54.92.76', (SELECT id FROM university.users WHERE username = 'cschultz'), 3, 42, 130), -- username : cschultz 
-    ('Christian', 'Robinson', 'crobinson@iut.univ-paris8.fr', '07.15.36.58.84', (SELECT id FROM university.users WHERE username = 'crobinson'), 3, 42, 130), -- username : crobinson 
-    ('Nancy', 'Arnold', 'narnold@iut.univ-paris8.fr', '06.30.10.59.02', (SELECT id FROM university.users WHERE username = 'narnold'), 3, 42, 130), -- username : narnold 
-    ('Gary', 'Todd', 'gtodd@iut.univ-paris8.fr', '06.15.11.94.88', (SELECT id FROM university.users WHERE username = 'gtodd'), 3, 42, 130), -- username : gtodd 
-    ('Michael', 'Turner', 'mturner@iut.univ-paris8.fr', '06.43.39.96.12', (SELECT id FROM university.users WHERE username = 'mturner'), 3, 42, 130), -- username : mturner 
-    ('Jade', 'Hodge', 'jhodge@iut.univ-paris8.fr', '06.99.10.47.24', (SELECT id FROM university.users WHERE username = 'jhodge'), 3, 42, 130), -- username : jhodge 
-    ('Jeffrey', 'George', 'jgeorge@iut.univ-paris8.fr', '07.97.12.21.20', (SELECT id FROM university.users WHERE username = 'jgeorge'), 3, 42, 130), -- username : jgeorge 
-    ('Drew', 'Collins', 'dcollins@iut.univ-paris8.fr', '06.04.85.73.34', (SELECT id FROM university.users WHERE username = 'dcollins'), 3, 32, 32), -- username : dcollins 
-    ('Joseph', 'Mann', 'jmann@iut.univ-paris8.fr', '07.86.95.49.68', (SELECT id FROM university.users WHERE username = 'jmann'), 3, 32, 32), -- username : jmann 
-    ('Gabriel', 'Stanley', 'gstanley@iut.univ-paris8.fr', '07.05.63.62.62', (SELECT id FROM university.users WHERE username = 'gstanley'), 3, 32, 32), -- username : gstanley 
-    ('Nicholas', 'Fischer', 'nfischer@iut.univ-paris8.fr', '06.08.08.36.61', (SELECT id FROM university.users WHERE username = 'nfischer'), 3, 32, 32), -- username : nfischer 
-    ('Thomas', 'Morris', 'tmorris@iut.univ-paris8.fr', '07.11.41.50.44', (SELECT id FROM university.users WHERE username = 'tmorris'), 3, 32, 32), -- username : tmorris 
-    ('Kyle', 'Lee', 'klee@iut.univ-paris8.fr', '07.09.99.74.60', (SELECT id FROM university.users WHERE username = 'klee'), 3, 32, 32), -- username : klee 
-    ('Whitney', 'Becker', 'wbecker@iut.univ-paris8.fr', '07.49.95.58.58', (SELECT id FROM university.users WHERE username = 'wbecker'), 3, 32, 32), -- username : wbecker 
-    ('Dana', 'Singh', 'dsingh@iut.univ-paris8.fr', '07.99.24.92.16', (SELECT id FROM university.users WHERE username = 'dsingh'), 3, 32, 32), -- username : dsingh 
-    ('Michael', 'Carr', 'mcarr@iut.univ-paris8.fr', '07.20.28.33.62', (SELECT id FROM university.users WHERE username = 'mcarr'), 3, 32, 32), -- username : mcarr 
-    ('James', 'Bowers', 'jbowers@iut.univ-paris8.fr', '07.02.78.38.70', (SELECT id FROM university.users WHERE username = 'jbowers'), 3, 32, 32), -- username : jbowers 
-    ('Linda', 'Wallace', 'lwallace@iut.univ-paris8.fr', '06.94.54.83.55', (SELECT id FROM university.users WHERE username = 'lwallace'), 3, 32, 76), -- username : lwallace 
-    ('Mary', 'Williams', 'mwilliams1@iut.univ-paris8.fr', '07.00.48.01.96', (SELECT id FROM university.users WHERE username = 'mwilliams1'), 3, 32, 76), -- username : mwilliams1 
-    ('Evelyn', 'Coleman', 'ecoleman@iut.univ-paris8.fr', '06.71.87.35.85', (SELECT id FROM university.users WHERE username = 'ecoleman'), 3, 32, 76), -- username : ecoleman 
-    ('Jill', 'Brown', 'jbrown@iut.univ-paris8.fr', '07.82.78.79.85', (SELECT id FROM university.users WHERE username = 'jbrown'), 3, 32, 76), -- username : jbrown 
-    ('Matthew', 'Smith', 'msmith@iut.univ-paris8.fr', '06.03.21.32.55', (SELECT id FROM university.users WHERE username = 'msmith'), 3, 32, 76), -- username : msmith 
-    ('Melissa', 'Gilbert', 'mgilbert@iut.univ-paris8.fr', '06.36.64.18.02', (SELECT id FROM university.users WHERE username = 'mgilbert'), 3, 32, 76), -- username : mgilbert 
-    ('Craig', 'Walker', 'cwalker@iut.univ-paris8.fr', '06.12.74.49.48', (SELECT id FROM university.users WHERE username = 'cwalker'), 3, 32, 76), -- username : cwalker 
-    ('Brooke', 'Anderson', 'banderson2@iut.univ-paris8.fr', '07.38.64.25.31', (SELECT id FROM university.users WHERE username = 'banderson2'), 3, 32, 76), -- username : banderson2 
-    ('Drew', 'Smith', 'dsmith@iut.univ-paris8.fr', '06.30.47.59.78', (SELECT id FROM university.users WHERE username = 'dsmith'), 3, 32, 76), -- username : dsmith 
-    ('Brian', 'Wise', 'bwise@iut.univ-paris8.fr', '06.32.44.57.66', (SELECT id FROM university.users WHERE username = 'bwise'), 3, 32, 76), -- username : bwise 
-    ('Melissa', 'Jones', 'mjones3@iut.univ-paris8.fr', '06.31.24.22.86', (SELECT id FROM university.users WHERE username = 'mjones3'), 3, 32, 120), -- username : mjones3 
-    ('Robert', 'Mendez', 'rmendez@iut.univ-paris8.fr', '07.71.18.12.78', (SELECT id FROM university.users WHERE username = 'rmendez'), 3, 32, 120), -- username : rmendez 
-    ('Brian', 'Anderson', 'banderson1@iut.univ-paris8.fr', '06.77.55.50.70', (SELECT id FROM university.users WHERE username = 'banderson1'), 3, 32, 120), -- username : banderson1 
-    ('Andrew', 'Harrison', 'aharrison@iut.univ-paris8.fr', '06.51.99.44.59', (SELECT id FROM university.users WHERE username = 'aharrison'), 3, 32, 120), -- username : aharrison 
-    ('Roy', 'Daniels', 'rdaniels@iut.univ-paris8.fr', '06.62.79.47.40', (SELECT id FROM university.users WHERE username = 'rdaniels'), 3, 32, 120), -- username : rdaniels 
-    ('Donna', 'Mcclain', 'dmcclain@iut.univ-paris8.fr', '06.38.64.61.94', (SELECT id FROM university.users WHERE username = 'dmcclain'), 3, 32, 120), -- username : dmcclain 
-    ('Amber', 'Williams', 'awilliams@iut.univ-paris8.fr', '06.92.82.84.61', (SELECT id FROM university.users WHERE username = 'awilliams'), 3, 32, 120), -- username : awilliams 
-    ('David', 'Yang', 'dyang@iut.univ-paris8.fr', '07.39.93.51.17', (SELECT id FROM university.users WHERE username = 'dyang'), 3, 32, 120), -- username : dyang 
-    ('Richard', 'Harris', 'rharris@iut.univ-paris8.fr', '07.87.46.59.65', (SELECT id FROM university.users WHERE username = 'rharris'), 3, 32, 120), -- username : rharris 
-    ('Charlene', 'Peters', 'cpeters@iut.univ-paris8.fr', '07.74.78.14.29', (SELECT id FROM university.users WHERE username = 'cpeters'), 3, 32, 120), -- username : cpeters 
-    ('Ronald', 'Lee', 'rlee@iut.univ-paris8.fr', '06.91.42.78.21', (SELECT id FROM university.users WHERE username = 'rlee'), 3, 31, 31), -- username : rlee 
-    ('Megan', 'Edwards', 'medwards@iut.univ-paris8.fr', '07.79.58.58.40', (SELECT id FROM university.users WHERE username = 'medwards'), 3, 31, 31), -- username : medwards 
-    ('Vincent', 'Williams', 'vwilliams@iut.univ-paris8.fr', '07.20.32.35.68', (SELECT id FROM university.users WHERE username = 'vwilliams'), 3, 31, 31), -- username : vwilliams 
-    ('Charlene', 'Sullivan', 'csullivan@iut.univ-paris8.fr', '06.67.05.76.09', (SELECT id FROM university.users WHERE username = 'csullivan'), 3, 31, 31), -- username : csullivan 
-    ('David', 'Tyler', 'dtyler@iut.univ-paris8.fr', '07.91.96.89.17', (SELECT id FROM university.users WHERE username = 'dtyler'), 3, 31, 31), -- username : dtyler 
-    ('Sharon', 'Gonzalez', 'sgonzalez@iut.univ-paris8.fr', '07.96.02.95.22', (SELECT id FROM university.users WHERE username = 'sgonzalez'), 3, 31, 31), -- username : sgonzalez 
-    ('Kathleen', 'Ramos', 'kramos@iut.univ-paris8.fr', '06.56.70.94.24', (SELECT id FROM university.users WHERE username = 'kramos'), 3, 31, 31), -- username : kramos 
-    ('Nicole', 'Robinson', 'nrobinson@iut.univ-paris8.fr', '06.32.47.99.07', (SELECT id FROM university.users WHERE username = 'nrobinson'), 3, 31, 31), -- username : nrobinson 
-    ('Traci', 'Rose', 'trose@iut.univ-paris8.fr', '07.99.69.13.92', (SELECT id FROM university.users WHERE username = 'trose'), 3, 31, 31), -- username : trose 
-    ('Jean', 'Gaines', 'jgaines@iut.univ-paris8.fr', '06.93.39.89.26', (SELECT id FROM university.users WHERE username = 'jgaines'), 3, 31, 31), -- username : jgaines 
-    ('Karla', 'Reyes', 'kreyes@iut.univ-paris8.fr', '06.67.23.59.74', (SELECT id FROM university.users WHERE username = 'kreyes'), 3, 31, 75), -- username : kreyes 
-    ('Brett', 'Ellis', 'bellis@iut.univ-paris8.fr', '06.03.47.90.28', (SELECT id FROM university.users WHERE username = 'bellis'), 3, 31, 75), -- username : bellis 
-    ('Daniel', 'Taylor', 'dtaylor@iut.univ-paris8.fr', '07.16.84.14.85', (SELECT id FROM university.users WHERE username = 'dtaylor'), 3, 31, 75), -- username : dtaylor 
-    ('Nicholas', 'Brown', 'nbrown@iut.univ-paris8.fr', '06.64.92.76.91', (SELECT id FROM university.users WHERE username = 'nbrown'), 3, 31, 75), -- username : nbrown 
-    ('Kathy', 'Bauer', 'kbauer@iut.univ-paris8.fr', '07.62.24.12.07', (SELECT id FROM university.users WHERE username = 'kbauer'), 3, 31, 75), -- username : kbauer 
-    ('Samuel', 'Brady', 'sbrady@iut.univ-paris8.fr', '07.61.41.15.65', (SELECT id FROM university.users WHERE username = 'sbrady'), 3, 31, 75), -- username : sbrady 
-    ('Rebecca', 'Guzman', 'rguzman@iut.univ-paris8.fr', '06.35.53.00.45', (SELECT id FROM university.users WHERE username = 'rguzman'), 3, 31, 75), -- username : rguzman 
-    ('Christopher', 'Jackson', 'cjackson@iut.univ-paris8.fr', '07.31.01.33.10', (SELECT id FROM university.users WHERE username = 'cjackson'), 3, 31, 75), -- username : cjackson 
-    ('David', 'Robertson', 'drobertson@iut.univ-paris8.fr', '06.72.35.47.02', (SELECT id FROM university.users WHERE username = 'drobertson'), 3, 31, 75), -- username : drobertson 
-    ('Alicia', 'Chen', 'achen@iut.univ-paris8.fr', '06.06.55.28.06', (SELECT id FROM university.users WHERE username = 'achen'), 3, 31, 75), -- username : achen 
-    ('Gregory', 'Miller', 'gmiller@iut.univ-paris8.fr', '07.60.88.14.46', (SELECT id FROM university.users WHERE username = 'gmiller'), 3, 31, 119), -- username : gmiller 
-    ('Stephanie', 'Mcintyre', 'smcintyre@iut.univ-paris8.fr', '07.86.73.95.83', (SELECT id FROM university.users WHERE username = 'smcintyre'), 3, 31, 119), -- username : smcintyre 
-    ('Meghan', 'Moreno', 'mmoreno@iut.univ-paris8.fr', '07.04.66.16.28', (SELECT id FROM university.users WHERE username = 'mmoreno'), 3, 31, 119), -- username : mmoreno 
-    ('Doris', 'Jones', 'djones@iut.univ-paris8.fr', '06.67.67.50.87', (SELECT id FROM university.users WHERE username = 'djones'), 3, 31, 119), -- username : djones 
-    ('Michael', 'Gibbs', 'mgibbs@iut.univ-paris8.fr', '07.28.98.38.46', (SELECT id FROM university.users WHERE username = 'mgibbs'), 3, 31, 119), -- username : mgibbs 
-    ('Connie', 'Stewart', 'cstewart1@iut.univ-paris8.fr', '06.22.09.37.36', (SELECT id FROM university.users WHERE username = 'cstewart1'), 3, 31, 119), -- username : cstewart1 
-    ('Lisa', 'Carey', 'lcarey@iut.univ-paris8.fr', '07.63.76.01.65', (SELECT id FROM university.users WHERE username = 'lcarey'), 3, 31, 119), -- username : lcarey 
-    ('Mike', 'Nelson', 'mnelson@iut.univ-paris8.fr', '06.95.18.70.99', (SELECT id FROM university.users WHERE username = 'mnelson'), 3, 31, 119), -- username : mnelson 
-    ('Brian', 'Mitchell', 'bmitchell@iut.univ-paris8.fr', '06.05.90.80.86', (SELECT id FROM university.users WHERE username = 'bmitchell'), 3, 31, 119), -- username : bmitchell 
-    ('Joshua', 'Merritt', 'jmerritt@iut.univ-paris8.fr', '07.04.34.04.98', (SELECT id FROM university.users WHERE username = 'jmerritt'), 3, 31, 119), -- username : jmerritt 
-    ('Brittney', 'Brown', 'bbrown@iut.univ-paris8.fr', '07.54.66.68.27', (SELECT id FROM university.users WHERE username = 'bbrown'), 3, 33, 33), -- username : bbrown 
-    ('Jennifer', 'Ward', 'jward@iut.univ-paris8.fr', '06.99.83.92.82', (SELECT id FROM university.users WHERE username = 'jward'), 3, 33, 33), -- username : jward 
-    ('Michael', 'Bennett', 'mbennett@iut.univ-paris8.fr', '06.10.51.07.47', (SELECT id FROM university.users WHERE username = 'mbennett'), 3, 33, 33), -- username : mbennett 
-    ('Martin', 'King', 'mking@iut.univ-paris8.fr', '07.39.37.58.00', (SELECT id FROM university.users WHERE username = 'mking'), 3, 33, 33), -- username : mking 
-    ('Evan', 'Osborne', 'eosborne@iut.univ-paris8.fr', '06.07.52.22.08', (SELECT id FROM university.users WHERE username = 'eosborne'), 3, 33, 33), -- username : eosborne 
-    ('Sean', 'Chung', 'schung@iut.univ-paris8.fr', '06.87.83.85.06', (SELECT id FROM university.users WHERE username = 'schung'), 3, 33, 33), -- username : schung 
-    ('Brenda', 'Mcclure', 'bmcclure@iut.univ-paris8.fr', '06.69.34.00.41', (SELECT id FROM university.users WHERE username = 'bmcclure'), 3, 33, 33), -- username : bmcclure 
-    ('Diana', 'Gilbert', 'dgilbert@iut.univ-paris8.fr', '06.13.07.75.74', (SELECT id FROM university.users WHERE username = 'dgilbert'), 3, 33, 33), -- username : dgilbert 
-    ('William', 'Miller', 'wmiller@iut.univ-paris8.fr', '07.16.30.71.59', (SELECT id FROM university.users WHERE username = 'wmiller'), 3, 33, 33), -- username : wmiller 
-    ('Shelly', 'Walsh', 'swalsh@iut.univ-paris8.fr', '07.35.45.68.94', (SELECT id FROM university.users WHERE username = 'swalsh'), 3, 33, 33), -- username : swalsh 
-    ('Robert', 'Holden', 'rholden@iut.univ-paris8.fr', '07.43.37.17.73', (SELECT id FROM university.users WHERE username = 'rholden'), 3, 33, 77), -- username : rholden 
-    ('Dawn', 'Cox', 'dcox@iut.univ-paris8.fr', '07.92.47.87.11', (SELECT id FROM university.users WHERE username = 'dcox'), 3, 33, 77), -- username : dcox 
-    ('Matthew', 'Chavez', 'mchavez@iut.univ-paris8.fr', '07.96.61.79.53', (SELECT id FROM university.users WHERE username = 'mchavez'), 3, 33, 77), -- username : mchavez 
-    ('Cameron', 'Mckinney', 'cmckinney@iut.univ-paris8.fr', '07.54.70.37.54', (SELECT id FROM university.users WHERE username = 'cmckinney'), 3, 33, 77), -- username : cmckinney 
-    ('Richard', 'Tanner', 'rtanner@iut.univ-paris8.fr', '06.22.12.03.97', (SELECT id FROM university.users WHERE username = 'rtanner'), 3, 33, 77), -- username : rtanner 
-    ('Belinda', 'Strong', 'bstrong@iut.univ-paris8.fr', '06.98.91.99.92', (SELECT id FROM university.users WHERE username = 'bstrong'), 3, 33, 77), -- username : bstrong 
-    ('Tracey', 'Rodriguez', 'trodriguez@iut.univ-paris8.fr', '07.63.32.68.63', (SELECT id FROM university.users WHERE username = 'trodriguez'), 3, 33, 77), -- username : trodriguez 
-    ('Sheila', 'Oneill', 'soneill@iut.univ-paris8.fr', '06.08.05.07.89', (SELECT id FROM university.users WHERE username = 'soneill'), 3, 33, 77), -- username : soneill 
-    ('David', 'Rosales', 'drosales@iut.univ-paris8.fr', '06.89.31.06.00', (SELECT id FROM university.users WHERE username = 'drosales'), 3, 33, 77), -- username : drosales 
-    ('Sharon', 'Solis', 'ssolis@iut.univ-paris8.fr', '06.82.48.82.84', (SELECT id FROM university.users WHERE username = 'ssolis'), 3, 33, 77), -- username : ssolis 
-    ('Jamie', 'Smith', 'jsmith@iut.univ-paris8.fr', '07.81.84.54.85', (SELECT id FROM university.users WHERE username = 'jsmith'), 3, 33, 121), -- username : jsmith 
-    ('Pamela', 'Stephens', 'pstephens@iut.univ-paris8.fr', '06.53.48.24.49', (SELECT id FROM university.users WHERE username = 'pstephens'), 3, 33, 121), -- username : pstephens 
-    ('Cory', 'Johnson', 'cjohnson@iut.univ-paris8.fr', '07.75.80.89.49', (SELECT id FROM university.users WHERE username = 'cjohnson'), 3, 33, 121), -- username : cjohnson 
-    ('Debbie', 'Griffith', 'dgriffith@iut.univ-paris8.fr', '07.27.40.63.28', (SELECT id FROM university.users WHERE username = 'dgriffith'), 3, 33, 121), -- username : dgriffith 
-    ('Kelly', 'Jackson', 'kjackson@iut.univ-paris8.fr', '07.03.04.25.38', (SELECT id FROM university.users WHERE username = 'kjackson'), 3, 33, 121), -- username : kjackson 
-    ('Shelby', 'Castro', 'scastro@iut.univ-paris8.fr', '07.32.98.63.69', (SELECT id FROM university.users WHERE username = 'scastro'), 3, 33, 121), -- username : scastro 
-    ('James', 'Manning', 'jmanning1@iut.univ-paris8.fr', '06.64.10.65.42', (SELECT id FROM university.users WHERE username = 'jmanning1'), 3, 33, 121), -- username : jmanning1 
-    ('David', 'Kim', 'dkim@iut.univ-paris8.fr', '07.95.15.90.78', (SELECT id FROM university.users WHERE username = 'dkim'), 3, 33, 121), -- username : dkim 
-    ('Kevin', 'Murphy', 'kmurphy@iut.univ-paris8.fr', '07.06.62.57.93', (SELECT id FROM university.users WHERE username = 'kmurphy'), 3, 33, 121), -- username : kmurphy 
-    ('Tammy', 'Freeman', 'tfreeman@iut.univ-paris8.fr', '06.73.19.64.00', (SELECT id FROM university.users WHERE username = 'tfreeman'), 3, 33, 121), -- username : tfreeman 
-    ('Jennifer', 'Manning', 'jmanning@iut.univ-paris8.fr', '07.25.96.76.80', (SELECT id FROM university.users WHERE username = 'jmanning'), 3, 8, 8), -- username : jmanning 
-    ('Jared', 'Kelly', 'jkelly@iut.univ-paris8.fr', '06.44.22.69.32', (SELECT id FROM university.users WHERE username = 'jkelly'), 3, 8, 8), -- username : jkelly 
-    ('Russell', 'Joseph', 'rjoseph@iut.univ-paris8.fr', '07.32.19.56.68', (SELECT id FROM university.users WHERE username = 'rjoseph'), 3, 8, 8), -- username : rjoseph 
-    ('Amber', 'Nelson', 'anelson@iut.univ-paris8.fr', '06.30.67.63.10', (SELECT id FROM university.users WHERE username = 'anelson'), 3, 8, 8), -- username : anelson 
-    ('Erica', 'Williams', 'ewilliams@iut.univ-paris8.fr', '07.33.02.27.06', (SELECT id FROM university.users WHERE username = 'ewilliams'), 3, 8, 8), -- username : ewilliams 
-    ('Haley', 'Duke', 'hduke@iut.univ-paris8.fr', '07.92.07.18.06', (SELECT id FROM university.users WHERE username = 'hduke'), 3, 8, 8), -- username : hduke 
-    ('Margaret', 'Farley', 'mfarley@iut.univ-paris8.fr', '07.01.94.90.56', (SELECT id FROM university.users WHERE username = 'mfarley'), 3, 8, 8), -- username : mfarley 
-    ('Philip', 'Hebert', 'phebert1@iut.univ-paris8.fr', '07.65.55.51.19', (SELECT id FROM university.users WHERE username = 'phebert1'), 3, 8, 8), -- username : phebert1 
-    ('Joanne', 'Thomas', 'jthomas@iut.univ-paris8.fr', '06.63.82.90.39', (SELECT id FROM university.users WHERE username = 'jthomas'), 3, 8, 8), -- username : jthomas 
-    ('Pamela', 'Flynn', 'pflynn@iut.univ-paris8.fr', '07.70.27.39.93', (SELECT id FROM university.users WHERE username = 'pflynn'), 3, 8, 8), -- username : pflynn 
-    ('Nicole', 'Jones', 'njones@iut.univ-paris8.fr', '07.26.24.07.51', (SELECT id FROM university.users WHERE username = 'njones'), 3, 8, 52), -- username : njones 
-    ('Elizabeth', 'Anderson', 'eanderson@iut.univ-paris8.fr', '07.62.90.65.80', (SELECT id FROM university.users WHERE username = 'eanderson'), 3, 8, 52), -- username : eanderson 
-    ('Daniel', 'Curtis', 'dcurtis@iut.univ-paris8.fr', '07.02.08.67.87', (SELECT id FROM university.users WHERE username = 'dcurtis'), 3, 8, 52), -- username : dcurtis 
-    ('Lisa', 'Hicks', 'lhicks@iut.univ-paris8.fr', '07.22.45.03.15', (SELECT id FROM university.users WHERE username = 'lhicks'), 3, 8, 52), -- username : lhicks 
-    ('Gerald', 'White', 'gwhite@iut.univ-paris8.fr', '06.87.61.57.61', (SELECT id FROM university.users WHERE username = 'gwhite'), 3, 8, 52), -- username : gwhite 
-    ('Holly', 'Rivera', 'hrivera@iut.univ-paris8.fr', '06.72.35.76.70', (SELECT id FROM university.users WHERE username = 'hrivera'), 3, 8, 52), -- username : hrivera 
-    ('Joseph', 'Best', 'jbest@iut.univ-paris8.fr', '06.30.92.71.82', (SELECT id FROM university.users WHERE username = 'jbest'), 3, 8, 52), -- username : jbest 
-    ('Michael', 'Garza', 'mgarza@iut.univ-paris8.fr', '07.67.37.99.66', (SELECT id FROM university.users WHERE username = 'mgarza'), 3, 8, 52), -- username : mgarza 
-    ('Jared', 'Bowman', 'jbowman@iut.univ-paris8.fr', '06.42.06.16.18', (SELECT id FROM university.users WHERE username = 'jbowman'), 3, 8, 52), -- username : jbowman 
-    ('Kevin', 'Baker', 'kbaker@iut.univ-paris8.fr', '07.76.08.06.68', (SELECT id FROM university.users WHERE username = 'kbaker'), 3, 8, 52), -- username : kbaker 
-    ('Robert', 'Miller', 'rmiller1@iut.univ-paris8.fr', '06.67.54.87.47', (SELECT id FROM university.users WHERE username = 'rmiller1'), 3, 8, 96), -- username : rmiller1 
-    ('Joshua', 'Stephens', 'jstephens@iut.univ-paris8.fr', '06.99.42.77.57', (SELECT id FROM university.users WHERE username = 'jstephens'), 3, 8, 96), -- username : jstephens 
-    ('Claudia', 'Davidson', 'cdavidson@iut.univ-paris8.fr', '07.93.60.15.44', (SELECT id FROM university.users WHERE username = 'cdavidson'), 3, 8, 96), -- username : cdavidson 
-    ('Kimberly', 'Rose', 'krose@iut.univ-paris8.fr', '06.25.05.35.01', (SELECT id FROM university.users WHERE username = 'krose'), 3, 8, 96), -- username : krose 
-    ('Claire', 'Moore', 'cmoore1@iut.univ-paris8.fr', '06.55.14.37.31', (SELECT id FROM university.users WHERE username = 'cmoore1'), 3, 8, 96), -- username : cmoore1 
-    ('Aaron', 'Gonzales', 'agonzales1@iut.univ-paris8.fr', '06.40.01.10.15', (SELECT id FROM university.users WHERE username = 'agonzales1'), 3, 8, 96), -- username : agonzales1 
-    ('Jonathan', 'Fischer', 'jfischer1@iut.univ-paris8.fr', '07.54.71.12.30', (SELECT id FROM university.users WHERE username = 'jfischer1'), 3, 8, 96), -- username : jfischer1 
-    ('Scott', 'Jordan', 'sjordan@iut.univ-paris8.fr', '07.33.29.68.90', (SELECT id FROM university.users WHERE username = 'sjordan'), 3, 8, 96), -- username : sjordan 
-    ('Tiffany', 'Burke', 'tburke@iut.univ-paris8.fr', '06.65.69.17.81', (SELECT id FROM university.users WHERE username = 'tburke'), 3, 8, 96), -- username : tburke 
-    ('Lauren', 'Hughes', 'lhughes@iut.univ-paris8.fr', '06.15.47.03.35', (SELECT id FROM university.users WHERE username = 'lhughes'), 3, 8,96) -- username : llhughes 
-;
+    --Groupes B
 
--- FAKE for departement GACO
--- students(@student_number,last_name, first_name, mail, phone_number, user_username, #department_id, #group_id, #subgroup_id)
-INSERT INTO university.students (last_name, first_name, mail, phone_number, user_id, department_id, group_id, subgroup_id)
-VALUES
-    ('Ichigo', 'Kurosaki', 'ikurosaki@iut.univ-paris8.fr', '07.31.18.90.10', (SELECT id FROM university.users WHERE username = 'ikurosaki'), 4, 24, 24), -- username : ikurosaki 
-    ('Rukia', 'Kuchiki', 'rkuchiki@iut.univ-paris8.fr', '07.16.11.67.69', (SELECT id FROM university.users WHERE username = 'rkuchiki'), 4, 24, 24), -- username : rkuchiki 
-    ('William', 'Ross', 'wross@iut.univ-paris8.fr', '07.97.24.83.04', (SELECT id FROM university.users WHERE username = 'wross'), 4, 24, 24), -- username : wross 
-    ('Julia', 'Spencer', 'jspencer@iut.univ-paris8.fr', '07.30.95.49.76', (SELECT id FROM university.users WHERE username = 'jspencer'), 4, 24, 24), -- username : jspencer 
-    ('Angela', 'Richardson', 'arichardson@iut.univ-paris8.fr', '06.12.25.16.12', (SELECT id FROM university.users WHERE username = 'arichardson'), 4, 24, 24), -- username : arichardson 
-    ('William', 'Bender', 'wbender@iut.univ-paris8.fr', '06.81.85.93.35', (SELECT id FROM university.users WHERE username = 'wbender'), 4, 24, 24), -- username : wbender 
-    ('Andrew', 'Gibbs', 'agibbs@iut.univ-paris8.fr', '07.73.15.96.74', (SELECT id FROM university.users WHERE username = 'agibbs'), 4, 24, 24), -- username : agibbs 
-    ('Kevin', 'Nolan', 'knolan@iut.univ-paris8.fr', '07.23.22.82.06', (SELECT id FROM university.users WHERE username = 'knolan'), 4, 24, 24), -- username : knolan 
-    ('Tyler', 'Boyer', 'tboyer@iut.univ-paris8.fr', '07.59.27.18.68', (SELECT id FROM university.users WHERE username = 'tboyer'), 4, 24, 24), -- username : tboyer 
-    ('Taylor', 'Santos', 'tsantos@iut.univ-paris8.fr', '06.78.32.49.09', (SELECT id FROM university.users WHERE username = 'tsantos'), 4, 24, 24), -- username : tsantos 
-    ('Mercedes', 'Franklin', 'mfranklin@iut.univ-paris8.fr', '06.60.92.93.57', (SELECT id FROM university.users WHERE username = 'mfranklin'), 4, 24, 68), -- username : mfranklin 
-    ('Aaron', 'Mullins', 'amullins@iut.univ-paris8.fr', '06.71.37.91.65', (SELECT id FROM university.users WHERE username = 'amullins'), 4, 24, 68), -- username : amullins 
-    ('Daniel', 'Nelson', 'dnelson@iut.univ-paris8.fr', '06.43.44.03.14', (SELECT id FROM university.users WHERE username = 'dnelson'), 4, 24, 68), -- username : dnelson 
-    ('Sheila', 'Gomez', 'sgomez@iut.univ-paris8.fr', '06.71.34.91.55', (SELECT id FROM university.users WHERE username = 'sgomez'), 4, 24, 68), -- username : sgomez 
-    ('Christopher', 'Adams', 'cadams@iut.univ-paris8.fr', '07.42.35.55.32', (SELECT id FROM university.users WHERE username = 'cadams'), 4, 24, 68), -- username : cadams 
-    ('Sherri', 'Fischer', 'sfischer@iut.univ-paris8.fr', '06.28.10.96.15', (SELECT id FROM university.users WHERE username = 'sfischer'), 4, 24, 68), -- username : sfischer 
-    ('Isaiah', 'Molina', 'imolina@iut.univ-paris8.fr', '07.19.79.71.13', (SELECT id FROM university.users WHERE username = 'imolina'), 4, 24, 68), -- username : imolina 
-    ('Kara', 'Oliver', 'koliver@iut.univ-paris8.fr', '06.74.81.59.16', (SELECT id FROM university.users WHERE username = 'koliver'), 4, 24, 68), -- username : koliver 
-    ('Michael', 'Jackson', 'mjackson@iut.univ-paris8.fr', '07.69.45.71.99', (SELECT id FROM university.users WHERE username = 'mjackson'), 4, 24, 68), -- username : mjackson 
-    ('Michele', 'Clark', 'mclark@iut.univ-paris8.fr', '06.97.91.06.74', (SELECT id FROM university.users WHERE username = 'mclark'), 4, 24, 68), -- username : mclark 
-    ('Gabrielle', 'Ramirez', 'gramirez@iut.univ-paris8.fr', '07.24.46.95.69', (SELECT id FROM university.users WHERE username = 'gramirez'), 4, 24, 112), -- username : gramirez 
-    ('Kimberly', 'Sullivan', 'ksullivan@iut.univ-paris8.fr', '07.80.27.04.54', (SELECT id FROM university.users WHERE username = 'ksullivan'), 4, 24, 112), -- username : ksullivan 
-    ('Steven', 'Murphy', 'smurphy@iut.univ-paris8.fr', '06.79.75.70.30', (SELECT id FROM university.users WHERE username = 'smurphy'), 4, 24, 112), -- username : smurphy 
-    ('Tyler', 'Kirby', 'tkirby@iut.univ-paris8.fr', '07.86.82.60.64', (SELECT id FROM university.users WHERE username = 'tkirby'), 4, 24, 112), -- username : tkirby 
-    ('April', 'Barron', 'abarron@iut.univ-paris8.fr', '07.39.47.03.05', (SELECT id FROM university.users WHERE username = 'abarron'), 4, 24, 112), -- username : abarron 
-    ('Joyce', 'Dickerson', 'jdickerson@iut.univ-paris8.fr', '07.37.80.19.85', (SELECT id FROM university.users WHERE username = 'jdickerson'), 4, 24, 112), -- username : jdickerson 
-    ('Nancy', 'Jacobs', 'njacobs@iut.univ-paris8.fr', '07.94.31.23.61', (SELECT id FROM university.users WHERE username = 'njacobs'), 4, 24, 112), -- username : njacobs 
-    ('Cody', 'Hogan', 'chogan@iut.univ-paris8.fr', '06.63.48.54.25', (SELECT id FROM university.users WHERE username = 'chogan'), 4, 24, 112), -- username : chogan 
-    ('Chad', 'Weeks', 'cweeks@iut.univ-paris8.fr', '06.72.77.43.25', (SELECT id FROM university.users WHERE username = 'cweeks'), 4, 24, 112), -- username : cweeks 
-    ('David', 'Harvey', 'dharvey@iut.univ-paris8.fr', '07.12.76.35.09', (SELECT id FROM university.users WHERE username = 'dharvey'), 4, 24, 112), -- username : dharvey 
-    ('Larry', 'Harris', 'lharris@iut.univ-paris8.fr', '06.55.95.41.48', (SELECT id FROM university.users WHERE username = 'lharris'), 4, 23, 23), -- username : lharris 
-    ('Kristy', 'Mosley', 'kmosley@iut.univ-paris8.fr', '07.37.98.76.25', (SELECT id FROM university.users WHERE username = 'kmosley'), 4, 23, 23), -- username : kmosley 
-    ('Corey', 'Soto', 'csoto@iut.univ-paris8.fr', '07.19.48.48.93', (SELECT id FROM university.users WHERE username = 'csoto'), 4, 23, 23), -- username : csoto 
-    ('Rebecca', 'Lopez', 'rlopez@iut.univ-paris8.fr', '06.16.13.83.59', (SELECT id FROM university.users WHERE username = 'rlopez'), 4, 23, 23), -- username : rlopez 
-    ('Allison', 'Logan', 'alogan@iut.univ-paris8.fr', '06.89.97.94.74', (SELECT id FROM university.users WHERE username = 'alogan'), 4, 23, 23), -- username : alogan 
-    ('Katelyn', 'Gentry', 'kgentry@iut.univ-paris8.fr', '06.71.39.57.78', (SELECT id FROM university.users WHERE username = 'kgentry'), 4, 23, 23), -- username : kgentry 
-    ('Julie', 'Hurst', 'jhurst@iut.univ-paris8.fr', '07.37.47.36.15', (SELECT id FROM university.users WHERE username = 'jhurst'), 4, 23, 23), -- username : jhurst 
-    ('Aaron', 'Gutierrez', 'agutierrez@iut.univ-paris8.fr', '06.05.75.49.06', (SELECT id FROM university.users WHERE username = 'agutierrez'), 4, 23, 23), -- username : agutierrez 
-    ('Courtney', 'Tucker', 'ctucker@iut.univ-paris8.fr', '06.75.61.72.81', (SELECT id FROM university.users WHERE username = 'ctucker'), 4, 23, 23), -- username : ctucker 
-    ('Robert', 'Gates', 'rgates@iut.univ-paris8.fr', '07.02.46.00.68', (SELECT id FROM university.users WHERE username = 'rgates'), 4, 23, 23), -- username : rgates 
-    ('Heather', 'Nielsen', 'hnielsen@iut.univ-paris8.fr', '07.70.06.29.13', (SELECT id FROM university.users WHERE username = 'hnielsen'), 4, 23, 67), -- username : hnielsen 
-    ('Andrew', 'Long', 'along@iut.univ-paris8.fr', '07.64.57.61.76', (SELECT id FROM university.users WHERE username = 'along'), 4, 23, 67), -- username : along 
-    ('Maria', 'Evans', 'mevans1@iut.univ-paris8.fr', '06.90.73.31.18', (SELECT id FROM university.users WHERE username = 'mevans1'), 4, 23, 67), -- username : mevans1 
-    ('Billy', 'Steele', 'bsteele@iut.univ-paris8.fr', '06.30.89.93.60', (SELECT id FROM university.users WHERE username = 'bsteele'), 4, 23, 67), -- username : bsteele 
-    ('Linda', 'Schneider', 'lschneider@iut.univ-paris8.fr', '07.76.95.02.97', (SELECT id FROM university.users WHERE username = 'lschneider'), 4, 23, 67), -- username : lschneider 
-    ('Tonya', 'Long', 'tlong@iut.univ-paris8.fr', '07.95.97.41.07', (SELECT id FROM university.users WHERE username = 'tlong'), 4, 23, 67), -- username : tlong 
-    ('Amanda', 'Gonzalez', 'agonzalez@iut.univ-paris8.fr', '06.80.82.09.61', (SELECT id FROM university.users WHERE username = 'agonzalez'), 4, 23, 67), -- username : agonzalez 
-    ('Robert', 'Ryan', 'rryan@iut.univ-paris8.fr', '06.49.58.40.91', (SELECT id FROM university.users WHERE username = 'rryan'), 4, 23, 67), -- username : rryan 
-    ('Tammy', 'Perez', 'tperez@iut.univ-paris8.fr', '07.15.18.57.51', (SELECT id FROM university.users WHERE username = 'tperez'), 4, 23, 67), -- username : tperez 
-    ('Lucas', 'Oconnor', 'loconnor@iut.univ-paris8.fr', '07.68.66.41.61', (SELECT id FROM university.users WHERE username = 'loconnor'), 4, 23, 67), -- username : loconnor 
-    ('James', 'Daugherty', 'jdaugherty@iut.univ-paris8.fr', '07.01.24.94.05', (SELECT id FROM university.users WHERE username = 'jdaugherty'), 4, 23, 111), -- username : jdaugherty 
-    ('Elizabeth', 'Ortiz', 'eortiz@iut.univ-paris8.fr', '06.58.64.99.33', (SELECT id FROM university.users WHERE username = 'eortiz'), 4, 23, 111), -- username : eortiz 
-    ('Meagan', 'Hall', 'mhall@iut.univ-paris8.fr', '07.70.94.75.88', (SELECT id FROM university.users WHERE username = 'mhall'), 4, 23, 111), -- username : mhall 
-    ('Gary', 'Sellers', 'gsellers@iut.univ-paris8.fr', '06.97.68.35.00', (SELECT id FROM university.users WHERE username = 'gsellers'), 4, 23, 111), -- username : gsellers 
-    ('William', 'Guzman', 'wguzman@iut.univ-paris8.fr', '07.98.33.35.56', (SELECT id FROM university.users WHERE username = 'wguzman'), 4, 23, 111), -- username : wguzman 
-    ('Jacqueline', 'Berger', 'jberger@iut.univ-paris8.fr', '06.36.69.08.18', (SELECT id FROM university.users WHERE username = 'jberger'), 4, 23, 111), -- username : jberger 
-    ('Michael', 'Berry', 'mberry@iut.univ-paris8.fr', '06.52.10.96.19', (SELECT id FROM university.users WHERE username = 'mberry'), 4, 23, 111), -- username : mberry 
-    ('Sydney', 'Serrano', 'sserrano@iut.univ-paris8.fr', '07.47.07.74.33', (SELECT id FROM university.users WHERE username = 'sserrano'), 4, 23, 111), -- username : sserrano 
-    ('Kurt', 'Santana', 'ksantana@iut.univ-paris8.fr', '07.31.69.88.12', (SELECT id FROM university.users WHERE username = 'ksantana'), 4, 23, 111), -- username : ksantana 
-    ('Brandi', 'Miller', 'bmiller@iut.univ-paris8.fr', '06.31.63.93.71', (SELECT id FROM university.users WHERE username = 'bmiller'), 4, 23, 111), -- username : bmiller 
-    ('Erika', 'Martinez', 'emartinez@iut.univ-paris8.fr', '07.64.29.95.19', (SELECT id FROM university.users WHERE username = 'emartinez'), 4, 22, 22), -- username : emartinez 
-    ('Julia', 'Powell', 'jpowell@iut.univ-paris8.fr', '07.04.38.70.86', (SELECT id FROM university.users WHERE username = 'jpowell'), 4, 22, 22), -- username : jpowell 
-    ('Harry', 'Anderson', 'handerson@iut.univ-paris8.fr', '07.50.84.25.58', (SELECT id FROM university.users WHERE username = 'handerson'), 4, 22, 22), -- username : handerson 
-    ('Jeffrey', 'Curtis', 'jcurtis@iut.univ-paris8.fr', '06.50.29.41.85', (SELECT id FROM university.users WHERE username = 'jcurtis'), 4, 22, 22), -- username : jcurtis 
-    ('Darrell', 'Adkins', 'dadkins@iut.univ-paris8.fr', '07.13.14.06.85', (SELECT id FROM university.users WHERE username = 'dadkins'), 4, 22, 22), -- username : dadkins 
-    ('Ashley', 'Martin', 'amartin@iut.univ-paris8.fr', '07.74.97.74.09', (SELECT id FROM university.users WHERE username = 'amartin'), 4, 22, 22), -- username : amartin 
-    ('David', 'Rowland', 'drowland@iut.univ-paris8.fr', '06.10.67.45.91', (SELECT id FROM university.users WHERE username = 'drowland'), 4, 22, 22), -- username : drowland 
-    ('Matthew', 'Martinez', 'mmartinez@iut.univ-paris8.fr', '07.94.19.84.82', (SELECT id FROM university.users WHERE username = 'mmartinez'), 4, 22, 22), -- username : mmartinez 
-    ('Miranda', 'Buck', 'mbuck@iut.univ-paris8.fr', '07.46.53.06.73', (SELECT id FROM university.users WHERE username = 'mbuck'), 4, 22, 22), -- username : mbuck 
-    ('Shane', 'Mclean', 'smclean@iut.univ-paris8.fr', '07.02.27.52.02', (SELECT id FROM university.users WHERE username = 'smclean'), 4, 22, 22), -- username : smclean 
-    ('Kevin', 'Robinson', 'krobinson@iut.univ-paris8.fr', '07.09.84.81.53', (SELECT id FROM university.users WHERE username = 'krobinson'), 4, 22, 66), -- username : krobinson 
-    ('Cody', 'Gilbert', 'cgilbert@iut.univ-paris8.fr', '06.17.01.89.61', (SELECT id FROM university.users WHERE username = 'cgilbert'), 4, 22, 66), -- username : cgilbert 
-    ('Jason', 'Hunt', 'jhunt@iut.univ-paris8.fr', '06.92.19.22.30', (SELECT id FROM university.users WHERE username = 'jhunt'), 4, 22, 66), -- username : jhunt 
-    ('Mallory', 'Martin', 'mmartin@iut.univ-paris8.fr', '06.25.80.32.11', (SELECT id FROM university.users WHERE username = 'mmartin'), 4, 22, 66), -- username : mmartin 
-    ('Linda', 'Sanders', 'lsanders@iut.univ-paris8.fr', '06.83.47.04.38', (SELECT id FROM university.users WHERE username = 'lsanders'), 4, 22, 66), -- username : lsanders 
-    ('Kayla', 'Maxwell', 'kmaxwell@iut.univ-paris8.fr', '06.18.73.57.18', (SELECT id FROM university.users WHERE username = 'kmaxwell'), 4, 22, 66), -- username : kmaxwell 
-    ('Katie', 'Castro', 'kcastro@iut.univ-paris8.fr', '06.76.97.95.52', (SELECT id FROM university.users WHERE username = 'kcastro'), 4, 22, 66), -- username : kcastro 
-    ('Anne', 'Shaw', 'ashaw@iut.univ-paris8.fr', '07.06.27.03.36', (SELECT id FROM university.users WHERE username = 'ashaw'), 4, 22, 66), -- username : ashaw 
-    ('Joshua', 'Howard', 'jhoward@iut.univ-paris8.fr', '07.43.54.13.92', (SELECT id FROM university.users WHERE username = 'jhoward'), 4, 22, 66), -- username : jhoward 
-    ('Jennifer', 'Carter', 'jcarter@iut.univ-paris8.fr', '07.93.98.69.53', (SELECT id FROM university.users WHERE username = 'jcarter'), 4, 22, 66), -- username : jcarter 
-    ('Colleen', 'Hill', 'chill@iut.univ-paris8.fr', '07.80.13.12.13', (SELECT id FROM university.users WHERE username = 'chill'), 4, 22, 110), -- username : chill 
-    ('Rita', 'Shaw', 'rshaw@iut.univ-paris8.fr', '06.13.79.52.22', (SELECT id FROM university.users WHERE username = 'rshaw'), 4, 22, 110), -- username : rshaw 
-    ('Alexandria', 'Perry', 'aperry@iut.univ-paris8.fr', '07.76.21.12.26', (SELECT id FROM university.users WHERE username = 'aperry'), 4, 22, 110), -- username : aperry 
-    ('Theresa', 'Howell', 'thowell@iut.univ-paris8.fr', '07.96.56.39.13', (SELECT id FROM university.users WHERE username = 'thowell'), 4, 22, 110), -- username : thowell 
-    ('Jose', 'Ferguson', 'jferguson@iut.univ-paris8.fr', '07.77.40.18.58', (SELECT id FROM university.users WHERE username = 'jferguson'), 4, 22, 110), -- username : jferguson 
-    ('Jose', 'Mccarty', 'jmccarty@iut.univ-paris8.fr', '07.75.23.17.67', (SELECT id FROM university.users WHERE username = 'jmccarty'), 4, 22, 110), -- username : jmccarty 
-    ('Jay', 'Crawford', 'jcrawford@iut.univ-paris8.fr', '06.30.94.45.02', (SELECT id FROM university.users WHERE username = 'jcrawford'), 4, 22, 110), -- username : jcrawford 
-    ('Christine', 'Calderon', 'ccalderon@iut.univ-paris8.fr', '06.96.03.96.62', (SELECT id FROM university.users WHERE username = 'ccalderon'), 4, 22, 110), -- username : ccalderon 
-    ('Caitlin', 'Hale', 'chale@iut.univ-paris8.fr', '07.87.84.83.40', (SELECT id FROM university.users WHERE username = 'chale'), 4, 22, 110), -- username : chale 
-    ('Ebony', 'Medina', 'emedina@iut.univ-paris8.fr', '07.21.97.80.77', (SELECT id FROM university.users WHERE username = 'emedina'), 4, 22, 110), -- username : emedina 
-    ('Alexis', 'Clark', 'aclark@iut.univ-paris8.fr', '06.62.05.71.12', (SELECT id FROM university.users WHERE username = 'aclark'), 4, 10, 10), -- username : aclark 
-    ('Joshua', 'Sanchez', 'jsanchez@iut.univ-paris8.fr', '06.15.93.09.51', (SELECT id FROM university.users WHERE username = 'jsanchez'), 4, 10, 10), -- username : jsanchez 
-    ('Teresa', 'Duran', 'tduran@iut.univ-paris8.fr', '07.63.26.23.88', (SELECT id FROM university.users WHERE username = 'tduran'), 4, 10, 10), -- username : tduran 
-    ('Julie', 'Romero', 'jromero@iut.univ-paris8.fr', '06.14.83.41.64', (SELECT id FROM university.users WHERE username = 'jromero'), 4, 10, 10), -- username : jromero 
-    ('Kimberly', 'Clay', 'kclay@iut.univ-paris8.fr', '07.40.45.83.44', (SELECT id FROM university.users WHERE username = 'kclay'), 4, 10, 10), -- username : kclay 
-    ('Stephen', 'Rose', 'srose@iut.univ-paris8.fr', '06.45.69.34.39', (SELECT id FROM university.users WHERE username = 'srose'), 4, 10, 10), -- username : srose 
-    ('Martin', 'Holloway', 'mholloway@iut.univ-paris8.fr', '06.54.42.76.28', (SELECT id FROM university.users WHERE username = 'mholloway'), 4, 10, 10), -- username : mholloway 
-    ('Sherry', 'Orozco', 'sorozco@iut.univ-paris8.fr', '06.85.54.71.87', (SELECT id FROM university.users WHERE username = 'sorozco'), 4, 10, 10), -- username : sorozco 
-    ('Debra', 'Quinn', 'dquinn@iut.univ-paris8.fr', '07.58.52.79.43', (SELECT id FROM university.users WHERE username = 'dquinn'), 4, 10, 10), -- username : dquinn 
-    ('Tonya', 'Smith', 'tsmith@iut.univ-paris8.fr', '07.07.00.59.69', (SELECT id FROM university.users WHERE username = 'tsmith'), 4, 10, 10), -- username : tsmith 
-    ('Karen', 'Gibson', 'kgibson@iut.univ-paris8.fr', '07.56.41.26.72', (SELECT id FROM university.users WHERE username = 'kgibson'), 4, 10, 54), -- username : kgibson 
-    ('Harry', 'Hartman', 'hhartman@iut.univ-paris8.fr', '07.04.67.88.08', (SELECT id FROM university.users WHERE username = 'hhartman'), 4, 10, 54), -- username : hhartman 
-    ('Jon', 'Rivera', 'jrivera@iut.univ-paris8.fr', '07.59.43.01.52', (SELECT id FROM university.users WHERE username = 'jrivera'), 4, 10, 54), -- username : jrivera 
-    ('Elizabeth', 'Russo', 'erusso@iut.univ-paris8.fr', '06.89.62.22.35', (SELECT id FROM university.users WHERE username = 'erusso'), 4, 10, 54), -- username : erusso 
-    ('Brett', 'Davis', 'bdavis@iut.univ-paris8.fr', '06.88.36.49.63', (SELECT id FROM university.users WHERE username = 'bdavis'), 4, 10, 54), -- username : bdavis 
-    ('Heidi', 'Gilbert', 'hgilbert@iut.univ-paris8.fr', '07.88.97.17.58', (SELECT id FROM university.users WHERE username = 'hgilbert'), 4, 10, 54), -- username : hgilbert 
-    ('Samantha', 'Miller', 'smiller@iut.univ-paris8.fr', '07.35.69.39.35', (SELECT id FROM university.users WHERE username = 'smiller'), 4, 10, 54), -- username : smiller 
-    ('Amanda', 'Wright', 'awright@iut.univ-paris8.fr', '06.34.88.30.93', (SELECT id FROM university.users WHERE username = 'awright'), 4, 10, 54), -- username : awright 
-    ('Donna', 'Schneider', 'dschneider@iut.univ-paris8.fr', '07.94.03.50.22', (SELECT id FROM university.users WHERE username = 'dschneider'), 4, 10, 54), -- username : dschneider 
-    ('Cheyenne', 'Taylor', 'ctaylor@iut.univ-paris8.fr', '06.88.94.17.00', (SELECT id FROM university.users WHERE username = 'ctaylor'), 4, 10, 54), -- username : ctaylor 
-    ('Douglas', 'Thompson', 'dthompson@iut.univ-paris8.fr', '06.60.62.48.62', (SELECT id FROM university.users WHERE username = 'dthompson'), 4, 10, 98), -- username : dthompson 
-    ('Joseph', 'Lee', 'jlee@iut.univ-paris8.fr', '06.03.32.53.45', (SELECT id FROM university.users WHERE username = 'jlee'), 4, 10, 98), -- username : jlee 
-    ('Gregory', 'Boyd', 'gboyd@iut.univ-paris8.fr', '07.26.83.77.49', (SELECT id FROM university.users WHERE username = 'gboyd'), 4, 10, 98), -- username : gboyd 
-    ('William', 'Hart', 'whart@iut.univ-paris8.fr', '06.67.51.58.88', (SELECT id FROM university.users WHERE username = 'whart'), 4, 10, 98), -- username : whart 
-    ('Angela', 'Anderson', 'aanderson@iut.univ-paris8.fr', '06.08.08.38.97', (SELECT id FROM university.users WHERE username = 'aanderson'), 4, 10, 98), -- username : aanderson 
-    ('Peter', 'Smith', 'psmith@iut.univ-paris8.fr', '07.76.83.85.08', (SELECT id FROM university.users WHERE username = 'psmith'), 4, 10, 98), -- username : psmith 
-    ('Ricky', 'Park', 'rpark@iut.univ-paris8.fr', '07.33.17.76.18', (SELECT id FROM university.users WHERE username = 'rpark'), 4, 10, 98), -- username : rpark 
-    ('Ashley', 'Taylor', 'ataylor@iut.univ-paris8.fr', '06.71.46.80.66', (SELECT id FROM university.users WHERE username = 'ataylor'), 4, 10, 98), -- username : ataylor 
-    ('Stephanie', 'Hobbs', 'shobbs@iut.univ-paris8.fr', '06.00.79.13.57', (SELECT id FROM university.users WHERE username = 'shobbs'), 4, 10, 98), -- username : shobbs 
-    ('Ian', 'Mcdowell', 'imcdowell@iut.univ-paris8.fr', '07.84.02.56.07', (SELECT id FROM university.users WHERE username = 'imcdowell'), 4, 10, 98), -- username : imcdowell 
-    ('Traci', 'Deleon', 'tdeleon@iut.univ-paris8.fr', '06.34.10.83.11', (SELECT id FROM university.users WHERE username = 'tdeleon'), 4, 12, 12), -- username : tdeleon 
-    ('Lee', 'Moore', 'lmoore@iut.univ-paris8.fr', '06.43.26.20.91', (SELECT id FROM university.users WHERE username = 'lmoore'), 4, 12, 12), -- username : lmoore 
-    ('Kevin', 'Walker', 'kwalker@iut.univ-paris8.fr', '07.65.67.42.85', (SELECT id FROM university.users WHERE username = 'kwalker'), 4, 12, 12), -- username : kwalker 
-    ('Elizabeth', 'Brown', 'ebrown@iut.univ-paris8.fr', '06.23.34.20.36', (SELECT id FROM university.users WHERE username = 'ebrown'), 4, 12, 12), -- username : ebrown 
-    ('Travis', 'Alexander', 'talexander@iut.univ-paris8.fr', '06.48.80.35.79', (SELECT id FROM university.users WHERE username = 'talexander'), 4, 12, 12), -- username : talexander 
-    ('Matthew', 'Evans', 'mevans@iut.univ-paris8.fr', '06.94.39.14.98', (SELECT id FROM university.users WHERE username = 'mevans'), 4, 12, 12), -- username : mevans 
-    ('Anthony', 'Adkins', 'aadkins@iut.univ-paris8.fr', '06.44.72.60.86', (SELECT id FROM university.users WHERE username = 'aadkins'), 4, 12, 12), -- username : aadkins 
-    ('Jose', 'Jackson', 'jjackson@iut.univ-paris8.fr', '07.73.41.47.73', (SELECT id FROM university.users WHERE username = 'jjackson'), 4, 12, 12), -- username : jjackson 
-    ('Joshua', 'Bowen', 'jbowen@iut.univ-paris8.fr', '07.44.44.78.59', (SELECT id FROM university.users WHERE username = 'jbowen'), 4, 12, 12), -- username : jbowen 
-    ('Matthew', 'Gonzalez', 'mgonzalez@iut.univ-paris8.fr', '07.63.58.15.36', (SELECT id FROM university.users WHERE username = 'mgonzalez'), 4, 12, 12), -- username : mgonzalez 
-    ('Michael', 'Becker', 'mbecker@iut.univ-paris8.fr', '07.30.39.15.37', (SELECT id FROM university.users WHERE username = 'mbecker'), 4, 12, 56), -- username : mbecker 
-    ('Pamela', 'Oconnor', 'poconnor@iut.univ-paris8.fr', '07.31.03.92.56', (SELECT id FROM university.users WHERE username = 'poconnor'), 4, 12, 56), -- username : poconnor 
-    ('Gabriel', 'Davis', 'gdavis@iut.univ-paris8.fr', '06.60.49.50.14', (SELECT id FROM university.users WHERE username = 'gdavis'), 4, 12, 56), -- username : gdavis 
-    ('Tim', 'Mercado', 'tmercado@iut.univ-paris8.fr', '06.83.32.46.23', (SELECT id FROM university.users WHERE username = 'tmercado'), 4, 12, 56), -- username : tmercado 
-    ('Krista', 'Lopez', 'klopez@iut.univ-paris8.fr', '07.63.30.94.87', (SELECT id FROM university.users WHERE username = 'klopez'), 4, 12, 56), -- username : klopez 
-    ('Austin', 'Rojas', 'arojas@iut.univ-paris8.fr', '07.07.38.99.53', (SELECT id FROM university.users WHERE username = 'arojas'), 4, 12, 56), -- username : arojas 
-    ('Alexandra', 'Morris', 'amorris@iut.univ-paris8.fr', '06.27.79.22.96', (SELECT id FROM university.users WHERE username = 'amorris'), 4, 12, 56), -- username : amorris 
-    ('Renee', 'Watson', 'rwatson@iut.univ-paris8.fr', '07.06.13.14.02', (SELECT id FROM university.users WHERE username = 'rwatson'), 4, 12, 56), -- username : rwatson 
-    ('Katelyn', 'Kaufman', 'kkaufman@iut.univ-paris8.fr', '06.25.30.50.15', (SELECT id FROM university.users WHERE username = 'kkaufman'), 4, 12, 56), -- username : kkaufman 
-    ('Cory', 'Phillips', 'cphillips@iut.univ-paris8.fr', '07.09.27.41.90', (SELECT id FROM university.users WHERE username = 'cphillips'), 4, 12, 56), -- username : cphillips 
-    ('James', 'Moore', 'jmoore@iut.univ-paris8.fr', '07.84.84.74.86', (SELECT id FROM university.users WHERE username = 'jmoore'), 4, 12, 100), -- username : jmoore 
-    ('Joseph', 'James', 'jjames@iut.univ-paris8.fr', '07.72.38.18.92', (SELECT id FROM university.users WHERE username = 'jjames'), 4, 12, 100), -- username : jjames 
-    ('Timothy', 'Webster', 'twebster@iut.univ-paris8.fr', '06.25.46.32.01', (SELECT id FROM university.users WHERE username = 'twebster'), 4, 12, 100), -- username : twebster 
-    ('Zachary', 'Lee', 'zlee@iut.univ-paris8.fr', '07.14.25.47.94', (SELECT id FROM university.users WHERE username = 'zlee'), 4, 12, 100), -- username : zlee 
-    ('Cynthia', 'Stewart', 'cstewart@iut.univ-paris8.fr', '07.36.41.13.50', (SELECT id FROM university.users WHERE username = 'cstewart'), 4, 12, 100), -- username : cstewart 
-    ('Benjamin', 'Smith', 'bsmith@iut.univ-paris8.fr', '06.39.13.25.45', (SELECT id FROM university.users WHERE username = 'bsmith'), 4, 12, 100), -- username : bsmith 
-    ('Eric', 'Martin', 'emartin@iut.univ-paris8.fr', '06.25.56.01.66', (SELECT id FROM university.users WHERE username = 'emartin'), 4, 12, 100), -- username : emartin 
-    ('Leslie', 'Allen', 'lallen@iut.univ-paris8.fr', '06.90.05.28.67', (SELECT id FROM university.users WHERE username = 'lallen'), 4, 12, 100), -- username : lallen 
-    ('Elizabeth', 'Jones', 'ejones@iut.univ-paris8.fr', '06.82.37.68.78', (SELECT id FROM university.users WHERE username = 'ejones'), 4, 12, 100), -- username : ejones 
-    ('Savannah', 'Ramirez', 'sramirez@iut.univ-paris8.fr', '06.45.07.45.84', (SELECT id FROM university.users WHERE username = 'sramirez'), 4, 12, 100), -- username : sramirez 
-    ('Mary', 'Erickson', 'merickson@iut.univ-paris8.fr', '07.06.97.06.84', (SELECT id FROM university.users WHERE username = 'merickson'), 4, 11, 11), -- username : merickson 
-    ('Bruce', 'Lewis', 'blewis@iut.univ-paris8.fr', '06.55.46.54.11', (SELECT id FROM university.users WHERE username = 'blewis'), 4, 11, 11), -- username : blewis 
-    ('William', 'Eaton', 'weaton@iut.univ-paris8.fr', '06.09.74.34.90', (SELECT id FROM university.users WHERE username = 'weaton'), 4, 11, 11), -- username : weaton 
-    ('Elizabeth', 'Burns', 'eburns@iut.univ-paris8.fr', '07.72.19.77.87', (SELECT id FROM university.users WHERE username = 'eburns'), 4, 11, 11), -- username : eburns 
-    ('Kelly', 'Mills', 'kmills@iut.univ-paris8.fr', '06.64.09.57.75', (SELECT id FROM university.users WHERE username = 'kmills'), 4, 11, 11), -- username : kmills 
-    ('Sarah', 'Harris', 'sharris@iut.univ-paris8.fr', '07.18.52.13.69', (SELECT id FROM university.users WHERE username = 'sharris'), 4, 11, 11), -- username : sharris 
-    ('Denise', 'Johnson', 'djohnson@iut.univ-paris8.fr', '06.54.29.13.91', (SELECT id FROM university.users WHERE username = 'djohnson'), 4, 11, 11), -- username : djohnson 
-    ('Adam', 'Ward', 'award@iut.univ-paris8.fr', '07.83.02.12.56', (SELECT id FROM university.users WHERE username = 'award'), 4, 11, 11), -- username : award 
-    ('Michelle', 'Jones', 'mjones2@iut.univ-paris8.fr', '07.50.90.83.90', (SELECT id FROM university.users WHERE username = 'mjones2'), 4, 11, 11), -- username : mjones2 
-    ('Natasha', 'Cook', 'ncook@iut.univ-paris8.fr', '06.73.17.07.01', (SELECT id FROM university.users WHERE username = 'ncook'), 4, 11, 11), -- username : ncook 
-    ('Roger', 'Fowler', 'rfowler@iut.univ-paris8.fr', '06.26.25.32.72', (SELECT id FROM university.users WHERE username = 'rfowler'), 4, 36, 124), -- username : rfowler 
-    ('David', 'Marquez', 'dmarquez@iut.univ-paris8.fr', '07.43.56.51.56', (SELECT id FROM university.users WHERE username = 'dmarquez'), 4, 36, 124), -- username : dmarquez 
-    ('Tiffany', 'Villa', 'tvilla@iut.univ-paris8.fr', '06.13.10.15.26', (SELECT id FROM university.users WHERE username = 'tvilla'), 4, 36, 124), -- username : tvilla 
-    ('Samantha', 'Mccarthy', 'smccarthy@iut.univ-paris8.fr', '06.36.39.74.20', (SELECT id FROM university.users WHERE username = 'smccarthy'), 4, 36, 124), -- username : smccarthy 
-    ('Tyler', 'Spence', 'tspence@iut.univ-paris8.fr', '06.26.65.41.40', (SELECT id FROM university.users WHERE username = 'tspence'), 4, 36, 124), -- username : tspence 
-    ('Christopher', 'Hartman', 'chartman@iut.univ-paris8.fr', '06.25.43.30.71', (SELECT id FROM university.users WHERE username = 'chartman'), 4, 36, 124), -- username : chartman 
-    ('Melanie', 'Jones', 'mjones1@iut.univ-paris8.fr', '06.83.23.58.04', (SELECT id FROM university.users WHERE username = 'mjones1'), 4, 36, 124), -- username : mjones1 
-    ('Samantha', 'Williams', 'swilliams@iut.univ-paris8.fr', '07.52.80.53.67', (SELECT id FROM university.users WHERE username = 'swilliams'), 4, 36, 124), -- username : swilliams 
-    ('Brian', 'Johnson', 'bjohnson@iut.univ-paris8.fr', '06.16.34.35.43', (SELECT id FROM university.users WHERE username = 'bjohnson'), 4, 36, 124), -- username : bjohnson 
-    ('David', 'Lawson', 'dlawson@iut.univ-paris8.fr', '06.51.25.47.18', (SELECT id FROM university.users WHERE username = 'dlawson'), 4, 36, 124), -- username : dlawson 
-    ('Maria', 'Jones', 'mjones@iut.univ-paris8.fr', '07.51.03.23.10', (SELECT id FROM university.users WHERE username = 'mjones'), 4, 11, 99), -- username : mjones 
-    ('Amy', 'Peters', 'apeters@iut.univ-paris8.fr', '07.85.11.61.75', (SELECT id FROM university.users WHERE username = 'apeters'), 4, 11, 99), -- username : apeters 
-    ('Misty', 'Richardson', 'mrichardson@iut.univ-paris8.fr', '06.70.53.58.12', (SELECT id FROM university.users WHERE username = 'mrichardson'), 4, 11, 99), -- username : mrichardson 
-    ('Bernard', 'Hamilton', 'bhamilton@iut.univ-paris8.fr', '06.28.19.32.93', (SELECT id FROM university.users WHERE username = 'bhamilton'), 4, 11, 99), -- username : bhamilton 
-    ('Julie', 'Kidd', 'jkidd@iut.univ-paris8.fr', '07.93.09.19.24', (SELECT id FROM university.users WHERE username = 'jkidd'), 4, 11, 99), -- username : jkidd 
-    ('Dylan', 'Garcia', 'dgarcia@iut.univ-paris8.fr', '07.95.20.31.57', (SELECT id FROM university.users WHERE username = 'dgarcia'), 4, 11, 99), -- username : dgarcia 
-    ('Lauren', 'Lee', 'llee@iut.univ-paris8.fr', '06.15.72.13.43', (SELECT id FROM university.users WHERE username = 'llee'), 4, 11, 99), -- username : llee 
-    ('Robin', 'Walters', 'rwalters@iut.univ-paris8.fr', '07.54.53.53.54', (SELECT id FROM university.users WHERE username = 'rwalters'), 4, 11, 99), -- username : rwalters 
-    ('George', 'Collins', 'gcollins@iut.univ-paris8.fr', '07.16.10.57.16', (SELECT id FROM university.users WHERE username = 'gcollins'), 4, 11, 99), -- username : gcollins 
-    ('Anne', 'Diaz', 'adiaz@iut.univ-paris8.fr', '06.85.94.05.83', (SELECT id FROM university.users WHERE username = 'adiaz'), 4, 11, 99), -- username : adiaz 
-    ('Jerry', 'Rosales', 'jrosales@iut.univ-paris8.fr', '06.26.12.14.91', (SELECT id FROM university.users WHERE username = 'jrosales'), 4, 43, 43), -- username : jrosales 
-    ('Brian', 'Howell', 'bhowell@iut.univ-paris8.fr', '07.85.70.63.25', (SELECT id FROM university.users WHERE username = 'bhowell'), 4, 43, 43), -- username : bhowell 
-    ('Brenda', 'Anderson', 'banderson@iut.univ-paris8.fr', '06.34.37.27.66', (SELECT id FROM university.users WHERE username = 'banderson'), 4, 43, 43), -- username : banderson 
-    ('Jillian', 'Wolfe', 'jwolfe@iut.univ-paris8.fr', '06.38.76.18.17', (SELECT id FROM university.users WHERE username = 'jwolfe'), 4, 43, 43), -- username : jwolfe 
-    ('Edward', 'Nelson', 'enelson@iut.univ-paris8.fr', '07.05.23.58.92', (SELECT id FROM university.users WHERE username = 'enelson'), 4, 43, 43), -- username : enelson 
-    ('Yvonne', 'Powers', 'ypowers@iut.univ-paris8.fr', '07.42.59.15.65', (SELECT id FROM university.users WHERE username = 'ypowers'), 4, 43, 43), -- username : ypowers 
-    ('Anna', 'Hayes', 'ahayes@iut.univ-paris8.fr', '07.11.83.88.68', (SELECT id FROM university.users WHERE username = 'ahayes'), 4, 43, 43), -- username : ahayes 
-    ('Jody', 'Tucker', 'jtucker@iut.univ-paris8.fr', '07.81.78.17.76', (SELECT id FROM university.users WHERE username = 'jtucker'), 4, 43, 43), -- username : jtucker 
-    ('Jeffrey', 'Walker', 'jwalker@iut.univ-paris8.fr', '07.85.77.04.42', (SELECT id FROM university.users WHERE username = 'jwalker'), 4, 43, 43), -- username : jwalker 
-    ('Amanda', 'Crawford', 'acrawford@iut.univ-paris8.fr', '07.11.98.38.30', (SELECT id FROM university.users WHERE username = 'acrawford'), 4, 43, 43), -- username : acrawford 
-    ('Julie', 'Davis', 'jdavis@iut.univ-paris8.fr', '07.06.23.96.08', (SELECT id FROM university.users WHERE username = 'jdavis'), 4, 43, 87), -- username : jdavis 
-    ('Wendy', 'Phillips', 'wphillips@iut.univ-paris8.fr', '07.35.12.20.24', (SELECT id FROM university.users WHERE username = 'wphillips'), 4, 43, 87), -- username : wphillips 
-    ('Craig', 'Moore', 'cmoore@iut.univ-paris8.fr', '06.13.59.97.09', (SELECT id FROM university.users WHERE username = 'cmoore'), 4, 43, 87), -- username : cmoore 
-    ('Stephanie', 'Thompson', 'sthompson@iut.univ-paris8.fr', '07.20.67.46.94', (SELECT id FROM university.users WHERE username = 'sthompson'), 4, 43, 87), -- username : sthompson 
-    ('Christina', 'Sloan', 'csloan@iut.univ-paris8.fr', '07.68.78.45.66', (SELECT id FROM university.users WHERE username = 'csloan'), 4, 43, 87), -- username : csloan 
-    ('Shane', 'Burns', 'sburns@iut.univ-paris8.fr', '07.57.35.53.58', (SELECT id FROM university.users WHERE username = 'sburns'), 4, 43, 87), -- username : sburns 
-    ('John', 'Cruz', 'jcruz@iut.univ-paris8.fr', '07.01.77.64.07', (SELECT id FROM university.users WHERE username = 'jcruz'), 4, 43, 87), -- username : jcruz 
-    ('Christina', 'Thompson', 'cthompson@iut.univ-paris8.fr', '07.00.46.18.34', (SELECT id FROM university.users WHERE username = 'cthompson'), 4, 43, 87), -- username : cthompson 
-    ('Jennifer', 'Jensen', 'jjensen@iut.univ-paris8.fr', '07.72.69.02.46', (SELECT id FROM university.users WHERE username = 'jjensen'), 4, 43, 87), -- username : jjensen 
-    ('Christopher', 'Smith', 'csmith@iut.univ-paris8.fr', '07.72.97.11.22', (SELECT id FROM university.users WHERE username = 'csmith'), 4, 43, 87), -- username : csmith 
-    ('Cheyenne', 'Williams', 'cwilliams@iut.univ-paris8.fr', '07.22.95.16.57', (SELECT id FROM university.users WHERE username = 'cwilliams'), 4, 43, 131), -- username : cwilliams 
-    ('James', 'Johnson', 'jjohnson@iut.univ-paris8.fr', '06.10.84.65.78', (SELECT id FROM university.users WHERE username = 'jjohnson'), 4, 43, 131), -- username : jjohnson 
-    ('Robert', 'Kennedy', 'rkennedy@iut.univ-paris8.fr', '07.52.04.24.02', (SELECT id FROM university.users WHERE username = 'rkennedy'), 4, 43, 131), -- username : rkennedy 
-    ('Ryan', 'Miller', 'rmiller@iut.univ-paris8.fr', '06.12.41.11.16', (SELECT id FROM university.users WHERE username = 'rmiller'), 4, 43, 131), -- username : rmiller 
-    ('David', 'Fisher', 'dfisher@iut.univ-paris8.fr', '07.64.36.16.96', (SELECT id FROM university.users WHERE username = 'dfisher'), 4, 43, 131), -- username : dfisher 
-    ('Sarah', 'Barnett', 'sbarnett@iut.univ-paris8.fr', '07.75.18.12.87', (SELECT id FROM university.users WHERE username = 'sbarnett'), 4, 43, 131), -- username : sbarnett 
-    ('Deborah', 'Willis', 'dwillis@iut.univ-paris8.fr', '07.12.61.31.22', (SELECT id FROM university.users WHERE username = 'dwillis'), 4, 43, 131), -- username : dwillis 
-    ('Tracey', 'Willis', 'twillis@iut.univ-paris8.fr', '06.12.95.78.89', (SELECT id FROM university.users WHERE username = 'twillis'), 4, 43, 131), -- username : twillis 
-    ('Cassie', 'Tanner', 'ctanner@iut.univ-paris8.fr', '07.53.42.33.93', (SELECT id FROM university.users WHERE username = 'ctanner'), 4, 43, 131), -- username : ctanner 
-    ('Patrick', 'Hebert', 'phebert@iut.univ-paris8.fr', '06.46.53.71.83', (SELECT id FROM university.users WHERE username = 'phebert'), 4, 43, 131), -- username : phebert 
-    ('Scott', 'Vega', 'svega@iut.univ-paris8.fr', '06.14.94.13.45', (SELECT id FROM university.users WHERE username = 'svega'), 4, 44, 44), -- username : svega 
-    ('Kathryn', 'Price', 'kprice@iut.univ-paris8.fr', '06.56.41.14.39', (SELECT id FROM university.users WHERE username = 'kprice'), 4, 44, 44), -- username : kprice 
-    ('Ralph', 'Duran', 'rduran@iut.univ-paris8.fr', '07.31.53.98.82', (SELECT id FROM university.users WHERE username = 'rduran'), 4, 44, 44), -- username : rduran 
-    ('Crystal', 'Hebert', 'chebert@iut.univ-paris8.fr', '07.22.59.26.60', (SELECT id FROM university.users WHERE username = 'chebert'), 4, 44, 44), -- username : chebert 
-    ('Melissa', 'Glover', 'mglover@iut.univ-paris8.fr', '07.23.24.49.76', (SELECT id FROM university.users WHERE username = 'mglover'), 4, 44, 44), -- username : mglover 
-    ('Joshua', 'Velazquez', 'jvelazquez@iut.univ-paris8.fr', '07.95.89.74.72', (SELECT id FROM university.users WHERE username = 'jvelazquez'), 4, 44, 44), -- username : jvelazquez 
-    ('April', 'White', 'awhite@iut.univ-paris8.fr', '07.05.80.01.60', (SELECT id FROM university.users WHERE username = 'awhite'), 4, 44, 44), -- username : awhite 
-    ('George', 'Thomas', 'gthomas@iut.univ-paris8.fr', '07.46.79.03.12', (SELECT id FROM university.users WHERE username = 'gthomas'), 4, 44, 44), -- username : gthomas 
-    ('Sydney', 'Garcia', 'sgarcia@iut.univ-paris8.fr', '06.59.31.01.72', (SELECT id FROM university.users WHERE username = 'sgarcia'), 4, 44, 44), -- username : sgarcia 
-    ('Joel', 'Baker', 'jbaker@iut.univ-paris8.fr', '07.64.68.72.90', (SELECT id FROM university.users WHERE username = 'jbaker'), 4, 44, 44), -- username : jbaker 
-    ('Cheryl', 'Olson', 'colson@iut.univ-paris8.fr', '06.96.33.55.24', (SELECT id FROM university.users WHERE username = 'colson'), 4, 44, 88), -- username : colson 
-    ('Mary', 'Shelton', 'mshelton@iut.univ-paris8.fr', '06.33.96.05.37', (SELECT id FROM university.users WHERE username = 'mshelton'), 4, 44, 88), -- username : mshelton 
-    ('Hannah', 'Williams', 'hwilliams@iut.univ-paris8.fr', '06.17.36.47.45', (SELECT id FROM university.users WHERE username = 'hwilliams'), 4, 44, 88), -- username : hwilliams 
-    ('Karen', 'Shaw', 'kshaw@iut.univ-paris8.fr', '07.30.15.81.02', (SELECT id FROM university.users WHERE username = 'kshaw'), 4, 44, 88), -- username : kshaw 
-    ('Kathryn', 'Jacobs', 'kjacobs@iut.univ-paris8.fr', '07.02.59.92.11', (SELECT id FROM university.users WHERE username = 'kjacobs'), 4, 44, 88), -- username : kjacobs 
-    ('Alexander', 'Jarvis', 'ajarvis@iut.univ-paris8.fr', '07.95.44.46.60', (SELECT id FROM university.users WHERE username = 'ajarvis'), 4, 44, 88), -- username : ajarvis 
-    ('Shane', 'Walker', 'swalker@iut.univ-paris8.fr', '06.38.05.18.37', (SELECT id FROM university.users WHERE username = 'swalker'), 4, 44, 88), -- username : swalker 
-    ('Andrea', 'Gordon', 'agordon@iut.univ-paris8.fr', '07.89.04.48.83', (SELECT id FROM university.users WHERE username = 'agordon'), 4, 44, 88), -- username : agordon 
-    ('Jennifer', 'Miller', 'jmiller@iut.univ-paris8.fr', '07.27.02.61.81', (SELECT id FROM university.users WHERE username = 'jmiller'), 4, 44, 88), -- username : jmiller 
-    ('Sandra', 'Paul', 'spaul@iut.univ-paris8.fr', '07.44.45.43.11', (SELECT id FROM university.users WHERE username = 'spaul'), 4, 44, 88), -- username : spaul 
-    ('Eric', 'Park', 'epark@iut.univ-paris8.fr', '07.09.78.59.81', (SELECT id FROM university.users WHERE username = 'epark'), 4, 44, 132), -- username : epark 
-    ('David', 'Randolph', 'drandolph@iut.univ-paris8.fr', '07.53.55.33.65', (SELECT id FROM university.users WHERE username = 'drandolph'), 4, 44, 132), -- username : drandolph 
-    ('Darlene', 'Hutchinson', 'dhutchinson@iut.univ-paris8.fr', '06.90.45.07.62', (SELECT id FROM university.users WHERE username = 'dhutchinson'), 4, 44, 132), -- username : dhutchinson 
-    ('Thomas', 'Johnson', 'tjohnson@iut.univ-paris8.fr', '06.57.43.93.13', (SELECT id FROM university.users WHERE username = 'tjohnson'), 4, 44, 132), -- username : tjohnson 
-    ('Kimberly', 'Rivera', 'krivera@iut.univ-paris8.fr', '06.69.78.28.46', (SELECT id FROM university.users WHERE username = 'krivera'), 4, 44, 132), -- username : krivera 
-    ('Angela', 'Moore', 'amoore@iut.univ-paris8.fr', '07.27.09.89.09', (SELECT id FROM university.users WHERE username = 'amoore'), 4, 44, 132), -- username : amoore 
-    ('Amy', 'Romero', 'aromero@iut.univ-paris8.fr', '07.03.82.19.59', (SELECT id FROM university.users WHERE username = 'aromero'), 4, 44, 132), -- username : aromero 
-    ('Stacy', 'Carlson', 'scarlson@iut.univ-paris8.fr', '06.70.18.36.24', (SELECT id FROM university.users WHERE username = 'scarlson'), 4, 44, 132), -- username : scarlson 
-    ('Frederick', 'Hoffman', 'fhoffman@iut.univ-paris8.fr', '06.16.98.40.27', (SELECT id FROM university.users WHERE username = 'fhoffman'), 4, 44, 132), -- username : fhoffman 
-    ('George', 'Ayers', 'gayers@iut.univ-paris8.fr', '06.32.06.80.62', (SELECT id FROM university.users WHERE username = 'gayers'), 4, 44, 132), -- username : gayers 
-    ('Jennifer', 'Sexton', 'jsexton@iut.univ-paris8.fr', '07.42.94.25.85', (SELECT id FROM university.users WHERE username = 'jsexton'), 4, 36, 36), -- username : jsexton 
-    ('Lori', 'Campbell', 'lcampbell@iut.univ-paris8.fr', '06.07.44.04.32', (SELECT id FROM university.users WHERE username = 'lcampbell'), 4, 36, 36), -- username : lcampbell 
-    ('Whitney', 'Weiss', 'wweiss@iut.univ-paris8.fr', '07.16.26.70.52', (SELECT id FROM university.users WHERE username = 'wweiss'), 4, 36, 36), -- username : wweiss 
-    ('Lawrence', 'Boyle', 'lboyle@iut.univ-paris8.fr', '07.13.99.14.29', (SELECT id FROM university.users WHERE username = 'lboyle'), 4, 36, 36), -- username : lboyle 
-    ('Christopher', 'Jenkins', 'cjenkins@iut.univ-paris8.fr', '06.33.91.20.10', (SELECT id FROM university.users WHERE username = 'cjenkins'), 4, 36, 36), -- username : cjenkins 
-    ('Lisa', 'Flores', 'lflores@iut.univ-paris8.fr', '06.88.68.30.11', (SELECT id FROM university.users WHERE username = 'lflores'), 4, 36, 36), -- username : lflores 
-    ('Todd', 'Hernandez', 'thernandez@iut.univ-paris8.fr', '07.21.81.56.49', (SELECT id FROM university.users WHERE username = 'thernandez'), 4, 36, 36), -- username : thernandez 
-    ('Jacob', 'Adams', 'jadams@iut.univ-paris8.fr', '06.38.29.68.76', (SELECT id FROM university.users WHERE username = 'jadams'), 4, 36, 36), -- username : jadams 
-    ('Taylor', 'Bishop', 'tbishop@iut.univ-paris8.fr', '07.37.61.03.66', (SELECT id FROM university.users WHERE username = 'tbishop'), 4, 36, 36), -- username : tbishop 
-    ('Michael', 'Hawkins', 'mhawkins@iut.univ-paris8.fr', '06.64.51.17.51', (SELECT id FROM university.users WHERE username = 'mhawkins'), 4, 36, 36), -- username : mhawkins 
-    ('Jeffrey', 'Watson', 'jwatson@iut.univ-paris8.fr', '06.93.13.51.04', (SELECT id FROM university.users WHERE username = 'jwatson'), 4, 36, 80), -- username : jwatson 
-    ('Kathleen', 'Martin', 'kmartin@iut.univ-paris8.fr', '06.32.00.37.38', (SELECT id FROM university.users WHERE username = 'kmartin'), 4, 36, 80), -- username : kmartin 
-    ('Jeffery', 'Brooks', 'jbrooks@iut.univ-paris8.fr', '07.18.77.07.38', (SELECT id FROM university.users WHERE username = 'jbrooks'), 4, 36, 80), -- username : jbrooks 
-    ('Lisa', 'White', 'lwhite@iut.univ-paris8.fr', '07.52.10.77.18', (SELECT id FROM university.users WHERE username = 'lwhite'), 4, 36, 80), -- username : lwhite 
-    ('Tamara', 'Cross', 'tcross@iut.univ-paris8.fr', '06.90.00.08.92', (SELECT id FROM university.users WHERE username = 'tcross'), 4, 36, 80), -- username : tcross 
-    ('Jasmine', 'Ford', 'jford@iut.univ-paris8.fr', '06.88.88.67.49', (SELECT id FROM university.users WHERE username = 'jford'), 4, 36, 80), -- username : jford 
-    ('Debbie', 'Jacobs', 'djacobs@iut.univ-paris8.fr', '06.27.40.14.48', (SELECT id FROM university.users WHERE username = 'djacobs'), 4, 36, 80), -- username : djacobs 
-    ('Stephanie', 'Moran', 'smoran@iut.univ-paris8.fr', '06.79.15.12.39', (SELECT id FROM university.users WHERE username = 'smoran'), 4, 36, 80), -- username : smoran 
-    ('Isaiah', 'Bowman', 'ibowman@iut.univ-paris8.fr', '06.50.50.17.59', (SELECT id FROM university.users WHERE username = 'ibowman'), 4, 36, 80), -- username : ibowman 
-    ('Sheila', 'Stark', 'sstark@iut.univ-paris8.fr', '07.55.11.61.27', (SELECT id FROM university.users WHERE username = 'sstark'), 4, 36, 80), -- username : sstark 
-    ('Alan', 'Thompson', 'athompson@iut.univ-paris8.fr', '06.10.98.23.33', (SELECT id FROM university.users WHERE username = 'athompson'), 4, 36, 124), -- username : athompson 
-    ('Rhonda', 'Bell', 'rbell@iut.univ-paris8.fr', '06.38.43.74.50', (SELECT id FROM university.users WHERE username = 'rbell'), 4, 36, 124), -- username : rbell 
-    ('Randy', 'Castillo', 'rcastillo@iut.univ-paris8.fr', '07.90.99.55.56', (SELECT id FROM university.users WHERE username = 'rcastillo'), 4, 36, 124), -- username : rcastillo 
-    ('Jo', 'Harris', 'jharris@iut.univ-paris8.fr', '06.26.27.73.80', (SELECT id FROM university.users WHERE username = 'jharris'), 4, 36, 124), -- username : jharris 
-    ('Kimberly', 'Nelson', 'knelson@iut.univ-paris8.fr', '07.01.11.07.21', (SELECT id FROM university.users WHERE username = 'knelson'), 4, 36, 124), -- username : knelson 
-    ('Patricia', 'Farmer', 'pfarmer@iut.univ-paris8.fr', '06.31.57.33.44', (SELECT id FROM university.users WHERE username = 'pfarmer'), 4, 36, 124), -- username : pfarmer 
-    ('Lisa', 'Hanna', 'lhanna@iut.univ-paris8.fr', '07.44.55.97.34', (SELECT id FROM university.users WHERE username = 'lhanna'), 4, 36, 124), -- username : lhanna 
-    ('Breanna', 'Haas', 'bhaas@iut.univ-paris8.fr', '06.87.22.73.60', (SELECT id FROM university.users WHERE username = 'bhaas'), 4, 36, 124), -- username : bhaas 
-    ('Jessica', 'Williams', 'jwilliams@iut.univ-paris8.fr', '07.19.33.47.24', (SELECT id FROM university.users WHERE username = 'jwilliams'), 4, 36, 124), -- username : jwilliams 
-    ('Ernest', 'Carey', 'ecarey@iut.univ-paris8.fr', '07.82.41.80.37', (SELECT id FROM university.users WHERE username = 'ecarey'), 4, 36, 124), -- username : ecarey 
-    ('Kristen', 'Hernandez', 'khernandez@iut.univ-paris8.fr', '06.44.20.95.20', (SELECT id FROM university.users WHERE username = 'khernandez'), 4, 34, 34), -- username : khernandez 
-    ('Megan', 'Williams', 'mwilliams@iut.univ-paris8.fr', '07.90.55.98.68', (SELECT id FROM university.users WHERE username = 'mwilliams'), 4, 34, 34), -- username : mwilliams 
-    ('Janet', 'Wheeler', 'jwheeler@iut.univ-paris8.fr', '06.75.26.75.80', (SELECT id FROM university.users WHERE username = 'jwheeler'), 4, 34, 34), -- username : jwheeler 
-    ('Willie', 'Gross', 'wgross@iut.univ-paris8.fr', '07.59.82.43.05', (SELECT id FROM university.users WHERE username = 'wgross'), 4, 34, 34), -- username : wgross 
-    ('Amanda', 'Jacobs', 'ajacobs@iut.univ-paris8.fr', '06.34.84.51.01', (SELECT id FROM university.users WHERE username = 'ajacobs'), 4, 34, 34), -- username : ajacobs 
-    ('Crystal', 'Harris', 'charris@iut.univ-paris8.fr', '06.70.17.04.77', (SELECT id FROM university.users WHERE username = 'charris'), 4, 34, 34), -- username : charris 
-    ('Kristine', 'Brown', 'kbrown@iut.univ-paris8.fr', '06.78.86.41.59', (SELECT id FROM university.users WHERE username = 'kbrown'), 4, 34, 34), -- username : kbrown 
-    ('Andrew', 'Wagner', 'awagner@iut.univ-paris8.fr', '07.47.72.87.04', (SELECT id FROM university.users WHERE username = 'awagner'), 4, 34, 34), -- username : awagner 
-    ('Paige', 'Carter', 'pcarter@iut.univ-paris8.fr', '07.65.72.42.23', (SELECT id FROM university.users WHERE username = 'pcarter'), 4, 34, 34), -- username : pcarter 
-    ('Elizabeth', 'Kerr', 'ekerr@iut.univ-paris8.fr', '06.59.52.48.15', (SELECT id FROM university.users WHERE username = 'ekerr'), 4, 34, 34), -- username : ekerr 
-    ('Shannon', 'Parrish', 'sparrish@iut.univ-paris8.fr', '07.19.02.74.57', (SELECT id FROM university.users WHERE username = 'sparrish'), 4, 34, 78), -- username : sparrish 
-    ('Terri', 'Brown', 'tbrown@iut.univ-paris8.fr', '07.76.90.52.65', (SELECT id FROM university.users WHERE username = 'tbrown'), 4, 34, 78), -- username : tbrown 
-    ('Taylor', 'Flores', 'tflores@iut.univ-paris8.fr', '06.45.97.09.79', (SELECT id FROM university.users WHERE username = 'tflores'), 4, 34, 78), -- username : tflores 
-    ('Nicholas', 'Conley', 'nconley@iut.univ-paris8.fr', '06.83.59.56.99', (SELECT id FROM university.users WHERE username = 'nconley'), 4, 34, 78), -- username : nconley 
-    ('Emily', 'Blankenship', 'eblankenship@iut.univ-paris8.fr', '06.38.58.38.12', (SELECT id FROM university.users WHERE username = 'eblankenship'), 4, 34, 78), -- username : eblankenship 
-    ('April', 'Wilson', 'awilson@iut.univ-paris8.fr', '06.29.08.95.17', (SELECT id FROM university.users WHERE username = 'awilson'), 4, 34, 78), -- username : awilson 
-    ('Olivia', 'Lawson', 'olawson@iut.univ-paris8.fr', '07.56.72.83.95', (SELECT id FROM university.users WHERE username = 'olawson'), 4, 34, 78), -- username : olawson 
-    ('Lori', 'Huynh', 'lhuynh@iut.univ-paris8.fr', '06.82.59.86.11', (SELECT id FROM university.users WHERE username = 'lhuynh'), 4, 34, 78), -- username : lhuynh 
-    ('Marie', 'Holden', 'mholden@iut.univ-paris8.fr', '07.84.93.51.10', (SELECT id FROM university.users WHERE username = 'mholden'), 4, 34, 78), -- username : mholden 
-    ('Tabitha', 'Morales', 'tmorales@iut.univ-paris8.fr', '07.69.42.20.53', (SELECT id FROM university.users WHERE username = 'tmorales'), 4, 34, 78), -- username : tmorales 
-    ('Jennifer', 'Cooper', 'jcooper@iut.univ-paris8.fr', '07.98.37.59.39', (SELECT id FROM university.users WHERE username = 'jcooper'), 4, 34, 122), -- username : jcooper 
-    ('Kevin', 'Sanders', 'ksanders@iut.univ-paris8.fr', '07.75.16.47.93', (SELECT id FROM university.users WHERE username = 'ksanders'), 4, 34, 122), -- username : ksanders 
-    ('Christine', 'Blair', 'cblair@iut.univ-paris8.fr', '07.97.71.21.37', (SELECT id FROM university.users WHERE username = 'cblair'), 4, 34, 122), -- username : cblair 
-    ('Vanessa', 'Villa', 'vvilla@iut.univ-paris8.fr', '06.18.62.75.88', (SELECT id FROM university.users WHERE username = 'vvilla'), 4, 34, 122), -- username : vvilla 
-    ('Tyler', 'Morgan', 'tmorgan@iut.univ-paris8.fr', '06.89.54.02.90', (SELECT id FROM university.users WHERE username = 'tmorgan'), 4, 34, 122), -- username : tmorgan 
-    ('Karen', 'Tate', 'ktate@iut.univ-paris8.fr', '07.51.98.05.43', (SELECT id FROM university.users WHERE username = 'ktate'), 4, 34, 122), -- username : ktate 
-    ('Ashley', 'Gonzales', 'agonzales@iut.univ-paris8.fr', '07.85.92.59.81', (SELECT id FROM university.users WHERE username = 'agonzales'), 4, 34, 122), -- username : agonzales 
-    ('Christina', 'Gordon', 'cgordon@iut.univ-paris8.fr', '06.35.94.70.87', (SELECT id FROM university.users WHERE username = 'cgordon'), 4, 34, 122), -- username : cgordon 
-    ('Ryan', 'Sanchez', 'rsanchez@iut.univ-paris8.fr', '06.34.55.44.24', (SELECT id FROM university.users WHERE username = 'rsanchez'), 4, 34, 122), -- username : rsanchez 
-    ('David', 'Moore', 'dmoore@iut.univ-paris8.fr', '06.71.97.12.52', (SELECT id FROM university.users WHERE username = 'dmoore'), 4, 34, 122), -- username : dmoore 
-    ('Randy', 'Campbell', 'rcampbell@iut.univ-paris8.fr', '07.28.74.71.04', (SELECT id FROM university.users WHERE username = 'rcampbell'), 4, 35, 35), -- username : rcampbell 
-    ('Russell', 'Rogers', 'rrogers@iut.univ-paris8.fr', '07.47.87.32.04', (SELECT id FROM university.users WHERE username = 'rrogers'), 4, 35, 35), -- username : rrogers 
-    ('William', 'Meyer', 'wmeyer@iut.univ-paris8.fr', '07.46.10.65.57', (SELECT id FROM university.users WHERE username = 'wmeyer'), 4, 35, 35), -- username : wmeyer 
-    ('David', 'King', 'dking@iut.univ-paris8.fr', '07.93.05.56.11', (SELECT id FROM university.users WHERE username = 'dking'), 4, 35, 35), -- username : dking 
-    ('Tyler', 'Austin', 'taustin@iut.univ-paris8.fr', '07.65.60.48.49', (SELECT id FROM university.users WHERE username = 'taustin'), 4, 35, 35), -- username : taustin 
-    ('Matthew', 'Giles', 'mgiles@iut.univ-paris8.fr', '07.63.62.24.22', (SELECT id FROM university.users WHERE username = 'mgiles'), 4, 35, 35), -- username : mgiles 
-    ('Anna', 'Tran', 'atran@iut.univ-paris8.fr', '06.37.39.36.40', (SELECT id FROM university.users WHERE username = 'atran'), 4, 35, 35), -- username : atran 
-    ('Herbert', 'Gonzalez', 'hgonzalez@iut.univ-paris8.fr', '07.43.55.63.32', (SELECT id FROM university.users WHERE username = 'hgonzalez'), 4, 35, 35), -- username : hgonzalez 
-    ('Tina', 'Perry', 'tperry1@iut.univ-paris8.fr', '07.81.77.52.76', (SELECT id FROM university.users WHERE username = 'tperry1'), 4, 35, 35), -- username : tperry1 
-    ('Nicole', 'Cain', 'ncain@iut.univ-paris8.fr', '07.25.23.05.24', (SELECT id FROM university.users WHERE username = 'ncain'), 4, 35, 35), -- username : ncain 
-    ('Melinda', 'Lewis', 'mlewis@iut.univ-paris8.fr', '07.41.83.18.99', (SELECT id FROM university.users WHERE username = 'mlewis'), 4, 35, 79), -- username : mlewis 
-    ('Robert', 'Santana', 'rsantana@iut.univ-paris8.fr', '07.43.30.12.09', (SELECT id FROM university.users WHERE username = 'rsantana'), 4, 35, 79), -- username : rsantana 
-    ('Nicholas', 'Mack', 'nmack@iut.univ-paris8.fr', '07.57.30.28.74', (SELECT id FROM university.users WHERE username = 'nmack'), 4, 35, 79), -- username : nmack 
-    ('Rachel', 'Bishop', 'rbishop@iut.univ-paris8.fr', '07.06.13.78.88', (SELECT id FROM university.users WHERE username = 'rbishop'), 4, 35, 79), -- username : rbishop 
-    ('Jill', 'Casey', 'jcasey@iut.univ-paris8.fr', '07.08.59.76.22', (SELECT id FROM university.users WHERE username = 'jcasey'), 4, 35, 79), -- username : jcasey 
-    ('Samantha', 'Kelly', 'skelly@iut.univ-paris8.fr', '07.66.80.00.19', (SELECT id FROM university.users WHERE username = 'skelly'), 4, 35, 79), -- username : skelly 
-    ('Melissa', 'Reed', 'mreed@iut.univ-paris8.fr', '07.98.53.10.76', (SELECT id FROM university.users WHERE username = 'mreed'), 4, 35, 79), -- username : mreed 
-    ('Tamara', 'James', 'tjames@iut.univ-paris8.fr', '06.26.45.04.28', (SELECT id FROM university.users WHERE username = 'tjames'), 4, 35, 79), -- username : tjames 
-    ('Jason', 'Green', 'jgreen@iut.univ-paris8.fr', '06.85.34.96.03', (SELECT id FROM university.users WHERE username = 'jgreen'), 4, 35, 79), -- username : jgreen 
-    ('Sarah', 'Fox', 'sfox@iut.univ-paris8.fr', '06.56.47.61.78', (SELECT id FROM university.users WHERE username = 'sfox'), 4, 35, 79), -- username : sfox 
-    ('Brian', 'Sandoval', 'bsandoval@iut.univ-paris8.fr', '07.71.67.49.23', (SELECT id FROM university.users WHERE username = 'bsandoval'), 4, 35, 123), -- username : bsandoval 
-    ('Anthony', 'Wells', 'awells@iut.univ-paris8.fr', '07.39.25.43.18', (SELECT id FROM university.users WHERE username = 'awells'), 4, 35, 123), -- username : awells 
-    ('Mark', 'Bishop', 'mbishop@iut.univ-paris8.fr', '06.32.78.37.76', (SELECT id FROM university.users WHERE username = 'mbishop'), 4, 35, 123), -- username : mbishop 
-    ('Wanda', 'Sanchez', 'wsanchez@iut.univ-paris8.fr', '06.34.44.62.63', (SELECT id FROM university.users WHERE username = 'wsanchez'), 4, 35, 123), -- username : wsanchez 
-    ('Karen', 'Bell', 'kbell@iut.univ-paris8.fr', '06.49.09.40.97', (SELECT id FROM university.users WHERE username = 'kbell'), 4, 35, 123), -- username : kbell 
-    ('Seth', 'Yu', 'syu@iut.univ-paris8.fr', '06.01.79.53.96', (SELECT id FROM university.users WHERE username = 'syu'), 4, 35, 123), -- username : syu 
-    ('Angela', 'Huang', 'ahuang@iut.univ-paris8.fr', '07.84.72.57.20', (SELECT id FROM university.users WHERE username = 'ahuang'), 4, 35, 123), -- username : ahuang 
-    ('Vanessa', 'Simpson', 'vsimpson@iut.univ-paris8.fr', '07.53.45.31.94', (SELECT id FROM university.users WHERE username = 'vsimpson'), 4, 35, 123), -- username : vsimpson 
-    ('Fernando', 'Pena', 'fpena@iut.univ-paris8.fr', '07.85.30.16.79', (SELECT id FROM university.users WHERE username = 'fpena'), 4, 35, 123), -- username : fpena 
-    ('Christina', 'Jones', 'cjones@iut.univ-paris8.fr', '06.95.86.82.80', (SELECT id FROM university.users WHERE username = 'cjones'), 4, 35, 123), -- username : cjones 
-    ('Margaret', 'Marks', 'mmarks@iut.univ-paris8.fr', '07.07.30.78.09', (SELECT id FROM university.users WHERE username = 'mmarks'), 4, 12, 12), -- username : mmarks 
-    ('Tammy', 'Hester', 'thester@iut.univ-paris8.fr', '06.48.09.08.01', (SELECT id FROM university.users WHERE username = 'thester'), 4, 12, 12), -- username : thester 
-    ('Benjamin', 'Patterson', 'bpatterson@iut.univ-paris8.fr', '07.69.10.22.89', (SELECT id FROM university.users WHERE username = 'bpatterson'), 4, 12, 12), -- username : bpatterson 
-    ('Brittney', 'Finley', 'bfinley@iut.univ-paris8.fr', '06.93.04.39.57', (SELECT id FROM university.users WHERE username = 'bfinley'), 4, 12, 12), -- username : bfinley 
-    ('Valerie', 'Cruz', 'vcruz@iut.univ-paris8.fr', '07.92.12.75.95', (SELECT id FROM university.users WHERE username = 'vcruz'), 4, 12, 12), -- username : vcruz 
-    ('Katie', 'Campbell', 'kcampbell@iut.univ-paris8.fr', '06.77.92.19.10', (SELECT id FROM university.users WHERE username = 'kcampbell'), 4, 12, 12), -- username : kcampbell 
-    ('Matthew', 'Perry', 'mperry@iut.univ-paris8.fr', '07.93.62.20.66', (SELECT id FROM university.users WHERE username = 'mperry'), 4, 12, 12), -- username : mperry 
-    ('Ray', 'Nichols', 'rnichols@iut.univ-paris8.fr', '07.87.44.74.40', (SELECT id FROM university.users WHERE username = 'rnichols'), 4, 12, 12), -- username : rnichols 
-    ('Kimberly', 'Garcia', 'kgarcia@iut.univ-paris8.fr', '07.93.59.55.14', (SELECT id FROM university.users WHERE username = 'kgarcia'), 4, 12, 12), -- username : kgarcia 
-    ('Stephanie', 'Clark', 'sclark@iut.univ-paris8.fr', '07.79.52.33.65', (SELECT id FROM university.users WHERE username = 'sclark'), 4, 12, 12), -- username : sclark 
-    ('Alexandra', 'Allen', 'aallen@iut.univ-paris8.fr', '06.32.80.99.66', (SELECT id FROM university.users WHERE username = 'aallen'), 4, 23, 67), -- username : aallen 
-    ('Tracy', 'Perry', 'tperry@iut.univ-paris8.fr', '06.65.44.70.73', (SELECT id FROM university.users WHERE username = 'tperry'), 4, 23, 67), -- username : tperry 
-    ('Linda', 'Wright', 'lwright@iut.univ-paris8.fr', '06.81.39.55.18', (SELECT id FROM university.users WHERE username = 'lwright'), 4, 23, 67), -- username : lwright 
-    ('Anthony', 'Davis', 'adavis@iut.univ-paris8.fr', '07.52.60.91.52', (SELECT id FROM university.users WHERE username = 'adavis'), 4, 23, 67), -- username : adavis 
-    ('Jennifer', 'Fischer', 'jfischer@iut.univ-paris8.fr', '06.51.92.73.75', (SELECT id FROM university.users WHERE username = 'jfischer'), 4, 23, 67), -- username : jfischer 
-    ('Andrea', 'Calderon', 'acalderon@iut.univ-paris8.fr', '06.67.49.87.28', (SELECT id FROM university.users WHERE username = 'acalderon'), 4, 23, 67), -- username : acalderon 
-    ('Richard', 'Lawson', 'rlawson@iut.univ-paris8.fr', '06.50.15.81.39', (SELECT id FROM university.users WHERE username = 'rlawson'), 4, 23, 67), -- username : rlawson 
-    ('David', 'Zuniga', 'dzuniga@iut.univ-paris8.fr', '07.53.58.09.82', (SELECT id FROM university.users WHERE username = 'dzuniga'), 4, 23, 67), -- username : dzuniga 
-    ('Andrew', 'Willis', 'awillis@iut.univ-paris8.fr', '07.51.72.52.28', (SELECT id FROM university.users WHERE username = 'awillis'), 4, 23, 67), -- username : awillis 
-    ('Vicki', 'Pugh', 'vpugh@iut.univ-paris8.fr', '06.49.06.61.60', (SELECT id FROM university.users WHERE username = 'vpugh'), 4, 23, 67), -- username : vpugh 
-    ('Michelle', 'Mathis', 'mmathis@iut.univ-paris8.fr', '07.20.73.50.22', (SELECT id FROM university.users WHERE username = 'mmathis'), 4, 43, 131), -- username : mmathis 
-    ('Paige', 'Miranda', 'pmiranda@iut.univ-paris8.fr', '07.84.96.01.04', (SELECT id FROM university.users WHERE username = 'pmiranda'), 4, 43, 131), -- username : pmiranda 
-    ('Melissa', 'Cooper', 'mcooper@iut.univ-paris8.fr', '06.45.89.00.93', (SELECT id FROM university.users WHERE username = 'mcooper'), 4, 43, 131), -- username : mcooper 
-    ('Angela', 'Mercado', 'amercado@iut.univ-paris8.fr', '06.18.54.43.47', (SELECT id FROM university.users WHERE username = 'amercado'), 4, 43, 131), -- username : amercado 
-    ('Christopher', 'Stokes', 'cstokes@iut.univ-paris8.fr', '07.77.15.66.11', (SELECT id FROM university.users WHERE username = 'cstokes'), 4, 43, 131), -- username : cstokes 
-    ('Michael', 'Mccann', 'mmccann@iut.univ-paris8.fr', '07.03.50.79.78', (SELECT id FROM university.users WHERE username = 'mmccann'), 4, 43, 131), -- username : mmccann 
-    ('Samantha', 'Martinez', 'smartinez@iut.univ-paris8.fr', '07.83.66.44.41', (SELECT id FROM university.users WHERE username = 'smartinez'), 4, 43, 131), -- username : smartinez 
-    ('Ethan', 'Rodriguez', 'erodriguez@iut.univ-paris8.fr', '07.10.43.04.94', (SELECT id FROM university.users WHERE username = 'erodriguez'), 4, 43, 131), -- username : erodriguez 
-    ('Paul', 'Johnson', 'pjohnson@iut.univ-paris8.fr', '06.27.11.38.55', (SELECT id FROM university.users WHERE username = 'pjohnson'), 4, 43, 131), -- username : pjohnson 
-    ('Joseph', 'Gutierrez', 'jgutierrez@iut.univ-paris8.fr', '07.67.96.78.91', (SELECT id FROM university.users WHERE username = 'jgutierrez'), 4, 43,131) -- username : jjgutierrez 
+    --1ère année
+    --B1
+    ('Zoé', 'Dupont', (SELECT id FROM university.users WHERE username = 'jbrown2'), 1, 4, 7),
+    ('Noah', 'Lambert', (SELECT id FROM university.users WHERE username = 'jmitchell'), 1, 4, 7),
+    ('Alice', 'Bonnet', (SELECT id FROM university.users WHERE username = 'mbradley'), 1, 4, 7),
+    --B2
+    ('Théo', 'Fernandez', (SELECT id FROM university.users WHERE username = 'kward'), 1, 4, 8),
+    ('Eva', 'Lemoine', (SELECT id FROM university.users WHERE username = 'jzamora'), 1, 4, 8),
+    ('Liam', 'Roussel', (SELECT id FROM university.users WHERE username = 'mhumphrey'), 1, 4, 8),
+    --2ème année
+    --B1
+    ('Inès', 'Girard', (SELECT id FROM university.users WHERE username = 'mjohnson2'), 1, 5, 9),
+    ('Tom', 'Brun', (SELECT id FROM university.users WHERE username = 'thopkins'), 1, 5, 9),
+    ('Clara', 'Guillaume', (SELECT id FROM university.users WHERE username = 'bcobb'), 1, 5, 9),
+    --B2
+    ('Timéo', 'Lucas', (SELECT id FROM university.users WHERE username = 'zsimmons'), 1, 5, 10),
+    ('Rose', 'Faure', (SELECT id FROM university.users WHERE username = 'swhite1'), 1, 5, 10),
+    ('Leo', 'Henry', (SELECT id FROM university.users WHERE username = 'lbeard'), 1, 5, 10),
+    --3ème année
+    --B1
+    ('Juliett', 'Robin', (SELECT id FROM university.users WHERE username = 'tbauer'), 1, 6, 11),
+    ('Ethan', 'Roux', (SELECT id FROM university.users WHERE username = 'jstevens'), 1, 6, 11),
+    ('Eléna', 'David', (SELECT id FROM university.users WHERE username = 'mgarcia1'), 1, 6, 11),
+    --B2
+    ('Arthur', 'Bertrand', (SELECT id FROM university.users WHERE username = 'dgriffith1'), 1, 6, 12),
+    ('Lou', 'Perrin', (SELECT id FROM university.users WHERE username = 'pmiller1'), 1, 6, 12),
+    ('Samuel', 'Lambert', (SELECT id FROM university.users WHERE username = 'cscott'), 1, 6, 12),
+
+    --Groupes C
+
+    --1ère année
+    --C1
+    ('Océane', 'Gauthier', (SELECT id FROM university.users WHERE username = 'awhite1'), 1, 7, 13),
+    ('Yanis', 'Morel', (SELECT id FROM university.users WHERE username = 'sball'), 1, 7, 13),
+    ('Sarah', 'Simon', (SELECT id FROM university.users WHERE username = 'mjennings'), 1, 7, 13),
+    --C2
+    ('Milo', 'Caron', (SELECT id FROM university.users WHERE username = 'aroth'), 1, 7, 14),
+    ('Charlot', 'Lefevre', (SELECT id FROM university.users WHERE username = 'rrivera'), 1, 7, 14),
+    ('Adam', 'Andre', (SELECT id FROM university.users WHERE username = 'erichard'), 1, 7, 14),
+    --2ème année
+    --C1
+    ('Maëlys', 'Fournier', (SELECT id FROM university.users WHERE username = 'mgutierrez1'), 1, 8, 15),
+    ('Rayan', 'Vincent', (SELECT id FROM university.users WHERE username = 'dstein'), 1, 8, 15),
+    ('Manuela', 'Vidal', (SELECT id FROM university.users WHERE username = 'mpatel'), 1, 8, 15),
+    --C2
+    ('Maëlle', 'Henry', (SELECT id FROM university.users WHERE username = 'cgray'), 1, 8, 16),
+    ('Martin', 'Roussel', (SELECT id FROM university.users WHERE username = 'lwilliams1'), 1, 8, 16),
+    ('Elsa', 'Lucas', (SELECT id FROM university.users WHERE username = 'shall'), 1, 8, 16),
+    --3ème année--C1
+    ('Lucas', 'Philippe', (SELECT id FROM university.users WHERE username = 'mwatson1'), 1, 9, 17),
+    ('Léna', 'Renaud', (SELECT id FROM university.users WHERE username = 'dgonzalez'), 1, 9, 17),
+    ('Paul', 'Leroux', (SELECT id FROM university.users WHERE username = 'arobinson'), 1, 9, 17),
+    --C2
+    ('Louane', 'Noel', (SELECT id FROM university.users WHERE username = 'dkane'), 1, 9, 18),
+    ('Théa', 'Muller', (SELECT id FROM university.users WHERE username = 'aklein1'), 1, 9, 18),
+    ('Axel', 'Chevalier', (SELECT id FROM university.users WHERE username = 'pobrien'), 1, 9, 18),
+    --Groupes App
+    --2ème année
+    ('Elise', 'Blanche', (SELECT id FROM university.users WHERE username = 'cfoley'), 1, 11, 19),
+    ('Noah', 'Renard', (SELECT id FROM university.users WHERE username = 'jgarcia1'), 1, 11, 19),
+    ('Margaux', 'Picard', (SELECT id FROM university.users WHERE username = 'sbrown'), 1, 11, 19),
+    --3ème année
+    ('Lucas', 'Legrand', (SELECT id FROM university.users WHERE username = 'mskinner'), 1, 11, 20),
+    ('Romane', 'Giraud', (SELECT id FROM university.users WHERE username = 'mfowler'), 1, 11, 20),
+    ('Sacha', 'Lefevre', (SELECT id FROM university.users WHERE username = 'dmorrison'), 1, 11, 20),
+    
+
+    ---------------------------------
+    --QLIO
+    ---------------------------------
+    
+    --Groupes A
+
+    --1ère année
+    --A1
+    ('Zoé', 'Nicolas', (SELECT id FROM university.users WHERE username = 'nwhite'), 2, 12, 21),
+    ('Jules', 'Rolland', (SELECT id FROM university.users WHERE username = 'kjohnson1'), 2, 12, 21),
+    ('Léa', 'Gallet', (SELECT id FROM university.users WHERE username = 'dsantos'), 2, 12, 21),
+    --A2
+    ('Maxime', 'Joly', (SELECT id FROM university.users WHERE username = 'dfoster'), 2, 12, 22),
+    ('Clara', 'Rousseau', (SELECT id FROM university.users WHERE username = 'jsmith4'), 2, 12, 22),
+    ('Ethan', 'Morin', (SELECT id FROM university.users WHERE username = 'jsantiago'), 2, 12, 22),
+    --2ème année
+    --A1
+    ('Lily', 'Leger', (SELECT id FROM university.users WHERE username = 'gmartin'), 2, 13, 23),
+    ('Tom', 'Remy', (SELECT id FROM university.users WHERE username = 'kwilliams'), 2, 13, 23),
+    ('Ambre', 'Hebert', (SELECT id FROM university.users WHERE username = 'mhenry'), 2, 13, 23),
+    --A2
+    ('Théo', 'Julien', (SELECT id FROM university.users WHERE username = 'svelez1'), 2, 13, 24),
+    ('Zoé', 'Prevost', (SELECT id FROM university.users WHERE username = 'ljennings'), 2, 13, 24),
+    ('Robin', 'Renard', (SELECT id FROM university.users WHERE username = 'mdavis2'), 2, 13, 24),
+    --3ème année
+    --A1
+    ('Manon', 'Leclerc', (SELECT id FROM university.users WHERE username = 'rreeves'), 2, 14, 25),
+    ('Maxime', 'Gerard', (SELECT id FROM university.users WHERE username = 'jjackson2'), 2, 14, 25),
+    ('Lou', 'Lebrun', (SELECT id FROM university.users WHERE username = 'skemp'), 2, 14, 25),
+    --A2
+    ('Raphaël', 'Michel', (SELECT id FROM university.users WHERE username = 'jpeters'), 2, 14, 26),
+    ('Jade', 'Faure', (SELECT id FROM university.users WHERE username = 'khunt'), 2, 14, 26),
+    ('Léo', 'Fournier', (SELECT id FROM university.users WHERE username = 'mdudley'), 2, 14, 26),
+
+    --Groupes B
+
+    --1ère année
+    --B1
+    ('Nina', 'Perrin', (SELECT id FROM university.users WHERE username = 'avasquez'), 2, 15, 27),
+    ('Paul', 'Roy', (SELECT id FROM university.users WHERE username = 'kdoyle'), 2, 15, 27),
+    ('Margaux', 'Mathieu', (SELECT id FROM university.users WHERE username = 'rclarke'), 2, 15, 27),
+    --B2
+    ('Gabriel', 'Caron', (SELECT id FROM university.users WHERE username = 'hmoore1'), 2, 15, 28),
+    ('Sarah', 'Masson', (SELECT id FROM university.users WHERE username = 'kcox'), 2, 15, 28),
+    ('Thomas', 'Guerin', (SELECT id FROM university.users WHERE username = 'awillis1'), 2, 15, 28),
+    --2ème année--B1
+    ('Juliett', 'Julien', (SELECT id FROM university.users WHERE username = 'jskinner'), 2, 16, 29),
+    ('Matéo', 'Marchand', (SELECT id FROM university.users WHERE username = 'ajames'), 2, 16, 29),
+    ('Camille', 'Denis', (SELECT id FROM university.users WHERE username = 'jmaddox'), 2, 16, 29),
+    --B2
+    ('Emma', 'Perrin', (SELECT id FROM university.users WHERE username = 'jcooley'), 2, 16, 30),
+    ('Baptist', 'Lambert', (SELECT id FROM university.users WHERE username = 'sgould'), 2, 16, 30),
+    ('Manon', 'Michel', (SELECT id FROM university.users WHERE username = 'rpeters'), 2, 16, 30),
+    --3ème année
+    --B1
+    ('Alexand', 'Renard', (SELECT id FROM university.users WHERE username = 'lwhite1'), 2, 17, 31),
+    ('Emma', 'Joly', (SELECT id FROM university.users WHERE username = 'cgonzalez'), 2, 17, 31),
+    ('Liam', 'Giraud', (SELECT id FROM university.users WHERE username = 'sjordan1'), 2, 17, 31),
+    --B2
+    ('Lilou', 'Nicolas', (SELECT id FROM university.users WHERE username = 'jlove'), 2, 17, 32),
+    ('Noah', 'Renault', (SELECT id FROM university.users WHERE username = 'lheath'), 2, 17, 32),
+    ('Lola', 'Lucas', (SELECT id FROM university.users WHERE username = 'bramos'), 2, 17, 32),
+    
+    --Groupes C
+    
+    --1ère année
+    --C1
+    ('Lucas', 'Faure', (SELECT id FROM university.users WHERE username = 'dbrown1'), 2, 18, 33),
+    ('Emma', 'Lambert', (SELECT id FROM university.users WHERE username = 'mphillips'), 2, 18, 33),
+    ('Hugo', 'Bernard', (SELECT id FROM university.users WHERE username = 'ljackson'), 2, 18, 33),
+    --C2
+    ('Léa', 'Durand', (SELECT id FROM university.users WHERE username = 'dsmith2'), 2, 18, 34),
+    ('Adam', 'Thomas', (SELECT id FROM university.users WHERE username = 'pklein'), 2, 18, 34),
+    ('Lucie', 'Robert', (SELECT id FROM university.users WHERE username = 'jmartinez'), 2, 18, 34),
+    --2ème année
+    --C1
+    ('Nathan', 'Richard', (SELECT id FROM university.users WHERE username = 'jreynolds'), 2, 19, 35),
+    ('Julia', 'Petit', (SELECT id FROM university.users WHERE username = 'cjarvis'), 2, 19, 35),
+    ('Gabriel', 'Moreau', (SELECT id FROM university.users WHERE username = 'acook'), 2, 19, 35),
+    --C2
+    ('Emma', 'Simon', (SELECT id FROM university.users WHERE username = 'rgonzales'), 2, 19, 36),
+    ('Louis', 'Laurent', (SELECT id FROM university.users WHERE username = 'lcampbell1'), 2, 19, 36),
+    ('Juliett', 'Lefevre', (SELECT id FROM university.users WHERE username = 'aperry1'), 2, 19, 36),
+    --3ème année
+    --C1
+    ('Sacha', 'Garcia', (SELECT id FROM university.users WHERE username = 'jjohnston'), 2, 20, 37),
+    ('Chloé', 'Michel', (SELECT id FROM university.users WHERE username = 'sgordon'), 2, 20, 37),
+    ('Arthur', 'Rodriguez', (SELECT id FROM university.users WHERE username = 'csanchez'), 2, 20, 37),
+    --C2
+    ('Louise', 'Martinez', (SELECT id FROM university.users WHERE username = 'lshelton'), 2, 20, 38),
+    ('Raphaël', 'Boucher', (SELECT id FROM university.users WHERE username = 'aadams2'), 2, 20, 38),
+    ('Lina', 'Dupont', (SELECT id FROM university.users WHERE username = 'rwilliams'), 2, 20, 38),
+    --Groupes App
+    --2ème année
+    ('Liam', 'Lambert', (SELECT id FROM university.users WHERE username = 'lmcdonald'), 2, 21, 39),
+    ('Eva', 'Bonnet', (SELECT id FROM university.users WHERE username = 'cjohnston'), 2, 21, 39),
+    ('Tom', 'Fernandez', (SELECT id FROM university.users WHERE username = 'jsmith3'), 2, 21, 39),
+    --3ème année
+    ('Zoé', 'Lemoine', (SELECT id FROM university.users WHERE username = 'bcoffey'), 2, 22, 40),
+    ('Ethan', 'Roussel', (SELECT id FROM university.users WHERE username = 'redwards'), 2, 22, 40),
+    ('Jade', 'Girard', (SELECT id FROM university.users WHERE username = 'ssanders'), 2, 22, 40),
+    
+
+    ---------------------------------
+    --INFOCOM
+    ---------------------------------
+    
+    --Groupes A
+    
+    --1ère année
+    --A1
+    ('Théo', 'Brun', (SELECT id FROM university.users WHERE username = 'jluna'), 3, 23, 41),
+    ('Léa', 'Guillaume', (SELECT id FROM university.users WHERE username = 'agoodwin'), 3, 23, 41),
+    ('Noah', 'Lucas', (SELECT id FROM university.users WHERE username = 'drodriguez1'), 3, 23, 41),
+    --A2
+    ('Camille', 'Faure', (SELECT id FROM university.users WHERE username = 'jstewart2'), 3, 23, 42),
+    ('Louis', 'Henry', (SELECT id FROM university.users WHERE username = 'tbradford'), 3, 23, 42),
+    ('Emma', 'Robin', (SELECT id FROM university.users WHERE username = 'sschroeder'), 3, 23, 42),
+    --2ème année
+    --A1
+    ('Hugo', 'Roux', (SELECT id FROM university.users WHERE username = 'lwilkerson'), 3, 24, 43),
+    ('Clara', 'David', (SELECT id FROM university.users WHERE username = 'kthompson'), 3, 24, 43),
+    ('Gabriel', 'Bertrand', (SELECT id FROM university.users WHERE username = 'cberry'), 3, 24, 43),
+    --A2
+    ('Juliett', 'Perrin', (SELECT id FROM university.users WHERE username = 'jmorales'), 3, 24, 44),
+    ('Jules', 'Lambert', (SELECT id FROM university.users WHERE username = 'shoffman'), 3, 24, 44),
+    ('Léa', 'Gauthier', (SELECT id FROM university.users WHERE username = 'jmeadows1'), 3, 24, 44),
+    --3ème année
+    --A1
+    ('Chloé', 'Morel', (SELECT id FROM university.users WHERE username = 'cporter'), 3, 25, 45),
+    ('Tom', 'Simon', (SELECT id FROM university.users WHERE username = 'mmiller3'), 3, 25, 45),
+    ('Eva', 'Caron', (SELECT id FROM university.users WHERE username = 'jcampbell'), 3, 25, 45),
+    --A2
+    ('Nathan', 'Lefevre', (SELECT id FROM university.users WHERE username = 'jpalmer1'), 3, 25, 46),
+    ('Lily', 'Andre', (SELECT id FROM university.users WHERE username = 'bphelps'), 3, 25, 46),
+    ('Lucas', 'Fournier', (SELECT id FROM university.users WHERE username = 'dreed2'), 3, 25, 46),
+    
+    --Groupes B
+
+    --1ère année
+    --B1
+    ('Sarah', 'Vincent', (SELECT id FROM university.users WHERE username = 'kwillis'), 3, 26, 47),
+    ('Théo', 'Vidal', (SELECT id FROM university.users WHERE username = 'rgonzalez'), 3, 26, 47),
+    ('Emma', 'Henry', (SELECT id FROM university.users WHERE username = 'asaunders'), 3, 26, 47),
+    --B2
+    ('Liam', 'Roussel', (SELECT id FROM university.users WHERE username = 'jgomez'), 3, 26, 48),
+    ('Manon', 'Lucas', (SELECT id FROM university.users WHERE username = 'lsharp'), 3, 26, 48),
+    ('Noah', 'Philippe', (SELECT id FROM university.users WHERE username = 'tturner'), 3, 26, 48),
+    --2ème année
+    --B1
+    ('Inès', 'Renaud', (SELECT id FROM university.users WHERE username = 'kchase'), 3, 27, 49),
+    ('Lucas', 'Leroux', (SELECT id FROM university.users WHERE username = 'sallen'), 3, 27, 49),
+    ('Zoé', 'Noel', (SELECT id FROM university.users WHERE username = 'dgonzales1'), 3, 27, 49),
+    --B2
+    ('Léa', 'Muller', (SELECT id FROM university.users WHERE username = 'jellis'), 3, 27, 50),
+    ('Hugo', 'Chevalier', (SELECT id FROM university.users WHERE username = 'jballard'), 3, 27, 50),
+    ('Eléna', 'Blanche', (SELECT id FROM university.users WHERE username = 'tcurtis'), 3, 27, 50),
+    --3ème année
+    --B1
+    ('Gabriel', 'Renard', (SELECT id FROM university.users WHERE username = 'jblake'), 3, 28, 51),
+    ('Clara', 'Picard', (SELECT id FROM university.users WHERE username = 'lwhitaker'), 3, 28, 51),
+    ('Raphaël', 'Legrand', (SELECT id FROM university.users WHERE username = 'nmcgee'), 3, 28, 51),
+    --B2
+    ('Anna', 'Giraud', (SELECT id FROM university.users WHERE username = 'tbailey'), 3, 28, 52),
+    ('Jules', 'Lefevre', (SELECT id FROM university.users WHERE username = 'hstrickland'), 3, 28, 52),
+    ('Lou', 'Nicolas', (SELECT id FROM university.users WHERE username = 'kmcdowell'), 3, 28, 52),
+    --Groupes C
+    --1ère année
+    --C1
+    ('Théo', 'Rolland', (SELECT id FROM university.users WHERE username = 'cbowman'), 3, 29, 53),
+    ('Léa', 'Gallet', (SELECT id FROM university.users WHERE username = 'jholland'), 3, 29, 53),
+    ('Tom', 'Joly', (SELECT id FROM university.users WHERE username = 'ccarlson'), 3, 29, 53),
+    --C2
+    ('Chloé', 'Rousseau', (SELECT id FROM university.users WHERE username = 'kgriffith'), 3, 29, 54),
+    ('Jade', 'Morin', (SELECT id FROM university.users WHERE username = 'smccormick'), 3, 29, 54),
+    ('Noah', 'Leger', (SELECT id FROM university.users WHERE username = 'jnash'), 3, 29, 54),
+    --2ème année
+    --C1
+    ('Louise', 'Remy', (SELECT id FROM university.users WHERE username = 'awalter'), 3, 30, 55),
+    ('Lucas', 'Hebert', (SELECT id FROM university.users WHERE username = 'kmcmahon'), 3, 30, 55),
+    ('Maëlys', 'Julien', (SELECT id FROM university.users WHERE username = 'hburns'), 3, 30, 55),
+    --C2
+    ('Gabriel', 'Prevost', (SELECT id FROM university.users WHERE username = 'jkirk'), 3, 30, 56),
+    ('Lina', 'Renard', (SELECT id FROM university.users WHERE username = 'sstanton'), 3, 30, 56),
+    ('Emma', 'Leclerc', (SELECT id FROM university.users WHERE username = 'abryan'), 3, 30, 56),
+    --3ème année
+    --C1
+    ('Mathéo', 'Gerard', (SELECT id FROM university.users WHERE username = 'rbeard'), 3, 31, 57),
+    ('Eva', 'Lebrun', (SELECT id FROM university.users WHERE username = 'mmccarty'), 3, 31, 57),
+    ('Jules', 'Michel', (SELECT id FROM university.users WHERE username = 'jthornton'), 3, 31, 57),
+    --C2
+    ('Sarah', 'Faure', (SELECT id FROM university.users WHERE username = 'lpatrick'), 3, 31, 58),
+    ('Louane', 'Fournier', (SELECT id FROM university.users WHERE username = 'mrandolph'), 3, 31, 58),
+    ('Théo', 'Perrin', (SELECT id FROM university.users WHERE username = 'cwise'), 3, 31, 58),
+    --Groupes App
+    --2ème année
+    ('Lou', 'Roy', (SELECT id FROM university.users WHERE username = 'nbranch'), 3, 32, 59),
+    ('Liam', 'Mathieu', (SELECT id FROM university.users WHERE username = 'bthorpe'), 3, 32, 59),
+    ('Elise', 'Caron', (SELECT id FROM university.users WHERE username = 'ewalsh'), 3, 32, 59),
+    --3ème année
+    ('Nathan', 'Masson', (SELECT id FROM university.users WHERE username = 'jmayer'), 3, 33, 60),
+    ('Manon', 'Guerin', (SELECT id FROM university.users WHERE username = 'cgolden'), 3, 33, 60),
+    ('Lucas', 'Julien', (SELECT id FROM university.users WHERE username = 'ahays'), 3, 33, 60),
+    
+
+    ---------------------------------
+    --GACO
+    ---------------------------------
+    
+    --Groupes A
+
+    --1ère année
+    --A1
+    ('Juliett', 'Marchand', (SELECT id FROM university.users WHERE username = 'jcolon'), 4, 34, 61),
+    ('Emma', 'Denis', (SELECT id FROM university.users WHERE username = 'dmcmillan'), 4, 34, 61),
+    ('Arthur', 'Perrin', (SELECT id FROM university.users WHERE username = 'krocha'), 4, 34, 61),
+    --A2
+    ('Léa', 'Lambert', (SELECT id FROM university.users WHERE username = 'arosales'), 4, 34, 62),
+    ('Hugo', 'Michel', (SELECT id FROM university.users WHERE username = 'jbarton'), 4, 34, 62),
+    ('Camille', 'Renard', (SELECT id FROM university.users WHERE username = 'sswanson'), 4, 34, 62),
+    --2ème année
+    --A1
+    ('Clara', 'Joly', (SELECT id FROM university.users WHERE username = 'hmccarthy'), 4, 35, 63),
+    ('Ethan', 'Giraud', (SELECT id FROM university.users WHERE username = 'ebrock'), 4, 35, 63),
+    ('Jade', 'Nicolas', (SELECT id FROM university.users WHERE username = 'dgould'), 4, 35, 63),
+    --A2
+    ('Noah', 'Renault', (SELECT id FROM university.users WHERE username = 'kblair'), 4, 35, 64),
+    ('Zoé', 'Lucas', (SELECT id FROM university.users WHERE username = 'jtrujillo'), 4, 35, 64),
+    ('Léo', 'Faure', (SELECT id FROM university.users WHERE username = 'rswanson'), 4, 35, 64),
+    --3ème année
+    --A1
+    ('Emma', 'Lambert', (SELECT id FROM university.users WHERE username = 'mjennings2'), 4, 36, 65),
+    ('Lucas', 'Bernard', (SELECT id FROM university.users WHERE username = 'rbates'), 4, 36, 65),
+    ('Léa', 'Durand', (SELECT id FROM university.users WHERE username = 'cbeasley'), 4, 36, 65),
+    --A2
+    ('Théo', 'Thomas', (SELECT id FROM university.users WHERE username = 'lhorton'), 4, 36, 66),
+    ('Maëlys', 'Robert', (SELECT id FROM university.users WHERE username = 'kshaffer'), 4, 36, 66),
+    ('Noah', 'Richard', (SELECT id FROM university.users WHERE username = 'amccall'), 4, 36, 66),
+    
+    --Groupes B
+    
+    --1ère année
+    --B1
+    ('Lily', 'Petit', (SELECT id FROM university.users WHERE username = 'wtilley'), 4, 37, 67),
+    ('Hugo', 'Moreau', (SELECT id FROM university.users WHERE username = 'pcasey'), 4, 37, 67),
+    ('Lou', 'Simon', (SELECT id FROM university.users WHERE username = 'jhodge'), 4, 37, 67),
+    --B2
+    ('Gabriel', 'Laurent', (SELECT id FROM university.users WHERE username = 'blangley'), 4, 37, 68),
+    ('Chloé', 'Lefevre', (SELECT id FROM university.users WHERE username = 'jzimmerman'), 4, 37, 68),
+    ('Tom', 'Garcia', (SELECT id FROM university.users WHERE username = 'kmcmillan'), 4, 37, 68),
+    --2ème année
+    --B1
+    ('Eva', 'Michel', (SELECT id FROM university.users WHERE username = 'cenglish'), 4, 38, 69),
+    ('Lina', 'Rodriguez', (SELECT id FROM university.users WHERE username = 'jacobson'), 4, 38, 69),
+    ('Raphaël', 'Martinez', (SELECT id FROM university.users WHERE username = 'rschmitt'), 4, 38, 69),
+    --B2
+    ('Léa', 'Boucher', (SELECT id FROM university.users WHERE username = 'cchristian'), 4, 38, 70),
+    ('Ethan', 'Dupont', (SELECT id FROM university.users WHERE username = 'mbowman'), 4, 38, 70),
+    ('Zoé', 'Lambert', (SELECT id FROM university.users WHERE username = 'jphelps'), 4, 38, 70),
+    --3ème année
+    --B1
+    ('Louis', 'Bonnet', (SELECT id FROM university.users WHERE username = 'dbolton'), 4, 39, 71),
+    ('Clara', 'Fernandez', (SELECT id FROM university.users WHERE username = 'lstein'), 4, 39, 71),
+    ('Manon', 'Lemoine', (SELECT id FROM university.users WHERE username = 'ncase'), 4, 39, 71),
+    --B2
+    ('Nathan', 'Roussel', (SELECT id FROM university.users WHERE username = 'mbaker'), 4, 39, 72),
+    ('Juliett', 'Girard', (SELECT id FROM university.users WHERE username = 'tsloan'), 4, 39, 72),
+    ('Liam', 'Brun', (SELECT id FROM university.users WHERE username = 'jgoodman'), 4, 39, 72),
+    
+    --Groupes C
+    
+    --1ère année
+    --C1
+    ('Emma', 'Guillaume', (SELECT id FROM university.users WHERE username = 'ckinney'), 4, 40, 73),
+    ('Jade', 'Lucas', (SELECT id FROM university.users WHERE username = 'ngriffith'), 4, 40, 73),
+    ('Tom', 'Faure', (SELECT id FROM university.users WHERE username = 'jweaver'), 4, 40, 73),
+    --C2
+    ('Léa', 'Henry', (SELECT id FROM university.users WHERE username = 'tdudley'), 4, 40, 74),
+    ('Noah', 'Robin', (SELECT id FROM university.users WHERE username = 'swilcox'), 4, 40, 74),
+    ('Louise', 'Roux', (SELECT id FROM university.users WHERE username = 'rdalton'), 4, 40, 74),
+    --2ème année
+    --C1
+    ('Gabriel', 'David', (SELECT id FROM university.users WHERE username = 'jwilliams'), 4, 41, 75),
+    ('Chloé', 'Bertrand', (SELECT id FROM university.users WHERE username = 'bdalton'), 4, 41, 75),
+    ('Théo', 'Perrin', (SELECT id FROM university.users WHERE username = 'sburnett'), 4, 41, 75),
+    --C2
+    ('Eva', 'Lambert', (SELECT id FROM university.users WHERE username = 'rmoran'), 4, 41, 76),
+    ('Jules', 'Gauthier', (SELECT id FROM university.users WHERE username = 'lwright'), 4, 41, 76),
+    ('Clara', 'Morel', (SELECT id FROM university.users WHERE username = 'astuart'), 4, 41, 76),
+    --3ème année
+    --C1
+    ('Liam', 'Simon', (SELECT id FROM university.users WHERE username = 'kcarter'), 4, 42, 77),
+    ('Emma', 'Caron', (SELECT id FROM university.users WHERE username = 'jkent'), 4, 42, 77),
+    ('Louis', 'Lefevre', (SELECT id FROM university.users WHERE username = 'lshelton2'), 4, 42, 77),
+    --C2
+    ('Léa', 'Andre', (SELECT id FROM university.users WHERE username = 'cmelton'), 4, 42, 78),
+    ('Noah', 'Fournier', (SELECT id FROM university.users WHERE username = 'jhenry'), 4, 42, 78),
+    ('Jade', 'Vincent', (SELECT id FROM university.users WHERE username = 'kgreen'), 4, 42, 78),
+    --Groupes App
+    --2ème année
+    ('Tom', 'Vidal', (SELECT id FROM university.users WHERE username = 'sford'), 4, 43, 79),
+    ('Zoé', 'Henry', (SELECT id FROM university.users WHERE username = 'tschwartz'), 4, 43, 79),
+    ('Hugo', 'Roussel', (SELECT id FROM university.users WHERE username = 'aparks'), 4, 43, 79),
+    --3ème année
+    ('Juliett', 'Lucas', (SELECT id FROM university.users WHERE username = 'dherman'), 4, 44, 80),
+    ('Chloé', 'Philippe', (SELECT id FROM university.users WHERE username = 'mwiley'), 4, 44, 80),
+    ('Raphaël', 'Renaud', (SELECT id FROM university.users WHERE username = 'jjordan'), 4, 44, 80)
 ;

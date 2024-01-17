@@ -7,7 +7,6 @@ from controllers.personal_controller import personal_app
 from controllers.specialization_controller import specialization_app
 from controllers.room_controller import room_app
 from controllers.teaching_controller import teaching_app
-from controllers.role_controller import role_app
 from controllers.course_controller import course_app
 from controllers.student_controller import student_app
 from controllers.responsible_controller import responsible_app
