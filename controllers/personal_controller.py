@@ -41,21 +41,19 @@ def get_personal_by_id(id):
     except Exception as e:
         return jsonify({"error": str(e)})
 
-@personal_app.route('/personals/identify', methods=['POST'])
-def identify_personal():
-    """Identify a personal by mail in JSON format"""
-    try:
-        data = request.json
-        _service = personal_service()
-        returnStatement = _service.identify_personal(data)
-        return jsonify(returnStatement)
-    except Exception as e:
-        return jsonify({"error": str(e)})
-    
 # ----------------------------------------------------------
 # Add / Delete / Update
 # ----------------------------------------------------------
-
+@personal_app.route('/users/get-roles', methods=['POST'])
+def get_roles():
+    try:
+        data = request.json
+        _service = personal_service()
+        returnStatement = _service.get_roles(data)
+        return jsonify(returnStatement)
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 404
+    
 @personal_app.route('/personals/add', methods=['PUT'])
 def add_personal():
     """ Add a personal by data in JSON format """

@@ -15,13 +15,6 @@ def create_university_db():
     print(f"Execute : {result_bool}")
     return jsonify(resultString)
 
-@university_app.route('/create_sample_university', methods=['GET'])
-def create_sample_university():
-    """!! Warning this methode drop all before !!  CREATE ALL DB this methode will DROP all BEFORE create """
-    result_bool, resultString  = universityService.sample_database()
-    print(f"Execute : {result_bool}")
-    return jsonify(resultString)
-
 @university_app.route('/create_table_university_db', methods=['GET'])
 def create_table_university_db():
     """ DROP AND CREATE ALL TABLE IN DB """

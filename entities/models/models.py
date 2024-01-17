@@ -23,8 +23,6 @@ class Student(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     last_name = db.Column(db.String(32), nullable=False)
     first_name = db.Column(db.String(32), nullable=False)
-    mail = db.Column(db.String(64), nullable=False, unique=True)
-    phone_number = db.Column(db.String(14), nullable=False, unique=True)
     user_id = db.Column(db.Integer, unique=True, nullable=False)
     department_id = db.Column(db.Integer, nullable=False)
     group_id = db.Column(db.Integer, nullable=False)
@@ -36,8 +34,6 @@ class Student(db.Model):
                 'id' : self.id,
                 'last_name' : self.last_name,
                 'first_name' : self.first_name,
-                'mail' : self.mail,
-                'phone_number' : self.phone_number,
                 'user_id' : self.user_id,
                 'department_id' : self.department_id,
                 'group_id' : self.group_id,
@@ -105,10 +101,8 @@ class Personal(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     last_name = db.Column(db.String(32), nullable=False)
     first_name = db.Column(db.String(32), nullable=False)
-    mail = db.Column(db.String(64), nullable=False)
     personal_code = db.Column(db.String(16), unique=True, nullable=False)
     user_id = db.Column(db.Integer, unique=True, nullable=False)
-    phone_number = db.Column(db.String(14), nullable=False, unique=True)
     
     def get_json(self):
         """ Formats data in JSON """
@@ -116,28 +110,8 @@ class Personal(db.Model):
                 'id' : self.id,
                 'last_name' : self.last_name,
                 'first_name' : self.first_name,
-                'mail' : self.mail,
                 'personal_code' : self.personal_code,
-                'user_id' : self.user_id,
-                'phone_number' : self.phone_number
-            }
-
-class Role(db.Model):
-    __tablename__ = 'roles'
-    __table_args__ = {'schema': 'university'}
-
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String(64), nullable=False)
-    description = db.Column(db.String(128))
-    personal_id = db.Column(db.Integer, nullable=False)
-    
-    def get_json(self):
-        """ Formats data in JSON """
-        return {
-                'id' : self.id,
-                'name' : self.name,
-                'description' : self.description,
-                'personal_id' : self.personal_id
+                'user_id' : self.user_id
             }
 
 class Course(db.Model):
