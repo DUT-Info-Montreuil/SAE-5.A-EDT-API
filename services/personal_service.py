@@ -14,7 +14,7 @@ class personal_service(Service):
         query = """
         SELECT 
             CASE 
-                WHEN students.id IS NOT NULL THEN 'student'
+                WHEN students.id IS NOT NULL THEN 'STUDENT'
                 WHEN personals.id IS NOT NULL THEN personals.roles
                 ELSE 'unknown'
             END as user_type

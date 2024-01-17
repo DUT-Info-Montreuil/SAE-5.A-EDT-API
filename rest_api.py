@@ -40,7 +40,7 @@ from datetime import datetime, timedelta, timezone
 from flask_jwt_extended import set_access_cookies
 
 app.config["JWT_SECRET_KEY"] = "hcohen_aclaude_achetouani_bseydi_mtoure"
-app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(minutes=15) 
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(minutes=30) 
 
 jwt = JWTManager(app) 
 
@@ -49,7 +49,7 @@ def refresh_expiring_jwts(response):
         exp_timestamp = get_jwt()["exp"]
         exp_datetime = datetime.fromtimestamp(exp_timestamp)
         now = datetime.now(timezone.utc)
-        target_timestamp = datetime.timestamp(now + timedelta(minutes=15))
+        target_timestamp = datetime.timestamp(now + timedelta(minutes=30))
         if target_timestamp > exp_timestamp:
             access_token = create_access_token(identity=get_jwt_identity())
             # print(access_token)
