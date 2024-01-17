@@ -1,3 +1,4 @@
+from unittest.mock import patch
 from services.main_service import Service
 
 from configuration import connect_pg
