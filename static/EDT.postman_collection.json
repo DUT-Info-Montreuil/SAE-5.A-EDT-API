@@ -1,0 +1,1816 @@
+{
+	"info": {
+		"_postman_id": "5dfdcc43-bbb3-4cb3-ad4b-7237be0acb70",
+		"name": "EDT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31207392",
+		"_collection_link": "https://restless-escape-554210.postman.co/workspace/EDT~202ab6f3-5b1f-4ffa-b78a-fe6fd1a6ebe2/collection/31207392-5dfdcc43-bbb3-4cb3-ad4b-7237be0acb70?action=share&source=collection_link&creator=31207392"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login & Get Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"var accessToken = jsonData.token;\r",
+									"\r",
+									"pm.globals.set('accessToken', accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"hcohen\",\r\n    \"password\":\"aA123456789_\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Verif Connexion",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/protected"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Absence",
+			"item": [
+				{
+					"name": "Get Absences",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5050/absents/get",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"absents",
+								"get"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Absences By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/absents/get/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Absence",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"justified\":\"true\",\r\n    \"student_number\":\"85800425\",\r\n    \"course_id\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/absents/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Absence",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/absents/delete/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Apsence",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"justified\":\"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/absent/update/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Departments",
+			"item": [
+				{
+					"name": "Get Departments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5050/departments/get",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"departments",
+								"get"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Departments",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/departments/delete/8"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Departments",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"degree_type\": \"BUT\",\r\n    \"description\": \"Gestion\",\r\n    \"name\": \"DEP7\",\r\n    \"personal_id\": 11\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/departments/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Departments",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"degree_type\": \"BUT\",\r\n    \"description\": \"Gestion rrrrrrrrr\",\r\n    \"name\": \"DEP6\",\r\n    \"personal_id\": 11\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/departments/update/8"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "Timetable",
+					"item": [
+						{
+							"name": "Timetable By Room",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"room_id\":\"3\",\r\n    \"week_date_start\":\"2022-10-10\",\r\n    \"week_date_end\":\"2024-10-11\"\r\n}"
+								},
+								"url": "localhost:5050/courses/timetable/by-room"
+							},
+							"response": [
+								{
+									"name": "Timetable By Room",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"room_id\":\"2\",\r\n    \"week_date_start\":\"2022-10-10\",\r\n    \"week_date_end\":\"2024-10-11\"\r\n}"
+										},
+										"url": "localhost:5050/courses/timetable/by-room"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.1 Python/3.11.3"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 27 Dec 2023 19:40:55 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "636"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "Content-Type,Authorization"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET,PUT,POST,DELETE"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"edt\": [\n        {\n            \"course_type\": \"cours\",\n            \"description\": null,\n            \"endtime\": \"2023-12-09T13:00\",\n            \"personal_code\": [\n                \"MyL\",\n                \"PB\"\n            ],\n            \"room_name\": [\n                \"A0-04 (musique)\"\n            ],\n            \"starttime\": \"2023-12-09T11:00\",\n            \"teaching_title\": \"Anglais Technique\"\n        },\n        {\n            \"course_type\": \"Projet\",\n            \"description\": null,\n            \"endtime\": \"2023-12-09T11:00\",\n            \"personal_code\": [\n                null\n            ],\n            \"room_name\": [\n                \"A0-04 (musique)\"\n            ],\n            \"starttime\": \"2023-12-09T08:00\",\n            \"teaching_title\": \"Projet professionnel et personnel\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Timetable By Teachers",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"personal_id\":\"2\",\r\n    \"week_date_start\":\"2022-10-10\",\r\n    \"week_date_end\":\"2024-10-11\"\r\n}"
+								},
+								"url": "localhost:5050/courses/timetable/by-teacher"
+							},
+							"response": []
+						},
+						{
+							"name": "Timetable By Dep&Prom",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"promotion\":\"1\",\r\n    \"department_id\":\"1\",\r\n    \"week_date_start\":\"2027-01-04\",\r\n    \"week_date_end\":\"2027-01-10\"\r\n}"
+								},
+								"url": "localhost:5050/courses/timetable/by-department-and-promotion"
+							},
+							"response": []
+						},
+						{
+							"name": "Timetable By Username",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"hcohen\",\r\n    \"week_date_start\":\"2022-10-10\",\r\n    \"week_date_end\":\"2024-10-11\"\r\n}"
+								},
+								"url": "localhost:5050/courses/timetable/by-username"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Copy Courses",
+					"item": [
+						{
+							"name": "Copy By Day",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"promotion\":\"1\",\r\n    \"department_id\":\"1\",\r\n    \"day_to_copy\":\"2024-01-15\",\r\n    \"day_to_paste\":\"2207-01-15\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:5050/courses/copy/day"
+							},
+							"response": []
+						},
+						{
+							"name": "Copy By Week",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"promotion\":\"1\",\r\n    \"department_id\":\"1\",\r\n    \"week_to_copy_start\":\"2023-05-06\",\r\n    \"week_to_paste_start\":\"2027-01-04\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:5050/courses/copy/week",
+								"description": "StartFragmentweek_to_copy_startEndFragment\n\nStartFragmentweek_to_paste_startEndFragment  \n  \nmust be monday"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Courses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/courses/get"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Courses By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5050/courses/get/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"courses",
+								"get",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Courses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"coursMardi\",\r\n    \"endtime\": \"2023-05-07T13:00\",\r\n    \"starttime\": \"2023-05-07T12:00\",\r\n    \"course_type\": \"TP\",\r\n    \"teaching\":{\"id\":\"1\"},\r\n    \"personals\": [{\"id\": 17}, {\"id\": 8}, {\"id\": 16}, {\"id\": 20}],\r\n    \"rooms\": [{\"id\": 3}, {\"id\": 7}, {\"id\": 9}],\r\n    \"subgroups\": [{\"id\": 1}, {\"id\": 2}, {\"id\": 3}, {\"id\": 4}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/courses/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Course",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\":\"ntmporidge\",\r\n    \"rooms\": [{\"id\": 1}],\r\n    \"personals\": [{\"id\": 8}],\r\n    \"subGroups\": [{\"id\": 124}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/courses/update/42"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Course",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/courses/delete/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subgroups",
+			"item": [
+				{
+					"name": "Get Subgroups",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/subgroups/get"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Subgroups By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/subgroups/get"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Subgroups By Group Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/subgroups/by-group/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Subgroup",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"group_id\": 46,\r\n    \"name\": \"brrrzsert\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/subgroups/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete SubGroup",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/subgroups/delete/178"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "Students By Department",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/students/department/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Student By Groups",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"department_id\":\"1\",\r\n    \"group_id\":\"2\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5050/students/groups",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"students",
+								"groups"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Student By Subgroups",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"department_id\":\"1\",\r\n    \"group_id\":\"38\",\r\n    \"subgroup_id\":\"38\"\r\n}"
+						},
+						"url": "localhost:5050/students/subgroups"
+					},
+					"response": []
+				},
+				{
+					"name": "Student By Subgroups Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"department_id\":\"1\",\r\n    \"group_id\":\"1\",\r\n    \"subgroup_id\":\"2\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5050/students/subgroups",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"students",
+								"subgroups"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Student By Subgroups Copy 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"department_id\":\"1\",\r\n    \"group_id\":\"38\",\r\n    \"subgroup_id\":\"38\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5050/students/subgroups",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"students",
+								"subgroups"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Students (User already exist)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"department_id\": 4,\r\n    \"first_name\": \"yakari\",\r\n    \"group_id\": 1,\r\n    \"last_name\": \"lindien\",\r\n    \"subgroup_id\": 1,\r\n    \"password\": \"ypassword\"\r\n}"
+						},
+						"url": "localhost:5050/students/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Get students",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"department_id\": 1,\r\n    \"first_name\": \"SEYDI\",\r\n    \"group_id\": 38,\r\n    \"last_name\": \"Boulayee\",\r\n    \"mail\": \"bseydi@iut.univ-paris8.fr\",\r\n    \"phone_number\": \"07.01.10.01.10\",\r\n    \"subgroup_id\": 38,\r\n    \"user_id\": 37\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/students/get"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete students",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/students/delete/241"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Students",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"department_id\": 1,\r\n    \"first_name\": \"Toure\",\r\n    \"group_id\": 1,\r\n    \"last_name\": \"Mehedi\",\r\n    \"subgroup_id\": 1,\r\n    \"user_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/students/update/243"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5050/users/get",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"users",
+								"get"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"martyna\",\r\n    \"password\":\"martynapassword\"\r\n}"
+						},
+						"url": "localhost:5050/users/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Users",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/users/delete/6"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Ladure\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/users/update/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Roles",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"hcohen\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/users/get-roles"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teaching",
+			"item": [
+				{
+					"name": "Get Teaching",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5050/teachings/get",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"teachings",
+								"get"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Teaching",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/teachings/delete/203"
+					},
+					"response": []
+				},
+				{
+					"name": "Add teachings",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"color\": \"50CC25\",\r\n    \"description\": null,\r\n    \"hour_number\": 115,\r\n    \"semestre\": 3,\r\n    \"sequence\": \"09\",\r\n    \"specialization_id\": 11,\r\n    \"teaching_type\": \"RCC\",\r\n    \"title\": \"Stratégie de communication\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/teachings/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Teachings",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"color\": \"GRAY\",\r\n    \"description\": null,\r\n    \"hour_number\": 0,\r\n    \"semestre\": 3,\r\n    \"sequence\": \"08\",\r\n    \"specialization_id\": 11,\r\n    \"teaching_type\": \"RCC\",\r\n    \"title\": \"ANGLAIS INggggggggggggggg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/teachings/update/202"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rooms",
+			"item": [
+				{
+					"name": "Get rooms",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5050/rooms/get",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"rooms",
+								"get"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rooms",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/rooms/delete/78"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Room",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"capacity\": 100,\r\n    \"code\": \"F10-02\",\r\n    \"has_computer\": true,\r\n    \"has_projector\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/rooms/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Rooms",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"capacity\": 125,\r\n        \"code\": \"A0-03 (Libre)\",\r\n        \"has_computer\": true,\r\n        \"has_projector\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/rooms/update/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room_courses",
+			"item": [
+				{
+					"name": "Get room_courses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5050/rooms_courses/get",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"rooms_courses",
+								"get"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get room_courses by Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5050/rooms_courses/get/2",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"rooms_courses",
+								"get",
+								"2"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add room_courses",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"course_id\":\"5\",\r\n    \"rooms_id\":\"12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/rooms_courses/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete room_courses",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5050/rooms_courses/delete/7",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"rooms_courses",
+								"delete",
+								"7"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Personals_courses",
+			"item": [
+				{
+					"name": "Get personals_courses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5050/personals_courses/get",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"personals_courses",
+								"get"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get personal_courses by Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": "localhost:5050/personals_courses/get/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Add personal_courses",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"course_id\":\"5\",\r\n    \"personal_id\":\"12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/personals_courses/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete personal_courses",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5050/personals_courses/delete/5",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"personals_courses",
+								"delete",
+								"5"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reminders",
+			"item": [
+				{
+					"name": "Get reminders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/reminders/get"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Personals",
+			"item": [
+				{
+					"name": "Get Personal",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/personals/get/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Personal",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/personals/delete/32"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Personal",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"BOBO\",\r\n    \"last_name\": \"SESE\",\r\n    \"mail\": \"v.nyzam@iut.univ-paris8.fr\",\r\n    \"personal_code\": \"BD\",\r\n    \"phone_number\": \"06.88.49.46.84\",\r\n    \"password\": \"bobopassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/personals/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Personal",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"BOBOrrrrrrrrrrrrr\",\r\n    \"id\": 32,\r\n    \"last_name\": \"SESErrrrrrrrrrrrrr\",\r\n    \"personal_code\": \"BD\",\r\n    \"roles\": \"TEACHER\",\r\n    \"user_id\": 273\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/personals/update/32"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Group",
+			"item": [
+				{
+					"name": "Get Group",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/groups/get"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Group",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/groups/delete/38"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Group",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"department_id\": 4,\r\n    \"promotion\": 4,\r\n    \"type\": \"Appol\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/groups/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Group",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"department_id\": 4,\r\n    \"promotion\": 4,\r\n    \"type\": \"B\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5050/groups/update/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Participate",
+			"item": [
+				{
+					"name": "Get Participates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:5050/participates/get"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create DB",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:5050/create_university_db"
+			},
+			"response": []
+		},
+		{
+			"name": "Insert Table",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:5050/insert_table_university_db"
+			},
+			"response": []
+		}
+	]
+}
